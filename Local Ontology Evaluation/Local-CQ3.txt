@@ -1,0 +1,225 @@
+==== OSN CQ3 ====
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>  # Sesuaikan dengan namespace RDF Anda
+
+SELECT ?suspect ?victim ?platform ?messageText ?threat ?verbalAbuse ?blackmail
+WHERE {
+  ?message rdf:type ex:TextMessage ;
+           ex:hasMessageText ?messageText ;
+           ex:sendsTextMessage ?suspect ;
+           ex:viewsMessages ?victim ;
+           ex:belongsToPlatform ?platform .
+
+  # Klasifikasi ancaman
+  BIND (
+    IF (
+      REGEX(?messageText, "end it", "i") ||
+      REGEX(?messageText, "ruin your life", "i") ||
+      REGEX(?messageText, "watch your back", "i") ||
+      REGEX(?messageText, "just disappear", "i"), 
+      "Threat", 
+      ""
+    ) AS ?threat
+  )
+  
+  # Klasifikasi pelecehan verbal
+  BIND (
+    IF (
+      REGEX(?messageText, "nobody likes you", "i") ||
+      REGEX(?messageText, "loser", "i") ||
+      REGEX(?messageText, "pathetic", "i") ||
+      REGEX(?messageText, "ugly", "i"), 
+      "Verbal Abuse", 
+      ""
+    ) AS ?verbalAbuse
+  )
+  
+  # Klasifikasi pemerasan
+  BIND (
+    IF (
+      REGEX(?messageText, "I have private pictures", "i") ||
+      REGEX(?messageText, "pay me or else", "i") ||
+      REGEX(?messageText, "leak private", "i"), 
+      "Blackmail", 
+      ""
+    ) AS ?blackmail
+  )
+}
+ORDER BY ?suspect ?platform
+
+
+
+
+==== MP CQ3 ====
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>  # Sesuaikan dengan namespace RDF Anda
+
+SELECT ?suspect ?victim ?platform ?messageText ?threat ?verbalAbuse ?blackmail
+WHERE {
+  {
+    # Mencari pesan DM yang memiliki ancaman
+    ?message rdf:type ex:DirectMessages ;
+             ex:hasDMContent ?messageText ;
+             ex:dmSender ?suspect ;
+             ex:dmReceiver ?victim ;
+             ex:belongsToPlatform ?platform .
+
+    # Klasifikasi ancaman
+    BIND (
+      IF (
+        REGEX(?messageText, "we know where you live", "i") ||
+        REGEX(?messageText, "watch your back", "i") ||
+        REGEX(?messageText, "make you regret it", "i") ||
+        REGEX(?messageText, "take it to the next level", "i"),
+        "Threat", 
+        ""
+      ) AS ?threat
+    )
+
+    # Klasifikasi pelecehan verbal
+    BIND (
+      IF (
+        REGEX(?messageText, "shut up", "i") ||
+        REGEX(?messageText, "garbage articles", "i") ||
+        REGEX(?messageText, "you're sick", "i") ||
+        REGEX(?messageText, "nobody wants to hear from you", "i"),
+        "Verbal Abuse", 
+        ""
+      ) AS ?verbalAbuse
+    )
+
+    # Klasifikasi pemerasan
+    BIND (
+      IF (
+        REGEX(?messageText, "pay me or else", "i") ||
+        REGEX(?messageText, "take it to the next level", "i") ||
+        REGEX(?messageText, "leak your address", "i") ||
+        REGEX(?messageText, "dark web", "i"),
+        "Blackmail", 
+        ""
+      ) AS ?blackmail
+    )
+  }
+}
+ORDER BY ?suspect ?platform
+
+
+
+
+
+==== MCSS CQ3 ====
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>  # Sesuaikan dengan namespace RDF Anda
+
+SELECT ?suspect ?victim ?platform ?messageText ?threat ?verbalAbuse ?blackmail
+WHERE {
+  {
+    # Mencari pesan DM yang berpotensi mengancam atau memaksa
+    ?message rdf:type ex:DirectMessage ;
+             ex:hasTextContent ?messageText ;
+             ex:sentBy ?suspect ;
+             ex:sentTo ?victim ;
+             ex:belongsToPlatform ?platform .
+
+    # Klasifikasi ancaman
+    BIND (
+      IF (
+        REGEX(?messageText, "you should just do it", "i") ||
+        REGEX(?messageText, "don't back down", "i") ||
+        REGEX(?messageText, "if you don't do it, you will regret it", "i") ||
+        REGEX(?messageText, "this will blow up", "i"),
+        "Threat", 
+        ""
+      ) AS ?threat
+    )
+
+    # Klasifikasi pelecehan verbal
+    BIND (
+      IF (
+        REGEX(?messageText, "everyone's done it", "i") ||
+        REGEX(?messageText, "just a few seconds", "i") ||
+        REGEX(?messageText, "nothing's going to happen", "i"),
+        "Verbal Abuse", 
+        ""
+      ) AS ?verbalAbuse
+    )
+
+    # Klasifikasi pemerasan
+    BIND (
+      IF (
+        REGEX(?messageText, "if something goes wrong", "i") ||
+        REGEX(?messageText, "you better not back out", "i") ||
+        REGEX(?messageText, "I have proof and backups", "i"),
+        "Blackmail", 
+        ""
+      ) AS ?blackmail
+    )
+  }
+}
+ORDER BY ?suspect ?platform
+
+
+
+
+==== OFB CQ3 ====
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#> # Namespace ontologi OFB Anda
+
+SELECT ?suspect ?victim ?platform ?messageText
+       ?threatClassification ?illicitTradeClassification ?harassmentClassification
+WHERE {
+  # Menargetkan instance DirectMessaging dari ontologi OFB
+  ?message rdf:type ex:DirectMessaging .
+  ?message ex:hasMessageContent ?messageText .
+  ?message ex:messageSender ?suspect .
+  ?message ex:messageReceiver ?victim .
+  ?message ex:belongsToPlatform ?platform .
+
+  # --- Klasifikasi Konten Pesan ---
+
+  # Klasifikasi Kategori 1: Ancaman (Threat)
+  BIND (
+    IF (
+      REGEX(?messageText, "regret it|handle nosy people|worry about your own privacy|threat|expose|deserves what's coming|watch your back", "i"),
+      "Threat Detected",
+      ""
+    ) AS ?threatClassification
+  )
+
+  # Klasifikasi Kategori 2: Diskusi Perdagangan Ilegal (Illicit Trade)
+  BIND (
+    IF (
+      REGEX(?messageText, "cc dumps|stolen data|monero|untraceable payment|premium cc|vendor|dumps|carding", "i"),
+      "Illicit Trade Discussion Detected",
+      ""
+    ) AS ?illicitTradeClassification
+  )
+
+  # Klasifikasi Kategori 3: Pelecehan / Cacian (Harassment / Abuse)
+  BIND (
+    IF (
+      REGEX(?messageText, "shut up|get lost|traitor|part of the problem|nobody forced you|nosy people|stupid|idiot", "i"),
+      "Harassment/Abuse Detected",
+      ""
+    ) AS ?harassmentClassification
+  )
+
+  # --- Akhir Klasifikasi ---
+
+  # !!! BARIS FILTER STRLEN DIHAPUS DARI SINI !!!
+
+}
+ORDER BY ?platform ?suspect ?victim

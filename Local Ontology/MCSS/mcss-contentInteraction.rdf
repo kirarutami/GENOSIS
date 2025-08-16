@@ -1,0 +1,428 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Class: ContentInteraction -->
+    <owl:Class rdf:about="#ContentInteraction">
+        <rdfs:comment>Represents interactions on content within the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-class: InteractionType -->
+    <owl:Class rdf:about="#InteractionType">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <rdfs:comment>Represents different types of interactions with content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-class: Like -->
+    <owl:Class rdf:about="#Like">
+        <rdfs:subClassOf rdf:resource="#InteractionType"/>
+        <rdfs:comment>Represents a like interaction with content.</rdfs:comment>
+    </owl:Class>
+
+
+    <!-- Object Properties for Like -->
+    <owl:ObjectProperty rdf:about="#likesContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user likes a specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#likesContent">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a channel likes a specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#Like"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Indicates that a like is associated with a specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithLikedPost">
+        <rdfs:domain rdf:resource="#Like"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Indicates that a like is associated with a liked post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithLikedVideo">
+        <rdfs:domain rdf:resource="#Like"/>
+        <rdfs:range rdf:resource="#Video"/>
+        <rdfs:comment>Indicates that a like is associated with a liked video.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithLikedShortVideo">
+        <rdfs:domain rdf:resource="#Like"/>
+        <rdfs:range rdf:resource="#ShortVideo"/>
+        <rdfs:comment>Indicates that a like is associated with a liked short video.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithLikedLive">
+        <rdfs:domain rdf:resource="#Like"/>
+        <rdfs:range rdf:resource="#Live"/>
+        <rdfs:comment>Indicates that a like is associated with a liked live session.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property for Like -->
+    <owl:DatatypeProperty rdf:about="#hasLikeTimestamp">
+        <rdfs:domain rdf:resource="#Like"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Records the timestamp when a like interaction occurred.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: Comment -->
+    <owl:Class rdf:about="#Comment">
+        <rdfs:subClassOf rdf:resource="#InteractionType"/>
+        <rdfs:comment>Represents a comment interaction with content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for Comment -->
+    <owl:ObjectProperty rdf:about="#commentsOnContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user comments on specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#commentsOnContent">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a channel comments on specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#Comment"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Indicates that a comment is associated with specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithCommentedPost">
+        <rdfs:domain rdf:resource="#Comment"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Indicates that a comment is associated with a commented post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithCommentedVideo">
+        <rdfs:domain rdf:resource="#Comment"/>
+        <rdfs:range rdf:resource="#Video"/>
+        <rdfs:comment>Indicates that a comment is associated with a commented video.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithCommentedShortVideo">
+        <rdfs:domain rdf:resource="#Comment"/>
+        <rdfs:range rdf:resource="#ShortVideo"/>
+        <rdfs:comment>Indicates that a comment is associated with a commented short video.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithCommentedLive">
+        <rdfs:domain rdf:resource="#Comment"/>
+        <rdfs:range rdf:resource="#Live"/>
+        <rdfs:comment>Indicates that a comment is associated with a commented live session.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for Comment -->
+    <owl:DatatypeProperty rdf:about="#hasCommentText">
+        <rdfs:domain rdf:resource="#Comment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the text of a comment.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasCommentTimestamp">
+        <rdfs:domain rdf:resource="#Comment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Records the timestamp when a comment interaction occurred.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: Share -->
+    <owl:Class rdf:about="#Share">
+        <rdfs:subClassOf rdf:resource="#InteractionType"/>
+        <rdfs:comment>Represents a share interaction with content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for Share -->
+    <owl:ObjectProperty rdf:about="#sharesContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user shares specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#sharesContent">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a channel shares specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#Share"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Indicates that a share is associated with specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithSharedPost">
+        <rdfs:domain rdf:resource="#Share"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Indicates that a share is associated with a shared post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithSharedVideo">
+        <rdfs:domain rdf:resource="#Share"/>
+        <rdfs:range rdf:resource="#Video"/>
+        <rdfs:comment>Indicates that a share is associated with a shared video.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithSharedShortVideo">
+        <rdfs:domain rdf:resource="#Share"/>
+        <rdfs:range rdf:resource="#ShortVideo"/>
+        <rdfs:comment>Indicates that a share is associated with a shared short video.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithSharedLive">
+        <rdfs:domain rdf:resource="#Share"/>
+        <rdfs:range rdf:resource="#Live"/>
+        <rdfs:comment>Indicates that a share is associated with a shared live session.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property for Share -->
+    <owl:DatatypeProperty rdf:about="#hasShareTimestamp">
+        <rdfs:domain rdf:resource="#Share"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Records the timestamp when a share interaction occurred.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: Dislike -->
+    <owl:Class rdf:about="#Dislike">
+        <rdfs:subClassOf rdf:resource="#InteractionType"/>
+        <rdfs:comment>Represents a dislike interaction with content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for Dislike -->
+    <owl:ObjectProperty rdf:about="#dislikesContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user dislikes specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#dislikesContent">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a channel dislikes specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#Dislike"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Indicates that a dislike is associated with specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithDislikedPost">
+        <rdfs:domain rdf:resource="#Dislike"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Indicates that a dislike is associated with a disliked post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithDislikedVideo">
+        <rdfs:domain rdf:resource="#Dislike"/>
+        <rdfs:range rdf:resource="#Video"/>
+        <rdfs:comment>Indicates that a dislike is associated with a disliked video.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithDislikedShortVideo">
+        <rdfs:domain rdf:resource="#Dislike"/>
+        <rdfs:range rdf:resource="#ShortVideo"/>
+        <rdfs:comment>Indicates that a dislike is associated with a disliked short video.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithDislikedLive">
+        <rdfs:domain rdf:resource="#Dislike"/>
+        <rdfs:range rdf:resource="#Live"/>
+        <rdfs:comment>Indicates that a dislike is associated with a disliked live session.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property for Dislike -->
+    <owl:DatatypeProperty rdf:about="#hasDislikeTimestamp">
+        <rdfs:domain rdf:resource="#Dislike"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Records the timestamp when a dislike interaction occurred.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: Report -->
+    <owl:Class rdf:about="#Report">
+        <rdfs:subClassOf rdf:resource="#InteractionType"/>
+        <rdfs:comment>Represents a report interaction with content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for Report -->
+    <owl:ObjectProperty rdf:about="#reportsContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user reports specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#reportsContent">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a channel reports specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#reportsChannel">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Channel"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user reports specific channel.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#reportsUser">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user reports specific user.</rdfs:comment>
+    </owl:ObjectProperty>
+
+
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#Report"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Indicates that a report is associated with specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithReportedPost">
+        <rdfs:domain rdf:resource="#Report"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Indicates that a report is associated with a reported post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithReportedVideo">
+        <rdfs:domain rdf:resource="#Report"/>
+        <rdfs:range rdf:resource="#Video"/>
+        <rdfs:comment>Indicates that a report is associated with a reported video.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithReportedShortVideo">
+        <rdfs:domain rdf:resource="#Report"/>
+        <rdfs:range rdf:resource="#ShortVideo"/>
+        <rdfs:comment>Indicates that a report is associated with a reported short video.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithReportedLive">
+        <rdfs:domain rdf:resource="#Report"/>
+        <rdfs:range rdf:resource="#Live"/>
+        <rdfs:comment>Indicates that a report is associated with a reported live session.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for Report -->
+    <owl:DatatypeProperty rdf:about="#hasReportReason">
+        <rdfs:domain rdf:resource="#Report"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates the reason for reporting specific content.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasReportTimestamp">
+        <rdfs:domain rdf:resource="#Report"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Records the timestamp when a report interaction occurred.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: WatchLater -->
+    <owl:Class rdf:about="#WatchLater">
+        <rdfs:subClassOf rdf:resource="#InteractionType"/>
+        <rdfs:comment>Represents the watch later feature for videos.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for WatchLater -->
+    <owl:ObjectProperty rdf:about="#addsVideoToWatchLater">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Video"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user adds a video to their watch later list.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithVideo">
+        <rdfs:domain rdf:resource="#WatchLater"/>
+        <rdfs:range rdf:resource="#Video"/>
+        <rdfs:comment>Indicates that a watch later action is associated with a specific video.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property for WatchLater -->
+    <owl:DatatypeProperty rdf:about="#hasWatchLaterTimestamp">
+        <rdfs:domain rdf:resource="#WatchLater"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Records the timestamp when a video was added to the watch later list.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: Gift -->
+    <owl:Class rdf:about="#Gift">
+        <rdfs:subClassOf rdf:resource="#InteractionType"/>
+        <rdfs:comment>Represents gifting interactions during live sessions.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for Gift -->
+    <owl:ObjectProperty rdf:about="#sendsGiftInLive">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Live"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user sends a gift during a live session.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#sendsGiftInLive">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="#Live"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a channel sends a gift during a live session.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#receivesGiftInLive">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="#Live"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user receive a gift during a live session.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithLive">
+        <rdfs:domain rdf:resource="#Gift"/>
+        <rdfs:range rdf:resource="#Live"/>
+        <rdfs:comment>Indicates that a gift interaction is associated with a specific live session.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for Gift -->
+    <owl:DatatypeProperty rdf:about="#hasGiftComment">
+        <rdfs:domain rdf:resource="#Gift"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores a comment provided with the gift.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGiftPrice">
+        <rdfs:domain rdf:resource="#Gift"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the price of the gift sent during a live session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGiftTimestamp">
+        <rdfs:domain rdf:resource="#Gift"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Records the timestamp when a gift was sent during a live session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>
+
+

@@ -1,0 +1,108 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+
+SELECT DISTINCT 
+  ?user1 ?user1Label 
+  ?user2 ?user2Label 
+  ?associationType 
+  (GROUP_CONCAT(DISTINCT STR(?contextOrDetail); SEPARATOR="; ") AS ?details)
+  ?platformHint 
+WHERE {
+  ?user1 rdf:type/rdfs:subClassOf* genosisOwl:Global:UserAccount .
+  ?user2 rdf:type/rdfs:subClassOf* genosisOwl:Global:UserAccount .
+  FILTER(?user1 != ?user2 && STR(?user1) < STR(?user2))
+
+  OPTIONAL { ?user1 rdfs:label ?user1Label . }
+  OPTIONAL { ?user2 rdfs:label ?user2Label . }
+
+  {
+    BIND("Shared Group/Community Membership" AS ?associationType)
+    ?group rdf:type/rdfs:subClassOf* genosisOwl:Global:Group ;
+           genosisOwl:hasGroupName ?groupName ;
+           genosisOwl:belongsToPlatform ?platformHint .
+    ?group genosisOwl:hasParticipant ?user1 .
+    ?group genosisOwl:hasParticipant ?user2 .
+    BIND(STR(?groupName) AS ?contextOrDetail) 
+  }
+  UNION
+  {
+    BIND("Direct Message Exchange" AS ?associationType)
+    {
+      ?dm rdf:type/rdfs:subClassOf* genosisOwl:Global:DirectMessage ;
+          genosisOwl:attributedToUser ?user1 ;
+          genosisOwl:messageReceiver ?user2 ;
+          genosisOwl:belongsToPlatform ?platformHint .
+      OPTIONAL { ?dm genosisOwl:hasMessageContent ?dmContent . }
+    } UNION { 
+      ?dm rdf:type/rdfs:subClassOf* genosisOwl:Global:DirectMessage ;
+          genosisOwl:attributedToUser ?user2 ;
+          genosisOwl:messageReceiver ?user1 ;
+          genosisOwl:belongsToPlatform ?platformHint .
+      OPTIONAL { ?dm genosisOwl:hasMessageContent ?dmContent . }
+    }
+    BIND(IF(BOUND(?dmContent), STR(?dmContent), "DM Interaction") AS ?contextOrDetail) # Menampilkan seluruh konten DM jika ada
+  }
+  UNION
+  {
+    BIND("DM with Specific Keywords" AS ?associationType)
+    ?dm rdf:type/rdfs:subClassOf* genosisOwl:Global:DirectMessage ;
+        genosisOwl:hasMessageContent ?dmContent ;
+        genosisOwl:belongsToPlatform ?platformHint .
+    { ?dm genosisOwl:attributedToUser ?user1 ; genosisOwl:messageReceiver ?user2 . }
+    UNION
+    { ?dm genosisOwl:attributedToUser ?user2 ; genosisOwl:messageReceiver ?user1 . }
+    
+    FILTER (
+      REGEX(?dmContent, "collaborate", "i") ||
+      REGEX(?dmContent, "coordinate", "i") ||
+      REGEX(?dmContent, "stole", "i") || 
+      REGEX(?dmContent, "meet up", "i") || 
+      REGEX(?dmContent, "partner", "i")
+    )
+    BIND(STR(?dmContent) AS ?contextOrDetail) # Menampilkan seluruh konten DM
+  }
+  UNION
+  {
+    BIND("Commented on Same Content" AS ?associationType)
+    ?sharedContent rdf:type/rdfs:subClassOf* genosisOwl:Global:Content .
+    OPTIONAL {?sharedContent genosisOwl:hasTitle ?contentTitle .}
+    OPTIONAL {?sharedContent rdfs:label ?contentLabelFallback .}
+    BIND(COALESCE(?contentTitle, ?contentLabelFallback, STRBEFORE(REPLACE(STR(?sharedContent), ".*/", ""), "_")) AS ?displayContentName)
+
+    ?comment1 rdf:type/rdfs:subClassOf* genosisOwl:Global:CommentOrReplyAction ;
+              (genosisOwl:commentedBy | genosisOwl:performedBy) ?user1 ;
+              genosisOwl:commentsOn ?sharedContent ;
+              genosisOwl:belongsToPlatform ?platformHint . 
+    ?comment2 rdf:type/rdfs:subClassOf* genosisOwl:Global:CommentOrReplyAction ;
+              (genosisOwl:commentedBy | genosisOwl:performedBy) ?user2 ;
+              genosisOwl:commentsOn ?sharedContent .
+    BIND(STR(?displayContentName) AS ?contextOrDetail) 
+  }
+  UNION
+  {
+    BIND("User1 Commented on User2's Post" AS ?associationType)
+    ?post rdf:type/rdfs:subClassOf* genosisOwl:Global:Post ;
+          genosisOwl:postedBy ?user2 ; 
+          genosisOwl:belongsToPlatform ?platformHint .
+    ?comment rdf:type/rdfs:subClassOf* genosisOwl:Global:CommentOrReplyAction ;
+             (genosisOwl:commentedBy | genosisOwl:performedBy) ?user1 ; 
+             genosisOwl:commentsOn ?post .
+    OPTIONAL { ?comment genosisOwl:hasContentText ?commentTextSample . }
+    BIND(IF(BOUND(?commentTextSample), STR(?commentTextSample), "Comment on U2's Post") AS ?contextOrDetail) # Menampilkan seluruh komen
+  }
+  UNION
+  {
+    BIND("User2 Commented on User1's Post" AS ?associationType)
+    ?post rdf:type/rdfs:subClassOf* genosisOwl:Global:Post ;
+          genosisOwl:postedBy ?user1 ; 
+          genosisOwl:belongsToPlatform ?platformHint .
+    ?comment rdf:type/rdfs:subClassOf* genosisOwl:Global:CommentOrReplyAction ;
+             (genosisOwl:commentedBy | genosisOwl:performedBy) ?user2 ; 
+             genosisOwl:commentsOn ?post .
+    OPTIONAL { ?comment genosisOwl:hasContentText ?commentTextSample . }
+    BIND(IF(BOUND(?commentTextSample), STR(?commentTextSample), "Comment on U1's Post") AS ?contextOrDetail) # Menampilkan seluruh komen
+  }
+}
+GROUP BY ?user1 ?user1Label ?user2 ?user2Label ?associationType ?platformHint
+ORDER BY ?user1 ?user2 ?associationType

@@ -1,0 +1,15 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Logout -->
+    <owl:Class rdf:about="#Logout"/>
+
+    <!-- Individu di dalam Logout -->
+    <owl:NamedIndividual rdf:about="#Logout">
+        <rdf:type rdf:resource="#Logout"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can log out from their account.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

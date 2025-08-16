@@ -1,0 +1,123 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Class: Channel -->
+    <owl:Class rdf:about="#Channel">
+        <rdfs:comment>Represents a content creator's channel on the platform, with attributes and relationships to content and users.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasChannelID -->
+    <owl:DatatypeProperty rdf:about="#hasChannelID">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Unique identifier for the channel.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasChannelName -->
+    <owl:DatatypeProperty rdf:about="#hasChannelName">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Name of the channel.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasChannelDescription -->
+    <owl:DatatypeProperty rdf:about="#hasChannelDescription">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Description of the channel.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasChannelCreationDate -->
+    <owl:DatatypeProperty rdf:about="#hasChannelCreationDate">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Date when the channel was created.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasChannelProfilePicture -->
+    <owl:DatatypeProperty rdf:about="#hasChannelProfilePicture">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>URL of the channel's profile picture.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasSubscriberCount -->
+    <owl:DatatypeProperty rdf:about="#hasSubscriberCount">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Total number of subscribers for the channel.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasPlaylist-->
+    <owl:DatatypeProperty rdf:about="#hasPlaylist">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>the channel to playlists</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasTotalViews -->
+    <owl:DatatypeProperty rdf:about="#hasTotalViews">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Total number of views across all content in the channel.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: associatedWithUser -->
+    <owl:ObjectProperty rdf:about="#associatedWithUser">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Links the channel to the user who owns or manages it.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: uploadsContent -->
+    <owl:ObjectProperty rdf:about="#uploadsContent">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:comment>General property linking the channel to uploaded content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: uploadsVideo -->
+    <owl:ObjectProperty rdf:about="#uploadsVideo">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="#Video"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Links the channel to uploaded video content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: uploadsShortVideo -->
+    <owl:ObjectProperty rdf:about="#uploadsShortVideo">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="#ShortVideo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Links the channel to uploaded short videos.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: uploadsLive -->
+    <owl:ObjectProperty rdf:about="#uploadsLive">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="#Live"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Links the channel to live sessions conducted through it.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: associatedWithMonetization -->
+    <owl:ObjectProperty rdf:about="#associatedWithMonetization">
+        <rdfs:domain rdf:resource="#Channel"/>
+        <rdfs:range rdf:resource="#Monetization"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Links the channel to monetization settings or features.</rdfs:comment>
+    </owl:ObjectProperty>
+
+</rdf:RDF>

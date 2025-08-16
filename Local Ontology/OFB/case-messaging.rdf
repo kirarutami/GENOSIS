@@ -1,0 +1,58 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Messaging Class -->
+    <owl:Class rdf:about="#Messaging">
+        <rdfs:comment>Represents the messaging functionality within the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- DirectMessaging Subclass -->
+    <owl:Class rdf:about="#DirectMessaging">
+        <rdfs:subClassOf rdf:resource="#Messaging"/>
+        <rdfs:comment>Represents one-on-one messaging interactions.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: sendsMessageTo -->
+    <owl:ObjectProperty rdf:about="#sendsMessageTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user who sends a direct message to another user.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: receivesMessageFrom -->
+    <owl:ObjectProperty rdf:about="#receivesMessageFrom">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user who receives a direct message from another user.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for DirectMessaging with Case Data -->
+    <owl:DatatypeProperty rdf:about="#hasMessageContent">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the content of a direct message.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <rdf:Description rdf:about="#Message1">
+        <hasMessageContent>"Hey, I saw your post about AI ethics. Are you seriously advocating for government control over AI development? That sounds like a bad idea."</hasMessageContent>
+        <hasMessageTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-20T16:05:30Z</hasMessageTimestamp>
+        <sendsMessageTo rdf:resource="#user_001"/>
+        <receivesMessageFrom rdf:resource="#user_003"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Message2">
+        <hasMessageContent>"Not exactly. I believe in a balanced approach where there are safety measures in place. Unchecked AI could cause harm."</hasMessageContent>
+        <hasMessageTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-20T16:07:45Z</hasMessageTimestamp>
+        <sendsMessageTo rdf:resource="#user_003"/>
+        <receivesMessageFrom rdf:resource="#user_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Message3">
+        <hasMessageContent>"Hmm, I see your point. But how do you think regulations should be implemented?"</hasMessageContent>
+        <hasMessageTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-20T16:10:22Z</hasMessageTimestamp>
+        <sendsMessageTo rdf:resource="#user_001"/>
+        <receivesMessageFrom rdf:resource="#user_003"/>
+    </rdf:Description>
+</rdf:RDF>

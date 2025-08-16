@@ -1,0 +1,30 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?dm ?dmSender ?dmReceiver ?hasDMContent ?hasDMTimestamp ?hasDMIP ?hasDMDevice ?belongsToPlatform
+WHERE {
+    # Menarik semua DM dengan konten tertentu
+    ?dm rdf:type ex:DirectMessages ;
+        ex:dmSender ?dmSender ;
+        ex:dmReceiver ?dmReceiver ;
+        ex:hasDMContent ?hasDMContent ;
+        ex:hasDMTimestamp ?hasDMTimestamp ;
+        ex:hasDMIP ?hasDMIP ;
+        ex:hasDMDevice ?hasDMDevice ;
+        ex:belongsToPlatform ?belongsToPlatform .
+
+    # Memilih DM yang mengandung ancaman atau perilaku ilegal
+    FILTER (
+        REGEX(?hasDMContent, "we know where you live", "i") ||
+        REGEX(?hasDMContent, "watch your back", "i") ||
+        REGEX(?hasDMContent, "make you regret it", "i") ||
+        REGEX(?hasDMContent, "take it to the next level", "i") ||
+        REGEX(?hasDMContent, "dark web", "i") ||
+        REGEX(?hasDMContent, "blackmail", "i") ||
+        REGEX(?hasDMContent, "illegal", "i")
+    )
+}
+ORDER BY ?hasDMTimestamp

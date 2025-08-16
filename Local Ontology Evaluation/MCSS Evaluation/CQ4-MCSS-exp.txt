@@ -1,0 +1,6 @@
+Kalau ingin menyaring percakapan antara Ethan dan MaxDares saja, kamu bisa aktifkan kembali baris berikut:
+
+FILTER ((?sender = ex:Ethan && ?receiver = ex:MaxDares) ||
+        (?sender = ex:MaxDares && ?receiver = ex:Ethan))
+        
+Tapi pastikan dulu bahwa instance ex:Ethan dan ex:MaxDares memang terdefinisi dan cocok dengan RDF namespace yang kamu gunakan (misal URI-nya apakah http://www.w3.org/2002/07/owl#Ethan? atau http://example.org/mcss#Ethan?).

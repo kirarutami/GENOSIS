@@ -1,0 +1,47 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+MCSS:associatedWithContent,OFB:associatedWithContent,100.0,Indicates that a like is associated with a specific content.,Links an upvote or downvote action to the associated content.
+MCSS:associatedWithUser,OFB:associatedWithUser,100.0,Links the channel to the user who owns or manages it.,Links a post to the user who created it.
+MCSS:canEditProfile,OFB:canEditProfile,100.0,Indicates that the user can edit their general profile settings.,Indicates that a user can edit their profile settings.
+MCSS:likesContent,OFB:likesContent,100.0,Indicates that a user likes a specific content.,Links a user to the content they have liked.
+MCSS:sendsMessageTo,OFB:sendsMessageTo,100.0,Represents a user sending a message to another user.,Links a user who sends a direct message to another user.
+MCSS:sharesContent,OFB:sharesContent,100.0,Indicates that a user shares specific content.,Links a user to the content they have shared or reposted.
+MCSS:associatedWithContent,OFB:associatedWithComment,90.48,Indicates that a like is associated with a specific content.,Links a reply action to the associated comment.
+MCSS:associatedWithCommentedShortVideo,OFB:associatedWithComment,90.0,Indicates that a comment is associated with a commented short video.,Links a reply action to the associated comment.
+MCSS:canEditProfilePicture,OFB:canEditProfile,90.0,Indicates that the user can edit their profile picture within the profile settings.,Indicates that a user can edit their profile settings.
+MCSS:commentsOnContent,OFB:commentsOn,90.0,Indicates that a user comments on specific content.,Links a user to the content they have commented on.
+MCSS:searchesForContent,OFB:searchesFor,90.0,Indicates that a user searches for specific content using search functionality.,Links a user to the target of their search query.
+MCSS:subscribesToCreator,OFB:subscribesTo,90.0,Indicates that a User subscribes to a content creator.,Links a user to the subscription plan they have subscribed to.
+MCSS:dislikesContent,OFB:likesContent,88.89,Indicates that a user dislikes specific content.,Links a user to the content they have liked.
+MCSS:associatedWithLikedPost,OFB:associatedWithPost,87.8,Indicates that a like is associated with a liked post.,Links tagged content to the post it is associated with.
+MCSS:associatedWithCommentedLive,OFB:associatedWithComment,87.5,Indicates that a comment is associated with a commented live session.,Links a reply action to the associated comment.
+MCSS:associatedWithCommentedPost,OFB:associatedWithComment,87.5,Indicates that a comment is associated with a commented post.,Links a reply action to the associated comment.
+MCSS:associatedWithCommentedVideo,OFB:associatedWithComment,85.71,Indicates that a comment is associated with a commented video.,Links a reply action to the associated comment.
+MCSS:associatedWithSharedPost,OFB:associatedWithPost,85.71,Indicates that a share is associated with a shared post.,Links tagged content to the post it is associated with.
+MCSS:hasGroupParticipants,OFB:hasParticipants,85.71,Represents participants in a group message thread.,Links a group message thread to its participants.
+MCSS:sendsMediaMessageTo,OFB:sendsMessageTo,84.85,Represents a user sending a media message to another user.,Links a user who sends a direct message to another user.
+MCSS:editsRecommendations,OFB:receivesRecommendations,83.72,Indicates that a user edits their recommendation preferences.,Links a user to the content recommended to them.
+MCSS:associatedWithCommentedPost,OFB:associatedWithContent,83.33,Indicates that a comment is associated with a commented post.,Links an upvote or downvote action to the associated content.
+MCSS:associatedWithLive,OFB:associatedWithUser,83.33,Indicates that a gift interaction is associated with a specific live session.,Links a post to the user who created it.
+MCSS:associatedWithUser,OFB:associatedWithPost,83.33,Links the channel to the user who owns or manages it.,Links tagged content to the post it is associated with.
+MCSS:sendsGiftInMessageTo,OFB:sendsMessageTo,82.35,Allows a user to send a gift within a message to another user.,Links a user who sends a direct message to another user.
+MCSS:associatedWithContent,OFB:associatedWithPost,82.05,Indicates that a like is associated with a specific content.,Links tagged content to the post it is associated with.
+MCSS:unsubscribesFromCreator,OFB:unsubscribesFrom,82.05,Indicates that a User unsubscribes from a content creator.,Links a user to the subscription plan they have unsubscribed from.
+MCSS:associatedWithContent,OFB:associatedWithCommunity,81.82,Indicates that a like is associated with a specific content.,Links a post to the community it belongs to.
+MCSS:associatedWithDislikedPost,OFB:associatedWithPost,81.82,Indicates that a dislike is associated with a disliked post.,Links tagged content to the post it is associated with.
+MCSS:associatedWithReportedPost,OFB:associatedWithPost,81.82,Indicates that a report is associated with a reported post.,Links tagged content to the post it is associated with.
+MCSS:associatedWithReportedShortVideo,OFB:associatedWithUser,81.82,Indicates that a report is associated with a reported short video.,Links a post to the user who created it.
+MCSS:associatedWithReportedVideo,OFB:associatedWithUser,81.82,Indicates that a report is associated with a reported video.,Links a post to the user who created it.
+MCSS:associatedWithSharedShortVideo,OFB:associatedWithPost,81.82,Indicates that a share is associated with a shared short video.,Links tagged content to the post it is associated with.
+MCSS:associatedWithSharedShortVideo,OFB:associatedWithUser,81.82,Indicates that a share is associated with a shared short video.,Links a post to the user who created it.
+MCSS:associatedWithUser,OFB:associatedWithAwardingUser,81.82,Links the channel to the user who owns or manages it.,Links an award action to the user who awarded the content.
+MCSS:associatedWithUser,OFB:associatedWithSubscriptionPlan,81.82,Links the channel to the user who owns or manages it.,Associates a user with their subscription plan.
+MCSS:associatedWithCommentedShortVideo,OFB:associatedWithContent,81.43,Indicates that a comment is associated with a commented short video.,Links an upvote or downvote action to the associated content.
+MCSS:associatedWithLive,OFB:associatedWithTopic,81.08,Indicates that a gift interaction is associated with a specific live session.,Links a muting action to the associated topic.
+MCSS:associatedWithVideo,OFB:associatedWithPost,81.08,Indicates that a watch later action is associated with a specific video.,Links tagged content to the post it is associated with.
+MCSS:associatedWithVideo,OFB:associatedWithUser,81.08,Indicates that a watch later action is associated with a specific video.,Links a post to the user who created it.
+MCSS:associatedWithCommentedLive,OFB:associatedWithCommunity,80.0,Indicates that a comment is associated with a commented live session.,Links a post to the community it belongs to.
+MCSS:associatedWithCommentedPost,OFB:associatedWithCommunity,80.0,Indicates that a comment is associated with a commented post.,Links a post to the community it belongs to.
+MCSS:associatedWithCommentedPost,OFB:associatedWithPost,80.0,Indicates that a comment is associated with a commented post.,Links tagged content to the post it is associated with.
+MCSS:associatedWithReportedShortVideo,OFB:associatedWithPost,80.0,Indicates that a report is associated with a reported short video.,Links tagged content to the post it is associated with.
+MCSS:associatedWithReportedVideo,OFB:associatedWithPost,80.0,Indicates that a report is associated with a reported video.,Links tagged content to the post it is associated with.
+MCSS:canEditProfile,OFB:canSetProfileVisibility,80.0,Indicates that the user can edit their general profile settings.,Indicates that a user can set their profile visibility (Public or Private).

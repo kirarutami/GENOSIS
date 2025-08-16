@@ -1,0 +1,85 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#> # Namespace ontologi OFB Anda
+
+# Contoh Query untuk CQ6: Mengekstrak Peristiwa Bertimestamp untuk Linimasa
+# Mengambil berbagai jenis aktivitas pengguna yang memiliki timestamp.
+
+# --- PENTING: Ganti ex:UserOfInterest dengan URI pengguna yang relevan ---
+# Contoh: ex:CyberSentinel, ex:DavidHistory, ex:DeepMarketMod
+
+SELECT ?timestamp ?eventType ?user ?relatedItem ?platform
+WHERE {
+  # Tentukan pengguna yang ingin diselidiki di sini
+  BIND(ex:DeepMarketMod AS ?user) # <<< GANTI URI PENGGUNA DI SINI
+
+  {
+    # Peristiwa: Registrasi Pengguna
+    BIND("User Registration" AS ?eventType)
+    ?user ex:hasRegistrationDate ?timestamp .
+    BIND(?user AS ?relatedItem) # Item terkait adalah pengguna itu sendiri
+    # Ambil platform pengguna jika ada
+    OPTIONAL { ?user ex:belongsToPlatform ?platform . }
+  }
+  UNION
+  {
+    # Peristiwa: Pembuatan Post
+    BIND("Post Created" AS ?eventType)
+    # Cari post yang dibuat oleh pengguna (?user ex:createsPost ?post salah, harusnya ?post ex:associatedWithUser ?user)
+    # atau gunakan properti fungsional terbalik jika didefinisikan
+    ?relatedItem rdf:type ex:Post .        # ?relatedItem adalah post
+    ?relatedItem ex:associatedWithUser ?user . # Post diasosiasikan dengan pengguna
+    ?relatedItem ex:hasPostCreationTimestamp ?timestamp .
+    # Ambil platform post jika ada (misalnya dari komunitasnya)
+    OPTIONAL { ?relatedItem ex:associatedWithCommunity ?comm . ?comm ex:belongsToPlatform ?platform .}
+  }
+  UNION
+  {
+    # Peristiwa: Pembuatan Komentar
+    BIND("Comment Made" AS ?eventType)
+    ?relatedItem rdf:type ex:Comment . # ?relatedItem adalah komentar
+    ?relatedItem ex:performedBy ?user .
+    ?relatedItem ex:hasCommentTimestamp ?timestamp .
+    # Ambil platform komentar jika ada
+    OPTIONAL { ?relatedItem ex:belongsToPlatform ?platform . }
+  }
+  UNION
+  {
+    # Peristiwa: Mengirim DM
+    BIND("DM Sent" AS ?eventType)
+    ?dm rdf:type ex:DirectMessaging .
+    ?dm ex:messageSender ?user .
+    ?dm ex:hasMessageTimestamp ?timestamp .
+    BIND(?dm AS ?relatedItem) # Item terkait adalah DM itu sendiri
+    OPTIONAL { ?dm ex:belongsToPlatform ?platform . }
+  }
+  UNION
+  {
+    # Peristiwa: Menerima DM
+    BIND("DM Received" AS ?eventType)
+    ?dm rdf:type ex:DirectMessaging .
+    ?dm ex:messageReceiver ?user .
+    ?dm ex:hasMessageTimestamp ?timestamp .
+    BIND(?dm AS ?relatedItem) # Item terkait adalah DM itu sendiri
+    OPTIONAL { ?dm ex:belongsToPlatform ?platform . }
+  }
+  UNION
+  {
+    # Peristiwa: Permintaan Hapus Akun (Contoh UserAction terstruktur)
+    BIND("Account Deletion Requested" AS ?eventType)
+    ?action ex:performedBy ?user .       # Aksi dilakukan oleh user
+    ?relatedItem ex:deletionRequestedBy ?action . # Proses delesi terkait aksi
+    ?relatedItem rdf:type ex:AccountDeletion .
+    ?relatedItem ex:deletionRequestedOn ?timestamp . # Timestamp ada di proses delesi
+    # Ambil platform dari user (atau proses delesi jika ada)
+    OPTIONAL { ?user ex:belongsToPlatform ?platform . }
+  }
+  # --- Tambahkan blok UNION lain di sini untuk jenis peristiwa lain ---
+  # Contoh: Bergabung Komunitas (?user ex:joinsCommunity ?comm. ?entry ex:...)
+  # Contoh: Memberi Upvote (?upvote ex:performedBy ?user. ?upvote ex:hasUpvoteTimestamp ?ts)
+}
+# Urutkan hasil berdasarkan waktu secara menaik (kronologis)
+ORDER BY ?timestamp

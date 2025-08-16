@@ -1,0 +1,26 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+MP:Comment,MCSS:Comment,100.0,MP:,MCSS:Represents a comment interaction with content.
+MP:ContentInteraction,MCSS:ContentInteraction,100.0,MP:,MCSS:Represents interactions on content within the platform.
+MP:Monetization,MCSS:Monetization,100.0,"MP:Represents features related to monetization on the platform, including subscriptions and advertisements.",MCSS:Represents all monetization-related features and interactions.
+MP:NotificationSettings,MCSS:NotificationSettings,100.0,MP:Represents settings related to notifications that the user can configure.,MCSS:Represents settings for managing message notifications.
+MP:Notifications,MCSS:Notifications,100.0,MP:Represents user notifications and their related settings on the platform.,MCSS:Represents notifications and related interactions in the platform.
+MP:Post,MCSS:Post,100.0,MP:Represents a specific post or piece of content created by a user.,"MCSS:Represents a generic post on the platform, including audience type and schedule time."
+MP:ProfileSettings,MCSS:ProfileSettings,100.0,MP:Represents profile customization settings for the user.,MCSS:Sub-class representing settings a user can edit in their profile.
+MP:Report,MCSS:Report,100.0,MP:,MCSS:Represents a report interaction with content.
+MP:SearchFunctionality,MCSS:SearchFunctionality,100.0,MP:Represents search functionalities within the platform.,MCSS:Handles direct search actions performed by users.
+MP:Subscription,MCSS:Subscription,100.0,MP:Represents subscription-related features for monetization.,MCSS:Represents subscription-related features on the platform.
+MP:User,MCSS:User,100.0,"MP:Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",MCSS:The primary class representing individual users in the system.
+MP:ContentCreation,MCSS:Content,90.0,MP:Represents actions related to creating and managing content on a microblogging platform.,MCSS:Represents all types of content on the platform.
+MP:ContentInteraction,MCSS:Content,90.0,MP:,MCSS:Represents all types of content on the platform.
+MP:DiscoveryAndSearch,MCSS:Search,90.0,"MP:Represents features for discovering and searching content, people, and topics on a microblogging platform.",MCSS:Represents search functionalities and recommendations within the system.
+MP:LiveInteractions,MCSS:Live,90.0,"MP:Represents live interaction features on the platform, including live spaces, rooms, and upcoming sessions.",MCSS:Represents live streaming content within the system.
+MP:LiveSpacesRooms,MCSS:Live,90.0,"MP:Represents live spaces or rooms for users to listen, speak, and interact during live sessions.",MCSS:Represents live streaming content within the system.
+MP:NotificationSettings,MCSS:Notifications,90.0,MP:Represents settings related to notifications that the user can configure.,MCSS:Represents notifications and related interactions in the platform.
+MP:Notifications,MCSS:NotificationSettings,90.0,MP:Represents user notifications and their related settings on the platform.,MCSS:Represents settings for managing message notifications.
+MP:Post,MCSS:LivePost,90.0,MP:Represents a specific post or piece of content created by a user.,MCSS:Represents posts associated with live sessions.
+MP:Post,MCSS:ShortVideoPost,90.0,MP:Represents a specific post or piece of content created by a user.,MCSS:Represents posts associated with short videos.
+MP:Post,MCSS:VideoPost,90.0,MP:Represents a specific post or piece of content created by a user.,MCSS:Represents posts that are associated with videos.
+MP:ReblogRetweetPost,MCSS:Post,90.0,MP:,"MCSS:Represents a generic post on the platform, including audience type and schedule time."
+MP:SearchFunctionality,MCSS:Search,90.0,MP:Represents search functionalities within the platform.,MCSS:Represents search functionalities and recommendations within the system.
+MP:Likes,MCSS:Like,88.89,MP:,MCSS:Represents a like interaction with content.
+MP:Notifications,MCSS:HideNotifications,86.67,MP:Represents user notifications and their related settings on the platform.,MCSS:Represents the functionality to hide notifications for users or channels.

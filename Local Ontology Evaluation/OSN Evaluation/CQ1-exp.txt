@@ -1,0 +1,14 @@
+Query ini mencari pengguna yang mengirim pesan berisi ancaman atau indikasi penipuan di Instagram dan Facebook.
+
+🔹 Menyeleksi:
+
+?suspect → Pengguna yang mengirim pesan
+?platform → Platform (Instagram/Facebook)
+?msgText → Isi pesan
+🔹 Menyaring pesan dengan regex:
+
+Ancaman: "end it", "ruin your life", "watch your back", "just disappear", "leak private"
+Penipuan: "I will scam you", "you fell for it", "stupid buyer", "say goodbye to your money"
+🔹 Hasil diurutkan berdasarkan pengguna dan platform.
+
+Tujuan: Mendeteksi pelaku cyberbullying & penipuan di media sosial. 🚀

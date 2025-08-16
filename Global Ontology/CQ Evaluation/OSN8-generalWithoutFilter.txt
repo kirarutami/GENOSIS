@@ -1,0 +1,36 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+
+SELECT ?user1 ?user1Label ?relationType ?user2 ?user2Label ?platform
+WHERE {
+  ?user1 rdf:type/rdfs:subClassOf* genosisOwl:Global:UserAccount ;
+         genosisOwl:belongsToPlatform ?platform .
+  ?user2 rdf:type/rdfs:subClassOf* genosisOwl:Global:UserAccount ;
+         genosisOwl:belongsToPlatform ?platform .
+
+  # Fokus pada platform OSN dengan perbandingan string langsung (case-sensitive)
+  FILTER(STR(?platform) = "Facebook" || STR(?platform) = "Instagram")
+
+  OPTIONAL { ?user1 rdfs:label ?user1Label . }
+  OPTIONAL { ?user2 rdfs:label ?user2Label . }
+
+  {
+    ?user1 genosisOwl:followsAccount ?user2 .
+    BIND("follows" AS ?relationType)
+  }
+  UNION
+  {
+    ?user1 genosisOwl:isFollowedByAccount ?user2 .
+    BIND("is followed by" AS ?relationType)
+  }
+  # UNION
+  # {
+  #   # Jika ada properti spesifik untuk "isFriendOf" di GENOSIS, tambahkan di sini
+  #   # Contoh: ?user1 genosisOwl:isFriendOf ?user2 .
+  #   # BIND("is friend of" AS ?relationType)
+  # }
+
+  FILTER(?user1 != ?user2) 
+}
+ORDER BY ?user1Label ?relationType ?user2Label

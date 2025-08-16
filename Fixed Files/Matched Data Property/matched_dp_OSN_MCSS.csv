@@ -1,0 +1,89 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+OSN:hasAccountCreationDate,MCSS:hasAccountCreationDate,100.0,Stores the account creation date for the user.,The date and time when the user's account was created.
+OSN:hasCommentText,MCSS:hasCommentText,100.0,Stores the text of the comment.,Stores the text of a comment.
+OSN:hasDescription,MCSS:hasDescription,100.0,The description of the page.,Stores the description of the video.
+OSN:hasDeviceInfo,MCSS:hasDeviceInfo,100.0,Stores the device information of the user who gave the like.,Stores the device information of the user device who gave a comment.
+OSN:hasEmail,MCSS:hasEmail,100.0,Stores the email address of the user.,The email address associated with the user.
+OSN:hasPhoneNumber,MCSS:hasPhoneNumber,100.0,Stores the user's phone number.,The phone number associated with the user.
+OSN:hasPostLocation,MCSS:hasPostLocation,100.0,Stores Post's geotag location,Location associated with the short video post.
+OSN:hasProfilePicture,MCSS:hasProfilePicture,100.0,Stores the URL or file path to the user's profile picture.,URL of the user's profile picture.
+OSN:hasReportTimestamp,MCSS:hasReportTimestamp,100.0,Timestamp for submitting a problem report.,Records the timestamp when a report interaction occurred.
+OSN:hasTimestamp,MCSS:hasTimestamp,100.0,Stores the timestamp when the like was given.,Represents the timestamp of when the message was sent.
+OSN:hasUserInteractionIP,MCSS:hasUserInteractionIP,100.0,Stores the IP address of the user who gave the like.,Stores the IP information of the user device who gave a comment.
+OSN:hasUsername,MCSS:hasUsername,100.0,Stores the unique username of the user.,The username chosen by the user.
+OSN:hasVideoLocation,MCSS:hasVideoLocation,100.0,Stores Video's geotag location,Represents the location associated with the video.
+OSN:hasViewCount,MCSS:hasViewCount,100.0,The total number of views on the page.,Represents the number of views the video has received.
+OSN:hasNotificationSoundsSettings,MCSS:hasNotificationSoundSetting,96.43,Settings for notification sounds.,Indicates the user's chosen notification sound setting.
+OSN:hasEmailNotificationsStatus,MCSS:hasEmail,90.0,Status of email notifications (enabled/disabled).,The email address associated with the user.
+OSN:hasGIF,MCSS:hasGiftComment,90.0,"Stores the GIF attached to a post, if any.",Stores a comment provided with the gift.
+OSN:hasGIF,MCSS:hasGiftPrice,90.0,"Stores the GIF attached to a post, if any.",Stores the price of the gift sent during a live session.
+OSN:hasGIF,MCSS:hasGiftTimestamp,90.0,"Stores the GIF attached to a post, if any.",Records the timestamp when a gift was sent during a live session.
+OSN:hasPhoneNumberVerificationStatus,MCSS:hasPhoneNumber,90.0,Indicates the verification status of the user's phone number.,The phone number associated with the user.
+OSN:hasPostCaption,MCSS:hasPostLocation,89.66,The caption associated with the avatar post.,Location associated with the short video post.
+OSN:hasProfilePictureHash,MCSS:hasProfilePicture,89.47,For verifying the integrity of the profile picture using hash.,URL of the user's profile picture.
+OSN:hasMessageContentType,MCSS:hasNewsPageContentType,88.37,"Specifies the type of content in the message, e.g., text, photo, video.","Indicates the type of content displayed on the news watch page (e.g., video, article)."
+OSN:hasPostTimestamp,MCSS:hasReportTimestamp,88.24,Stores post's timestamp,Records the timestamp when a report interaction occurred.
+OSN:hasVideoCount,MCSS:hasViewCount,88.0,The number of videos on the page.,Represents the number of views the video has received.
+OSN:hasEditTimestamp,MCSS:hasGiftTimestamp,87.5,The timestamp of the last edit made to the avatar.,Records the timestamp when a gift was sent during a live session.
+OSN:hasRuleDescription,MCSS:hasDescription,87.5,The description of the group rule.,Stores the description of the video.
+OSN:hasNotificationIP,MCSS:hasNotificationPreferences,87.27,Stores the IP address of the user who received the video notification.,Notification preferences set by the user.
+OSN:hasDeviceInfo,MCSS:hasPostDeviceInfo,86.67,Stores the device information of the user who gave the like.,Device information used to create the short video post.
+OSN:hasReelDeviceInfo,MCSS:hasDeviceInfo,86.67,Device information of the user while watching the reel.,Stores the device information of the user device who gave a comment.
+OSN:hasVideoLocation,MCSS:hasShortVideoLocation,86.49,Stores Video's geotag location,Represents the location associated with the short video.
+OSN:hasEditTimestamp,MCSS:hasTimestamp,85.71,The timestamp of the last edit made to the avatar.,Represents the timestamp of when the message was sent.
+OSN:hasLastLogin,MCSS:hasLastLoginDate,85.71,Stores the date and time of the user's last login.,The date and time of the user's last login.
+OSN:hasLinkedAccount,MCSS:hasLikeCount,85.71,Stores the username or identifier of the linked social media account.,Represents the number of likes the video has received.
+OSN:hasPostTimestamp,MCSS:hasTimestamp,85.71,Stores post's timestamp,Represents the timestamp of when the message was sent.
+OSN:hasTimestamp,MCSS:hasGiftTimestamp,85.71,Stores the timestamp when the like was given.,Records the timestamp when a gift was sent during a live session.
+OSN:hasTimestamp,MCSS:hasLikeTimestamp,85.71,Stores the timestamp when the like was given.,Records the timestamp when a like interaction occurred.
+OSN:hasDescription,MCSS:hasShortDescription,84.85,The description of the page.,Stores the description of the short video.
+OSN:hasEventDescription,MCSS:hasDescription,84.85,The description of the event.,Stores the description of the video.
+OSN:hasGroupDescription,MCSS:hasDescription,84.85,A description of the group.,Stores the description of the video.
+OSN:hasUserInteractionIP,MCSS:hasUserID,84.71,Stores the IP address of the user who gave the like.,Unique identifier for the user.
+OSN:hasLocation,MCSS:hasLiveLocation,84.62,The location of the page.,Represents the location associated with the live session.
+OSN:hasLocation,MCSS:hasPostLocation,84.62,The location of the page.,Location associated with the short video post.
+OSN:hasNotificationIP,MCSS:hasNotificationSoundSetting,84.38,Stores the IP address of the user who received the video notification.,Indicates the user's chosen notification sound setting.
+OSN:hasMessageAttachment,MCSS:hasMediaAttachment,84.21,Attachment on direct messages sent by the user.,Represents the URL of a media attachment in the message.
+OSN:hasEventDeviceInfo,MCSS:hasDeviceInfo,83.87,Device information of the user managing the event.,Stores the device information of the user device who gave a comment.
+OSN:hasEventLocation,MCSS:hasLiveLocation,83.87,The location of the event.,Represents the location associated with the live session.
+OSN:hasStoryLocation,MCSS:hasPostLocation,83.87,Stores story's geotag location,Location associated with the short video post.
+OSN:hasVideoLocation,MCSS:hasLiveLocation,83.87,Stores Video's geotag location,Represents the location associated with the live session.
+OSN:hasProfilePrivacySettings,MCSS:hasPrivacySettings,83.72,Settings for profile visibility and privacy.,Privacy settings defined by the user.
+OSN:hasMessageLocation,MCSS:hasMessageReaction,83.33,Location on direct messages sent by the user.,Represents an array of emojis reacting to the message.
+OSN:hasViewCount,MCSS:hasLikeCount,83.33,The total number of views on the page.,Represents the number of likes the video has received.
+OSN:hasEventInteractionIP,MCSS:hasUserInteractionIP,82.93,The IP address of the user managing the event.,Stores the IP information of the user device who gave a comment.
+OSN:hasProfilePicture,MCSS:hasChannelProfilePicture,82.93,Stores the URL or file path to the user's profile picture.,URL of the channel's profile picture.
+OSN:hasTimestamp,MCSS:hasShareTimestamp,82.76,Stores the timestamp when the like was given.,Records the timestamp when a share interaction occurred.
+OSN:hasNotificationActionTimestamp,MCSS:donationTime,82.5,Timestamp of notification-related actions.,The timestamp when the donation was made.
+OSN:hasEditTimestamp,MCSS:hasReportTimestamp,82.35,The timestamp of the last edit made to the avatar.,Records the timestamp when a report interaction occurred.
+OSN:hasLogoutTimestamp,MCSS:hasGiftTimestamp,82.35,Timestamp indicating when the logout occurred.,Records the timestamp when a gift was sent during a live session.
+OSN:hasGroupName,MCSS:hasGroupMessageCreatedTimestamp,81.82,The name of the group.,Represents the timestamp when the group message thread was created.
+OSN:hasGroupName,MCSS:hasGroupMessageLastActivity,81.82,The name of the group.,Represents the timestamp of the last activity in the group message thread.
+OSN:hasGroupName,MCSS:hasGroupMessageTitle,81.82,The name of the group.,Represents the title of a group message thread.
+OSN:hasInboxAccessTimestamp,MCSS:hasTimestamp,81.82,Timestamp for accessing the support inbox.,Represents the timestamp of when the message was sent.
+OSN:hasReelWatchTimestamp,MCSS:hasTimestamp,81.82,Timestamp of when the reel was watched.,Represents the timestamp of when the message was sent.
+OSN:hasSupportAccessTimestamp,MCSS:hasTimestamp,81.82,Timestamp for accessing the support center.,Represents the timestamp of when the message was sent.
+OSN:hasLocation,MCSS:hasVideoLocation,81.48,The location of the page.,Represents the location associated with the video.
+OSN:hasEditTimestamp,MCSS:hasLikeTimestamp,81.25,The timestamp of the last edit made to the avatar.,Records the timestamp when a like interaction occurred.
+OSN:hasEventLocation,MCSS:hasVideoLocation,81.25,The location of the event.,Represents the location associated with the video.
+OSN:hasPostTimestamp,MCSS:hasGiftTimestamp,81.25,Stores post's timestamp,Records the timestamp when a gift was sent during a live session.
+OSN:hasSellerLocation,MCSS:hasLiveLocation,81.25,The location of the seller for the listing.,Represents the location associated with the live session.
+OSN:hasGameSaveTimestamp,MCSS:hasShareTimestamp,81.08,The timestamp when the game was saved.,Records the timestamp when a share interaction occurred.
+OSN:hasRuleDescription,MCSS:hasShortDescription,81.08,The description of the group rule.,Stores the description of the short video.
+OSN:hasLastName,MCSS:hasLastMessagePreview,81.0,Stores the last name of the user.,Displays a preview of the most recent message.
+OSN:hasDescription,MCSS:hasChannelDescription,80.0,The description of the page.,Description of the channel.
+OSN:hasEditTimestamp,MCSS:hasCommentTimestamp,80.0,The timestamp of the last edit made to the avatar.,Records the timestamp when a comment interaction occurred.
+OSN:hasEditTimestamp,MCSS:hasDislikeTimestamp,80.0,The timestamp of the last edit made to the avatar.,Records the timestamp when a dislike interaction occurred.
+OSN:hasEventCount,MCSS:hasViewCount,80.0,The number of events on the page.,Represents the number of views the video has received.
+OSN:hasEventDeviceInfo,MCSS:hasPostDeviceInfo,80.0,Device information of the user managing the event.,Device information used to create the short video post.
+OSN:hasLogoutTimestamp,MCSS:hasTimestamp,80.0,Timestamp indicating when the logout occurred.,Represents the timestamp of when the message was sent.
+OSN:hasNotificationFrequency,MCSS:hasNotificationPreferences,80.0,"The frequency of group notifications (e.g., Daily, Weekly).",Notification preferences set by the user.
+OSN:hasPostLocation,MCSS:hasPostURL,80.0,Stores Post's geotag location,URL of the short video post.
+OSN:hasPostTimestamp,MCSS:hasCommentTimestamp,80.0,Stores post's timestamp,Records the timestamp when a comment interaction occurred.
+OSN:hasPostTimestamp,MCSS:hasPostIP,80.0,Stores post's timestamp,IP address used to create the short video post.
+OSN:hasPostVisibility,MCSS:hasPostIP,80.0,"The visibility level of the avatar post (e.g., Public, Private).",IP address used to create the short video post.
+OSN:hasReelLocation,MCSS:hasLiveLocation,80.0,Stores Reel's geotag location,Represents the location associated with the live session.
+OSN:hasReportTimestamp,MCSS:hasShareTimestamp,80.0,Timestamp for submitting a problem report.,Records the timestamp when a share interaction occurred.
+OSN:hasReportTimestamp,MCSS:hasTimestamp,80.0,Timestamp for submitting a problem report.,Represents the timestamp of when the message was sent.
+OSN:hasTimestamp,MCSS:hasReportTimestamp,80.0,Stores the timestamp when the like was given.,Records the timestamp when a report interaction occurred.
+OSN:hasVideoCount,MCSS:hasLikeCount,80.0,The number of videos on the page.,Represents the number of likes the video has received.

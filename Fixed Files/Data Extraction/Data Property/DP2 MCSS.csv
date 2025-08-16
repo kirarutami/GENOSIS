@@ -1,0 +1,115 @@
+class,dataProperty,classComment,dataPropertyComment
+User,hasUserID,The primary class representing individual users in the system.,Unique identifier for the user.
+User,hasUsername,The primary class representing individual users in the system.,The username chosen by the user.
+User,hasEmail,The primary class representing individual users in the system.,The email address associated with the user.
+User,hasPhoneNumber,The primary class representing individual users in the system.,The phone number associated with the user.
+User,hasProfilePicture,The primary class representing individual users in the system.,URL of the user's profile picture.
+User,hasAccountCreationDate,The primary class representing individual users in the system.,The date and time when the user's account was created.
+User,hasLastLoginDate,The primary class representing individual users in the system.,The date and time of the user's last login.
+User,hasPasswordHash,The primary class representing individual users in the system.,Hashed password of the user.
+User,hasTwoFactorAuthenticationStatus,The primary class representing individual users in the system.,Status of two-factor authentication for the user (enabled/disabled).
+User,hasSubscriptionStatus,The primary class representing individual users in the system.,Indicates whether the user has an active subscription.
+User,hasPremiumMembershipStatus,The primary class representing individual users in the system.,Indicates whether the user is a premium member.
+User,hasPrivacySettings,The primary class representing individual users in the system.,Privacy settings defined by the user.
+User,hasNotificationPreferences,The primary class representing individual users in the system.,Notification preferences set by the user.
+User,hasAccessibilityPreferences,The primary class representing individual users in the system.,"Specifies the accessibility preferences of the user, such as screen reader settings or text size."
+Channel,hasChannelID,"Represents a content creator's channel on the platform, with attributes and relationships to content and users.",Unique identifier for the channel.
+Channel,hasChannelName,"Represents a content creator's channel on the platform, with attributes and relationships to content and users.",Name of the channel.
+Channel,hasChannelDescription,"Represents a content creator's channel on the platform, with attributes and relationships to content and users.",Description of the channel.
+Channel,hasChannelCreationDate,"Represents a content creator's channel on the platform, with attributes and relationships to content and users.",Date when the channel was created.
+Channel,hasChannelProfilePicture,"Represents a content creator's channel on the platform, with attributes and relationships to content and users.",URL of the channel's profile picture.
+Channel,hasSubscriberCount,"Represents a content creator's channel on the platform, with attributes and relationships to content and users.",Total number of subscribers for the channel.
+Channel,hasPlaylist,"Represents a content creator's channel on the platform, with attributes and relationships to content and users.",the channel to playlists
+Channel,hasTotalViews,"Represents a content creator's channel on the platform, with attributes and relationships to content and users.",Total number of views across all content in the channel.
+Like,hasLikeTimestamp,Represents a like interaction with content.,Records the timestamp when a like interaction occurred.
+Comment,hasCommentText,Represents a comment interaction with content.,Stores the text of a comment.
+Comment,hasCommentTimestamp,Represents a comment interaction with content.,Records the timestamp when a comment interaction occurred.
+Comment,hasDeviceInfo,Represents a comment interaction with content.,Stores the device information of the user device who gave a comment.
+Comment,hasDeviceInfo,Represents a comment interaction with content.,Stores the device information of the user device who send a DM.
+MessageContent,hasDeviceInfo,"Represents the content of a message, including text, media, and metadata.",Stores the device information of the user device who gave a comment.
+MessageContent,hasDeviceInfo,"Represents the content of a message, including text, media, and metadata.",Stores the device information of the user device who send a DM.
+Comment,hasUserInteractionIP,Represents a comment interaction with content.,Stores the IP information of the user device who gave a comment.
+Comment,hasUserInteractionIP,Represents a comment interaction with content.,Stores the IP information of the user device who sent a DM.
+MessageContent,hasUserInteractionIP,"Represents the content of a message, including text, media, and metadata.",Stores the IP information of the user device who gave a comment.
+MessageContent,hasUserInteractionIP,"Represents the content of a message, including text, media, and metadata.",Stores the IP information of the user device who sent a DM.
+Share,hasShareTimestamp,Represents a share interaction with content.,Records the timestamp when a share interaction occurred.
+Dislike,hasDislikeTimestamp,Represents a dislike interaction with content.,Records the timestamp when a dislike interaction occurred.
+Report,hasReportReason,Represents a report interaction with content.,Indicates the reason for reporting specific content.
+Report,hasReportTimestamp,Represents a report interaction with content.,Records the timestamp when a report interaction occurred.
+WatchLater,hasWatchLaterTimestamp,Represents the watch later feature for videos.,Records the timestamp when a video was added to the watch later list.
+Gift,hasGiftComment,Represents gifting interactions during live sessions.,Stores a comment provided with the gift.
+Gift,hasGiftPrice,Represents gifting interactions during live sessions.,Stores the price of the gift sent during a live session.
+Gift,hasGiftTimestamp,Represents gifting interactions during live sessions.,Records the timestamp when a gift was sent during a live session.
+SearchFunctionality,hasSearchKeyword,Handles direct search actions performed by users.,Stores the keyword used in a search action.
+SearchRecommendation,hasRecommendationAlgorithm,Handles recommendations generated based on user activity and preferences.,Stores the algorithm used for generating recommendations.
+NewsWatchPage,hasNewsPageContentType,Represents the page where users watch or read news content.,"Indicates the type of content displayed on the news watch page (e.g., video, article)."
+BreakingNews,hasBreakingNewsPriority,Represents the breaking news section in the system.,"Represents the priority level of breaking news (e.g., High, Medium, Low)."
+TopNews,hasTopNewsAlgorithm,Represents the top news section in the system.,Represents the algorithm used to determine the top news.
+Video,hasTitle,Represents video content in the system.,Stores the title of the video.
+Video,hasDescription,Represents video content in the system.,Stores the description of the video.
+Video,hasDurationInMinutes,Represents video content in the system.,Represents the duration of the video in minutes.
+Video,hasPublicationDate,Represents video content in the system.,Represents the publication date and time of the video.
+Video,hasViewCount,Represents video content in the system.,Represents the number of views the video has received.
+Video,hasURL,Represents video content in the system.,Video content's URL
+Video,hasLikeCount,Represents video content in the system.,Represents the number of likes the video has received.
+Video,hasDislikeCount,Represents video content in the system.,Represents the number of dislikes the video has received.
+Video,hasCommentCount,Represents video content in the system.,Represents the number of comments on the video.
+Video,hasVideoTags,Represents video content in the system.,Stores tags associated with the video.
+Video,hasVideoLocation,Represents video content in the system.,Represents the location associated with the video.
+Video,hasContentRating,Represents video content in the system.,"Represents the content rating of the video (e.g., PG, R)."
+ShortVideo,hasShortDescription,Represents short video content in the system.,Stores the description of the short video.
+ShortVideo,hasDurationInSeconds,Represents short video content in the system.,Represents the duration of the short video in seconds.
+ShortVideo,hasMusicUsedInShort,Represents short video content in the system.,Represents the music used in the short video.
+ShortVideo,hasEffectsUsedInShort,Represents short video content in the system.,Represents the effects used in the short video.
+ShortVideo,hasShortUploadDate,Represents short video content in the system.,Represents the upload date and time of the short video.
+ShortVideo,hasShortVideoTags,Represents short video content in the system.,Represents tags associated with the short video.
+ShortVideo,hasShortVideoLocation,Represents short video content in the system.,Represents the location associated with the short video.
+ShortVideo,hasRemixableStatus,Represents short video content in the system.,Represents whether the short video is remixable.
+Live,hasLiveDurationInMinutes,Represents live streaming content within the system.,Represents the duration of the live session in minutes.
+Live,hasViewerCountInLive,Represents live streaming content within the system.,Represents the total number of viewers during the live session.
+Live,hasReactionCountInLive,Represents live streaming content within the system.,Represents the total number of reactions received during the live session.
+Live,hasLiveStartTime,Represents live streaming content within the system.,Represents the start time of the live session.
+Live,hasLiveEndTime,Represents live streaming content within the system.,Represents the end time of the live session.
+Live,hasLiveTags,Represents live streaming content within the system.,Represents tags associated with the live session.
+Live,hasLiveLocation,Represents live streaming content within the system.,Represents the location associated with the live session.
+Live,hasSuperChatRevenue,Represents live streaming content within the system.,Represents the total revenue generated from super chat during the live session.
+SuperChat,amount,Represents a SuperChat donation event during live streaming.,The amount donated in the SuperChat.
+SuperChat,donationTime,Represents a SuperChat donation event during live streaming.,The timestamp when the donation was made.
+Shopping,hasShoppingFeatureDescription,Represents shopping-related features within the platform.,Describes the specific shopping feature available.
+Subscription,hasSubscriptionBenefits,Represents subscription-related features on the platform.,Describes the benefits associated with a subscription.
+CreatorMarketplace,hasMarketplaceDetails,Represents interactions with the creator marketplace.,Describes the details of the creator marketplace.
+HideNotifications,hasHiddenNotificationReason,Represents the functionality to hide notifications for users or channels.,Describes the reason for hiding notifications.
+ManageMentions,hasMentionedContentDetails,Represents the functionality to manage mentions and their related details.,Describes the details of the content where a mention occurred.
+Post,hasPostAudienceType,"Represents a generic post on the platform, including audience type and schedule time.","Specifies the audience type for a post (e.g., Public, Friends)."
+Post,hasPostScheduleTime,"Represents a generic post on the platform, including audience type and schedule time.",Specifies the scheduled time for the post to be published.
+VideoPost,hasVideoPostAudienceType,Represents posts that are associated with videos.,Specifies the audience type for a video post.
+VideoPost,hasVideoPostScheduleTime,Represents posts that are associated with videos.,Specifies the scheduled time for the video post to be published.
+ShortVideoPost,hasShortVideoPostAudienceType,Represents posts associated with short videos.,Specifies the audience type for a short video post.
+ShortVideoPost,hasShortVideoPostRemixableStatus,Represents posts associated with short videos.,Indicates whether the short video post is remixable.
+ShortVideoPost,hasShortVideoPostScheduleTime,Represents posts associated with short videos.,Specifies the scheduled time for the short video post to be published.
+ShortVideoPost,hasPostURL,Represents posts associated with short videos.,URL of the short video post.
+ShortVideoPost,hasPostTags,Represents posts associated with short videos.,Tags associated with the short video post.
+ShortVideoPost,hasPostLocation,Represents posts associated with short videos.,Location associated with the short video post.
+ShortVideoPost,hasPostDeviceInfo,Represents posts associated with short videos.,Device information used to create the short video post.
+ShortVideoPost,hasPostIP,Represents posts associated with short videos.,IP address used to create the short video post.
+LivePost,hasLivePostAudienceType,Represents posts associated with live sessions.,Specifies the audience type for a live post.
+LivePost,hasLivePostStreamType,Represents posts associated with live sessions.,"Specifies the stream type for a live post (e.g., Public, Private)."
+LivePost,hasLivePostScheduleTime,Represents posts associated with live sessions.,Specifies the scheduled time for the live post to be published.
+MessageContent,hasTextContent,"Represents the content of a message, including text, media, and metadata.",Represents the text content of a message.
+MessageContent,hasMediaAttachment,"Represents the content of a message, including text, media, and metadata.",Represents the URL of a media attachment in the message.
+MessageContent,hasTimestamp,"Represents the content of a message, including text, media, and metadata.",Represents the timestamp of when the message was sent.
+MessageContent,hasMessageStatus,"Represents the content of a message, including text, media, and metadata.","Represents the status of the message, such as sent, delivered, or read."
+MessageContent,hasMessageReaction,"Represents the content of a message, including text, media, and metadata.",Represents an array of emojis reacting to the message.
+MessageContent,isMessageFlagged,"Represents the content of a message, including text, media, and metadata.",Indicates whether the message has been flagged as crime.
+MessageContent,isMessageEncrypted,"Represents the content of a message, including text, media, and metadata.",Indicates whether the message is encrypted.
+User,translatesMessageTo,The primary class representing individual users in the system.,Allows a user to translate a message into another language.
+User,hasUnreadMessageCount,The primary class representing individual users in the system.,Represents the number of unread messages for a user.
+User,hasLastMessagePreview,The primary class representing individual users in the system.,Displays a preview of the most recent message.
+User,hasNotificationSoundSetting,The primary class representing individual users in the system.,Indicates the user's chosen notification sound setting.
+GroupMessage,hasGroupMessageTitle,Represents group message threads and related interactions.,Represents the title of a group message thread.
+GroupMessage,hasGroupMessageCreatedTimestamp,Represents group message threads and related interactions.,Represents the timestamp when the group message thread was created.
+GroupMessage,hasGroupMessageLastActivity,Represents group message threads and related interactions.,Represents the timestamp of the last activity in the group message thread.
+MessageContent,hasOpenRate,"Represents the content of a message, including text, media, and metadata.",Represents the open rate of a message in percentage.
+MessageContent,hasClickThroughRate,"Represents the content of a message, including text, media, and metadata.",Represents the click-through rate of a message in percentage.
+MessageContent,hasResponseTime,"Represents the content of a message, including text, media, and metadata.",Represents the average response time for a message in seconds.
+MessageContent,isMessageBoosted,"Represents the content of a message, including text, media, and metadata.",Indicates whether a message has been boosted for visibility.

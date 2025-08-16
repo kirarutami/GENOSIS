@@ -1,0 +1,5 @@
+SPARQL menjawab MCSS8 dengan memungkinkan kita mencari pola dalam data yang mengindikasikan penyebaran konten atau aktivitas tertentu. Dalam kueri yang diperbaiki ini, SPARQL digunakan untuk:
+
+Mengidentifikasi semua postingan (?post bertipe ex:ShortVideoPost).
+Memfilter postingan tersebut untuk menemukan yang mengandung tag spesifik (#blackoutchallenge) dalam properti ex:hasPostTags, menggunakan fungsi REGEX untuk pencocokan yang fleksibel.
+Mengumpulkan metadata terkait (seperti jumlah view, like, share, dan timestamp) dari postingan yang cocok. Menemukan banyak postingan yang cocok dengan kriteria ini, terutama jika memiliki metrik keterlibatan tinggi dan timestamp yang berdekatan, menunjukkan adanya "tren" atau penyebaran dari aktivitas (dalam hal ini, tantangan berbahaya) tersebut di platform. Ini memungkinkan deteksi dini pola aktivitas yang berpotensi ilegal atau berbahaya.

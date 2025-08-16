@@ -1,0 +1,902 @@
+    <!-- Instance: User Mark Sullivan -->
+    <rdf:Description rdf:about="#User_MarkSullivan">
+        <rdf:type rdf:resource="#User"/>
+    </rdf:Description>
+
+    <!-- Instance: UserProfile Mark Sullivan -->
+    <rdf:Description rdf:about="#UserProfile_MarkSullivan">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFirstName>Mark</hasFirstName>
+        <hasLastName>Sullivan</hasLastName>
+        <hasUsername>MarkSullivan92</hasUsername>
+        <hasEmail>mark.sullivan92@email.com</hasEmail>
+        <hasPhoneNumber>+1-555-1234</hasPhoneNumber>
+        <hasProfilePicture>https://socialmedia.com/profile/mark.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2024-11-15T10:00:00</hasAccountCreationDate>
+        <hasAccountVerification>true</hasAccountVerification>
+    </rdf:Description>
+
+    <!-- Instance: User Invest4You (Sock Puppet Account) -->
+    <rdf:Description rdf:about="#User_Invest4You">
+        <rdf:type rdf:resource="#User"/>
+    </rdf:Description>
+
+    <!-- Instance: UserProfile Invest4You -->
+    <rdf:Description rdf:about="#UserProfile_Invest4You">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFirstName>Invest</hasFirstName>
+        <hasLastName>4You</hasLastName>
+        <hasUsername>Invest4You</hasUsername>
+        <hasEmail>mark.sullivan92@email.com</hasEmail>
+        <hasPhoneNumber>+1-555-1234</hasPhoneNumber>
+        <hasProfilePicture>https://socialmedia.com/profile/invest.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2025-01-05T12:30:00</hasAccountCreationDate>
+        <hasAccountVerification>false</hasAccountVerification>
+    </rdf:Description>
+
+    <!-- Instance: User Alice Carter -->
+    <rdf:Description rdf:about="#User_AliceCarter">
+        <rdf:type rdf:resource="#User"/>
+    </rdf:Description>
+
+    <!-- Instance: UserProfile Alice Carter -->
+    <rdf:Description rdf:about="#UserProfile_AliceCarter">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFirstName>Alice</hasFirstName>
+        <hasLastName>Carter</hasLastName>
+        <hasUsername>AliceCarter01</hasUsername>
+        <hasEmail>alice.carter01@email.com</hasEmail>
+        <hasPhoneNumber>+1-555-5678</hasPhoneNumber>
+        <hasProfilePicture>https://socialmedia.com/profile/alice.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2023-09-20T15:45:00</hasAccountCreationDate>
+        <hasAccountVerification>true</hasAccountVerification>
+    </rdf:Description>
+
+    <!-- Instance: SecuritySettings for Mark Sullivan -->
+    <rdf:Description rdf:about="#SecuritySettings_MarkSullivan">
+        <rdf:type rdf:resource="#SecuritySettings"/>
+        <hasLoginIP>192.168.1.10</hasLoginIP>
+        <hasLastLogin>2025-01-15T15:00:00</hasLastLogin>
+        <hasActiveSessions>2</hasActiveSessions>
+    </rdf:Description>
+
+    <!-- Instance: SecuritySettings for Invest4You -->
+    <rdf:Description rdf:about="#SecuritySettings_Invest4You">
+        <rdf:type rdf:resource="#SecuritySettings"/>
+        <hasLoginIP>192.168.1.10</hasLoginIP>
+        <hasLastLogin>2025-01-15T15:10:00</hasLastLogin>
+        <hasActiveSessions>1</hasActiveSessions>
+    </rdf:Description>
+
+    <!-- Instance: SecuritySettings for Alice Carter -->
+    <rdf:Description rdf:about="#SecuritySettings_AliceCarter">
+        <rdf:type rdf:resource="#SecuritySettings"/>
+        <hasLoginIP>203.0.113.15</hasLoginIP>
+        <hasLastLogin>2025-01-15T15:30:00</hasLastLogin>
+        <hasActiveSessions>1</hasActiveSessions>
+    </rdf:Description>
+
+    <!-- Instance: Post by Mark Sullivan -->
+    <rdf:Description rdf:about="#Post_MarkSullivan">
+        <rdf:type rdf:resource="#Posts"/>
+        <hasPostContent>Exclusive investment opportunity! Earn 200% returns in 30 days. DM me for details!</hasPostContent>
+        <hasPostMedia>https://socialmedia.com/post/mark_promo.jpg</hasPostMedia>
+        <hasPostTimestamp>2025-01-15T14:30:00</hasPostTimestamp>
+    </rdf:Description>
+
+    <!-- Instance: Post by Alice Carter -->
+    <rdf:Description rdf:about="#Post_AliceCarter">
+        <rdf:type rdf:resource="#Posts"/>
+        <hasPostContent>This sounds like a scam. Don't fall for it!</hasPostContent>
+        <hasPostTimestamp>2025-01-15T14:45:00</hasPostTimestamp>
+    </rdf:Description>
+
+    <!-- Instance: Story by Mark Sullivan -->
+    <rdf:Description rdf:about="#Story_MarkSullivan">
+        <rdf:type rdf:resource="#Stories"/>
+        <hasStoryContent>Another successful investment completed. DM for testimonials!</hasStoryContent>
+        <hasStoryMedia>https://socialmedia.com/story/mark_success.mp4</hasStoryMedia>
+        <hasStoryTimestamp>2025-01-15T18:00:00</hasStoryTimestamp>
+    </rdf:Description>
+
+    <!-- Instance: Reel by Invest4You -->
+    <rdf:Description rdf:about="#Reel_Invest4You">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasReelContent>Real customer testimonials! See how people doubled their money with us.</hasReelContent>
+        <hasReelMedia>https://socialmedia.com/reel/testimonials.mp4</hasReelMedia>
+        <hasReelTimestamp>2025-01-15T20:00:00</hasReelTimestamp>
+    </rdf:Description>
+
+
+    <!-- Instance: Like on Mark Sullivan's Post by Alice Carter -->
+    <rdf:Description rdf:about="#Like_AliceCarter_MarkPost">
+        <rdf:type rdf:resource="#Like"/>
+        <hasLikeTimestamp>2025-01-15T15:20:00</hasLikeTimestamp>
+        <hasUserInteractionIP>203.0.113.15</hasUserInteractionIP>
+        <hasDeviceInfo>Samsung Galaxy S21</hasDeviceInfo>
+        <associatedWithContent rdf:resource="#Post_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Angry Reaction on Mark Sullivan's Post by Alice Carter -->
+    <rdf:Description rdf:about="#React_AliceCarter_MarkPost">
+        <rdf:type rdf:resource="#React"/>
+        <hasReactionType>Angry</hasReactionType>
+        <hasReactTimestamp>2025-01-15T15:25:00</hasReactTimestamp>
+        <hasUserInteractionIP>203.0.113.15</hasUserInteractionIP>
+        <hasDeviceInfo>Samsung Galaxy S21</hasDeviceInfo>
+        <associatedWithContent rdf:resource="#Post_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by Alice Carter on Mark Sullivan's Post -->
+    <rdf:Description rdf:about="#Comment_AliceCarter_MarkPost">
+        <rdf:type rdf:resource="#TextComment"/>
+        <hasCommentText>This seems fishy. Where’s your business license?</hasCommentText>
+        <hasCommentTimestamp>2025-01-15T14:50:00</hasCommentTimestamp>
+        <hasUserInteractionIP>203.0.113.15</hasUserInteractionIP>
+        <hasDeviceInfo>Samsung Galaxy S21</hasDeviceInfo>
+        <associatedWithContent rdf:resource="#Post_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Like on Alice Carter's Comment by Mark Sullivan -->
+    <rdf:Description rdf:about="#Like_MarkSullivan_AliceComment">
+        <rdf:type rdf:resource="#Like"/>
+        <hasLikeTimestamp>2025-01-15T14:55:00</hasLikeTimestamp>
+        <hasUserInteractionIP>192.168.1.10</hasUserInteractionIP>
+        <hasDeviceInfo>iPhone 12</hasDeviceInfo>
+        <associatedWithContent rdf:resource="#Comment_AliceCarter_MarkPost"/>
+    </rdf:Description>
+
+    <!-- Instance: Threatening Comment by Mark Sullivan on Alice Carter's Post -->
+    <rdf:Description rdf:about="#Comment_MarkSullivan_AlicePost">
+        <rdf:type rdf:resource="#TextComment"/>
+        <hasCommentText>Keep running your mouth and you'll regret it!</hasCommentText>
+        <hasCommentTimestamp>2025-01-15T15:10:00</hasCommentTimestamp>
+        <hasUserInteractionIP>192.168.1.10</hasUserInteractionIP>
+        <hasDeviceInfo>iPhone 12</hasDeviceInfo>
+        <associatedWithContent rdf:resource="#Post_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Supportive Comment by Anonymous User on Alice Carter's Post -->
+    <rdf:Description rdf:about="#Comment_Anon_AlicePost">
+        <rdf:type rdf:resource="#TextComment"/>
+        <hasCommentText>Report this guy. This is not okay.</hasCommentText>
+        <hasCommentTimestamp>2025-01-15T15:15:00</hasCommentTimestamp>
+        <hasUserInteractionIP>198.51.100.20</hasUserInteractionIP>
+        <hasDeviceInfo>Windows PC</hasDeviceInfo>
+        <associatedWithContent rdf:resource="#Post_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Follow-up Threat by Mark Sullivan on Alice Carter's Comment -->
+    <rdf:Description rdf:about="#Comment_MarkSullivan_AliceReply">
+        <rdf:type rdf:resource="#TextComment"/>
+        <hasCommentText>I warned you. You’ll regret posting that.</hasCommentText>
+        <hasCommentTimestamp>2025-01-15T15:35:00</hasCommentTimestamp>
+        <hasUserInteractionIP>192.168.1.10</hasUserInteractionIP>
+        <hasDeviceInfo>iPhone 12</hasDeviceInfo>
+        <associatedWithContent rdf:resource="#Comment_AliceCarter_MarkPost"/>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter Replies Defending Herself -->
+    <rdf:Description rdf:about="#Comment_AliceCarter_Defense">
+        <rdf:type rdf:resource="#TextComment"/>
+        <hasCommentText>Are you threatening me? I’m reporting this.</hasCommentText>
+        <hasCommentTimestamp>2025-01-15T15:40:00</hasCommentTimestamp>
+        <hasUserInteractionIP>203.0.113.15</hasUserInteractionIP>
+        <hasDeviceInfo>Samsung Galaxy S21</hasDeviceInfo>
+        <associatedWithContent rdf:resource="#Comment_MarkSullivan_AliceReply"/>
+    </rdf:Description>
+
+    <!-- Instance: Anonymous User Encourages Alice to Take Legal Action -->
+    <rdf:Description rdf:about="#Comment_Anon_Defense">
+        <rdf:type rdf:resource="#TextComment"/>
+        <hasCommentText>Take a screenshot and report this to the authorities.</hasCommentText>
+        <hasCommentTimestamp>2025-01-15T15:45:00</hasCommentTimestamp>
+        <hasUserInteractionIP>198.51.100.20</hasUserInteractionIP>
+        <hasDeviceInfo>Windows PC</hasDeviceInfo>
+        <associatedWithContent rdf:resource="#Comment_AliceCarter_Defense"/>
+    </rdf:Description>
+
+        <!-- Instance: Direct Message from Mark Sullivan to Alice Carter -->
+    <rdf:Description rdf:about="#Message_MarkSullivan_AliceCarter">
+        <rdf:type rdf:resource="#TextMessage"/>
+        <hasMessageContent>Why are you spreading lies? Take down your post now.</hasMessageContent>
+        <hasMessageSendTimestamp>2025-01-15T16:00:00</hasMessageSendTimestamp>
+        <hasMessageStatus>Sent</hasMessageStatus>
+        <sendsTextMessage rdf:resource="#User_MarkSullivan"/>
+        <viewsMessages rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Direct Message from Invest4You to Alice Carter (Sock Puppet Account) -->
+    <rdf:Description rdf:about="#Message_Invest4You_AliceCarter">
+        <rdf:type rdf:resource="#TextMessage"/>
+        <hasMessageContent>You should stay quiet. This is your final warning.</hasMessageContent>
+        <hasMessageSendTimestamp>2025-01-15T16:10:00</hasMessageSendTimestamp>
+        <hasMessageStatus>Delivered</hasMessageStatus>
+        <sendsTextMessage rdf:resource="#User_Invest4You"/>
+        <viewsMessages rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter reports the messages to an anonymous friend -->
+    <rdf:Description rdf:about="#Message_AliceCarter_Anonymous">
+        <rdf:type rdf:resource="#TextMessage"/>
+        <hasMessageContent>I'm getting threats from two accounts, but I think it's the same person.</hasMessageContent>
+        <hasMessageSendTimestamp>2025-01-15T16:30:00</hasMessageSendTimestamp>
+        <hasMessageStatus>Read</hasMessageStatus>
+        <sendsTextMessage rdf:resource="#User_AliceCarter"/>
+        <viewsMessages rdf:resource="#User_Anonymous"/>
+    </rdf:Description>
+
+    <!-- Instance: Group Chat created by Alice Carter for support -->
+    <rdf:Description rdf:about="#GroupChat_AliceSupport">
+        <rdf:type rdf:resource="#GroupChat"/>
+        <hasGroupName>Support for Alice</hasGroupName>
+        <hasGroupCreatedDate>2025-01-15T17:00:00</hasGroupCreatedDate>
+        <createsGroupChat rdf:resource="#User_AliceCarter"/>
+        <hasParticipants rdf:resource="#User_Anonymous"/>
+        <hasParticipants rdf:resource="#User_JohnDoe"/>
+    </rdf:Description>
+
+    <!-- Instance: Alice shares threat screenshots in group chat -->
+    <rdf:Description rdf:about="#GroupMessage_Alice_SharedThreats">
+        <rdf:type rdf:resource="#GroupChat"/>
+        <hasGroupMessageContent>Here are the messages I received. Do you think I should go to the authorities?</hasGroupMessageContent>
+        <hasGroupChatActionTimestamp>2025-01-15T17:15:00</hasGroupChatActionTimestamp>
+        <participatesInGroupMessage rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: John Doe advises Alice in group chat -->
+    <rdf:Description rdf:about="#GroupMessage_JohnDoe_Advice">
+        <rdf:type rdf:resource="#GroupChat"/>
+        <hasGroupMessageContent>This is serious. You need to report this immediately.</hasGroupMessageContent>
+        <hasGroupChatActionTimestamp>2025-01-15T17:20:00</hasGroupChatActionTimestamp>
+        <participatesInGroupMessage rdf:resource="#User_JohnDoe"/>
+    </rdf:Description>
+
+    <!-- Instance: Alice mutes notifications due to stress -->
+    <rdf:Description rdf:about="#Mute_AliceCarter">
+        <rdf:type rdf:resource="#MessageNotifications"/>
+        <hasMuteTimestamp>2025-01-15T17:30:00</hasMuteTimestamp>
+        <disablesNotifications rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Event Created by Mark Sullivan -->
+    <rdf:Description rdf:about="#Event_MarkSullivan_InvestmentSeminar">
+        <rdf:type rdf:resource="#InPerson"/>
+        <hasEventCreationTimestamp>2025-01-10T12:00:00</hasEventCreationTimestamp>
+        <hasEventUpdateTimestamp>2025-01-12T14:30:00</hasEventUpdateTimestamp>
+        <hasEventStartTimestamp>2025-01-20T18:00:00</hasEventStartTimestamp>
+        <hasEventEndTimestamp>2025-01-20T21:00:00</hasEventEndTimestamp>
+        <hasEventLocation>Grand Hotel Conference Room</hasEventLocation>
+        <hasEventInteractionIP>192.168.1.10</hasEventInteractionIP>
+        <hasEventDeviceInfo>iPhone 12</hasEventDeviceInfo>
+    </rdf:Description>
+
+    <!-- Instance: Event Invitation from Mark Sullivan to Alice Carter -->
+    <rdf:Description rdf:about="#Invitation_MarkSullivan_AliceCarter">
+        <rdf:type rdf:resource="#EventInvitations"/>
+        <hasInvitationSentTimestamp>2025-01-12T15:00:00</hasInvitationSentTimestamp>
+        <sendsEventInvitationTo rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter Rejects the Invitation -->
+    <rdf:Description rdf:about="#Rejection_AliceCarter">
+        <rdf:type rdf:resource="#EventInvitations"/>
+        <hasInviteAcceptanceTimestamp>2025-01-13T10:00:00</hasInviteAcceptanceTimestamp>
+        <acceptsEventInvitationFrom rdf:resource="#User_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Mark Sullivan Creates a Virtual Event After Rejections -->
+    <rdf:Description rdf:about="#Event_MarkSullivan_VirtualSession">
+        <rdf:type rdf:resource="#Virtual"/>
+        <hasEventCreationTimestamp>2025-01-14T09:00:00</hasEventCreationTimestamp>
+        <hasEventStartTimestamp>2025-01-21T19:00:00</hasEventStartTimestamp>
+        <hasEventEndTimestamp>2025-01-21T22:00:00</hasEventEndTimestamp>
+        <hasVirtualEventLink>https://virtualplatform.com/investment2025</hasVirtualEventLink>
+        <hasEventInteractionIP>192.168.1.10</hasEventInteractionIP>
+        <hasEventDeviceInfo>iPhone 12</hasEventDeviceInfo>
+    </rdf:Description>
+
+    <!-- Instance: Anonymous User Warns Alice About the Event -->
+    <rdf:Description rdf:about="#Message_Anonymous_AliceWarning">
+        <rdf:type rdf:resource="#TextMessage"/>
+        <hasMessageContent>Be careful. This event is likely a scam.</hasMessageContent>
+        <hasMessageSendTimestamp>2025-01-15T10:30:00</hasMessageSendTimestamp>
+        <sendsTextMessage rdf:resource="#User_Anonymous"/>
+        <viewsMessages rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Event Notifications Sent to Participants -->
+    <rdf:Description rdf:about="#Notification_EventUpdate">
+        <rdf:type rdf:resource="#EventNotifications"/>
+        <hasNotificationSentTimestamp>2025-01-16T08:00:00</hasNotificationSentTimestamp>
+        <hasNotificationType>Update</hasNotificationType>
+        <hasNotificationRecipient>Alice Carter</hasNotificationRecipient>
+    </rdf:Description>
+
+        <!-- Instance: Birthday Post for Alice Carter by Mark Sullivan -->
+    <rdf:Description rdf:about="#BirthdayPost_MarkSullivan_AliceCarter">
+        <rdf:type rdf:resource="#BirthdayPosts"/>
+        <hasBirthdayPostTimestamp>2025-02-05T08:30:00</hasBirthdayPostTimestamp>
+        <hasBirthdayMessageContent>Happy Birthday, Alice! Hope you have a great day!</hasBirthdayMessageContent>
+        <writesBirthdayOnTimeline rdf:resource="#User_AliceCarter"/>
+        <sendBirthdayMessageTo rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Birthday Post from Anonymous User to Alice Carter -->
+    <rdf:Description rdf:about="#BirthdayPost_Anonymous_AliceCarter">
+        <rdf:type rdf:resource="#BirthdayPosts"/>
+        <hasBirthdayPostTimestamp>2025-02-05T09:00:00</hasBirthdayPostTimestamp>
+        <hasBirthdayMessageContent>Wishing you a wonderful birthday, Alice!</hasBirthdayMessageContent>
+        <writesBirthdayOnTimeline rdf:resource="#User_AliceCarter"/>
+        <sendBirthdayMessageTo rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter Thanks Mark Sullivan -->
+    <rdf:Description rdf:about="#BirthdayReply_AliceCarter_MarkSullivan">
+        <rdf:type rdf:resource="#BirthdayPosts"/>
+        <hasBirthdayPostTimestamp>2025-02-05T10:00:00</hasBirthdayPostTimestamp>
+        <hasBirthdayMessageContent>Thank you so much, Mark! Really appreciate it.</hasBirthdayMessageContent>
+        <writesBirthdayOnTimeline rdf:resource="#User_MarkSullivan"/>
+        <sendBirthdayMessageTo rdf:resource="#User_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Suspicious Birthday Message from Invest4You (Sock Puppet Account) -->
+    <rdf:Description rdf:about="#BirthdayPost_Invest4You_AliceCarter">
+        <rdf:type rdf:resource="#BirthdayPosts"/>
+        <hasBirthdayPostTimestamp>2025-02-05T11:00:00</hasBirthdayPostTimestamp>
+        <hasBirthdayMessageContent>Happy Birthday, Alice! I hope we can talk soon about some amazing opportunities.</hasBirthdayMessageContent>
+        <writesBirthdayOnTimeline rdf:resource="#User_AliceCarter"/>
+        <sendBirthdayMessageTo rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter Responds to Anonymous User -->
+    <rdf:Description rdf:about="#BirthdayReply_AliceCarter_Anonymous">
+        <rdf:type rdf:resource="#BirthdayPosts"/>
+        <hasBirthdayPostTimestamp>2025-02-05T12:30:00</hasBirthdayPostTimestamp>
+        <hasBirthdayMessageContent>Thank you! I really appreciate the kind words.</hasBirthdayMessageContent>
+        <writesBirthdayOnTimeline rdf:resource="#User_Anonymous"/>
+        <sendBirthdayMessageTo rdf:resource="#User_Anonymous"/>
+    </rdf:Description>
+
+        <!-- Instance: Mark Sullivan Creates an Avatar -->
+    <rdf:Description rdf:about="#Avatar_MarkSullivan">
+        <rdf:type rdf:resource="#Avatars"/>
+        <hasAvatarCreationTimestamp>2025-03-01T10:00:00</hasAvatarCreationTimestamp>
+        <hasClothingItem>Formal Suit</hasClothingItem>
+        <hasOutfitCategory>Business</hasOutfitCategory>
+        <createsAvatar rdf:resource="#User_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Mark Sullivan Edits Avatar -->
+    <rdf:Description rdf:about="#EditAvatar_MarkSullivan">
+        <rdf:type rdf:resource="#Avatars"/>
+        <hasEditTimestamp>2025-03-02T14:00:00</hasEditTimestamp>
+        <hasClothingItem>Casual Hoodie</hasClothingItem>
+        <hasOutfitCategory>Casual</hasOutfitCategory>
+        <editsAvatar rdf:resource="#User_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter Buys a New Outfit for Avatar -->
+    <rdf:Description rdf:about="#Avatar_AliceCarter">
+        <rdf:type rdf:resource="#Avatars"/>
+        <hasAvatarCreationTimestamp>2025-02-28T09:30:00</hasAvatarCreationTimestamp>
+        <hasClothingItem>Evening Dress</hasClothingItem>
+        <hasOutfitCategory>Elegant</hasOutfitCategory>
+        <createsAvatar rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter Edits Avatar and Tries a New Outfit -->
+    <rdf:Description rdf:about="#EditAvatar_AliceCarter">
+        <rdf:type rdf:resource="#Avatars"/>
+        <hasEditTimestamp>2025-03-02T16:45:00</hasEditTimestamp>
+        <hasClothingItem>Summer Dress</hasClothingItem>
+        <hasOutfitCategory>Casual</hasOutfitCategory>
+        <editsAvatar rdf:resource="#User_AliceCarter"/>
+        <triesNewOutfitsFor rdf:resource="#Avatar_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Invest4You Creates a Fake Avatar Resembling Mark Sullivan -->
+    <rdf:Description rdf:about="#Avatar_Invest4You">
+        <rdf:type rdf:resource="#Avatars"/>
+        <hasAvatarCreationTimestamp>2025-03-03T11:20:00</hasAvatarCreationTimestamp>
+        <hasClothingItem>Formal Suit</hasClothingItem>
+        <hasOutfitCategory>Business</hasOutfitCategory>
+        <createsAvatar rdf:resource="#User_Invest4You"/>
+    </rdf:Description>
+
+    <!-- Instance: Mark Sullivan Creates an Avatar Post -->
+    <rdf:Description rdf:about="#AvatarPost_MarkSullivan">
+        <rdf:type rdf:resource="#AvatarPosts"/>
+        <hasPostCreationTimestamp>2025-03-03T12:00:00</hasPostCreationTimestamp>
+        <hasPostCaption>"Feeling great in my new business attire!"</hasPostCaption>
+        <hasPostVisibility>Public</hasPostVisibility>
+        <createAvatarPosts rdf:resource="#User_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Invest4You Posts a Fake Avatar Post -->
+    <rdf:Description rdf:about="#AvatarPost_Invest4You">
+        <rdf:type rdf:resource="#AvatarPosts"/>
+        <hasPostCreationTimestamp>2025-03-04T08:00:00</hasPostCreationTimestamp>
+        <hasPostCaption>"Join my investment webinar! DM for details."</hasPostCaption>
+        <hasPostVisibility>Public</hasPostVisibility>
+        <createAvatarPosts rdf:resource="#User_Invest4You"/>
+    </rdf:Description>
+
+        <!-- Instance: Mark Sullivan Saves a Game Progress -->
+    <rdf:Description rdf:about="#GameSave_MarkSullivan">
+        <rdf:type rdf:resource="#PlayGames"/>
+        <hasGameSaveTimestamp>2025-04-01T15:45:00</hasGameSaveTimestamp>
+        <hasGameConnectionType>Wi-Fi</hasGameConnectionType>
+        <savesGame rdf:resource="#User_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter Shares a Game on Facebook -->
+    <rdf:Description rdf:about="#GameShare_AliceCarter">
+        <rdf:type rdf:resource="#PlayGames"/>
+        <hasGameSharePlatform>Facebook</hasGameSharePlatform>
+        <sharesGame rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Invest4You Connects to a Game with Suspicious Activity -->
+    <rdf:Description rdf:about="#GameConnection_Invest4You">
+        <rdf:type rdf:resource="#PlayGames"/>
+        <hasGameConnectionType>Mobile Data</hasGameConnectionType>
+        <connectsGame rdf:resource="#User_Invest4You"/>
+    </rdf:Description>
+
+    <!-- Instance: Mark Sullivan's Player Profile -->
+    <rdf:Description rdf:about="#PlayerInfo_MarkSullivan">
+        <rdf:type rdf:resource="#PlayerInfo"/>
+        <hasPlayerName>MarkTheGamer</hasPlayerName>
+        <hasPlayerAvatar>https://gamingplatform.com/avatars/mark.jpg</hasPlayerAvatar>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter's Player Profile -->
+    <rdf:Description rdf:about="#PlayerInfo_AliceCarter">
+        <rdf:type rdf:resource="#PlayerInfo"/>
+        <hasPlayerName>AliceTheChampion</hasPlayerName>
+        <hasPlayerAvatar>https://gamingplatform.com/avatars/alice.jpg</hasPlayerAvatar>
+    </rdf:Description>
+
+    <!-- Instance: Invest4You's Player Profile (Potential Fake Account) -->
+    <rdf:Description rdf:about="#PlayerInfo_Invest4You">
+        <rdf:type rdf:resource="#PlayerInfo"/>
+        <hasPlayerName>InvestGamer</hasPlayerName>
+        <hasPlayerAvatar>https://gamingplatform.com/avatars/invest.jpg</hasPlayerAvatar>
+    </rdf:Description>
+
+        <!-- Instance: Mark Sullivan Creates a Group -->
+    <rdf:Description rdf:about="#Group_MarkSullivan_InvestorsClub">
+        <rdf:type rdf:resource="#Groups"/>
+        <hasGroupName>Exclusive Investors Club</hasGroupName>
+        <hasGroupDescription>A private group for exclusive investment opportunities.</hasGroupDescription>
+        <hasMembershipRequestsCount>25</hasMembershipRequestsCount>
+        <hasGroupCategory>Finance</hasGroupCategory>
+        <hasGroupCreationTimestamp>2025-04-05T14:00:00</hasGroupCreationTimestamp>
+        <hasLastActivityTimestamp>2025-04-10T18:30:00</hasLastActivityTimestamp>
+        <hasGroupCoverPhoto>https://socialmedia.com/groups/investorsclub.jpg</hasGroupCoverPhoto>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter Requests to Join the Group -->
+    <rdf:Description rdf:about="#GroupRequest_AliceCarter">
+        <rdf:type rdf:resource="#Groups"/>
+        <hasMembershipRequestsCount>1</hasMembershipRequestsCount>
+        <hasGroupName>Exclusive Investors Club</hasGroupName>
+    </rdf:Description>
+
+    <!-- Instance: Mark Sullivan Pins the Group -->
+    <rdf:Description rdf:about="#PinnedGroup_MarkSullivan">
+        <rdf:type rdf:resource="#PinnedGroups"/>
+        <hasGroupPinnedTimestamp>2025-04-06T09:30:00</hasGroupPinnedTimestamp>
+        <pinsGroup rdf:resource="#Group_MarkSullivan_InvestorsClub"/>
+    </rdf:Description>
+
+    <!-- Instance: Invest4You Attempts to Join the Group with Suspicious Intent -->
+    <rdf:Description rdf:about="#GroupRequest_Invest4You">
+        <rdf:type rdf:resource="#Groups"/>
+        <hasMembershipRequestsCount>1</hasMembershipRequestsCount>
+        <hasGroupName>Exclusive Investors Club</hasGroupName>
+    </rdf:Description>
+
+    <!-- Instance: Group Notifications Enabled by Alice Carter -->
+    <rdf:Description rdf:about="#GroupNotifications_AliceCarter">
+        <rdf:type rdf:resource="#GroupNotifications"/>
+        <hasNotificationFrequency>Daily</hasNotificationFrequency>
+        <hasNotificationType>Posts</hasNotificationType>
+        <enablesGroupNotifications rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Group Event Created by Mark Sullivan -->
+    <rdf:Description rdf:about="#GroupEvent_MarkSullivan">
+        <rdf:type rdf:resource="#Events"/>
+        <hasEventCreationTimestamp>2025-04-07T12:00:00</hasEventCreationTimestamp>
+        <hasEventTitle>Investment Strategies 2025</hasEventTitle>
+        <hasEventDescription>An exclusive webinar for top investors.</hasEventDescription>
+        <hasEventDate>2025-04-15</hasEventDate>
+        <hasEventLocation>Online Webinar</hasEventLocation>
+        <createsGroupEvents rdf:resource="#User_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Suspicious File Upload by Invest4You -->
+    <rdf:Description rdf:about="#FileUpload_Invest4You">
+        <rdf:type rdf:resource="#Files"/>
+        <hasFileUploadTimestamp>2025-04-08T10:15:00</hasFileUploadTimestamp>
+        <hasFileName>Exclusive_Investment_Secrets.pdf</hasFileName>
+        <hasFileType>PDF</hasFileType>
+    </rdf:Description>
+
+        <!-- Instance: Mark Sullivan Accesses Help Center -->
+    <rdf:Description rdf:about="#HelpAccess_MarkSullivan">
+        <rdf:type rdf:resource="#HelpSupport"/>
+        <hasSupportAccessTimestamp>2025-05-01T10:00:00</hasSupportAccessTimestamp>
+        <accessHelpCenter rdf:resource="#User_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter Reports a Problem -->
+    <rdf:Description rdf:about="#ReportProblem_AliceCarter">
+        <rdf:type rdf:resource="#HelpSupport"/>
+        <hasReportTimestamp>2025-05-02T12:15:00</hasReportTimestamp>
+        <submitsReportProblem rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Invest4You Accesses Support Inbox with Suspicious Activity -->
+    <rdf:Description rdf:about="#SupportInbox_Invest4You">
+        <rdf:type rdf:resource="#HelpSupport"/>
+        <hasInboxAccessTimestamp>2025-05-03T14:30:00</hasInboxAccessTimestamp>
+        <accessSupportInbox rdf:resource="#User_Invest4You"/>
+    </rdf:Description>
+
+    <!-- Instance: Mark Sullivan's Meta Verification Status -->
+    <rdf:Description rdf:about="#MetaVerified_MarkSullivan">
+        <rdf:type rdf:resource="#MetaVerified"/>
+        <hasPublicPresenceStatus>true</hasPublicPresenceStatus>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter's Meta Verification Status -->
+    <rdf:Description rdf:about="#MetaVerified_AliceCarter">
+        <rdf:type rdf:resource="#MetaVerified"/>
+        <hasPublicPresenceStatus>false</hasPublicPresenceStatus>
+    </rdf:Description>
+
+    <!-- Instance: Mark Sullivan Connects WhatsApp to Account -->
+    <rdf:Description rdf:about="#WhatsApp_Connection_MarkSullivan">
+        <rdf:type rdf:resource="#OtherApps"/>
+        <hasConnectedAppStatus>true</hasConnectedAppStatus>
+        <WhatsApp rdf:resource="#User_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Invest4You Attempts to Connect Messenger with Suspicious Intent -->
+    <rdf:Description rdf:about="#Messenger_Connection_Invest4You">
+        <rdf:type rdf:resource="#OtherApps"/>
+        <hasConnectedAppStatus>false</hasConnectedAppStatus>
+        <Messenger rdf:resource="#User_Invest4You"/>
+    </rdf:Description>
+
+
+    <!-- Instance: Mark Sullivan Lists an Item for Sale -->
+    <rdf:Description rdf:about="#Listing_MarkSullivan_Laptop">
+        <rdf:type rdf:resource="#Listings"/>
+        <hasListingTitle>MacBook Pro 2021</hasListingTitle>
+        <hasListingPrice>1500.00</hasListingPrice>
+        <hasListingCategory>Electronics</hasListingCategory>
+        <hasListingCreationTimestamp>2025-06-01T10:30:00</hasListingCreationTimestamp>
+        <hasListingUpdateTimestamp>2025-06-02T12:00:00</hasListingUpdateTimestamp>
+        <hasSellerLocation>Los Angeles, USA</hasSellerLocation>
+        <hasListingViews>75</hasListingViews>
+        <hasListingBoostStatus>true</hasListingBoostStatus>
+        <listsItemTo rdf:resource="#User_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter Lists a Car for Sale -->
+    <rdf:Description rdf:about="#Listing_AliceCarter_Car">
+        <rdf:type rdf:resource="#Listings"/>
+        <hasListingTitle>Toyota Corolla 2018</hasListingTitle>
+        <hasListingPrice>12000.00</hasListingPrice>
+        <hasListingCategory>Vehicles</hasListingCategory>
+        <hasListingCreationTimestamp>2025-06-03T09:00:00</hasListingCreationTimestamp>
+        <hasListingUpdateTimestamp>2025-06-05T11:15:00</hasListingUpdateTimestamp>
+        <hasSellerLocation>New York, USA</hasSellerLocation>
+        <hasListingViews>120</hasListingViews>
+        <hasListingBoostStatus>false</hasListingBoostStatus>
+        <listsVehicleTo rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Invest4You Lists a Suspicious Property for Sale -->
+    <rdf:Description rdf:about="#Listing_Invest4You_Property">
+        <rdf:type rdf:resource="#Listings"/>
+        <hasListingTitle>Luxury Apartment in Miami</hasListingTitle>
+        <hasListingPrice>500000.00</hasListingPrice>
+        <hasListingCategory>Real Estate</hasListingCategory>
+        <hasListingCreationTimestamp>2025-06-04T14:00:00</hasListingCreationTimestamp>
+        <hasListingUpdateTimestamp>2025-06-06T16:45:00</hasListingUpdateTimestamp>
+        <hasSellerLocation>Miami, USA</hasSellerLocation>
+        <hasListingViews>30</hasListingViews>
+        <hasListingBoostStatus>true</hasListingBoostStatus>
+        <listsPropertyTo rdf:resource="#User_Invest4You"/>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter Messages Mark Sullivan About the Laptop -->
+    <rdf:Description rdf:about="#Message_AliceCarter_MarkSullivan">
+        <rdf:type rdf:resource="#MessageSeller"/>
+        <hasMessageSentTimestamp>2025-06-02T14:30:00</hasMessageSentTimestamp>
+    </rdf:Description>
+
+    <!-- Instance: Seller Information for Mark Sullivan -->
+    <rdf:Description rdf:about="#SellerInfo_MarkSullivan">
+        <rdf:type rdf:resource="#SellerInformation"/>
+        <hasSellerRating>4.8</hasSellerRating>
+        <hasNumberOfSales>15</hasNumberOfSales>
+        <hasSellerVerificationStatus>true</hasSellerVerificationStatus>
+    </rdf:Description>
+
+    <!-- Instance: Seller Information for Invest4You (Suspicious) -->
+    <rdf:Description rdf:about="#SellerInfo_Invest4You">
+        <rdf:type rdf:resource="#SellerInformation"/>
+        <hasSellerRating>2.5</hasSellerRating>
+        <hasNumberOfSales>2</hasNumberOfSales>
+        <hasSellerVerificationStatus>false</hasSellerVerificationStatus>
+    </rdf:Description>
+
+
+    <!-- Instance: Mark Sullivan Creates a Messenger Kids Account for His Child -->
+    <rdf:Description rdf:about="#MessengerKidsAccount_JohnSullivan">
+        <rdf:type rdf:resource="#MessengerKids"/>
+        <createChildAccount rdf:resource="#User_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Child Information for John Sullivan -->
+    <rdf:Description rdf:about="#ChildInfo_JohnSullivan">
+        <rdf:type rdf:resource="#ChildInformation"/>
+        <hasFirstName>John</hasFirstName>
+        <hasLastName>Sullivan</hasLastName>
+        <hasBirthday>2015-07-10</hasBirthday>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter Creates a Messenger Kids Account for Her Child -->
+    <rdf:Description rdf:about="#MessengerKidsAccount_EmmaCarter">
+        <rdf:type rdf:resource="#MessengerKids"/>
+        <createChildAccount rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Child Information for Emma Carter -->
+    <rdf:Description rdf:about="#ChildInfo_EmmaCarter">
+        <rdf:type rdf:resource="#ChildInformation"/>
+        <hasFirstName>Emma</hasFirstName>
+        <hasLastName>Carter</hasLastName>
+        <hasBirthday>2016-09-15</hasBirthday>
+    </rdf:Description>
+
+    <!-- Instance: John Sullivan Connects with Emma Carter on Messenger Kids -->
+    <rdf:Description rdf:about="#Connection_JohnSullivan_EmmaCarter">
+        <rdf:type rdf:resource="#ConnectKids"/>
+        <hasConnectionTimestamp>2025-06-10T16:00:00</hasConnectionTimestamp>
+        <hasConnectionStatus>Active</hasConnectionStatus>
+        <connectMessengerKid rdf:resource="#MessengerKidsAccount_JohnSullivan"/>
+        <connectMessengerKid rdf:resource="#MessengerKidsAccount_EmmaCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Suspicious Connection Request from Invest4You to John Sullivan -->
+    <rdf:Description rdf:about="#Connection_Invest4You_JohnSullivan">
+        <rdf:type rdf:resource="#ConnectKids"/>
+        <hasConnectionTimestamp>2025-06-11T09:30:00</hasConnectionTimestamp>
+        <hasConnectionStatus>Pending</hasConnectionStatus>
+        <connectMessengerKid rdf:resource="#MessengerKidsAccount_JohnSullivan"/>
+        <connectMessengerKid rdf:resource="#User_Invest4You"/>
+    </rdf:Description>
+
+    <!-- Instance: Mark Sullivan Creates a Business Page -->
+    <rdf:Description rdf:about="#Page_MarkSullivan_Business">
+        <rdf:type rdf:resource="#Pages"/>
+        <hasPageName>Mark Sullivan Consulting</hasPageName>
+        <hasPageDescription>Providing expert financial consulting services.</hasPageDescription>
+        <hasPageCategory>Business</hasPageCategory>
+        <hasPageContactInfo>contact@marksullivan.com</hasPageContactInfo>
+        <hasPageLocation>Los Angeles, USA</hasPageLocation>
+        <hasOperatingHours>9 AM - 5 PM</hasOperatingHours>
+        <hasPageWebsite>https://www.marksullivanconsulting.com</hasPageWebsite>
+        <createPage rdf:resource="#User_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Alice Carter Creates an Art Page -->
+    <rdf:Description rdf:about="#Page_AliceCarter_Art">
+        <rdf:type rdf:resource="#Pages"/>
+        <hasPageName>Alice Carter Artwork</hasPageName>
+        <hasPageDescription>Showcasing my latest digital and traditional artworks.</hasPageDescription>
+        <hasPageCategory>Art</hasPageCategory>
+        <hasPageContactInfo>contact@alicecarterart.com</hasPageContactInfo>
+        <hasPageLocation>New York, USA</hasPageLocation>
+        <hasOperatingHours>10 AM - 6 PM</hasOperatingHours>
+        <hasPageWebsite>https://www.alicecarterart.com</hasPageWebsite>
+        <createPage rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Suspicious Page Created by Invest4You -->
+    <rdf:Description rdf:about="#Page_Invest4You_Scheme">
+        <rdf:type rdf:resource="#Pages"/>
+        <hasPageName>Invest4You Profits</hasPageName>
+        <hasPageDescription>Join our exclusive investment opportunity for high returns.</hasPageDescription>
+        <hasPageCategory>Finance</hasPageCategory>
+        <hasPageContactInfo>invest4you@email.com</hasPageContactInfo>
+        <hasPageLocation>Miami, USA</hasPageLocation>
+        <hasOperatingHours>24/7</hasOperatingHours>
+        <hasPageWebsite>https://www.invest4youprofits.com</hasPageWebsite>
+        <createPage rdf:resource="#User_Invest4You"/>
+    </rdf:Description>
+
+    <!-- Instance: Mark Sullivan Merges Pages -->
+    <rdf:Description rdf:about="#PageMerge_MarkSullivan">
+        <rdf:type rdf:resource="#PagesManagement"/>
+        <mergePages rdf:resource="#Page_MarkSullivan_Business"/>
+    </rdf:Description>
+
+    <!-- Instance: Insights for Alice Carter's Art Page -->
+    <rdf:Description rdf:about="#PageInsights_AliceCarter">
+        <rdf:type rdf:resource="#PagesInsights"/>
+        <hasPageViewCount>2000</hasPageViewCount>
+        <hasPagePostReach>15000</hasPagePostReach>
+    </rdf:Description>
+
+        <!-- Instance: Privacy Settings for Mark Sullivan -->
+    <rdf:Description rdf:about="#PrivacySettings_MarkSullivan">
+        <rdf:type rdf:resource="#PrivacySettings"/>
+        <hasProfilePrivacySettings>Friends Only</hasProfilePrivacySettings>
+        <hasBlockedAccounts>User123, SuspiciousUser45</hasBlockedAccounts>
+        <hasActivityStatus>false</hasActivityStatus>
+    </rdf:Description>
+
+    <!-- Instance: Privacy Settings for Alice Carter -->
+    <rdf:Description rdf:about="#PrivacySettings_AliceCarter">
+        <rdf:type rdf:resource="#PrivacySettings"/>
+        <hasProfilePrivacySettings>Public</hasProfilePrivacySettings>
+        <hasBlockedAccounts>None</hasBlockedAccounts>
+        <hasActivityStatus>true</hasActivityStatus>
+    </rdf:Description>
+
+    <!-- Instance: Security Settings for Mark Sullivan -->
+    <rdf:Description rdf:about="#SecuritySettings_MarkSullivan">
+        <rdf:type rdf:resource="#SecuritySettings"/>
+        <settingsTwoFactorAuthentication rdf:resource="#User_MarkSullivan"/>
+        <settingsLoginAlerts rdf:resource="#User_MarkSullivan"/>
+        <settingsPasswordManagement rdf:resource="#User_MarkSullivan"/>
+    </rdf:Description>
+
+    <!-- Instance: Data Usage Settings for Alice Carter -->
+    <rdf:Description rdf:about="#DataUsageSettings_AliceCarter">
+        <rdf:type rdf:resource="#DataUsageSettings"/>
+        <hasCellularDataUsageSettings>Optimized</hasCellularDataUsageSettings>
+        <hasWiFiDataUsageSettings>Unlimited</hasWiFiDataUsageSettings>
+    </rdf:Description>
+
+    <!-- Instance: Notification Settings for Mark Sullivan -->
+    <rdf:Description rdf:about="#NotificationSettings_MarkSullivan">
+        <rdf:type rdf:resource="#NotificationSettings"/>
+        <hasPushNotificationsStatus>true</hasPushNotificationsStatus>
+        <hasEmailNotificationsStatus>false</hasEmailNotificationsStatus>
+        <hasSMSNotificationsStatus>true</hasSMSNotificationsStatus>
+        <hasNotificationSoundsSettings>true</hasNotificationSoundsSettings>
+    </rdf:Description>
+
+    <!-- Instance: Account Management for Alice Carter -->
+    <rdf:Description rdf:about="#AccountManagement_AliceCarter">
+        <rdf:type rdf:resource="#AccountManagement"/>
+        <downloadsYourInformation rdf:resource="#User_AliceCarter"/>
+        <transfersYourInformation rdf:resource="#User_AliceCarter"/>
+    </rdf:Description>
+
+    <!-- Instance: Device Management for Mark Sullivan -->
+    <rdf:Description rdf:about="#DeviceManagement_MarkSullivan">
+        <rdf:type rdf:resource="#DeviceManagement"/>
+        <hasAuthorizedDevices>iPhone 12, MacBook Pro, Samsung Galaxy Tab</hasAuthorizedDevices>
+    </rdf:Description>
+
+
+    <!-- Instance: Reel Uploaded by Mark Sullivan -->
+    <rdf:Description rdf:about="#Reel_MarkSullivan">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasReelWatchTimestamp>2025-07-01T14:30:00</hasReelWatchTimestamp>
+        <hasReelWatchDuration>35.5</hasReelWatchDuration>
+        <hasReelWatchIP>192.168.1.15</hasReelWatchIP>
+        <hasReelDeviceInfo>iPhone 14 Pro</hasReelDeviceInfo>
+    </rdf:Description>
+
+    <!-- Instance: Reel Uploaded by Alice Carter -->
+    <rdf:Description rdf:about="#Reel_AliceCarter">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasReelWatchTimestamp>2025-07-02T10:15:00</hasReelWatchTimestamp>
+        <hasReelWatchDuration>28.0</hasReelWatchDuration>
+        <hasReelWatchIP>203.0.113.45</hasReelWatchIP>
+        <hasReelDeviceInfo>Samsung Galaxy S22</hasReelDeviceInfo>
+    </rdf:Description>
+
+    <!-- Instance: Suspicious Reel Watched by Invest4You -->
+    <rdf:Description rdf:about="#Reel_Invest4You">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasReelWatchTimestamp>2025-07-03T08:50:00</hasReelWatchTimestamp>
+        <hasReelWatchDuration>12.0</hasReelWatchDuration>
+        <hasReelWatchIP>198.51.100.23</hasReelWatchIP>
+        <hasReelDeviceInfo>Windows PC</hasReelDeviceInfo>
+    </rdf:Description>
+
+    <!-- Instance: Reel Settings for Mark Sullivan -->
+    <rdf:Description rdf:about="#ReelSettings_MarkSullivan">
+        <rdf:type rdf:resource="#ReelSettings"/>
+        <hasReelClosedCaption>true</hasReelClosedCaption>
+        <hascQuality>HD</hascQuality>
+        <hasReelDataSaver>false</hasReelDataSaver>
+        <hasReelPlaybackSpeed>1.0</hasReelPlaybackSpeed>
+    </rdf:Description>
+
+    <!-- Instance: Reel Settings for Alice Carter -->
+    <rdf:Description rdf:about="#ReelSettings_AliceCarter">
+        <rdf:type rdf:resource="#ReelSettings"/>
+        <hasReelClosedCaption>false</hasReelClosedCaption>
+        <hascQuality>SD</hascQuality>
+        <hasReelDataSaver>true</hasReelDataSaver>
+        <hasReelPlaybackSpeed>1.5</hasReelPlaybackSpeed>
+    </rdf:Description>
+
+    <!-- Instance: Reel Settings for Invest4You (Suspicious Activity) -->
+    <rdf:Description rdf:about="#ReelSettings_Invest4You">
+        <rdf:type rdf:resource="#ReelSettings"/>
+        <hasReelClosedCaption>true</hasReelClosedCaption>
+        <hascQuality>HD</hascQuality>
+        <hasReelDataSaver>false</hasReelDataSaver>
+        <hasReelPlaybackSpeed>2.0</hasReelPlaybackSpeed>
+    </rdf:Description>
+
+
+    <!-- Instance: Video Watched by Mark Sullivan -->
+    <rdf:Description rdf:about="#VideoHistory_MarkSullivan">
+        <rdf:type rdf:resource="#Videos"/>
+        <hasVideoHistory>Investing for Beginners</hasVideoHistory>
+        <hasVideoWatchTimestamp>2025-08-01T15:20:00</hasVideoWatchTimestamp>
+        <hasVideoWatchDuration>00:10:45</hasVideoWatchDuration>
+        <hasVideoWatchIP>192.168.1.25</hasVideoWatchIP>
+        <hasVideoQuality>1080p</hasVideoQuality>
+        <hasVideoDeviceInfo>MacBook Pro</hasVideoDeviceInfo>
+    </rdf:Description>
+
+    <!-- Instance: Video Watched by Alice Carter -->
+    <rdf:Description rdf:about="#VideoHistory_AliceCarter">
+        <rdf:type rdf:resource="#Videos"/>
+        <hasVideoHistory>Modern Art Techniques</hasVideoHistory>
+        <hasVideoWatchTimestamp>2025-08-02T11:10:00</hasVideoWatchTimestamp>
+        <hasVideoWatchDuration>00:08:30</hasVideoWatchDuration>
+        <hasVideoWatchIP>203.0.113.57</hasVideoWatchIP>
+        <hasVideoQuality>720p</hasVideoQuality>
+        <hasVideoDeviceInfo>iPad Pro</hasVideoDeviceInfo>
+    </rdf:Description>
+
+    <!-- Instance: Suspicious Video Watched by Invest4You -->
+    <rdf:Description rdf:about="#VideoHistory_Invest4You">
+        <rdf:type rdf:resource="#Videos"/>
+        <hasVideoHistory>Crypto Trading Secrets</hasVideoHistory>
+        <hasVideoWatchTimestamp>2025-08-03T19:45:00</hasVideoWatchTimestamp>
+        <hasVideoWatchDuration>00:05:00</hasVideoWatchDuration>
+        <hasVideoWatchIP>198.51.100.99</hasVideoWatchIP>
+        <hasVideoQuality>HD</hasVideoQuality>
+        <hasVideoDeviceInfo>Windows Desktop</hasVideoDeviceInfo>
+    </rdf:Description>
+
+    <!-- Instance: Video Notification for Mark Sullivan -->
+    <rdf:Description rdf:about="#VideoNotification_MarkSullivan">
+        <rdf:type rdf:resource="#VideoNotifications"/>
+        <hasNotificationTimestamp>2025-08-01T16:00:00</hasNotificationTimestamp>
+        <hasNotificationStatus>true</hasNotificationStatus>
+        <hasNotificationType>New Upload</hasNotificationType>
+        <hasNotificationIP>192.168.1.25</hasNotificationIP>
+        <hasNotificationDeviceInfo>MacBook Pro</hasNotificationDeviceInfo>
+    </rdf:Description>
+
+    <!-- Instance: Video Notification for Alice Carter -->
+    <rdf:Description rdf:about="#VideoNotification_AliceCarter">
+        <rdf:type rdf:resource="#VideoNotifications"/>
+        <hasNotificationTimestamp>2025-08-02T12:30:00</hasNotificationTimestamp>
+        <hasNotificationStatus>true</hasNotificationStatus>
+        <hasNotificationType>Reminder</hasNotificationType>
+        <hasNotificationIP>203.0.113.57</hasNotificationIP>
+        <hasNotificationDeviceInfo>iPad Pro</hasNotificationDeviceInfo>
+    </rdf:Description>
+
+
+

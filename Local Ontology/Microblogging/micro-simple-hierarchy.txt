@@ -1,0 +1,47 @@
+User (Class)
+  └── ProfileSettings (Sub-class)
+
+ContentCreation (Class)
+
+ContentInteractionAndModeration (Class)
+  └── Post (Sub-class)
+  └── Likes (Sub-class)
+  └── ReblogRetweetPost (Sub-class)
+  └── Comment (Sub-class)
+  └── Reply (Sub-class)
+  └── Block (Sub-class)
+  └── Report (Sub-class)
+  └── FollowUnfollow (Sub-class)
+  └── Ask (Sub-class)
+  └── Muting (Sub-class)
+  └── Words (Sub-class)
+
+DiscoveryAndSearch (Class)
+  └── SearchFunctionality (Sub-class)
+  └── ExploreSettings (Sub-class)
+
+Notifications (Class)
+  └── NotificationSettings (Sub-class)
+  └── Preferences (Sub-class)
+
+DirectMessages (Class)
+
+Monetization (Class)
+  └── Subscription (Sub-class)
+  └── Advertisement (Sub-class)
+
+AccessibilityAndDisplay (Class)
+
+Community (Class)
+
+LiveInteractions (Class)
+  └── LiveSpacesRooms (Sub-class)
+  └── UpcomingSessions (Sub-class)
+
+Drafts (Class)
+
+Lists (Class)
+
+Bookmarks (Class)
+
+FollowerRequests (Class)

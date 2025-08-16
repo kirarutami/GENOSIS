@@ -1,0 +1,754 @@
+    <rdf:Description rdf:about="#Post_001">
+        <rdf:type rdf:resource="#Post"/>
+        <hasPostTitle>Ethical Concerns in AI</hasPostTitle>
+        <hasPostContent>What do you think about the ethical concerns in AI? Should we have stricter regulations?</hasPostContent>
+        <hasPostMedia>http://example.com/images/ai_ethics.png</hasPostMedia>
+        <hasPostCreationTimestamp>2024-01-20T14:35:22Z</hasPostCreationTimestamp>
+        <associatedWithUser rdf:resource="#User_001"/>
+        <associatedWithCommunity rdf:resource="#Community_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Draft_001">
+        <rdf:type rdf:resource="#Draft"/>
+        <hasDraftTitle>Future AI Regulations</hasDraftTitle>
+        <hasDraftContent>Draft content discussing AI governance models.</hasDraftContent>
+        <hasDraftMedia>http://example.com/drafts/ai_governance.pdf</hasDraftMedia>
+        <hasDraftSavedTimestamp>2024-01-19T18:10:30Z</hasDraftSavedTimestamp>
+        <savesPostAsDraft rdf:resource="#User_002"/>
+        <associatedWithCommunity rdf:resource="#Community_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#ScheduledPost_001">
+        <rdf:type rdf:resource="#ScheduledPost"/>
+        <hasScheduledPostTitle>AI vs Human Creativity</hasScheduledPostTitle>
+        <hasScheduledPostContent>How does AI impact human creativity in digital art?</hasScheduledPostContent>
+        <hasScheduledPostMedia>http://example.com/videos/ai_creativity.mp4</hasScheduledPostMedia>
+        <hasScheduledPublishTimestamp>2024-02-01T12:00:00Z</hasScheduledPublishTimestamp>
+        <postsScheduledPost rdf:resource="#User_003"/>
+        <associatedWithCommunity rdf:resource="#Community_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#CrossPost_001">
+        <rdf:type rdf:resource="#CrossPost"/>
+        <hasCrosspostedTitle>AI in Healthcare</hasCrosspostedTitle>
+        <hasCrosspostedContent>Discussing AI applications in modern healthcare.</hasCrosspostedContent>
+        <hasCrosspostedMedia>http://example.com/images/ai_healthcare.jpg</hasCrosspostedMedia>
+        <associatedWithOriginalPost rdf:resource="#Post_001"/>
+        <associatedWithUser rdf:resource="#User_004"/>
+        <associatedWithCommunity rdf:resource="#Community_003"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#TagContent_001">
+        <rdf:type rdf:resource="#TagContent"/>
+        <hasTagLabel>#AI #Ethics #MachineLearning</hasTagLabel>
+        <associatedWithPost rdf:resource="#Post_001"/>
+        <associatedWithUser rdf:resource="#User_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Polls_001">
+        <rdf:type rdf:resource="#Polls"/>
+        <hasPollQuestion>Should AI be regulated by governments?</hasPollQuestion>
+        <hasPollOptions>["Yes", "No", "Maybe"]</hasPollOptions>
+        <hasPollStartTime>2024-01-25T10:00:00Z</hasPollStartTime>
+        <hasPollEndTime>2024-02-01T10:00:00Z</hasPollEndTime>
+        <opensPoll rdf:resource="#User_005"/>
+        <associatedWithCommunity rdf:resource="#Community_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#FlairSystem_001">
+        <rdf:type rdf:resource="#FlairSystem"/>
+        <hasFlairLabel>Expert Contributor</hasFlairLabel>
+        <associatedWithUser rdf:resource="#User_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#AnonymousMode_001">
+        <rdf:type rdf:resource="#AnonymousMode"/>
+        <hasAnonymousPostTitle>AI and Privacy</hasAnonymousPostTitle>
+        <hasAnonymousPostContent>Can AI truly respect privacy, or is it always at odds with data collection?</hasAnonymousPostContent>
+        <hasAnonymousPostMedia>http://example.com/images/ai_privacy.png</hasAnonymousPostMedia>
+        <hasAnonymousPostTimestamp>2024-01-21T16:45:00Z</hasAnonymousPostTimestamp>
+        <associatedWithCommunity rdf:resource="#Community_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Upvote_001">
+        <rdf:type rdf:resource="#UpvoteDownvote"/>
+        <hasUpvoteTimestamp>2024-01-22T10:45:30Z</hasUpvoteTimestamp>
+        <associatedWithContent rdf:resource="#Post_001"/>
+        <upvotesContent rdf:resource="#User_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Downvote_001">
+        <rdf:type rdf:resource="#UpvoteDownvote"/>
+        <hasDownvoteTimestamp>2024-01-22T11:15:45Z</hasDownvoteTimestamp>
+        <associatedWithContent rdf:resource="#Post_002"/>
+        <downvotesContent rdf:resource="#User_003"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Like_001">
+        <rdf:type rdf:resource="#Like"/>
+        <hasLikeTimestamp>2024-01-22T12:05:30Z</hasLikeTimestamp>
+        <associatedWithContent rdf:resource="#Post_003"/>
+        <likesContent rdf:resource="#User_004"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Reply_001">
+        <rdf:type rdf:resource="#ReplyToComments"/>
+        <hasReplyText>I totally agree with your perspective on AI safety.</hasReplyText>
+        <hasReplyTimestamp>2024-01-22T13:20:00Z</hasReplyTimestamp>
+        <associatedWithComment rdf:resource="#Comment_002"/>
+        <repliesToComment rdf:resource="#User_005"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Share_001">
+        <rdf:type rdf:resource="#ShareRepost"/>
+        <hasShareTimestamp>2024-01-22T14:45:00Z</hasShareTimestamp>
+        <associatedWithContent rdf:resource="#Post_004"/>
+        <sharesContent rdf:resource="#User_006"/>
+        <sharedToCommunity rdf:resource="#Community_003"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Bookmark_001">
+        <rdf:type rdf:resource="#Bookmark"/>
+        <hasBookmarkTimestamp>2024-01-22T15:30:45Z</hasBookmarkTimestamp>
+        <associatedWithContent rdf:resource="#Post_005"/>
+        <bookmarksContent rdf:resource="#User_007"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Award_001">
+        <rdf:type rdf:resource="#GiveAwards"/>
+        <hasAwardType>Gold</hasAwardType>
+        <hasAwardTimestamp>2024-01-22T16:00:30Z</hasAwardTimestamp>
+        <associatedWithContent rdf:resource="#Post_006"/>
+        <associatedWithAwardingUser rdf:resource="#User_008"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Block_001">
+        <rdf:type rdf:resource="#BlockUnblockUser"/>
+        <hasBlockReason>Harassment</hasBlockReason>
+        <hasBlockTimestamp>2024-01-22T17:15:00Z</hasBlockTimestamp>
+        <blocksUser rdf:resource="#User_009"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Unblock_001">
+        <rdf:type rdf:resource="#BlockUnblockUser"/>
+        <hasUnblockTimestamp>2024-01-23T10:30:00Z</hasUnblockTimestamp>
+        <unblocksUser rdf:resource="#User_009"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Mute_001">
+        <rdf:type rdf:resource="#Mute"/>
+        <hasMuteTimestamp>2024-01-22T18:05:30Z</hasMuteTimestamp>
+        <mutesUser rdf:resource="#User_010"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Follow_001">
+        <rdf:type rdf:resource="#FollowTopics"/>
+        <hasFollowTimestamp>2024-01-22T19:00:00Z</hasFollowTimestamp>
+        <associatedWithTopic rdf:resource="#Topic_001"/>
+        <followsTopic rdf:resource="#User_011"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Pin_001">
+        <rdf:type rdf:resource="#PinPosts"/>
+        <hasPinTimestamp>2024-01-22T20:15:30Z</hasPinTimestamp>
+        <associatedWithPost rdf:resource="#Post_007"/>
+        <pinsPost rdf:resource="#User_012"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_001">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>This is a very informative post about AI ethics!</hasCommentText>
+        <hasCommentTimestamp>2024-01-22T21:45:00Z</hasCommentTimestamp>
+        <associatedWithContent rdf:resource="#Post_008"/>
+        <commentsOn rdf:resource="#User_013"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#User_001">
+        <rdf:type rdf:resource="#User"/>
+        <hasUsername>AIethicsGuy</hasUsername>
+        <hasAvatarURL>http://example.com/avatars/user_001.png</hasAvatarURL>
+        <hasBio>Passionate about AI Ethics and regulations.</hasBio>
+        <hasProfileVisibility>Public</hasProfileVisibility>
+        <hasPasswordHash>$2y$12$examplehash123</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>true</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>false</hasNSFWVisibilitySetting>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#User_002">
+        <rdf:type rdf:resource="#User"/>
+        <hasUsername>MLDev99</hasUsername>
+        <hasAvatarURL>http://example.com/avatars/user_002.jpg</hasAvatarURL>
+        <hasBio>Machine Learning Enthusiast</hasBio>
+        <hasProfileVisibility>Private</hasProfileVisibility>
+        <hasPasswordHash>$2y$10$examplehash234</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#ProfileSettings_001">
+        <rdf:type rdf:resource="#ProfileSettings"/>
+        <canEditProfile rdf:resource="#User_001"/>
+        <canEditAvatar rdf:resource="#User_001"/>
+        <canEditBio rdf:resource="#User_001"/>
+        <canSetProfileVisibility rdf:resource="#User_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SecuritySettings_001">
+        <rdf:type rdf:resource="#SecuritySettings"/>
+        <canEditPassword rdf:resource="#User_002"/>
+        <canEnableTwoFactorAuthentication rdf:resource="#User_002"/>
+        <canSetNSFWVisibility rdf:resource="#User_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SubscriptionPlan_001">
+        <rdf:type rdf:resource="#SubscriptionPlan"/>
+        <hasSubscriptionType>Premium</hasSubscriptionType>
+        <hasSubscriptionStartDate>2024-01-15T08:00:00Z</hasSubscriptionStartDate>
+        <hasSubscriptionEndDate>2024-07-15T08:00:00Z</hasSubscriptionEndDate>
+        <subscribesTo rdf:resource="#User_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#NotificationSettings_001">
+        <rdf:type rdf:resource="#NotificationSettings"/>
+        <hasPushNotificationEnabled>true</hasPushNotificationEnabled>
+        <hasEmailNotificationEnabled>false</hasEmailNotificationEnabled>
+        <hasInAppNotificationEnabled>true</hasInAppNotificationEnabled>
+        <configuresPushNotifications rdf:resource="#User_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#AnonymousSession_001">
+        <rdf:type rdf:resource="#AnonymousSession"/>
+        <isAnonymousModeEnabled>true</isAnonymousModeEnabled>
+        <hasAnonymousSessionID>anon_12345</hasAnonymousSessionID>
+        <expiresAt>2024-01-25T12:00:00Z</expiresAt>
+        <enablesAnonymousMode rdf:resource="#User_003"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#AccountDeactivation_001">
+        <rdf:type rdf:resource="#AccountDeactivation"/>
+        <isAccountDeactivated>false</isAccountDeactivated>
+        <deactivationReason>User temporarily inactive</deactivationReason>
+        <requestsAccountDeactivation rdf:resource="#User_004"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#AccountDeletion_001">
+        <rdf:type rdf:resource="#AccountDeletion"/>
+        <isAccountDeleted>true</isAccountDeleted>
+        <deletionReason>Privacy Concerns</deletionReason>
+        <deletionRequestedOn>2024-01-18T16:30:00Z</deletionRequestedOn>
+        <requestsAccountDeletion rdf:resource="#User_005"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Session_001">
+        <rdf:type rdf:resource="#Session"/>
+        <hasSessionID>session_67890</hasSessionID>
+        <hasLogoutTimestamp>2024-01-22T22:00:00Z</hasLogoutTimestamp>
+        <logsOutFromSession rdf:resource="#User_006"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DirectMessage_001">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+        <hasMessageContent>Hey, I saw your post about AI ethics. Are you seriously advocating for government control over AI?</hasMessageContent>
+        <hasMessageTimestamp>2024-01-20T16:05:30Z</hasMessageTimestamp>
+        <hasMessageStatus>Sent</hasMessageStatus>
+        <hasMessageFrequency>Occasional</hasMessageFrequency>
+        <sendsMessageTo rdf:resource="#User_003"/>
+        <receivesMessageFrom rdf:resource="#User_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DirectMessage_002">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+        <hasMessageContent>Not exactly. I believe in a balanced approach where there are safety measures in place.</hasMessageContent>
+        <hasMessageTimestamp>2024-01-20T16:07:45Z</hasMessageTimestamp>
+        <hasMessageStatus>Read</hasMessageStatus>
+        <hasMessageFrequency>Occasional</hasMessageFrequency>
+        <sendsMessageTo rdf:resource="#User_001"/>
+        <receivesMessageFrom rdf:resource="#User_003"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DirectMessage_003">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+        <hasMessageContent>Hmm, I see your point. But how do you think regulations should be implemented?</hasMessageContent>
+        <hasMessageTimestamp>2024-01-20T16:10:22Z</hasMessageTimestamp>
+        <hasMessageStatus>Delivered</hasMessageStatus>
+        <hasMessageFrequency>Occasional</hasMessageFrequency>
+        <sendsMessageTo rdf:resource="#User_003"/>
+        <receivesMessageFrom rdf:resource="#User_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#MuteUser_001">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+        <hasMuteTimestamp>2024-01-21T10:30:00Z</hasMuteTimestamp>
+        <mutesUser rdf:resource="#User_004"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#BlockUser_001">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+        <hasBlocksTimestamp>2024-01-21T11:15:30Z</hasBlocksTimestamp>
+        <blocksUser rdf:resource="#User_005"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#GroupMessage_001">
+        <rdf:type rdf:resource="#GroupMessaging"/>
+        <hasGroupMessageContent>Welcome to the AI Research discussion group!</hasGroupMessageContent>
+        <hasGroupCreatedDate>2024-01-19T08:00:00Z</hasGroupCreatedDate>
+        <hasGroupName>AI Research and Ethics</hasGroupName>
+        <hasGroupMessageFrequency>Daily</hasGroupMessageFrequency>
+        <hasParticipants rdf:resource="#User_001"/>
+        <hasParticipants rdf:resource="#User_002"/>
+        <hasParticipants rdf:resource="#User_003"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#GroupMessage_002">
+        <rdf:type rdf:resource="#GroupMessaging"/>
+        <hasGroupMessageContent>AI can enhance creativity, but it also raises concerns.</hasGroupMessageContent>
+        <hasGroupCreatedDate>2024-01-19T10:30:00Z</hasGroupCreatedDate>
+        <hasGroupName>AI and Human Creativity</hasGroupName>
+        <hasGroupMessageFrequency>Weekly</hasGroupMessageFrequency>
+        <hasParticipants rdf:resource="#User_004"/>
+        <hasParticipants rdf:resource="#User_005"/>
+        <hasParticipants rdf:resource="#User_006"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#JoinGroup_001">
+        <rdf:type rdf:resource="#GroupMessaging"/>
+        <hasJoinTimestamp>2024-01-19T12:00:00Z</hasJoinTimestamp>
+        <joinsGroupChat rdf:resource="#User_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#LeaveGroup_001">
+        <rdf:type rdf:resource="#GroupMessaging"/>
+        <hasLeaveTimestamp>2024-01-20T18:00:00Z</hasLeaveTimestamp>
+        <leavesGroupChat rdf:resource="#User_005"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#MuteGroupChat_001">
+        <rdf:type rdf:resource="#GroupMessaging"/>
+        <hasMuteTimestamp>2024-01-22T14:45:00Z</hasMuteTimestamp>
+        <mutesGroupChat rdf:resource="#User_006"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#GlobalSearch_001">
+        <rdf:type rdf:resource="#GlobalSearch"/>
+        <hasSearchKeyword>AI Ethics</hasSearchKeyword>
+        <hasSearchTimestamp>2024-01-20T14:40:00Z</hasSearchTimestamp>
+        <searchesFor rdf:resource="#Post_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#GlobalSearch_002">
+        <rdf:type rdf:resource="#GlobalSearch"/>
+        <hasSearchKeyword>Machine Learning Regulations</hasSearchKeyword>
+        <hasSearchTimestamp>2024-01-21T09:30:45Z</hasSearchTimestamp>
+        <searchesFor rdf:resource="#Post_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#AdvancedSearch_001">
+        <rdf:type rdf:resource="#AdvancedSearch"/>
+        <hasSearchCriteria>{"keyword": "AI", "date_range": "last_week", "flair": "Discussion"}</hasSearchCriteria>
+        <hasSearchResultCount>25</hasSearchResultCount>
+        <appliesSearchFilter rdf:resource="#User_003"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#AdvancedSearch_002">
+        <rdf:type rdf:resource="#AdvancedSearch"/>
+        <hasSearchCriteria>{"keyword": "Cybersecurity", "date_range": "last_month", "tags": "privacy"}</hasSearchCriteria>
+        <hasSearchResultCount>15</hasSearchResultCount>
+        <appliesSearchFilter rdf:resource="#User_004"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SearchFilter_001">
+        <rdf:type rdf:resource="#SearchFilter"/>
+        <hasFilterType>Flair</hasFilterType>
+        <hasFilterValue>Technology</hasFilterValue>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SearchFilter_002">
+        <rdf:type rdf:resource="#SearchFilter"/>
+        <hasFilterType>Tags</hasFilterType>
+        <hasFilterValue>Machine Learning</hasFilterValue>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#TrendSearch_001">
+        <rdf:type rdf:resource="#TrendSearch"/>
+        <hasTrendingKeyword>AI Bias</hasTrendingKeyword>
+        <hasTrendingScore>92.5</hasTrendingScore>
+        <viewsTrendingContent rdf:resource="#TrendingContent_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#TrendSearch_002">
+        <rdf:type rdf:resource="#TrendSearch"/>
+        <hasTrendingKeyword>Ethical AI</hasTrendingKeyword>
+        <hasTrendingScore>85.0</hasTrendingScore>
+        <viewsTrendingContent rdf:resource="#TrendingContent_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#TrendingContent_001">
+        <rdf:type rdf:resource="#TrendingContent"/>
+        <associatedWithTopic rdf:resource="#Topic_001"/>
+        <associatedWithContent rdf:resource="#Post_003"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#TrendingContent_002">
+        <rdf:type rdf:resource="#TrendingContent"/>
+        <associatedWithTopic rdf:resource="#Topic_002"/>
+        <associatedWithContent rdf:resource="#Post_004"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#UserAction_001">
+        <rdf:type rdf:resource="#UserAction"/>
+        <hasActionType>EditProfile</hasActionType>
+        <hasTimestamp>2024-01-19T10:15:00Z</hasTimestamp>
+        <hasReason>Updated bio with latest research interests</hasReason>
+        <performedBy rdf:resource="#User_001"/>
+        <associatedWithEntity rdf:resource="#ProfileSettings_001"/>
+        <loggedBySystem rdf:resource="#SystemLogger_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#UserAction_002">
+        <rdf:type rdf:resource="#UserAction"/>
+        <hasActionType>EnableTwoFactorAuth</hasActionType>
+        <hasTimestamp>2024-01-20T08:30:45Z</hasTimestamp>
+        <performedBy rdf:resource="#User_002"/>
+        <associatedWithEntity rdf:resource="#SecuritySettings_001"/>
+        <loggedBySystem rdf:resource="#SystemLogger_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#UserAction_003">
+        <rdf:type rdf:resource="#UserAction"/>
+        <hasActionType>RequestAccountDeletion</hasActionType>
+        <hasTimestamp>2024-01-21T14:00:00Z</hasTimestamp>
+        <hasReason>Privacy concerns</hasReason>
+        <performedBy rdf:resource="#User_005"/>
+        <associatedWithEntity rdf:resource="#AccountDeletion_001"/>
+        <loggedBySystem rdf:resource="#SystemLogger_003"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#UserAction_004">
+        <rdf:type rdf:resource="#UserAction"/>
+        <hasActionType>RequestAccountDeactivation</hasActionType>
+        <hasTimestamp>2024-01-22T12:45:00Z</hasTimestamp>
+        <hasReason>Taking a break from social media</hasReason>
+        <performedBy rdf:resource="#User_004"/>
+        <associatedWithEntity rdf:resource="#AccountDeactivation_001"/>
+        <loggedBySystem rdf:resource="#SystemLogger_004"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#UserAction_005">
+        <rdf:type rdf:resource="#UserAction"/>
+        <hasActionType>ChangeSubscriptionPlan</hasActionType>
+        <hasTimestamp>2024-01-23T15:30:00Z</hasTimestamp>
+        <hasReason>Upgrading to Premium for additional features</hasReason>
+        <performedBy rdf:resource="#User_006"/>
+        <associatedWithEntity rdf:resource="#SubscriptionPlan_001"/>
+        <loggedBySystem rdf:resource="#SystemLogger_005"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#UserAction_006">
+        <rdf:type rdf:resource="#UserAction"/>
+        <hasActionType>ModifyNotificationSettings</hasActionType>
+        <hasTimestamp>2024-01-24T09:20:00Z</hasTimestamp>
+        <performedBy rdf:resource="#User_007"/>
+        <associatedWithEntity rdf:resource="#NotificationSettings_001"/>
+        <loggedBySystem rdf:resource="#SystemLogger_006"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#UserAction_007">
+        <rdf:type rdf:resource="#UserAction"/>
+        <hasActionType>Logout</hasActionType>
+        <hasTimestamp>2024-01-22T22:00:00Z</hasTimestamp>
+        <performedBy rdf:resource="#User_008"/>
+        <associatedWithEntity rdf:resource="#Session_001"/>
+        <loggedBySystem rdf:resource="#SystemLogger_007"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#UserAction_008">
+        <rdf:type rdf:resource="#UserAction"/>
+        <hasActionType>SearchQuery</hasActionType>
+        <hasTimestamp>2024-01-20T14:40:00Z</hasTimestamp>
+        <hasReason>Looking for discussions on AI Ethics</hasReason>
+        <performedBy rdf:resource="#User_009"/>
+        <associatedWithEntity rdf:resource="#GlobalSearch_001"/>
+        <loggedBySystem rdf:resource="#SystemLogger_008"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#UserAction_009">
+        <rdf:type rdf:resource="#UserAction"/>
+        <hasActionType>ViewTrendingContent</hasActionType>
+        <hasTimestamp>2024-01-21T18:10:00Z</hasTimestamp>
+        <performedBy rdf:resource="#User_010"/>
+        <associatedWithEntity rdf:resource="#TrendingContent_001"/>
+        <loggedBySystem rdf:resource="#SystemLogger_009"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SystemLogger_001">
+        <rdf:type rdf:resource="#SystemLogger"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SystemLogger_002">
+        <rdf:type rdf:resource="#SystemLogger"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SystemLogger_003">
+        <rdf:type rdf:resource="#SystemLogger"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SystemLogger_004">
+        <rdf:type rdf:resource="#SystemLogger"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SystemLogger_005">
+        <rdf:type rdf:resource="#SystemLogger"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SystemLogger_006">
+        <rdf:type rdf:resource="#SystemLogger"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SystemLogger_007">
+        <rdf:type rdf:resource="#SystemLogger"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SystemLogger_008">
+        <rdf:type rdf:resource="#SystemLogger"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SystemLogger_009">
+        <rdf:type rdf:resource="#SystemLogger"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Community_001">
+        <rdf:type rdf:resource="#Community"/>
+        <hasCommunityName>AI Research and Ethics</hasCommunityName>
+        <hasCommunityDescription>A place for discussing AI regulations, ethics, and future implications.</hasCommunityDescription>
+        <hasCommunityTheme>Technology</hasCommunityTheme>
+        <hasCommunityCreationDate>2023-12-10T10:00:00Z</hasCommunityCreationDate>
+        <createdByUser rdf:resource="#User_001"/>
+        <hasCommunityRules rdf:resource="#CommunityRules_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Community_002">
+        <rdf:type rdf:resource="#Community"/>
+        <hasCommunityName>Machine Learning Insights</hasCommunityName>
+        <hasCommunityDescription>Sharing ML advancements and best practices.</hasCommunityDescription>
+        <hasCommunityTheme>Education</hasCommunityTheme>
+        <hasCommunityCreationDate>2023-11-05T15:30:00Z</hasCommunityCreationDate>
+        <createdByUser rdf:resource="#User_002"/>
+        <hasCommunityRules rdf:resource="#CommunityRules_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#CommunityRules_001">
+        <rdf:type rdf:resource="#CommunityRules"/>
+        <hasRuleDescription>All posts must be related to AI ethics and research.</hasRuleDescription>
+        <hasRuleType>Content</hasRuleType>
+        <addedByModerator rdf:resource="#Moderator_001"/>
+        <associatedWithCommunity rdf:resource="#Community_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#CommunityRules_002">
+        <rdf:type rdf:resource="#CommunityRules"/>
+        <hasRuleDescription>No spam or self-promotion.</hasRuleDescription>
+        <hasRuleType>Behavior</hasRuleType>
+        <addedByModerator rdf:resource="#Moderator_002"/>
+        <associatedWithCommunity rdf:resource="#Community_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#CommunityEntry_001">
+        <rdf:type rdf:resource="#CommunityEntry"/>
+        <hasJoinTimestamp>2024-01-15T09:00:00Z</hasJoinTimestamp>
+        <hasFollowStatus>true</hasFollowStatus>
+        <joinsCommunity rdf:resource="#User_003"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SpotlightCommunity_001">
+        <rdf:type rdf:resource="#SpotlightCommunity"/>
+        <hasSpotlightReason>Community recognized for in-depth discussions on AI regulations.</hasSpotlightReason>
+        <highlightsCommunity rdf:resource="#Community_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#CommunityNotifications_001">
+        <rdf:type rdf:resource="#CommunityNotifications"/>
+        <hasNotificationType>Post</hasNotificationType>
+        <hasNotificationFrequency>Daily Digest</hasNotificationFrequency>
+        <customizesCommunityNotification rdf:resource="#User_004"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#CommunityReputation_001">
+        <rdf:type rdf:resource="#CommunityReputation"/>
+        <hasKarmaPoints>3500</hasKarmaPoints>
+        <hasReputationLevel>Gold</hasReputationLevel>
+        <earnedByUser rdf:resource="#User_005"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Leaderboards_001">
+        <rdf:type rdf:resource="#Leaderboards"/>
+        <hasLeaderboardType>Karma</hasLeaderboardType>
+        <displaysTopContributor rdf:resource="#User_006"/>
+        <displaysTopEngagement rdf:resource="#User_007"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Moderator_001">
+        <rdf:type rdf:resource="#Moderator"/>
+        <hasModeratorRoleType>Lead Moderator</hasModeratorRoleType>
+        <hasJoinDateAsModerator>2023-12-15T14:00:00Z</hasJoinDateAsModerator>
+        <hasModeratorPermissions>EditRules, BanUsers, ManagePosts</hasModeratorPermissions>
+        <isActiveModerator>true</isActiveModerator>
+        <hasModeratorReputation>1500</hasModeratorReputation>
+        <moderatesCommunity rdf:resource="#Community_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#ModeratorActions_001">
+        <rdf:type rdf:resource="#ModeratorActions"/>
+        <approvesPost rdf:resource="#Post_001"/>
+        <deniesPost rdf:resource="#Post_002"/>
+        <bansUser rdf:resource="#User_008"/>
+        <locksPost rdf:resource="#Post_003"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#ModerationQueue_001">
+        <rdf:type rdf:resource="#ModerationQueue"/>
+        <hasModerationPriority>High</hasModerationPriority>
+        <hasQueueCreationTimestamp>2024-01-20T18:00:00Z</hasQueueCreationTimestamp>
+        <hasProcessingStatus>Pending</hasProcessingStatus>
+        <processedByModerator rdf:resource="#Moderator_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Reports_001">
+        <rdf:type rdf:resource="#Reports"/>
+        <hasReportReason>Harassment</hasReportReason>
+        <hasReportTimestamp>2024-01-21T14:30:00Z</hasReportTimestamp>
+        <isFiledAgainst rdf:resource="#User_009"/>
+        <isFiledFor rdf:resource="#Post_004"/>
+        <isFiledBy rdf:resource="#User_010"/>
+        <reviewedBy rdf:resource="#Moderator_001"/>
+        <hasResolutionStatus>Approved</hasResolutionStatus>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#CommunitySettings_001">
+        <rdf:type rdf:resource="#CommunitySettings"/>
+        <hasBannerImageURL>http://example.com/banners/ai_research.png</hasBannerImageURL>
+        <hasDescription>Settings for AI Research and Ethics community.</hasDescription>
+        <hasPostingRules>Only research-related content allowed.</hasPostingRules>
+        <canAllowAnonymousPosts>false</canAllowAnonymousPosts>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#ModeratorStatistics_001">
+        <rdf:type rdf:resource="#ModeratorStatistics"/>
+        <hasTotalPostsApproved>150</hasTotalPostsApproved>
+        <hasTotalPostsDenied>20</hasTotalPostsDenied>
+        <hasTotalUsersBanned>5</hasTotalUsersBanned>
+        <hasTotalCommentsRemoved>45</hasTotalCommentsRemoved>
+        <hasAverageResponseTime>2.5</hasAverageResponseTime>
+        <hasActivityLevel>High</hasActivityLevel>
+        <hasKarmaPointsEarned>200</hasKarmaPointsEarned>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#EngagementMetrics_001">
+        <rdf:type rdf:resource="#EngagementMetrics"/>
+        <hasViewsCount>12400</hasViewsCount>
+        <hasVotesCount>320</hasVotesCount>
+        <hasCommentsCount>67</hasCommentsCount>
+        <hasSharesCount>45</hasSharesCount>
+        <associatedWithContent rdf:resource="#Post_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#EngagementMetrics_002">
+        <rdf:type rdf:resource="#EngagementMetrics"/>
+        <hasViewsCount>9400</hasViewsCount>
+        <hasVotesCount>210</hasVotesCount>
+        <hasCommentsCount>54</hasCommentsCount>
+        <hasSharesCount>30</hasSharesCount>
+        <associatedWithContent rdf:resource="#Post_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#CommunityMetrics_001">
+        <rdf:type rdf:resource="#CommunityMetrics"/>
+        <hasMemberCount>15200</hasMemberCount>
+        <hasEngagementRate>8.5</hasEngagementRate>
+        <hasActiveMembersCount>5200</hasActiveMembersCount>
+        <tracksGrowth rdf:resource="#Community_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#CommunityMetrics_002">
+        <rdf:type rdf:resource="#CommunityMetrics"/>
+        <hasMemberCount>8700</hasMemberCount>
+        <hasEngagementRate>6.8</hasEngagementRate>
+        <hasActiveMembersCount>3200</hasActiveMembersCount>
+        <tracksGrowth rdf:resource="#Community_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#UserInsights_001">
+        <rdf:type rdf:resource="#UserInsights"/>
+        <hasDraftViewsCount>520</hasDraftViewsCount>
+        <hasDraftCommentsCount>15</hasDraftCommentsCount>
+        <hasDraftSharesCount>8</hasDraftSharesCount>
+        <hasDraftEngagementRate>4.2</hasDraftEngagementRate>
+        <tracksPerformance rdf:resource="#Draft_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#UserInsights_002">
+        <rdf:type rdf:resource="#UserInsights"/>
+        <hasDraftViewsCount>780</hasDraftViewsCount>
+        <hasDraftCommentsCount>22</hasDraftCommentsCount>
+        <hasDraftSharesCount>12</hasDraftSharesCount>
+        <hasDraftEngagementRate>5.1</hasDraftEngagementRate>
+        <tracksPerformance rdf:resource="#Draft_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#NotificationDevice_001">
+        <rdf:type rdf:resource="#NotificationDevice"/>
+        <hasDeviceType>Mobile</hasDeviceType>
+        <hasDeviceID>device_abc123</hasDeviceID>
+        <configuresPushNotifications rdf:resource="#User_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#NotificationDevice_002">
+        <rdf:type rdf:resource="#NotificationDevice"/>
+        <hasDeviceType>Desktop</hasDeviceType>
+        <hasDeviceID>device_xyz789</hasDeviceID>
+        <configuresPushNotifications rdf:resource="#User_002"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#EmailNotifications_001">
+        <rdf:type rdf:resource="#EmailNotifications"/>
+        <hasEmailFrequency>Daily</hasEmailFrequency>
+        <configuresEmailNotifications rdf:resource="#User_003"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#EmailNotifications_002">
+        <rdf:type rdf:resource="#EmailNotifications"/>
+        <hasEmailFrequency>Weekly</hasEmailFrequency>
+        <configuresEmailNotifications rdf:resource="#User_004"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#NotificationPreferences_001">
+        <rdf:type rdf:resource="#NotificationPreferences"/>
+        <hasPreferenceType>Mentions</hasPreferenceType>
+        <hasUnreadCount>5</hasUnreadCount>
+        <customizesInAppNotifications rdf:resource="#User_005"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#NotificationPreferences_002">
+        <rdf:type rdf:resource="#NotificationPreferences"/>
+        <hasPreferenceType>Replies</hasPreferenceType>
+        <hasUnreadCount>2</hasUnreadCount>
+        <customizesInAppNotifications rdf:resource="#User_006"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#WeeklyDigests_001">
+        <rdf:type rdf:resource="#WeeklyDigests"/>
+        <receivesWeeklyDigest rdf:resource="#User_007"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DigestSummary_001">
+        <rdf:type rdf:resource="#DigestSummary"/>
+        <hasSummaryDate>2024-01-21T12:00:00Z</hasSummaryDate>
+        <hasDigestType>Activity</hasDigestType>
+        <hasContentHighlights rdf:resource="#Post_001"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DigestSummary_002">
+        <rdf:type rdf:resource="#DigestSummary"/>
+        <hasSummaryDate>2024-01-21T12:00:00Z</hasSummaryDate>
+        <hasDigestType>Recommendations</hasDigestType>
+        <hasContentHighlights rdf:resource="#Post_002"/>
+    </rdf:Description>

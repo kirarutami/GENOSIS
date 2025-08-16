@@ -1,0 +1,60 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+# MCSS prefix tidak secara eksplisit dibutuhkan di sini karena properti
+# seperti hasLiveStartTime, hasDonationAmount, dll. ada di genosisOwl:
+# berdasarkan definisi dan contoh instance di GENOSIS.txt Anda.
+
+SELECT 
+  ?liveEventIRI ?liveEventLabel ?liveStartTime ?liveEndTime
+  ?interactionType 
+  ?actor ?actorLabel 
+  ?interactionTimestamp 
+  ?interactionTextOrAmount  # Akan berisi teks komentar atau jumlah donasi
+  ?platform
+  ?ipAddress                # IP address terkait interaksi (jika ada)
+  ?deviceInfo               # Info perangkat terkait interaksi (jika ada)
+WHERE {
+  # Mencari semua event Live dari platform MCSS
+  ?liveEventIRI rdf:type genosisOwl:MCSS:Live ; # Kelas spesifik untuk Live Event di MCSS
+                genosisOwl:belongsToPlatform ?platform .
+  
+  # Filter hanya untuk platform MCSS (YouTube atau TikTok)
+  FILTER(STR(?platform) = "YouTube" || STR(?platform) = "TikTok")
+
+  OPTIONAL { ?liveEventIRI rdfs:label ?liveEventLabel . }
+  OPTIONAL { ?liveEventIRI genosisOwl:hasLiveStartTime ?liveStartTime . } #
+  OPTIONAL { ?liveEventIRI genosisOwl:hasLiveEndTime ?liveEndTime . }     #
+  
+  {
+    # Jenis Interaksi 1: Komentar pada Live Event
+    BIND("Live Comment" AS ?interactionType)
+    ?interactionInstance rdf:type genosisOwl:MCSS:CommentAction ;    # Komentar saat Live adalah MCSS:CommentAction
+                         genosisOwl:commentsOnContent ?liveEventIRI ; # Komentar pada Live Event tertentu
+                         genosisOwl:commentedBy ?actor ;              # Pengguna yang berkomentar
+                         genosisOwl:hasInteractionTimestamp ?interactionTimestamp ; # Waktu komentar
+                         genosisOwl:hasContentText ?interactionTextOrAmount .      # Isi teks komentar
+    # Metadata tambahan untuk komentar
+    OPTIONAL { ?interactionInstance genosisOwl:hasIpAddress ?ipAddress . }    #
+    OPTIONAL { ?interactionInstance genosisOwl:hasDeviceInfo ?deviceInfo . }  #
+  }
+  UNION
+  {
+    # Jenis Interaksi 2: SuperChat selama Live Event
+    BIND("SuperChat" AS ?interactionType)
+    ?interactionInstance rdf:type genosisOwl:MCSS:SuperChat ;        # Instance SuperChat
+                         genosisOwl:belongsToLive ?liveEventIRI ;   # SuperChat terkait Live Event tertentu
+                         genosisOwl:donatedBy ?actor ;                # Pengguna yang berdonasi
+                         genosisOwl:hasDonationTimestamp ?interactionTimestamp ; # Waktu donasi
+                         genosisOwl:hasDonationAmount ?interactionTextOrAmount . # Jumlah donasi
+    # SuperChat instances di GENOSIS.txt tidak secara eksplisit punya IP/Device,
+    # tapi kita bisa tambahkan OPTIONAL jika kelasnya mendukung.
+    # Diasumsikan SuperChat sebagai interaksi bisa saja memiliki properti ini.
+    OPTIONAL { ?interactionInstance genosisOwl:hasIpAddress ?ipAddress . } 
+    OPTIONAL { ?interactionInstance genosisOwl:hasDeviceInfo ?deviceInfo . } 
+  }
+
+  # Mengambil label untuk aktor (pengomentar/donatur)
+  OPTIONAL { ?actor rdfs:label ?actorLabel . }
+}
+ORDER BY ?liveEventIRI DESC(?interactionTimestamp)

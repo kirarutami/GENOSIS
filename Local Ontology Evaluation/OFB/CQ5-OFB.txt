@@ -1,0 +1,59 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#> # Ontology namespace
+
+# Query Example for CQ5: Identifying Networks/Associations between Users (CONCAT Removed)
+
+SELECT DISTINCT ?user1 ?user2 ?associationType (GROUP_CONCAT(DISTINCT STR(?context); SEPARATOR=", ") AS ?contexts)
+WHERE {
+  {
+    # Association Type 1: Direct Messaging (either direction)
+    BIND("Direct Message Interaction" AS ?associationType)
+    {
+      ?dm rdf:type ex:DirectMessaging .
+      ?dm ex:messageSender ?user1 .
+      ?dm ex:messageReceiver ?user2 .
+      ?dm ex:belongsToPlatform ?context .
+    } UNION {
+      ?dm rdf:type ex:DirectMessaging .
+      ?dm ex:messageSender ?user2 .
+      ?dm ex:messageReceiver ?user1 .
+      ?dm ex:belongsToPlatform ?context .
+    }
+  }
+  UNION
+  {
+    # Association Type 2: Commenting on each other's posts
+    BIND("Commenting on each other's posts" AS ?associationType)
+    ?comment rdf:type ex:Comment .
+    ?comment ex:performedBy ?user1 .
+    ?comment ex:associatedWithContent ?post .
+    ?post rdf:type ex:Post .
+    ?post ex:associatedWithUser ?user2 .
+    ?comment ex:belongsToPlatform ?context .
+  }
+  UNION
+  {
+    # Association Type 3: Membership in the same *suspicious* community
+    VALUES ?suspiciousCommunity { ex:DeepMarketSub ex:CardingHubSub }
+
+    # *** BIND DIMODIFIKASI DI SINI (CONCAT DIHAPUS) ***
+    BIND("Shared Suspicious Community" AS ?associationType) # Label lebih sederhana
+    BIND(?suspiciousCommunity AS ?context) # ?context menyimpan URI komunitas spesifik
+
+    ?user1 rdf:type ex:User .
+    { ?user1 ex:joinsCommunity ?suspiciousCommunity . } UNION { ?user1 ex:followsCommunity ?suspiciousCommunity . }
+    ?user2 rdf:type ex:User .
+    { ?user2 ex:joinsCommunity ?suspiciousCommunity . } UNION { ?user2 ex:followsCommunity ?suspiciousCommunity . }
+  }
+
+  # Common Filters
+  FILTER (?user1 != ?user2)
+  FILTER (STR(?user1) < STR(?user2))
+
+}
+GROUP BY ?user1 ?user2 ?associationType
+ORDER BY ?user1 ?user2 ?associationType

@@ -1,0 +1,335 @@
+==== OSN CQ6 ====
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>  # Sesuaikan dengan namespace RDF Anda
+
+SELECT ?interactionType ?user ?content ?timestamp ?location ?device ?ip
+WHERE {
+  {
+    # Menarik metadata dari postingan
+    ?post rdf:type ex:Posts ;
+          ex:hasPostContent ?content ;
+          ex:hasPostTimestamp ?timestamp ;
+          ex:belongsToPlatform ?platform ;
+          ex:hasMessageLocation ?location ;
+          ex:hasDeviceInfo ?device ;
+          ex:hasUserInteractionIP ?ip .
+    BIND("Post" AS ?interactionType)
+    BIND(?post AS ?user)
+  }
+  UNION
+  {
+    # Menarik metadata dari komentar
+    ?comment rdf:type ex:TextComment ;
+             ex:hasCommentText ?content ;
+             ex:hasCommentTimestamp ?timestamp ;
+             ex:hasMessageLocation ?location ;
+             ex:hasDeviceInfo ?device ;
+             ex:hasUserInteractionIP ?ip .
+    BIND("Comment" AS ?interactionType)
+    BIND(?comment AS ?user)
+  }
+  UNION
+  {
+    # Menarik metadata dari direct message
+    ?dm rdf:type ex:TextMessage ;
+        ex:hasMessageText ?content ;
+        ex:hasMessageSendTimestamp ?timestamp ;
+        ex:hasMessageLocation ?location ;
+        ex:hasDeviceInfo ?device ;
+        ex:sendsTextMessage ?user .
+    OPTIONAL { ?dm ex:hasUserInteractionIP ?ip } 
+    BIND("Direct Message" AS ?interactionType)
+  }
+}
+ORDER BY ?timestamp
+
+
+
+
+
+==== MP CQ6 ====
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?content ?timestamp ?device ?ip ?user ?platform ?interactionType
+WHERE {
+  {
+    # Query untuk Post
+    ?post rdf:type ex:Post ;
+          ex:hasPostContent ?content ;
+          ex:hasPostTimestamp ?timestamp ;
+          ex:hasPostDeviceInfo ?device ;
+          ex:hasPostInteractionIP ?ip ;
+          ex:postedBy ?user ;
+          ex:belongsToPlatform ?platform .
+    BIND("Post" AS ?interactionType)
+  }
+  UNION
+  {
+    # Query untuk Direct Messages (DM)
+    ?dm rdf:type ex:DirectMessages ;
+        ex:hasDMContent ?content ;
+        ex:hasDMTimestamp ?timestamp ;
+        ex:hasDMDevice ?device ;
+        ex:hasDMIP ?ip ;
+        ex:dmSender ?user ;
+        ex:belongsToPlatform ?platform .
+    BIND("DM" AS ?interactionType)
+  }
+  UNION
+  {
+    # Query untuk Komentar
+    ?comment rdf:type ex:Comment ;
+             ex:hasCommentContent ?content ;
+             ex:hasCommentTimestamp ?timestamp ;
+             ex:hasCommentDevice ?device ;
+             ex:hasCommentIP ?ip ;
+             ex:commentedBy ?user ;
+             ex:belongsToPlatform ?platform .
+    BIND("Comment" AS ?interactionType)
+  }
+}
+ORDER BY ?timestamp
+
+
+
+
+
+==== MCSS CQ6 ====
+
+===== Versi 1 MCSS CQ6 kasus TikTok
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# Menggunakan namespace dasar dari file RDF untuk elemen ontologi
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+# CQ6: How can metadata from social media platforms be used to corroborate the timeline of events?
+# Pendekatan: Mengambil timestamp dari peristiwa kunci dalam kasus TikTok
+# (Postingan Ethan, komentar terkait, DM) dan mengurutkannya.
+
+SELECT ?timestamp ?eventType ?description ?actor
+WHERE {
+  {
+    # Postingan ShortVideo oleh Ethan
+    BIND(ex:EthanBlackoutChallengePost AS ?event)
+    ?event rdf:type ex:ShortVideoPost ;
+           ex:hasPostTimestamp ?timestamp ;   # Metadata: Waktu posting
+           ex:hasCaption ?description .       # Detail: Caption postingan
+    BIND(ex:Ethan AS ?actor)                 # Pelaku: Ethan
+    BIND("Post" AS ?eventType)               # Jenis Peristiwa: Postingan
+  }
+  UNION
+  {
+    # Komentar pada postingan Ethan oleh aktor kunci
+    ?event rdf:type ex:Comment ;
+           ex:commentsOnContent ex:EthanBlackoutChallengePost ; # Terkait dengan postingan Ethan
+           ex:hasCommentTimestamp ?timestamp ; # Metadata: Waktu komentar
+           ex:commentedBy ?actor ;          # Pelaku: Pengirim komentar
+           ex:hasCommentText ?description .   # Detail: Teks komentar
+    # Filter hanya untuk komentar dari pengguna yang relevan dengan interaksi
+    FILTER(?actor IN (ex:MaxDares, ex:SarahCares, ex:RiskyKing, ex:JakeMaster))
+    BIND("Comment" AS ?eventType)            # Jenis Peristiwa: Komentar
+  }
+  UNION
+  {
+    # Pesan Langsung antara Ethan dan MaxDares (termasuk dari orang tua Ethan)
+    ?event rdf:type ex:DirectMessage .       # Instance Pesan Langsung
+    ?event ex:hasTimestamp ?timestamp ;      # Metadata: Waktu pengiriman DM
+           ex:hasTextContent ?description ;  # Detail: Teks DM
+           ex:sentBy ?sender ;
+           ex:sentTo ?recipient .
+    # Filter hanya untuk DM antara Ethan dan MaxDares, atau DM dari orang tua (via akun Ethan) ke MaxDares
+    FILTER( (?sender = ex:Ethan && ?recipient = ex:MaxDares) ||
+            (?sender = ex:MaxDares && ?recipient = ex:Ethan) ||
+            (?event = ex:DM010 && ?sender = ex:Ethan && ?recipient = ex:MaxDares) # DM penting dari orang tua
+          )
+    BIND(?sender AS ?actor)                   # Pelaku: Pengirim DM
+    BIND("DirectMessage" AS ?eventType)      # Jenis Peristiwa: Pesan Langsung
+  }
+}
+ORDER BY ?timestamp # Mengurutkan hasil berdasarkan waktu
+
+===== Versi 2 MCSS CQ6 Kasus YouTube
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# Menggunakan namespace dasar dari file RDF untuk elemen ontologi
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+# CQ6: How can metadata from social media platforms be used to corroborate the timeline of events?
+# Pendekatan: Mengambil timestamp dari peristiwa kunci dalam kasus hak cipta YouTube
+# (Publikasi Video, Komentar terkait sengketa, Laporan) dan mengurutkannya.
+
+SELECT ?timestamp ?eventType ?description ?actorOrTarget
+WHERE {
+  {
+    # Publikasi Video Asli oleh Lisa
+    BIND(ex:LisaSwissAlpsVideo AS ?event)
+    ?event rdf:type ex:Video ;
+           ex:hasPublicationDate ?timestamp ;  # Metadata: Waktu publikasi
+           ex:hasTitle ?description .          # Detail: Judul video
+    BIND(ex:Lisa AS ?actorOrTarget)            # Pelaku/Pemilik: Lisa
+    BIND("Publikasi Video (Asli)" AS ?eventType)
+  }
+  UNION
+  {
+    # Publikasi Video (Diduga Dicuri) oleh WanderlustTravels
+    BIND(ex:StolenSwissAlpsVideo AS ?event)
+    ?event rdf:type ex:Video ;
+           ex:hasPublicationDate ?timestamp ;  # Metadata: Waktu publikasi
+           ex:hasTitle ?description .          # Detail: Judul video
+    BIND(ex:WanderlustTravels AS ?actorOrTarget) # Pelaku/Pemilik: WanderlustTravels
+    BIND("Publikasi Video (Diduga Dicuri)" AS ?eventType)
+  }
+  UNION
+  {
+    # Komentar terkait sengketa di video Lisa
+    ?event rdf:type ex:Comment ;
+           ex:commentsOnContent ex:LisaSwissAlpsVideo ; # Terkait video Lisa
+           ex:hasCommentTimestamp ?timestamp ; # Metadata: Waktu komentar
+           ex:commentedBy ?actorOrTarget ;     # Pelaku: Pengirim komentar
+           ex:hasCommentText ?description .    # Detail: Teks komentar
+    # Filter hanya komentar relevan dengan sengketa awal
+    FILTER(?event IN (ex:Comment001, ex:Comment002, ex:Comment003))
+    BIND("Komentar di Video Asli" AS ?eventType)
+  }
+  UNION
+  {
+    # Komentar terkait sengketa di video WanderlustTravels
+    ?event rdf:type ex:Comment ;
+           ex:commentsOnContent ex:StolenSwissAlpsVideo ; # Terkait video Wanderlust
+           ex:hasCommentTimestamp ?timestamp ; # Metadata: Waktu komentar
+           ex:commentedBy ?actorOrTarget ;     # Pelaku: Pengirim komentar
+           ex:hasCommentText ?description .    # Detail: Teks komentar
+    # Filter hanya komentar relevan dengan konfrontasi
+    FILTER(?event IN (ex:Comment004, ex:Comment005, ex:Comment006, ex:Comment007, ex:Comment008, ex:Comment009, ex:Comment010, ex:Comment011, ex:Comment012))
+    BIND("Komentar di Video (Diduga Dicuri)" AS ?eventType)
+  }
+  UNION
+  {
+    # Tindakan Pelaporan oleh Lisa
+    BIND(ex:Report001 AS ?event)
+    ?event rdf:type ex:Report ;
+           ex:hasReportTimestamp ?timestamp ;  # Metadata: Waktu pelaporan
+           ex:hasReportReason ?description ;   # Detail: Alasan laporan
+           ex:reportsUser ?userReported .     # Mendapatkan pengguna yang dilaporkan
+    BIND(?userReported AS ?actorOrTarget)      # Target: Pengguna yang dilaporkan
+    BIND("Tindakan Pelaporan" AS ?eventType)
+    # Pastikan ini adalah instance laporan yang spesifik dari kasus ini
+    FILTER(?event = ex:Report001)
+  }
+  UNION
+  {
+    # Awal Siaran Langsung oleh Lisa
+    BIND(ex:LisaLiveEvent001 AS ?event)
+    ?event rdf:type ex:Live ;
+           ex:hasLiveStartTime ?timestamp .     # Metadata: Waktu mulai live
+    BIND(ex:Lisa AS ?actorOrTarget)             # Pelaku: Lisa
+    BIND("Mulai Siaran Langsung" AS ?eventType)
+    # Deskripsi manual untuk memberikan konteks
+    BIND("Lisa memulai siaran langsung untuk membahas isu hak cipta" AS ?description)
+  }
+}
+ORDER BY ?timestamp # Mengurutkan hasil berdasarkan waktu
+
+
+
+
+==== OFB CQ6 ====
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#> # Namespace ontologi OFB Anda
+
+# Contoh Query untuk CQ6: Mengekstrak Peristiwa Bertimestamp untuk Linimasa
+# Mengambil berbagai jenis aktivitas pengguna yang memiliki timestamp.
+
+# --- PENTING: Ganti ex:UserOfInterest dengan URI pengguna yang relevan ---
+# Contoh: ex:CyberSentinel, ex:DavidHistory, ex:DeepMarketMod
+
+SELECT ?timestamp ?eventType ?user ?relatedItem ?platform
+WHERE {
+  # Tentukan pengguna yang ingin diselidiki di sini
+  BIND(ex:DeepMarketMod AS ?user) # <<< GANTI URI PENGGUNA DI SINI
+
+  {
+    # Peristiwa: Registrasi Pengguna
+    BIND("User Registration" AS ?eventType)
+    ?user ex:hasRegistrationDate ?timestamp .
+    BIND(?user AS ?relatedItem) # Item terkait adalah pengguna itu sendiri
+    # Ambil platform pengguna jika ada
+    OPTIONAL { ?user ex:belongsToPlatform ?platform . }
+  }
+  UNION
+  {
+    # Peristiwa: Pembuatan Post
+    BIND("Post Created" AS ?eventType)
+    # Cari post yang dibuat oleh pengguna (?user ex:createsPost ?post salah, harusnya ?post ex:associatedWithUser ?user)
+    # atau gunakan properti fungsional terbalik jika didefinisikan
+    ?relatedItem rdf:type ex:Post .        # ?relatedItem adalah post
+    ?relatedItem ex:associatedWithUser ?user . # Post diasosiasikan dengan pengguna
+    ?relatedItem ex:hasPostCreationTimestamp ?timestamp .
+    # Ambil platform post jika ada (misalnya dari komunitasnya)
+    OPTIONAL { ?relatedItem ex:associatedWithCommunity ?comm . ?comm ex:belongsToPlatform ?platform .}
+  }
+  UNION
+  {
+    # Peristiwa: Pembuatan Komentar
+    BIND("Comment Made" AS ?eventType)
+    ?relatedItem rdf:type ex:Comment . # ?relatedItem adalah komentar
+    ?relatedItem ex:performedBy ?user .
+    ?relatedItem ex:hasCommentTimestamp ?timestamp .
+    # Ambil platform komentar jika ada
+    OPTIONAL { ?relatedItem ex:belongsToPlatform ?platform . }
+  }
+  UNION
+  {
+    # Peristiwa: Mengirim DM
+    BIND("DM Sent" AS ?eventType)
+    ?dm rdf:type ex:DirectMessaging .
+    ?dm ex:messageSender ?user .
+    ?dm ex:hasMessageTimestamp ?timestamp .
+    BIND(?dm AS ?relatedItem) # Item terkait adalah DM itu sendiri
+    OPTIONAL { ?dm ex:belongsToPlatform ?platform . }
+  }
+  UNION
+  {
+    # Peristiwa: Menerima DM
+    BIND("DM Received" AS ?eventType)
+    ?dm rdf:type ex:DirectMessaging .
+    ?dm ex:messageReceiver ?user .
+    ?dm ex:hasMessageTimestamp ?timestamp .
+    BIND(?dm AS ?relatedItem) # Item terkait adalah DM itu sendiri
+    OPTIONAL { ?dm ex:belongsToPlatform ?platform . }
+  }
+  UNION
+  {
+    # Peristiwa: Permintaan Hapus Akun (Contoh UserAction terstruktur)
+    BIND("Account Deletion Requested" AS ?eventType)
+    ?action ex:performedBy ?user .       # Aksi dilakukan oleh user
+    ?relatedItem ex:deletionRequestedBy ?action . # Proses delesi terkait aksi
+    ?relatedItem rdf:type ex:AccountDeletion .
+    ?relatedItem ex:deletionRequestedOn ?timestamp . # Timestamp ada di proses delesi
+    # Ambil platform dari user (atau proses delesi jika ada)
+    OPTIONAL { ?user ex:belongsToPlatform ?platform . }
+  }
+  # --- Tambahkan blok UNION lain di sini untuk jenis peristiwa lain ---
+  # Contoh: Bergabung Komunitas (?user ex:joinsCommunity ?comm. ?entry ex:...)
+  # Contoh: Memberi Upvote (?upvote ex:performedBy ?user. ?upvote ex:hasUpvoteTimestamp ?ts)
+}
+# Urutkan hasil berdasarkan waktu secara menaik (kronologis)
+ORDER BY ?timestamp

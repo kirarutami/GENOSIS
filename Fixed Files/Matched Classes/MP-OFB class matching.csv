@@ -1,0 +1,120 @@
+MP:Comment,OFB:Comment,100,MP:,OFB:Represents comments made by users on content.
+MP:ContentInteraction,OFB:ContentInteraction,100,MP:,"OFB:Represents all forms of user interactions with content, including voting, liking, and replying."
+MP:Monetization,OFB:Monetization,100,"MP:Represents features related to monetization on the platform, including subscriptions and advertisements.",OFB:Represents the monetization features on the platform.
+MP:NotificationSettings,OFB:NotificationSettings,100,MP:Represents settings related to notifications that the user can configure.,OFB:Represents notification settings for a user.
+MP:Notifications,OFB:Notifications,100,MP:Represents user notifications and their related settings on the platform.,OFB:Represents notifications and their configurations.
+MP:Post,OFB:Post,100,MP:Represents a specific post or piece of content created by a user.,"OFB:Represents posts created by users, which may contain text, media, and other metadata."
+MP:ProfileSettings,OFB:ProfileSettings,100,MP:Represents profile customization settings for the user.,OFB:Settings related to managing the user's profile.
+MP:Subscription,OFB:Subscription,100,MP:Represents subscription-related features for monetization.,OFB:Represents subscription-based revenue generation.
+MP:User,OFB:User,100,"MP:Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",OFB:Represents a user in the online forum or blog system.
+MP:Report,OFB:Reports,92.31,MP:,OFB:Represents user reports for violations in the community.
+MP:Block,OFB:BlockUnblockUser,90,MP:,OFB:Represents blocking and unblocking actions between users.
+MP:Comment,OFB:ReplyToComments,90,MP:,OFB:Represents a reply to a comment action.
+MP:ContentCreation,OFB:Content,90,MP:Represents actions related to creating and managing content on a microblogging platform.,"OFB:Represents all forms of user-generated content, including posts and drafts, within the platform."
+MP:ContentInteraction,OFB:Content,90,MP:,"OFB:Represents all forms of user-generated content, including posts and drafts, within the platform."
+MP:NotificationSettings,OFB:Notifications,90,MP:Represents settings related to notifications that the user can configure.,OFB:Represents notifications and their configurations.
+MP:Notifications,OFB:CommunityNotifications,90,MP:Represents user notifications and their related settings on the platform.,OFB:Represents notification settings and preferences for a community.
+MP:Notifications,OFB:NotificationSettings,90,MP:Represents user notifications and their related settings on the platform.,OFB:Represents notification settings for a user.
+MP:Post,OFB:CrossPost,90,MP:Represents a specific post or piece of content created by a user.,OFB:Represents posts that are cross-posted from other communities or original posts.
+MP:Post,OFB:PinPosts,90,MP:Represents a specific post or piece of content created by a user.,OFB:Represents pinning actions for posts by users or communities.
+MP:Post,OFB:ScheduledPost,90,MP:Represents a specific post or piece of content created by a user.,OFB:Represents posts scheduled by users to be published at a future timestamp.
+MP:Post,OFB:ShareRepost,90,MP:Represents a specific post or piece of content created by a user.,OFB:Represents sharing or reposting content to a community or other platforms.
+MP:Preferences,OFB:NotificationPreferences,90,"MP:Represents user-specific notification preferences, such as unread counts and badges.",OFB:Represents preferences for in-app notifications.
+MP:ReblogRetweetPost,OFB:Post,90,MP:,"OFB:Represents posts created by users, which may contain text, media, and other metadata."
+MP:Reply,OFB:ReplyToComments,90,MP:,OFB:Represents a reply to a comment action.
+MP:UpcomingSessions,OFB:Session,90,MP:Represents scheduled live sessions that users can set reminders for or add to their calendar.,"OFB:Handles session management, including logouts."
+MP:User,OFB:BlockUnblockUser,90,"MP:Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",OFB:Represents blocking and unblocking actions between users.
+MP:User,OFB:UserInsights,90,"MP:Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",OFB:Represents insights for users based on their drafts or contributions.
+MP:Likes,OFB:Like,88.89,MP:,OFB:Represents a like action on content.
+MP:Notifications,OFB:PushNotifications,86.67,MP:Represents user notifications and their related settings on the platform.,OFB:Represents push notification settings.
+MP:Notifications,OFB:NotificationPreferences,86.4,MP:Represents user notifications and their related settings on the platform.,OFB:Represents preferences for in-app notifications.
+MP:Subscription,OFB:SubscriptionPlan,85.71,MP:Represents subscription-related features for monetization.,OFB:Represents a subscription plan for a user.
+MP:Notifications,OFB:EmailNotifications,83.87,MP:Represents user notifications and their related settings on the platform.,OFB:Represents email notification settings.
+MP:Notifications,OFB:InAppNotifications,83.87,MP:Represents user notifications and their related settings on the platform.,OFB:Represents in-app notification settings.
+MP:Comment,OFB:Comment,100,MP:,OFB:Represents comments made by users on content.
+MP:ContentInteraction,OFB:ContentInteraction,100,MP:,"OFB:Represents all forms of user interactions with content, including voting, liking, and replying."
+MP:Monetization,OFB:Monetization,100,"MP:Represents features related to monetization on the platform, including subscriptions and advertisements.",OFB:Represents the monetization features on the platform.
+MP:NotificationSettings,OFB:NotificationSettings,100,MP:Represents settings related to notifications that the user can configure.,OFB:Represents notification settings for a user.
+MP:Notifications,OFB:Notifications,100,MP:Represents user notifications and their related settings on the platform.,OFB:Represents notifications and their configurations.
+MP:Post,OFB:Post,100,MP:Represents a specific post or piece of content created by a user.,"OFB:Represents posts created by users, which may contain text, media, and other metadata."
+MP:ProfileSettings,OFB:ProfileSettings,100,MP:Represents profile customization settings for the user.,OFB:Settings related to managing the user's profile.
+MP:Subscription,OFB:Subscription,100,MP:Represents subscription-related features for monetization.,OFB:Represents subscription-based revenue generation.
+MP:User,OFB:User,100,"MP:Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",OFB:Represents a user in the online forum or blog system.
+MP:Report,OFB:Reports,92.31,MP:,OFB:Represents user reports for violations in the community.
+MP:Block,OFB:BlockUnblockUser,90,MP:,OFB:Represents blocking and unblocking actions between users.
+MP:Comment,OFB:ReplyToComments,90,MP:,OFB:Represents a reply to a comment action.
+MP:ContentCreation,OFB:Content,90,MP:Represents actions related to creating and managing content on a microblogging platform.,"OFB:Represents all forms of user-generated content, including posts and drafts, within the platform."
+MP:ContentInteraction,OFB:Content,90,MP:,"OFB:Represents all forms of user-generated content, including posts and drafts, within the platform."
+MP:NotificationSettings,OFB:Notifications,90,MP:Represents settings related to notifications that the user can configure.,OFB:Represents notifications and their configurations.
+MP:Notifications,OFB:CommunityNotifications,90,MP:Represents user notifications and their related settings on the platform.,OFB:Represents notification settings and preferences for a community.
+MP:Notifications,OFB:NotificationSettings,90,MP:Represents user notifications and their related settings on the platform.,OFB:Represents notification settings for a user.
+MP:Post,OFB:CrossPost,90,MP:Represents a specific post or piece of content created by a user.,OFB:Represents posts that are cross-posted from other communities or original posts.
+MP:Post,OFB:PinPosts,90,MP:Represents a specific post or piece of content created by a user.,OFB:Represents pinning actions for posts by users or communities.
+MP:Post,OFB:ScheduledPost,90,MP:Represents a specific post or piece of content created by a user.,OFB:Represents posts scheduled by users to be published at a future timestamp.
+MP:Post,OFB:ShareRepost,90,MP:Represents a specific post or piece of content created by a user.,OFB:Represents sharing or reposting content to a community or other platforms.
+MP:Preferences,OFB:NotificationPreferences,90,"MP:Represents user-specific notification preferences, such as unread counts and badges.",OFB:Represents preferences for in-app notifications.
+MP:ReblogRetweetPost,OFB:Post,90,MP:,"OFB:Represents posts created by users, which may contain text, media, and other metadata."
+MP:Reply,OFB:ReplyToComments,90,MP:,OFB:Represents a reply to a comment action.
+MP:UpcomingSessions,OFB:Session,90,MP:Represents scheduled live sessions that users can set reminders for or add to their calendar.,"OFB:Handles session management, including logouts."
+MP:User,OFB:BlockUnblockUser,90,"MP:Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",OFB:Represents blocking and unblocking actions between users.
+MP:User,OFB:UserInsights,90,"MP:Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",OFB:Represents insights for users based on their drafts or contributions.
+MP:Likes,OFB:Like,88.89,MP:,OFB:Represents a like action on content.
+MP:Notifications,OFB:PushNotifications,86.67,MP:Represents user notifications and their related settings on the platform.,OFB:Represents push notification settings.
+MP:Notifications,OFB:NotificationPreferences,86.4,MP:Represents user notifications and their related settings on the platform.,OFB:Represents preferences for in-app notifications.
+MP:Subscription,OFB:SubscriptionPlan,85.71,MP:Represents subscription-related features for monetization.,OFB:Represents a subscription plan for a user.
+MP:Notifications,OFB:EmailNotifications,83.87,MP:Represents user notifications and their related settings on the platform.,OFB:Represents email notification settings.
+MP:Notifications,OFB:InAppNotifications,83.87,MP:Represents user notifications and their related settings on the platform.,OFB:Represents in-app notification settings.
+MCSS:Comment,OFB:Comment,100,MCSS:Represents a comment interaction with content.,OFB:Represents comments made by users on content.
+MCSS:Content,OFB:Content,100,MCSS:Represents all types of content on the platform.,"OFB:Represents all forms of user-generated content, including posts and drafts, within the platform."
+MCSS:ContentInteraction,OFB:ContentInteraction,100,MCSS:Represents interactions on content within the platform.,"OFB:Represents all forms of user interactions with content, including voting, liking, and replying."
+MCSS:Like,OFB:Like,100,MCSS:Represents a like interaction with content.,OFB:Represents a like action on content.
+MCSS:Monetization,OFB:Monetization,100,MCSS:Represents all monetization-related features and interactions.,OFB:Represents the monetization features on the platform.
+MCSS:NotificationSettings,OFB:NotificationSettings,100,MCSS:Represents settings for managing message notifications.,OFB:Represents notification settings for a user.
+MCSS:Notifications,OFB:Notifications,100,MCSS:Represents notifications and related interactions in the platform.,OFB:Represents notifications and their configurations.
+MCSS:Post,OFB:Post,100,"MCSS:Represents a generic post on the platform, including audience type and schedule time.","OFB:Represents posts created by users, which may contain text, media, and other metadata."
+MCSS:ProfileSettings,OFB:ProfileSettings,100,MCSS:Sub-class representing settings a user can edit in their profile.,OFB:Settings related to managing the user's profile.
+MCSS:Subscription,OFB:Subscription,100,MCSS:Represents subscription-related features on the platform.,OFB:Represents subscription-based revenue generation.
+MCSS:User,OFB:User,100,MCSS:The primary class representing individual users in the system.,OFB:Represents a user in the online forum or blog system.
+MCSS:Report,OFB:Reports,92.31,MCSS:Represents a report interaction with content.,OFB:Represents user reports for violations in the community.
+MCSS:AdvancedMessagingFeatures,OFB:Messaging,90,"MCSS:Represents advanced features for messaging, such as encryption and priority settings.",OFB:Represents the messaging functionality within the platform.
+MCSS:Comment,OFB:ReplyToComments,90,MCSS:Represents a comment interaction with content.,OFB:Represents a reply to a comment action.
+MCSS:Content,OFB:ContentInteraction,90,MCSS:Represents all types of content on the platform.,"OFB:Represents all forms of user interactions with content, including voting, liking, and replying."
+MCSS:Content,OFB:RecommendedContent,90,MCSS:Represents all types of content on the platform.,OFB:Represents the content recommended to a user.
+MCSS:Content,OFB:TrendingContent,90,MCSS:Represents all types of content on the platform.,OFB:Represents content identified as trending based on user activities.
+MCSS:ContentInteraction,OFB:Content,90,MCSS:Represents interactions on content within the platform.,"OFB:Represents all forms of user-generated content, including posts and drafts, within the platform."
+MCSS:Dislike,OFB:Like,90,MCSS:Represents a dislike interaction with content.,OFB:Represents a like action on content.
+MCSS:LivePost,OFB:Post,90,MCSS:Represents posts associated with live sessions.,"OFB:Represents posts created by users, which may contain text, media, and other metadata."
+MCSS:MessageAnalytics,OFB:Analytics,90,"MCSS:Represents analytics related to messages, such as open rate and response time.","OFB:Represents analytics data and insights for content, users, and communities."
+MCSS:MessageContent,OFB:Content,90,"MCSS:Represents the content of a message, including text, media, and metadata.","OFB:Represents all forms of user-generated content, including posts and drafts, within the platform."
+MCSS:NotificationSettings,OFB:Notifications,90,MCSS:Represents settings for managing message notifications.,OFB:Represents notifications and their configurations.
+MCSS:Notifications,OFB:CommunityNotifications,90,MCSS:Represents notifications and related interactions in the platform.,OFB:Represents notification settings and preferences for a community.
+MCSS:Notifications,OFB:NotificationSettings,90,MCSS:Represents notifications and related interactions in the platform.,OFB:Represents notification settings for a user.
+MCSS:Post,OFB:CrossPost,90,"MCSS:Represents a generic post on the platform, including audience type and schedule time.",OFB:Represents posts that are cross-posted from other communities or original posts.
+MCSS:Post,OFB:PinPosts,90,"MCSS:Represents a generic post on the platform, including audience type and schedule time.",OFB:Represents pinning actions for posts by users or communities.
+MCSS:Post,OFB:ScheduledPost,90,"MCSS:Represents a generic post on the platform, including audience type and schedule time.",OFB:Represents posts scheduled by users to be published at a future timestamp.
+MCSS:Post,OFB:ShareRepost,90,"MCSS:Represents a generic post on the platform, including audience type and schedule time.",OFB:Represents sharing or reposting content to a community or other platforms.
+MCSS:Search,OFB:AdvancedSearch,90,MCSS:Represents search functionalities and recommendations within the system.,OFB:Represents advanced search functionalities with additional filters.
+MCSS:Search,OFB:FlairSearch,90,MCSS:Represents search functionalities and recommendations within the system.,OFB:Represents the ability to search for content by specific flair tags.
+MCSS:Search,OFB:GlobalSearch,90,MCSS:Represents search functionalities and recommendations within the system.,OFB:Represents global search functionality for different targets.
+MCSS:Search,OFB:SearchAndDiscovery,90,MCSS:Represents search functionalities and recommendations within the system.,OFB:Represents the overall structure for search and discovery functionalities.
+MCSS:Search,OFB:SearchFeatures,90,MCSS:Represents search functionalities and recommendations within the system.,OFB:Defines various search-related features.
+MCSS:Search,OFB:SearchFilter,90,MCSS:Represents search functionalities and recommendations within the system.,OFB:Represents filters used in advanced search queries.
+MCSS:Search,OFB:TrendSearch,90,MCSS:Represents search functionalities and recommendations within the system.,OFB:Represents trends observed in user searches.
+MCSS:Share,OFB:ShareRepost,90,MCSS:Represents a share interaction with content.,OFB:Represents sharing or reposting content to a community or other platforms.
+MCSS:ShortVideoPost,OFB:Post,90,MCSS:Represents posts associated with short videos.,"OFB:Represents posts created by users, which may contain text, media, and other metadata."
+MCSS:User,OFB:BlockUnblockUser,90,MCSS:The primary class representing individual users in the system.,OFB:Represents blocking and unblocking actions between users.
+MCSS:User,OFB:UserInsights,90,MCSS:The primary class representing individual users in the system.,OFB:Represents insights for users based on their drafts or contributions.
+MCSS:VideoPost,OFB:Post,90,MCSS:Represents posts that are associated with videos.,"OFB:Represents posts created by users, which may contain text, media, and other metadata."
+MCSS:HideNotifications,OFB:Notifications,86.67,MCSS:Represents the functionality to hide notifications for users or channels.,OFB:Represents notifications and their configurations.
+MCSS:Notifications,OFB:PushNotifications,86.67,MCSS:Represents notifications and related interactions in the platform.,OFB:Represents push notification settings.
+MCSS:Notifications,OFB:NotificationPreferences,86.4,MCSS:Represents notifications and related interactions in the platform.,OFB:Represents preferences for in-app notifications.
+MCSS:Subscription,OFB:SubscriptionPlan,85.71,MCSS:Represents subscription-related features on the platform.,OFB:Represents a subscription plan for a user.
+MCSS:GroupMessage,OFB:GroupMessaging,84.62,MCSS:Represents group message threads and related interactions.,OFB:Represents group messaging interactions.
+MCSS:Notifications,OFB:EmailNotifications,83.87,MCSS:Represents notifications and related interactions in the platform.,OFB:Represents email notification settings.
+MCSS:Notifications,OFB:InAppNotifications,83.87,MCSS:Represents notifications and related interactions in the platform.,OFB:Represents in-app notification settings.
+MCSS:DirectMessages,OFB:DirectMessaging,82.76,MCSS:Represents the functionality and content of direct messages in the system.,OFB:Represents one-on-one messaging interactions.
+MCSS:Content,OFB:TagContent,82.35,MCSS:Represents all types of content on the platform.,OFB:Represents content tagged by users with specific labels.
+MCSS:HideNotifications,OFB:PushNotifications,82.35,MCSS:Represents the functionality to hide notifications for users or channels.,OFB:Represents push notification settings.
+MCSS:HideNotifications,OFB:EmailNotifications,80,MCSS:Represents the functionality to hide notifications for users or channels.,OFB:Represents email notification settings.
+MCSS:HideNotifications,OFB:InAppNotifications,80,MCSS:Represents the functionality to hide notifications for users or channels.,OFB:Represents in-app notification settings.
+MCSS:SearchRecommendation,OFB:Recommendations,80,MCSS:Handles recommendations generated based on user activity and preferences.,OFB:Represents the system that provides recommendations to users.

@@ -1,0 +1,40 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+
+SELECT 
+  ?suspectIRI ?suspectLabel
+  ?postIRI ?postContent ?postMediaURL ?postTags
+  ?timestamp ?deviceInfo ?ipAddress
+  ?platform
+WHERE {
+  # --- Tentukan IRI Tersangka di Sini ---
+  # !!! PENTING: Bunda perlu mengganti IRI di bawah ini dengan IRI tersangka yang relevan dari GENOSIS.txt !!!
+  # Bisa satu atau lebih tersangka. Jika lebih dari satu, pisahkan dengan spasi.
+  # Contoh dari query lokal Bunda: genosisOwl:User_DarkAestheticNSFW_Tumblr, genosisOwl:User_MidnightObsession_Tumblr
+  VALUES ?suspectIRI { 
+    genosisOwl:User_DarkAestheticNSFW_Tumblr 
+    genosisOwl:User_MidnightObsession_Tumblr 
+    # Tambahkan IRI tersangka lain jika ada
+  }
+
+  # Mengambil postingan yang dibuat oleh tersangka di platform Microblogging
+  ?postIRI rdf:type/rdfs:subClassOf* genosisOwl:Global:Post ; # Mencakup genosisOwl:MP:Post
+           genosisOwl:postedBy ?suspectIRI ;
+           genosisOwl:belongsToPlatform ?platform .
+
+  # Filter hanya untuk platform MP (Twitter atau Tumblr)
+  FILTER(STR(?platform) = "Twitter" || STR(?platform) = "Tumblr")
+
+  # Mengambil detail postingan (opsional, karena tidak semua postingan mungkin memiliki semua detail ini)
+  OPTIONAL { ?postIRI genosisOwl:hasContentText ?postContent . }       # Sesuai ex:hasPostContent [cite: 1]
+  OPTIONAL { ?postIRI genosisOwl:hasAttachmentURL ?postMediaURL . }    # Dipetakan dari ex:hasPostMedia, menggunakan properti umum untuk lampiran
+  OPTIONAL { ?postIRI genosisOwl:hasPostTags ?postTags . }             # Sesuai ex:hasPostTags [cite: 3]
+  OPTIONAL { ?postIRI genosisOwl:hasCreationTimestamp ?timestamp . }   # Dipetakan dari ex:hasPostTimestamp [cite: 2]
+  OPTIONAL { ?postIRI genosisOwl:hasPostDeviceInfo ?deviceInfo . }     # Sesuai ex:hasPostDeviceInfo [cite: 3]
+  OPTIONAL { ?postIRI genosisOwl:hasIpAddress ?ipAddress . }           # Dipetakan dari ex:hasPostInteractionIP, menggunakan properti IP umum untuk post
+
+  # Mengambil label tersangka (opsional)
+  OPTIONAL { ?suspectIRI rdfs:label ?suspectLabel . }
+}
+ORDER BY ?suspectIRI DESC(?timestamp)

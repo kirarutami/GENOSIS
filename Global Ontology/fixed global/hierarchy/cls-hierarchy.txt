@@ -1,0 +1,195 @@
+owl:Thing
+ ├── Global:UserAccount
+ │    ├── MCSS:User
+ │    ├── MP:User
+ │    │    ├── MP:List
+ │    │    └── MP:Bookmark
+ │    ├── OFB:User
+ │    ├── OSN:User
+ │    │    └── OSN:CloseFriendList
+ │    ├── Global:Setting
+ │    │    ├── Global:ProfileSettings
+ │    │    │    ├── MCSS:ProfileSettings
+ │    │    │    ├── MP:ProfileSettings
+ │    │    │    ├── OFB:ProfileSettings
+ │    │    │    └── OSN:AccountSettings
+ │    │    │         ├── OSN:DataUsageSettings
+ │    │    │         ├── OSN:AccountManagementSettings
+ │    │    │         ├── OSN:DeviceManagementSettings
+ │    │    │         └── OSN:NotificationSettings
+ │    │    │              ├── OSN:GroupNotification
+ │    │    │              ├── OSN:MessageNotification
+ │    │    │              └── OSN:VideoNotification
+ │    │    ├── Global:NotificationSettings
+ │    │    │    ├── MCSS:NotificationSettings
+ │    │    │    ├── MP:NotificationSettings
+ │    │    │    ├── OFB:NotificationSettings
+ │    │    │    │    ├── OFB:PushNotification
+ │    │    │    │    ├── OFB:NotificationPreferences
+ │    │    │    │    └── OFB:CommunityNotification
+ │    │    ├── Global:SecuritySettings
+ │    │    │    ├── OFB:SecuritySettings
+ │    │    │    ├── OSN:SecuritySettings
+ │    │    │    ├── MP:SecuritySettings
+ │    │    │    └── MCSS:SecuritySettings
+ │    │    ├── Global:PrivacySettings
+ │    │    │    ├── OSN:PrivacySettings
+ │    │    │    ├── MP:PrivacySettings
+ │    │    │    ├── MCSS:PrivacySettings
+ │    │    │    └── OFB:PrivacySettings
+ │    │    └── Global:Accessibility
+ │    │         ├── OFB:Accessibility
+ │    │         │    └── OFB:LanguageSettings
+ │    │         └── MP:Accessibility
+ │    └──  Global:UserManagement
+ │         ├── OSN:UserManagement
+ │         ├── MP:UserManagement
+ │         ├── MCSS:UserManagement
+ │         └── OFB:UserManagement
+ ├── Global:Content
+ │    ├── Global:Post
+ │    │    ├── MCSS:Post
+ │    │    ├── MP:Post
+ │    │    ├── OFB:Post
+ │    │    │    ├── OFB:ScheduledPost
+ │    │    │    ├── OFB:CrossPostContent
+ │    │    │    └── OFB:DraftContent
+ │    │    └── OSN:Post
+ │    │         ├── OSN:BirthdayPost
+ │    │         └── OSN:AvatarPost
+ │    ├── Global:VideoContent
+ │    │    ├── MCSS:Video
+ │    │    ├── MCSS:ShortVideo
+ │    │    └── OSN:VideoContent
+ │    │         ├── OSN:ReelVideo
+ │    │         └── OSN:ShortVideoContent
+ │    ├── Global:LiveContent
+ │    │    ├── MCSS:Live
+ │    │    │    └── MCSS:SuperChat
+ │    │    ├── OSN:Live
+ │    │    └── MP:Live
+ │    │         ├── MP:LiveInteractionActivity
+ │    │         ├── MP:LiveSpacesRoomsActivity
+ │    │         └── MP:UpcomingSessionInteraction
+ │    ├── Global:Poll
+ │    │    ├── OFB:Poll
+ │    │    └── OSN:Poll
+ │    ├── Global:Story
+ │    │    ├── OSN:Story
+ │    │    │    └── OSN:StoryHighlight
+ │    │    └── MCSS:Story
+ │    ├── Global:NewsContent
+ │    │    ├── MCSS:NewsInformationFeature
+ │    │    │    ├── MCSS:BreakingNews
+ │    │    │    └── MCSS:TopNews
+ │    │    └── OFB:TrendingContent
+ ├── Global:Message
+ │    ├── Global:DirectMessage
+ │    │    ├── MCSS:DirectMessage
+ │    │    ├── OFB:DirectMessage
+ │    │    ├── OSN:DirectMessage
+ │    │    └── MP:DirectMessage
+ │    ├── Global:GroupMessage
+ │    │    ├── MCSS:GroupMessage
+ │    │    └── OSN:GroupMessage
+ │    └── Global:MessagingActivity (belum didefinisikan, hanya disebut)
+ ├── Global:ContentInteraction
+ │    ├── Global:SharingAction
+ │    │    ├── MCSS:ShareAction
+ │    │    ├── MP:ReblogRetweetAction
+ │    │    └── OFB:CrossPostAction
+ │    ├── Global:CommentOrReplyAction
+ │    │    ├── MCSS:CommentAction
+ │    │    ├── MP:CommentAction
+ │    │    ├── OFB:CommentAction
+ │    │    ├── OFB:ReplyToCommentAction
+ │    │    └── OSN:CommentAction
+ │    ├── Global:ReactionAction
+ │    │    ├── MCSS:DislikeAction
+ │    │    ├── MCSS:LikeAction
+ │    │    ├── MP:LikeAction
+ │    │    ├── OFB:LikeAction
+ │    │    └── OSN:LikesReactions
+ │    ├── Global:ReportAction
+ │    │    ├── MCSS:ReportAction
+ │    │    ├── MP:ReportAction
+ │    │    ├── OFB:ReportAction
+ │    │    └── OSN:ReportAction
+ │    └── Global:AdditionalInteraction
+ │         ├── MCSS:WatchLaterAction
+ │         ├── MCSS:GiftAction
+ │         ├── OFB:BookmarkAction
+ │         ├── OFB:GiveAwardAction
+ │         ├── OFB:FollowTopicAction
+ │         └── OFB:PinPostAction
+ ├── Global:Group
+ │    ├── OSN:Group
+ │    ├── OFB:Community
+ │    │    └── OFB:SpotlightCommunity
+ │    ├── Global:ModerationAction
+ │    │    ├── OFB:ModeratorAction
+ │    │    ├── OSN:ModerationAction
+ │    │    ├── OFB:CommunityModerationAction
+ │    │    ├── OFB:ModerationQueue
+ │    │    └── OFB:ModeratorStatistics
+ │    ├── Global:GroupManagementActivity
+ │    │    ├── OFB:CommunityCreationActivity
+ │    │    └── OFB:CommunityEntryActivity
+ │    └── Global:Role
+ │         └── Global:ModeratorRole
+ │              ├── OFB:Moderator
+ │              └── OSN:Moderator
+ ├── Global:SearchFunctionality
+ │    ├── OSN:Search
+ │    ├── MCSS:SearchAndRecommendation
+ │    ├── MP:DiscoveryAndSearchFeature
+ │    └── OFB:SearchFeature
+ │         ├── OFB:GlobalSearchFeature
+ │         ├── OFB:AdvancedSearchFeature
+ │         ├── OFB:TrendSearchFeature
+ │         ├── OFB:SearchFilterFeature
+ │         ├── OFB:SearchAndDiscoveryFeature
+ │         └── OFB:RecommendationFeature
+ ├── Global:Marketplace
+ │    └── OSN:Marketplace
+ │         ├── OSN:ListingFeature
+ │         ├── OSN:ListingManagementActivity
+ │         └── OSN:ListingDetails
+ └── Global:AdditionalFeature
+      ├── OSN:AdditionalFeature
+      │    ├── OSN:Gaming
+      │    │    ├── OSN:Games
+      │    │    └── OSN:PlayerInfo
+      │    ├── OSN:Page
+      │    │    ├── OSN:PageManagementActivity
+      │    │    ├── OSN:PageInsight
+      │    │    ├── OSN:PageFeature
+      │    │    └── OSN:PageSettings
+      │    ├── OSN:MessengerKids
+      │    │    ├── OSN:ChildInformation
+      │    │    └── OSN:ConnectKids
+      │    ├── OSN:MetaVerifiedFeature
+      │    ├── OSN:AlsoFromMetaFeature
+      │    │    └── OSN:OtherAppsFeature
+      │    └── OSN:MediaEnhancementFeature
+      │              ├── OSN:ReelEffect
+      │              ├── OSN:ReelRemixFeature
+      │              └── OSN:ReelMusic
+      ├── MCSS:AdditionalFeature
+      │    ├── MCSS:MessageAnalytics
+      │    └── MCSS:ShoppingFeature
+      └── OFB:AdditionalFeature
+           ├── OFB:ActivitySummary
+           │    ├── OFB:WeeklyDigest
+           │    └── OFB:DigestSummary
+           ├── OFB:Flair
+           │    ├── OFB:FlairSearch
+           │    └── OFB:FlairSystemFeature
+           ├── OFB:Analytics
+           │    └── OFB:StatsAndInsight
+           │         ├── OFB:EngagementMetric
+           │         ├── OFB:CommunityMetric
+           │         └── OFB:UserInsight
+           ├── OFB:AdRevenueFeature
+           └── OFB:DonationFeature
+

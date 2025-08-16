@@ -1,0 +1,89 @@
+#Menyediakan Isi Pesan: Teks aktual dari DM sangat krusial.
+#Mengidentifikasi Pelaku dan Penerima: Siapa mengirim ke siapa.
+#Konteks Waktu: Kapan pesan dikirim.
+#Metadata Teknis (jika ada): Seperti alamat IP dan info perangkat pengirim.
+#Klasifikasi Konten Pesan: Ini poin penting. DM akan dianalisis untuk menentukan apakah isinya mengandung unsur ancaman, pelecehan, pemerasan, diskusi ilegal, atau paksaan/tantangan berbahaya.
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+# Prefix spesifik platform (OSN, MP, MCSS, OFB) umumnya tidak diperlukan jika properti sudah dipetakan ke genosisOwl:
+
+SELECT DISTINCT
+  ?dmIRI
+  ?sender ?senderLabel
+  ?receiver ?receiverLabel
+  ?platform ?timestamp ?messageText
+  ?ipAddress ?deviceInfo
+  ?threatClassification ?abuseClassification ?blackmailClassification ?illicitTradeClassification ?coercionClassification
+WHERE {
+  # 1. Ambil semua instance Direct Message dan info dasarnya
+  ?dmIRI rdf:type/rdfs:subClassOf* genosisOwl:Global:DirectMessage ;
+         genosisOwl:attributedToUser ?sender ;
+         genosisOwl:messageReceiver ?receiver ;
+         genosisOwl:hasMessageContent ?messageText ;
+         genosisOwl:hasMessageSentTimestamp ?timestamp ;
+         genosisOwl:belongsToPlatform ?platform .
+
+  # 2. Ambil info teknis opsional (IP dan Perangkat)
+  # Menggunakan COALESCE untuk mengambil nilai pertama yang non-blank dari beberapa kemungkinan properti IP
+  OPTIONAL { ?dmIRI genosisOwl:hasIpAddress ?ip1 . }
+  OPTIONAL { ?dmIRI genosisOwl:hasDMSpecificIP ?ip2 . }      # Dari MP
+  OPTIONAL { ?dmIRI genosisOwl:hasCommentSpecificIP ?ip3 . } # Kurang relevan untuk DM, tapi jaga-jaga
+  OPTIONAL { ?dmIRI genosisOwl:hasUserInteractionIP ?ip4 . } # Dari MCSS
+  BIND(COALESCE(?ip1, ?ip2, ?ip3, ?ip4, "N/A") AS ?ipAddress)
+
+  # Menggunakan COALESCE untuk info perangkat
+  OPTIONAL { ?dmIRI genosisOwl:hasDeviceInfo ?dev1 . }        # Umum & dari MCSS
+  OPTIONAL { ?dmIRI genosisOwl:hasDMDevice ?dev2 . }          # Dari MP
+  OPTIONAL { ?dmIRI genosisOwl:hasMessageDevice ?dev3 . }     # Dari OFB
+  BIND(COALESCE(?dev1, ?dev2, ?dev3, "N/A") AS ?deviceInfo)
+
+  # 3. Mengambil label untuk sender dan receiver (opsional)
+  OPTIONAL { ?sender rdfs:label ?senderLabel . }
+  OPTIONAL { ?receiver rdfs:label ?receiverLabel . }
+
+  # --- 4. Klasifikasi Konten Pesan (menggabungkan dan memperluas kata kunci dari CQ3 & CQ4 lokal) ---
+
+  BIND (
+    IF (REGEX(?messageText, "end it|ruin your life|watch your back|just disappear|we know where you live|make you regret it|take it to the next level|you should just do it|don't back down|if you don't do it, you will regret it|this will blow up|regret it|handle nosy people|worry about your own privacy|threat|expose|deserves what's coming|illegal", "i"),
+        "Threat", "")
+    AS ?threatClassification
+  )
+
+  BIND (
+    IF (REGEX(?messageText, "nobody likes you|loser|pathetic|ugly|shut up|garbage articles|you're sick|nobody wants to hear from you|everyone's done it|just a few seconds|nothing's going to happen|get lost|traitor|part of the problem|stupid|idiot|wimp", "i"),
+        "Verbal Abuse/Harassment", "")
+    AS ?abuseClassification
+  )
+  
+  BIND (
+    IF (REGEX(?messageText, "I have private pictures|pay me or else|leak private|take it to the next level|leak your address|dark web|if something goes wrong|you better not back out|I have proof and backups|send me REAL ones instead|transfer or I will|blackmail", "i"),
+        "Blackmail/Extortion", "")
+    AS ?blackmailClassification
+  )
+
+  BIND (
+    IF (REGEX(?messageText, "cc dumps|stolen data|monero|untraceable payment|premium cc|vendor|dumps|carding", "i"),
+        "Illicit Trade Discussion", "")
+    AS ?illicitTradeClassification
+  )
+
+  # Kategori baru dari MCSS CQ4 untuk paksaan/tantangan
+  BIND (
+    IF (REGEX(?messageText, "stop being a wimp|gonna let a girl beat|just record and post", "i"),
+        "Coercion/Dangerous Challenge", "")
+    AS ?coercionClassification
+  )
+
+  # Filter untuk hanya menampilkan DM yang relevan (masuk minimal satu klasifikasi)
+  FILTER(
+    ?threatClassification != "" || 
+    ?abuseClassification != "" || 
+    ?blackmailClassification != "" || 
+    ?illicitTradeClassification != "" ||
+    ?coercionClassification != ""
+  )
+}
+ORDER BY DESC(?timestamp) ?sender

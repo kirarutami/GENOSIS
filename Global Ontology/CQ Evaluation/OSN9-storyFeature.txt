@@ -1,0 +1,41 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+
+SELECT 
+  ?storyIRI 
+  ?postedBy ?postedByLabel
+  ?timestamp ?platform
+  ?storyContent 
+  ?mediaURL 
+  ?location 
+  ?ipAddress 
+  ?deviceInfo         # Jika ada di data GENOSIS untuk story
+  ?storyMusic         # Jika ada di data GENOSIS untuk story
+  ?storySticker       # Jika ada di data GENOSIS untuk story
+WHERE {
+  # Mengambil semua instance dari OSN:Story
+  ?storyIRI rdf:type genosisOwl:OSN:Story ;
+            genosisOwl:belongsToPlatform ?platform .
+
+  # Filter hanya untuk platform OSN (Facebook atau Instagram sesuai data Anda)
+  FILTER(STR(?platform) = "Facebook" || STR(?platform) = "Instagram")
+
+  # Mengambil properti-properti story secara OPTIONAL
+  OPTIONAL { 
+    ?storyIRI genosisOwl:postedBy ?postedBy .
+    OPTIONAL { ?postedBy rdfs:label ?postedByLabel . }
+  }
+  OPTIONAL { ?storyIRI genosisOwl:hasCreationTimestamp ?timestamp . }      # Dipetakan dari ex:hasStoryTimestamp [cite: 2, 3]
+  OPTIONAL { ?storyIRI genosisOwl:hasContentText ?storyContent . }        # Dipetakan dari ex:hasStoryContent [cite: 2]
+  OPTIONAL { ?storyIRI genosisOwl:hasAttachmentURL ?mediaURL . }        # Dipetakan dari ex:hasStoryMedia [cite: 2]
+  OPTIONAL { ?storyIRI genosisOwl:hasLocation ?location . }              # Dipetakan dari ex:hasMessageLocation [cite: 3]
+  OPTIONAL { ?storyIRI genosisOwl:hasIpAddress ?ipAddress . }            # Dipetakan dari ex:hasUserInteractionIP [cite: 4]
+  
+  # Properti berikut mungkin tidak ada di semua instance story GENOSIS,
+  # tapi kita coba ambil sesuai query lokal:
+  OPTIONAL { ?storyIRI genosisOwl:hasDeviceInfo ?deviceInfo . }          # Dari ex:hasDeviceInfo [cite: 3, 4]
+  OPTIONAL { ?storyIRI genosisOwl:hasStoryMusic ?storyMusic . }           # Dari ex:hasStoryMusic [cite: 4, 5]
+  OPTIONAL { ?storyIRI genosisOwl:hasStoryStickers ?storySticker . }       # Dari ex:hasStoryStickers [cite: 5]
+}
+ORDER BY DESC(?timestamp) ?postedByLabel

@@ -1,0 +1,141 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Class: Post -->
+    <owl:Class rdf:about="#Post">
+        <rdfs:comment>Represents a generic post on the platform, including audience type and schedule time.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasPostAudienceType -->
+    <owl:DatatypeProperty rdf:about="#hasPostAudienceType">
+        <rdfs:domain rdf:resource="#Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Specifies the audience type for a post (e.g., Public, Friends).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasPostScheduleTime -->
+    <owl:DatatypeProperty rdf:about="#hasPostScheduleTime">
+        <rdfs:domain rdf:resource="#Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Specifies the scheduled time for the post to be published.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: associatedWithContent -->
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#Post"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Links a post to its associated content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Sub-class: VideoPost -->
+    <owl:Class rdf:about="#VideoPost">
+        <rdfs:subClassOf rdf:resource="#Post"/>
+        <rdfs:comment>Represents posts that are associated with videos.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: associatedWithContent -->
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#VideoPost"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Links a Video post to its associated content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasVideoPostAudienceType -->
+    <owl:DatatypeProperty rdf:about="#hasVideoPostAudienceType">
+        <rdfs:domain rdf:resource="#VideoPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Specifies the audience type for a video post.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasVideoPostScheduleTime -->
+    <owl:DatatypeProperty rdf:about="#hasVideoPostScheduleTime">
+        <rdfs:domain rdf:resource="#VideoPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Specifies the scheduled time for the video post to be published.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: ShortVideoPost -->
+    <owl:Class rdf:about="#ShortVideoPost">
+        <rdfs:subClassOf rdf:resource="#Post"/>
+        <rdfs:comment>Represents posts associated with short videos.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: associatedWithContent -->
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#ShortVideoPost"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Links a Short Video post to its associated content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasShortVideoPostAudienceType -->
+    <owl:DatatypeProperty rdf:about="#hasShortVideoPostAudienceType">
+        <rdfs:domain rdf:resource="#ShortVideoPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Specifies the audience type for a short video post.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasShortVideoPostRemixableStatus -->
+    <owl:DatatypeProperty rdf:about="#hasShortVideoPostRemixableStatus">
+        <rdfs:domain rdf:resource="#ShortVideoPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates whether the short video post is remixable.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasShortVideoPostScheduleTime -->
+    <owl:DatatypeProperty rdf:about="#hasShortVideoPostScheduleTime">
+        <rdfs:domain rdf:resource="#ShortVideoPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Specifies the scheduled time for the short video post to be published.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: LivePost -->
+    <owl:Class rdf:about="#LivePost">
+        <rdfs:subClassOf rdf:resource="#Post"/>
+        <rdfs:comment>Represents posts associated with live sessions.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: associatedWithContent -->
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#LivePost"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Links a Live post to its associated content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasLivePostAudienceType -->
+    <owl:DatatypeProperty rdf:about="#hasLivePostAudienceType">
+        <rdfs:domain rdf:resource="#LivePost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Specifies the audience type for a live post.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasLivePostStreamType -->
+    <owl:DatatypeProperty rdf:about="#hasLivePostStreamType">
+        <rdfs:domain rdf:resource="#LivePost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Specifies the stream type for a live post (e.g., Public, Private).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasLivePostScheduleTime -->
+    <owl:DatatypeProperty rdf:about="#hasLivePostScheduleTime">
+        <rdfs:domain rdf:resource="#LivePost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Specifies the scheduled time for the live post to be published.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

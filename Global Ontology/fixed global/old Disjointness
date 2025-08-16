@@ -1,0 +1,274 @@
+
+
+<!--Disjointness-->
+    <owl:Class rdf:about="#Global:UserAccount">
+        <rdfs:comment xml:lang="en">An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:Content"/>
+        <owl:disjointWith rdf:resource="#Global:Message"/>
+        <owl:disjointWith rdf:resource="#Global:ContentInteraction"/>
+        <!-- <owl:disjointWith rdf:resource="#Global:Group"/> -->
+        <owl:disjointWith rdf:resource="#Global:SearchFunctionality"/>
+        <owl:disjointWith rdf:resource="#Global:Marketplace"/>
+        <!-- <owl:disjointWith rdf:resource="#Global:AdditionalFeature"/> -->
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:Content">
+        <rdfs:comment xml:lang="en">An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:UserAccount"/>
+        <owl:disjointWith rdf:resource="#Global:Message"/>
+        <owl:disjointWith rdf:resource="#Global:ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#Global:Group"/>
+        <owl:disjointWith rdf:resource="#Global:SearchFunctionality"/>
+        <owl:disjointWith rdf:resource="#Global:Marketplace"/>
+        <owl:disjointWith rdf:resource="#Global:AdditionalFeature"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:Message">
+        <rdfs:comment xml:lang="en">An instance of Global:Message cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:UserAccount"/>
+        <owl:disjointWith rdf:resource="#Global:Content"/>
+        <owl:disjointWith rdf:resource="#Global:ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#Global:Group"/>
+        <owl:disjointWith rdf:resource="#Global:SearchFunctionality"/>
+        <owl:disjointWith rdf:resource="#Global:Marketplace"/>
+        <owl:disjointWith rdf:resource="#Global:AdditionalFeature"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:ContentInteraction">
+        <rdfs:comment xml:lang="en">An instance of Global:ContentInteraction cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:UserAccount"/>
+        <owl:disjointWith rdf:resource="#Global:Content"/>
+        <owl:disjointWith rdf:resource="#Global:Message"/>
+        <owl:disjointWith rdf:resource="#Global:Group"/>
+        <owl:disjointWith rdf:resource="#Global:SearchFunctionality"/>
+        <owl:disjointWith rdf:resource="#Global:Marketplace"/>
+        <owl:disjointWith rdf:resource="#Global:AdditionalFeature"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:Group">
+        <rdfs:comment xml:lang="en">An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature.</rdfs:comment>
+        <!-- <owl:disjointWith rdf:resource="#Global:UserAccount"/> -->
+        <owl:disjointWith rdf:resource="#Global:Content"/>
+        <owl:disjointWith rdf:resource="#Global:Message"/>
+        <owl:disjointWith rdf:resource="#Global:ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#Global:SearchFunctionality"/>
+        <owl:disjointWith rdf:resource="#Global:Marketplace"/>
+        <owl:disjointWith rdf:resource="#Global:AdditionalFeature"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:SearchFunctionality">
+        <rdfs:comment xml:lang="en">An instance of Global:SearchFunctionality cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:Marketplace, or Global:AdditionalFeature.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:UserAccount"/>
+        <owl:disjointWith rdf:resource="#Global:Content"/>
+        <owl:disjointWith rdf:resource="#Global:Message"/>
+        <owl:disjointWith rdf:resource="#Global:ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#Global:Group"/>
+        <owl:disjointWith rdf:resource="#Global:Marketplace"/>
+        <owl:disjointWith rdf:resource="#Global:AdditionalFeature"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:Marketplace">
+        <rdfs:comment xml:lang="en">An instance of Global:Marketplace cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, or Global:AdditionalFeature.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:UserAccount"/>
+        <owl:disjointWith rdf:resource="#Global:Content"/>
+        <owl:disjointWith rdf:resource="#Global:Message"/>
+        <owl:disjointWith rdf:resource="#Global:ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#Global:Group"/>
+        <owl:disjointWith rdf:resource="#Global:SearchFunctionality"/>
+        <owl:disjointWith rdf:resource="#Global:AdditionalFeature"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:AdditionalFeature">
+        <rdfs:comment xml:lang="en">An instance of Global:AdditionalFeature cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, or Global:Marketplace.</rdfs:comment>
+        <!-- <owl:disjointWith rdf:resource="#Global:UserAccount"/> -->
+        <owl:disjointWith rdf:resource="#Global:Content"/>
+        <owl:disjointWith rdf:resource="#Global:Message"/>
+        <owl:disjointWith rdf:resource="#Global:ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#Global:Group"/>
+        <owl:disjointWith rdf:resource="#Global:SearchFunctionality"/>
+        <owl:disjointWith rdf:resource="#Global:Marketplace"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:User">
+        <rdfs:comment xml:lang="en">An MCSS:User is distinct from users of other platforms (MP:User, OFB:User, OSN:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is removed to address inconsistencies with OSN settings classes, assuming settings can be related to specific user types.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#MP:User"/>
+        <owl:disjointWith rdf:resource="#OFB:User"/>
+        <owl:disjointWith rdf:resource="#OSN:User"/>
+        <owl:disjointWith rdf:resource="#Global:UserManagement"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MP:User">
+        <rdfs:comment xml:lang="en">An MP:User is distinct from users of other platforms (MCSS:User, OFB:User, OSN:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is removed. MP:List and MP:Bookmark are distinct concepts associated with MP:User.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#MCSS:User"/>
+        <owl:disjointWith rdf:resource="#OFB:User"/>
+        <owl:disjointWith rdf:resource="#OSN:User"/>
+        <owl:disjointWith rdf:resource="#Global:UserManagement"/>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:List">
+        <rdfs:comment xml:lang="en">Following the provided hierarchy, an MP:List is distinct from an MP:Bookmark if they are the only direct, distinct sub-concepts of MP:User. This modeling is unusual as lists and bookmarks are typically associated entities, not user subtypes.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#MP:Bookmark"/>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:Bookmark">
+        <rdfs:comment xml:lang="en">Following the provided hierarchy, an MP:Bookmark is distinct from an MP:List if they are the only direct, distinct sub-concepts of MP:User.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#MP:List"/>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="#OFB:User">
+        <rdfs:comment xml:lang="en">An OFB:User is distinct from users of other platforms (MCSS:User, MP:User, OSN:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is removed.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#MCSS:User"/>
+        <owl:disjointWith rdf:resource="#MP:User"/>
+        <owl:disjointWith rdf:resource="#OSN:User"/>
+        <owl:disjointWith rdf:resource="#Global:UserManagement"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#OSN:User">
+        <rdfs:comment xml:lang="en">An OSN:User is distinct from users of other platforms (MCSS:User, MP:User, OFB:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is REMOVED to prevent inconsistencies with OSN-specific setting classes that are modeled under Global:Setting but are inherently tied to OSN:User.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#MCSS:User"/>
+        <owl:disjointWith rdf:resource="#MP:User"/>
+        <owl:disjointWith rdf:resource="#OFB:User"/>
+        </owl:Class>
+    
+    <owl:Class rdf:about="#Global:Setting">
+        <rdfs:comment xml:lang="en">Global:Setting (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User) - this disjointness is REMOVED for OSN:User to resolve inconsistencies. It remains distinct from Global:UserManagement.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#MCSS:User"/>
+        <owl:disjointWith rdf:resource="#MP:User"/>
+        <owl:disjointWith rdf:resource="#OFB:User"/>
+        <owl:disjointWith rdf:resource="#Global:UserManagement"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:UserManagement">
+        <rdfs:comment xml:lang="en">Global:UserManagement (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User). Disjointness with OSN:User is REMOVED to prevent potential inconsistencies if UserManagement aspects are closely tied to OSN:User.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#MCSS:User"/>
+        <owl:disjointWith rdf:resource="#MP:User"/>
+        <owl:disjointWith rdf:resource="#OFB:User"/>
+        <owl:disjointWith rdf:resource="#Global:Setting"/>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="#Global:ProfileSettings">
+        <rdfs:comment xml:lang="en">ProfileSettings are distinct from NotificationSettings, SecuritySettings, PrivacySettings, and Accessibility settings.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:NotificationSettings"/>
+        <owl:disjointWith rdf:resource="#Global:SecuritySettings"/>
+        <owl:disjointWith rdf:resource="#Global:PrivacySettings"/>
+        <owl:disjointWith rdf:resource="#Global:Accessibility"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:NotificationSettings">
+        <rdfs:comment xml:lang="en">NotificationSettings are distinct from ProfileSettings, SecuritySettings, PrivacySettings, and Accessibility settings.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:ProfileSettings"/>
+        <owl:disjointWith rdf:resource="#Global:SecuritySettings"/>
+        <owl:disjointWith rdf:resource="#Global:PrivacySettings"/>
+        <owl:disjointWith rdf:resource="#Global:Accessibility"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:SecuritySettings">
+        <rdfs:comment xml:lang="en">SecuritySettings are distinct from ProfileSettings, NotificationSettings, PrivacySettings, and Accessibility settings.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:ProfileSettings"/>
+        <owl:disjointWith rdf:resource="#Global:NotificationSettings"/>
+        <owl:disjointWith rdf:resource="#Global:PrivacySettings"/>
+        <owl:disjointWith rdf:resource="#Global:Accessibility"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:PrivacySettings">
+        <rdfs:comment xml:lang="en">PrivacySettings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and Accessibility settings.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:ProfileSettings"/>
+        <owl:disjointWith rdf:resource="#Global:NotificationSettings"/>
+        <owl:disjointWith rdf:resource="#Global:SecuritySettings"/>
+        <owl:disjointWith rdf:resource="#Global:Accessibility"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:Accessibility">
+        <rdfs:comment xml:lang="en">Accessibility settings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and PrivacySettings.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:ProfileSettings"/>
+        <owl:disjointWith rdf:resource="#Global:NotificationSettings"/>
+        <owl:disjointWith rdf:resource="#Global:SecuritySettings"/>
+        <owl:disjointWith rdf:resource="#Global:PrivacySettings"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:ProfileSettings">
+        <rdfs:comment xml:lang="en">MCSS:ProfileSettings are distinct from MP:ProfileSettings, OFB:ProfileSettings, and OSN:AccountSettings as they represent profile settings for different platform contexts or types.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#MP:ProfileSettings"/>
+        <owl:disjointWith rdf:resource="#OFB:ProfileSettings"/>
+        <owl:disjointWith rdf:resource="#OSN:AccountSettings"/>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:ProfileSettings">
+        <rdfs:comment xml:lang="en">MP:ProfileSettings are distinct from MCSS:ProfileSettings, OFB:ProfileSettings, and OSN:AccountSettings.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#MCSS:ProfileSettings"/>
+        <owl:disjointWith rdf:resource="#OFB:ProfileSettings"/>
+        <owl:disjointWith rdf:resource="#OSN:AccountSettings"/>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:ProfileSettings">
+        <rdfs:comment xml:lang="en">OFB:ProfileSettings are distinct from MCSS:ProfileSettings, MP:ProfileSettings, and OSN:AccountSettings.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#MCSS:ProfileSettings"/>
+        <owl:disjointWith rdf:resource="#MP:ProfileSettings"/>
+        <owl:disjointWith rdf:resource="#OSN:AccountSettings"/>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:AccountSettings">
+        <rdfs:comment xml:lang="en">OSN:AccountSettings are distinct from MCSS:ProfileSettings, MP:ProfileSettings, and OFB:ProfileSettings.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#MCSS:ProfileSettings"/>
+        <owl:disjointWith rdf:resource="#MP:ProfileSettings"/>
+        <owl:disjointWith rdf:resource="#OFB:ProfileSettings"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:Post">
+        <rdfs:comment xml:lang="en">A Global:Post is distinct from other types of Global:Content such as VideoContent, LiveContent, Poll, Story, or NewsContent.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:VideoContent"/>
+        <owl:disjointWith rdf:resource="#Global:LiveContent"/>
+        <owl:disjointWith rdf:resource="#Global:Poll"/>
+        <owl:disjointWith rdf:resource="#Global:Story"/>
+        <owl:disjointWith rdf:resource="#Global:NewsContent"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:VideoContent">
+        <rdfs:comment xml:lang="en">A Global:VideoContent is distinct from other types of Global:Content such as Post, LiveContent, Poll, Story, or NewsContent.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:Post"/>
+        <owl:disjointWith rdf:resource="#Global:LiveContent"/>
+        <owl:disjointWith rdf:resource="#Global:Poll"/>
+        <owl:disjointWith rdf:resource="#Global:Story"/>
+        <owl:disjointWith rdf:resource="#Global:NewsContent"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:LiveContent">
+        <rdfs:comment xml:lang="en">A Global:LiveContent is distinct from other types of Global:Content such as Post, VideoContent, Poll, Story, or NewsContent.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:Post"/>
+        <owl:disjointWith rdf:resource="#Global:VideoContent"/>
+        <owl:disjointWith rdf:resource="#Global:Poll"/>
+        <owl:disjointWith rdf:resource="#Global:Story"/>
+        <owl:disjointWith rdf:resource="#Global:NewsContent"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:Poll">
+        <rdfs:comment xml:lang="en">A Global:Poll is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Story, or NewsContent.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:Post"/>
+        <owl:disjointWith rdf:resource="#Global:VideoContent"/>
+        <owl:disjointWith rdf:resource="#Global:LiveContent"/>
+        <owl:disjointWith rdf:resource="#Global:Story"/>
+        <owl:disjointWith rdf:resource="#Global:NewsContent"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:Story">
+        <rdfs:comment xml:lang="en">A Global:Story is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Poll, or NewsContent.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:Post"/>
+        <owl:disjointWith rdf:resource="#Global:VideoContent"/>
+        <owl:disjointWith rdf:resource="#Global:LiveContent"/>
+        <owl:disjointWith rdf:resource="#Global:Poll"/>
+        <owl:disjointWith rdf:resource="#Global:NewsContent"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:NewsContent">
+        <rdfs:comment xml:lang="en">A Global:NewsContent is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Poll, or Story.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:Post"/>
+        <owl:disjointWith rdf:resource="#Global:VideoContent"/>
+        <owl:disjointWith rdf:resource="#Global:LiveContent"/>
+        <owl:disjointWith rdf:resource="#Global:Poll"/>
+        <owl:disjointWith rdf:resource="#Global:Story"/>
+    </owl:Class>
+
+
+    <!-- <owl:Class rdf:about="#Global:DirectMessage">
+        <rdfs:comment xml:lang="en">A Global:DirectMessage is distinct from a Global:GroupMessage and Global:MessagingActivity.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:GroupMessage"/>
+        <owl:disjointWith rdf:resource="#Global:MessagingActivity"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:GroupMessage">
+        <rdfs:comment xml:lang="en">A Global:GroupMessage is distinct from a Global:DirectMessage and Global:MessagingActivity.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:DirectMessage"/>
+        <owl:disjointWith rdf:resource="#Global:MessagingActivity"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:MessagingActivity">
+        <rdfs:comment xml:lang="en">Global:MessagingActivity is distinct from the message content types Global:DirectMessage and Global:GroupMessage.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#Global:DirectMessage"/>
+        <owl:disjointWith rdf:resource="#Global:GroupMessage"/>
+    </owl:Class> -->

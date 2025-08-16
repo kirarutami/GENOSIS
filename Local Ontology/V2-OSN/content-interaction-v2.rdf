@@ -1,0 +1,162 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas ContentInteraction -->
+    <owl:Class rdf:about="#ContentInteraction">
+        <rdfs:comment>Represents interactions with content such as likes, comments, and shares.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas LikesReactions -->
+    <owl:Class rdf:about="#LikesReactions">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <rdfs:comment>Represents likes and reactions on content such as posts or reels.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas untuk LikesReactions -->
+    <owl:Class rdf:about="#Like">
+        <rdfs:subClassOf rdf:resource="#LikesReactions"/>
+        <rdfs:comment>Represents a like on a post or other content.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#React">
+        <rdfs:subClassOf rdf:resource="#LikesReactions"/>
+        <rdfs:comment>Represents a reaction (like, love, laugh, etc.) on a post or other content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas Comments -->
+    <owl:Class rdf:about="#Comments">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <rdfs:comment>Represents comments made on posts or other content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas untuk Comments -->
+    <owl:Class rdf:about="#TextComment">
+        <rdfs:subClassOf rdf:resource="#Comments"/>
+        <rdfs:comment>Represents a text-based comment on a post or other content.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#GIFComment">
+        <rdfs:subClassOf rdf:resource="#Comments"/>
+        <rdfs:comment>Represents a GIF comment on a post or other content.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#EmojiComment">
+        <rdfs:subClassOf rdf:resource="#Comments"/>
+        <rdfs:comment>Represents an emoji comment on a post or other content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for ContentInteraction -->
+
+    <!-- User likes post -->
+    <owl:ObjectProperty rdf:about="#likesPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Like"/>
+        <rdfs:comment>Defines the relationship where a user likes a post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- User reacts to post -->
+    <owl:ObjectProperty rdf:about="#reactsToPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#React"/>
+        <rdfs:comment>Defines the relationship where a user reacts to a post with an emoji or emotion.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- User adds text comment to post -->
+    <owl:ObjectProperty rdf:about="#addsTextCommentToPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#TextComment"/>
+        <rdfs:comment>Defines the relationship where a user adds a text comment to a post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- User adds GIF comment to post -->
+    <owl:ObjectProperty rdf:about="#addsGIFCommentToPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GIFComment"/>
+        <rdfs:comment>Defines the relationship where a user adds a GIF comment to a post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- User adds emoji comment to post -->
+    <owl:ObjectProperty rdf:about="#addsEmojiCommentToPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#EmojiComment"/>
+        <rdfs:comment>Defines the relationship where a user adds an emoji comment to a post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Properties for Share -->
+    
+    <!-- User shares post to feed -->
+    <owl:ObjectProperty rdf:about="#sharesPostToFeed">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Feed"/>
+        <rdfs:comment>Defines the relationship where a user shares a post to their feed.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- User shares post to story -->
+    <owl:ObjectProperty rdf:about="#sharesPostToStory">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Stories"/>
+        <rdfs:comment>Defines the relationship where a user shares a post to their story.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- User shares post to external apps -->
+    <owl:ObjectProperty rdf:about="#sharesPostToExternalApps">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ExternalApps"/>
+        <rdfs:comment>Defines the relationship where a user shares a post to external applications such as messaging or social media apps.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Karakteristik untuk Object Properties -->
+    
+    <owl:FunctionalProperty rdf:about="#likesPost"/>
+    <owl:FunctionalProperty rdf:about="#sharesPostToFeed"/>
+    <owl:FunctionalProperty rdf:about="#sharesPostToStory"/>
+    
+    <owl:FunctionalProperty rdf:about="#addsGIFCommentToPost"/>
+    <owl:FunctionalProperty rdf:about="#reactsToPost"/>
+    <owl:FunctionalProperty rdf:about="#addsTextCommentToPost"/>
+    <owl:FunctionalProperty rdf:about="#addsEmojiCommentToPost"/>
+
+    <!-- Disjointness untuk LikesReactions, Comments, dan Shares -->
+    <owl:Class rdf:about="#LikesReactions">
+        <owl:disjointWith rdf:resource="#Comments"/>
+        <owl:disjointWith rdf:resource="#Shares"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Comments">
+        <owl:disjointWith rdf:resource="#LikesReactions"/>
+        <owl:disjointWith rdf:resource="#Shares"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Shares">
+        <owl:disjointWith rdf:resource="#LikesReactions"/>
+        <owl:disjointWith rdf:resource="#Comments"/>
+    </owl:Class>
+
+    <!-- Disjointness untuk Sub-sub-kelas LikesReactions (Like dan React) -->
+    <owl:Class rdf:about="#Like">
+        <owl:disjointWith rdf:resource="#React"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#React">
+        <owl:disjointWith rdf:resource="#Like"/>
+    </owl:Class>
+
+    <!-- Disjointness untuk Sub-sub-kelas Comments (TextComment, GIFComment, dan EmojiComment) -->
+    <owl:Class rdf:about="#TextComment">
+        <owl:disjointWith rdf:resource="#GIFComment"/>
+        <owl:disjointWith rdf:resource="#EmojiComment"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#GIFComment">
+        <owl:disjointWith rdf:resource="#TextComment"/>
+        <owl:disjointWith rdf:resource="#EmojiComment"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#EmojiComment">
+        <owl:disjointWith rdf:resource="#TextComment"/>
+        <owl:disjointWith rdf:resource="#GIFComment"/>
+    </owl:Class>
+
+</rdf:RDF>

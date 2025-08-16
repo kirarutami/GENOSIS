@@ -1,0 +1,470 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas User -->
+    <owl:Class rdf:about="#User"/>
+
+    <!-- Kelas ContentCreation -->
+    <owl:Class rdf:about="#ContentCreation"/>
+
+    <!-- Kelas ContentInteraction -->
+    <owl:Class rdf:about="#ContentInteraction"/>
+
+    <!-- Kelas VideoContent -->
+    <owl:Class rdf:about="#VideoContent"/>
+
+    <!-- Properti Objek untuk Relasi Antar Kelas -->
+    <owl:ObjectProperty rdf:about="#hasProfile"/>
+    <owl:ObjectProperty rdf:about="#hasPrivacySetting"/>
+    <owl:ObjectProperty rdf:about="#hasSecuritySetting"/>
+    <owl:ObjectProperty rdf:about="#hasAccountSetting"/>
+    <owl:ObjectProperty rdf:about="#isPartOfUser"/>
+
+    <!-- Sub-kelas UserProfile -->
+    <owl:Class rdf:about="#UserProfile">
+        <rdfs:subClassOf rdf:resource="#User"/>
+    </owl:Class>
+
+    <!-- Individu di dalam UserProfile -->
+    <owl:NamedIndividual rdf:about="#ProfilePicture">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their profile picture.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Username">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their username.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">admin</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Email">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their email address.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inactive</status>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas Fullname di dalam UserProfile -->
+    <owl:Class rdf:about="#Fullname">
+        <rdfs:subClassOf rdf:resource="#UserProfile"/>
+    </owl:Class>
+
+    <!-- Individu di dalam Fullname -->
+    <owl:NamedIndividual rdf:about="#FirstName">
+        <rdf:type rdf:resource="#Fullname"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their first name.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MiddleName">
+        <rdf:type rdf:resource="#Fullname"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their middle name.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inactive</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LastName">
+        <rdf:type rdf:resource="#Fullname"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their last name.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">admin</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas PrivacySettings -->
+    <owl:Class rdf:about="#PrivacySettings">
+        <rdfs:subClassOf rdf:resource="#User"/>
+    </owl:Class>
+
+    <!-- Sub-kelas AccountPrivacy di dalam PrivacySettings -->
+    <owl:Class rdf:about="#AccountPrivacy">
+        <rdfs:subClassOf rdf:resource="#PrivacySettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam AccountPrivacy -->
+    <owl:NamedIndividual rdf:about="#PrivateAccount">
+        <rdf:type rdf:resource="#AccountPrivacy"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can set their account to private.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+
+    <!-- Kelas ContentCreation -->
+    <owl:Class rdf:about="#ContentCreation"/>
+
+    <!-- Sub-kelas Posts di dalam ContentCreation -->
+    <owl:Class rdf:about="#Posts">
+        <rdfs:subClassOf rdf:resource="#ContentCreation"/>
+    </owl:Class>
+
+    <!-- Sub-kelas NewPost di dalam Posts -->
+    <owl:Class rdf:about="#NewPost">
+        <rdfs:subClassOf rdf:resource="#Posts"/>
+    </owl:Class>
+
+    <!-- Individu di dalam NewPost -->
+    <owl:NamedIndividual rdf:about="#PhotoVideo">
+        <rdf:type rdf:resource="#NewPost"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can upload photos or videos.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas Stories di dalam ContentCreation -->
+    <owl:Class rdf:about="#Stories">
+        <rdfs:subClassOf rdf:resource="#ContentCreation"/>
+    </owl:Class>
+
+    <!-- Sub-kelas CreateStory di dalam Stories -->
+    <owl:Class rdf:about="#CreateStory">
+        <rdfs:subClassOf rdf:resource="#Stories"/>
+    </owl:Class>
+
+    <!-- Individu di dalam CreateStory -->
+    <owl:NamedIndividual rdf:about="#StoryPhotoVideo">
+        <rdf:type rdf:resource="#CreateStory"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can upload photos or videos to their story.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas Reels di dalam ContentCreation -->
+    <owl:Class rdf:about="#Reels">
+        <rdfs:subClassOf rdf:resource="#ContentCreation"/>
+    </owl:Class>
+
+    <!-- Sub-kelas CreateReel di dalam Reels -->
+    <owl:Class rdf:about="#CreateReel">
+        <rdfs:subClassOf rdf:resource="#Reels"/>
+    </owl:Class>
+
+    <!-- Individu di dalam CreateReel -->
+    <owl:NamedIndividual rdf:about="#ReelVideo">
+        <rdf:type rdf:resource="#CreateReel"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can create short video clips.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+        <!-- Sub-kelas LikesReactions di dalam ContentInteraction -->
+    <owl:Class rdf:about="#LikesReactions">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+    </owl:Class>
+
+    <!-- Individu di dalam LikesReactions -->
+    <owl:NamedIndividual rdf:about="#Like">
+        <rdf:type rdf:resource="#LikesReactions"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can like posts, comments, or stories.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#React">
+        <rdf:type rdf:resource="#LikesReactions"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can react to posts with different emotions.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas Comments di dalam ContentInteraction -->
+    <owl:Class rdf:about="#Comments">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+    </owl:Class>
+
+    <!-- Individu di dalam Comments -->
+    <owl:NamedIndividual rdf:about="#TextComment">
+        <rdf:type rdf:resource="#Comments"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add text comments.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#GIFComment">
+        <rdf:type rdf:resource="#Comments"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add GIFs in comments.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#EmojiComment">
+        <rdf:type rdf:resource="#Comments"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add emojis in comments.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas Shares di dalam ContentInteraction -->
+    <owl:Class rdf:about="#Shares">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+    </owl:Class>
+
+    <!-- Individu di dalam Shares -->
+    <owl:NamedIndividual rdf:about="#ShareToFeed">
+        <rdf:type rdf:resource="#Shares"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can share posts to their feed.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ShareToStory">
+        <rdf:type rdf:resource="#Shares"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can share posts to their story.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ShareToExternalApps">
+        <rdf:type rdf:resource="#Shares"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can share posts to external applications like WhatsApp.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+
+    <!-- Sub-kelas Videos di dalam VideoContent -->
+    <owl:Class rdf:about="#Videos">
+        <rdfs:subClassOf rdf:resource="#VideoContent"/>
+    </owl:Class>
+
+    <!-- Individu di dalam Videos -->
+    <owl:NamedIndividual rdf:about="#WatchVideo">
+        <rdf:type rdf:resource="#Videos"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can watch videos.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SavedVideos">
+        <rdf:type rdf:resource="#Videos"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can save videos for later.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#VideoHistory">
+        <rdf:type rdf:resource="#Videos"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view their video watching history.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#CellularDataUse">
+        <rdf:type rdf:resource="#Videos"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage data usage for videos on cellular networks.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#VideoNotifications">
+        <rdf:type rdf:resource="#Videos"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can receive notifications for video updates.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas SearchVideo di dalam VideoContent -->
+    <owl:Class rdf:about="#SearchVideo">
+        <rdfs:subClassOf rdf:resource="#VideoContent"/>
+    </owl:Class>
+
+    <!-- Individu di dalam SearchVideo -->
+    <owl:NamedIndividual rdf:about="#ByKeyword">
+        <rdf:type rdf:resource="#SearchVideo"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can search videos by keywords.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ByActivity">
+        <rdf:type rdf:resource="#SearchVideo"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can search videos based on activity.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <!-- Properti Objek untuk Interaksi Antar Pengguna -->
+    <owl:ObjectProperty rdf:about="#sendMessageTo"/>
+    <owl:ObjectProperty rdf:about="#commentOn"/>
+    <owl:ObjectProperty rdf:about="#reactTo"/>
+    <owl:ObjectProperty rdf:about="#shareContentWith"/>
+    <owl:ObjectProperty rdf:about="#follow"/>
+    <owl:ObjectProperty rdf:about="#blockUser"/>
+    <owl:ObjectProperty rdf:about="#viewContent"/>
+    <owl:ObjectProperty rdf:about="#isConnectedTo"/>
+
+    <!-- Properti Data -->
+    <owl:DatatypeProperty rdf:about="#creationDate"/>
+    <owl:DatatypeProperty rdf:about="#modifiedDate"/>
+    <owl:DatatypeProperty rdf:about="#accessLevel"/>
+    <owl:DatatypeProperty rdf:about="#status"/>
+    <owl:DatatypeProperty rdf:about="#hasFeatureDescription"/>
+
+    <!-- Properti Objek Baru -->
+    <owl:ObjectProperty rdf:about="#postContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ContentCreation"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#createStory">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Stories"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#createReel">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reels"/>
+    </owl:ObjectProperty>
+    
+    <!-- Properti Objek uploadContentTo -->
+    <owl:ObjectProperty rdf:about="#uploadContentTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#NewPost"/>
+    </owl:ObjectProperty>
+
+    <!-- Properti Objek likeContent -->
+    <owl:ObjectProperty rdf:about="#likeContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ContentCreation"/>
+    </owl:ObjectProperty>
+
+    <!-- Properti Objek shareReelWith -->
+    <owl:ObjectProperty rdf:about="#shareReelWith">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+    </owl:ObjectProperty>
+
+    <!-- Properti Objek editProfile -->
+    <owl:ObjectProperty rdf:about="#editProfile">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#UserProfile"/>
+    </owl:ObjectProperty>
+
+    <!-- Properti Objek blockContentFrom -->
+    <owl:ObjectProperty rdf:about="#blockContentFrom">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ContentCreation"/>
+    </owl:ObjectProperty>
+
+    <!-- Properti Objek tagUserIn -->
+    <owl:ObjectProperty rdf:about="#tagUserIn">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+    </owl:ObjectProperty>
+
+    <!-- Properti Objek hasFullname -->
+    <owl:ObjectProperty rdf:about="#tagUserIn">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Fullname"/>
+    </owl:ObjectProperty>
+
+    <!-- Properti Objek addCommentTo -->
+    <owl:ObjectProperty rdf:about="#addCommentTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ContentCreation"/>
+    </owl:ObjectProperty>
+
+    <!-- Properti Objek viewStory -->
+    <owl:ObjectProperty rdf:about="#viewStory">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Stories"/>
+    </owl:ObjectProperty>
+
+        <!-- Properti Objek Baru untuk Content Interraction--> 
+    <owl:ObjectProperty rdf:about="#likeContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#LikesReactions"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#addComment">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Comments"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#shareContentTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Shares"/>
+    </owl:ObjectProperty>
+
+    <!-- Properti Objek Baru untuk Video Content -->
+    <owl:ObjectProperty rdf:about="#watchVideo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Videos"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#saveVideo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Videos"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#viewVideoHistory">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Videos"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#searchVideoByKeyword">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchVideo"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#searchVideoByActivity">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchVideo"/>
+    </owl:ObjectProperty>
+
+</rdf:RDF>

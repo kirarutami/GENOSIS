@@ -1,0 +1,45 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?content ?timestamp ?device ?ip ?user ?platform ?interactionType
+WHERE {
+  {
+    # Query untuk Post
+    ?post rdf:type ex:Post ;
+          ex:hasPostContent ?content ;
+          ex:hasPostTimestamp ?timestamp ;
+          ex:hasPostDeviceInfo ?device ;
+          ex:hasPostInteractionIP ?ip ;
+          ex:postedBy ?user ;
+          ex:belongsToPlatform ?platform .
+    BIND("Post" AS ?interactionType)
+  }
+  UNION
+  {
+    # Query untuk Direct Messages (DM)
+    ?dm rdf:type ex:DirectMessages ;
+        ex:hasDMContent ?content ;
+        ex:hasDMTimestamp ?timestamp ;
+        ex:hasDMDevice ?device ;
+        ex:hasDMIP ?ip ;
+        ex:dmSender ?user ;
+        ex:belongsToPlatform ?platform .
+    BIND("DM" AS ?interactionType)
+  }
+  UNION
+  {
+    # Query untuk Komentar
+    ?comment rdf:type ex:Comment ;
+             ex:hasCommentContent ?content ;
+             ex:hasCommentTimestamp ?timestamp ;
+             ex:hasCommentDevice ?device ;
+             ex:hasCommentIP ?ip ;
+             ex:commentedBy ?user ;
+             ex:belongsToPlatform ?platform .
+    BIND("Comment" AS ?interactionType)
+  }
+}
+ORDER BY ?timestamp

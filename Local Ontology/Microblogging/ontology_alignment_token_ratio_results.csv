@@ -1,0 +1,75 @@
+Type,Item_O1,Item_O2,Similarity
+Subject,Suspects,Suspects,100.0
+Subject,Suspects,Suspects,100.0
+Subject,Suspects,Suspects,100.0
+Subject,Suspects,Suspects,100.0
+Subject,Suspects,Suspects,100.0
+Subject,Suspects,Suspects,100.0
+Subject,Suspects,Suspects,100.0
+Subject,User,User,100.0
+Subject,UserActivity,UserActivity,100.0
+Subject,UserActivity,UserActivity,100.0
+Subject,ThresholdOfSuspiciousActivity,ThresholdOfSuspiciousActivity,100.0
+Subject,DigitalCrime,DigitalCrime,100.0
+Subject,User,User,100.0
+Subject,User,User,100.0
+Predicate,followsFlaggedProfiles,followsFlaggedProfiles,100.0
+Predicate,likesFlaggedContent,likesFlaggedContent,100.0
+Predicate,sharesFlaggedContent,sharesFlaggedContent,100.0
+Predicate,commentsOnFlaggedContent,commentsOnFlaggedContent,100.0
+Predicate,triggers,triggers,100.0
+Predicate,performsActivity,performsActivity,100.0
+Predicate,isConsideredSuspectBy,isConsideredSuspectBy,100.0
+Predicate,isConsideredSuspect,isConsideredSuspect,100.0
+Predicate,markedAsFlaggedContent,markedAsFlaggedContent,100.0
+Predicate,markedAsFlaggedProfile,markedAsFlaggedProfile,100.0
+Predicate,activatesCase,activatesCase,100.0
+Predicate,involvesFlaggedContent,involvesFlaggedContent,100.0
+Predicate,commentsOn,commentsOn,100.0
+Object,FlaggedProfiles,FlaggedProfiles,100.0
+Object,FlaggedContent,FlaggedContent,100.0
+Object,FlaggedContent,FlaggedContent,100.0
+Object,FlaggedContent,FlaggedContent,100.0
+Object,ThresholdOfSuspiciousActivity,ThresholdOfSuspiciousActivity,100.0
+Object,UserActivity,UserActivity,100.0
+Object,ThresholdOfSuspiciousActivity,ThresholdOfSuspiciousActivity,100.0
+Object,Suspects,Suspect,93.33333333333333
+Object,FlaggedContent,FlaggedContent,100.0
+Object,FlaggedProfiles,FlaggedProfiles,100.0
+Object,Crime_Case_Solving,Crime_Case_Solving,100.0
+Object,FlaggedContent,FlaggedContent,100.0
+Object,ContentCreation,ContentCreation,100.0
+Object,User,User,100.0
+Object,ContentCreation,ContentCreation,100.0
+Object,User,User,100.0
+Object,User,User,100.0
+SubjectComment,Represents individuals suspected of criminal activity based on their interactions in OSNs.,Represents individuals suspected of criminal activity based on their interactions in OSNs.,100.0
+SubjectComment,Represents individuals suspected of criminal activity based on their interactions in OSNs.,Represents individuals suspected of criminal activity based on their interactions in OSNs.,100.0
+SubjectComment,Represents individuals suspected of criminal activity based on their interactions in OSNs.,Represents individuals suspected of criminal activity based on their interactions in OSNs.,100.0
+SubjectComment,Represents individuals suspected of criminal activity based on their interactions in OSNs.,Represents individuals suspected of criminal activity based on their interactions in OSNs.,100.0
+SubjectComment,Represents individuals suspected of criminal activity based on their interactions in OSNs.,Represents individuals suspected of criminal activity based on their interactions in OSNs.,100.0
+SubjectComment,Represents individuals suspected of criminal activity based on their interactions in OSNs.,Represents individuals suspected of criminal activity based on their interactions in OSNs.,100.0
+SubjectComment,Represents individuals suspected of criminal activity based on their interactions in OSNs.,Represents individuals suspected of criminal activity based on their interactions in OSNs.,100.0
+SubjectComment,"Represents a threshold that, when exceeded, triggers suspicion.","Represents a threshold that, when exceeded, triggers suspicion.",100.0
+PredicateComment,Indicates that a suspect follows profiles that have been flagged as suspicious.,Indicates that a suspect follows profiles that have been flagged as suspicious.,100.0
+PredicateComment,Indicates that a suspect has liked content that has been flagged.,Indicates that a suspect has liked content that has been flagged.,100.0
+PredicateComment,Indicates that a suspect has shared flagged content.,Indicates that a suspect has shared flagged content.,100.0
+PredicateComment,Indicates that a suspect has commented on flagged content.,Indicates that a suspect has commented on flagged content.,100.0
+PredicateComment,Links a suspect to a threshold that triggers suspicion based on activities.,Links a suspect to a threshold that triggers suspicion based on activities.,100.0
+PredicateComment,Links a suspect to activities performed on social networks.,Links a suspect to activities performed on social networks.,100.0
+PredicateComment,"Links a person to the threshold that, once exceeded, classifies them as a suspect.","Links a person to the threshold that, once exceeded, classifies them as a suspect.",100.0
+PredicateComment,Links a user to the status of being considered a suspect.,Links a user to the status of being considered a suspect.,100.0
+PredicateComment,"Marks specific content (video, post) as suspicious or flagged.","Marks specific content (video, post) as suspicious or flagged.",100.0
+PredicateComment,Marks specific user profiles as suspicious or flagged.,Marks specific user profiles as suspicious or flagged.,100.0
+PredicateComment,Links a suspicious activity threshold to the activation of a crime case.,Links a suspicious activity threshold to the activation of a crime case.,100.0
+PredicateComment,Links a digital crime to flagged content that it involves.,Links a digital crime to flagged content that it involves.,100.0
+ObjectComment,Represents profiles that have been flagged as suspicious.,Represents profiles that have been flagged as suspicious.,100.0
+ObjectComment,Represents digital content that has been flagged as suspicious.,Represents digital content that has been flagged as suspicious.,100.0
+ObjectComment,Represents digital content that has been flagged as suspicious.,Represents digital content that has been flagged as suspicious.,100.0
+ObjectComment,Represents digital content that has been flagged as suspicious.,Represents digital content that has been flagged as suspicious.,100.0
+ObjectComment,"Represents a threshold that, when exceeded, triggers suspicion.","Represents a threshold that, when exceeded, triggers suspicion.",100.0
+ObjectComment,"Represents a threshold that, when exceeded, triggers suspicion.","Represents a threshold that, when exceeded, triggers suspicion.",100.0
+ObjectComment,Represents digital content that has been flagged as suspicious.,Represents digital content that has been flagged as suspicious.,100.0
+ObjectComment,Represents profiles that have been flagged as suspicious.,Represents profiles that have been flagged as suspicious.,100.0
+ObjectComment,Represents the process and methods used to solve a crime case.,Represents the process and methods used to solve a crime case.,100.0
+ObjectComment,Represents digital content that has been flagged as suspicious.,Represents digital content that has been flagged as suspicious.,100.0

@@ -1,0 +1,92 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas: OnlineSocialNetworkSites -->
+    <owl:Class rdf:about="#OnlineSocialNetworkSites">
+        <rdfs:comment>Represents various online social network platforms, such as Facebook, Instagram, LinkedIn, etc.</rdfs:comment>
+    </owl:Class>
+
+
+Dalam konteks ontologi untuk forensik digital, di mana kita perlu menganalisis apakah profil dari berbagai Online Social Network Sites (OSNs) milik orang yang sama, lebih baik menjadikan Facebook, Instagram, LinkedIn, dan platform serupa sebagai Individuals daripada Sub-kelas.
+
+Alasannya:
+
+Individuals lebih cocok karena mereka mewakili contoh konkret dari platform sosial tertentu, seperti entitas nyata yang bisa digunakan atau dianalisis.
+Sub-kelas biasanya digunakan untuk konsep yang lebih umum dan tidak cocok untuk entitas yang mewakili contoh spesifik.
+Struktur Hierarki yang Disarankan:
+scss
+Copy code
+OnlineSocialNetworkSites (Class)
+    ├── Facebook (Individual)
+    ├── Instagram (Individual)
+    ├── LinkedIn (Individual)
+    └── Other Platforms (Individuals, e.g., Twitter, TikTok, etc.)
+RDF untuk Hierarki dan Definisi Online Social Network Sites dengan Individuals
+Berikut adalah RDF yang menggambarkan hierarki di mana Facebook, Instagram, LinkedIn, dan platform lainnya dijadikan Individuals.
+
+xml
+Copy code
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas: OnlineSocialNetworkSites -->
+    <owl:Class rdf:about="#OnlineSocialNetworkSites">
+        <rdfs:comment>Represents various online social network platforms, such as Facebook, Instagram, LinkedIn, etc.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Individual: Facebook -->
+    <owl:NamedIndividual rdf:about="#Facebook">
+        <rdf:type rdf:resource="#OnlineSocialNetworkSites"/>
+        <rdfs:comment>Represents the Facebook social media platform.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Individual: Instagram -->
+    <owl:NamedIndividual rdf:about="#Instagram">
+        <rdf:type rdf:resource="#OnlineSocialNetworkSites"/>
+        <rdfs:comment>Represents the Instagram social media platform.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Individual: LinkedIn -->
+    <owl:NamedIndividual rdf:about="#LinkedIn">
+        <rdf:type rdf:resource="#OnlineSocialNetworkSites"/>
+        <rdfs:comment>Represents the LinkedIn social media platform.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Object Property: hasProfileOn -->
+    <owl:ObjectProperty rdf:about="#hasProfileOn">
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <rdfs:range rdf:resource="#OnlineSocialNetworkSites"/>
+        <rdfs:comment>Indicates that a UserProfile exists on a specific Online Social Network Site (e.g., Facebook, Instagram, LinkedIn).</rdfs:comment>
+        <owl:inverseOf rdf:resource="#belongsTo"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: belongsTo -->
+    <owl:ObjectProperty rdf:about="#belongsTo">
+        <rdfs:domain rdf:resource="#OnlineSocialNetworkSites"/>
+        <rdfs:range rdf:resource="#UserProfile"/>
+        <rdfs:comment>The inverse property of 'hasProfileOn', indicating that a social media profile belongs to a user on a given platform.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: isLinkedTo -->
+    <owl:ObjectProperty rdf:about="#isLinkedTo">
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <rdfs:range rdf:resource="#UserProfile"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:comment>Indicates that a UserProfile on one platform is linked to another profile on a different platform. This property is symmetric.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: sameAs -->
+    <owl:ObjectProperty rdf:about="#sameAs">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <rdfs:range rdf:resource="#UserProfile"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:comment>Indicates that two profiles on different Online Social Network Sites belong to the same person. This property is functional and inverse functional.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#isLinkedTo"/>
+    </owl:ObjectProperty>
+
+</rdf:RDF>

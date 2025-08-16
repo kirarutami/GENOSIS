@@ -1,0 +1,56 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas VideoContent -->
+    <owl:Class rdf:about="#VideoContent"/>
+
+    <!-- Sub-kelas Videos -->
+    <owl:Class rdf:about="#Videos">
+        <rdfs:subClassOf rdf:resource="#VideoContent"/>
+    </owl:Class>
+
+    <!-- Individu di dalam Videos -->
+    <owl:NamedIndividual rdf:about="#WatchVideo">
+        <rdf:type rdf:resource="#Videos"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can watch videos.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SavedVideos">
+        <rdf:type rdf:resource="#Videos"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can save videos for later.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#VideoHistory">
+        <rdf:type rdf:resource="#Videos"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view their video watching history.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#CellularDataUse">
+        <rdf:type rdf:resource="#Videos"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage data usage for videos.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#VideoNotifications">
+        <rdf:type rdf:resource="#Videos"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can receive notifications for video updates.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas SearchVideo -->
+    <owl:Class rdf:about="#SearchVideo">
+        <rdfs:subClassOf rdf:resource="#VideoContent"/>
+    </owl:Class>
+
+    <!-- Individu di dalam SearchVideo -->
+    <owl:NamedIndividual rdf:about="#ByKeyword">
+        <rdf:type rdf:resource="#SearchVideo"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can search videos by keywords.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ByActivity">
+        <rdf:type rdf:resource="#SearchVideo"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can search videos based on activity.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

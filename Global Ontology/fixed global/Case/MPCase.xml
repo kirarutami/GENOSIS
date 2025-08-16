@@ -1,0 +1,474 @@
+        <owl:DatatypeProperty rdf:about="#hasPassword">
+            <rdfs:label xml:lang="en">has Password</rdfs:label>
+            <rdfs:comment xml:lang="en">Stores the encrypted or placeholder password of the user.</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:UserAccount"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasUserBirthday">
+            <rdfs:label xml:lang="en">has User Birthday</rdfs:label>
+            <rdfs:comment xml:lang="en">Stores the birth date of the user.</rdfs:comment>
+            <rdfs:subPropertyOf rdf:resource="#Global:hasProfileDetails"/>
+            <rdfs:domain rdf:resource="#Global:UserAccount"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasSecuritySettingsValue">
+            <rdfs:label xml:lang="en">has Security Settings Value</rdfs:label>
+            <rdfs:comment xml:lang="en">Describes specific security settings of the user account as a string value (e.g., '2FA enabled').</rdfs:comment>
+            <rdfs:subPropertyOf rdf:resource="#Global:hasProfileSetting"/>
+            <rdfs:domain rdf:resource="#Global:SecuritySettings"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasSubscriptionStatus">
+            <rdfs:label xml:lang="en">has Subscription Status</rdfs:label>
+            <rdfs:comment xml:lang="en">Indicates the subscription status of the user (e.g., 'free', 'premium').</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:UserAccount"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasNotificationsSettingValue">
+            <rdfs:label xml:lang="en">has Notifications Setting Value</rdfs:label>
+            <rdfs:comment xml:lang="en">Describes user's notification preferences as a string value (e.g., 'enabled', 'disabled').</rdfs:comment>
+            <rdfs:subPropertyOf rdf:resource="#Global:hasProfileSetting"/>
+            <rdfs:domain rdf:resource="#Global:NotificationSettings"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasUserPrivacySettingValue">
+            <rdfs:label xml:lang="en">has User Privacy Setting Value</rdfs:label>
+            <rdfs:comment xml:lang="en">Describes the privacy setting of the user account as a string value (e.g., 'public', 'private').</rdfs:comment>
+            <rdfs:subPropertyOf rdf:resource="#Global:hasProfileSetting"/>
+            <rdfs:domain rdf:resource="#Global:PrivacySettings"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasLogoutStatus">
+            <rdfs:label xml:lang="en">has Logout Status</rdfs:label>
+            <rdfs:comment xml:lang="en">Indicates if the user is currently logged out.</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:UserAccount"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasProfileWebsite">
+            <rdfs:label xml:lang="en">has Profile Website</rdfs:label>
+            <rdfs:comment xml:lang="en">Stores the user's website URL from their profile.</rdfs:comment>
+            <rdfs:subPropertyOf rdf:resource="#Global:hasProfileDetails"/>
+            <rdfs:domain rdf:resource="#Global:UserAccount"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasTips">
+            <rdfs:label xml:lang="en">has Tips</rdfs:label>
+            <rdfs:comment xml:lang="en">Profile tips or a short message from the user, often found in bio sections.</rdfs:comment>
+            <rdfs:subPropertyOf rdf:resource="#Global:hasProfileDetails"/>
+            <rdfs:domain rdf:resource="#Global:UserAccount"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasPostDeviceInfo">
+            <rdfs:label xml:lang="en">has Post Device Info</rdfs:label>
+            <rdfs:comment xml:lang="en">Information about the device used to create a post.</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:Post"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasPostTags">
+            <rdfs:label xml:lang="en">has Post Tags</rdfs:label>
+            <rdfs:comment xml:lang="en">Tags or hashtags associated with a post.</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:Post"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasPostStatus">
+            <rdfs:label xml:lang="en">has Post Status</rdfs:label>
+            <rdfs:comment xml:lang="en">The status of a post (e.g., 'draft', 'scheduled', 'published').</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:Post"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasCommentSpecificIP">
+            <rdfs:label xml:lang="en">has Comment Specific IP</rdfs:label>
+            <rdfs:comment xml:lang="en">IP address associated with a comment action.</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:CommentOrReplyAction"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasCommentDevice">
+            <rdfs:label xml:lang="en">has Comment Device</rdfs:label>
+            <rdfs:comment xml:lang="en">Device used to make a comment.</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:CommentOrReplyAction"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasDMSpecificIP">
+            <rdfs:label xml:lang="en">has DM Specific IP</rdfs:label>
+            <rdfs:comment xml:lang="en">IP address associated with a direct message.</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:DirectMessage"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasDMDevice">
+            <rdfs:label xml:lang="en">has DM Device</rdfs:label>
+            <rdfs:comment xml:lang="en">Device used to send/receive a direct message.</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:DirectMessage"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasDMThreatLevel">
+            <rdfs:label xml:lang="en">has DM Threat Level</rdfs:label>
+            <rdfs:comment xml:lang="en">Assessed threat level of a direct message (e.g., 'high', 'medium', 'low').</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:DirectMessage"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasInteractionDevice">
+            <rdfs:label xml:lang="en">has Interaction Device</rdfs:label>
+            <rdfs:comment xml:lang="en">Device used for a generic interaction like block or report.</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:ContentInteraction"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasBlockReason">
+            <rdfs:label xml:lang="en">has Block Reason</rdfs:label>
+            <rdfs:comment xml:lang="en">Reason provided for blocking a user or content.</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:ContentInteraction"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasReportReason">
+            <rdfs:label xml:lang="en">has Report Reason</rdfs:label>
+            <rdfs:comment xml:lang="en">Reason provided for a report.</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:ReportAction"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:Class rdf:about="#MP:BlockAction">
+            <rdfs:label xml:lang="en">MP Block Action</rdfs:label>
+            <rdfs:comment xml:lang="en">Represents the action of a user blocking another user on a microblogging platform.</rdfs:comment>
+            <rdfs:subClassOf rdf:resource="#Global:ContentInteraction"/>
+        </owl:Class>
+
+        <owl:ObjectProperty rdf:about="#performedBy">
+            <rdfs:label xml:lang="en">performed By</rdfs:label>
+            <rdfs:comment xml:lang="en">Relates an interaction or action to the user account that performed it.</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:ContentInteraction"/>
+            <rdfs:range rdf:resource="#Global:UserAccount"/>
+        </owl:ObjectProperty>
+
+        <owl:ObjectProperty rdf:about="#targetUser">
+            <rdfs:label xml:lang="en">target User</rdfs:label>
+            <rdfs:comment xml:lang="en">Relates an interaction or action to the user account that is the target of the action.</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:ContentInteraction"/>
+            <rdfs:range rdf:resource="#Global:UserAccount"/>
+        </owl:ObjectProperty>
+        
+        <owl:DatatypeProperty rdf:about="#hasUsername"/>
+        <owl:DatatypeProperty rdf:about="#hasEmail"/>
+        <owl:DatatypeProperty rdf:about="#hasBio"/>
+        <owl:DatatypeProperty rdf:about="#hasLocation"/>
+        <owl:DatatypeProperty rdf:about="#hasProfilePicture"/>
+        <owl:DatatypeProperty rdf:about="#hasCreationTimestamp"/>
+        <owl:DatatypeProperty rdf:about="#hasContentURL"/>
+        <owl:DatatypeProperty rdf:about="#hasIpAddress"/>
+        <owl:DatatypeProperty rdf:about="#hasContentText"/>
+        <owl:DatatypeProperty rdf:about="#hasInteractionTimestamp"/>
+        <owl:DatatypeProperty rdf:about="#hasAttachmentURL"/>
+        <owl:DatatypeProperty rdf:about="#hasScheduledPublishTimestamp"/>
+        <owl:DatatypeProperty rdf:about="#hasMessageContent"/>
+        <owl:DatatypeProperty rdf:about="#hasMessageSentTimestamp"/>
+
+        <owl:ObjectProperty rdf:about="#postedBy"/>
+        <owl:ObjectProperty rdf:about="#commentedBy"/>
+        <owl:ObjectProperty rdf:about="#commentsOn"/>
+        <owl:ObjectProperty rdf:about="#attributedToUser"/>
+        <owl:ObjectProperty rdf:about="#messageReceiver"/>
+
+    </owl:Ontology>
+
+    <rdf:Description rdf:about="#User_AminaReports_Twitter">
+        <rdf:type rdf:resource="#MP:User"/>
+        <rdfs:label>AminaReports (Twitter User)</rdfs:label>
+        <hasUsername>AminaReports</hasUsername>
+        <hasEmail>amina.reporter@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasUserBirthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1985-06-15</hasUserBirthday>
+        <hasSecuritySettingsValue>2FA enabled</hasSecuritySettingsValue>
+        <hasSubscriptionStatus>premium</hasSubscriptionStatus>
+        <hasNotificationsSettingValue>enabled</hasNotificationsSettingValue>
+        <hasUserPrivacySettingValue>public</hasUserPrivacySettingValue>
+        <hasLogoutStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasLogoutStatus>
+        <hasBio>Journalist covering climate change and economic policies.</hasBio>
+        <hasLocation>New York, USA</hasLocation>
+        <hasProfileWebsite>https://aminareports.com</hasProfileWebsite>
+        <hasTips>Stay informed, stay engaged.</hasTips>
+        <hasProfilePicture>https://aminareports.com/profile.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-07-20T10:00:00Z</hasCreationTimestamp>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#User_RealPatriot99_Twitter">
+        <rdf:type rdf:resource="#MP:User"/>
+        <rdfs:label>RealPatriot99 (Twitter User)</rdfs:label>
+        <hasUsername>RealPatriot99</hasUsername>
+        <hasEmail>realpatriot99@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasUserBirthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1978-11-22</hasUserBirthday>
+        <hasSecuritySettingsValue>2FA disabled</hasSecuritySettingsValue>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSettingValue>enabled</hasNotificationsSettingValue>
+        <hasUserPrivacySettingValue>public</hasUserPrivacySettingValue>
+        <hasLogoutStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasLogoutStatus>
+        <hasBio>Fighting for free speech and truth.</hasBio>
+        <hasLocation>Unknown</hasLocation>
+        <hasProfileWebsite>None</hasProfileWebsite>
+        <hasTips>Speak your mind.</hasTips>
+        <hasProfilePicture>https://realpatriot99.com/profile.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-10T12:00:00Z</hasCreationTimestamp>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#User_FreeSpeechWarrior_Twitter">
+        <rdf:type rdf:resource="#MP:User"/>
+        <rdfs:label>FreeSpeechWarrior (Twitter User)</rdfs:label>
+        <hasUsername>FreeSpeechWarrior</hasUsername>
+        <hasEmail>freespeechwarrior@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasUserBirthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1982-03-10</hasUserBirthday>
+        <hasSecuritySettingsValue>2FA disabled</hasSecuritySettingsValue>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSettingValue>enabled</hasNotificationsSettingValue>
+        <hasUserPrivacySettingValue>public</hasUserPrivacySettingValue>
+        <hasLogoutStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasLogoutStatus>
+        <hasBio>Defender of free speech.</hasBio>
+        <hasLocation>Unknown</hasLocation>
+        <hasProfileWebsite>None</hasProfileWebsite>
+        <hasTips>Freedom above all.</hasTips>
+        <hasProfilePicture>https://freespeechwarrior.com/profile.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-11-05T15:30:00Z</hasCreationTimestamp>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#User_AnonDestroyer_Twitter">
+        <rdf:type rdf:resource="#MP:User"/>
+        <rdfs:label>AnonDestroyer (Twitter User)</rdfs:label>
+        <hasUsername>AnonDestroyer</hasUsername>
+        <hasEmail>anondestroyer@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasUserBirthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1990-07-05</hasUserBirthday>
+        <hasSecuritySettingsValue>2FA disabled</hasSecuritySettingsValue>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSettingValue>enabled</hasNotificationsSettingValue>
+        <hasUserPrivacySettingValue>public</hasUserPrivacySettingValue>
+        <hasLogoutStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasLogoutStatus>
+        <hasBio>Anonymous and unstoppable.</hasBio>
+        <hasLocation>Unknown</hasLocation>
+        <hasProfileWebsite>None</hasProfileWebsite>
+        <hasTips>Stay anonymous.</hasTips>
+        <hasProfilePicture>https://anondestroyer.com/profile.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-02T08:00:00Z</hasCreationTimestamp>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#User_BotReplier55_Twitter">
+        <rdf:type rdf:resource="#MP:User"/>
+        <rdfs:label>BotReplier55 (Twitter User - Bot)</rdfs:label>
+        <hasUsername>BotReplier55</hasUsername>
+        <hasEmail>botreplier55@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasUserBirthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2000-01-01</hasUserBirthday>
+        <hasSecuritySettingsValue>2FA disabled</hasSecuritySettingsValue>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSettingValue>enabled</hasNotificationsSettingValue>
+        <hasUserPrivacySettingValue>public</hasUserPrivacySettingValue>
+        <hasLogoutStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasLogoutStatus>
+        <hasBio>Automated responses for truth.</hasBio>
+        <hasLocation>Unknown</hasLocation>
+        <hasProfileWebsite>None</hasProfileWebsite>
+        <hasTips>Automation is key.</hasTips>
+        <hasProfilePicture>https://botreplier55.com/profile.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-03-15T00:00:00Z</hasCreationTimestamp>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Post_Amina001_Twitter">
+        <rdf:type rdf:resource="#MP:Post"/>
+        <rdfs:label>Amina's Climate Article Post</rdfs:label>
+        <postedBy rdf:resource="#User_AminaReports_Twitter"/>
+        <hasContentURL>https://twitter.com/AminaReports/status/123456</hasContentURL>
+        <hasPostDeviceInfo>Twitter Web (MacBook Pro)</hasPostDeviceInfo>
+        <hasIpAddress>192.168.1.12</hasIpAddress>
+        <hasLocation>New York, USA</hasLocation>
+        <hasContentText>"Just published my latest article on climate policies..."</hasContentText>
+        <hasPostTags>#ClimateChange #EconomicGrowth</hasPostTags>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T12:30:00Z</hasCreationTimestamp>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Post_RP99_Draft_001_Twitter">
+        <rdf:type rdf:resource="#MP:Post"/>
+        <rdfs:label>RealPatriot99's Draft Post</rdfs:label>
+        <postedBy rdf:resource="#User_RealPatriot99_Twitter"/>
+        <hasPostDeviceInfo>Twitter Android App</hasPostDeviceInfo>
+        <hasIpAddress>10.0.0.99</hasIpAddress>
+        <hasLocation>Unknown</hasLocation>
+        <hasContentText>"Drafting a post calling out mainstream media..."</hasContentText>
+        <hasPostTags>#SpeakTruth</hasPostTags>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-01T10:00:00Z</hasCreationTimestamp>
+        <hasPostStatus>draft</hasPostStatus>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Post_Amina_Scheduled_001_Twitter">
+        <rdf:type rdf:resource="#MP:Post"/>
+        <rdfs:label>Amina's Scheduled Post</rdfs:label>
+        <postedBy rdf:resource="#User_AminaReports_Twitter"/>
+        <hasPostDeviceInfo>Twitter Web (MacBook)</hasPostDeviceInfo>
+        <hasIpAddress>192.168.1.12</hasIpAddress>
+        <hasAttachmentURL>https://aminareports.com/images/teaser.png</hasAttachmentURL>
+        <hasLocation>New York, USA</hasLocation>
+        <hasContentText>"[Scheduled] New insights on climate policy to be posted soon."</hasContentText>
+        <hasPostTags>#ClimateDebate #ScheduledPost</hasPostTags>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-02T09:00:00Z</hasCreationTimestamp>
+        <hasPostStatus>scheduled</hasPostStatus>
+        <hasScheduledPublishTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-02T16:30:00Z</hasScheduledPublishTimestamp>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_RealPatriot99_1_Twitter">
+        <rdf:type rdf:resource="#MP:CommentAction"/>
+        <rdfs:label>RealPatriot99 Comment 1 on Amina's Post</rdfs:label>
+        <commentedBy rdf:resource="#User_RealPatriot99_Twitter"/>
+        <commentsOn rdf:resource="#Post_Amina001_Twitter"/>
+        <hasContentText>"Another fake news journalist pushing the globalist agenda. Maybe go back to your kitchen where you belong. #WomenShouldntReport"</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T13:05:00Z</hasInteractionTimestamp>
+        <hasCommentSpecificIP>10.0.0.101</hasCommentSpecificIP>
+        <hasCommentDevice>Android (VPN)</hasCommentDevice>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_FreeSpeechWarrior_1_Twitter">
+        <rdf:type rdf:resource="#MP:CommentAction"/>
+        <rdfs:label>FreeSpeechWarrior Comment 1 on Amina's Post</rdfs:label>
+        <commentedBy rdf:resource="#User_FreeSpeechWarrior_Twitter"/>
+        <commentsOn rdf:resource="#Post_Amina001_Twitter"/>
+        <hasContentText>"The climate scam is the biggest hoax in history. People like you are the real problem. Hope you lose your job."</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T13:10:00Z</hasInteractionTimestamp>
+        <hasCommentSpecificIP>10.0.0.102</hasCommentSpecificIP>
+        <hasCommentDevice>Windows PC (VPN)</hasCommentDevice>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_AnonDestroyer_1_Twitter">
+        <rdf:type rdf:resource="#MP:CommentAction"/>
+        <rdfs:label>AnonDestroyer Doxing Comment on Amina's Post</rdfs:label>
+        <commentedBy rdf:resource="#User_AnonDestroyer_Twitter"/>
+        <commentsOn rdf:resource="#Post_Amina001_Twitter"/>
+        <hasContentText>"Her real name is Amina K. She lives in Brooklyn. Here's her email: amina.reporter[at]mail.com. Let's send her some messages!"</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T13:20:00Z</hasInteractionTimestamp>
+        <hasCommentSpecificIP>10.0.0.103</hasCommentSpecificIP>
+        <hasCommentDevice>Windows (Multi-VPN)</hasCommentDevice>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_RealPatriot99_2_Twitter">
+        <rdf:type rdf:resource="#MP:CommentAction"/>
+        <rdfs:label>RealPatriot99 Comment 2 on Amina's Post</rdfs:label>
+        <commentedBy rdf:resource="#User_RealPatriot99_Twitter"/>
+        <commentsOn rdf:resource="#Post_Amina001_Twitter"/>
+        <hasContentText>"Cry more. If you can't handle criticism, get off Twitter. #FreeSpeech"</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T13:30:00Z</hasInteractionTimestamp>
+        <hasCommentSpecificIP>10.0.0.105</hasCommentSpecificIP>
+        <hasCommentDevice>Android (VPN)</hasCommentDevice>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_BotReplier55_1_Twitter">
+        <rdf:type rdf:resource="#MP:CommentAction"/>
+        <rdfs:label>BotReplier55 Comment on Amina's Post</rdfs:label>
+        <commentedBy rdf:resource="#User_BotReplier55_Twitter"/>
+        <commentsOn rdf:resource="#Post_Amina001_Twitter"/>
+        <hasContentText>"This journalist is a fraud. BLOCK HER ACCOUNT NOW. #FakeNews #GlobalistLies"</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T13:35:00Z</hasInteractionTimestamp>
+        <hasCommentSpecificIP>10.0.0.106</hasCommentSpecificIP>
+        <hasCommentDevice>Automated Bot Script</hasCommentDevice>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_AnonDestroyer_to_Amina_1_Twitter">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>AnonDestroyer Threat DM to Amina 1</rdfs:label>
+        <attributedToUser rdf:resource="#User_AnonDestroyer_Twitter"/>
+        <messageReceiver rdf:resource="#User_AminaReports_Twitter"/>
+        <hasMessageContent>"We know where you live. If you don't stop spreading lies, we'll make sure you regret it. Watch your back."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T14:00:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>8.8.8.8</hasDMSpecificIP>
+        <hasDMDevice>Windows PC (VPN)</hasDMDevice>
+        <hasDMThreatLevel>high</hasDMThreatLevel>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_Amina_to_AnonDestroyer_1_Twitter">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>Amina Reply DM to AnonDestroyer 1</rdfs:label>
+        <attributedToUser rdf:resource="#User_AminaReports_Twitter"/>
+        <messageReceiver rdf:resource="#User_AnonDestroyer_Twitter"/>
+        <hasMessageContent>"Who are you? Why are you doing this?"</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T14:05:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>192.168.1.12</hasDMSpecificIP>
+        <hasDMDevice>MacBook Pro (Twitter Web)</hasDMDevice>
+        <hasDMThreatLevel>low</hasDMThreatLevel>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_AnonDestroyer_to_Amina_2_Twitter">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>AnonDestroyer Threat DM to Amina 2</rdfs:label>
+        <attributedToUser rdf:resource="#User_AnonDestroyer_Twitter"/>
+        <messageReceiver rdf:resource="#User_AminaReports_Twitter"/>
+        <hasMessageContent>"LOL, you think you're important? Just shut up and stop writing your garbage articles. Or we'll take it to the next level."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T14:10:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>8.8.4.4</hasDMSpecificIP>
+        <hasDMDevice>Windows PC (VPN)</hasDMDevice>
+        <hasDMThreatLevel>high</hasDMThreatLevel>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_RealPatriot99_to_Amina_1_Twitter">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>RealPatriot99 Threat DM to Amina</rdfs:label>
+        <attributedToUser rdf:resource="#User_RealPatriot99_Twitter"/>
+        <messageReceiver rdf:resource="#User_AminaReports_Twitter"/>
+        <hasMessageContent>"You should just delete your account. Nobody wants to hear from you. Maybe something 'unfortunate' will happen if you don't."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T14:15:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>10.0.0.99</hasDMSpecificIP>
+        <hasDMDevice>Android (VPN)</hasDMDevice>
+        <hasDMThreatLevel>high</hasDMThreatLevel>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Block_Amina_Anon_001_Twitter">
+        <rdf:type rdf:resource="#MP:BlockAction"/>
+        <rdfs:label>Amina blocks AnonDestroyer</rdfs:label>
+        <performedBy rdf:resource="#User_AminaReports_Twitter"/>
+        <targetUser rdf:resource="#User_AnonDestroyer_Twitter"/>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T14:20:00Z</hasInteractionTimestamp>
+        <hasIpAddress>192.168.1.12</hasIpAddress>
+        <hasInteractionDevice>Twitter Web</hasInteractionDevice>
+        <hasBlockReason>Threatening DMs</hasBlockReason>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Block_Amina_RP99_001_Twitter">
+        <rdf:type rdf:resource="#MP:BlockAction"/>
+        <rdfs:label>Amina blocks RealPatriot99</rdfs:label>
+        <performedBy rdf:resource="#User_AminaReports_Twitter"/>
+        <targetUser rdf:resource="#User_RealPatriot99_Twitter"/>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T14:20:00Z</hasInteractionTimestamp>
+        <hasIpAddress>192.168.1.12</hasIpAddress>
+        <hasInteractionDevice>Twitter Web</hasInteractionDevice>
+        <hasBlockReason>Threatening DM</hasBlockReason>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+

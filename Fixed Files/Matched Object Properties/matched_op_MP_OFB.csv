@@ -1,0 +1,49 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+MP:blockInitiator,OFB:blockInitiator,100.0,"
+            The user who initiates the block action.
+        ","
+        Indicates the user who initiates the blocking action.
+        "
+MP:canEditAvatar,OFB:canEditAvatar,100.0,Indicates permission to edit profile avatar.,Indicates that a user can edit their avatar.
+MP:canEditProfile,OFB:canEditProfile,100.0,Indicates permission to edit profile information.,Indicates that a user can edit their profile settings.
+MP:commentsOn,OFB:commentsOn,100.0,,Links a user to the content they have commented on.
+MP:joinsCommunity,OFB:joinsCommunity,100.0,Indicates that a user has joined a specific community.,Indicates that a user has joined a community.
+MP:repliesOnComment,OFB:repliesToComment,93.75,,Links a user to the comment they have replied to.
+MP:blocks,OFB:blocksUser,90.0,,Links a user to another user they have blocked.
+MP:blocks,OFB:unblocksUser,90.0,,Links a user to another user they have unblocked.
+MP:commentsOnReblogRetweetPost,OFB:commentsOn,90.0,,Links a user to the content they have commented on.
+MP:follow,OFB:followsCommunity,90.0,,Indicates that a user is following a community.
+MP:follow,OFB:followsTopic,90.0,,Links a user to a topic they are following.
+MP:searchFor,OFB:searchesFor,90.0,Allows a user to search for other users within the platform.,Links a user to the target of their search query.
+MP:searchesForCommunity,OFB:searchesFor,90.0,Indicates that a user is searching for a specific community.,Links a user to the target of their search query.
+MP:unblocks,OFB:unblocksUser,90.0,,Links a user to another user they have unblocked.
+MP:pinsCommunity,OFB:joinsCommunity,88.89,Indicates that a user has pinned a specific community to their profile or feed.,Indicates that a user has joined a community.
+MP:sharesCommunity,OFB:sharedToCommunity,87.5,Indicates that a user has shared a community with others.,Links shared content to the community where it was reposted.
+MP:blockedUser,OFB:blocksUser,85.71,"
+            The user who is being blocked.
+        ",Links a user to another user they have blocked.
+MP:commentedOn,OFB:commentsOn,85.71,"
+            Points to the post on which this comment was made.
+            For reblog/retweet, you could similarly add commentedOnReblogRetweetPost, etc.
+        ",Links a user to the content they have commented on.
+MP:isSubscribedTo,OFB:subscribesTo,84.62,Links a user to a specific subscription they are subscribed to.,Links a user to the subscription plan they have subscribed to.
+MP:saveSearchesFor,OFB:searchesFor,84.62,Allows a user to save their searches for future reference.,Links a user to the target of their search query.
+MP:likesComment,OFB:likesContent,83.33,,Links a user to the content they have liked.
+MP:schedulePost,OFB:editsScheduledPost,82.5,Schedules a post to be published at a specified time.,Indicates that a user edits an existing scheduled post.
+MP:schedulePost,OFB:postsScheduledPost,82.5,Schedules a post to be published at a specified time.,Links a user to the scheduled post they have created.
+MP:blocks,OFB:blockInitiator,81.82,,"
+        Indicates the user who initiates the blocking action.
+        "
+MP:blocks,OFB:blockedTargetUser,81.82,,"
+        Indicates the user who is being blocked.
+        "
+MP:blocks,OFB:locksPost,81.82,,Indicates that a moderator has locked a post in the community.
+MP:saveAsDraft,OFB:savesPostAsDraft,81.48,Saves a post as a draft for future editing or posting.,Indicates that a user saved a post as a draft.
+MP:searchesForLists,OFB:searchesFor,81.48,Indicates that a user has searched for specific lists on the platform.,Links a user to the target of their search query.
+MP:pinsCommunity,OFB:pinsPostByCommunity,81.25,Indicates that a user has pinned a specific community to their profile or feed.,Links a community to a post it has pinned.
+MP:canEditProfile,OFB:canSetProfileVisibility,80.0,Indicates permission to edit profile information.,Indicates that a user can set their profile visibility (Public or Private).
+MP:dmReceiver,OFB:messageReceiver,80.0,"
+            The user who receives this direct message.
+        ","
+        Indicates the user who received this particular direct message instance.
+        "

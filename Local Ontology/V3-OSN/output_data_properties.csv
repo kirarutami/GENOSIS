@@ -1,0 +1,133 @@
+class,dataProperty,classComment,dataPropertyComment
+ThresholdOfSuspiciousActivity,ThresholdCriteria,"Represents a threshold that, when exceeded, triggers suspicion.",Specifies the criteria for a threshold of suspicious activity.
+ThresholdOfSuspiciousActivity,hasThresholdValue,"Represents a threshold that, when exceeded, triggers suspicion.",Stores the numerical value of a threshold for suspicious activity.
+Crime_Case_Solving,hasCaseID,Represents the process and methods used to solve a crime case.,Stores the unique identifier for a crime case.
+Crime_Case_Solving,hasEvidenceChainOfCustody,Represents the process and methods used to solve a crime case.,Tracks the chain of custody for evidence in a crime case.
+UserProfile,hasFirstName,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the first name of the user.
+UserProfile,hasLastName,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the last name of the user.
+UserProfile,hasMiddleName,"Represents the profile of a user, containing personal information such as profile picture, username, and email.","Stores the middle name of the user, if applicable."
+UserProfile,hasProfilePicture,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the URL or file path to the user's profile picture.
+UserProfile,hasProfilePictureHash,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",For verifying the integrity of the profile picture using hash.
+UserProfile,hasCoverPhoto,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the URL or file path to the user's cover photo.
+UserProfile,hasUsername,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the unique username of the user.
+UserProfile,hasEmail,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the email address of the user.
+UserProfile,hasBio,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the biography or short description of the user.
+UserProfile,hasDetails,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores additional details about the user.
+UserProfile,hasHighlights,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores highlights associated with the user's profile.
+UserProfile,hasAccountCreationDate,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the account creation date for the user.
+UserProfile,hasAccountVerification,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Indicates whether the user's account has been verified.
+PrivacySettings,hasAccountPrivacy,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.","Stores the privacy setting of the user's account, indicating whether the account is private or public."
+PrivacySettings,hasPrivateAccount,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Indicates whether the user account is private.
+PrivacySettings,hasCloseFriends,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Indicates whether the user has a close friends list.
+PrivacySettings,hasBlockedAccounts,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Indicates whether the user has blocked accounts.
+PrivacySettings,hasBlockingOptions,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Indicates the available blocking options for the user.
+PrivacySettings,hasBlockNotifications,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Indicates whether the user is notified about blocked accounts.
+PrivacySettings,hasReviewBlockedAccounts,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Indicates whether the user has reviewed the list of blocked accounts.
+PrivacySettings,hasHideStory,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Stores whether the user's story is hidden from certain users.
+PrivacySettings,hasAllowStoryReplies,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Indicates whether replies to the user's story are allowed.
+PrivacySettings,hasStoryExpiration,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Stores the expiration time of the user's story.
+PrivacySettings,hasLastStoryUpdate,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Stores the time of the last update to the user's story.
+SecuritySettings,hasActiveSessions,"Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.",Indicates the number of active sessions the user has.
+SecuritySettings,hasLastLogin,"Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.",Stores the date and time of the user's last login.
+SecuritySettings,hasLoginIP,"Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.",Stores the IP address used during the user's last login session.
+SecuritySettings,hasLogoutFromSessions,"Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.",Indicates whether the user has logged out from all active sessions.
+SecuritySettings,hasPhoneNumberVerificationStatus,"Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.",Indicates the verification status of the user's phone number.
+SecuritySettings,hasPhoneNumber,"Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.",Stores the user's phone number.
+Posts,hasBackgroundColor,"Represents posts created by users, including media posts, location check-ins, and live videos.",Stores the background color of a post.
+Posts,hasGIF,"Represents posts created by users, including media posts, location check-ins, and live videos.","Stores the GIF attached to a post, if any."
+Stories,hasStoryMusic,"Represents temporary stories shared by users, which expire after a certain period of time.",Stores music added to a story.
+Stories,hasStoryStickers,"Represents temporary stories shared by users, which expire after a certain period of time.",Stores stickers added to a story.
+Reels,hasClosedCaption,"Represents short videos shared by users, often with music, effects, or remixing.",Indicates whether a reel video has closed captions enabled.
+Reels,hasQuality,"Represents short videos shared by users, often with music, effects, or remixing.",Stores the video quality of a reel.
+Reels,hasDataSaver,"Represents short videos shared by users, often with music, effects, or remixing.",Indicates whether the data saver mode is enabled for the reel.
+Reels,hasPlaybackSpeed,"Represents short videos shared by users, often with music, effects, or remixing.",Indicates the playback speed of a reel video.
+Like,hasTimestamp,Represents a user's 'like' interaction on a post or content.,Stores the timestamp when the like was given.
+Like,hasTimestamp,Represents a user's 'like' interaction on a post or content.,Stores the timestamp when the reaction was given.
+Like,hasTimestamp,Represents a user's 'like' interaction on a post or content.,Stores the timestamp when the comment was made.
+Like,hasTimestamp,Represents a user's 'like' interaction on a post or content.,Stores the timestamp when the GIF comment was made.
+Like,hasTimestamp,Represents a user's 'like' interaction on a post or content.,Stores the timestamp when the emoji comment was made.
+React,hasTimestamp,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the timestamp when the like was given.
+React,hasTimestamp,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the timestamp when the reaction was given.
+React,hasTimestamp,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the timestamp when the comment was made.
+React,hasTimestamp,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the timestamp when the GIF comment was made.
+React,hasTimestamp,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the timestamp when the emoji comment was made.
+TextComment,hasTimestamp,Represents a text-based comment made by a user.,Stores the timestamp when the like was given.
+TextComment,hasTimestamp,Represents a text-based comment made by a user.,Stores the timestamp when the reaction was given.
+TextComment,hasTimestamp,Represents a text-based comment made by a user.,Stores the timestamp when the comment was made.
+TextComment,hasTimestamp,Represents a text-based comment made by a user.,Stores the timestamp when the GIF comment was made.
+TextComment,hasTimestamp,Represents a text-based comment made by a user.,Stores the timestamp when the emoji comment was made.
+GIFComment,hasTimestamp,Represents a comment made by a user that contains a GIF.,Stores the timestamp when the like was given.
+GIFComment,hasTimestamp,Represents a comment made by a user that contains a GIF.,Stores the timestamp when the reaction was given.
+GIFComment,hasTimestamp,Represents a comment made by a user that contains a GIF.,Stores the timestamp when the comment was made.
+GIFComment,hasTimestamp,Represents a comment made by a user that contains a GIF.,Stores the timestamp when the GIF comment was made.
+GIFComment,hasTimestamp,Represents a comment made by a user that contains a GIF.,Stores the timestamp when the emoji comment was made.
+EmojiComment,hasTimestamp,Represents a comment made by a user that contains an emoji.,Stores the timestamp when the like was given.
+EmojiComment,hasTimestamp,Represents a comment made by a user that contains an emoji.,Stores the timestamp when the reaction was given.
+EmojiComment,hasTimestamp,Represents a comment made by a user that contains an emoji.,Stores the timestamp when the comment was made.
+EmojiComment,hasTimestamp,Represents a comment made by a user that contains an emoji.,Stores the timestamp when the GIF comment was made.
+EmojiComment,hasTimestamp,Represents a comment made by a user that contains an emoji.,Stores the timestamp when the emoji comment was made.
+Like,hasUserInteractionIP,Represents a user's 'like' interaction on a post or content.,Stores the IP address of the user who gave the like.
+Like,hasUserInteractionIP,Represents a user's 'like' interaction on a post or content.,Stores the IP address of the user who gave the reaction.
+Like,hasUserInteractionIP,Represents a user's 'like' interaction on a post or content.,Stores the IP address of the user who made the comment.
+Like,hasUserInteractionIP,Represents a user's 'like' interaction on a post or content.,Stores the IP address of the user who made the GIF comment.
+Like,hasUserInteractionIP,Represents a user's 'like' interaction on a post or content.,Stores the IP address of the user who made the emoji comment.
+React,hasUserInteractionIP,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the IP address of the user who gave the like.
+React,hasUserInteractionIP,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the IP address of the user who gave the reaction.
+React,hasUserInteractionIP,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the IP address of the user who made the comment.
+React,hasUserInteractionIP,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the IP address of the user who made the GIF comment.
+React,hasUserInteractionIP,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the IP address of the user who made the emoji comment.
+TextComment,hasUserInteractionIP,Represents a text-based comment made by a user.,Stores the IP address of the user who gave the like.
+TextComment,hasUserInteractionIP,Represents a text-based comment made by a user.,Stores the IP address of the user who gave the reaction.
+TextComment,hasUserInteractionIP,Represents a text-based comment made by a user.,Stores the IP address of the user who made the comment.
+TextComment,hasUserInteractionIP,Represents a text-based comment made by a user.,Stores the IP address of the user who made the GIF comment.
+TextComment,hasUserInteractionIP,Represents a text-based comment made by a user.,Stores the IP address of the user who made the emoji comment.
+GIFComment,hasUserInteractionIP,Represents a comment made by a user that contains a GIF.,Stores the IP address of the user who gave the like.
+GIFComment,hasUserInteractionIP,Represents a comment made by a user that contains a GIF.,Stores the IP address of the user who gave the reaction.
+GIFComment,hasUserInteractionIP,Represents a comment made by a user that contains a GIF.,Stores the IP address of the user who made the comment.
+GIFComment,hasUserInteractionIP,Represents a comment made by a user that contains a GIF.,Stores the IP address of the user who made the GIF comment.
+GIFComment,hasUserInteractionIP,Represents a comment made by a user that contains a GIF.,Stores the IP address of the user who made the emoji comment.
+EmojiComment,hasUserInteractionIP,Represents a comment made by a user that contains an emoji.,Stores the IP address of the user who gave the like.
+EmojiComment,hasUserInteractionIP,Represents a comment made by a user that contains an emoji.,Stores the IP address of the user who gave the reaction.
+EmojiComment,hasUserInteractionIP,Represents a comment made by a user that contains an emoji.,Stores the IP address of the user who made the comment.
+EmojiComment,hasUserInteractionIP,Represents a comment made by a user that contains an emoji.,Stores the IP address of the user who made the GIF comment.
+EmojiComment,hasUserInteractionIP,Represents a comment made by a user that contains an emoji.,Stores the IP address of the user who made the emoji comment.
+Like,hasDeviceInfo,Represents a user's 'like' interaction on a post or content.,Stores the device information of the user who gave the like.
+Like,hasDeviceInfo,Represents a user's 'like' interaction on a post or content.,Stores the device information of the user who gave the reaction.
+Like,hasDeviceInfo,Represents a user's 'like' interaction on a post or content.,Stores the device information of the user who made the comment.
+Like,hasDeviceInfo,Represents a user's 'like' interaction on a post or content.,Stores the device information of the user who made the GIF comment.
+Like,hasDeviceInfo,Represents a user's 'like' interaction on a post or content.,Stores the device information of the user who made the emoji comment.
+React,hasDeviceInfo,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the device information of the user who gave the like.
+React,hasDeviceInfo,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the device information of the user who gave the reaction.
+React,hasDeviceInfo,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the device information of the user who made the comment.
+React,hasDeviceInfo,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the device information of the user who made the GIF comment.
+React,hasDeviceInfo,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the device information of the user who made the emoji comment.
+TextComment,hasDeviceInfo,Represents a text-based comment made by a user.,Stores the device information of the user who gave the like.
+TextComment,hasDeviceInfo,Represents a text-based comment made by a user.,Stores the device information of the user who gave the reaction.
+TextComment,hasDeviceInfo,Represents a text-based comment made by a user.,Stores the device information of the user who made the comment.
+TextComment,hasDeviceInfo,Represents a text-based comment made by a user.,Stores the device information of the user who made the GIF comment.
+TextComment,hasDeviceInfo,Represents a text-based comment made by a user.,Stores the device information of the user who made the emoji comment.
+GIFComment,hasDeviceInfo,Represents a comment made by a user that contains a GIF.,Stores the device information of the user who gave the like.
+GIFComment,hasDeviceInfo,Represents a comment made by a user that contains a GIF.,Stores the device information of the user who gave the reaction.
+GIFComment,hasDeviceInfo,Represents a comment made by a user that contains a GIF.,Stores the device information of the user who made the comment.
+GIFComment,hasDeviceInfo,Represents a comment made by a user that contains a GIF.,Stores the device information of the user who made the GIF comment.
+GIFComment,hasDeviceInfo,Represents a comment made by a user that contains a GIF.,Stores the device information of the user who made the emoji comment.
+EmojiComment,hasDeviceInfo,Represents a comment made by a user that contains an emoji.,Stores the device information of the user who gave the like.
+EmojiComment,hasDeviceInfo,Represents a comment made by a user that contains an emoji.,Stores the device information of the user who gave the reaction.
+EmojiComment,hasDeviceInfo,Represents a comment made by a user that contains an emoji.,Stores the device information of the user who made the comment.
+EmojiComment,hasDeviceInfo,Represents a comment made by a user that contains an emoji.,Stores the device information of the user who made the GIF comment.
+EmojiComment,hasDeviceInfo,Represents a comment made by a user that contains an emoji.,Stores the device information of the user who made the emoji comment.
+React,hasReactionType,"Represents a user's reaction to a post, such as love, angry, etc.","Stores the type of reaction given, such as Love, Angry, etc."
+TextComment,hasCommentText,Represents a text-based comment made by a user.,Stores the text of the comment.
+GIFComment,hasGIFLink,Represents a comment made by a user that contains a GIF.,Stores the link to the GIF used in the comment.
+EmojiComment,hasEmojiCode,Represents a comment made by a user that contains an emoji.,Stores the code of the emoji used in the comment.
+Videos,hasVideoHistory,"Represents video content watched by users, including viewing history and notifications.",Stores the video watch history for a user.
+hasVideoHistory,hasVideoWatchTimestamp,Stores the video watch history for a user.,Stores the timestamp when the video was watched.
+hasVideoHistory,hasVideoWatchDuration,Stores the video watch history for a user.,Stores the duration for which the video was watched.
+hasVideoHistory,hasVideoWatchIP,Stores the video watch history for a user.,Stores the IP address of the user who watched the video.
+hasVideoHistory,hasVideoQuality,Stores the video watch history for a user.,"Stores the quality of the video that was played (e.g., 1080p, 720p)."
+hasVideoHistory,hasVideoDeviceInfo,Stores the video watch history for a user.,Stores the device information used to watch the video.
+VideoNotifications,hasNotificationTimestamp,"Represents notifications related to video content, such as new video uploads, reminders, and other updates.",Stores the timestamp when the video notification was received.
+VideoNotifications,hasNotificationStatus,"Represents notifications related to video content, such as new video uploads, reminders, and other updates.",Indicates whether the video notification is active or inactive.
+VideoNotifications,hasNotificationType,"Represents notifications related to video content, such as new video uploads, reminders, and other updates.","Indicates the type of video notification, such as new upload, reminder, or other alerts."
+VideoNotifications,hasNotificationIP,"Represents notifications related to video content, such as new video uploads, reminders, and other updates.",Stores the IP address of the user who received the video notification.
+VideoNotifications,hasNotificationDeviceInfo,"Represents notifications related to video content, such as new video uploads, reminders, and other updates.",Stores the device information used when the video notification was received.

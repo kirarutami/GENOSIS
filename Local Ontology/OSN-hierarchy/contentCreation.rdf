@@ -1,0 +1,143 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas ContentCreation -->
+    <owl:Class rdf:about="#ContentCreation"/>
+
+    <!-- Sub-kelas Posts -->
+    <owl:Class rdf:about="#Posts">
+        <rdfs:subClassOf rdf:resource="#ContentCreation"/>
+    </owl:Class>
+
+    <!-- Sub-kelas NewPost di dalam Posts -->
+    <owl:Class rdf:about="#NewPost">
+        <rdfs:subClassOf rdf:resource="#Posts"/>
+    </owl:Class>
+
+    <!-- Individu di dalam NewPost -->
+    <owl:NamedIndividual rdf:about="#PhotoVideo">
+        <rdf:type rdf:resource="#NewPost"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can upload photos or videos.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TagPeople">
+        <rdf:type rdf:resource="#NewPost"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can tag other users in their posts.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#FeelingActivity">
+        <rdf:type rdf:resource="#NewPost"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can share their current feeling or activity.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#CheckIn">
+        <rdf:type rdf:resource="#NewPost"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can check in to locations.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LiveVideo">
+        <rdf:type rdf:resource="#NewPost"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can start a live video broadcast.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#BackgroundColor">
+        <rdf:type rdf:resource="#NewPost"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add a background color to their text posts.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#GIF">
+        <rdf:type rdf:resource="#NewPost"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add GIFs to their posts.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LifeEvent">
+        <rdf:type rdf:resource="#NewPost"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can share a life event.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas Stories -->
+    <owl:Class rdf:about="#Stories">
+        <rdfs:subClassOf rdf:resource="#ContentCreation"/>
+    </owl:Class>
+
+    <!-- Sub-kelas CreateStory di dalam Stories -->
+    <owl:Class rdf:about="#CreateStory">
+        <rdfs:subClassOf rdf:resource="#Stories"/>
+    </owl:Class>
+
+    <!-- Individu di dalam CreateStory -->
+    <owl:NamedIndividual rdf:about="#StoryPhotoVideo">
+        <rdf:type rdf:resource="#CreateStory"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can upload photos or videos to their story.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#StoryText">
+        <rdf:type rdf:resource="#CreateStory"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add text to their story.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#StoryMusic">
+        <rdf:type rdf:resource="#CreateStory"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add music to their story.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#StoryStickers">
+        <rdf:type rdf:resource="#CreateStory"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add interactive stickers like polls or questions.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#StoryHighlights">
+        <rdf:type rdf:resource="#CreateStory"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can save stories to highlights.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas StorySettings di dalam CreateStory -->
+    <owl:Class rdf:about="#StorySettings">
+        <rdfs:subClassOf rdf:resource="#CreateStory"/>
+    </owl:Class>
+
+    <!-- Individu di dalam StorySettings -->
+    <owl:NamedIndividual rdf:about="#HideFrom">
+        <rdf:type rdf:resource="#StorySettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can hide their story from specific accounts.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#CloseFriends">
+        <rdf:type rdf:resource="#StorySettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can share their story with close friends only.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas Reels -->
+    <owl:Class rdf:about="#Reels">
+        <rdfs:subClassOf rdf:resource="#ContentCreation"/>
+    </owl:Class>
+
+    <!-- Sub-kelas CreateReel di dalam Reels -->
+    <owl:Class rdf:about="#CreateReel">
+        <rdfs:subClassOf rdf:resource="#Reels"/>
+    </owl:Class>
+
+    <!-- Individu di dalam CreateReel -->
+    <owl:NamedIndividual rdf:about="#ReelVideo">
+        <rdf:type rdf:resource="#CreateReel"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can create short video clips.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ReelMusic">
+        <rdf:type rdf:resource="#CreateReel"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add music to their reels.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ReelEffects">
+        <rdf:type rdf:resource="#CreateReel"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add various effects to their reels.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ReelRemix">
+        <rdf:type rdf:resource="#CreateReel"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can remix other users' reels.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

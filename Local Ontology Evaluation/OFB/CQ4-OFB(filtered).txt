@@ -1,0 +1,76 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#> # Namespace ontologi OFB Anda
+
+# Query Gabungan: Ekstrak Detail DM + Klasifikasi Konten (Blackmail, Abuse, dll.) + Filter Hasil
+# Berguna untuk CQ4 dalam konteks investigasi
+
+SELECT ?message ?timestamp ?platform ?sender ?receiver ?content ?status ?ip ?device
+       ?threatClassification ?illicitTradeClassification ?harassmentClassification ?blackmailClassification
+WHERE {
+  # 1. Ambil semua instance Direct Messaging dan info dasarnya
+  ?message rdf:type ex:DirectMessaging .
+  ?message ex:messageSender ?sender .
+  ?message ex:messageReceiver ?receiver .
+  ?message ex:belongsToPlatform ?platform .
+  ?message ex:hasMessageTimestamp ?timestamp .
+
+  # 2. Ambil info opsional (konten wajib ada untuk klasifikasi)
+  OPTIONAL { ?message ex:hasMessageContent ?content . }
+  OPTIONAL { ?message ex:hasMessageStatus ?status . }
+  OPTIONAL { ?message ex:hasMessageIP ?ip . }
+  OPTIONAL { ?message ex:hasMessageDevice ?device . }
+
+  # Pastikan konten ada sebelum mencoba klasifikasi
+  FILTER(BOUND(?content))
+
+  # --- 3. Klasifikasi Konten Pesan menggunakan BIND/IF/REGEX ---
+
+  # Klasifikasi: Ancaman (Threat)
+  BIND (
+    IF (REGEX(?content, "regret it|handle nosy people|worry about your own privacy|threat|expose|deserves what's coming|watch your back", "i"),
+        "Threat", "") # Label singkat
+    AS ?threatClassification
+  )
+
+  # Klasifikasi: Diskusi Perdagangan Ilegal (Illicit Trade)
+  BIND (
+    IF (REGEX(?content, "cc dumps|stolen data|monero|untraceable payment|premium cc|vendor|dumps|carding", "i"),
+        "Illicit Trade", "")
+    AS ?illicitTradeClassification
+  )
+
+  # Klasifikasi: Pelecehan / Cacian (Harassment / Abuse)
+  BIND (
+    IF (REGEX(?content, "shut up|get lost|traitor|part of the problem|nobody forced you|nosy people|stupid|idiot", "i"),
+        "Harassment/Abuse", "")
+    AS ?harassmentClassification
+  )
+
+  # Klasifikasi: Pemerasan / Pengancaman (Blackmail / Extortion)
+  BIND (
+    IF (REGEX(?content, "pay me or else|leak your address|expose you unless|send crypto|dark web|private info unless", "i"),
+        "Blackmail/Extortion", "")
+    AS ?blackmailClassification
+  )
+
+  # --- Akhir Klasifikasi ---
+
+  # 4. Filter Hasil: Hanya tampilkan pesan yang terdeteksi minimal satu kategori
+  # Menggunakan REGEX(?, ".+") untuk cek string tidak kosong (alternatif STRLEN)
+  FILTER(
+        REGEX(?threatClassification, ".+") ||
+        REGEX(?illicitTradeClassification, ".+") ||
+        REGEX(?harassmentClassification, ".+") ||
+        REGEX(?blackmailClassification, ".+")
+       )
+
+  # Opsional: Filter tipe User jika data sudah konsisten
+  # FILTER EXISTS { ?sender rdf:type ex:User . }
+  # FILTER EXISTS { ?receiver rdf:type ex:User . }
+}
+# Urutkan berdasarkan waktu, pesan terbaru muncul lebih dulu
+ORDER BY DESC(?timestamp)

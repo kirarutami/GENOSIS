@@ -1,0 +1,49 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+# Tidak memerlukan prefix MCSS: secara eksplisit jika semua properti sudah
+# menggunakan genosisOwl: berdasarkan instance data MCSS di GENOSIS.txt
+
+SELECT 
+  ?postIRI ?caption ?allPostTags
+  ?timestamp 
+  ?viewCount ?likeCount ?commentCount ?shareCount 
+  ?postedBy ?postedByLabel 
+  ?platform 
+  ?matchedHashtag # Menampilkan hashtag tren yang cocok
+WHERE {
+  # --- Daftar Hashtag Tren Berbahaya/Ilegal yang Dilacak ---
+  # !!! PENTING: Bunda perlu menyesuaikan daftar hashtag di bawah ini !!!
+  # Contoh dari query lokal Bunda: "#blackoutchallenge"
+  VALUES ?problematicHashtag {
+    "#blackoutchallenge" 
+    # Tambahkan hashtag tren lain yang relevan untuk investigasi di sini
+    # Misalnya: "#DangerousTikTokTrend", "#IllegalChallenge"
+  }
+
+  # Mencari postingan ShortVideo di platform MCSS
+  ?postIRI rdf:type genosisOwl:MCSS:ShortVideo ; # Fokus pada kelas MCSS:ShortVideo
+           genosisOwl:belongsToPlatform ?platform ;
+           genosisOwl:hasPostTags ?allPostTags .   # String berisi semua hashtag postingan
+
+  # Filter hanya untuk platform MCSS (YouTube atau TikTok)
+  FILTER(STR(?platform) = "YouTube" || STR(?platform) = "TikTok")
+  
+  # Memeriksa apakah ?allPostTags (string) mengandung salah satu ?problematicHashtag
+  # Menggunakan REGEX dengan flag "i" untuk case-insensitive
+  FILTER(REGEX(STR(?allPostTags), STR(?problematicHashtag), "i"))
+  BIND(STR(?problematicHashtag) AS ?matchedHashtag) # Menampilkan hashtag yang cocok
+
+  # Mengambil metadata postingan secara opsional
+  OPTIONAL { 
+    ?postIRI genosisOwl:postedBy ?postedBy . # Pengguna yang memposting
+    OPTIONAL { ?postedBy rdfs:label ?postedByLabel . }
+  }
+  OPTIONAL { ?postIRI genosisOwl:hasCaption ?caption . }                 #
+  OPTIONAL { ?postIRI genosisOwl:hasCreationTimestamp ?timestamp . }    # Dipetakan dari ex:hasPostTimestamp
+  OPTIONAL { ?postIRI genosisOwl:hasViewCount ?viewCount . }            #
+  OPTIONAL { ?postIRI genosisOwl:hasLikeCount ?likeCount . }            #
+  OPTIONAL { ?postIRI genosisOwl:hasCommentCount ?commentCount . }      #
+  OPTIONAL { ?postIRI genosisOwl:hasShareCount ?shareCount . }          #
+}
+ORDER BY DESC(?timestamp) DESC(?viewCount)

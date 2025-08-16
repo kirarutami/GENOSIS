@@ -1,0 +1,15 @@
+Kueri SPARQL di atas digunakan untuk mengidentifikasi dan mengkategorikan pesan dalam komunikasi online berdasarkan jenis ancaman yang terkandung di dalamnya. Berikut adalah ringkasan fungsi tiap bagian kueri:
+
+Menarik Informasi Dasar
+
+Mengambil pengirim pesan (?suspect), penerima pesan (?victim), platform tempat pesan dikirim (?platform), dan isi pesan (?messageText).
+Klasifikasi Kejahatan Online
+Menggunakan BIND dan IF dengan REGEX untuk mengelompokkan pesan ke dalam tiga kategori:
+
+Ancaman (?threat) → Jika pesan mengandung frasa seperti "end it", "ruin your life", "watch your back", maka dikategorikan sebagai ancaman.
+Pelecehan Verbal (?verbalAbuse) → Jika pesan mengandung hinaan seperti "nobody likes you", "loser", "ugly", maka dikategorikan sebagai pelecehan verbal.
+Pemerasan (?blackmail) → Jika pesan mengandung unsur pemerasan seperti "I have private pictures", "pay me or else", maka dikategorikan sebagai pemerasan.
+Mengurutkan Hasil
+
+Hasil ditampilkan dalam bentuk tabel, dikelompokkan berdasarkan pengirim (?suspect) dan platform (?platform).
+🔹 Tujuan Kueri → Mengidentifikasi tersangka berdasarkan komunikasi online dan mengategorikan jenis ancaman dalam pesan.

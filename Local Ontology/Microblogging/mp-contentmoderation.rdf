@@ -1,0 +1,49 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- ContentModeration Class -->
+    <owl:Class rdf:about="#ContentModeration">
+        <rdfs:comment>Represents moderation activities within a social media platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Reporting Sub-class -->
+    <owl:Class rdf:about="#Reporting">
+        <rdfs:subClassOf rdf:resource="#ContentModeration"/>
+        <rdfs:comment>Represents reporting actions taken by a user, such as reporting a post or another user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- BlockingAndMuting Sub-class -->
+    <owl:Class rdf:about="#BlockingAndMuting">
+        <rdfs:subClassOf rdf:resource="#ContentModeration"/>
+        <rdfs:comment>Represents actions related to blocking or muting notifications, accounts, or words.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Disjointness Definitions -->
+    <owl:Class rdf:about="#Reporting">
+        <owl:disjointWith rdf:resource="#BlockingAndMuting"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#BlockingAndMuting">
+        <owl:disjointWith rdf:resource="#Reporting"/>
+    </owl:Class>
+
+    <!-- Object Properties for Reporting -->
+    <owl:ObjectProperty rdf:about="#reportsPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Indicates that a user reports a specific post.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#reportsUser">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Indicates that a user reports another user.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+
+
+</rdf:RDF>

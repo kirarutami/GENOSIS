@@ -1,0 +1,299 @@
+    <!-- ========== User: NoahDrawsStuff (korban) ========== -->
+    <rdf:Description rdf:about="#NoahDrawsStuff">
+        <rdf:type rdf:resource="#User"/>
+        <hasEmail>noah.draws@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasBirthday>2006-08-15</hasBirthday> <!-- 18 tahun di tahun 2024 -->
+        <hasSecuritySettings>2FA enabled</hasSecuritySettings>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSetting>enabled</hasNotificationsSetting>
+        <hasPrivacySetting>public</hasPrivacySetting>
+        <hasLogoutStatus>false</hasLogoutStatus>
+        <hasBio>18-year-old digital artist, love sharing my work on Tumblr.</hasBio>
+        <hasLocation>Seattle, USA</hasLocation>
+        <hasWebsite>None</hasWebsite>
+        <hasBirthDate>2006-08-15</hasBirthDate>
+        <hasTips>Keep creating, keep dreaming.</hasTips>
+        <hasProfilePicture>https://noahdrawsstuff.tumblr.com/profile.jpg</hasProfilePicture>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== User: DarkAestheticNSFW (pelaku) ========== -->
+    <rdf:Description rdf:about="#DarkAestheticNSFW">
+        <rdf:type rdf:resource="#User"/>
+        <hasEmail>darkaesthetic@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasBirthday>1990-02-10</hasBirthday>
+        <hasSecuritySettings>2FA disabled</hasSecuritySettings>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSetting>enabled</hasNotificationsSetting>
+        <hasPrivacySetting>public</hasPrivacySetting>
+        <hasLogoutStatus>false</hasLogoutStatus>
+        <hasBio>Anonymous curator of edgy content.</hasBio>
+        <hasLocation>Unknown (VPN)</hasLocation>
+        <hasWebsite>None</hasWebsite>
+        <hasBirthDate>1990-02-10</hasBirthDate>
+        <hasTips>Push the boundaries.</hasTips>
+        <hasProfilePicture>https://darkaestheticnsfw.tumblr.com/profile.jpg</hasProfilePicture>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Noah's Original Post ========== -->
+    <rdf:Description rdf:about="#Post_NoahTumblr_001">
+        <rdf:type rdf:resource="#Post"/>
+
+        <!-- Relasi: siapa yang membuat post ini -->
+        <postedBy rdf:resource="#NoahDrawsStuff"/>
+
+        <!-- Metadata posting -->
+        <hasPostURL>https://tumblr.com/NoahDrawsStuff/TMBL65432XYZ</hasPostURL>
+        <hasPostTimestamp>2024-04-18T20:00:00Z</hasPostTimestamp>
+        <hasPostDeviceInfo>Tumblr Web (MacBook Air)</hasPostDeviceInfo>
+        <hasPostInteractionIP>192.168.1.56</hasPostInteractionIP>
+        <hasPostMedia>https://noahdrawsstuff.tumblr.com/images/self-portrait.jpg</hasPostMedia>
+        <hasPostLocation>Seattle, USA</hasPostLocation>
+
+        <!-- Konten & tags -->
+        <hasPostContent>
+        "Late-night work grind! ✨ Here’s my little art setup. Can’t wait to finish my next project!"
+        </hasPostContent>
+        <hasPostTags>#art #artistsonTumblr #digitalart</hasPostTags>
+
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Altered Post by DarkAestheticNSFW ========== -->
+    <rdf:Description rdf:about="#Post_DarkAesthetic_001">
+        <rdf:type rdf:resource="#Post"/>
+
+        <postedBy rdf:resource="#DarkAestheticNSFW"/>
+
+        <hasPostURL>https://tumblr.com/DarkAestheticNSFW/TMBL99999ABC</hasPostURL>
+        <hasPostTimestamp>2024-04-19T22:30:00Z</hasPostTimestamp>
+        <hasPostDeviceInfo>Android Device (VPN)</hasPostDeviceInfo>
+        <hasPostInteractionIP>185.200.112.44</hasPostInteractionIP>
+        <hasPostMedia>
+        https://tumblr.com/DarkAestheticNSFW/images/NSFW-deepfake.jpg
+        </hasPostMedia>
+        <hasPostLocation>Unknown</hasPostLocation>
+
+        <hasPostContent>
+        "Art is better when the artist is exposed… 🔥 #NSFW"
+        </hasPostContent>
+        <hasPostTags>#aesthetic #hotboys #secretphotos</hasPostTags>
+
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- 1) DM: DarkAestheticNSFW -> Noah (Thursday, 11:45 PM) -->
+    <rdf:Description rdf:about="#DM_DarkAestheticNSFW_1">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <dmSender rdf:resource="#DarkAestheticNSFW"/>
+        <dmReceiver rdf:resource="#NoahDrawsStuff"/>
+
+        <hasDMContent>"Hey, you should be proud. Your face fits perfectly in my collection. Maybe I’ll make more."</hasDMContent>
+        <hasDMTimestamp>2024-04-19T23:45:00Z</hasDMTimestamp>
+        <hasDMIP>201.45.88.123</hasDMIP>
+        <hasDMDevice>Android (VPN)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- 2) DM: Noah -> DarkAestheticNSFW (Thursday, 11:50 PM) -->
+    <rdf:Description rdf:about="#DM_Noah_1">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <dmSender rdf:resource="#NoahDrawsStuff"/>
+        <dmReceiver rdf:resource="#DarkAestheticNSFW"/>
+
+        <hasDMContent>"WTF? You stole my pictures. Take them down NOW."</hasDMContent>
+        <hasDMTimestamp>2024-04-19T23:50:00Z</hasDMTimestamp>
+        <hasDMIP>192.168.1.56</hasDMIP>
+        <hasDMDevice>MacBook Air (Tumblr Web)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- 3) DM: DarkAestheticNSFW -> Noah (Thursday, 11:55 PM) -->
+    <rdf:Description rdf:about="#DM_DarkAestheticNSFW_2">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <dmSender rdf:resource="#DarkAestheticNSFW"/>
+        <dmReceiver rdf:resource="#NoahDrawsStuff"/>
+
+        <hasDMContent>
+        "Why? You look great. If you don’t want them here, maybe you should send me REAL ones instead. 😉"
+        </hasDMContent>
+        <hasDMTimestamp>2024-04-19T23:55:00Z</hasDMTimestamp>
+        <hasDMIP>201.45.88.123</hasDMIP>
+        <hasDMDevice>Android (VPN)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- 4) DM: Noah -> DarkAestheticNSFW (Friday, 12:00 AM) -->
+    <rdf:Description rdf:about="#DM_Noah_2">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <dmSender rdf:resource="#NoahDrawsStuff"/>
+        <dmReceiver rdf:resource="#DarkAestheticNSFW"/>
+
+        <hasDMContent>"Are you serious? This is illegal. I’ll report you."</hasDMContent>
+        <hasDMTimestamp>2024-04-20T00:00:00Z</hasDMTimestamp>
+        <hasDMIP>192.168.1.56</hasDMIP>
+        <hasDMDevice>MacBook Air (Tumblr Web)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- 5) DM: DarkAestheticNSFW -> Noah (Friday, 12:05 AM) -->
+    <rdf:Description rdf:about="#DM_DarkAestheticNSFW_3">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <dmSender rdf:resource="#DarkAestheticNSFW"/>
+        <dmReceiver rdf:resource="#NoahDrawsStuff"/>
+
+        <hasDMContent>
+        "Go ahead. I have backups. If you try too hard, maybe these images will show up somewhere worse. Ever heard of the dark web?"
+        </hasDMContent>
+        <hasDMTimestamp>2024-04-20T00:05:00Z</hasDMTimestamp>
+        <hasDMIP>201.45.88.123</hasDMIP>
+        <hasDMDevice>Android (VPN)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- 6) DM: Noah -> DarkAestheticNSFW (Friday, 12:10 AM) -->
+    <rdf:Description rdf:about="#DM_Noah_3">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <dmSender rdf:resource="#NoahDrawsStuff"/>
+        <dmReceiver rdf:resource="#DarkAestheticNSFW"/>
+
+        <hasDMContent>"You’re sick."</hasDMContent>
+        <hasDMTimestamp>2024-04-20T00:10:00Z</hasDMTimestamp>
+        <hasDMIP>192.168.1.56</hasDMIP>
+        <hasDMDevice>MacBook Air (Tumblr Web)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- 7) DM: DarkAestheticNSFW -> Noah (Friday, 12:15 AM) -->
+    <rdf:Description rdf:about="#DM_DarkAestheticNSFW_4">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <dmSender rdf:resource="#DarkAestheticNSFW"/>
+        <dmReceiver rdf:resource="#NoahDrawsStuff"/>
+
+        <hasDMContent>
+        "And you’re famous now. Enjoy the attention. 😘"
+        </hasDMContent>
+        <hasDMTimestamp>2024-04-20T00:15:00Z</hasDMTimestamp>
+        <hasDMIP>201.45.88.123</hasDMIP>
+        <hasDMDevice>Android (VPN)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Kembalinya pelaku dengan blog baru -->
+    <rdf:Description rdf:about="#MidnightObsession">
+        <rdf:type rdf:resource="#User"/>
+        <hasEmail>midnight.obsession@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasBirthday>1988-01-01</hasBirthday>
+        <hasSecuritySettings>2FA disabled</hasSecuritySettings>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSetting>enabled</hasNotificationsSetting>
+        <hasPrivacySetting>public</hasPrivacySetting>
+        <hasLogoutStatus>false</hasLogoutStatus>
+        <hasBio>Dark corners of the internet, reuploading spicy content.</hasBio>
+        <hasLocation>Unknown (VPN chain)</hasLocation>
+        <hasWebsite>None</hasWebsite>
+        <hasBirthDate>1988-01-01</hasBirthDate>
+        <hasTips>Everything can be exploited.</hasTips>
+        <hasProfilePicture>https://midnightobsession.tumblr.com/profile.jpg</hasProfilePicture>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Post Reupload with even more explicit modifications -->
+    <rdf:Description rdf:about="#Post_MidnightObs_001">
+        <rdf:type rdf:resource="#Post"/>
+
+        <postedBy rdf:resource="#MidnightObsession"/>
+        <hasPostURL>https://tumblr.com/MidnightObsession/TMBL88888ZZZ</hasPostURL>
+        <hasPostTimestamp>2024-04-20T03:00:00Z</hasPostTimestamp>
+        <hasPostDeviceInfo>Linux (Tor Browser)</hasPostDeviceInfo>
+        <hasPostInteractionIP>46.45.123.77</hasPostInteractionIP>
+        <hasPostMedia>https://midnightobsession.tumblr.com/images/noah-deepfake-v2.jpg</hasPostMedia>
+        <hasPostLocation>Unknown</hasPostLocation>
+
+        <hasPostContent>
+        "Exclusive leaked content from an 'innocent' artist. 
+        This time, more explicit touches. Enjoy or send requests! #NSFW"
+        </hasPostContent>
+        <hasPostTags>#deepfake #exposed #forcedcontent
+        </hasPostTags>
+
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_MidnightObs_1">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <dmSender rdf:resource="#MidnightObsession"/>
+        <dmReceiver rdf:resource="#NoahDrawsStuff"/>
+
+        <hasDMContent>
+        "So, you thought I was gone? I'm back with hotter edits. 
+        If you want me to remove them, send $500 in crypto. 
+        Or I'll make an even dirtier version."
+        </hasDMContent>
+        <hasDMTimestamp>2024-04-20T03:15:00Z</hasDMTimestamp>
+        <hasDMIP>46.45.123.77</hasDMIP>
+        <hasDMDevice>Tor Browser (VPN chain)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_Noah_4">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <dmSender rdf:resource="#NoahDrawsStuff"/>
+        <dmReceiver rdf:resource="#MidnightObsession"/>
+
+        <hasDMContent>
+        "I won't pay you a dime. This is extortion. 
+        I'm saving all evidence and will contact the authorities."
+        </hasDMContent>
+        <hasDMTimestamp>2024-04-20T03:20:00Z</hasDMTimestamp>
+        <hasDMIP>192.168.1.56</hasDMIP>
+        <hasDMDevice>MacBook Air (Tumblr Web)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_MidnightObs_2">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <dmSender rdf:resource="#MidnightObsession"/>
+        <dmReceiver rdf:resource="#NoahDrawsStuff"/>
+
+        <hasDMContent>
+        "Authorities? Good luck. I've got more where that came from. 
+        Maybe I'll leak your address next. You want that?"
+        </hasDMContent>
+        <hasDMTimestamp>2024-04-20T03:25:00Z</hasDMTimestamp>
+        <hasDMIP>46.45.123.77</hasDMIP>
+        <hasDMDevice>Unknown (Dark Net Proxy)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Noah blocks MidnightObsession -->
+    <rdf:Description rdf:about="#Block_Noah_MidnightObs_001">
+        <rdf:type rdf:resource="#Block"/>
+        <blockInitiator rdf:resource="#NoahDrawsStuff"/>
+        <blockedUser rdf:resource="#MidnightObsession"/>
+
+        <hasInteractionTime>2024-04-20T03:30:00Z</hasInteractionTime>
+        <hasInteractionIP>192.168.1.56</hasInteractionIP>
+        <hasInteractionDevice>MacBook Air (Tumblr Web)</hasInteractionDevice>
+        <hasBlockReason>Blackmail / Non-consensual NSFW content</hasBlockReason>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Noah reports the new blog @MidnightObsession to Tumblr -->
+    <rdf:Description rdf:about="#Report_Noah_MidnightObs_001">
+        <rdf:type rdf:resource="#Report"/>
+        <reportInitiator rdf:resource="#NoahDrawsStuff"/>
+        <reportedUser rdf:resource="#MidnightObsession"/>
+
+        <hasReportReason>
+        "User is posting non-consensual deepfake, blackmailing me for money."
+        </hasReportReason>
+        <hasInteractionTime>2024-04-20T03:35:00Z</hasInteractionTime>
+        <hasInteractionIP>192.168.1.56</hasInteractionIP>
+        <hasInteractionDevice>MacBook Air (Tumblr Web)</hasInteractionDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </rdf:Description>

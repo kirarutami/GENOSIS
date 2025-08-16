@@ -1,0 +1,95 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+
+SELECT DISTINCT ?itemIRI ?itemType ?author ?authorLabel ?platform ?flagReason ?contextInfo (GROUP_CONCAT(DISTINCT STR(?communityName); SEPARATOR=", ") AS ?communities)
+WHERE {
+  VALUES ?keywordsRegex { "cc dumps|stolen data|monero|untraceable payment|premium cc|vendor|dumps|carding|threat|expose|regret it|handle nosy people|watch your back|shut up|get lost|traitor|pay me or else|leak your address" }
+  
+  # PERBAIKAN: Koma dihilangkan, nilai dipisahkan spasi
+  VALUES ?suspiciousCommunityIRI { 
+    genosisOwl:Community_DeepMarketSub_Reddit    # Pastikan IRI ini benar
+    genosisOwl:Community_CardingHubSub_Reddit     # Pastikan IRI ini benar
+    # Tambahkan IRI komunitas mencurigakan lainnya di sini jika ada, dipisahkan spasi
+  }
+
+  OPTIONAL { ?author rdfs:label ?authorLabel . }
+
+  { 
+    BIND("Suspicious Post" AS ?itemType)
+    ?itemIRI rdf:type/rdfs:subClassOf* genosisOwl:Global:Post ;
+             genosisOwl:belongsToPlatform ?platform ;
+             genosisOwl:attributedToUser ?author .
+
+    FILTER(STR(?platform) = "Reddit" || STR(?platform) = "Quora")
+
+    OPTIONAL { ?itemIRI genosisOwl:hasPostTitle ?title . } 
+    OPTIONAL { ?itemIRI genosisOwl:hasContentText ?content . } 
+    OPTIONAL { 
+      ?itemIRI genosisOwl:postInCommunity ?community . 
+      ?community genosisOwl:hasGroupName ?communityName . 
+    }
+
+    { 
+      FILTER(BOUND(?title) || BOUND(?content)) 
+      FILTER(REGEX(STR(?title), ?keywordsRegex, "i") || REGEX(STR(?content), ?keywordsRegex, "i"))
+      BIND("Keywords in post" AS ?flagReason)
+      BIND(COALESCE(STR(?title), STR(?content), "Post with keyword") AS ?contextInfo)
+    } 
+    UNION 
+    { 
+      ?itemIRI genosisOwl:postInCommunity ?suspiciousCommunityIRI . 
+      ?suspiciousCommunityIRI genosisOwl:hasGroupName ?suspCommunityName .
+      BIND("Posted in suspicious community" AS ?flagReason)
+      BIND(STR(?suspCommunityName) AS ?contextInfo) 
+    }
+  }
+  UNION
+  { 
+    BIND("Suspicious Comment" AS ?itemType)
+    ?itemIRI rdf:type/rdfs:subClassOf* genosisOwl:Global:CommentOrReplyAction ;
+             genosisOwl:belongsToPlatform ?platform ;
+             (genosisOwl:commentedBy | genosisOwl:performedBy) ?author ; 
+             genosisOwl:hasContentText ?commentText . 
+
+    FILTER(STR(?platform) = "Reddit" || STR(?platform) = "Quora")
+    
+    OPTIONAL { 
+        ?itemIRI genosisOwl:commentsOn ?commentedOnPost .
+        OPTIONAL { 
+            ?commentedOnPost genosisOwl:postInCommunity ?community .
+            ?community genosisOwl:hasGroupName ?communityName .
+        }
+    }
+
+    { 
+      FILTER(REGEX(STR(?commentText), ?keywordsRegex, "i"))
+      BIND("Keywords in comment" AS ?flagReason)
+      BIND(STR(?commentText) AS ?contextInfo) 
+    } 
+    UNION 
+    { 
+      BIND("Comment on suspicious post" AS ?flagReason)
+      ?itemIRI genosisOwl:commentsOn ?suspiciousPostIRI . 
+      
+      { 
+        ?suspiciousPostIRI rdf:type/rdfs:subClassOf* genosisOwl:Global:Post .
+        OPTIONAL { ?suspiciousPostIRI genosisOwl:hasPostTitle ?postTitle . }
+        OPTIONAL { ?suspiciousPostIRI genosisOwl:hasContentText ?postContent . }
+        FILTER(BOUND(?postTitle) || BOUND(?postContent))
+        FILTER(REGEX(STR(?postTitle), ?keywordsRegex, "i") || REGEX(STR(?postContent), ?keywordsRegex, "i"))
+        BIND(COALESCE(STR(?postTitle), STR(?postContent), "Comment on post with keyword") AS ?contextInfo)
+      } 
+      UNION 
+      { 
+        ?suspiciousPostIRI genosisOwl:postInCommunity ?suspiciousCommunityIRI .
+        ?suspiciousCommunityIRI genosisOwl:hasGroupName ?suspCommunityName .
+        BIND(STR(?suspCommunityName) AS ?contextInfo)
+      }
+    }
+  }
+  
+  ?author rdf:type/rdfs:subClassOf* genosisOwl:Global:UserAccount .
+}
+GROUP BY ?itemIRI ?itemType ?author ?authorLabel ?platform ?flagReason ?contextInfo
+ORDER BY ?platform ?authorLabel ?itemIRI

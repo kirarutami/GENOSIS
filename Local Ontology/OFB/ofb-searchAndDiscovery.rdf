@@ -1,0 +1,138 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- SearchAndDiscovery Class -->
+    <owl:Class rdf:about="#SearchAndDiscovery">
+        <rdfs:comment>Represents the overall structure for search and discovery functionalities.</rdfs:comment>
+    </owl:Class>
+
+    <!-- SearchFeatures Subclass -->
+    <owl:Class rdf:about="#SearchFeatures">
+        <rdfs:subClassOf rdf:resource="#SearchAndDiscovery"/>
+        <rdfs:comment>Defines various search-related features.</rdfs:comment>
+    </owl:Class>
+
+    <!-- GlobalSearch Subclass -->
+    <owl:Class rdf:about="#GlobalSearch">
+        <rdfs:subClassOf rdf:resource="#SearchFeatures"/>
+        <rdfs:comment>Represents global search functionality for different targets.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: searchesFor -->
+    <owl:ObjectProperty rdf:about="#searchesFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a user to the target of their search query.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasSearchKeyword -->
+    <owl:DatatypeProperty rdf:about="#hasSearchKeyword">
+        <rdfs:domain rdf:resource="#GlobalSearch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores the keyword used in a search query.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasSearchTimestamp -->
+    <owl:DatatypeProperty rdf:about="#hasSearchTimestamp">
+        <rdfs:domain rdf:resource="#GlobalSearch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp of a search query.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- AdvancedSearch Subclass -->
+    <owl:Class rdf:about="#AdvancedSearch">
+        <rdfs:subClassOf rdf:resource="#SearchFeatures"/>
+        <rdfs:comment>Represents advanced search functionalities with additional filters.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: appliesAdvancedSearchFilter -->
+    <owl:ObjectProperty rdf:about="#appliesSearchFilter">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#AdvancedSearch"/>
+        <rdfs:comment>Links a user to the advanced search filters they applied.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasSearchCriteria -->
+    <owl:DatatypeProperty rdf:about="#hasSearchCriteria">
+        <rdfs:domain rdf:resource="#AdvancedSearch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores criteria used in an advanced search query.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasSearchResultCount -->
+    <owl:DatatypeProperty rdf:about="#hasSearchResultCount">
+        <rdfs:domain rdf:resource="#AdvancedSearch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Records the number of results returned in an advanced search query.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- SearchFilter Class -->
+    <owl:Class rdf:about="#SearchFilter">
+        <rdfs:subClassOf rdf:resource="#SearchAndDiscovery"/>
+        <rdfs:comment>Represents filters used in advanced search queries.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasFilterType -->
+    <owl:DatatypeProperty rdf:about="#hasFilterType">
+        <rdfs:domain rdf:resource="#SearchFilter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of filter used (e.g., flair, tags).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasFilterValue -->
+    <owl:DatatypeProperty rdf:about="#hasFilterValue">
+        <rdfs:domain rdf:resource="#SearchFilter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores the value of the filter applied in a search.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- TrendSearch Subclass -->
+    <owl:Class rdf:about="#TrendSearch">
+        <rdfs:subClassOf rdf:resource="#SearchFeatures"/>
+        <rdfs:comment>Represents trends observed in user searches.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: viewsTrendingContent -->
+    <owl:ObjectProperty rdf:about="#viewsTrendingContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#TrendingContent"/>
+        <rdfs:comment>Links a user to trending content they viewed.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasTrendingKeyword -->
+    <owl:DatatypeProperty rdf:about="#hasTrendingKeyword">
+        <rdfs:domain rdf:resource="#TrendSearch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores the trending keyword observed in user searches.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasTrendingScore -->
+    <owl:DatatypeProperty rdf:about="#hasTrendingScore">
+        <rdfs:domain rdf:resource="#TrendSearch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Records the score associated with a trending keyword or content.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- TrendingContent Class -->
+    <owl:Class rdf:about="#TrendingContent">
+        <rdfs:subClassOf rdf:resource="#SearchAndDiscovery"/>    
+        <rdfs:comment>Represents content identified as trending based on user activities.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: associatedWithTopic -->
+    <owl:ObjectProperty rdf:about="#associatedWithTopic">
+        <rdfs:domain rdf:resource="#TrendingContent"/>
+        <rdfs:range rdf:resource="#Topic"/>
+        <rdfs:comment>Links trending content to a topic it is associated with.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: associatedWithContent -->
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#TrendingContent"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links trending content to the actual content it represents.</rdfs:comment>
+    </owl:ObjectProperty>
+
+</rdf:RDF>

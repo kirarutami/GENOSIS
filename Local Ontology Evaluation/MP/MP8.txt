@@ -1,0 +1,18 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>  # Sesuaikan dengan XML namespace Anda
+
+SELECT ?post ?postContent ?postTags ?postTimestamp ?postedBy ?belongsToPlatform
+WHERE {
+    ?post rdf:type ex:Post ;
+          ex:hasPostContent ?postContent ;
+          ex:hasPostTags ?postTags ;
+          ex:hasPostTimestamp ?postTimestamp ;
+          ex:postedBy ?postedBy ;
+          ex:belongsToPlatform ?belongsToPlatform .
+          # bisa tambahkan filter untuk melihat hashtag lain ya
+
+}
+ORDER BY ?postTimestamp

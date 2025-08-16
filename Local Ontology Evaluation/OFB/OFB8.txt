@@ -1,0 +1,67 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#> # Ontology namespace
+
+# Query Example for OFB8: Detecting Illegal/Suspect Activity (CONCAT Removed/Minimized)
+
+SELECT DISTINCT ?item ?itemType ?author ?platform ?flagReason ?contextInfo
+WHERE {
+  VALUES ?suspiciousCommunity { ex:DeepMarketSub ex:CardingHubSub }
+  BIND("cc dumps|stolen data|monero|untraceable payment|premium cc|vendor|dumps|carding|threat|expose|regret it|handle nosy people|watch your back|shut up|get lost|traitor|pay me or else|leak your address" AS ?keywordsRegex)
+
+  { # --- Blok 1: Find Suspicious Posts ---
+    BIND("Post" AS ?itemType)
+    ?item rdf:type ex:Post .
+    ?item ex:associatedWithUser ?author .
+    OPTIONAL { ?item ex:hasPostTitle ?title . }
+    OPTIONAL { ?item ex:hasPostContent ?content . }
+    # Platform logic
+    OPTIONAL { ?item ex:associatedWithCommunity ?comm . OPTIONAL { ?comm ex:belongsToPlatform ?platform . } }
+    OPTIONAL { FILTER(!BOUND(?platform)) ?author ex:belongsToPlatform ?platform . }
+
+    { # Condition 1.1: Keywords in title OR content (CONCAT removed)
+      FILTER(REGEX(?title, ?keywordsRegex, "i") || REGEX(?content, ?keywordsRegex, "i"))
+      BIND("Suspicious keywords in post" AS ?flagReason)
+      BIND(COALESCE(?title, ?content, "") AS ?contextInfo) # Show title/content snippet
+    } UNION { # Condition 1.2: Posted in suspicious community
+      ?item ex:associatedWithCommunity ?suspiciousCommunity .
+      BIND("Posted in suspicious community" AS ?flagReason) # Simplified reason
+      BIND(STR(?suspiciousCommunity) AS ?contextInfo)      # Context is community URI
+    }
+  }
+  UNION
+  { # --- Blok 2: Find Suspicious Comments ---
+    BIND("Comment" AS ?itemType)
+    ?item rdf:type ex:Comment .
+    ?item ex:performedBy ?author .
+    ?item ex:hasCommentText ?text .
+    # Platform logic
+    OPTIONAL { ?item ex:belongsToPlatform ?platform . }
+    OPTIONAL { FILTER(!BOUND(?platform)) ?item ex:associatedWithContent ?postCtx . OPTIONAL {?postCtx ex:belongsToPlatform ?platform .} }
+    OPTIONAL { FILTER(!BOUND(?platform)) ?author ex:belongsToPlatform ?platform . }
+
+    { # Condition 2.1: Keywords in comment text
+      FILTER(REGEX(?text, ?keywordsRegex, "i"))
+      BIND("Suspicious keywords in comment" AS ?flagReason)
+      BIND(?text AS ?contextInfo) # Context is the comment text itself
+    } UNION { # Condition 2.2: Comment associated with a suspicious post
+      BIND("Comment on suspicious post" AS ?flagReason) # Simplified reason
+      ?item ex:associatedWithContent ?post .
+      { # Sub-cond 2a: Post flagged by keyword (CONCAT removed)
+         OPTIONAL { ?post ex:hasPostTitle ?postTitle . }
+         OPTIONAL { ?post ex:hasPostContent ?postContent . }
+         FILTER(REGEX(?postTitle, ?keywordsRegex, "i") || REGEX(?postContent, ?keywordsRegex, "i"))
+         BIND(STR(?post) AS ?contextInfo) # Context is the suspicious post URI
+      } UNION { # Sub-cond 2b: Post flagged by community
+         ?post ex:associatedWithCommunity ?suspiciousCommunity .
+         BIND(STR(?suspiciousCommunity) AS ?contextInfo) # Context is the suspicious community URI
+      }
+    }
+  }
+  # Pastikan author adalah User
+  ?author rdf:type ex:User .
+}
+ORDER BY ?platform ?author ?item

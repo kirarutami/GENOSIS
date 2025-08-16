@@ -1,0 +1,96 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Drafts -->
+    <owl:Class rdf:about="#Drafts">
+        <rdfs:comment>Represents drafts saved by users on the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: savesDraftsOn -->
+    <owl:ObjectProperty rdf:about="#savesDraftsOn">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Drafts"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has saved content as a draft.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Kelas Lists -->
+    <owl:Class rdf:about="#Lists">
+        <rdfs:comment>Represents lists created or followed by users on the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for Lists -->
+    <owl:ObjectProperty rdf:about="#addsOrFollowsList">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Lists"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user adds or follows a list on the platform.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#pinsList">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Lists"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has pinned a specific list for quick access.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#reportsList">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Lists"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has reported a list on the platform.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#blocksListCreator">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ListCreator"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has blocked the creator of a specific list.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#sharesList">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Lists"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has shared a list with others.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#searchesForLists">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Lists"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has searched for specific lists on the platform.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for Lists -->
+    <owl:DatatypeProperty rdf:about="#hasListPhoto">
+        <rdfs:domain rdf:resource="#Lists"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the URL or identifier of the list photo.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasListName">
+        <rdfs:domain rdf:resource="#Lists"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the name of the list.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasListDescription">
+        <rdfs:domain rdf:resource="#Lists"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the description of the list.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#setsListPrivacy">
+        <rdfs:domain rdf:resource="#Lists"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Specifies the privacy setting of the list, such as public or private.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

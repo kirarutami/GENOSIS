@@ -1,0 +1,83 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# Menggunakan namespace dasar dari file RDF untuk elemen ontologi
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+# CQ6: How can metadata from social media platforms be used to corroborate the timeline of events?
+# Pendekatan: Mengambil timestamp dari peristiwa kunci dalam kasus hak cipta YouTube
+# (Publikasi Video, Komentar terkait sengketa, Laporan) dan mengurutkannya.
+
+SELECT ?timestamp ?eventType ?description ?actorOrTarget
+WHERE {
+  {
+    # Publikasi Video Asli oleh Lisa
+    BIND(ex:LisaSwissAlpsVideo AS ?event)
+    ?event rdf:type ex:Video ;
+           ex:hasPublicationDate ?timestamp ;  # Metadata: Waktu publikasi
+           ex:hasTitle ?description .          # Detail: Judul video
+    BIND(ex:Lisa AS ?actorOrTarget)            # Pelaku/Pemilik: Lisa
+    BIND("Publikasi Video (Asli)" AS ?eventType)
+  }
+  UNION
+  {
+    # Publikasi Video (Diduga Dicuri) oleh WanderlustTravels
+    BIND(ex:StolenSwissAlpsVideo AS ?event)
+    ?event rdf:type ex:Video ;
+           ex:hasPublicationDate ?timestamp ;  # Metadata: Waktu publikasi
+           ex:hasTitle ?description .          # Detail: Judul video
+    BIND(ex:WanderlustTravels AS ?actorOrTarget) # Pelaku/Pemilik: WanderlustTravels
+    BIND("Publikasi Video (Diduga Dicuri)" AS ?eventType)
+  }
+  UNION
+  {
+    # Komentar terkait sengketa di video Lisa
+    ?event rdf:type ex:Comment ;
+           ex:commentsOnContent ex:LisaSwissAlpsVideo ; # Terkait video Lisa
+           ex:hasCommentTimestamp ?timestamp ; # Metadata: Waktu komentar
+           ex:commentedBy ?actorOrTarget ;     # Pelaku: Pengirim komentar
+           ex:hasCommentText ?description .    # Detail: Teks komentar
+    # Filter hanya komentar relevan dengan sengketa awal
+    FILTER(?event IN (ex:Comment001, ex:Comment002, ex:Comment003))
+    BIND("Komentar di Video Asli" AS ?eventType)
+  }
+  UNION
+  {
+    # Komentar terkait sengketa di video WanderlustTravels
+    ?event rdf:type ex:Comment ;
+           ex:commentsOnContent ex:StolenSwissAlpsVideo ; # Terkait video Wanderlust
+           ex:hasCommentTimestamp ?timestamp ; # Metadata: Waktu komentar
+           ex:commentedBy ?actorOrTarget ;     # Pelaku: Pengirim komentar
+           ex:hasCommentText ?description .    # Detail: Teks komentar
+    # Filter hanya komentar relevan dengan konfrontasi
+    FILTER(?event IN (ex:Comment004, ex:Comment005, ex:Comment006, ex:Comment007, ex:Comment008, ex:Comment009, ex:Comment010, ex:Comment011, ex:Comment012))
+    BIND("Komentar di Video (Diduga Dicuri)" AS ?eventType)
+  }
+  UNION
+  {
+    # Tindakan Pelaporan oleh Lisa
+    BIND(ex:Report001 AS ?event)
+    ?event rdf:type ex:Report ;
+           ex:hasReportTimestamp ?timestamp ;  # Metadata: Waktu pelaporan
+           ex:hasReportReason ?description ;   # Detail: Alasan laporan
+           ex:reportsUser ?userReported .     # Mendapatkan pengguna yang dilaporkan
+    BIND(?userReported AS ?actorOrTarget)      # Target: Pengguna yang dilaporkan
+    BIND("Tindakan Pelaporan" AS ?eventType)
+    # Pastikan ini adalah instance laporan yang spesifik dari kasus ini
+    FILTER(?event = ex:Report001)
+  }
+  UNION
+  {
+    # Awal Siaran Langsung oleh Lisa
+    BIND(ex:LisaLiveEvent001 AS ?event)
+    ?event rdf:type ex:Live ;
+           ex:hasLiveStartTime ?timestamp .     # Metadata: Waktu mulai live
+    BIND(ex:Lisa AS ?actorOrTarget)             # Pelaku: Lisa
+    BIND("Mulai Siaran Langsung" AS ?eventType)
+    # Deskripsi manual untuk memberikan konteks
+    BIND("Lisa memulai siaran langsung untuk membahas isu hak cipta" AS ?description)
+  }
+}
+ORDER BY ?timestamp # Mengurutkan hasil berdasarkan waktu

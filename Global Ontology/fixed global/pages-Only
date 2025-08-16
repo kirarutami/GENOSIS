@@ -1,0 +1,139 @@
+<!-- Pages Class -->
+    <owl:Class rdf:about="#OSN:Page">
+        <rdfs:comment>Represents Pages in the online social network context.</rdfs:comment>
+    </owl:Class>
+
+    <!-- PagesManagement Sub-Class -->
+    <owl:Class rdf:about="#OSN:PageManagementActivity">
+        <rdfs:subClassOf rdf:resource="#OSN:Page"/>
+        <rdfs:comment>Handles creation, activation, deactivation, and merging of Pages.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for PagesManagement -->
+    <owl:ObjectProperty rdf:about="#createPage">
+        <rdfs:domain rdf:resource="#OSN:User"/>
+        <rdfs:range rdf:resource="#OSN:Page"/>
+        <rdfs:comment>Links a user to the creation of a new page.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#activatePage">
+        <rdfs:domain rdf:resource="#OSN:User"/>
+        <rdfs:range rdf:resource="#OSN:Page"/>
+        <rdfs:comment>Links a user to the activation of a page.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#deactivatePage">
+        <rdfs:domain rdf:resource="#OSN:User"/>
+        <rdfs:range rdf:resource="#OSN:Page"/>
+        <rdfs:comment>Links a user to the deactivation of a page.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#mergePages">
+        <rdfs:domain rdf:resource="#OSN:User"/>
+        <rdfs:range rdf:resource="#OSN:Page"/>
+        <rdfs:comment>Links a user to the process of merging two or more pages.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- PagesSettings Sub-Class -->
+    <owl:Class rdf:about="#OSN:PageSettings">
+        <rdfs:subClassOf rdf:resource="#OSN:PageManagementActivity"/>
+        <rdfs:comment>Represents configurable settings for a page.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for PagesSettings -->
+    <owl:DatatypeProperty rdf:about="#hasName">
+        <rdfs:domain rdf:resource="#OSN:PageSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name of the page.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDescription">
+        <rdfs:domain rdf:resource="#OSN:PageSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The description of the page.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasCategory">
+        <rdfs:domain rdf:resource="#OSN:PageSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The category of the page.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasContactInfo">
+        <rdfs:domain rdf:resource="#OSN:PageSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The contact information for the page.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasLocation">
+        <rdfs:domain rdf:resource="#OSN:PageSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The location of the page.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasHours">
+        <rdfs:domain rdf:resource="#OSN:PageSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The operating hours of the page.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasWebsite">
+        <rdfs:domain rdf:resource="#OSN:PageSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>The website link associated with the page.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasUserRoles">
+        <rdfs:domain rdf:resource="#OSN:PageSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The roles of users associated with the page (e.g., Admin, Moderator).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- PagesFeatures Sub-Class -->
+    <owl:Class rdf:about="#OSN:PageFeature">
+        <rdfs:subClassOf rdf:resource="#OSN:Page"/>
+        <rdfs:comment>Represents features such as events, posts, photos, and videos available on a page.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for PagesFeatures -->
+    <owl:DatatypeProperty rdf:about="#hasEventCount">
+        <rdfs:domain rdf:resource="#OSN:PageFeature"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The number of events on the page.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPostCount">
+        <rdfs:domain rdf:resource="#OSN:PageFeature"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The number of posts on the page.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPhotoCount">
+        <rdfs:domain rdf:resource="#OSN:PageFeature"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The number of photos on the page.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasVideoCount">
+        <rdfs:domain rdf:resource="#OSN:PageFeature"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The number of videos on the page.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- PagesInsights Sub-Class -->
+    <owl:Class rdf:about="#OSN:PageInsight">
+        <rdfs:subClassOf rdf:resource="#OSN:Page"/>
+        <rdfs:comment>Represents insights like views, reach, and engagement for a page.</rdfs:comment>
+    </owl:Class>
+
+    <owl:DatatypeProperty rdf:about="#hasViewCount">
+        <rdfs:domain rdf:resource="#OSN:PageInsight"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The total number of views on the page.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPostReach">
+        <rdfs:domain rdf:resource="#OSN:PageInsight"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The reach of posts on the page.</rdfs:comment>
+    </owl:DatatypeProperty>

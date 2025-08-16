@@ -1,0 +1,5 @@
+SPARQL (dengan sintaks yang diperbaiki ini) menjawab MCSS9 dengan cara yang sama seperti penjelasan sebelumnya:
+
+Ia mencari hubungan langsung antara tersangka (#WanderlustTravels) dan unggahan video spesifik (#StolenSwissAlpsVideo) melalui kepemilikan channel (ex:ownsChannel) dan tindakan mengunggah (ex:uploadsVideo).
+Rantai hubungan User -> ownsChannel -> Channel -> uploadsVideo -> Video yang ditemukan berfungsi sebagai bukti digital yang memverifikasi keterlibatan tersangka dengan media yang relevan dengan dugaan kejahatan (pelanggaran hak cipta).
+Pengambilan metadata video (judul, URL, timestamp) memberikan konteks tambahan pada bukti tersebut.

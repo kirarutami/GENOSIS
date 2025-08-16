@@ -1,0 +1,102 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+PREFIX OFB: <http://saralutami.org/OnlineForumsBlogs#>
+
+SELECT DISTINCT ?suspectUser ?suspectLabel ?activityType ?detail ?platform ?timestamp
+WHERE {
+  ?suspectUser rdfs:label ?suspectLabel .
+
+  {
+    # Kondisi 1: Mengirim DM yang mencurigakan
+    ?message rdf:type genosisOwl:Global:DirectMessage ;
+             genosisOwl:attributedToUser ?suspectUser ; 
+             genosisOwl:hasMessageContent ?msgText ;
+             genosisOwl:hasMessageSentTimestamp ?timestamp ; 
+             genosisOwl:belongsToPlatform ?platform .
+    FILTER regex(str(?msgText), "end it|ruin your life|watch your back|just disappear|leak private|I will scam you|you fell for it|stupid buyer|say goodbye to your money|regret it|handle nosy people|worry about your own privacy|threat|expose|deserves what's coming|cc dumps|stolen data|monero|untraceable payment|shut up|get lost|illegal|report all you want", "i")
+    BIND("Sent Suspicious DM" AS ?activityType)
+    BIND(STR(?msgText) AS ?detail) # Detail adalah teks pesan
+  }
+  UNION
+  {
+    # Kondisi 2: Membuat komentar yang mencurigakan
+    ?comment rdf:type genosisOwl:Global:CommentOrReplyAction ;
+             (genosisOwl:commentedBy | genosisOwl:performedBy) ?suspectUser ; 
+             genosisOwl:hasContentText ?commentText ;
+             genosisOwl:hasInteractionTimestamp ?timestamp ;
+             genosisOwl:belongsToPlatform ?platform .
+    FILTER regex(str(?commentText), "end it|ruin your life|watch your back|just disappear|leak private|I will scam you|you fell for it|stupid buyer|say goodbye to your money|regret it|handle nosy people|worry about your own privacy|threat|expose|deserves what's coming|cc dumps|stolen data|monero|untraceable payment|shut up|get lost|illegal|report all you want", "i")
+    BIND("Made Suspicious Comment" AS ?activityType)
+    BIND(STR(?commentText) AS ?detail) # Detail adalah teks komentar
+  }
+  UNION
+  {
+    # Kondisi 3: Pengguna yang melakukan ReportAction (pelapor)
+    ?report rdf:type genosisOwl:Global:ReportAction ;
+            genosisOwl:performedBy ?suspectUser ; 
+            (genosisOwl:targetUser | genosisOwl:reportsUser) ?reportedTargetUser ; 
+            genosisOwl:hasReportReason ?reason ;
+            genosisOwl:hasInteractionTimestamp ?timestamp ;
+            genosisOwl:belongsToPlatform ?platform .
+    ?reportedTargetUser rdfs:label ?reportedTargetLabel . # Ambil label target
+    BIND("Initiated Report" AS ?activityType)
+    BIND(STR(?reason) AS ?detail) # Detail adalah alasan laporan
+    # Anda bisa tambahkan ?reportedTargetLabel di SELECT jika ingin melihatnya
+  }
+  UNION
+  {
+    # Kondisi 4: Pengguna yang dilaporkan (target laporan)
+    ?report rdf:type genosisOwl:Global:ReportAction ;
+            (genosisOwl:targetUser | genosisOwl:reportsUser) ?suspectUser ; 
+            genosisOwl:performedBy ?reporterUser ;
+            genosisOwl:hasReportReason ?reason ;
+            genosisOwl:hasInteractionTimestamp ?timestamp ;
+            genosisOwl:belongsToPlatform ?platform .
+    ?reporterUser rdfs:label ?reporterLabel . # Ambil label pelapor
+    BIND("Was Reported" AS ?activityType)
+    BIND(STR(?reason) AS ?detail) # Detail adalah alasan laporan
+    # Anda bisa tambahkan ?reporterLabel di SELECT jika ingin melihatnya
+  }
+  UNION
+  {
+    # Kondisi 5: Pengguna yang melakukan BlockAction (konteks MP)
+    ?blockAction rdf:type genosisOwl:MP:BlockAction ;
+                 genosisOwl:performedBy ?suspectUser ; 
+                 genosisOwl:targetUser ?blockedTargetUser ; 
+                 genosisOwl:hasBlockReason ?reason ;
+                 genosisOwl:hasInteractionTimestamp ?timestamp ;
+                 genosisOwl:belongsToPlatform ?platform .
+    ?blockedTargetUser rdfs:label ?blockedTargetLabel .
+    BIND("Initiated Block (MP Context)" AS ?activityType)
+    BIND(STR(?reason) AS ?detail)
+  }
+  UNION
+  {
+    # Kondisi 6: Pengguna yang diblokir (konteks MP)
+    ?blockAction rdf:type genosisOwl:MP:BlockAction ;
+                 genosisOwl:targetUser ?suspectUser ; 
+                 genosisOwl:performedBy ?blockerUser ;
+                 genosisOwl:hasBlockReason ?reason ;
+                 genosisOwl:hasInteractionTimestamp ?timestamp ;
+                 genosisOwl:belongsToPlatform ?platform .
+    ?blockerUser rdfs:label ?blockerLabel .
+    BIND("Was Blocked (MP Context)" AS ?activityType)
+    BIND(STR(?reason) AS ?detail)
+  }
+  UNION
+  {
+    # Kondisi 7: Pengguna yang diblokir oleh Moderator (konteks OFB)
+    ?modBlock rdf:type genosisOwl:OFB:ModeratorAction ;
+              genosisOwl:performedBy ?moderatorUser ; 
+              genosisOwl:targetUser ?suspectUser ;   
+              OFB:moderationActionType "BlockUser" ; 
+              genosisOwl:hasBlockReason ?reason ;
+              genosisOwl:hasInteractionTimestamp ?timestamp ;
+              genosisOwl:belongsToPlatform ?platform .
+    ?moderatorUser rdfs:label ?moderatorLabel .
+    BIND("Was Blocked by Moderator (OFB Context)" AS ?activityType)
+    BIND(STR(?reason) AS ?detail)
+  }
+}
+ORDER BY DESC(?timestamp) ?suspectLabel

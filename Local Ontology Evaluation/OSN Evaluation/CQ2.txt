@@ -1,0 +1,64 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>  # Sesuaikan dengan namespace RDF Anda
+
+SELECT ?identity ?profile1 ?platform1 ?profile2 ?platform2 ?matchType
+WHERE {
+  {
+    # Mencocokkan berdasarkan email yang sama
+    ?profile1 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform1 ;
+              ex:hasEmail ?email .
+
+    ?profile2 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform2 ;
+              ex:hasEmail ?email .
+
+    FILTER (?profile1 != ?profile2 && ?platform1 != ?platform2)  # Pastikan bukan akun yang sama di platform yang sama
+    BIND("Email Match" AS ?matchType)
+  }
+  UNION
+  {
+    # Mencocokkan berdasarkan username yang sama
+    ?profile1 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform1 ;
+              ex:hasUsername ?username .
+
+    ?profile2 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform2 ;
+              ex:hasUsername ?username .
+
+    FILTER (?profile1 != ?profile2 && ?platform1 != ?platform2)  
+    BIND("Username Match" AS ?matchType)
+  }
+  UNION
+  {
+    # Mencocokkan berdasarkan hasLinkedAccount
+    ?profile1 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform1 ;
+              ex:hasLinkedAccount ?linkedAcc .
+
+    ?profile2 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform2 ;
+              ex:hasUsername ?linkedAcc .
+
+    FILTER (?profile1 != ?profile2 && ?platform1 != ?platform2)  
+    BIND("Linked Account Match" AS ?matchType)
+  }
+  UNION
+  {
+    # Mencocokkan berdasarkan isLinkedTo
+    ?profile1 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform1 ;
+              ex:isLinkedTo ?profile2 .
+
+    ?profile2 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform2 .
+
+    FILTER (?profile1 != ?profile2 && ?platform1 != ?platform2)  
+    BIND("isLinkedTo Match" AS ?matchType)
+  }
+}
+ORDER BY ?identity ?matchType ?platform1 ?platform2

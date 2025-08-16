@@ -1,0 +1,147 @@
+
+<!-- MessengerKids Class -->
+    <owl:Class rdf:about="#OSN:MessengerKids">
+        <rdfs:subClassOf rdf:resource="#OSN:AdditionalFeature"/>
+        <rdfs:comment>Represents activities and information related to Messenger Kids accounts.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ChildInformation Sub-class -->
+    <owl:Class rdf:about="#OSN:ChildInformation">
+        <rdfs:subClassOf rdf:resource="#OSN:MessengerKids"/>
+        <rdfs:comment>Contains information about the child using Messenger Kids.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for ChildInformation -->
+    <owl:DatatypeProperty rdf:about="#OSN:hasKidsDetails">
+        <rdfs:domain rdf:resource="#OSN:AdditionalFeature"/>
+        <rdfs:label xml:lang="en">has Kids Details</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents kids details in online social network sites.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasFirstName">
+        <rdfs:subPropertyOf rdf:resource="#OSN:hasKidsDetails"/>
+        <rdfs:domain rdf:resource="#OSN:ChildInformation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The first name of the child.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasLastName">
+        <rdfs:subPropertyOf rdf:resource="#OSN:hasKidsDetails"/>
+        <rdfs:domain rdf:resource="#OSN:ChildInformation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The last name of the child.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasBirthday">
+        <rdfs:subPropertyOf rdf:resource="#OSN:hasKidsDetails"/>
+        <rdfs:domain rdf:resource="#OSN:ChildInformation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment>The birthday of the child.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- ConnectKids Sub-class -->
+    <owl:Class rdf:about="#OSN:ConnectKids">
+        <rdfs:subClassOf rdf:resource="#OSN:MessengerKids"/>
+        <rdfs:comment>Represents the connection status and timestamps for Messenger Kids users.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for ConnectKids -->
+    <owl:DatatypeProperty rdf:about="#hasConnectionTimestamp">
+        <rdfs:subPropertyOf rdf:resource="#OSN:hasKidsDetails"/>
+        <rdfs:domain rdf:resource="#OSN:ConnectKids"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the connection was created.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasConnectionStatus">
+        <rdfs:subPropertyOf rdf:resource="#OSN:hasKidsDetails"/>
+        <rdfs:domain rdf:resource="#OSN:ConnectKids"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The connection status (e.g., Active, Pending).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for MessengerKids -->
+    <owl:ObjectProperty rdf:about="#createChildAccount">
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#OSN:MessengerKids"/>
+        <rdfs:comment>Links a user to the creation of a child's account on Messenger Kids.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#connectMessengerKid">
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#OSN:MessengerKids"/>
+        <rdfs:comment>Links a user to the connection of Messenger Kids accounts.</rdfs:comment>
+    </owl:ObjectProperty>
+
+
+    
+<!-- Gaming Class -->
+    <owl:Class rdf:about="#OSN:Gaming">
+        <rdfs:subClassOf rdf:resource="#OSN:AdditionalFeature"/>
+        <rdfs:comment>Represents gaming-related actions and player information.</rdfs:comment>
+    </owl:Class>
+
+    <!-- PlayGames Sub-class -->
+    <owl:Class rdf:about="#OSN:Games">
+        <rdfs:subClassOf rdf:resource="#OSN:Gaming"/>
+        <rdfs:comment>Represents game-playing activities.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for PlayGames -->
+    <owl:ObjectProperty rdf:about="#savesGame">
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#OSN:Games"/>
+        <rdfs:comment>Links a user to saved games.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#sharesGame">
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#OSN:Games"/>
+        <rdfs:comment>Links a user to shared games.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#connectsGame">
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#OSN:Games"/>
+        <rdfs:comment>Links a user to connected games or gaming notifications.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for PlayGames -->
+    <owl:DatatypeProperty rdf:about="#hasGameSaveTimestamp">
+        <rdfs:domain rdf:resource="#OSN:Games"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the game was saved.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGameSharePlatform">
+        <rdfs:domain rdf:resource="#OSN:Games"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The platform where the game was shared (e.g., Facebook, Instagram).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGameConnectionType">
+        <rdfs:domain rdf:resource="#OSN:Games"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The type of connection used for gaming (e.g., Wi-Fi, Mobile Data).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- PlayerInfo Sub-class -->
+
+    <owl:Class rdf:about="#OSN:PlayerInfo">
+        <rdfs:subClassOf rdf:resource="#OSN:Gaming"/>
+        <rdfs:comment>Represents player-related details.</rdfs:comment>
+    </owl:Class>
+
+    <owl:DatatypeProperty rdf:about="#hasPlayerName">
+        <rdfs:domain rdf:resource="#OSN:PlayerInfo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name of the player.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPlayerAvatar">
+        <rdfs:domain rdf:resource="#OSN:PlayerInfo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>The avatar of the player (URL).</rdfs:comment>
+    </owl:DatatypeProperty>

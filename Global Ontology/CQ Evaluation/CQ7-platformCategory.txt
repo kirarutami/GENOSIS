@@ -1,0 +1,23 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+
+SELECT DISTINCT ?platformName ?categoryName
+WHERE {
+  ?entity genosisOwl:belongsToPlatform ?platformName ;
+          rdf:type ?entityType .
+
+  # Tentukan nama kategori berdasarkan IRI dari ?entityType menggunakan REGEX
+  # Mencari pola "#KATEGORI:" dalam string IRI kelas
+  BIND (
+    IF (REGEX(STR(?entityType), "#OSN:"), "Online Social Network Sites",
+    IF (REGEX(STR(?entityType), "#MP:") , "Microblogging Platforms",
+    IF (REGEX(STR(?entityType), "#MCSS:"), "Media-content Sharing Sites",
+    IF (REGEX(STR(?entityType), "#OFB:") , "Online Forums/Blogs", 
+    "Unknown Category" 
+    )))) AS ?categoryName
+  )
+  
+  FILTER(?categoryName != "Unknown Category")
+}
+ORDER BY ?categoryName ?platformName

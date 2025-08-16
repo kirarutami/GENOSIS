@@ -1,0 +1,582 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Groups Class -->
+    <owl:Class rdf:about="#Groups">
+        <rdfs:comment>Represents groups in the online social network site.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for Groups -->
+    <owl:DatatypeProperty rdf:about="#hasGroupName">
+        <rdfs:domain rdf:resource="#Groups"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name of the group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupDescription">
+        <rdfs:domain rdf:resource="#Groups"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A description of the group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMembershipRequestsCount">
+        <rdfs:domain rdf:resource="#Groups"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The number of membership requests for the group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupCategory">
+        <rdfs:domain rdf:resource="#Groups"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The category of the group (e.g., Travel, Education).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupCreationTimestamp">
+        <rdfs:domain rdf:resource="#Groups"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The creation timestamp of the group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasLastActivityTimestamp">
+        <rdfs:domain rdf:resource="#Groups"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp of the last activity in the group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupCoverPhoto">
+        <rdfs:domain rdf:resource="#Groups"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>The cover photo of the group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- GroupSettings Sub-class -->
+    <owl:Class rdf:about="#GroupSettings">
+        <rdfs:subClassOf rdf:resource="#Groups"/>
+        <rdfs:comment>Represents the settings of a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- PinnedGroups Sub-class -->
+    <owl:Class rdf:about="#PinnedGroups">
+        <rdfs:subClassOf rdf:resource="#GroupSettings"/>
+        <rdfs:comment>Represents groups that a user has pinned.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property for PinnedGroups -->
+    <owl:ObjectProperty rdf:about="#pinsGroup">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#PinnedGroups"/>
+        <rdfs:comment>Links a user to the groups they have pinned.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property for PinnedGroups -->
+    <owl:DatatypeProperty rdf:about="#hasGroupPinnedTimestamp">
+        <rdfs:domain rdf:resource="#PinnedGroups"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the group was pinned.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- GroupNotifications Sub-class -->
+    <owl:Class rdf:about="#GroupNotifications">
+        <rdfs:subClassOf rdf:resource="#GroupSettings"/>
+        <rdfs:comment>Represents notification settings for a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for GroupNotifications -->
+    <owl:ObjectProperty rdf:about="#enablesGroupNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupNotifications"/>
+        <rdfs:comment>Links a user to enabling notifications for a group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#disablesGroupNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupNotifications"/>
+        <rdfs:comment>Links a user to disabling notifications for a group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for GroupNotifications -->
+    <owl:DatatypeProperty rdf:about="#hasNotificationFrequency">
+        <rdfs:domain rdf:resource="#GroupNotifications"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The frequency of group notifications (e.g., Daily, Weekly).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasNotificationType">
+        <rdfs:domain rdf:resource="#GroupNotifications"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The type of group notifications (e.g., Posts, Events).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- GroupPrivacy Sub-class -->
+    <owl:Class rdf:about="#GroupPrivacy">
+        <rdfs:subClassOf rdf:resource="#GroupSettings"/>
+        <rdfs:comment>Represents privacy settings for a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for GroupPrivacy -->
+    <owl:DatatypeProperty rdf:about="#hasPrivacyLevel">
+        <rdfs:domain rdf:resource="#GroupPrivacy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The privacy level of the group (e.g., Public, Private, Hidden).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMembershipApprovalStatus">
+        <rdfs:domain rdf:resource="#GroupPrivacy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if membership approval is required for the group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasLinkedPages">
+        <rdfs:domain rdf:resource="#GroupPrivacy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The pages linked to the group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupBadges">
+        <rdfs:domain rdf:resource="#GroupPrivacy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The badges or achievements of the group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupRules">
+        <rdfs:domain rdf:resource="#GroupPrivacy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The rules of the group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+
+    <!-- GroupRoles Sub-class -->
+    <owl:Class rdf:about="#GroupRoles">
+        <rdfs:subClassOf rdf:resource="#Groups"/>
+        <rdfs:comment>Represents the roles within a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Admin Sub-class -->
+    <owl:Class rdf:about="#Admin">
+        <rdfs:subClassOf rdf:resource="#GroupRoles"/>
+        <rdfs:comment>Represents an admin role in a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Moderator Sub-class -->
+    <owl:Class rdf:about="#Moderator">
+        <rdfs:subClassOf rdf:resource="#GroupRoles"/>
+        <rdfs:comment>Represents a moderator role in a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Member Sub-class -->
+    <owl:Class rdf:about="#Member">
+        <rdfs:subClassOf rdf:resource="#GroupRoles"/>
+        <rdfs:comment>Represents a member role in a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for GroupRoles -->
+    <owl:ObjectProperty rdf:about="#hasAdminRole">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Admin"/>
+        <rdfs:comment>Links a user to an admin role in a group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasModeratorRole">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Moderator"/>
+        <rdfs:comment>Links a user to a moderator role in a group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasMemberRole">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Member"/>
+        <rdfs:comment>Links a user to a member role in a group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- GroupFeatures Sub-class -->
+    <owl:Class rdf:about="#GroupFeatures">
+        <rdfs:subClassOf rdf:resource="#Groups"/>
+        <rdfs:comment>Represents features available in a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Events Sub-class -->
+    <owl:Class rdf:about="#Events">
+        <rdfs:subClassOf rdf:resource="#GroupFeatures"/>
+        <rdfs:comment>Represents group events.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for Events -->
+    <owl:ObjectProperty rdf:about="#createsGroupEvents">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#Events"/>
+        <rdfs:comment>Links a moderator to creating group events.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#cancelsGroupEvents">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#Events"/>
+        <rdfs:comment>Links a moderator to canceling group events.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for Events -->
+    <owl:DatatypeProperty rdf:about="#hasEventCreationTimestamp">
+        <rdfs:domain rdf:resource="#Events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the event was created.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEventTitle">
+        <rdfs:domain rdf:resource="#Events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The title of the event.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEventDescription">
+        <rdfs:domain rdf:resource="#Events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The description of the event.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEventDate">
+        <rdfs:domain rdf:resource="#Events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment>The date of the event.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEventLocation">
+        <rdfs:domain rdf:resource="#Events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The location of the event.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#hasCoHost">
+        <rdfs:domain rdf:resource="#Events"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links an event to its co-host user(s).</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Files Sub-class -->
+    <owl:Class rdf:about="#Files">
+        <rdfs:subClassOf rdf:resource="#GroupFeatures"/>
+        <rdfs:comment>Represents files uploaded to a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for Files -->
+    <owl:DatatypeProperty rdf:about="#hasFileUploadTimestamp">
+        <rdfs:domain rdf:resource="#Files"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the file was uploaded.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasFileName">
+        <rdfs:domain rdf:resource="#Files"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name of the file uploaded to the group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasFileType">
+        <rdfs:domain rdf:resource="#Files"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The type of the file (e.g., PDF, Image).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Announcements Sub-class -->
+    <owl:Class rdf:about="#Announcements">
+        <rdfs:subClassOf rdf:resource="#GroupFeatures"/>
+        <rdfs:comment>Represents announcements made in a group.</rdfs:comment>
+    </owl:Class>
+
+    <owl:DatatypeProperty rdf:about="#hasAnnouncementTitle">
+        <rdfs:domain rdf:resource="#Announcements"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The title of the announcement.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAnnouncementTimestamp">
+        <rdfs:domain rdf:resource="#Announcements"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the announcement was made.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAnnouncementBody">
+        <rdfs:domain rdf:resource="#Announcements"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The body text of the announcement.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- GroupRoles Sub-class -->
+    <owl:Class rdf:about="#GroupRoles">
+        <rdfs:subClassOf rdf:resource="#Groups"/>
+        <rdfs:comment>Represents roles within a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Admin Sub-class -->
+    <owl:Class rdf:about="#Admin">
+        <rdfs:subClassOf rdf:resource="#GroupRoles"/>
+        <rdfs:comment>Represents an admin role within a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Moderator Sub-class -->
+    <owl:Class rdf:about="#Moderator">
+        <rdfs:subClassOf rdf:resource="#GroupRoles"/>
+        <rdfs:comment>Represents a moderator role within a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Member Sub-class -->
+    <owl:Class rdf:about="#Member">
+        <rdfs:subClassOf rdf:resource="#GroupRoles"/>
+        <rdfs:comment>Represents a member role within a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for GroupRoles -->
+    <owl:ObjectProperty rdf:about="#hasAdminRole">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Admin"/>
+        <rdfs:comment>Links a user to an admin role in a group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasModeratorRole">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Moderator"/>
+        <rdfs:comment>Links a user to a moderator role in a group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasMemberRole">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Member"/>
+        <rdfs:comment>Links a user to a member role in a group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- GroupFeatures Sub-class -->
+    <owl:Class rdf:about="#GroupFeatures">
+        <rdfs:subClassOf rdf:resource="#Groups"/>
+        <rdfs:comment>Represents features available in a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Events Sub-class -->
+    <owl:Class rdf:about="#Events">
+        <rdfs:subClassOf rdf:resource="#GroupFeatures"/>
+        <rdfs:comment>Represents group events.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for Events -->
+    <owl:ObjectProperty rdf:about="#createsGroupEvents">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#Events"/>
+        <rdfs:comment>Links a moderator to creating group events.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#cancelsGroupEvents">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#Events"/>
+        <rdfs:comment>Links a moderator to canceling group events.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for Events -->
+    <owl:DatatypeProperty rdf:about="#hasEventCreationTimestamp">
+        <rdfs:domain rdf:resource="#Events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the event was created.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEventTitle">
+        <rdfs:domain rdf:resource="#Events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The title of the event.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEventDescription">
+        <rdfs:domain rdf:resource="#Events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The description of the event.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEventDate">
+        <rdfs:domain rdf:resource="#Events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment>The date of the event.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEventLocation">
+        <rdfs:domain rdf:resource="#Events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The location of the event.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#hasCoHost">
+        <rdfs:domain rdf:resource="#Events"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links an event to its co-host user(s).</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Files Sub-class -->
+    <owl:Class rdf:about="#Files">
+        <rdfs:subClassOf rdf:resource="#GroupFeatures"/>
+        <rdfs:comment>Represents files uploaded to a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for Files -->
+    <owl:DatatypeProperty rdf:about="#hasFileUploadTimestamp">
+        <rdfs:domain rdf:resource="#Files"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the file was uploaded.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasFileName">
+        <rdfs:domain rdf:resource="#Files"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name of the file uploaded to the group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasFileType">
+        <rdfs:domain rdf:resource="#Files"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The type of the file (e.g., PDF, Image).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Polls Sub-class -->
+    <owl:Class rdf:about="#Polls">
+        <rdfs:subClassOf rdf:resource="#GroupFeatures"/>
+        <rdfs:comment>Represents polls created in a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for Polls -->
+    <owl:DatatypeProperty rdf:about="#hasPollCreationTimestamp">
+        <rdfs:domain rdf:resource="#Polls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the poll was created.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPollQuestion">
+        <rdfs:domain rdf:resource="#Polls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The question for the poll.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPollOptions">
+        <rdfs:domain rdf:resource="#Polls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The options for the poll (Array).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPollVotesCount">
+        <rdfs:domain rdf:resource="#Polls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The total number of votes for the poll.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- GroupModeration Class -->
+    <owl:Class rdf:about="#GroupModeration">
+        <rdfs:subClassOf rdf:resource="#Groups"/>
+        <rdfs:comment>Represents the moderation activities and policies within a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ModerationActions Sub-class -->
+    <owl:Class rdf:about="#ModerationActions">
+        <rdfs:subClassOf rdf:resource="#GroupModeration"/>
+        <rdfs:comment>Represents actions that moderators or admins can take in group moderation.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for ModerationActions -->
+    <owl:ObjectProperty rdf:about="#setsMemberToAdmin">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#Admin"/>
+        <rdfs:comment>Allows a moderator to assign a user as an admin.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#removesAdmin">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#Admin"/>
+        <rdfs:comment>Allows a moderator to remove an admin role from a user.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#deletesGroup">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#Groups"/>
+        <rdfs:comment>Allows a moderator to delete a group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#removesMember">
+        <rdfs:domain rdf:resource="#Admin"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Allows an admin to remove a member from the group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#approvesPost">
+        <rdfs:domain rdf:resource="#Admin"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Allows an admin to approve a post submitted by a group member.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#deniesPost">
+        <rdfs:domain rdf:resource="#Admin"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Allows an admin to deny a post submitted by a group member.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#setsGroupRuleViolation">
+        <rdfs:domain rdf:resource="#Admin"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Allows an admin to flag a user for violating group rules.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#reviewsReportedContent">
+        <rdfs:domain rdf:resource="#Admin"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Allows an admin to review reported content for rule violations.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Violations Sub-class -->
+    <owl:Class rdf:about="#Violations">
+        <rdfs:subClassOf rdf:resource="#GroupModeration"/>
+        <rdfs:comment>Represents violations reported within the group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for Violations -->
+    <owl:DatatypeProperty rdf:about="#hasViolationType">
+        <rdfs:domain rdf:resource="#Violations"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The type of violation reported (e.g., Spam, Harassment).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasViolationReportedTimestamp">
+        <rdfs:domain rdf:resource="#Violations"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the violation was reported.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasViolationResolvedStatus">
+        <rdfs:domain rdf:resource="#Violations"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The resolution status of the violation (e.g., Resolved, Pending).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasViolationActionsTaken">
+        <rdfs:domain rdf:resource="#Violations"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The actions taken in response to the violation (e.g., Warning, Removal).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- GroupRules Sub-class -->
+    <owl:Class rdf:about="#GroupRules">
+        <rdfs:subClassOf rdf:resource="#GroupModeration"/>
+        <rdfs:comment>Represents the rules set for a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for GroupRules -->
+    <owl:DatatypeProperty rdf:about="#hasRuleDescription">
+        <rdfs:domain rdf:resource="#GroupRules"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The description of the group rule.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasRuleCreationTimestamp">
+        <rdfs:domain rdf:resource="#GroupRules"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the rule was created.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasRuleModifiedTimestamp">
+        <rdfs:domain rdf:resource="#GroupRules"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the rule was last modified.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

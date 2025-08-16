@@ -1,0 +1,124 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Recommendations Class -->
+    <owl:Class rdf:about="#Recommendations">
+        <rdfs:comment>Represents the system that provides recommendations to users.</rdfs:comment>
+    </owl:Class>
+
+    <!-- PersonalizedFeed Subclass -->
+    <owl:Class rdf:about="#PersonalizedFeed">
+        <rdfs:subClassOf rdf:resource="#Recommendations"/>
+        <rdfs:comment>Represents personalized recommendation feeds based on user activity and preferences.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: receivesRecommendations -->
+    <owl:ObjectProperty rdf:about="#receivesRecommendations">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#RecommendedContent"/>
+        <rdfs:comment>Links a user to the content recommended to them.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasRecommendationSource -->
+    <owl:DatatypeProperty rdf:about="#hasRecommendationSource">
+        <rdfs:domain rdf:resource="#PersonalizedFeed"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates the source of recommendations (e.g., browsing history, preferences).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasRecommendationAlgorithm -->
+    <owl:DatatypeProperty rdf:about="#hasRecommendationAlgorithm">
+        <rdfs:domain rdf:resource="#PersonalizedFeed"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates the algorithm used to generate recommendations.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- RecommendedContent Class -->
+    <owl:Class rdf:about="#RecommendedContent">
+        <rdfs:subClassOf rdf:resource="#Recommendations"/>
+        <rdfs:comment>Represents the content recommended to a user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: associatedWithContent -->
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#RecommendedContent"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links recommended content to its associated content entity.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: associatedWithTopic -->
+    <owl:ObjectProperty rdf:about="#associatedWithTopic">
+        <rdfs:domain rdf:resource="#RecommendedContent"/>
+        <rdfs:range rdf:resource="#Topic"/>
+        <rdfs:comment>Links recommended content to the topic it is associated with.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- ExploreCategories Subclass -->
+    <owl:Class rdf:about="#ExploreCategories">
+        <rdfs:subClassOf rdf:resource="#Recommendations"/>
+        <rdfs:comment>Represents category browsing features for exploring content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: browsesCategory -->
+    <owl:ObjectProperty rdf:about="#browsesCategory">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Category"/>
+        <rdfs:comment>Links a user to the category they are browsing.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasCategoryName -->
+    <owl:DatatypeProperty rdf:about="#hasCategoryName">
+        <rdfs:domain rdf:resource="#ExploreCategories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the name of the category being explored.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Category Class -->
+    <owl:Class rdf:about="#Category">
+        <rdfs:subClassOf rdf:resource="#Recommendations"/>
+        <rdfs:comment>Represents content categories available for exploration.</rdfs:comment>
+    </owl:Class>
+
+    <!-- FlairSearch Subclass -->
+    <owl:Class rdf:about="#FlairSearch">
+        <rdfs:subClassOf rdf:resource="#Recommendations"/>
+        <rdfs:comment>Represents the ability to search for content by specific flair tags.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: searchesByFlair -->
+    <owl:ObjectProperty rdf:about="#searchesByFlair">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Flair"/>
+        <rdfs:comment>Links a user to the flair they used in their search.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasFlairName -->
+    <owl:DatatypeProperty rdf:about="#hasFlairName">
+        <rdfs:domain rdf:resource="#Flair"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the name of the flair tag used.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Flair Class -->
+    <owl:Class rdf:about="#Flair">
+        <rdfs:comment>Represents flair tags associated with posts or content.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#Recommendations"/>    
+    </owl:Class>
+
+    <!-- Object Property: associatedWithPost -->
+    <owl:ObjectProperty rdf:about="#associatedWithPost">
+        <rdfs:domain rdf:resource="#Flair"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Links a flair tag to a specific post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: associatedWithContent -->
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#Flair"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a flair tag to specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+</rdf:RDF>

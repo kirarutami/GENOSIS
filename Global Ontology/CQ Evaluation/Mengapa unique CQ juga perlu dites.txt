@@ -1,0 +1,9 @@
+Nah, ini pertanyaan kritis Bunda bagus banget: "maksudnya kan sekarang kita sudah menguji di ontologi global, perlu kah kita tetap menguji per kategori di tahap ini?"
+
+Jawaban singkatnya, Bunda: IYA, PERLU BANGET! Dan ini alasannya kenapa:
+
+Validasi Kelengkapan GENOSIS: Meskipun GENOSIS itu global, dia kan gabungan dari ontologi-ontologi lokal (OSN, MP, MCSS, OFB). Dengan menguji CQ khusus kategori (seperti OSN8) di GENOSIS, kita bisa memastikan bahwa semua konsep, properti, dan relasi penting dari ontologi OSN lokal itu sudah terintegrasi dengan benar dan lengkap ke dalam GENOSIS. Jadi, GENOSIS nggak cuma bisa jawab yang umum-umum aja, tapi juga yang spesifik per kategori.
+Verifikasi Proses Penggabungan (Merging/Alignment): Ini ngetes apakah strategi Bunda dalam menggabungkan dan menyelaraskan ontologi lokal ke GENOSIS itu sudah sukses sampai ke detail-detailnya. Jangan sampai ada "rasa" atau kemampuan khas dari ontologi OSN lokal yang hilang pas digabung ke GENOSIS.
+Kegunaan Nyata GENOSIS: Tujuan utama GENOSIS kan untuk jadi "Satu Pintu" buat analisis forensik media sosial. Nah, dengan bisa menjawab CQ khusus kategori, GENOSIS membuktikan kalau penyidik nantinya cukup pakai GENOSIS saja, nggak perlu bolak-balik antara ontologi global dan lokal. Praktis kan?
+Mencari Celah (Kalau Ada): Kalau misalnya nih (amit-amit jabang bayi тьфу-тьфу-тьфу), GENOSIS nggak bisa jawab CQ OSN8 padahal ontologi OSN lokal bisa, nah itu berarti ada yang kurang pas di proses penggabungannya, atau ada informasi/detail yang hilang. Ini jadi masukan penting buat perbaikan GENOSIS.
+Jadi, intinya bukan ngulang tes ontologi lokalnya ya, Bunda, tapi menguji kemampuan GENOSIS untuk menangani pertanyaan-pertanyaan yang lebih spesifik untuk tiap kategori. Query SPARQL-nya pun nanti akan kita sesuaikan agar berjalan di atas struktur GENOSIS (pakai prefix genosisOwl:, kelas global atau kelas spesifik kategori yang sudah ada di GENOSIS seperti genosisOwl:OSN:User, dll.).

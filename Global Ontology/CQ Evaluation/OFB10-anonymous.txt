@@ -1,0 +1,96 @@
+#Mengidentifikasi aktivitas dari pengguna yang profilnya "Anonymous" atau yang tidak secara eksplisit publik. Aktivitasnya bisa berupa:
+#Login terakhir pengguna anonim (berdasarkan hasLastLoginIP).
+#Komentar yang dibuat (berdasarkan hasCommentIP).
+#DM yang dikirim (berdasarkan hasMessageIP).
+#Mengumpulkan semua aktivitas ini berdasarkan kesamaan ?ipAddress.
+#Memfilter IP address, membuang IP privat yang umum.
+#Hanya menampilkan IP address yang dipakai oleh lebih dari satu pengguna anonim atau untuk lebih dari satu aksi anonim. Ini kuncinya, karena bisa jadi petunjuk kalau beberapa akun/aksi anonim itu sebenarnya dilakukan oleh orang yang sama atau terkoordinasi.
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+# Tidak memerlukan prefix OFB: secara eksplisit jika properti sudah terpetakan dengan baik ke genosisOwl:
+
+SELECT ?ipAddress
+       (GROUP_CONCAT(DISTINCT STR(?userIRI); SEPARATOR=", ") AS ?anonymousUserIRIs)
+       (GROUP_CONCAT(DISTINCT STR(?userLabel); SEPARATOR=", ") AS ?anonymousUserLabels)
+       (COUNT(DISTINCT ?actionIRI) AS ?actionCount)
+       (GROUP_CONCAT(DISTINCT ?actionType; SEPARATOR=" | ") AS ?actionTypes)
+       (GROUP_CONCAT(DISTINCT STR(?actionIRI); SEPARATOR=" | ") AS ?actionIRIs)
+WHERE {
+  # Menggunakan subquery untuk mengumpulkan kandidat IP, pengguna, dan aksi dari OFB
+  {
+    SELECT ?ipAddress ?userIRI ?actionIRI ?actionType ?platform
+    WHERE {
+      # Semua entitas pengguna dan aksi harus berasal dari platform OFB
+      ?anyEntityInvolved genosisOwl:belongsToPlatform ?platform .
+      FILTER(STR(?platform) = "Reddit" || STR(?platform) = "Quora")
+
+      {
+        # Jalur 1: IP dari Login Terakhir Pengguna yang Profilnya Eksplisit "Anonymous"
+        BIND("UserLogin" AS ?actionType)
+        ?userIRI rdf:type/rdfs:subClassOf* genosisOwl:Global:UserAccount ; # Mencakup genosisOwl:OFB:User
+                 genosisOwl:belongsToPlatform ?platform ;
+                 genosisOwl:hasProfileVisibility "Anonymous" ;  # (contoh data Quora anonim)
+                 genosisOwl:hasLastLoginIP ?ipAddress .         #
+        BIND(?userIRI AS ?actionIRI) # Pengguna itu sendiri adalah konteks "aksi" di sini
+      } 
+      UNION 
+      {
+        # Jalur 2: IP dari Komentar oleh pengguna yang anonim atau tidak diketahui visibilitasnya
+        BIND("Comment" AS ?actionType)
+        ?actionIRI rdf:type/rdfs:subClassOf* genosisOwl:Global:CommentOrReplyAction ; # Mencakup genosisOwl:OFB:CommentAction
+                   (genosisOwl:commentedBy | genosisOwl:performedBy) ?userIRI ;
+                   genosisOwl:belongsToPlatform ?platform .
+        # IP untuk Komentar OFB biasanya genosisOwl:hasCommentSpecificIP
+        OPTIONAL { ?actionIRI genosisOwl:hasCommentSpecificIP ?ipFromCommentSpecific . }
+        OPTIONAL { FILTER(!BOUND(?ipFromCommentSpecific)) ?actionIRI genosisOwl:hasIpAddress ?ipFromGeneric . } # Fallback
+        BIND(COALESCE(?ipFromCommentSpecific, ?ipFromGeneric) AS ?ipAddress)
+
+        # Anggap anonim jika visibilitas adalah "Anonymous" ATAU properti visibilitas tidak ada/kosong
+        FILTER NOT EXISTS { 
+          ?userIRI genosisOwl:hasProfileVisibility ?vis . 
+          FILTER(STR(?vis) != "Anonymous" && STR(?vis) != "") 
+        }
+      } 
+      UNION 
+      {
+        # Jalur 3: IP dari DM yang dikirim oleh pengguna yang anonim atau tidak diketahui visibilitasnya
+        BIND("DM Sent" AS ?actionType)
+        ?actionIRI rdf:type/rdfs:subClassOf* genosisOwl:Global:DirectMessage ; # Mencakup genosisOwl:OFB:DirectMessage
+                   genosisOwl:attributedToUser ?userIRI ;
+                   genosisOwl:belongsToPlatform ?platform .
+        # IP untuk DM OFB biasanya genosisOwl:hasMessageSpecificIP
+        OPTIONAL { ?actionIRI genosisOwl:hasMessageSpecificIP ?ipFromDmSpecific . }
+        OPTIONAL { FILTER(!BOUND(?ipFromDmSpecific)) ?actionIRI genosisOwl:hasIpAddress ?ipFromGeneric . } # Fallback
+        BIND(COALESCE(?ipFromDmSpecific, ?ipFromGeneric) AS ?ipAddress)
+
+        FILTER NOT EXISTS { 
+          ?userIRI genosisOwl:hasProfileVisibility ?vis . 
+          FILTER(STR(?vis) != "Anonymous" && STR(?vis) != "") 
+        }
+      }
+      # Pastikan user yang teridentifikasi juga dari platform OFB (jika belum terfilter oleh ?anyEntityInvolved)
+      ?userIRI genosisOwl:belongsToPlatform ?userPlatform .
+      FILTER(STR(?userPlatform) = "Reddit" || STR(?userPlatform) = "Quora")
+    }
+  } # Akhir Subquery
+
+  OPTIONAL { ?userIRI rdfs:label ?userLabel . }
+
+  # Filter untuk memastikan ?ipAddress ada dan bukan string kosong
+  FILTER(BOUND(?ipAddress) && STR(?ipAddress) != "")
+
+  # Filter untuk membuang IP address privat yang umum (sesuai query lokal)
+  FILTER(
+    !REGEX(STR(?ipAddress), "^192\\.168\\.") &&
+    !REGEX(STR(?ipAddress), "^10\\.") &&
+    !REGEX(STR(?ipAddress), "^172\\.1[6-9]\\.") && 
+    !REGEX(STR(?ipAddress), "^172\\.2[0-9]\\.") && 
+    !REGEX(STR(?ipAddress), "^172\\.3[0-1]\\.") 
+  )
+}
+GROUP BY ?ipAddress
+# HAVING clause untuk menampilkan IP yang dipakai >1 user ATAU >1 aksi
+HAVING (COUNT(DISTINCT ?userIRI) > 1 || COUNT(DISTINCT ?actionIRI) > 1)
+ORDER BY DESC(?actionCount) ?ipAddress

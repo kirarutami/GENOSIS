@@ -1,0 +1,104 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas VideoContent -->
+    <owl:Class rdf:about="#VideoContent">
+        <rdfs:comment>Represents the video content activities in the system.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas Videos -->
+    <owl:Class rdf:about="#Videos">
+        <rdfs:subClassOf rdf:resource="#VideoContent"/>
+        <rdfs:comment>Represents videos created or consumed by the user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Individual untuk VideoHistory -->
+    <owl:NamedIndividual rdf:about="#VideoHistory">
+        <rdf:type rdf:resource="#Videos"/>
+        <rdfs:comment>Contains the history of videos watched by the user.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Individual untuk VideoNotifications -->
+    <owl:NamedIndividual rdf:about="#VideoNotifications">
+        <rdf:type rdf:resource="#Videos"/>
+        <rdfs:comment>Represents whether the user has enabled notifications for videos.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:about="#watchVideo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Videos"/>
+        <rdfs:comment>Defines the relationship where a user watches a video.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#saveVideo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Videos"/>
+        <rdfs:comment>Defines the relationship where a user saves a video for later.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#searchByKeyword">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Videos"/>
+        <rdfs:comment>Defines the relationship where a user searches for a video by keyword.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#searchByActivity">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Videos"/>
+        <rdfs:comment>Defines the relationship where a user searches for a video based on activity.</rdfs:comment>
+    </owl:ObjectProperty>
+
+
+    <!-- Karakteristik untuk Object Properties -->
+    <owl:FunctionalProperty rdf:about="#watchVideo"/>
+    <owl:FunctionalProperty rdf:about="#saveVideo"/>
+    <owl:FunctionalProperty rdf:about="#searchByKeyword"/>
+    <owl:FunctionalProperty rdf:about="#searchByActivity"/>
+
+    <!-- Disjointness untuk Videos dan VideoHistory, VideoNotifications -->
+    <owl:Class rdf:about="#Videos">
+        <owl:disjointWith rdf:resource="#VideoHistory"/>
+        <owl:disjointWith rdf:resource="#VideoNotifications"/>
+    </owl:Class>
+
+    <owl:NamedIndividual rdf:about="#VideoHistory">
+        <rdf:type rdf:resource="#Videos"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#VideoNotifications">
+        <rdf:type rdf:resource="#Videos"/>
+    </owl:NamedIndividual>
+
+    <!-- Disjointness untuk Object Properties -->
+    <owl:ObjectProperty rdf:about="#watchVideo">
+        <owl:disjointWith rdf:resource="#saveVideo"/>
+        <owl:disjointWith rdf:resource="#searchByKeyword"/>
+        <owl:disjointWith rdf:resource="#searchByActivity"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#saveVideo">
+        <owl:disjointWith rdf:resource="#watchVideo"/>
+        <owl:disjointWith rdf:resource="#searchByKeyword"/>
+        <owl:disjointWith rdf:resource="#searchByActivity"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#searchByKeyword">
+        <owl:disjointWith rdf:resource="#watchVideo"/>
+        <owl:disjointWith rdf:resource="#saveVideo"/>
+        <owl:disjointWith rdf:resource="#searchByActivity"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#searchByActivity">
+        <owl:disjointWith rdf:resource="#watchVideo"/>
+        <owl:disjointWith rdf:resource="#saveVideo"/>
+        <owl:disjointWith rdf:resource="#searchByKeyword"/>
+    </owl:ObjectProperty>
+
+
+
+</rdf:RDF>

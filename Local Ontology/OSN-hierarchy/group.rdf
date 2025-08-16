@@ -1,0 +1,244 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Groups -->
+    <owl:Class rdf:about="#Groups"/>
+
+    <!-- Sub-kelas GroupManagement -->
+    <owl:Class rdf:about="#GroupManagement">
+        <rdfs:subClassOf rdf:resource="#Groups"/>
+    </owl:Class>
+
+    <!-- Individu di dalam GroupManagement -->
+    <owl:NamedIndividual rdf:about="#CreateGroup">
+        <rdf:type rdf:resource="#GroupManagement"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can create new groups.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas GroupSettings di dalam GroupManagement -->
+    <owl:Class rdf:about="#GroupSettings">
+        <rdfs:subClassOf rdf:resource="#GroupManagement"/>
+    </owl:Class>
+
+    <!-- Individu di dalam GroupSettings -->
+    <owl:NamedIndividual rdf:about="#PinnedGroups">
+        <rdf:type rdf:resource="#GroupSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage pinned groups.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Notifications">
+        <rdf:type rdf:resource="#GroupSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage notifications for groups.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas ManageGroup di dalam GroupManagement -->
+    <owl:Class rdf:about="#ManageGroup">
+        <rdfs:subClassOf rdf:resource="#GroupManagement"/>
+    </owl:Class>
+
+    <!-- Individu di dalam ManageGroup -->
+    <owl:NamedIndividual rdf:about="#GroupName">
+        <rdf:type rdf:resource="#ManageGroup"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the name of the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Description">
+        <rdf:type rdf:resource="#ManageGroup"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the description of the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Privacy">
+        <rdf:type rdf:resource="#ManageGroup"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the privacy settings of the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MembershipApproval">
+        <rdf:type rdf:resource="#ManageGroup"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage membership approval settings.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LinkedPages">
+        <rdf:type rdf:resource="#ManageGroup"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can link pages to the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Badges">
+        <rdf:type rdf:resource="#ManageGroup"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage badges for the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Roles">
+        <rdf:type rdf:resource="#ManageGroup"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can assign roles within the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#GroupRules">
+        <rdf:type rdf:resource="#ManageGroup"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can set rules for the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MembershipRequests">
+        <rdf:type rdf:resource="#ManageGroup"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage membership requests for the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas GroupFeatures di dalam GroupManagement -->
+    <owl:Class rdf:about="#GroupFeatures">
+        <rdfs:subClassOf rdf:resource="#GroupManagement"/>
+    </owl:Class>
+
+    <!-- Individu di dalam GroupFeatures -->
+    <owl:NamedIndividual rdf:about="#Events">
+        <rdf:type rdf:resource="#GroupFeatures"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage events within the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Files">
+        <rdf:type rdf:resource="#GroupFeatures"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage files within the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Photos">
+        <rdf:type rdf:resource="#GroupFeatures"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage photos within the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Polls">
+        <rdf:type rdf:resource="#GroupFeatures"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage polls within the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Announcements">
+        <rdf:type rdf:resource="#GroupFeatures"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage announcements within the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas GroupActivities di dalam GroupManagement -->
+    <owl:Class rdf:about="#GroupActivities">
+        <rdfs:subClassOf rdf:resource="#GroupManagement"/>
+    </owl:Class>
+
+    <!-- Individu di dalam GroupActivities -->
+    <owl:NamedIndividual rdf:about="#PostUpdates">
+        <rdf:type rdf:resource="#GroupActivities"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can post updates in the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Like">
+        <rdf:type rdf:resource="#GroupActivities"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can like posts within the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment">
+        <rdf:type rdf:resource="#GroupActivities"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can comment on posts within the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Share">
+        <rdf:type rdf:resource="#GroupActivities"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can share posts within the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#React">
+        <rdf:type rdf:resource="#GroupActivities"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can react to posts within the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas DiscoverGroups -->
+    <owl:Class rdf:about="#DiscoverGroups">
+        <rdfs:subClassOf rdf:resource="#Groups"/>
+    </owl:Class>
+
+    <!-- Individu di dalam DiscoverGroups -->
+    <owl:NamedIndividual rdf:about="#JoinGroup">
+        <rdf:type rdf:resource="#DiscoverGroups"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can discover and join new groups.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas GroupEvents di dalam DiscoverGroups -->
+    <owl:Class rdf:about="#GroupEvents">
+        <rdfs:subClassOf rdf:resource="#DiscoverGroups"/>
+    </owl:Class>
+
+    <!-- Individu di dalam GroupEvents -->
+    <owl:NamedIndividual rdf:about="#EventName">
+        <rdf:type rdf:resource="#GroupEvents"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the event name within the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Date">
+        <rdf:type rdf:resource="#GroupEvents"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the event date within the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Location">
+        <rdf:type rdf:resource="#GroupEvents"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the event location within the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#CoHost">
+        <rdf:type rdf:resource="#GroupEvents"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add a co-host to the event within the group.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas GroupInvites di dalam DiscoverGroups -->
+    <owl:Class rdf:about="#GroupInvites">
+        <rdfs:subClassOf rdf:resource="#DiscoverGroups"/>
+    </owl:Class>
+
+    <!-- Individu di dalam GroupInvites -->
+    <owl:NamedIndividual rdf:about="#SendInvites">
+        <rdf:type rdf:resource="#GroupInvites"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can send group invites.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AcceptInvites">
+        <rdf:type rdf:resource="#GroupInvites"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can accept group invites.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ManageInvites">
+        <rdf:type rdf:resource="#GroupInvites"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage group invites.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas SearchGroups di dalam DiscoverGroups -->
+    <owl:Class rdf:about="#SearchGroups">
+        <rdfs:subClassOf rdf:resource="#DiscoverGroups"/>
+    </owl:Class>
+
+    <!-- Individu di dalam SearchGroups -->
+    <owl:NamedIndividual rdf:about="#ByKeyword">
+        <rdf:type rdf:resource="#SearchGroups"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can search for groups by keyword.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ByCategory">
+        <rdf:type rdf:resource="#SearchGroups"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can search for groups by category.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas GroupInsights di dalam DiscoverGroups -->
+    <owl:Class rdf:about="#GroupInsights">
+        <rdfs:subClassOf rdf:resource="#DiscoverGroups"/>
+    </owl:Class>
+
+    <!-- Individu di dalam GroupInsights -->
+    <owl:NamedIndividual rdf:about="#MemberEngagement">
+        <rdf:type rdf:resource="#GroupInsights"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Group admins can access insights on member engagement.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#GrowthMetrics">
+        <rdf:type rdf:resource="#GroupInsights"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Group admins can access insights on growth metrics.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ContentPerformance">
+        <rdf:type rdf:resource="#GroupInsights"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Group admins can access insights on content performance.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

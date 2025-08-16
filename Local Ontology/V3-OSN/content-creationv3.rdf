@@ -1,0 +1,255 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Class: ContentCreation -->
+    <owl:Class rdf:about="#ContentCreation">
+        <rdfs:comment>The main class representing content creation functionality, including posts, stories, and reels.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#User"/>
+        <owl:disjointWith rdf:resource="#Marketplace"/>
+    </owl:Class>
+
+    <!-- Class: Posts -->
+    <owl:Class rdf:about="#Posts">
+        <rdfs:comment>Represents posts created by users, including media posts, location check-ins, and live videos.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#ContentCreation"/>
+        <owl:disjointWith rdf:resource="#Stories"/>
+        <owl:disjointWith rdf:resource="#Reels"/>
+    </owl:Class>
+
+        <!-- Data Property: hasPostContent -->
+    <owl:DatatypeProperty rdf:about="#hasPostContent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the textual content of a post, story, or reel.</rdfs:comment>
+        <rdfs:domain rdf:resource="#ContentCreation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasPostMedia -->
+    <owl:DatatypeProperty rdf:about="#hasPostMedia">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the media (photo, video, or GIF) associated with a post, story, or reel.</rdfs:comment>
+        <rdfs:domain rdf:resource="#ContentCreation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasPostTimestamp -->
+    <owl:DatatypeProperty rdf:about="#hasPostTimestamp">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the timestamp when the post, story, or reel was created.</rdfs:comment>
+        <rdfs:domain rdf:resource="#ContentCreation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: PhotoVideo -->
+    <owl:Class rdf:about="#PhotoVideo">
+        <rdfs:comment>Represents posts containing photos or videos uploaded by the user.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#Posts"/>
+        <owl:disjointWith rdf:resource="#LiveVideo"/>
+        <owl:disjointWith rdf:resource="#CheckIn"/>
+    </owl:Class>
+
+    <!-- Sub-class: FeelingActivity -->
+    <owl:Class rdf:about="#FeelingActivity">
+        <rdfs:comment>Represents posts expressing user emotions or activities.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#Posts"/>
+    </owl:Class>
+
+    <!-- Sub-class: CheckIn -->
+    <owl:Class rdf:about="#CheckIn">
+        <rdfs:comment>Represents posts where users check-in to a specific location.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#Posts"/>
+        <owl:disjointWith rdf:resource="#PhotoVideo"/>
+        <owl:disjointWith rdf:resource="#LiveVideo"/>
+    </owl:Class>
+
+    <!-- Sub-class: LiveVideo -->
+    <owl:Class rdf:about="#LiveVideo">
+        <rdfs:comment>Represents live video broadcasts created by the user.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#Posts"/>
+    </owl:Class>
+
+    <!-- Data Property: hasBackgroundColor -->
+    <owl:DatatypeProperty rdf:about="#hasBackgroundColor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the background color of a post.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Posts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasGIF -->
+    <owl:DatatypeProperty rdf:about="#hasGIF">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the GIF attached to a post, if any.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Posts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: LifeEvent -->
+    <owl:Class rdf:about="#LifeEvent">
+        <rdfs:comment>Represents significant life events shared by the user, such as marriage or graduation.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#Posts"/>
+    </owl:Class>
+
+    <!-- Class: Stories -->
+    <owl:Class rdf:about="#Stories">
+        <rdfs:comment>Represents temporary stories shared by users, which expire after a certain period of time.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#ContentCreation"/>
+        <owl:disjointWith rdf:resource="#Posts"/>
+        <owl:disjointWith rdf:resource="#Reels"/>
+    </owl:Class>
+
+        <!-- Data Property: hasStoryContent -->
+    <owl:DatatypeProperty rdf:about="#hasStoryContent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the textual content of a story.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Stories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasStoryMedia -->
+    <owl:DatatypeProperty rdf:about="#hasStoryMedia">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the media (photo, video, or GIF) associated with a story.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Stories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasStoryTimestamp -->
+    <owl:DatatypeProperty rdf:about="#hasStoryTimestamp">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the timestamp when the story was created.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Stories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- Sub-class: StoryPhotoVideo -->
+    <owl:Class rdf:about="#StoryPhotoVideo">
+        <rdfs:comment>Represents a story containing a photo or video.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#Stories"/>
+    </owl:Class>
+
+    <!-- Data Property: hasStoryMusic -->
+    <owl:DatatypeProperty rdf:about="#hasStoryMusic">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores music added to a story.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Stories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasStoryStickers -->
+    <owl:DatatypeProperty rdf:about="#hasStoryStickers">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores stickers added to a story.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Stories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: StoryHighlights -->
+    <owl:Class rdf:about="#StoryHighlights">
+        <rdfs:comment>Represents story highlights that can be saved beyond their expiration date.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#Stories"/>
+    </owl:Class>
+
+    <!-- Sub-class: HideFrom -->
+    <owl:Class rdf:about="#HideFrom">
+        <rdfs:comment>Represents a list of users from whom a specific story is hidden.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#Stories"/>
+    </owl:Class>
+
+    <!-- Sub-class: CloseFriends -->
+    <owl:Class rdf:about="#CloseFriends">
+        <rdfs:comment>Represents a list of close friends who can view exclusive stories from the user.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#Stories"/>
+    </owl:Class>
+
+    <!-- Class: Reels -->
+    <owl:Class rdf:about="#Reels">
+        <rdfs:comment>Represents short videos shared by users, often with music, effects, or remixing.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#ContentCreation"/>
+        <owl:disjointWith rdf:resource="#Posts"/>
+        <owl:disjointWith rdf:resource="#Stories"/>
+    </owl:Class>
+
+        <!-- Data Property: hasReelContent -->
+    <owl:DatatypeProperty rdf:about="#hasReelContent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the textual description of a reel.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Reels"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasReelMedia -->
+    <owl:DatatypeProperty rdf:about="#hasReelMedia">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the media (video, GIF, or image) associated with a reel.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Reels"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasReelTimestamp -->
+    <owl:DatatypeProperty rdf:about="#hasReelTimestamp">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the timestamp when the reel was created.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Reels"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: ReelVideo -->
+    <owl:Class rdf:about="#ReelVideo">
+        <rdfs:comment>Represents a short video that is part of a reel.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#Reels"/>
+    </owl:Class>
+
+    <!-- Sub-class: ReelMusic -->
+    <owl:Class rdf:about="#ReelMusic">
+        <rdfs:comment>Represents music that is added to a reel video.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#Reels"/>
+    </owl:Class>
+
+    <!-- Sub-class: ReelEffects -->
+    <owl:Class rdf:about="#ReelEffects">
+        <rdfs:comment>Represents effects applied to a reel video, such as filters or transitions.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#Reels"/>
+    </owl:Class>
+
+    <!-- Sub-class: ReelRemix -->
+    <owl:Class rdf:about="#ReelRemix">
+        <rdfs:comment>Represents remix content that is added to or derived from another user's reel.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#Reels"/>
+    </owl:Class>
+
+    <!-- Data Property: hasClosedCaption -->
+    <owl:DatatypeProperty rdf:about="#hasClosedCaption">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates whether a reel video has closed captions enabled.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Reels"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasQuality -->
+    <owl:DatatypeProperty rdf:about="#hasQuality">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the video quality of a reel.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Reels"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasDataSaver -->
+    <owl:DatatypeProperty rdf:about="#hasDataSaver">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates whether the data saver mode is enabled for the reel.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Reels"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasPlaybackSpeed -->
+    <owl:DatatypeProperty rdf:about="#hasPlaybackSpeed">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates the playback speed of a reel video.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Reels"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+</rdf:RDF>

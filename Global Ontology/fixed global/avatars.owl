@@ -1,0 +1,106 @@
+
+<!-- Avatars Class -->
+    <owl:Class rdf:about="#OSN:Avatars">
+        <rdfs:subClassOf rdf:resource="#OSN:Post"/>
+        <rdfs:comment>Represents the avatars created, edited, and customized by users.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for Avatars -->
+
+    <owl:DatatypeProperty rdf:about="#OSN:hasAvatarDetails">
+        <rdfs:domain rdf:resource="#OSN:Avatars"/>
+        <rdfs:label xml:lang="en">has Avatar Details</rdfs:label>
+        <rdfs:comment xml:lang="en">A generic property for avatar details</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAvatarCreationTimestamp">
+        <rdfs:subPropertyOf rdf:resource="#OSN:hasAvatarDetails"/>
+        <rdfs:domain rdf:resource="#OSN:Avatars"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the avatar was created.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasClothingItem">
+        <rdfs:subPropertyOf rdf:resource="#OSN:hasAvatarDetails"/>
+        <rdfs:domain rdf:resource="#OSN:Avatars"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The clothing item selected or purchased for the avatar.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasOutfitCategory">
+        <rdfs:subPropertyOf rdf:resource="#OSN:hasAvatarDetails"/>
+        <rdfs:domain rdf:resource="#OSN:Avatars"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The category of outfits the avatar is trying or wearing.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEditTimestamp">
+        <rdfs:subPropertyOf rdf:resource="#OSN:hasAvatarDetails"/>
+        <rdfs:domain rdf:resource="#OSN:Avatars"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp of the last edit made to the avatar.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for Avatars -->
+    <owl:ObjectProperty rdf:about="#createsAvatar">
+        <rdfs:domain rdf:resource="#OSN:User"/>
+        <rdfs:range rdf:resource="#OSN:Avatars"/>
+        <rdfs:comment>Links a user to the creation of a new avatar.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#editsAvatar">
+        <rdfs:domain rdf:resource="#OSN:User"/>
+        <rdfs:range rdf:resource="#OSN:Avatars"/>
+        <rdfs:comment>Links a user to editing an existing avatar.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#buysClothesFor">
+        <rdfs:domain rdf:resource="#OSN:User"/>
+        <rdfs:range rdf:resource="#OSN:Avatars"/>
+        <rdfs:comment>Represents the action of buying clothes for an avatar.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#triesNewOutfitsFor">
+        <rdfs:domain rdf:resource="#OSN:User"/>
+        <rdfs:range rdf:resource="#OSN:Avatars"/>
+        <rdfs:comment>Represents the action of trying new outfits for an avatar.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- AvatarPosts Sub-class -->
+    <owl:Class rdf:about="#AvatarPosts">
+        <rdfs:subClassOf rdf:resource="#OSN:Avatars"/>
+        <rdfs:comment>Represents posts created using avatars.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for AvatarPosts -->
+    <owl:ObjectProperty rdf:about="#createAvatarPosts">
+        <rdfs:domain rdf:resource="#OSN:User"/>
+        <rdfs:range rdf:resource="#OSN:Post"/>
+        <rdfs:comment>Links a user to the creation of posts featuring their avatar.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for AvatarPosts -->
+    <owl:DatatypeProperty rdf:about="#hasPostCreationTimestamp">
+        <rdfs:subPropertyOf rdf:resource="#OSN:hasAvatarDetails"/>
+        <rdfs:domain rdf:resource="#OSN:AvatarPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the avatar post was created.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPostCaption">
+        <rdfs:subPropertyOf rdf:resource="#OSN:hasAvatarDetails"/>
+        <rdfs:domain rdf:resource="#OSN:AvatarPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The caption associated with the avatar post.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPostVisibility">
+        <rdfs:subPropertyOf rdf:resource="#OSN:hasAvatarDetails"/>
+        <rdfs:domain rdf:resource="#OSN:AvatarPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The visibility level of the avatar post (e.g., Public, Private).</rdfs:comment>
+    </owl:DatatypeProperty>
+

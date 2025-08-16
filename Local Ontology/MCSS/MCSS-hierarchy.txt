@@ -1,0 +1,260 @@
+User (Class)
+  ├── User -> hasUserID (Data Property) -> String
+  ├── User -> hasUsername (Data Property) -> String
+  ├── User -> hasEmail (Data Property) -> String
+  ├── User -> hasPhoneNumber (Data Property) -> String
+  ├── User -> hasProfilePicture (Data Property) -> URL
+  ├── User -> hasAccountCreationDate (Data Property) -> DateTime
+  ├── User -> hasLastLoginDate (Data Property) -> DateTime
+  ├── User -> hasPasswordHash (Data Property) -> String
+  ├── User -> hasTwoFactorAuthenticationStatus (Data Property) -> Boolean
+  ├── User -> hasSubscriptionStatus (Data Property) -> Boolean
+  ├── User -> hasPremiumMembershipStatus (Data Property) -> Boolean
+  ├── User -> hasPrivacySettings (Data Property) -> String
+  ├── User -> hasNotificationPreferences (Data Property) -> String
+  ├── User -> ownsChannel -> Channel (Object Property)
+  ├── User -> managesChannel -> Channel (Object Property)  # Kolaborator
+  └── User -> hasAccessibilityPreferences (Data Property) -> String
+  └── ProfileSettings (Sub-class)
+       ├── User -> canEditProfile -> ProfileSettings (ObjectProperties)
+       ├── User -> canEditProfilePicture -> ProfileSettings (ObjectProperties)
+       ├── User -> canEditUsername -> ProfileSettings (ObjectProperties)
+       ├── User -> canEditUsername -> ProfileSettings (ObjectProperties)
+
+Channel (Class)
+  ├── hasChannelID (Data Property) -> String
+  ├── hasChannelName (Data Property) -> String
+  ├── hasChannelDescription (Data Property) -> String
+  ├── hasChannelCreationDate (Data Property) -> DateTime
+  ├── hasChannelProfilePicture (Data Property) -> URL
+  ├── hasSubscriberCount (Data Property) -> Integer
+  ├── hasTotalViews (Data Property) -> Integer
+  ├── associatedWithUser -> User (Object Property)
+  ├── uploadsContent -> Content (Object Property)     # General relationship
+  ├── uploadsVideo -> Video (Object Property)         # Specific relationship
+  ├── uploadsShortVideo -> ShortVideo (Object Property)
+  ├── uploadsLive -> Live (Object Property)
+  ├── hasPlaylist -> String (Object Property)
+  └── associatedWithMonetization -> Monetization (Object Property)
+
+
+ContentInteraction (Class)
+  ├── InteractionType (Sub-class)
+  │    ├── Like (Sub-class)
+  │    │    ├── User -> likesContent -> Content (Object Property)
+  │    │    ├── Channel -> likesContent -> Content (Object Property)
+  │    │    ├── Like -> associatedWithContent -> Content (Object Property)
+  │    │    ├── Like -> associatedWithLikedPost -> Post (Object Property)
+  │    │    ├── Like -> associatedWithLikedVideo -> Video (Object Property)
+  │    │    ├── Like -> associatedWithLikedShortVideo -> ShortVideo (Object Property)
+  │    │    ├── Like -> associatedWithLikedLive -> Live (Object Property)
+  │    │    ├── hasLikeTimestamp (Data Property) 
+  │    ├── Comment (Sub-class)
+  │    │    ├── User -> commentsOnContent -> Content (Object Property)
+  │    │    ├── Channel -> commentsOnContent -> Content (Object Property)
+  │    │    ├── Comment -> associatedWithContent -> Content (Object Property)
+  │    │    ├── hasCommentText (Data Property)
+  │    │    ├── hasCommentTimestamp (Data Property)
+  │    │    ├── Comment -> associatedWithCommentedPost -> Post (Object Property)
+  │    │    ├── Comment -> associatedWithCommentedVideo -> Video (Object Property)
+  │    │    ├── Comment -> associatedWithCommentedShortVideo -> ShortVideo (Object Property)
+  │    │    ├── Comment -> associatedWithCommentedLive -> Live (Object Property)
+  │    ├── Share (Sub-class)
+  │    │    ├── User -> sharesContent -> Content (Object Property)
+  │    │    ├── Channel -> sharesContent -> Content (Object Property)
+  │    │    ├── Share -> associatedWithContent -> Content (Object Property)
+  │    │    ├── Share -> associatedWithSharedPost -> Post (Object Property)
+  │    │    ├── Share -> associatedWithSharedVideo -> Video (Object Property)
+  │    │    ├── Share -> associatedWithSharedShortVideo -> ShortVideo (Object Property)
+  │    │    ├── Share -> associatedWithSharedLive -> Live (Object Property)
+  │    │    ├── hasShareTimestamp (Data Property)
+  │    ├── Dislike (Sub-class)
+  │    │    ├── User -> dislikesContent -> Content (Object Property)
+  │    │    ├── Channel -> dislikesContent -> Content (Object Property)
+  │    │    ├── hasDislikeTimestamp (Data Property)
+  │    │    ├── Dislike -> associatedWithContent -> Content (Object Property)
+  │    │    ├── Dislike -> associatedWithDislikedPost -> Post (Object Property)
+  │    │    ├── Dislike -> associatedWithDislikedVideo -> Video (Object Property)
+  │    │    ├── Dislike -> associatedWithDislikedShortVideo -> ShortVideo (Object Property)
+  │    │    ├── Dislike -> associatedWithDislikedLive -> Live (Object Property)
+  │    ├── Report (Sub-class)
+  │    │    ├── User -> reportsContent -> Content (Object Property)
+  │    │    ├── Channel -> reportsContent -> Content (Object Property)
+  │    │    ├── User -> reportsChannel -> Channel (Object Property)
+  │    │    ├── User -> reportsUser -> User (Object Property)
+  │    │    ├── Report -> associatedWithContent -> Content (Object Property)
+  │    │    ├── Report -> associatedWithReportedPost -> Post (Object Property)
+  │    │    ├── Report -> associatedWithReportedVideo -> Video (Object Property)
+  │    │    ├── Report -> associatedWithReportedShortVideo -> ShortVideo (Object Property)
+  │    │    ├── Report -> associatedWithReportedLive -> Live (Object Property)
+  │    │    ├── hasReportReason (Data Property)
+  │    │    ├── hasReportTimestamp (Data Property)
+  │    ├── WatchLater (Sub-class)
+  │    │    ├── User -> addsVideoToWatchLater -> Video (Object Property)
+  │    │    ├── WatchLater -> associatedWithVideo -> Video
+  │    │    ├── hasWatchLaterTimestamp
+  │    ├── Gift (Sub-class)
+  │    │    ├── User -> sendsGiftInLive -> Live (Object Property)
+  │    │    ├── Channel -> sendsGiftInLive -> Live (Object Property)
+  │    │    ├── Channel -> receivesGiftInLive -> Live (Object Property)
+  │    │    ├── Gift -> associatedWithLive -> Live (Object Property)
+  │    │    ├── hasGiftComment
+  │    │    ├── hasGiftPrice
+  │    │    ├── hasGiftTimestamp
+
+
+Search (Class)
+  ├── SearchFunctionality (Sub-class)
+  │    ├── User -> searchesForContent -> SearchFunctionality (Object Property)
+  │    ├── User -> deletesSearchHistory -> SearchFunctionality (Object Property)
+  │    └── hasSearchKeyword (Data Property) -> String
+  └── SearchRecommendation (Sub-class)
+       ├── User -> viewsRecommendationsBasedOnWatchHistory -> SearchRecommendation (Object Property)
+       ├── User -> viewsRecommendationsBasedOnSearchHistory -> SearchRecommendation (Object Property)
+       ├── User -> viewsRecommendationsBasedOnSubscriptions -> SearchRecommendation (Object Property)
+       ├── User -> viewsRecommendationsBasedOnLikes -> SearchRecommendation (Object Property)
+       ├── User -> viewsRecommendationsBasedOnDislikes -> SearchRecommendation (Object Property)
+       ├── User -> editsRecommendations -> SearchRecommendation (Object Property)
+       ├── User -> pausesRecommendations -> SearchRecommendation (Object Property)
+       ├── User -> providesSurveyFeedbackFor -> SearchRecommendation (Object Property)
+       └── hasRecommendationAlgorithm (Data Property) -> String
+
+NewsInformation (Class)
+  ├── NewsWatchPage (Sub-class)
+  │    ├── User -> viewsNewsWatchPage -> NewsWatchPage (Object Property)
+  │    └── hasNewsPageContentType (Data Property) -> String
+  ├── BreakingNews (Sub-class)
+  │    ├── User -> viewsBreakingNews -> BreakingNews (Object Property)
+  │    └── hasBreakingNewsPriority (Data Property) -> String
+  └── TopNews (Sub-class)
+       ├── User -> viewsTopNews -> TopNews (Object Property)
+       └── hasTopNewsAlgorithm (Data Property) -> String
+
+Content (Class)
+  ├── Video (Sub-class)
+  │    ├── hasTitle (Data Property) -> String
+  │    ├── hasDescription (Data Property) -> String
+  │    ├── hasDurationInMinutes (Data Property) -> Integer
+  │    ├── hasPublicationDate (Data Property) -> DateTime
+  │    ├── hasViewCount (Data Property) -> Integer
+  │    ├── hasLikeCount (Data Property) -> Integer
+  │    ├── hasDislikeCount (Data Property) -> Integer
+  │    ├── hasCommentCount (Data Property) -> Integer
+  │    ├── hasVideoTags (Data Property) -> String (Array)
+  │    ├── hasVideoLocation (Data Property) -> String (Array)
+  │    └── hasContentRating (Data Property) -> String (e.g., PG, R)
+  ├── ShortVideo (Sub-class)
+  │    ├── hasShortDescription (Data Property) -> String
+  │    ├── hasDurationInSeconds (Data Property) -> Integer
+  │    ├── hasMusicUsedInShort (Data Property) -> String
+  │    ├── hasEffectsUsedInShort (Data Property) -> String
+  │    ├── hasShortUploadDate (Data Property) -> DateTime
+  │    ├── hasShortVideoTags (Data Property) -> String (Array)
+  │    ├── hasShortVideoLocation (Data Property) -> String (Array)
+  │    └── hasRemixableStatus (Data Property) -> Boolean
+  ├── Live (Sub-class)
+  │    ├── hasLiveDurationInMinutes (Data Property) -> Integer
+  │    ├── hasViewerCountInLive (Data Property) -> Integer
+  │    ├── hasReactionCountInLive (Data Property) -> Integer
+  │    ├── hasLiveStartTime (Data Property) -> DateTime
+  │    ├── hasLiveEndTime (Data Property) -> DateTime
+  │    ├── hasLiveTags (Data Property) -> String (Array)
+  │    ├── hasLiveLocation (Data Property) -> String (Array)
+  │    └── hasSuperChatRevenue (Data Property) -> Float
+
+
+Monetization (Class)
+  ├── Shopping (Sub-class)
+  │    ├── User -> viewsShoppingFeatures -> Shopping (Object Property)
+  │    ├── User -> interactsWithShop -> Shopping (Object Property)
+  │    └── hasShoppingFeatureDescription (Data Property) -> String
+  ├── Subscription (Sub-class)
+  │    ├── User -> subscribesToCreator -> Subscription (Object Property)
+  │    ├── User -> unsubscribesFromCreator -> Subscription (Object Property)
+  │    ├── User -> subscribesToChannel -> Channel (Object Property)
+  │    ├── User -> unsubscribesFromChannel -> Channel (Object Property)
+  │    └── hasSubscriptionBenefits (Data Property) -> String
+  └── CreatorMarketplace (Sub-class)
+       ├── User -> exploresCreatorMarketplace -> CreatorMarketplace (Object Property)
+       ├── User -> purchasesCreatorContent -> CreatorMarketplace (Object Property)
+       └── hasMarketplaceDetails (Data Property) -> String
+
+Notifications (Class)
+  ├── HideNotifications (Sub-class)
+  │    ├── User -> hidesUserNotificationsFor -> User (Object Property)
+  │    ├── User -> hidesChannelNotificationsFor -> Channel (Object Property)
+  │    └── hasHiddenNotificationReason (Data Property) -> String
+  └── ManageMentions (Sub-class)
+       ├── User -> managesMentionsFor -> Mentions (Object Property)
+       └── hasMentionedContentDetails (Data Property) -> String
+
+Post (Class)
+  ├── hasPostAudienceType (Data Property) -> String
+  ├── hasPostScheduleTime (Data Property) -> DateTime
+  ├── associatedWithContent (Object Property) -> Content
+  ├── VideoPost (Sub-class)
+  │    ├── associatedWithContent -> Video (Object Property)
+  │    ├── hasVideoPostAudienceType (Data Property) -> String
+  │    ├── hasVideoPostScheduleTime (Data Property) -> DateTime
+  ├── ShortVideoPost (Sub-class)
+  │    ├── associatedWithContent -> ShortVideo (Object Property)
+  │    ├── hasShortVideoPostAudienceType (Data Property) -> String
+  │    ├── hasShortVideoPostRemixableStatus (Data Property) -> Boolean
+  │    └── hasShortVideoPostScheduleTime (Data Property) -> DateTime
+  └── LivePost (Sub-class)
+       ├── associatedWithContent -> Live (Object Property)
+       ├── hasLivePostAudienceType (Data Property) -> String
+       ├── hasLivePostStreamType (Data Property) -> String (e.g., Public, Private)
+       ├── hasLivePostScheduleTime (Data Property) -> DateTime
+
+DirectMessages (Class)
+  ├── MessageContent (Sub-class)
+  │    ├── hasTextContent (Data Property) -> String
+  │    ├── hasMediaAttachment (Data Property) -> URL
+  │    ├── hasTimestamp (Data Property) -> DateTime
+  │    ├── hasMessageStatus (Data Property) -> String (e.g., sent, delivered, read)
+  │    ├── hasMessageReaction (Data Property) -> String (Array of emojis)
+  │    ├── isMessageFlagged (Data Property) -> Boolean
+  │    └── isMessageEncrypted (Data Property) -> Boolean
+  ├── MessageActions (Sub-class)
+  │    ├── User -> sendsMessageTo -> User (Object Property)
+  │    ├── User -> sendsMediaMessageTo -> User (Object Property)
+  │    ├── User -> sendsVoiceNoteTo -> User (Object Property)
+  │    ├── User -> reactsToMessage -> MessageContent (Object Property)
+  │    ├── User -> repliesToMessage -> MessageContent (Object Property)
+  │    ├── User -> deletesMessage -> MessageContent (Object Property)
+  │    ├── User -> reportsMessage -> MessageContent (Object Property)
+  │    ├── User -> forwardsMessageTo -> User (Object Property)
+  │    ├── User -> marksMessageAsUnread -> MessageContent (Object Property)
+  │    └── User -> archivesMessage -> MessageContent (Object Property)
+  ├── AdvancedMessagingFeatures (Sub-class)
+  │    ├── User -> setsMessagePriority -> MessageContent (Object Property)
+  │    ├── User -> enablesMessageEncryptionFor -> User (Object Property)
+  │    ├── User -> sendsGiftInMessageTo -> User (Object Property)
+  │    ├── User -> schedulesMessageFor -> User (Object Property)
+  │    ├── User -> recallsMessage -> MessageContent (Object Property)
+  │    ├── User -> translatesMessageTo -> String (Data Property)
+  │    └── User -> pinsMessageInChat -> MessageContent (Object Property)
+  ├── NotificationSettings (Sub-class)
+  │    ├── User -> mutesMessageNotificationsFrom -> User (Object Property)
+  │    ├── User -> enablesReadReceiptsFor -> User (Object Property)
+  │    ├── User -> disablesReadReceiptsFor -> User (Object Property)
+  │    ├── User -> hasUnreadMessageCount -> Integer (Data Property)
+  │    ├── User -> hasLastMessagePreview -> String (Data Property)
+  │    ├── User -> hasNotificationSoundSetting -> String (Data Property)
+  │    └── User -> enablesNotificationForGroupMessages -> GroupMessage (Object Property)
+  ├── GroupMessages (Sub-class)
+  │    ├── User -> createsGroupMessageThreadWith -> GroupMessage (Object Property)
+  │    ├── GroupMessage -> hasGroupParticipants -> User (Object Property)
+  │    ├── User -> leavesGroupMessageThread -> GroupMessage (Object Property)
+  │    ├── User -> addsParticipantsToGroup -> GroupMessage (Object Property)
+  │    ├── User -> removesParticipantsFromGroup -> GroupMessage (Object Property)
+  │    ├── GroupMessage -> hasGroupMessageTitle -> String (Data Property)
+  │    ├── GroupMessage -> hasGroupMessageCreatedTimestamp -> DateTime (Data Property)
+  │    └── GroupMessage -> hasGroupMessageLastActivity -> DateTime (Data Property)
+  └── MessageAnalytics (Sub-class)
+       ├── User -> viewsMessageStats -> MessageContent (Object Property)
+       ├── MessageContent -> hasOpenRate -> Float (Data Property)
+       ├── MessageContent -> hasClickThroughRate -> Float (Data Property)
+       ├── MessageContent -> hasResponseTime -> Float (Data Property)
+       └── MessageContent -> isMessageBoosted -> Boolean (Data Property)

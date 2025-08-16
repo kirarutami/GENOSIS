@@ -1,0 +1,124 @@
+class,dataProperty,classComment,dataPropertyComment
+User,hasEmail,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",Stores the email address associated with the user's account.
+User,hasPassword,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",Stores the password for the user's account.
+User,hasBirthday,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",Stores the user's birth date.
+User,hasSecuritySettings,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).","Contains the user's security settings (e.g., two-factor authentication status)."
+User,hasSubscriptionStatus,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).","Indicates the user's subscription status (e.g., premium, free)."
+User,hasNotificationsSetting,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).","Specifies the user's notifications settings (e.g., email notifications enabled)."
+User,hasPrivacySetting,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).","Specifies the user's privacy settings (e.g., public profile, private account)."
+User,hasLogoutStatus,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",Indicates if the user is currently logged out of the platform.
+ProfileSettings,hasBio,Represents profile customization settings for the user.,Stores the bio or description on the user's profile.
+ProfileSettings,hasLocation,Represents profile customization settings for the user.,Indicates the user's location as shown on their profile.
+ProfileSettings,hasWebsite,Represents profile customization settings for the user.,Contains the website link provided by the user in their profile.
+ProfileSettings,hasBirthDate,Represents profile customization settings for the user.,Records the user's birth date displayed on their profile.
+ProfileSettings,hasTips,Represents profile customization settings for the user.,Stores any tips or notable quotes the user chooses to display on their profile.
+Post,hasPostURL,Represents a specific post or piece of content created by a user.,"
+            Contains the public URL or permalink to the post, if available.
+            Useful for referencing the post directly from an external link.
+        "
+Post,hasPostDeviceInfo,Represents a specific post or piece of content created by a user.,"
+            Stores information about the device or app used to create the post
+            (e.g., 'Twitter Web on MacBook Pro', 'Android App').
+        "
+Post,hasPostInteractionIP,Represents a specific post or piece of content created by a user.,"
+            Captures the IP address from which the user posted. 
+            Useful for forensic tracing of post origin.
+        "
+Post,hasPostMedia,Represents a specific post or piece of content created by a user.,"
+            Holds the URL(s) or reference to media (images, videos, GIFs) 
+            attached to the post.
+        "
+Post,hasPostLocation,Represents a specific post or piece of content created by a user.,"
+            Geographical location or place the user tagged 
+            (e.g., 'New York, USA').
+        "
+Post,hasPostContent,Represents a specific post or piece of content created by a user.,"
+            Main textual content or body of the post, 
+            including any caption or message written by the user.
+        "
+Post,hasPostTags,Represents a specific post or piece of content created by a user.,"
+            Contains hashtags, labels, or additional tags associated with the post.
+            Useful for categorizing or searching content by topic.
+        "
+Post,hasPostTimestamp,Represents a specific post or piece of content created by a user.,"
+            Records the date and time when the post was created or published.
+        "
+Post,hasPostStatus,Represents a specific post or piece of content created by a user.,"
+            Indicates the publishing status of the post (e.g., ""draft"", ""scheduled"", or ""published"").
+            Useful for distinguishing between different post states.
+        "
+Post,hasScheduledTime,Represents a specific post or piece of content created by a user.,"
+            If the post status is ""scheduled"", records the date and time
+            when the post will be published.
+        "
+Post,hasScheduledTime,Represents a specific post or piece of content created by a user.,Stores the scheduled time of an upcoming session.
+UpcomingSessions,hasScheduledTime,Represents scheduled live sessions that users can set reminders for or add to their calendar.,"
+            If the post status is ""scheduled"", records the date and time
+            when the post will be published.
+        "
+UpcomingSessions,hasScheduledTime,Represents scheduled live sessions that users can set reminders for or add to their calendar.,Stores the scheduled time of an upcoming session.
+ReblogRetweetPost,hasRetweetTimestamp,,Mencatat tanggal dan waktu ketika retweet atau reblog terjadi.
+ReblogRetweetPost,hasRetweetComment,,Menyimpan komentar yang ditambahkan oleh pengguna saat me-retweet/reblog.
+ReblogRetweetPost,hasRetweetIP,,Alamat IP yang digunakan saat melakukan retweet/reblog.
+ReblogRetweetPost,hasRetweetDevice,,Perangkat/aplikasi yang digunakan saat melakukan retweet/reblog.
+Comment,hasCommentContent,,"
+            Holds the main text/body of a comment posted by a user.
+        "
+Comment,hasCommentTimestamp,,"
+            The date and time when this comment was created.
+            Useful for forensic timeline reconstruction.
+        "
+Comment,hasCommentIP,,"
+            The IP address of the device used to post the comment.
+            Critical for digital forensics or geolocation.
+        "
+Comment,hasCommentDevice,,"
+            Additional info about the device/app used (e.g., 'Twitter Web', 'Android App').
+        "
+NotificationSettings,hasQualityFilter,Represents settings related to notifications that the user can configure.,Indicates if the quality filter is enabled for notifications.
+NotificationSettings,receivesPushNotifications,Represents settings related to notifications that the user can configure.,Indicates if the user receives push notifications.
+NotificationSettings,receivesSMSNotifications,Represents settings related to notifications that the user can configure.,Indicates if the user receives SMS notifications.
+NotificationSettings,receivesEmailNotifications,Represents settings related to notifications that the user can configure.,Indicates if the user receives email notifications.
+Preferences,hasUnreadNotificationCountBadge,"Represents user-specific notification preferences, such as unread counts and badges.",Displays the count of unread notifications as a badge for the user.
+DirectMessages,hasDMContent,Represents direct messages sent between users on the platform.,"
+            The text/body of the direct message.
+        "
+DirectMessages,hasDMTimestamp,Represents direct messages sent between users on the platform.,"
+            The date and time when the DM was sent.
+        "
+DirectMessages,hasDMIP,Represents direct messages sent between users on the platform.,"
+            The IP address used by the sender to send the DM.
+            Useful for forensic tracing or geolocation.
+        "
+DirectMessages,hasDMDevice,Represents direct messages sent between users on the platform.,"
+            The device/app used to send this DM (e.g., 'Twitter Web', 'Android App').
+        "
+DirectMessages,hasDMThreatLevel,Represents direct messages sent between users on the platform.,"
+            A classification or rating of how threatening the DM is 
+            (e.g., 'high', 'moderate', 'low') as assessed by a forensic analyst or an AI.
+        "
+User,hasSubscribed,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",Indicates if the user has subscribed to a service.
+User,hasAdvertisements,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",Indicates whether the user is exposed to advertisements.
+User,hasAccessibilitySettings,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",Stores the user's accessibility settings.
+User,hasDisplaySettings,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",Stores the user's display settings.
+User,hasLanguagePreferences,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",Stores the user's preferred language settings.
+User,hasDataUsageSettings,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",Stores the user's data usage settings.
+Community,hasCommunityName,"Represents a group or community on the platform where users can join, interact, and share content.",Stores the name of the community.
+Community,hasCommunityDescription,"Represents a group or community on the platform where users can join, interact, and share content.",Provides a description of the community.
+Community,hasMemberCount,"Represents a group or community on the platform where users can join, interact, and share content.",Stores the number of members in the community.
+Community,hasCreationDate,"Represents a group or community on the platform where users can join, interact, and share content.",Indicates the creation date of the community.
+LiveSpacesRooms,hasSpacesName,"Represents live spaces or rooms for users to listen, speak, and interact during live sessions.",Stores the name of the live space or room.
+LiveSpacesRooms,hasHostName,"Represents live spaces or rooms for users to listen, speak, and interact during live sessions.",Stores the name of the host of the live session.
+LiveSpacesRooms,hasParticipantCount,"Represents live spaces or rooms for users to listen, speak, and interact during live sessions.",Stores the count of participants in the live session.
+LiveSpacesRooms,hasSessionDuration,"Represents live spaces or rooms for users to listen, speak, and interact during live sessions.",Stores the duration of the live session.
+LiveSpacesRooms,hasSessionType,"Represents live spaces or rooms for users to listen, speak, and interact during live sessions.","Specifies the type of live session, such as public or private."
+UpcomingSessions,hasReminder,Represents scheduled live sessions that users can set reminders for or add to their calendar.,Indicates if a user has set a reminder for an upcoming session.
+User,hasUpcomingSessions,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",Indicates if a user has any upcoming live sessions.
+Lists,hasListPhoto,Represents lists created or followed by users on the platform.,Stores the URL or identifier of the list photo.
+Lists,hasListName,Represents lists created or followed by users on the platform.,Stores the name of the list.
+Lists,hasListDescription,Represents lists created or followed by users on the platform.,Stores the description of the list.
+Lists,setsListPrivacy,Represents lists created or followed by users on the platform.,"Specifies the privacy setting of the list, such as public or private."
+Bookmarks,hasBookmarkCount,Represents a collection of content items saved as bookmarks by users.,Stores the count of items saved in bookmarks.
+Bookmarks,hasBookmarkDate,Represents a collection of content items saved as bookmarks by users.,Records the date and time when a bookmark was saved.
+FollowerRequests,hasRequestDate,Represents follower requests that a user can accept or decline.,Records the date when the follower request was received.
+FollowerRequests,isRequestAccepted,Represents follower requests that a user can accept or decline.,Indicates whether the follower request was accepted (true) or declined (false).

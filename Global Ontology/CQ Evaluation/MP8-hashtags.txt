@@ -1,0 +1,46 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+
+SELECT
+  ?postIRI ?postContent ?allPostTags 
+  ?timestamp
+  ?postedBy ?postedByLabel 
+  ?platform
+  ?matchedHashtag # Menampilkan hashtag spesifik yang cocok dari daftar Bunda
+WHERE {
+  # --- Daftar Hashtag Mencurigakan ---
+  # !!! PENTING: Bunda perlu menyesuaikan daftar hashtag di bawah ini !!!
+  # Ini hanya contoh, ganti dengan hashtag yang relevan untuk investigasi Bunda.
+  # Pastikan hashtag ditulis lengkap dengan tanda pagarnya, contoh: "#NamaHashtag"
+  VALUES ?suspiciousHashtag {
+    "#WomenShouldntReport"   # Contoh dari data MP Case
+    "#SpeakTruth"            # Contoh dari data MP Case
+    "#FakeNews"              # Contoh dari data MP Case
+    # "#IllegalStuff"        # Contoh lain yang bisa Bunda tambahkan
+    # "#DarkMarket"
+    # "#Wanted"
+  }
+
+  # Mencari postingan di platform Microblogging
+  ?postIRI rdf:type/rdfs:subClassOf* genosisOwl:Global:Post ; # Mencakup genosisOwl:MP:Post
+           genosisOwl:belongsToPlatform ?platform ;
+           genosisOwl:postedBy ?postedBy ;
+           genosisOwl:hasPostTags ?allPostTags . # Properti ini berisi string semua hashtag
+
+  # Filter hanya untuk platform MP (Twitter atau Tumblr sesuai data Anda)
+  FILTER(STR(?platform) = "Twitter" || STR(?platform) = "Tumblr")
+
+  # Memeriksa apakah ?allPostTags (string) mengandung salah satu ?suspiciousHashtag
+  # Menggunakan REGEX dengan flag "i" untuk case-insensitive
+  FILTER(REGEX(STR(?allPostTags), STR(?suspiciousHashtag), "i"))
+  
+  # Mengikat hashtag yang cocok ke variabel ?matchedHashtag
+  BIND(STR(?suspiciousHashtag) AS ?matchedHashtag)
+
+  # Mengambil informasi tambahan dari postingan (opsional)
+  OPTIONAL { ?postIRI genosisOwl:hasContentText ?postContent . } #
+  OPTIONAL { ?postIRI genosisOwl:hasCreationTimestamp ?timestamp . } #
+  OPTIONAL { ?postedBy rdfs:label ?postedByLabel . }
+}
+ORDER BY DESC(?timestamp) ?postedByLabel

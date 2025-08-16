@@ -1,0 +1,46 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas MessengerKids -->
+    <owl:Class rdf:about="#MessengerKids"/>
+
+    <!-- Sub-kelas CreateAccount -->
+    <owl:Class rdf:about="#CreateAccount">
+        <rdfs:subClassOf rdf:resource="#MessengerKids"/>
+    </owl:Class>
+
+    <!-- Sub-kelas ChildInformation di dalam CreateAccount -->
+    <owl:Class rdf:about="#ChildInformation">
+        <rdfs:subClassOf rdf:resource="#CreateAccount"/>
+    </owl:Class>
+
+    <!-- Individu di dalam ChildInformation -->
+    <owl:NamedIndividual rdf:about="#FirstName">
+        <rdf:type rdf:resource="#ChildInformation"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can enter child's first name.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LastName">
+        <rdf:type rdf:resource="#ChildInformation"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can enter child's last name.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Birthday">
+        <rdf:type rdf:resource="#ChildInformation"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can enter child's birthday.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas ConnectKids -->
+    <owl:Class rdf:about="#ConnectKids">
+        <rdfs:subClassOf rdf:resource="#MessengerKids"/>
+    </owl:Class>
+
+    <!-- Individu di dalam ConnectKids -->
+    <owl:NamedIndividual rdf:about="#MessengerConnection">
+        <rdf:type rdf:resource="#ConnectKids"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can connect their child to other kids through Messenger.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

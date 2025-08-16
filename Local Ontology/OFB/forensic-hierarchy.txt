@@ -1,0 +1,35 @@
+Agent (Class)
+├── CriminalGroup (Sub-class)
+├── CriminalOrganisation (Sub-class)
+└── Suspects (Sub-class)
+    ├── performsActivity (Object Property) → UserActivity (Class)
+    │   ├── followsFlaggedProfiles (Object Property) → FlaggedProfiles (Class)
+    │   ├── likesFlaggedContent (Object Property) → FlaggedContent (Class)
+    │   ├── sharesFlaggedContent (Object Property) → FlaggedContent (Class)
+    │   └── commentsOnFlaggedContent (Object Property) → FlaggedContent (Class)
+    ├── isConsideredSuspect (Object Property) → ThresholdOfSuspiciousActivity (Class)
+    └── markedAsFlaggedProfile (Object Property) → FlaggedProfiles (Class)
+
+ThresholdOfSuspiciousActivity (Class)
+├── hasThresholdValue (Data Property) → Integer
+└── ThresholdCriteria (Data Property) → String
+
+FlaggedProfiles (Class)
+├── flaggedForActivity (Data Property) → String (e.g., Hate Speech, Illegal Transaction)
+└── associatedWithFlaggedContent (Object Property) → FlaggedContent (Class)
+
+FlaggedContent (Class)
+├── flaggedReason (Data Property) → String (e.g., Contains Hate Speech, Promotes Illegal Activity)
+├── createdByUser (Object Property) → UserActivity (Class)
+└── associatedWithFlaggedProfiles (Object Property) → FlaggedProfiles (Class)
+
+UserActivity (Class)
+├── followsFlaggedProfiles (Object Property) → FlaggedProfiles (Class)
+├── likesFlaggedContent (Object Property) → FlaggedContent (Class)
+├── sharesFlaggedContent (Object Property) → FlaggedContent (Class)
+├── commentsOnFlaggedContent (Object Property) → FlaggedContent (Class)
+└── performedBy (Object Property) → Suspects (Class)
+
+Crime_Case_Solving (Class)
+├── triggers (Object Property) → ThresholdOfSuspiciousActivity (Class)
+└── hasResolutionStatus (Data Property) → String (e.g., Open, Closed, Under Investigation)

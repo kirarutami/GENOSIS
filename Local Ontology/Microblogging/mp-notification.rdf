@@ -1,0 +1,63 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Notifications -->
+    <owl:Class rdf:about="#Notifications">
+        <rdfs:comment>Represents user notifications and their related settings on the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas NotificationSettings -->
+    <owl:Class rdf:about="#NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#Notifications"/>
+        <rdfs:comment>Represents settings related to notifications that the user can configure.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas Preferences -->
+    <owl:Class rdf:about="#Preferences">
+        <rdfs:subClassOf rdf:resource="#Notifications"/>
+        <rdfs:comment>Represents user-specific notification preferences, such as unread counts and badges.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasQualityFilter -->
+    <owl:DatatypeProperty rdf:about="#hasQualityFilter">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates if the quality filter is enabled for notifications.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: receivesPushNotifications -->
+    <owl:DatatypeProperty rdf:about="#receivesPushNotifications">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates if the user receives push notifications.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: receivesSMSNotifications -->
+    <owl:DatatypeProperty rdf:about="#receivesSMSNotifications">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates if the user receives SMS notifications.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: receivesEmailNotifications -->
+    <owl:DatatypeProperty rdf:about="#receivesEmailNotifications">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates if the user receives email notifications.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasUnreadNotificationCountBadge -->
+    <owl:DatatypeProperty rdf:about="#hasUnreadNotificationCountBadge">
+        <rdfs:domain rdf:resource="#Preferences"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Displays the count of unread notifications as a badge for the user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

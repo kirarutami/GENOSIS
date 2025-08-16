@@ -1,0 +1,47 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+OSN:ContentInteraction,MCSS:ContentInteraction,100.0,"OSN:The class representing user interactions with content, such as likes, reactions, and comments.",MCSS:Represents interactions on content within the platform.
+OSN:DirectMessages,MCSS:DirectMessages,100.0,OSN:Represents direct messaging interactions among users on the platform.,MCSS:Represents the functionality and content of direct messages in the system.
+OSN:Like,MCSS:Like,100.0,OSN:Represents a user's 'like' interaction on a post or content.,MCSS:Represents a like interaction with content.
+OSN:NotificationSettings,MCSS:NotificationSettings,100.0,"OSN:Handles configurations for notifications like push, email, and SMS.",MCSS:Represents settings for managing message notifications.
+OSN:User,MCSS:User,100.0,OSN:The primary class representing the user in the system.,MCSS:The primary class representing individual users in the system.
+OSN:Comments,MCSS:Comment,93.33,OSN:Represents user interactions involving comments on content.,MCSS:Represents a comment interaction with content.
+OSN:VideoNotifications,MCSS:HideNotifications,91.43,"OSN:Represents notifications related to video content, such as new video uploads, reminders, and other updates.",MCSS:Represents the functionality to hide notifications for users or channels.
+OSN:Videos,MCSS:Video,90.91,"OSN:Represents video content watched by users, including viewing history and notifications.",MCSS:Represents video content in the system.
+OSN:AvatarPosts,MCSS:Post,90.0,OSN:Represents posts created using avatars.,"MCSS:Represents a generic post on the platform, including audience type and schedule time."
+OSN:BirthdayPosts,MCSS:Post,90.0,OSN:Represents posts created for birthdays.,"MCSS:Represents a generic post on the platform, including audience type and schedule time."
+OSN:ContentCreation,MCSS:Content,90.0,"OSN:The main class representing content creation functionality, including posts, stories, and reels.",MCSS:Represents all types of content on the platform.
+OSN:ContentInteraction,MCSS:Content,90.0,"OSN:The class representing user interactions with content, such as likes, reactions, and comments.",MCSS:Represents all types of content on the platform.
+OSN:EmojiComment,MCSS:Comment,90.0,OSN:Represents a comment made by a user that contains an emoji.,MCSS:Represents a comment interaction with content.
+OSN:Files,MCSS:ProfileSettings,90.0,OSN:Represents files uploaded to a group.,MCSS:Sub-class representing settings a user can edit in their profile.
+OSN:Like,MCSS:Dislike,90.0,OSN:Represents a user's 'like' interaction on a post or content.,MCSS:Represents a dislike interaction with content.
+OSN:LikesReactions,MCSS:Like,90.0,OSN:Represents user interactions involving likes and reactions to content.,MCSS:Represents a like interaction with content.
+OSN:LiveVideo,MCSS:Live,90.0,OSN:Represents live video broadcasts created by the user.,MCSS:Represents live streaming content within the system.
+OSN:LiveVideo,MCSS:Video,90.0,OSN:Represents live video broadcasts created by the user.,MCSS:Represents video content in the system.
+OSN:Marketplace,MCSS:CreatorMarketplace,90.0,OSN:Represents the marketplace feature in the online social network site.,MCSS:Represents interactions with the creator marketplace.
+OSN:MessageNotifications,MCSS:Notifications,90.0,OSN:Represents notification settings related to direct messages.,MCSS:Represents notifications and related interactions in the platform.
+OSN:NotificationSettings,MCSS:Notifications,90.0,"OSN:Handles configurations for notifications like push, email, and SMS.",MCSS:Represents notifications and related interactions in the platform.
+OSN:PhotoVideo,MCSS:Video,90.0,OSN:Represents posts containing photos or videos uploaded by the user.,MCSS:Represents video content in the system.
+OSN:ReelVideo,MCSS:Video,90.0,OSN:Represents a short video that is part of a reel.,MCSS:Represents video content in the system.
+OSN:ShortVideoContent,MCSS:Content,90.0,OSN:Represents short video content shared on social network platforms.,MCSS:Represents all types of content on the platform.
+OSN:ShortVideoContent,MCSS:ShortVideo,90.0,OSN:Represents short video content shared on social network platforms.,MCSS:Represents short video content in the system.
+OSN:ShortVideoContent,MCSS:Video,90.0,OSN:Represents short video content shared on social network platforms.,MCSS:Represents video content in the system.
+OSN:StoryPhotoVideo,MCSS:Video,90.0,OSN:Represents a story containing a photo or video.,MCSS:Represents video content in the system.
+OSN:TextComment,MCSS:Comment,90.0,OSN:Represents a text-based comment made by a user.,MCSS:Represents a comment interaction with content.
+OSN:UserProfile,MCSS:User,90.0,"OSN:Represents the profile of a user, containing personal information such as profile picture, username, and email.",MCSS:The primary class representing individual users in the system.
+OSN:VideoCalls,MCSS:Video,90.0,OSN:Represents video call interactions within direct messages.,MCSS:Represents video content in the system.
+OSN:VideoContent,MCSS:Content,90.0,"OSN:The main class representing video-related content in the system, including video history and notifications.",MCSS:Represents all types of content on the platform.
+OSN:VideoContent,MCSS:Video,90.0,"OSN:The main class representing video-related content in the system, including video history and notifications.",MCSS:Represents video content in the system.
+OSN:VideoNotifications,MCSS:Video,90.0,"OSN:Represents notifications related to video content, such as new video uploads, reminders, and other updates.",MCSS:Represents video content in the system.
+OSN:Posts,MCSS:Post,88.89,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.","MCSS:Represents a generic post on the platform, including audience type and schedule time."
+OSN:GroupNotifications,MCSS:Notifications,83.87,OSN:Represents notification settings for a group.,MCSS:Represents notifications and related interactions in the platform.
+OSN:VideoNotifications,MCSS:Notifications,83.87,"OSN:Represents notifications related to video content, such as new video uploads, reminders, and other updates.",MCSS:Represents notifications and related interactions in the platform.
+OSN:GIFComment,MCSS:Comment,82.35,OSN:Represents a comment made by a user that contains a GIF.,MCSS:Represents a comment interaction with content.
+OSN:Groups,MCSS:GroupMessage,81.82,OSN:Represents groups in the online social network site.,MCSS:Represents group message threads and related interactions.
+OSN:Videos,MCSS:ShortVideo,81.82,"OSN:Represents video content watched by users, including viewing history and notifications.",MCSS:Represents short video content in the system.
+OSN:Videos,MCSS:VideoPost,81.82,"OSN:Represents video content watched by users, including viewing history and notifications.",MCSS:Represents posts that are associated with videos.
+OSN:Pages,MCSS:DirectMessages,80.0,OSN:Represents Pages in the online social network context.,MCSS:Represents the functionality and content of direct messages in the system.
+OSN:Pages,MCSS:NewsWatchPage,80.0,OSN:Represents Pages in the online social network context.,MCSS:Represents the page where users watch or read news content.
+OSN:PhotoVideo,MCSS:ShortVideo,80.0,OSN:Represents posts containing photos or videos uploaded by the user.,MCSS:Represents short video content in the system.
+OSN:Posts,MCSS:LivePost,80.0,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",MCSS:Represents posts associated with live sessions.
+OSN:Posts,MCSS:ShortVideoPost,80.0,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",MCSS:Represents posts associated with short videos.
+OSN:Posts,MCSS:VideoPost,80.0,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",MCSS:Represents posts that are associated with videos.

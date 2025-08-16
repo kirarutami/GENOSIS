@@ -1,0 +1,332 @@
+<!-- ================================================================= -->
+<!-- == Data Properties - Tambahan dan Penyesuaian (Hierarki V3)   == -->
+<!-- ================================================================= -->
+
+<!-- === Kategori Properti Global Baru (berdasarkan PDF & Analisis) === -->
+
+<owl:DatatypeProperty rdf:about="#Global:timestampValue">
+    <rdfs:label xml:lang="en">Global Timestamp Value</rdfs:label>
+    <rdfs:comment xml:lang="en">A generalized data property for representing various types of timestamps. Range: xsd:dateTime.</rdfs:comment>
+    <rdfs:range rdf:resource="&xsd;dateTime"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Global:ipAddressValue">
+    <rdfs:label xml:lang="en">Global IP Address Value</rdfs:label>
+    <rdfs:comment xml:lang="en">A generalized data property for representing IP addresses. Range: xsd:string.</rdfs:comment>
+    <rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Global:identifierValue">
+    <rdfs:label xml:lang="en">Global Identifier Value</rdfs:label>
+    <rdfs:comment xml:lang="en">A generalized data property for representing unique identifiers. Range: xsd:string.</rdfs:comment>
+    <rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Global:descriptiveText">
+    <rdfs:label xml:lang="en">Global Descriptive Text</rdfs:label>
+    <rdfs:comment xml:lang="en">A generalized data property for various textual descriptions, comments, or content. Range: xsd:string.</rdfs:comment>
+    <rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Global:countValue">
+    <rdfs:label xml:lang="en">Global Count Value</rdfs:label>
+    <rdfs:comment xml:lang="en">A generalized data property for representing numerical counts. Range: xsd:integer.</rdfs:comment>
+    <rdfs:range rdf:resource="&xsd;integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Global:booleanValue">
+    <rdfs:label xml:lang="en">Global Boolean Value</rdfs:label>
+    <rdfs:comment xml:lang="en">A generalized data property for representing boolean states. Range: xsd:boolean.</rdfs:comment>
+    <rdfs:range rdf:resource="&xsd;boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Global:genericURL">
+    <rdfs:label xml:lang="en">Global Generic URL</rdfs:label>
+    <rdfs:comment xml:lang="en">A generalized data property for representing URLs. Range: xsd:anyURI.</rdfs:comment>
+    <rdfs:range rdf:resource="&xsd;anyURI"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Global:locationValue">
+    <rdfs:label xml:lang="en">Global Location Value</rdfs:label>
+    <rdfs:comment xml:lang="en">A generalized data property for representing location information, typically as text. Range: xsd:string.</rdfs:comment>
+    <rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Global:monetaryValue">
+    <rdfs:label xml:lang="en">Global Monetary Value</rdfs:label>
+    <rdfs:comment xml:lang="en">A generalized data property for representing monetary amounts. Range: xsd:decimal.</rdfs:comment>
+    <rdfs:range rdf:resource="&xsd;decimal"/>
+</owl:DatatypeProperty>
+
+<!-- === Pemetaan Data Property dari Kelompok NetworkX (dengan fokus pada saran PDF) === -->
+
+<!-- Kelompok DP #1 (Timestamp, IP, ID, Teks, Konten, dll.) - Contoh Pemecahan -->
+
+    <!-- Timestamps -->
+    <owl:DatatypeProperty rdf:about="#Global:creationTimestamp">
+        <rdfs:subPropertyOf rdf:resource="#Global:timestampValue"/>
+        <rdfs:label xml:lang="en">Creation Timestamp</rdfs:label>
+        <rdfs:comment xml:lang="en">Timestamp indicating when an entity or event was created.</rdfs:comment>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MCSS:hasGroupMessageCreatedTimestamp">
+        <rdfs:subPropertyOf rdf:resource="#Global:creationTimestamp"/>
+        <rdfs:domain rdf:resource="#MCSS:GroupMessage"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the timestamp when the group message thread was created.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasGroupMessageCreatedTimestamp</alignWithMCSS>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasGroupCreatedDate</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasGroupCreationTimestamp</alignWithOSN>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#OFB:hasPostCreationTimestamp">
+        <rdfs:subPropertyOf rdf:resource="#Global:creationTimestamp"/>
+        <rdfs:domain rdf:resource="#OFB:Post"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Timestamp of when the post was created.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasPostCreationTimestamp</alignWithOFB>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasPostTimestamp</alignWithMP>
+    </owl:DatatypeProperty>
+    <!-- ... (Properti creationTimestamp lainnya dari Kelompok DP #1) ... -->
+
+    <owl:DatatypeProperty rdf:about="#Global:interactionTimestamp">
+        <rdfs:subPropertyOf rdf:resource="#Global:timestampValue"/>
+        <rdfs:label xml:lang="en">Interaction Timestamp</rdfs:label>
+        <rdfs:comment xml:lang="en">Timestamp indicating when an interaction occurred.</rdfs:comment>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MCSS:hasCommentTimestamp">
+        <rdfs:subPropertyOf rdf:resource="#Global:interactionTimestamp"/>
+        <rdfs:domain rdf:resource="#MCSS:CommentAction"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Records the timestamp when a comment interaction occurred.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasCommentTimestamp</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasCommentTimestamp</alignWithMP>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasCommentTimestamp</alignWithOFB>
+    </owl:DatatypeProperty>
+    <!-- ... (Properti interactionTimestamp lainnya dari Kelompok DP #1) ... -->
+
+    <owl:DatatypeProperty rdf:about="#Global:lastActivityTimestamp">
+        <rdfs:subPropertyOf rdf:resource="#Global:timestampValue"/>
+        <rdfs:label xml:lang="en">Last Activity Timestamp</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MCSS:hasGroupMessageLastActivity">
+        <rdfs:subPropertyOf rdf:resource="#Global:lastActivityTimestamp"/>
+        <rdfs:domain rdf:resource="#MCSS:GroupMessage"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the timestamp of the last activity in the group message thread.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasGroupMessageLastActivity</alignWithMCSS>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasLastActivityTimestamp</alignWithOSN>
+    </owl:DatatypeProperty>
+    <!-- ... (Properti lastActivityTimestamp lainnya dari Kelompok DP #1) ... -->
+
+    <owl:DatatypeProperty rdf:about="#Global:messageSentTimestamp">
+        <rdfs:subPropertyOf rdf:resource="#Global:timestampValue"/>
+        <rdfs:label xml:lang="en">Message Sent Timestamp</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MCSS:hasTimestamp"> <!-- Konteks pesan MCSS -->
+        <rdfs:subPropertyOf rdf:resource="#Global:messageSentTimestamp"/>
+        <rdfs:domain rdf:resource="#MCSS:DirectMessage"/> <!-- Atau MessageContent -->
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the timestamp of when the message was sent.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasTimestamp</alignWithMCSS>
+    </owl:DatatypeProperty>
+    <!-- ... (Properti messageSentTimestamp lainnya dari Kelompok DP #1) ... -->
+
+    <!-- IP Addresses -->
+    <owl:DatatypeProperty rdf:about="#Global:ipAddress"> <!-- Nama generik sesuai PDF -->
+        <rdfs:subPropertyOf rdf:resource="#Global:ipAddressValue"/>
+        <rdfs:label xml:lang="en">IP Address</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents an IP address. Context (post, comment, login) should be inferred from the domain class or specific sub-properties.</rdfs:comment>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MCSS:hasPostIP">
+        <rdfs:subPropertyOf rdf:resource="#Global:ipAddress"/>
+        <rdfs:domain rdf:resource="#MCSS:Post"/> <!-- Lebih spesifik jika ada ShortVideoPost -->
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IP address used to create the short video post.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasPostIP</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasPostInteractionIP</alignWithMP>
+    </owl:DatatypeProperty>
+    <!-- ... (Properti IP Address lainnya dari Kelompok DP #1) ... -->
+
+    <!-- Identifier -->
+    <owl:DatatypeProperty rdf:about="#Global:userID">
+        <rdfs:subPropertyOf rdf:resource="#Global:identifierValue"/>
+        <rdfs:label xml:lang="en">User ID</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MCSS:hasUserID">
+        <rdfs:subPropertyOf rdf:resource="#Global:userID"/>
+        <rdfs:domain rdf:resource="#MCSS:User"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unique identifier for the user.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasUserID</alignWithMCSS>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:userBio">
+        <rdfs:subPropertyOf rdf:resource="#Global:descriptiveText"/>
+        <rdfs:label xml:lang="en">User Bio</rdfs:label>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/> <!-- Atau ProfileSettings -->
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MP:hasBio">
+        <rdfs:subPropertyOf rdf:resource="#Global:userBio"/>
+        <rdfs:domain rdf:resource="#MP:ProfileSettings"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stores the bio or description on the user's profile.</MPcomment>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasBio</alignWithMP>
+    </owl:DatatypeProperty>
+    <!-- ... (Properti Descriptive Text lainnya dari Kelompok DP #1) ... -->
+
+    <!-- URL/Attachment -->
+    <owl:DatatypeProperty rdf:about="#Global:attachmentURL">
+        <rdfs:subPropertyOf rdf:resource="#Global:genericURL"/>
+        <rdfs:label xml:lang="en">Attachment URL</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MCSS:hasMediaAttachment">
+        <rdfs:subPropertyOf rdf:resource="#Global:attachmentURL"/>
+        <rdfs:domain rdf:resource="#MCSS:DirectMessage"/> <!-- Atau MessageContent -->
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the URL of a media attachment in the message.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasMediaAttachment</alignWithMCSS>
+    </owl:DatatypeProperty>
+    <!-- ... (Properti URL/Attachment lainnya dari Kelompok DP #1) ... -->
+
+<!-- Kelompok DP #2 (Lokasi, URL, Caption) - Contoh Pemecahan -->
+    <owl:DatatypeProperty rdf:about="#Global:locationText">
+        <rdfs:subPropertyOf rdf:resource="#Global:locationValue"/>
+        <rdfs:label xml:lang="en">Location Text</rdfs:label>
+        <rdfs:comment xml:lang="en">Textual representation of a location.</rdfs:comment>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MCSS:hasLiveLocation">
+        <rdfs:subPropertyOf rdf:resource="#Global:locationText"/>
+        <rdfs:domain rdf:resource="#MCSS:Live"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the location associated with the live session.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasLiveLocation</alignWithMCSS>
+    </owl:DatatypeProperty>
+    <!-- ... (Properti Lokasi lainnya dari Kelompok DP #2) ... -->
+
+    <owl:DatatypeProperty rdf:about="#Global:contentURL">
+        <rdfs:subPropertyOf rdf:resource="#Global:genericURL"/>
+        <rdfs:label xml:lang="en">Content URL</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MCSS:hasPostURL">
+        <rdfs:subPropertyOf rdf:resource="#Global:contentURL"/>
+        <rdfs:domain rdf:resource="#MCSS:Post"/> <!-- Lebih spesifik jika ada ShortVideoPost -->
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">URL of the short video post.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasPostURL</alignWithMCSS>
+    </owl:DatatypeProperty>
+    <!-- ... (Properti URL lainnya dari Kelompok DP #2) ... -->
+
+    <owl:DatatypeProperty rdf:about="#Global:captionText">
+        <rdfs:subPropertyOf rdf:resource="#Global:descriptiveText"/>
+        <rdfs:label xml:lang="en">Caption Text</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#OSN:hasPostCaption">
+        <rdfs:subPropertyOf rdf:resource="#Global:captionText"/>
+        <rdfs:domain rdf:resource="#OSN:AvatarPost"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The caption associated with the avatar post.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasPostCaption</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasClosedCaptions">
+        <rdfs:subPropertyOf rdf:resource="#Global:booleanValue"/>
+        <rdfs:label xml:lang="en">Has Closed Captions</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#OSN:hasClosedCaption">
+        <rdfs:subPropertyOf rdf:resource="#Global:hasClosedCaptions"/>
+        <rdfs:domain rdf:resource="#OSN:ReelVideo"/> <!-- Atau Global:VideoContent -->
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether a reel video has closed captions enabled.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasClosedCaption</alignWithOSN>
+    </owl:DatatypeProperty>
+
+<!-- Kelompok DP #3 (Konten Teks & Jumlah) - Contoh Pemecahan -->
+    <owl:DatatypeProperty rdf:about="#Global:contentText">
+        <rdfs:subPropertyOf rdf:resource="#Global:descriptiveText"/>
+        <rdfs:label xml:lang="en">Content Text</rdfs:label>
+        <rdfs:comment xml:lang="en">The main textual content of a post or similar entity.</rdfs:comment>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MP:hasPostContent">
+        <rdfs:subPropertyOf rdf:resource="#Global:contentText"/>
+        <rdfs:domain rdf:resource="#MP:Post"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Main textual content or body of the post,including any caption or message written by the user.</MPcomment>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasPostContent</alignWithMP>
+    </owl:DatatypeProperty>
+    <!-- ... (Properti contentText lainnya dari Kelompok DP #3) ... -->
+
+    <owl:DatatypeProperty rdf:about="#Global:viewCount">
+        <rdfs:subPropertyOf rdf:resource="#Global:countValue"/>
+        <rdfs:label xml:lang="en">View Count</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MCSS:hasViewCount">
+        <rdfs:subPropertyOf rdf:resource="#Global:viewCount"/>
+        <rdfs:domain rdf:resource="#MCSS:Video"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the number of views the video has received.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasViewCount</alignWithMCSS>
+    </owl:DatatypeProperty>
+    <!-- ... (Properti count lainnya dari Kelompok DP #3) ... -->
+
+    <owl:DatatypeProperty rdf:about="#OSN:hasLinkedAccount">
+        <!-- Ini bukan subProperty dari Global:countValue atau Global:descriptiveText -->
+        <!-- Ini lebih ke identifier atau relasi, mungkin perlu object property jika ke entitas Akun lain -->
+        <rdfs:label xml:lang="en">OSN Linked Account Identifier</rdfs:label>
+        <rdfs:domain rdf:resource="#OSN:UserProfile"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stores the username or identifier of the linked social media account.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasLinkedAccount</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <!-- Lanjutkan untuk Kelompok DP #4 hingga #44 dengan pola serupa -->
+    <!-- Fokus pada pemecahan kelompok besar dan penggunaan properti global yang sudah didefinisikan -->
+
+    <!-- Contoh untuk Kelompok DP #4 (Pengaturan/Detail Notifikasi) -->
+    <owl:DatatypeProperty rdf:about="#Global:notificationPreferenceValue">
+        <rdfs:label xml:lang="en">Global Notification Preference Value</rdfs:label>
+        <rdfs:comment xml:lang="en">A generalized data property for representing notification preferences or settings. Can be string, boolean, etc.</rdfs:comment>
+        <!-- Range bisa lebih spesifik per sub-properti -->
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#Global:notificationFrequency">
+        <rdfs:subPropertyOf rdf:resource="#Global:notificationPreferenceValue"/>
+        <rdfs:label xml:lang="en">Notification Frequency</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/> <!-- e.g., "Daily", "Weekly", "Instant" -->
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MCSS:hasNotificationPreferences">
+        <rdfs:subPropertyOf rdf:resource="#Global:notificationPreferenceValue"/> <!-- Atau properti global yang lebih spesifik -->
+        <rdfs:domain rdf:resource="#MCSS:User"/> <!-- Atau MCSS:NotificationSettings -->
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Notification preferences set by the user.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasNotificationPreferences</alignWithMCSS>
+    </owl:DatatypeProperty>
+    <!-- ... (Properti lain dari Kelompok DP #4) ... -->
+
+
+    <!-- Contoh untuk Kelompok DP #8 (Email & Pengaturan Notifikasi Email) -->
+    <owl:DatatypeProperty rdf:about="#Global:emailAddress">
+        <rdfs:label xml:lang="en">Email Address</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents an email address.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/> <!-- Atau tipe data URI jika lebih sesuai -->
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MCSS:hasEmail">
+        <rdfs:subPropertyOf rdf:resource="#Global:emailAddress"/>
+        <rdfs:domain rdf:resource="#MCSS:User"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The email address associated with the user.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasEmail</alignWithMCSS>
+    </owl:DatatypeProperty>
+    <!-- ... (Properti email lainnya) ... -->
+    <owl:DatatypeProperty rdf:about="#OFB:hasEmailNotificationEnabled">
+        <rdfs:subPropertyOf rdf:resource="#Global:booleanValue"/> <!-- Ini adalah setting -->
+        <rdfs:label xml:lang="en">Email Notification Enabled (OFB)</rdfs:label>
+        <rdfs:domain rdf:resource="#OFB:NotificationSettings"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether email notifications are enabled for a user.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasEmailNotificationEnabled</alignWithOFB>
+    </owl:DatatypeProperty>
+    <!-- ... (Properti pengaturan notifikasi email lainnya) ... -->
+
+
+    <!-- Contoh untuk Kelompok DP #24 (Kata Sandi) -->
+    <owl:DatatypeProperty rdf:about="#Global:passwordCredentialValue">
+        <rdfs:label xml:lang="en">Global Password Credential Value</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents password-related information, ideally a hash. Range: xsd:string.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MCSS:hasPasswordHash">
+        <rdfs:subPropertyOf rdf:resource="#Global:passwordCredentialValue"/>
+        <rdfs:domain rdf:resource="#MCSS:User"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hashed password of the user.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasPasswordHash</alignWithMCSS>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="#MP:hasPassword">
+        <rdfs:subPropertyOf rdf:resource="#Global:passwordCredentialValue"/>
+        <rdfs:domain rdf:resource="#MP:User"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stores the password for the user's account. (Note: Storing plain text passwords is a security risk).</MPcomment>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasPassword</alignWithMP>
+    </owl:DatatypeProperty>
+    <!-- ... (Properti kata sandi lainnya) ... -->
+
+</rdf:RDF>

@@ -1,0 +1,28 @@
+Agent (Class)
+  ├── CriminalGroup (Sub-class)
+  ├── CriminalOrganisation (Sub-class)
+  ├── CriminalProfile (Object Property)
+  ├── Suspects (Sub-class)
+  └── PastCriminalProfile (Object Property)
+       └── hasCriminalHistory (Data Property)
+
+Crime (Class)
+  ├── ClassicalCrime (Sub-class)
+  │    ├── Bulgary
+  │    ├── Corruption
+  │    └── DomesticViolence
+  ├── DigitalCrime (Sub-class)
+  │    ├── CyberBullying
+  │    ├── IdentityTheft
+  │    └── MalwareDistribution
+  ├── CrimeCategories (Object Property)
+  └── CrimeArchive (Object Property)
+       └── hasCrimeDate (Data Property)
+
+Crime_Case_Solving (Class)
+  ├── DigitalEvidence (Sub-class)
+  │    ├── Methods (Object Property)
+  │    ├── Technology (Object Property)
+  │    └── Type_Digital_Evidence (Sub-class)
+  └── hasCaseID (Data Property)
+      hasEvidenceChainOfCustody (Data Property)

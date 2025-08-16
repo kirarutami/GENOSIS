@@ -1,0 +1,41 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+
+SELECT 
+  ?originalPostIRI        # IRI postingan asli yang dilacak
+  ?retweetActionIRI       # IRI dari aksi retweet/reblog itu sendiri
+  ?retweeterUser ?retweeterLabel 
+  ?retweetTimestamp 
+  ?retweetCommentText     # Komentar/quote yang ditambahkan saat retweet
+  ?platform
+WHERE {
+  # --- Tentukan IRI Postingan Asli yang Ingin Dilacak di Sini ---
+  # !!! PENTING: Bunda perlu mengganti IRI di bawah ini dengan IRI postingan MP yang relevan dari GENOSIS.txt !!!
+  # Contoh dari query lokal Bunda (disesuaikan dengan prefix GENOSIS):
+  VALUES ?originalPostIRI { genosisOwl:Post_Amina001_Twitter } 
+  # VALUES ?originalPostIRI { genosisOwl:Post_NoahTumblr_001_Tumblr } # Contoh lain jika melacak post Tumblr
+
+  # Memastikan postingan asli berasal dari platform MP
+  ?originalPostIRI genosisOwl:belongsToPlatform ?platform .
+  FILTER(STR(?platform) = "Twitter" || STR(?platform) = "Tumblr")
+
+  # Mencari aksi Reblog/Retweet yang menargetkan postingan asli tersebut
+  ?retweetActionIRI rdf:type genosisOwl:MP:ReblogRetweetAction ;  # Kelas untuk aksi Reblog/Retweet di MP
+                    genosisOwl:performedBy ?retweeterUser ;        # Pengguna yang melakukan retweet/reblog
+                    genosisOwl:sharedContent ?originalPostIRI ;    # Properti dari Global:SharingAction, menunjuk ke konten asli yang di-share/retweet
+                    genosisOwl:hasInteractionTimestamp ?retweetTimestamp ; # Waktu aksi retweet/reblog
+                    genosisOwl:belongsToPlatform ?platform .       # Aksi terjadi di platform yang sama
+
+  OPTIONAL { ?retweeterUser rdfs:label ?retweeterLabel . }
+  
+  # Mengambil komentar/quote yang ditambahkan pada saat retweet (opsional)
+  # Query lokal menggunakan ex:hasRetweetComment. Kita coba petakan ke properti yang mungkin ada di GENOSIS.
+  # Opsi 1: Jika ada properti spesifik genosisOwl:hasRetweetComment
+  OPTIONAL { ?retweetActionIRI genosisOwl:hasRetweetComment ?commentFromSpecificProp . }
+  # Opsi 2: Jika aksi retweet itu sendiri bisa punya teks (misalnya pakai genosisOwl:hasContentText)
+  OPTIONAL { ?retweetActionIRI genosisOwl:hasContentText ?commentFromContentText . }
+  BIND(COALESCE(?commentFromSpecificProp, ?commentFromContentText, "") AS ?retweetCommentText)
+
+}
+ORDER BY ?retweetTimestamp

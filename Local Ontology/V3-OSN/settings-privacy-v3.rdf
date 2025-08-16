@@ -1,0 +1,162 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- SettingsPrivacy Class -->
+    <owl:Class rdf:about="#SettingsPrivacy">
+        <rdfs:comment>Represents privacy-related settings for a user's account.</rdfs:comment>
+    </owl:Class>
+
+    <!-- AccountSettings Sub-Class -->
+    <owl:Class rdf:about="#AccountSettings">
+        <rdfs:subClassOf rdf:resource="#SettingsPrivacy"/>
+        <rdfs:comment>Handles general, privacy, security, and account management settings.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for AccountSettings -->
+    <owl:DatatypeProperty rdf:about="#hasGeneralSettings">
+        <rdfs:domain rdf:resource="#AccountSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>General settings for the user's account.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- PrivacySettings Sub-Class -->
+    <owl:Class rdf:about="#PrivacySettings">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+        <rdfs:comment>Privacy-related configurations for a user's account.</rdfs:comment>
+    </owl:Class>
+
+    <owl:DatatypeProperty rdf:about="#hasProfilePrivacySettings">
+        <rdfs:domain rdf:resource="#PrivacySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Settings for profile visibility and privacy.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasBlockedAccounts">
+        <rdfs:domain rdf:resource="#PrivacySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>List of accounts blocked by the user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasActivityStatus">
+        <rdfs:domain rdf:resource="#PrivacySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Activity status visibility (e.g., Online, Offline).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- SecuritySettings Sub-Class -->
+    <owl:Class rdf:about="#SecuritySettings">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+        <rdfs:comment>Handles security configurations like two-factor authentication and password management.</rdfs:comment>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:about="#settingsTwoFactorAuthentication">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SecuritySettings"/>
+        <rdfs:comment>Links a user to two-factor authentication settings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#settingsLoginAlerts">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SecuritySettings"/>
+        <rdfs:comment>Links a user to login alert settings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#settingsPasswordManagement">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SecuritySettings"/>
+        <rdfs:comment>Links a user to password management settings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- DataUsageSettings Sub-Class -->
+    <owl:Class rdf:about="#DataUsageSettings">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+        <rdfs:comment>Handles data usage configurations for cellular and WiFi connections.</rdfs:comment>
+    </owl:Class>
+
+    <owl:DatatypeProperty rdf:about="#hasCellularDataUsageSettings">
+        <rdfs:domain rdf:resource="#DataUsageSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Data usage settings for cellular connections.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasWiFiDataUsageSettings">
+        <rdfs:domain rdf:resource="#DataUsageSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Data usage settings for WiFi connections.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- NotificationSettings Sub-Class -->
+    <owl:Class rdf:about="#NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+        <rdfs:comment>Handles configurations for notifications like push, email, and SMS.</rdfs:comment>
+    </owl:Class>
+
+    <owl:DatatypeProperty rdf:about="#hasPushNotificationsStatus">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Status of push notifications (enabled/disabled).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEmailNotificationsStatus">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Status of email notifications (enabled/disabled).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasSMSNotificationsStatus">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Status of SMS notifications (enabled/disabled).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasNotificationSoundsSettings">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Settings for notification sounds.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- AccountManagement Sub-Class -->
+    <owl:Class rdf:about="#AccountManagement">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+        <rdfs:comment>Handles configurations for deactivating, deleting, downloading, or transferring account information.</rdfs:comment>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:about="#deactivatesAccount">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#AccountManagement"/>
+        <rdfs:comment>Links a user to account deactivation actions.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#deletesAccount">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#AccountManagement"/>
+        <rdfs:comment>Links a user to account deletion actions.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#downloadsYourInformation">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#AccountManagement"/>
+        <rdfs:comment>Links a user to downloading account information actions.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#transfersYourInformation">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#AccountManagement"/>
+        <rdfs:comment>Links a user to transferring account information actions.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- DeviceManagement Sub-Class -->
+    <owl:Class rdf:about="#DeviceManagement">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+        <rdfs:comment>Handles authorized devices associated with the user's account.</rdfs:comment>
+    </owl:Class>
+
+    <owl:DatatypeProperty rdf:about="#hasAuthorizedDevices">
+        <rdfs:domain rdf:resource="#DeviceManagement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Authorized devices for the user's account.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

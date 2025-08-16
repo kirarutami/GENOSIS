@@ -1,0 +1,335 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas User -->
+    <owl:Class rdf:about="#User">
+        <rdfs:comment>The primary class representing a user in the system.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas UserProfile -->
+    <owl:Class rdf:about="#UserProfile">
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <rdfs:comment>Represents the profile information of a user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas untuk UserProfile -->
+    <owl:Class rdf:about="#ProfilePicture">
+        <rdfs:subClassOf rdf:resource="#UserProfile"/>
+        <rdfs:comment>Represents the user's profile picture.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Username">
+        <rdfs:subClassOf rdf:resource="#UserProfile"/>
+        <rdfs:comment>Represents the username of the user.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Email">
+        <rdfs:subClassOf rdf:resource="#UserProfile"/>
+        <rdfs:comment>Represents the email address of the user.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#AccountVerification">
+        <rdfs:subClassOf rdf:resource="#UserProfile"/>
+        <rdfs:comment>Represents the email address of the user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas Fullname di dalam UserProfile -->
+    <owl:Class rdf:about="#Fullname">
+        <rdfs:subClassOf rdf:resource="#UserProfile"/>
+        <rdfs:comment>Fullname contains the first, middle, and last name of a user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties untuk FullName -->
+    <owl:DatatypeProperty rdf:about="#hasFirstName">
+        <rdfs:domain rdf:resource="#Fullname"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The user's first name.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMiddleName">
+        <rdfs:domain rdf:resource="#Fullname"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The user's middle name.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasLastName">
+        <rdfs:domain rdf:resource="#Fullname"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The user's last name.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Individual untuk UserProfile -->
+    <owl:NamedIndividual rdf:about="#CoverPhoto">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <rdfs:comment>Represents the user's cover photo in their profile.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Bio">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <rdfs:comment>Represents the bio information provided by the user in their profile.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Details">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <rdfs:comment>Additional details about the user in their profile.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Highlights">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <rdfs:comment>Highlights from the user's profile, such as achievements or stories.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Links">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <rdfs:comment>Links to external profiles or websites in the user's profile.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas PrivacySettings -->
+    <owl:Class rdf:about="#PrivacySettings">
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <rdfs:comment>Settings related to user privacy.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas untuk PrivacySettings -->
+    <owl:Class rdf:about="#AccountPrivacy">
+        <rdfs:subClassOf rdf:resource="#PrivacySettings"/>
+        <rdfs:comment>Represents privacy settings for the user account.</rdfs:comment>
+    </owl:Class>
+
+    <owl:NamedIndividual rdf:about="#PrivateAccount">
+        <rdf:type rdf:resource="#AccountPrivacy"/>
+        <rdfs:comment>Indicates that the user's account is set to private.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#CloseFriends">
+        <rdf:type rdf:resource="#AccountPrivacy"/>
+        <rdfs:comment>Represents the close friends list for account privacy settings.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Sub-sub-kelas BlockedAccounts di dalam PrivacySettings -->
+    <owl:Class rdf:about="#BlockedAccounts">
+        <rdfs:subClassOf rdf:resource="#AccountPrivacy"/>
+        <rdfs:comment>Represents accounts blocked by the user.</rdfs:comment>
+    </owl:Class>
+
+    <owl:NamedIndividual rdf:about="#BlockingOptions">
+        <rdf:type rdf:resource="#BlockedAccounts"/>
+        <rdfs:comment>Represents the options related to blocking accounts under privacy settings.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#BlockNotifications">
+        <rdf:type rdf:resource="#BlockedAccounts"/>
+        <rdfs:comment>Represents notifications related to blocking activity in privacy settings.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ReviewBlockedAccounts">
+        <rdf:type rdf:resource="#BlockedAccounts"/>
+        <rdfs:comment>Allows the user to review the list of blocked accounts.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Sub-sub-kelas StoryAndLiveSettings di dalam PrivacySettings -->
+    <owl:Class rdf:about="#StoryAndLiveSettings">
+        <rdfs:subClassOf rdf:resource="#PrivacySettings"/>
+        <rdfs:comment>Privacy settings related to stories and live videos.</rdfs:comment>
+    </owl:Class>
+
+    <owl:NamedIndividual rdf:about="#HideStory">
+        <rdf:type rdf:resource="#StoryAndLiveSettings"/>
+        <rdfs:comment>Represents the user's setting to hide their story from certain users.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AllowStoryReplies">
+        <rdf:type rdf:resource="#StoryAndLiveSettings"/>
+        <rdfs:comment>Represents the setting that allows or disables replies to the user's story.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas SecuritySettings -->
+    <owl:Class rdf:about="#SecuritySettings">
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <rdfs:comment>Represents settings related to user security.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas untuk SecuritySettings -->
+    <owl:Class rdf:about="#LoginSecurity">
+        <rdfs:subClassOf rdf:resource="#SecuritySettings"/>
+        <rdfs:comment>Security settings related to user login activities.</rdfs:comment>
+    </owl:Class>
+
+    <owl:NamedIndividual rdf:about="#TwoFactorAuthentication">
+        <rdf:type rdf:resource="#LoginSecurity"/>
+        <rdfs:comment>Represents the user's two-factor authentication setting for login security.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LoginAlerts">
+        <rdf:type rdf:resource="#LoginSecurity"/>
+        <rdfs:comment>Represents the setting to send alerts when a new login occurs.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#PasswordManagement">
+        <rdf:type rdf:resource="#LoginSecurity"/>
+        <rdfs:comment>Represents the management of the user's password for security purposes.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Sub-sub-kelas SessionManagement di dalam SecuritySettings -->
+    <owl:Class rdf:about="#SessionManagement">
+        <rdfs:subClassOf rdf:resource="#SecuritySettings"/>
+        <rdfs:comment>Represents the management of active sessions in user security.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ActiveSessions">
+        <rdfs:subClassOf rdf:resource="#SessionManagement"/>
+        <rdfs:comment>Represents the active sessions of the user across devices.</rdfs:comment>
+    </owl:Class>
+
+
+    <owl:NamedIndividual rdf:about="#LogoutFromSessions">
+        <rdf:type rdf:resource="#SessionManagement"/>
+        <rdfs:comment>Represents the option to log out from all active sessions.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas GeneralAccount -->
+    <owl:Class rdf:about="#GeneralAccount">
+        <rdfs:subClassOf rdf:resource="#SecuritySettings"/>
+        <rdfs:comment>Represents general account settings for the user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Individual untuk GeneralAccount -->
+    <owl:NamedIndividual rdf:about="#ApplyForVerification">
+        <rdf:type rdf:resource="#GeneralAccount"/>
+        <rdfs:comment>Represents the option for the user to apply for account verification.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Data Properties untuk GeneralAccount -->
+    <owl:DatatypeProperty rdf:about="#hasPhoneNumber">
+        <rdfs:domain rdf:resource="#GeneralAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The user's phone number in general account settings.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasLanguage">
+        <rdfs:domain rdf:resource="#GeneralAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The preferred language for the user account.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasTimeZone">
+        <rdfs:domain rdf:resource="#GeneralAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The user's preferred time zone in general account settings.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:about="#hasProfilePicture">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ProfilePicture"/>
+        <rdfs:comment>Links a user to their profile picture.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasUsername">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Username"/>
+        <rdfs:comment>Links a user to their username.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasEmail">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Email"/>
+        <rdfs:comment>Links a user to their email address.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasAccountVerification">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#AccountVerification"/>
+        <rdfs:comment>Links a user to their account verification status.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasAccountPrivacy">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#AccountPrivacy"/>
+        <rdfs:comment>Links a user to their account privacy settings, such as private or public account.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasBlockedAccounts">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#BlockedAccounts"/>
+        <rdfs:comment>Links a user to their list of blocked accounts under privacy settings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasStoryAndLiveSettings">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#StoryAndLiveSettings"/>
+        <rdfs:comment>Links a user to their story and live video privacy settings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasLoginSecurity">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#LoginSecurity"/>
+        <rdfs:comment>Links a user to their login security settings, such as two-factor authentication and login alerts.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasGeneralAccountSettings">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GeneralAccount"/>
+        <rdfs:comment>Links a user to their general account settings such as language, phone number, and timezone.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasSessionManagement">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SessionManagement"/>
+        <rdfs:comment>Links a user to their session management settings, allowing them to manage active sessions.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasBlockedAccountsInPrivacy">
+        <rdfs:domain rdf:resource="#AccountPrivacy"/>
+        <rdfs:range rdf:resource="#BlockedAccounts"/>
+        <rdfs:comment>Links the account privacy settings to blocked accounts management.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasStoryAndLivePrivacySettings">
+        <rdfs:domain rdf:resource="#PrivacySettings"/>
+        <rdfs:range rdf:resource="#StoryAndLiveSettings"/>
+        <rdfs:comment>Links privacy settings to story and live video privacy configurations.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasActiveSessions">
+        <rdfs:domain rdf:resource="#SessionManagement"/>
+        <rdfs:range rdf:resource="#ActiveSessions"/>
+        <rdfs:comment>Links session management settings to active session details.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Contoh Karakteristik untuk Object Property -->
+    <owl:FunctionalProperty rdf:about="#hasAccountPrivacy"/>
+    <owl:FunctionalProperty rdf:about="#hasLoginSecurity"/>
+    <owl:FunctionalProperty rdf:about="#hasStoryAndLiveSettings"/>
+
+    <!-- Disjointness untuk User dan Sub-kelas lainnya -->
+    <owl:Class rdf:about="#UserProfile">
+        <owl:disjointWith rdf:resource="#PrivacySettings"/>
+        <owl:disjointWith rdf:resource="#SecuritySettings"/>
+        <owl:disjointWith rdf:resource="#GeneralAccount"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#PrivacySettings">
+        <owl:disjointWith rdf:resource="#UserProfile"/>
+        <owl:disjointWith rdf:resource="#SecuritySettings"/>
+        <owl:disjointWith rdf:resource="#GeneralAccount"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#SecuritySettings">
+        <owl:disjointWith rdf:resource="#UserProfile"/>
+        <owl:disjointWith rdf:resource="#PrivacySettings"/>
+        <owl:disjointWith rdf:resource="#GeneralAccount"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#GeneralAccount">
+        <owl:disjointWith rdf:resource="#UserProfile"/>
+        <owl:disjointWith rdf:resource="#PrivacySettings"/>
+        <owl:disjointWith rdf:resource="#SecuritySettings"/>
+    </owl:Class>
+
+</rdf:RDF>

@@ -1,0 +1,199 @@
+==== OSN CQ4====
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>  # Sesuaikan dengan namespace RDF Anda
+
+SELECT ?suspect ?victim ?platform ?messageText ?messageTimestamp ?category
+WHERE {
+  ?message rdf:type ex:TextMessage ;
+           ex:hasMessageText ?messageText ;
+           ex:hasMessageSendTimestamp ?messageTimestamp ;
+           ex:sendsTextMessage ?suspect ;
+           ex:viewsMessages ?victim ;
+           ex:belongsToPlatform ?platform .
+
+  # Klasifikasi Pesan sebagai Ancaman, Pemerasan, atau Pelecehan Verbal
+  BIND (
+    IF (
+      REGEX(?messageText, "end it", "i") || 
+      REGEX(?messageText, "ruin your life", "i") ||
+      REGEX(?messageText, "watch your back", "i") ||
+      REGEX(?messageText, "just disappear", "i"),
+      "Threat",
+      ""
+    ) AS ?threat
+  )
+  
+  BIND (
+    IF (
+      REGEX(?messageText, "pay me or else", "i") ||
+      REGEX(?messageText, "I have private pictures", "i") ||
+      REGEX(?messageText, "transfer or I will", "i"),
+      "Blackmail",
+      ""
+    ) AS ?blackmail
+  )
+
+  BIND (
+    IF (
+      REGEX(?messageText, "nobody likes you", "i") ||
+      REGEX(?messageText, "loser", "i") ||
+      REGEX(?messageText, "ugly", "i"),
+      "Verbal Abuse",
+      ""
+    ) AS ?verbalAbuse
+  )
+
+  # Tentukan kategori utama
+  BIND (
+    COALESCE(?threat, ?blackmail, ?verbalAbuse, "Unclassified") AS ?category
+  )
+}
+ORDER BY ?suspect ?messageTimestamp
+
+
+
+
+==== MP CQ4====
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?dm ?dmSender ?dmReceiver ?hasDMContent ?hasDMTimestamp ?hasDMIP ?hasDMDevice ?belongsToPlatform
+WHERE {
+    # Menarik semua DM dengan konten tertentu
+    ?dm rdf:type ex:DirectMessages ;
+        ex:dmSender ?dmSender ;
+        ex:dmReceiver ?dmReceiver ;
+        ex:hasDMContent ?hasDMContent ;
+        ex:hasDMTimestamp ?hasDMTimestamp ;
+        ex:hasDMIP ?hasDMIP ;
+        ex:hasDMDevice ?hasDMDevice ;
+        ex:belongsToPlatform ?belongsToPlatform .
+
+    # Memilih DM yang mengandung ancaman atau perilaku ilegal
+    FILTER (
+        REGEX(?hasDMContent, "we know where you live", "i") ||
+        REGEX(?hasDMContent, "watch your back", "i") ||
+        REGEX(?hasDMContent, "make you regret it", "i") ||
+        REGEX(?hasDMContent, "take it to the next level", "i") ||
+        REGEX(?hasDMContent, "dark web", "i") ||
+        REGEX(?hasDMContent, "blackmail", "i") ||
+        REGEX(?hasDMContent, "illegal", "i")
+    )
+}
+ORDER BY ?hasDMTimestamp
+
+
+
+
+
+==== MCSS CQ4====
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?sender ?receiver ?message ?timestamp ?device ?ip
+WHERE {
+  ?dm a ex:DirectMessage ;
+      ex:sentBy ?sender ;
+      ex:sentTo ?receiver ;
+      ex:hasTextContent ?message ;
+      ex:hasTimestamp ?timestamp ;
+      ex:hasDeviceInfo ?device ;
+      ex:hasUserInteractionIP ?ip .
+
+  FILTER (
+    REGEX(?message, "stop being a wimp", "i") ||
+    REGEX(?message, "gonna let a girl beat", "i") ||
+    REGEX(?message, "just record and post", "i")
+  )
+}
+ORDER BY ?timestamp
+
+
+
+
+==== OFB CQ4====
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#> # Namespace ontologi OFB Anda
+
+# Query Gabungan: Ekstrak Detail DM + Klasifikasi Konten (Blackmail, Abuse, dll.) + Filter Hasil
+# Berguna untuk CQ4 dalam konteks investigasi
+
+SELECT ?message ?timestamp ?platform ?sender ?receiver ?content ?status ?ip ?device
+       ?threatClassification ?illicitTradeClassification ?harassmentClassification ?blackmailClassification
+WHERE {
+  # 1. Ambil semua instance Direct Messaging dan info dasarnya
+  ?message rdf:type ex:DirectMessaging .
+  ?message ex:messageSender ?sender .
+  ?message ex:messageReceiver ?receiver .
+  ?message ex:belongsToPlatform ?platform .
+  ?message ex:hasMessageTimestamp ?timestamp .
+
+  # 2. Ambil info opsional (konten wajib ada untuk klasifikasi)
+  OPTIONAL { ?message ex:hasMessageContent ?content . }
+  OPTIONAL { ?message ex:hasMessageStatus ?status . }
+  OPTIONAL { ?message ex:hasMessageIP ?ip . }
+  OPTIONAL { ?message ex:hasMessageDevice ?device . }
+
+  # Pastikan konten ada sebelum mencoba klasifikasi
+  FILTER(BOUND(?content))
+
+  # --- 3. Klasifikasi Konten Pesan menggunakan BIND/IF/REGEX ---
+
+  # Klasifikasi: Ancaman (Threat)
+  BIND (
+    IF (REGEX(?content, "regret it|handle nosy people|worry about your own privacy|threat|expose|deserves what's coming|watch your back", "i"),
+        "Threat", "") # Label singkat
+    AS ?threatClassification
+  )
+
+  # Klasifikasi: Diskusi Perdagangan Ilegal (Illicit Trade)
+  BIND (
+    IF (REGEX(?content, "cc dumps|stolen data|monero|untraceable payment|premium cc|vendor|dumps|carding", "i"),
+        "Illicit Trade", "")
+    AS ?illicitTradeClassification
+  )
+
+  # Klasifikasi: Pelecehan / Cacian (Harassment / Abuse)
+  BIND (
+    IF (REGEX(?content, "shut up|get lost|traitor|part of the problem|nobody forced you|nosy people|stupid|idiot", "i"),
+        "Harassment/Abuse", "")
+    AS ?harassmentClassification
+  )
+
+  # Klasifikasi: Pemerasan / Pengancaman (Blackmail / Extortion)
+  BIND (
+    IF (REGEX(?content, "pay me or else|leak your address|expose you unless|send crypto|dark web|private info unless", "i"),
+        "Blackmail/Extortion", "")
+    AS ?blackmailClassification
+  )
+
+  # --- Akhir Klasifikasi ---
+
+  # 4. Filter Hasil: Hanya tampilkan pesan yang terdeteksi minimal satu kategori
+  # Menggunakan REGEX(?, ".+") untuk cek string tidak kosong (alternatif STRLEN)
+  FILTER(
+        REGEX(?threatClassification, ".+") ||
+        REGEX(?illicitTradeClassification, ".+") ||
+        REGEX(?harassmentClassification, ".+") ||
+        REGEX(?blackmailClassification, ".+")
+       )
+
+  # Opsional: Filter tipe User jika data sudah konsisten
+  # FILTER EXISTS { ?sender rdf:type ex:User . }
+  # FILTER EXISTS { ?receiver rdf:type ex:User . }
+}
+# Urutkan berdasarkan waktu, pesan terbaru muncul lebih dulu
+ORDER BY DESC(?timestamp)

@@ -1,0 +1,9 @@
+Bagaimana Hasil Query Ini Menjawab CQ6:
+
+Hasil query ini akan berupa daftar kronologis aktivitas pengguna yang terekam dalam data RDF Anda. Penyelidik dapat menggunakan daftar ini untuk:
+
+Membangun linimasa: Melihat urutan pasti kapan pengguna melakukan registrasi, posting, berkomentar, mengirim/menerima DM, dll.
+Menguatkan (Corroborate): Mencocokkan linimasa dari data digital ini dengan bukti lain (misalnya, keterangan saksi, data lokasi fisik, data transaksi). Jika timestamp DM cocok dengan waktu terjadinya kejahatan yang dilaporkan, ini bisa menjadi bukti penguat.
+Menyangkal (Refute): Jika data menunjukkan pengguna aktif di satu platform pada waktu tertentu, ini bisa menyangkal alibi bahwa dia berada di tempat lain atau tidak aktif.
+Mengidentifikasi Pola: Melihat kapan saja pengguna paling aktif atau kapan peristiwa kunci terjadi secara berurutan.
+Jadi, query SPARQL ini menyediakan data mentah (metadata timestamp) yang diperlukan. Analisis dan interpretasi data inilah yang memungkinkan penyelidik menggunakan metadata tersebut untuk menguatkan linimasa kejadian dalam investigasi (menjawab CQ6).

@@ -1,0 +1,14 @@
+Pertanyaan ini mirip dengan CQ6, tetapi fokusnya lebih spesifik pada interaksi atau keterlibatan (engagement) pengguna dengan konten atau pengguna lain di forum sebagai cara membangun linimasa aktivitas kriminal. Engagement ini bisa berupa voting, menyukai, berkomentar, membalas, membagikan, memberi award, dll.
+
+SPARQL tidak secara langsung menjawab "bagaimana caranya?", tetapi ia berfungsi untuk mengekstraksi data engagement yang memiliki timestamp dari ontologi OFB Anda. Analisis kronologis dari data yang diekstrak inilah yang memungkinkan penyidik membangun linimasa.
+
+
+Bagaimana Hasil Query Ini Menjawab OFB9:
+
+Hasil query ini adalah daftar terurut waktu dari semua aktivitas engagement yang dilakukan oleh pengguna target. Daftar ini memungkinkan penyelidik untuk:
+
+Membuat Linimasa Engagement: Melihat kapan pengguna aktif berinteraksi, dengan konten apa, dan dengan cara apa.
+Mengidentifikasi Pola Engagement: Apakah pengguna sering berinteraksi dengan konten atau pengguna tertentu? Apakah ada lonjakan aktivitas engagement sebelum atau sesudah dugaan waktu kejahatan?
+Mengkorelasikan Engagement: Mencocokkan waktu engagement (misalnya, upvote pada postingan ilegal) dengan peristiwa lain atau komunikasi lain untuk membangun gambaran yang lebih lengkap.
+Menilai Keterlibatan: Intensitas dan jenis engagement terhadap konten/pengguna yang mencurigakan dapat membantu menilai tingkat keterlibatan atau pengetahuan pengguna target.
+Singkatnya, query ini mengekstrak data mentah engagement bertimestamp. Analisis kronologis data inilah yang memungkinkan penggunaan engagement pengguna untuk membangun linimasa aktivitas (kriminal) seperti yang ditanyakan dalam OFB9.

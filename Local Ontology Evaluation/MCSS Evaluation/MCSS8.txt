@@ -1,0 +1,33 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# Menggunakan namespace dasar dari file RDF untuk elemen ontologi
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+# MCSS8: How can trends on media content-sharing sites be used to detect the spread of illegal content or activities?
+# Pendekatan: Mengidentifikasi konten yang terkait dengan tren/tantangan berbahaya
+# melalui tag spesifik. Contoh: Menemukan postingan dengan tag #BlackoutChallenge.
+# VERSI DIPERBAIKI: Menggunakan REGEX.
+
+SELECT ?post ?caption ?timestamp ?viewCount ?likeCount ?commentCount ?shareCount
+WHERE {
+  # Cari postingan (contoh: ShortVideoPost)
+  ?post rdf:type ex:ShortVideoPost .
+
+  # Cari postingan yang memiliki tag spesifik (case-insensitive) menggunakan REGEX
+  ?post ex:hasPostTags ?tags .
+  # Gunakan REGEX untuk memeriksa apakah string ?tags mengandung "#blackoutchallenge", flag "i" untuk case-insensitive
+  FILTER(REGEX(STR(?tags), "#blackoutchallenge", "i"))
+
+  # Ambil metadata yang bisa menunjukkan popularitas/penyebaran dan waktu
+  OPTIONAL { ?post ex:hasCaption ?caption . }
+  OPTIONAL { ?post ex:hasPostTimestamp ?timestamp . }
+  OPTIONAL { ?post ex:hasViewCount ?viewCount . }
+  OPTIONAL { ?post ex:hasLikeCount ?likeCount . }
+  OPTIONAL { ?post ex:hasCommentCount ?commentCount . }
+  # Asumsikan ada properti hasShareCount berdasarkan data contoh instance (#EthanBlackoutChallengePost)
+  OPTIONAL { ?post ex:hasShareCount ?shareCount . }
+}
+ORDER BY DESC(?timestamp) # Urutkan berdasarkan waktu, terbaru di atas

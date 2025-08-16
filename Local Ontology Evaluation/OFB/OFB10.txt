@@ -1,0 +1,57 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#> # Ontology namespace
+
+# Query Example for OFB10: Grouping Anonymous Actions by IP Address (REGEX for filter)
+
+SELECT ?ipAddress
+       (GROUP_CONCAT(DISTINCT STR(?user); SEPARATOR=", ") AS ?anonymousUsers)
+       (COUNT(DISTINCT ?action) AS ?actionCount)
+       (GROUP_CONCAT(DISTINCT STR(?actionTypeAndUri); SEPARATOR=" | ") AS ?actions)
+WHERE {
+  { # Path 1: Anonymous User's Last Login IP
+    BIND("UserLogin" AS ?actionType)
+    ?user rdf:type ex:User ;
+          ex:hasProfileVisibility "Anonymous" ;
+          ex:hasLastLoginIP ?ipAddress .
+    BIND(?user AS ?action)
+    BIND(STR(?user) AS ?actionTypeAndUri)
+  } UNION { # Path 2: Comment potentially from anonymous user
+    BIND("Comment" AS ?actionType)
+    ?action rdf:type ex:Comment ;
+            ex:performedBy ?user ;
+            ex:hasCommentIP ?ipAddress .
+    FILTER NOT EXISTS { ?user ex:hasProfileVisibility ?vis . FILTER(STR(?vis) != "Anonymous") }
+    BIND(STR(?action) AS ?actionTypeAndUri)
+  } UNION { # Path 3: DM potentially from anonymous user
+    BIND("DM Sent" AS ?actionType)
+    ?action rdf:type ex:DirectMessaging ;
+            ex:messageSender ?user ;
+            ex:hasMessageIP ?ipAddress .
+    FILTER NOT EXISTS { ?user ex:hasProfileVisibility ?vis . FILTER(STR(?vis) != "Anonymous") }
+    BIND(STR(?action) AS ?actionTypeAndUri)
+  }
+  # Add other anonymous actions if needed
+
+  # Filter for meaningful IPs (using REGEX)
+  FILTER(BOUND(?ipAddress) && REGEX(STR(?ipAddress), ".+"))
+
+  # *** FILTER DIMODIFIKASI: Menggunakan REGEX sebagai pengganti STRSTARTS ***
+  # Filter out common private IPs
+  FILTER(
+    !REGEX(STR(?ipAddress), "^192\\.168\\.") &&  # Periksa awalan 192.168.
+    !REGEX(STR(?ipAddress), "^10\\.") &&         # Periksa awalan 10.
+    !REGEX(STR(?ipAddress), "^172\\.1[6-9]\\.") && # Periksa awalan 172.16. - 172.19.
+    !REGEX(STR(?ipAddress), "^172\\.2[0-9]\\.") && # Periksa awalan 172.20. - 172.29.
+    !REGEX(STR(?ipAddress), "^172\\.3[01]\\.")    # Periksa awalan 172.30. - 172.31.
+    # Regex di atas mencakup range 172.16.0.0 - 172.31.255.255
+  )
+
+}
+GROUP BY ?ipAddress
+# Show IPs potentially linking multiple users or actions
+HAVING (COUNT(DISTINCT ?user) > 1 || COUNT(DISTINCT ?action) > 1)
+ORDER BY DESC(?actionCount) ?ipAddress

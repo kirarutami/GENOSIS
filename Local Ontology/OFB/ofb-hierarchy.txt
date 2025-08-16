@@ -1,0 +1,396 @@
+User (Class)
+  ├── ProfileSettings (Sub-class)
+  │    ├── User -> canEditProfile -> ProfileSettings (Object Property)
+  │    ├── User -> canEditAvatar -> ProfileSettings (Object Property)
+  │    ├── User -> canEditBio -> ProfileSettings (Object Property)
+  │    ├── User -> canSetProfileVisibility -> ProfileSettings (Object Property)
+  │    ├── hasUsername (Data Property) -> String
+  │    ├── hasAvatarURL (Data Property) -> URL
+  │    ├── hasBio (Data Property) -> String
+  │    ├── hasProfileVisibility (Data Property) -> String (e.g., Public, Private)
+  │    └── updatedBy -> UserAction (Object Property)
+  ├── SecuritySettings (Sub-class)
+  │    ├── User -> canEditPassword -> SecuritySettings (Object Property)
+  │    ├── User -> canEnableTwoFactorAuthentication -> SecuritySettings (Object Property)
+  │    ├── User -> canSetNSFWVisibility -> SecuritySettings (Object Property)
+  │    ├── hasPasswordHash (Data Property) -> String
+  │    ├── hasTwoFactorAuthenticationEnabled (Data Property) -> Boolean
+  │    ├── hasNSFWVisibilitySetting (Data Property) -> Boolean
+  │    └── updatedBy -> UserAction (Object Property)
+  ├── SubscriptionPlan (Sub-class)
+  │    ├── User -> subscribesTo -> SubscriptionPlan (Object Property)
+  │    ├── User -> unsubscribesFrom -> SubscriptionPlan (Object Property)
+  │    ├── hasSubscriptionType (Data Property) -> String (e.g., Free, Premium)
+  │    ├── hasSubscriptionStartDate (Data Property) -> DateTime
+  │    ├── hasSubscriptionEndDate (Data Property) -> DateTime
+  │    └── associatedWithSubscriptionPlan -> SubscriptionPlan (Object Property)
+  ├── NotificationSettings (Sub-class)
+  │    ├── User -> configuresPushNotifications -> NotificationSettings (Object Property)
+  │    ├── User -> configuresEmailNotifications -> NotificationSettings (Object Property)
+  │    ├── User -> configuresInAppNotifications -> NotificationSettings (Object Property)
+  │    ├── hasPushNotificationEnabled (Data Property) -> Boolean
+  │    ├── hasEmailNotificationEnabled (Data Property) -> Boolean
+  │    ├── hasInAppNotificationEnabled (Data Property) -> Boolean
+  │    └── updatedBy -> UserAction (Object Property)
+  ├── AnonymousSession (Sub-class)
+  │    ├── User -> enablesAnonymousMode -> AnonymousSession (Object Property)
+  │    ├── User -> disablesAnonymousMode -> AnonymousSession (Object Property)
+  │    ├── isAnonymousModeEnabled (Data Property) -> Boolean
+  │    ├── hasAnonymousSessionID (Data Property) -> String
+  │    ├── anonymousActivityLoggedBy -> AnonymousSession (Object Property)
+  │    └── expiresAt (Data Property) -> DateTime
+  ├── AccountDeactivation (Sub-class)
+  │    ├── User -> requestsAccountDeactivation -> UserAction (Object Property)
+  │    ├── isAccountDeactivated (Data Property) -> Boolean
+  │    ├── deactivationReason (Data Property) -> String
+  │    └── deactivationRequestedBy -> UserAction (Object Property)
+  ├── AccountDeletion (Sub-class)
+  │    ├── User -> requestsAccountDeletion -> UserAction (Object Property)
+  │    ├── isAccountDeleted (Data Property) -> Boolean
+  │    ├── deletionReason (Data Property) -> String
+  │    ├── deletionRequestedOn (Data Property) -> DateTime
+  │    └── deletionRequestedBy -> UserAction (Object Property)
+  └── Session (Sub-class)
+       ├── User -> logsOutFromSession -> Session (Object Property)
+       ├── hasLogoutTimestamp (Data Property) -> DateTime
+       ├── hasSessionID (Data Property) -> String
+       └── logoutPerformedBy -> UserAction (Object Property)
+
+UserAction (Class)
+  ├── hasActionType (Data Property) -> String (e.g., EditProfile, EnableTwoFactorAuth, RequestAccountDeletion)
+  ├── hasTimestamp (Data Property) -> DateTime
+  ├── hasReason (Data Property) -> String (Optional, e.g., Privacy Concerns, Security)
+  ├── performedBy (Object Property) -> User
+
+Content (Class)
+  │    ├── Post (Sub-class)
+  │    │    ├── User -> createsPost -> Post (Object Property)
+  │    │    ├── User -> savesPostAsDraft -> Draft (Object Property)
+  │    │    ├── hasPostTitle (Data Property) -> String
+  │    │    ├── hasPostContent (Data Property) -> String
+  │    │    ├── hasPostMedia (Data Property) -> URL (Images, GIFs, Videos, or Links)
+  │    │    ├── hasPostCreationTimestamp (Data Property) -> DateTime
+  │    │    ├── associatedWithUser -> User (Object Property)
+  │    │    └── associatedWithCommunity -> Community (Object Property)
+  │    ├── Draft (Sub-class)
+  │    │    ├── User -> editsDraft -> Draft (Object Property)
+  │    │    ├── User -> postsDraft -> Draft (Object Property)
+  │    │    ├── hasDraftTitle (Data Property) -> String
+  │    │    ├── hasDraftContent (Data Property) -> String
+  │    │    ├── hasDraftMedia (Data Property) -> URL
+  │    │    ├── hasDraftSavedTimestamp (Data Property) -> DateTime
+  │    │    ├── associatedWithUser -> User (Object Property)
+  │    │    └── associatedWithCommunity -> Community (Object Property)
+  │    ├── ScheduledPost (Sub-class)
+  │    │    ├── User -> postsScheduledPost -> Post (Object Property)
+  │    │    ├── User -> editsScheduledPost -> ScheduledPost (Object Property)
+  │    │    ├── hasScheduledPostTitle (Data Property) -> String
+  │    │    ├── hasScheduledPostContent (Data Property) -> String
+  │    │    ├── hasScheduledPostMedia (Data Property) -> URL
+  │    │    ├── hasScheduledPublishTimestamp (Data Property) -> DateTime
+  │    │    ├── associatedWithUser -> User (Object Property)
+  │    │    └── associatedWithCommunity -> Community (Object Property)
+  │    ├── CrossPost (Sub-class)
+  │    │    ├── User -> postsCrossPost -> Post (Object Property)
+  │    │    ├── User -> editsCrossPost -> CrossPost (Object Property)
+  │    │    ├── hasCrosspostedTitle (Data Property) -> String
+  │    │    ├── hasCrosspostedContent (Data Property) -> String
+  │    │    ├── hasCrosspostedMedia (Data Property) -> URL
+  │    │    ├── associatedWithOriginalPost -> Post (Object Property)
+  │    │    ├── associatedWithUser -> User (Object Property)
+  │    │    └── associatedWithCommunity -> Community (Object Property)
+  │    ├── TagContent (Sub-class)
+  │    │    ├── User -> addTagsOnContent -> Content (Object Property)
+  │    │    ├── hasTagLabel (Data Property) -> String
+  │    │    ├── associatedWithPost -> Post (Object Property)
+  │    │    └── associatedWithUser -> User (Object Property)
+  │    ├── Polls (Sub-class)
+  │    │    ├── User -> opensPoll -> Poll (Object Property)
+  │    │    ├── hasPollQuestion (Data Property) -> String
+  │    │    ├── hasPollOptions (Data Property) -> String (Array)
+  │    │    ├── hasPollStartTime (Data Property) -> DateTime
+  │    │    ├── hasPollEndTime (Data Property) -> DateTime
+  │    │    ├── associatedWithPost -> Post (Object Property)
+  │    │    ├── associatedWithUser -> User (Object Property)
+  │    │    └── associatedWithCommunity -> Community (Object Property)
+  │    ├── FlairSystem (Sub-class)
+  │    │    ├── hasFlairLabel (Data Property) -> String
+  │    │    ├── associatedWithPost -> Post (Object Property)
+  │    │    └── associatedWithUser -> User (Object Property)
+  │    └── AnonymousMode (Sub-class)
+  │    │    ├── User -> postsContentAsAnonymous -> Post (Object Property)
+       │    ├── hasAnonymousPostTitle (Data Property) -> String
+       │    ├── hasAnonymousPostContent (Data Property) -> String
+       │    ├── hasAnonymousPostMedia (Data Property) -> URL
+       │    ├── hasAnonymousPostTimestamp (Data Property) -> DateTime
+       │    ├── associatedWithCommunity -> Community (Object Property)
+       │    └── anonymousActivityLoggedBy -> AnonymousSession (Object Property)
+
+Community (Class)
+  ├── CommunityCreation (Sub-class)
+  │    ├── hasCommunityName (Data Property) -> String
+  │    ├── hasCommunityDescription (Data Property) -> String
+  │    ├── hasCommunityTheme (Data Property) -> String
+  │    ├── hasCommunityCreationDate (Data Property) -> DateTime
+  │    ├── createdByUser -> User (Object Property)
+  │    └── hasCommunityRules -> CommunityRules (Object Property)
+  ├── CommunityEntry (Sub-class)
+  │    ├── User -> joinsCommunity -> Community (Object Property)
+  │    ├── User -> followsCommunity -> Community (Object Property)
+  │    ├── hasJoinTimestamp (Data Property) -> DateTime
+  │    └── hasFollowStatus (Data Property) -> Boolean
+ ├── CommunityRules (Sub-class)
+  │    ├── hasRuleDescription (Data Property) -> String
+  │    ├── hasRuleType (Data Property) -> String (e.g., Content, Behavior)
+  │    ├── addedByModerator -> Moderator (Object Property)
+  │    └── associatedWithCommunity -> Community (Object Property)
+  ├── CommunityModeration (Sub-class)
+  │    ├── Moderator -> approvesPost -> Post (Object Property)
+  │    ├── Moderator -> deniesPost -> Post (Object Property)
+  │    ├── Moderator -> bansUser -> User (Object Property)
+  │    ├── Moderator -> unbansUser -> User (Object Property)
+  │    ├── Moderator -> managesModerationQueue -> ModerationQueue (Object Property)
+  │    └── Moderator -> reviewsReports -> Report (Object Property)
+  ├── SpotlightCommunity (Sub-class)
+  │    ├── User -> highlightsCommunity -> Community (Object Property)
+  │    ├── Community -> appearsInSpotlight -> SpotlightFeature (Object Property)
+  │    └── hasSpotlightReason (Data Property) -> String
+  └── CommunityNotifications (Sub-class)
+  │    ├── User -> customizesCommunityNotification -> Community (Object Property)
+  │    ├── hasNotificationType (Data Property) -> String (e.g., Post, Comment, Reply)
+  │    └── hasNotificationFrequency (Data Property) -> String (e.g., Instant, Daily Digest)
+  ├── ReputationSystem (Sub-class)
+  │    ├── CommunityReputation (Sub-class)
+  │    │    ├── hasKarmaPoints (Data Property) -> Integer
+  │    │    ├── hasReputationLevel (Data Property) -> String (e.g., Bronze, Silver, Gold)
+  │    │    └── earnedByUser -> User (Object Property)
+  │    ├── Leaderboards (Sub-class)
+  │         ├── Community -> hasLeaderboard -> Leaderboard (Object Property)
+  │         ├── Leaderboard -> displaysTopContributor -> User (Object Property)
+  │         ├── Leaderboard -> displaysTopEngagement -> User (Object Property)
+  │         └── hasLeaderboardType (Data Property) -> String (e.g., Karma, Activity)
+  ├── CommunityModeration (Sub-class)
+  │    ├── Moderator (Sub-class)
+  │    │    ├── User -> isAssignedAsModeratorIn -> Community (Object Property)
+  │    │    ├── Moderator -> moderatesCommunity -> Community (Object Property)
+  │    │    ├── Moderator -> hasModeratorRoleType -> String (Data Property) (e.g., Lead Moderator, Assistant Moderator)
+  │    │    ├── Moderator -> hasJoinDateAsModerator -> DateTime (Data Property)
+  │    │    ├── Moderator -> hasAssignedBy -> Administrator (Object Property)
+  │    │    ├── Moderator -> hasModeratorPermissions -> String (Data Property) (e.g., EditRules, BanUsers, ManagePosts)
+  │    │    ├── Moderator -> isActiveModerator -> Boolean (Data Property)
+  │    │    ├── Moderator -> hasModeratorReputation -> Integer (Data Property) (e.g., based on votes or contributions)
+  │    │    └── Moderator -> hasModeratorNotes -> String (Data Property) (Optional)
+  │    ├── ModeratorActions (Sub-class)
+  │    │    ├── Moderator -> approvesPost -> Post (Object Property)
+  │    │    ├── Moderator -> deniesPost -> Post (Object Property)
+  │    │    ├── Moderator -> bansUser -> User (Object Property)
+  │    │    ├── Moderator -> unbansUser -> User (Object Property)
+  │    │    ├── Moderator -> locksPost -> Post (Object Property)
+  │    │    ├── Moderator -> unlocksPost -> Post (Object Property)
+  │    │    ├── Moderator -> removesComment -> Comment (Object Property)
+  │    │    ├── Moderator -> flagsPost -> Post (Object Property)
+  │    │    ├── Moderator -> reviewsModerationQueue -> ModerationQueue (Object Property)
+  │    │    ├── Moderator -> assignsFlairToPost -> Flair (Object Property)
+  │    │    ├── Moderator -> setsCommunityBanner -> CommunitySettings (Object Property)
+  │    │    ├── Moderator -> updatesCommunityDescription -> CommunitySettings (Object Property)
+  │    │    ├── Moderator -> reviewsReports -> Report (Object Property)
+  │    │    └── Moderator -> managesRules -> CommunityRules (Object Property)
+
+ContentInteraction (Class)   
+  ├── Engagement (Sub-class)
+  │    ├── UpvoteDownvote (Sub-class)
+  │    │    ├── User -> upvotesContent -> Content (Object Property)
+  │    │    ├── User -> downvotesContent -> Content (Object Property)
+  │    │    ├── User -> upvotesCommunity -> Community (Object Property)
+  │    │    ├── User -> downvotesCommunity -> Community (Object Property)
+  │    │    ├── hasUpvoteTimestamp (Data Property) -> DateTime
+  │    │    ├── hasDownvoteTimestamp (Data Property) -> DateTime
+  │    │    └── associatedWithContent -> Content (Object Property)
+  │    ├── Like (Sub-class)
+  │    │    ├── User -> likesContent -> Content (Object Property)
+  │    │    ├── User -> likesCommunity -> Community (Object Property)
+  │    │    ├── hasLikeTimestamp (Data Property) -> DateTime
+  │    │    └── associatedWithContent -> Content (Object Property)
+  │    ├── ReplyToComments (Sub-class)
+  │    │    ├── User -> repliesToComment -> Comment (Object Property)
+  │    │    ├── hasReplyText (Data Property) -> String
+  │    │    ├── hasReplyTimestamp (Data Property) -> DateTime
+  │    │    └── associatedWithComment -> Comment (Object Property)
+  │    ├── ShareRepost (Sub-class)
+  │    │    ├── User -> sharesContent -> Content (Object Property)
+  │    │    ├── User -> sharesCommunity -> Community (Object Property)
+  │    │    ├── hasShareTimestamp (Data Property) -> DateTime
+  │    │    ├── sharedToCommunity -> Community (Object Property)
+  │    │    └── associatedWithContent -> Content (Object Property)
+  │    ├── Bookmark (Sub-class)
+  │    │    ├── User -> bookmarksContent -> Content (Object Property)
+  │    │    ├── User -> bookmarksCommunity -> Community (Object Property)
+  │    │    ├── hasBookmarkTimestamp (Data Property) -> DateTime
+  │    │    └── associatedWithContent -> Content (Object Property)
+  │    ├── GiveAwards (Sub-class)
+  │    │    ├── User -> givesAwardToContent -> Content (Object Property)
+  │    │    ├── User -> givesAwardToCommunity -> Community (Object Property)
+  │    │    ├── hasAwardType (Data Property) -> String (e.g., Gold, Silver, Platinum)
+  │    │    ├── hasAwardTimestamp (Data Property) -> DateTime
+  │    │    ├── associatedWithContent -> Content (Object Property)
+  │    │    └── associatedWithAwardingUser -> User (Object Property)
+  │    ├── BlockUnblockUser (Sub-class)
+  │    │    ├── User -> blocksUser -> User (Object Property)
+  │    │    ├── User -> unblocksUser -> User (Object Property)
+  │    │    ├── hasBlockReason (Data Property) -> String
+  │    │    ├── hasBlockTimestamp (Data Property) -> DateTime
+  │    │    └── hasUnblockTimestamp (Data Property) -> DateTime
+  │    ├── Mute (Sub-class)
+  │    │    ├── User -> mutesUser -> User (Object Property)
+  │    │    ├── User -> mutesTopic -> Topic (Object Property)
+  │    │    ├── User -> mutesCommunity -> Community (Object Property)
+  │    │    ├── hasMuteTimestamp (Data Property) -> DateTime
+  │    │    └── associatedWithTopic -> Topic (Object Property)
+  │    ├── FollowTopics (Sub-class)
+  │    │    ├── User -> followsTopic -> Topic (Object Property)
+  │    │    ├── hasFollowTimestamp (Data Property) -> DateTime
+  │    │    └── associatedWithTopic -> Topic (Object Property)
+  │    ├── FollowCommunities (Sub-class)
+  │    │    ├── User -> followsCommunity -> Community (Object Property)
+  │    │    ├── hasFollowTimestamp (Data Property) -> DateTime
+  │    │    └── associatedWithCommunity -> Community (Object Property)
+  │    ├── PinPosts (Sub-class)
+  │         ├── User -> pinsPost -> Post (Object Property)
+  │         ├── Community -> pinsPost -> Post (Object Property)
+  │         ├── hasPinTimestamp (Data Property) -> DateTime
+  │         └── associatedWithPost -> Post (Object Property)
+
+SearchAndDiscovery (Class)
+  ├── SearchFeatures (Sub-class)
+  │    ├── GlobalSearch (Sub-class)
+  │    │    ├── User -> searchesFor -> Content (Object Property)
+  │    │    ├── hasSearchKeyword (Data Property) -> String
+  │    │    ├── hasSearchTimestamp (Data Property) -> DateTime
+  │    ├── AdvancedSearch (Sub-class)
+  │    │    ├── User -> appliesAdvancedSearchFilter -> AdvancedSearch (Object Property)
+  │    │    ├── hasSearchCriteria (Data Property) -> String (e.g., flair, tags, Boolean operators)
+  │    │    ├── hasSearchResultCount (Data Property) -> Integer
+  │    │    └── SearchFilter (Sub-Class)
+  │    │         ├── hasFilterType (Data Property) -> String (e.g., flair, tags)
+  │    │         └── hasFilterValue (Data Property) -> String
+  │    ├── TrendSearch (Sub-class)
+  │         ├── User -> viewsTrendingContent -> TrendingContent (Object Property)
+  │         ├── hasTrendingKeyword (Data Property) -> String
+  │         ├── hasTrendingScore (Data Property) -> Float
+  │         └── TrendingContent (Sub-Class)
+  │              ├── associatedWithTopic -> Topic (Object Property)
+  │              └── associatedWithContent -> Content (Object Property)
+
+  ├── Recommendations (Sub-class)
+  │    ├── PersonalizedFeed (Sub-class)
+  │    │    ├── User -> receivesRecommendations -> RecommendedContent (Object Property)
+  │    │    ├── hasRecommendationSource (Data Property) -> String (e.g., browsing history, preferences)
+  │    │    ├── hasRecommendationAlgorithm (Data Property) -> String
+  │    │    └── RecommendedContent (Class)
+  │    │         ├── associatedWithContent -> Content (Object Property)
+  │    │         └── associatedWithTopic -> Topic (Object Property)
+  │    ├── ExploreCategories (Sub-class)
+  │    │    ├── User -> browsesCategory -> Category (Object Property)
+  │    │    ├── hasCategoryName (Data Property) -> String
+  │    │    └── Category (Class)
+  │    │         ├── associatedWithContent -> Content (Object Property)
+  │    │         └── associatedWithTopic -> Topic (Object Property)
+  │    ├── FlairSearch (Sub-class)
+  │         ├── User -> searchesByFlair -> Flair (Object Property)
+  │         ├── hasFlairName (Data Property) -> String
+  │         └── Flair (Sub-Class)
+  │              ├── associatedWithPost -> Post (Object Property)
+  │              └── associatedWithContent -> Content (Object Property)
+
+Notifications (Class)
+  ├── NotificationSettings (Sub-class)
+  │    ├── PushNotifications (Sub-class)
+  │    │    ├── User -> configuresPushNotifications -> NotificationDevice (Object Property)
+  │    │    ├── NotificationDevice -> hasDeviceType -> String (Data Property) (e.g., mobile, desktop)
+  │    │    └── NotificationDevice -> hasDeviceID -> String (Data Property)
+  │    ├── EmailNotifications (Sub-class)
+  │    │    ├── User -> configuresEmailNotifications -> EmailAccount (Object Property)
+  │    │    └── EmailAccount -> hasEmailFrequency -> String (Data Property) (e.g., daily, weekly)
+  │    ├── InAppNotifications (Sub-class)
+  │         ├── User -> customizesInAppNotifications -> NotificationPreferences (Object Property)
+  │         ├── NotificationPreferences -> hasPreferenceType -> String (Data Property)
+  │         └── NotificationPreferences -> hasUnreadCount -> Integer (Data Property)
+  ├── ActivitySummaries (Sub-class)
+       ├── WeeklyDigests (Sub-class)
+       │    ├── User -> receivesWeeklyDigest -> DigestSummary (Object Property)
+       │    ├── DigestSummary -> hasSummaryDate -> DateTime (Data Property)
+       │    ├── DigestSummary -> hasContentHighlights -> Content (Object Property)
+       │    └── DigestSummary -> hasDigestType -> String (Data Property) (e.g., activity, recommendations)
+
+Messaging (Class)
+  ├── DirectMessaging (Sub-class)
+  │    ├── User -> sendsMessageTo -> User (Object Property)
+  │    ├── User -> receivesMessageFrom -> User (Object Property)
+  │    ├── User -> mutesUser -> User (Object Property)
+  │    ├── User -> blocksUser -> User (Object Property)
+  │    ├── hasMessageContent (Data Property) -> String
+  │    ├── hasMessageTimestamp (Data Property) -> DateTime
+  │    ├── hasMessageFrequency (Data Property) -> String
+  │    ├── hasMuteTimestamp (Data Property) -> DateTime
+  │    ├── hasBlocksTimestamp (Data Property) -> DateTime
+  │    └── hasMessageStatus (Data Property) -> String (e.g., sent, delivered, read)
+  ├── GroupMessaging (Sub-class)
+  │    ├── User -> participatesInGroupMessage -> GroupMessage (Object Property)
+  │    ├── GroupMessage -> hasParticipants -> User (Object Property)
+  │    ├── User -> joinsGroupChat -> GroupMessaging (Object Property)
+  │    ├── User -> leavesGroupChat -> GroupMessaging (Object Property)
+  │    ├── User -> lmutesGroupChat -> GroupMessaging (Object Property)
+  │    ├── GroupMessage -> hasMessageContent -> String (Data Property)
+  │    ├── GroupMessage -> hasGroupCreatedDate -> DateTime (Data Property)
+  │    └── GroupMessage -> hasGroupName -> String (Data Property)
+  │    └── GroupMessage -> hasGroupMessageFrequency -> String (Data Property)
+  │    └── GroupMessage -> hasJoinTimestamp (Data Property)
+  │    └── GroupMessage -> hasLeaveTimestamp (Data Property)
+
+Monetization (Class)
+  ├── RevenueGeneration (Sub-class)
+  │    ├── Subscription (Sub-class)
+  │    │    ├── User -> enablesSubscriptionFor -> Content (Object Property)
+  │    │    ├── Subscription -> hasSubscriptionFee -> Float (Data Property)
+  │    │    ├── Subscription -> hasSubscriptionDuration -> Integer (Data Property) (e.g., months)
+  │    │    └── Subscription -> hasSubscriptionBenefits -> String (Data Property)
+  │    ├── AdRevenue (Sub-class)
+  │    │    ├── User -> receivesAdRevenueFrom -> Content (Object Property)
+  │         ├── AdRevenue -> hasRevenueAmount -> Float (Data Property)
+  │         ├── AdRevenue -> hasAdImpressions -> Integer (Data Property)
+  │         └── AdRevenue -> hasAdClickRate -> Float (Data Property)
+  ├── Donations (Sub-class)
+       ├── User -> donatesTo -> Content (Object Property)
+       ├── Donation -> hasDonationAmount -> Float (Data Property)
+       ├── Donation -> hasDonationTimestamp -> DateTime (Data Property)
+       └── Donation -> hasDonationMessage -> String (Data Property)
+
+Analytics (Class)
+  ├── StatsAndInsights (Sub-class)
+  │    ├── EngagementMetrics (Sub-class)
+  │    │    ├── Content -> hasViewsCount -> Integer (Data Property)
+  │    │    ├── Content -> hasVotesCount -> Integer (Data Property)
+  │    │    ├── Content -> hasCommentsCount -> Integer (Data Property)
+  │    │    └── Content -> hasSharesCount -> Integer (Data Property)
+  │    ├── CommunityMetrics (Sub-class)
+  │         ├── Community -> tracksGrowth -> CommunityMetrics (Object Property)
+  │         ├── CommunityMetrics -> hasMemberCount -> Integer (Data Property)
+  │         ├── CommunityMetrics -> hasEngagementRate -> Float (Data Property)
+  │         └── CommunityMetrics -> hasActiveMembersCount -> Integer (Data Property)
+  ├── UserInsights (Sub-class)
+       ├── Draft -> tracksPerformance -> UserInsights (Object Property)
+       ├── UserInsights -> hasDraftViewsCount -> Integer (Data Property)
+       ├── UserInsights -> hasDraftCommentsCount -> Integer (Data Property)
+       ├── UserInsights -> hasDraftSharesCount -> Integer (Data Property)
+       └── UserInsights -> hasDraftEngagementRate -> Float (Data Property)
+       
+Accessibility (Class)
+  ├── AccessibilitySettings (Sub-class)
+  │    ├── User -> adjustsDisplayPreferences -> AccessibilitySettings (Object Property)
+  │    ├── AccessibilitySettings -> hasFontSize -> Integer (Data Property)
+  │    ├── AccessibilitySettings -> hasThemePreference -> String (Data Property) (e.g., light, dark)
+  │    └── AccessibilitySettings -> hasContrastSetting -> String (Data Property) (e.g., high, low)
+  ├── LanguageSettings (Sub-class)
+  │    ├── User -> choosesLanguagePreference -> LanguageSettings (Object Property)
+  │    ├── LanguageSettings -> hasPreferredLanguage -> String (Data Property)
+  │    └── LanguageSettings -> hasAvailableLanguages -> String (Data Property) (Array)

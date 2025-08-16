@@ -1,0 +1,15 @@
+Type,Item_O1,Item_O2,Similarity
+Subject,User Profile,User,100.0
+Subject,User Profile,User,100.0
+Subject,User Profile,User,100.0
+Subject,User,User,100.0
+Subject,User,User,100.0
+Predicate,comments On,comments On,100.0
+Object,User Profile,User,100.0
+Object,User Profile,User,100.0
+Object,User Profile,User,100.0
+Object,Content Creation,Content Creation,100.0
+Object,User,User,100.0
+Object,Content Creation,Content Creation,100.0
+Object,User,User,100.0
+Object,User,User,100.0

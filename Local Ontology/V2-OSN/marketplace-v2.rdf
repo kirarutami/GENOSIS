@@ -1,0 +1,361 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Marketplace -->
+    <owl:Class rdf:about="#Marketplace">
+        <rdfs:comment>Represents the marketplace where users can sell and manage listings.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas SellingPage -->
+    <owl:Class rdf:about="#SellingPage">
+        <rdfs:subClassOf rdf:resource="#Marketplace"/>
+        <rdfs:comment>Represents the selling page where listings are created and managed.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas ListingCreation -->
+    <owl:Class rdf:about="#ListingCreation">
+        <rdfs:subClassOf rdf:resource="#SellingPage"/>
+        <rdfs:comment>Represents the creation of a listing, including items, vehicles, and property.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas for ListingCreation -->
+    <owl:Class rdf:about="#Items">
+        <rdfs:subClassOf rdf:resource="#ListingCreation"/>
+        <rdfs:comment>Represents items that can be sold on the marketplace.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Vehicles">
+        <rdfs:subClassOf rdf:resource="#ListingCreation"/>
+        <rdfs:comment>Represents vehicles that can be listed for sale on the marketplace.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Property">
+        <rdfs:subClassOf rdf:resource="#ListingCreation"/>
+        <rdfs:comment>Represents property listings for sale on the marketplace.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas ListingDetails -->
+    <owl:Class rdf:about="#ListingDetails">
+        <rdfs:subClassOf rdf:resource="#ListingCreation"/>
+        <rdfs:comment>Represents details of a listing such as title, price, and category.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for ListingDetails -->
+    <owl:DatatypeProperty rdf:about="#listingTitle">
+        <rdfs:domain rdf:resource="#ListingDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The title of the listing.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#listingPrice">
+        <rdfs:domain rdf:resource="#ListingDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>The price of the listed item or property.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#listingCategory">
+        <rdfs:domain rdf:resource="#ListingDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The category of the listing (e.g., electronics, furniture).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#itemDescription">
+        <rdfs:domain rdf:resource="#ListingCreation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The description of the item being listed.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#itemLocation">
+        <rdfs:domain rdf:resource="#ListingCreation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The location of the item being listed.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#itemCondition">
+        <rdfs:domain rdf:resource="#ListingCreation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The condition of the item (e.g., new, used).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#listingAvailability">
+        <rdfs:domain rdf:resource="#ListingCreation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>The availability of the listing (whether it is currently active).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#itemSKU">
+        <rdfs:domain rdf:resource="#ListingCreation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The SKU (Stock Keeping Unit) of the item being listed.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#boostListing">
+        <rdfs:domain rdf:resource="#ListingCreation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if the listing has been boosted for higher visibility.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#offerShipping">
+        <rdfs:domain rdf:resource="#ListingCreation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if the seller is offering shipping for the listed item.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-kelas ListingsManagement -->
+    <owl:Class rdf:about="#ListingsManagement">
+        <rdfs:subClassOf rdf:resource="#SellingPage"/>
+        <rdfs:comment>Represents the management of listings, including editing, deleting, and renewing listings.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for ListingsManagement -->
+    <owl:ObjectProperty rdf:about="#editListing">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ListingsManagement"/>
+        <rdfs:comment>Links a user to the action of editing a listing.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#deleteListing">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ListingsManagement"/>
+        <rdfs:comment>Links a user to the action of deleting a listing.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#markAsSold">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ListingsManagement"/>
+        <rdfs:comment>Links a user to the action of marking a listing as sold.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#renewListing">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ListingsManagement"/>
+        <rdfs:comment>Links a user to the action of renewing a listing.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Sub-kelas MessageSeller -->
+    <owl:Class rdf:about="#MessageSeller">
+        <rdfs:subClassOf rdf:resource="#SellingPage"/>
+        <rdfs:comment>Represents communication between users and sellers regarding listings.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for MessageSeller -->
+    <owl:ObjectProperty rdf:about="#sendMessageToSeller">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#MessageSeller"/>
+        <rdfs:comment>Links a user to the action of sending a message to the seller.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#viewMessage">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#MessageSeller"/>
+        <rdfs:comment>Links a user to the action of viewing messages from sellers.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#markAsSpam">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#MessageSeller"/>
+        <rdfs:comment>Links a user to the action of marking a seller's message as spam.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#markAsRead">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#MessageSeller"/>
+        <rdfs:comment>Links a user to the action of marking a seller's message as read.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Sub-kelas TodaysPicks -->
+    <owl:Class rdf:about="#TodaysPicks">
+        <rdfs:subClassOf rdf:resource="#SellingPage"/>
+        <rdfs:comment>Represents today's picks on the marketplace, showing featured listings.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for TodaysPicks -->
+    <owl:ObjectProperty rdf:about="#saveListing">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#TodaysPicks"/>
+        <rdfs:comment>Links a user to the action of saving a listing.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#shareListing">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#TodaysPicks"/>
+        <rdfs:comment>Links a user to the action of sharing a listing.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Sub-kelas SellerInformation -->
+    <owl:Class rdf:about="#SellerInformation">
+        <rdfs:subClassOf rdf:resource="#SellingPage"/>
+        <rdfs:comment>Represents information about the seller, including their profile and follower count.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for SellerInformation -->
+    <owl:ObjectProperty rdf:about="#followSeller">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SellerInformation"/>
+        <rdfs:comment>Links a user to the action of following a seller on the marketplace.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Properties for ListingDetails -->
+    <owl:ObjectProperty rdf:about="#sellItemOn">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SellingPage"/>
+        <rdfs:comment>Links a user to the action of selling product on SellingPage</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#createItemList">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ListingCreation"/>
+        <rdfs:comment>Links a user to the action of creating a product list on ListingCreation</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#viewProductDetails">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ListingDetails"/>
+        <rdfs:comment>Links a user to the action of viewing product details for a listing.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#relatedProducts">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ListingDetails"/>
+        <rdfs:comment>Links a user to the action of viewing related products for a listing.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#reportListing">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ListingDetails"/>
+        <rdfs:comment>Links a user to the action of reporting a listing for violations.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#getHelpOnMarketplace">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Marketplace"/>
+        <rdfs:comment>Links a user to the action of getting help on the marketplace.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!--Tambahan-->
+    <!-- Object Properties untuk Search -->
+    <owl:ObjectProperty rdf:about="#searchByCategory">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Marketplace"/>
+        <rdfs:comment>Links a user to the action of searching listings by category.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#searchByLocation">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Marketplace"/>
+        <rdfs:comment>Links a user to the action of searching listings by location.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Properties untuk TodaysPicks -->
+
+    <owl:ObjectProperty rdf:about="#viewListings">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#TodaysPicks"/>
+        <rdfs:comment>Links a user to the action of viewing today's top listings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#sendOffer">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#TodaysPicks"/>
+        <rdfs:comment>Links a user to the action of sending an offer to the seller for a listing.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Properties untuk SellerInformation -->
+    <owl:ObjectProperty rdf:about="#viewSellerProfile">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SellerInformation"/>
+        <rdfs:comment>Links a user to the action of viewing the profile of a seller.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#followSeller">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SellerInformation"/>
+        <rdfs:comment>Links a user to the action of following a seller.</rdfs:comment>
+    </owl:ObjectProperty>
+
+
+    <!-- Karakteristik untuk Object Properties -->
+    <owl:FunctionalProperty rdf:about="#editListing"/>
+    <owl:FunctionalProperty rdf:about="#deleteListing"/>
+    <owl:FunctionalProperty rdf:about="#markAsSold"/>
+    <owl:FunctionalProperty rdf:about="#renewListing"/>
+
+    <owl:FunctionalProperty rdf:about="#sendMessageToSeller"/>
+    <owl:FunctionalProperty rdf:about="#viewMessage"/>
+
+    <owl:FunctionalProperty rdf:about="#saveListing"/>
+    <owl:FunctionalProperty rdf:about="#shareListing"/>
+
+    <owl:FunctionalProperty rdf:about="#viewSellerProfile"/>
+    <owl:FunctionalProperty rdf:about="#followSeller"/>
+    <owl:FunctionalProperty rdf:about="#viewListings"/>
+    <owl:FunctionalProperty rdf:about="#searchByCategory"/>
+    <owl:FunctionalProperty rdf:about="#searchByLocation"/>
+
+    <owl:SymmetricProperty rdf:about="#followSeller"/>
+    <owl:AsymmetricProperty rdf:about="#reportListing"/>
+    <owl:AsymmetricProperty rdf:about="#markAsSpam"/>
+    <owl:AsymmetricProperty rdf:about="#markAsRead"/>
+
+    <!-- Definisi disjoint antar kelas -->
+    <!-- Disjoint Classes for Categories: Vehicles, Items, Property -->
+    <owl:Class rdf:about="#Vehicles">
+        <rdfs:subClassOf rdf:resource="#ListingCreation"/>
+        <owl:disjointWith rdf:resource="#Items"/>
+        <owl:disjointWith rdf:resource="#Property"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Items">
+        <rdfs:subClassOf rdf:resource="#ListingCreation"/>
+        <owl:disjointWith rdf:resource="#Vehicles"/>
+        <owl:disjointWith rdf:resource="#Property"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Property">
+        <rdfs:subClassOf rdf:resource="#ListingCreation"/>
+        <owl:disjointWith rdf:resource="#Vehicles"/>
+        <owl:disjointWith rdf:resource="#Items"/>
+    </owl:Class>
+
+    <!-- Disjoint Classes for Activities: ListingCreation, ListingsManagement, MessageSeller -->
+    <owl:Class rdf:about="#ListingCreation">
+        <rdfs:subClassOf rdf:resource="#SellingPage"/>
+        <owl:disjointWith rdf:resource="#ListingsManagement"/>
+        <owl:disjointWith rdf:resource="#MessageSeller"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ListingsManagement">
+        <rdfs:subClassOf rdf:resource="#SellingPage"/>
+        <owl:disjointWith rdf:resource="#ListingCreation"/>
+        <owl:disjointWith rdf:resource="#MessageSeller"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MessageSeller">
+        <rdfs:subClassOf rdf:resource="#SellingPage"/>
+        <owl:disjointWith rdf:resource="#ListingCreation"/>
+        <owl:disjointWith rdf:resource="#ListingsManagement"/>
+    </owl:Class>
+
+    <!-- Disjoint Classes for Marketplace Sections: TodaysPicks, SellerInformation, ListingDetails -->
+    <owl:Class rdf:about="#TodaysPicks">
+        <rdfs:subClassOf rdf:resource="#SellingPage"/>
+        <owl:disjointWith rdf:resource="#SellerInformation"/>
+        <owl:disjointWith rdf:resource="#ListingDetails"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#SellerInformation">
+        <rdfs:subClassOf rdf:resource="#SellingPage"/>
+        <owl:disjointWith rdf:resource="#TodaysPicks"/>
+        <owl:disjointWith rdf:resource="#ListingDetails"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ListingDetails">
+        <rdfs:subClassOf rdf:resource="#ListingCreation"/>
+        <owl:disjointWith rdf:resource="#TodaysPicks"/>
+        <owl:disjointWith rdf:resource="#SellerInformation"/>
+    </owl:Class>
+
+
+</rdf:RDF>

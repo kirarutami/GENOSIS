@@ -1,0 +1,993 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/gsmfo.owl#"
+     xml:base="http://example.org/gsmfo.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:OSN="http://saralutami.org/OnlineSocialNetworkSites#"
+     xmlns:MP="http://saralutami.org/MicrobloggingPlatforms#"
+     xmlns:MCSS="http://saralutami.org/MediaContentSharingSites#"
+     xmlns:OFB="http://saralutami.org/OnlineForumsBlogs#"
+     xmlns:GSMFO="http://saralutami.org/GSMFO#">
+
+    <owl:Ontology rdf:about="http://example.org/gsmfo.owl">
+        <dc:title xml:lang="en">GSMFO - Global Social Media Forensic Ontology (Integrated Classes V2)</dc:title>
+        <dc:description xml:lang="en">This ontology integrates classes from four local ontologies (OSN, MP, MCSS, OFB) based on a defined global hierarchy, focusing on generalization for social media forensics.</dc:description>
+        <dc:description xml:lang="id">Ontologi ini mengintegrasikan kelas-kelas dari empat ontologi lokal (OSN, MP, MCSS, OFB) berdasarkan hierarki global yang telah ditentukan, dengan fokus pada generalisasi untuk forensik media sosial.</dc:description>
+        <owl:versionInfo>2.0</owl:versionInfo>
+    </owl:Ontology>
+
+    <owl:AnnotationProperty rdf:about="#OSNcomment">
+        <rdfs:label xml:lang="en">OSN Comment</rdfs:label>
+        <rdfs:comment xml:lang="en">Original comment from the OSN local ontology.</rdfs:comment>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="#MPcomment">
+        <rdfs:label xml:lang="en">MP Comment</rdfs:label>
+        <rdfs:comment xml:lang="en">Original comment from the MP local ontology.</rdfs:comment>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="#MCSScomment">
+        <rdfs:label xml:lang="en">MCSS Comment</rdfs:label>
+        <rdfs:comment xml:lang="en">Original comment from the MCSS local ontology.</rdfs:comment>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="#OFBcomment">
+        <rdfs:label xml:lang="en">OFB Comment</rdfs:label>
+        <rdfs:comment xml:lang="en">Original comment from the OFB local ontology.</rdfs:comment>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="#alignWithOSN">
+      <rdfs:label xml:lang="en">Aligned with OSN</rdfs:label>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="#alignWithMP">
+      <rdfs:label xml:lang="en">Aligned with MP</rdfs:label>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="#alignWithMCSS">
+      <rdfs:label xml:lang="en">Aligned with MCSS</rdfs:label>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="#alignWithOFB">
+      <rdfs:label xml:lang="en">Aligned with OFB</rdfs:label>
+    </owl:AnnotationProperty>
+     <owl:AnnotationProperty rdf:about="#sourceOrigin">
+      <rdfs:label xml:lang="en">Source Origin</rdfs:label>
+      <rdfs:comment xml:lang="en">Indicates the original source or mapping information for this element from the merging process.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+<!--UserAccount-->
+    <owl:Class rdf:about="#Global:UserAccount">
+        <rdfs:label xml:lang="en">Global User Account</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:User">
+        <rdfs:subClassOf rdf:resource="#Global:UserAccount"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The primary class representing individual users in the system.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#User</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:User">
+        <rdfs:subClassOf rdf:resource="#Global:UserAccount"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user in a microblogging platform (e.g., Twitter, Tumblr).</MPcomment>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#User</alignWithMP>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:List">
+        <rdfs:subClassOf rdf:resource="#MP:User"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents lists created or followed by users on the platform.</MPcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:Bookmark">
+        <rdfs:subClassOf rdf:resource="#MP:User"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a collection of content items saved as bookmarks by users.</MPcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:User">
+        <rdfs:subClassOf rdf:resource="#Global:UserAccount"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user in the online forum or blog system.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#User</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:User">
+        <rdfs:subClassOf rdf:resource="#Global:UserAccount"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The primary class representing the user in the system.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#User</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:CloseFriendList">
+        <rdfs:subClassOf rdf:resource="#OSN:User"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a list of close friends who can view exclusive stories from the user.</OSNcomment>
+    </owl:Class>
+
+<!--Content-->
+    <owl:Class rdf:about="#Global:Content">
+        <rdfs:label xml:lang="en">Global Content</rdfs:label>
+        <rdfs:comment xml:lang="en">A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:Post">
+        <rdfs:subClassOf rdf:resource="#Global:Content"/>
+        <rdfs:label xml:lang="en">Global Post</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a generalized user-generated post.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:Post">
+        <rdfs:subClassOf rdf:resource="#Global:Post"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a generic post on the platform, including audience type and schedule time.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#Post</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:Post">
+        <rdfs:subClassOf rdf:resource="#Global:Post"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a specific post or piece of content created by a user.</MPcomment>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#Post</alignWithMP>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:Post">
+        <rdfs:subClassOf rdf:resource="#Global:Post"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents posts created by users, which may contain text, media, and other metadata.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#Post</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:ScheduledPost">
+        <rdfs:subClassOf rdf:resource="#OFB:Post"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents posts scheduled by users to be published at a future timestamp.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#ScheduledPost</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:CrossPostContent">
+        <rdfs:subClassOf rdf:resource="#OFB:Post"/>
+        <rdfs:label xml:lang="en">OFB Cross Post Content</rdfs:label>
+        <rdfs:comment xml:lang="en">Content that has been cross-posted from another source within OFB.</rdfs:comment>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents posts that are cross-posted from other communities or original posts.</OFBcomment> </owl:Class>
+    <owl:Class rdf:about="#OFB:DraftContent">
+        <rdfs:subClassOf rdf:resource="#OFB:Post"/>
+        <rdfs:label xml:lang="en">OFB Draft Content</rdfs:label>
+        <rdfs:comment xml:lang="en">Content saved as a draft within OFB.</rdfs:comment>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents drafts saved by users, which can be edited and later posted.</OFBcomment> </owl:Class>
+    <owl:Class rdf:about="#OSN:Post"> <rdfs:subClassOf rdf:resource="#Global:Post"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents posts created by users, including media posts, location check-ins, and live videos.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#Posts</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:BirthdayPost">
+        <rdfs:subClassOf rdf:resource="#OSN:Post"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents posts created for birthdays.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#BirthdayPosts</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:AvatarPost">
+        <rdfs:subClassOf rdf:resource="#OSN:Post"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents posts created using avatars.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#AvatarPosts</alignWithOSN>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:VideoContent">
+        <rdfs:subClassOf rdf:resource="#Global:Content"/>
+        <rdfs:label xml:lang="en">Global Video Content</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents video content, including standard videos, short videos, and reels.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:Video">
+        <rdfs:subClassOf rdf:resource="#Global:VideoContent"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents video content in the system.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#Video</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:ShortVideo">
+        <rdfs:subClassOf rdf:resource="#Global:VideoContent"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents short video content in the system.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#ShortVideo</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:VideoContent">
+        <rdfs:subClassOf rdf:resource="#Global:VideoContent"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The main class representing video-related content in the system, including video history and notifications.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#VideoContent</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:ReelVideo">
+        <rdfs:subClassOf rdf:resource="#OSN:VideoContent"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a short video that is part of a reel.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#ReelVideo</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:ShortVideoContent">
+        <rdfs:subClassOf rdf:resource="#OSN:VideoContent"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents short video content shared on social network platforms.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#ShortVideoContent</alignWithOSN>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:LiveContent">
+        <rdfs:subClassOf rdf:resource="#Global:Content"/>
+        <rdfs:label xml:lang="en">Global Live Content</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents content generated during or associated with live streaming sessions.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:Live">
+        <rdfs:subClassOf rdf:resource="#Global:LiveContent"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents live streaming content within the system.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#Live</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:SuperChat">
+        <rdfs:subClassOf rdf:resource="#MCSS:Live"/> <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a SuperChat donation event during live streaming.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#SuperChat</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:Live">
+        <rdfs:subClassOf rdf:resource="#Global:LiveContent"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents live video broadcasts created by the user.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#LiveVideo</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:Live">
+        <rdfs:subClassOf rdf:resource="#Global:LiveContent"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents live video broadcasts created by the user.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#LiveVideo</alignWithOSN>
+    </owl:Class>
+        <owl:Class rdf:about="#MP:LiveInteractionActivity">
+        <rdfs:subClassOf rdf:resource="#MP:Live"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents live interaction features on the platform, including live spaces, rooms, and upcoming sessions.</MPcomment>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#LiveInteractions</alignWithMP>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:LiveSpacesRoomsActivity">
+        <rdfs:subClassOf rdf:resource="#MP:Live"/>
+        <rdfs:comment xml:lang="en">Activities related to MP Live Spaces/Rooms.</rdfs:comment>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents live spaces or rooms for users to listen, speak, and interact during live sessions.</MPcomment>
+    </owl:Class>
+        <owl:Class rdf:about="#MP:UpcomingSessionInteraction">
+        <rdfs:subClassOf rdf:resource="#MP:Live"/>
+        <rdfs:comment xml:lang="en">Interactions related to upcoming MP live sessions.</rdfs:comment>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents scheduled live sessions that users can set reminders for or add to their calendar.</MPcomment>
+    </owl:Class>
+
+    <!--Poll-->
+    <owl:Class rdf:about="#Global:Poll">
+        <rdfs:subClassOf rdf:resource="#Global:Content"/>
+        <rdfs:label xml:lang="en">Global Poll</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a poll created by users for interaction.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:Poll"> <rdfs:subClassOf rdf:resource="#Global:Poll"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents polls created by users with questions and options for interaction.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#Polls</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:Poll"> <rdfs:subClassOf rdf:resource="#Global:Poll"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents polls created in a group.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#Polls</alignWithOSN>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:Story">
+        <rdfs:subClassOf rdf:resource="#Global:Content"/>
+        <rdfs:label xml:lang="en">Global Story</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents temporary content, often visual, that expires after a period.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:Story"> <rdfs:subClassOf rdf:resource="#Global:Story"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents temporary stories shared by users, which expire after a certain period of time.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#Stories</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:StoryHighlight"> <rdfs:subClassOf rdf:resource="#OSN:Story"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents story highlights that can be saved beyond their expiration date.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#StoryHighlights</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:Story"> <rdfs:subClassOf rdf:resource="#Global:Story"/>
+        <rdfs:comment xml:lang="en">Represents a story feature in MCSS platforms.</rdfs:comment>
+    </owl:Class>
+
+<!--Message-->
+    <owl:Class rdf:about="#Global:Message">
+        <rdfs:label xml:lang="en">Global Message</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents any form of message exchanged between users or in groups.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:DirectMessage">
+        <rdfs:subClassOf rdf:resource="#Global:Message"/>
+        <rdfs:label xml:lang="en">Global Direct Message</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a private message sent between users.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:DirectMessage"> <rdfs:subClassOf rdf:resource="#Global:DirectMessage"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the functionality and content of direct messages in the system.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#DirectMessages</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:DirectMessage"> <rdfs:subClassOf rdf:resource="#Global:DirectMessage"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents one-on-one messaging interactions.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#DirectMessaging</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:DirectMessage"> <rdfs:subClassOf rdf:resource="#Global:DirectMessage"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents direct messaging interactions among users on the platform.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#DirectMessages</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:DirectMessage"> <rdfs:subClassOf rdf:resource="#Global:DirectMessage"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents direct messages sent between users on the platform.</MPcomment>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#DirectMessages</alignWithMP>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:GroupMessage">
+        <rdfs:subClassOf rdf:resource="#Global:Message"/>
+        <rdfs:label xml:lang="en">Global Group Message</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a message sent within a group chat context.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:GroupMessage">
+        <rdfs:subClassOf rdf:resource="#Global:GroupMessage"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents group message threads and related interactions.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#GroupMessage</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:GroupMessage"> <rdfs:subClassOf rdf:resource="#Global:GroupMessage"/>
+        <rdfs:comment xml:lang="en">Represents messages within an OSN group chat.</rdfs:comment>
+        </owl:Class>
+
+<!--Interaction-->
+    <owl:Class rdf:about="#Global:ContentInteraction">
+        <rdfs:label xml:lang="en">Global Content Interaction</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents any interaction a user has with content or other users related to content.</rdfs:comment>
+    </owl:Class>
+    <!--Share-->
+    <owl:Class rdf:about="#Global:SharingAction">
+        <rdfs:subClassOf rdf:resource="#Global:ContentInteraction"/>
+        <rdfs:label xml:lang="en">Global Sharing Action</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents the action of sharing, reposting, or reblogging content.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:ShareAction"> <rdfs:subClassOf rdf:resource="#Global:SharingAction"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a share interaction with content.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#Share</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:ReblogRetweetAction"> <rdfs:subClassOf rdf:resource="#Global:SharingAction"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></MPcomment>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#ReblogRetweetPost</alignWithMP>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:CrossPostAction">
+        <rdfs:subClassOf rdf:resource="#Global:SharingAction"/>
+        <rdfs:label xml:lang="en">OFB Cross Post Action</rdfs:label>
+        <rdfs:comment xml:lang="en">The action of creating a cross-post in OFB.</rdfs:comment>
+        </owl:Class>
+    <!--Comments-->
+    <owl:Class rdf:about="#Global:CommentOrReplyAction">
+        <rdfs:subClassOf rdf:resource="#Global:ContentInteraction"/>
+        <rdfs:label xml:lang="en">Global Comment or Reply Action</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents the action of commenting or replying.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:CommentAction"> <rdfs:subClassOf rdf:resource="#Global:CommentOrReplyAction"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a comment interaction with content.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#Comment</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:CommentAction"> <rdfs:subClassOf rdf:resource="#Global:CommentOrReplyAction"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></MPcomment>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#Comment</alignWithMP>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:CommentAction"> <rdfs:subClassOf rdf:resource="#Global:CommentOrReplyAction"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents comments made by users on content.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#Comment</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:ReplyToCommentAction"> <rdfs:subClassOf rdf:resource="#Global:CommentOrReplyAction"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a reply to a comment action.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#ReplyToComments</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:CommentAction"> <rdfs:subClassOf rdf:resource="#Global:CommentOrReplyAction"/>
+        <rdfs:comment xml:lang="en">Represents the action of commenting in OSN.</rdfs:comment>
+        </owl:Class>
+    <!--Reacts-->
+    <owl:Class rdf:about="#Global:ReactionAction">
+        <rdfs:subClassOf rdf:resource="#Global:ContentInteraction"/>
+        <rdfs:label xml:lang="en">Global Reaction Action</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents the action of reacting to content (e.g., liking, disliking).</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:DislikeAction"> <rdfs:subClassOf rdf:resource="#Global:ReactionAction"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a dislike interaction with content.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#Dislike</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:LikeAction"> <rdfs:subClassOf rdf:resource="#Global:ReactionAction"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a like interaction with content.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#Like</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:LikeAction"> <rdfs:subClassOf rdf:resource="#Global:ReactionAction"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></MPcomment>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#Likes</alignWithMP>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:LikeAction"> <rdfs:subClassOf rdf:resource="#Global:ReactionAction"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a like action on content.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#Like</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:LikesReactions"> <rdfs:subClassOf rdf:resource="#Global:ReactionAction"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents user interactions involving likes and reactions to content.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#LikesReactions</alignWithOSN>
+    </owl:Class>
+    <!--Reports-->
+    <owl:Class rdf:about="#Global:ReportAction">
+        <rdfs:subClassOf rdf:resource="#Global:ContentInteraction"/>
+        <rdfs:label xml:lang="en">Global Report Action</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents the action of reporting content, users, or messages.</rdfs:comment>
+    </owl:Class>
+     <owl:Class rdf:about="#MCSS:ReportAction"> <rdfs:subClassOf rdf:resource="#Global:ReportAction"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a report interaction with content.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#Report</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:ReportAction"> <rdfs:subClassOf rdf:resource="#Global:ReportAction"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></MPcomment>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#Report</alignWithMP>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:ReportAction"> <rdfs:subClassOf rdf:resource="#Global:ReportAction"/>
+        <rdfs:comment xml:lang="en">Represents the action of filing a report in OFB.</rdfs:comment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#Reports</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:ReportAction"> <rdfs:subClassOf rdf:resource="#Global:ReportAction"/>
+        <rdfs:comment xml:lang="en">Represents the action of reporting in OSN.</rdfs:comment>
+    </owl:Class>
+    <!--Additional Interaction-->
+    <owl:Class rdf:about="#Global:AdditionalInteraction">
+        <rdfs:subClassOf rdf:resource="#Global:ContentInteraction"/>
+        <rdfs:label xml:lang="en">Global Report Action</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents the action of reporting content, users, or messages.</rdfs:comment>
+    </owl:Class>
+   <owl:Class rdf:about="#MCSS:WatchLaterAction">
+        <rdfs:subClassOf rdf:resource="#Global:AdditionalInteraction"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the watch later feature for videos.</MCSScomment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:GiftAction">
+        <rdfs:subClassOf rdf:resource="#Global:AdditionalInteraction"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents gifting interactions during live sessions.</MCSScomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:BookmarkAction">
+        <rdfs:subClassOf rdf:resource="#Global:AdditionalInteraction"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents bookmarking content for later reference.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:GiveAwardAction">
+        <rdfs:subClassOf rdf:resource="#Global:AdditionalInteraction"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents giving awards to content or users as recognition.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:FollowTopicAction">
+        <rdfs:subClassOf rdf:resource="#Global:AdditionalInteraction"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents following topics actions.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:PinPostAction">
+        <rdfs:subClassOf rdf:resource="#Global:AdditionalInteraction"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents pinning actions for posts by users or communities.</OFBcomment>
+    </owl:Class>
+<!--Settings-->
+
+    <owl:Class rdf:about="#Global:ProfileSettings">
+        <rdfs:subClassOf rdf:resource="#Global:Setting"/>
+        <rdfs:label xml:lang="en">Global Profile Settings</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents user-configurable settings related to their profile.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:ProfileSettings">
+        <rdfs:subClassOf rdf:resource="#Global:ProfileSettings"/>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:ProfileSettings">
+        <rdfs:subClassOf rdf:resource="#Global:ProfileSettings"/>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:ProfileSettings">
+        <rdfs:subClassOf rdf:resource="#Global:ProfileSettings"/>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:AccountSettings">
+        <rdfs:subClassOf rdf:resource="#Global:ProfileSettings"/> 
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Handles general, privacy, security, and account management settings.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#AccountSettings</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:DataUsageSettings">
+        <rdfs:subClassOf rdf:resource="#OSN:AccountSettings"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Handles data usage configurations for cellular and WiFi connections.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:AccountManagementSettings"> 
+        <rdfs:subClassOf rdf:resource="#OSN:AccountSettings"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Handles configurations for deactivating, deleting, downloading, or transferring account information.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:DeviceManagementSettings"> 
+        <rdfs:subClassOf rdf:resource="#OSN:AccountSettings"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Handles authorized devices associated with the user's account.</OSNcomment>
+    </owl:Class>
+
+<!--Notification-->
+
+    <owl:Class rdf:about="#Global:NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#Global:Setting"/>
+        <rdfs:label xml:lang="en">Global Notification Settings</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents user-configurable settings related to notifications.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#Global:NotificationSettings"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents settings for managing message notifications.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#NotificationSettings</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#Global:NotificationSettings"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents settings related to notifications that the user can configure.</MPcomment>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#NotificationSettings</alignWithMP>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#Global:NotificationSettings"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents notification settings for a user.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#NotificationSettings</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:PushNotification"> 
+        <rdfs:subClassOf rdf:resource="#OFB:NotificationSettings"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents push notification settings.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:NotificationPreferences">
+        <rdfs:subClassOf rdf:resource="#OFB:NotificationSettings"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents preferences for in-app notifications.</OFBcomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OFB:CommunityNotification"> 
+        <rdfs:subClassOf rdf:resource="#OFB:NotificationSettings"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents notification settings and preferences for a community.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#Global:NotificationSettings"/>
+        <rdfs:subClassOf rdf:resource="#OSN:AccountSettings"/> 
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Handles configurations for notifications like push, email, and SMS.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#NotificationSettings</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:GroupNotification"> 
+        <rdfs:subClassOf rdf:resource="#OSN:NotificationSettings"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents notification settings for a group.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:MessageNotification"> 
+        <rdfs:subClassOf rdf:resource="#OSN:NotificationSettings"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents notification settings related to direct messages.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:VideoNotification"> 
+        <rdfs:subClassOf rdf:resource="#OSN:NotificationSettings"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents notifications related to video content, such as new video uploads, reminders, and other updates.</OSNcomment>
+    </owl:Class>
+
+<!--Group and Community-->
+    
+    <owl:Class rdf:about="#Global:Group">
+        <rdfs:label xml:lang="en">Global Group</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a generalized group or community entity within a social media platform.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#OSN:Group"> 
+        <rdfs:subClassOf rdf:resource="#Global:Group"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents groups in the online social network site.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#Groups</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:Community">
+        <rdfs:subClassOf rdf:resource="#Global:Group"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents an online community where users can join, follow, and interact with posts and rules.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#Community</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:SpotlightCommunity">
+        <rdfs:subClassOf rdf:resource="#OFB:Community"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents communities featured in spotlight sections.</OFBcomment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:ModerationAction">
+        <rdfs:subClassOf rdf:resource="#Global:Group"/>
+        <rdfs:label xml:lang="en">Global Moderation Action</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents actions performed by moderators or administrators.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:ModeratorAction"> 
+        <rdfs:subClassOf rdf:resource="#Global:ModerationAction"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the actions a moderator can perform in a community.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#ModeratorActions</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:ModerationAction"> 
+        <rdfs:subClassOf rdf:resource="#Global:ModerationAction"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents actions that moderators or admins can take in group moderation.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#ModerationActions</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:CommunityModerationAction"> 
+        <rdfs:subClassOf rdf:resource="#Global:ModerationAction"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents moderation functionalities for a community, including moderators and their actions.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#CommunityModeration</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:ModerationQueue">
+        <rdfs:subClassOf rdf:resource="#Global:ModerationAction"/>
+        <rdfs:comment xml:lang="en">Represents a queue for flagged content (OFB specific concept, related to moderation activity).</rdfs:comment>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a queue that contains flagged content for moderation.</OFBcomment>
+        </owl:Class>
+    <owl:Class rdf:about="#OFB:ModeratorStatistics">
+        <rdfs:subClassOf rdf:resource="#Global:ModerationAction"/>
+        <rdfs:comment xml:lang="en">Represents statistics about a moderator's activity (OFB specific concept).</rdfs:comment>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents various statistics associated with a moderator's activity in the community.</OFBcomment>
+        </owl:Class>
+
+    <owl:Class rdf:about="#Global:GroupManagementActivity">
+        <rdfs:subClassOf rdf:resource="#Global:Group"/>
+        <rdfs:label xml:lang="en">Global Group Management Activity</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents activities related to the management of groups or communities.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:CommunityCreationActivity"> 
+        <rdfs:subClassOf rdf:resource="#Global:GroupManagementActivity"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the creation process and properties of a community.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#CommunityCreation</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:CommunityEntryActivity"> 
+        <rdfs:subClassOf rdf:resource="#Global:GroupManagementActivity"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the process and properties of joining or following a community.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#CommunityEntry</alignWithOFB>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:Role">
+        <rdfs:subClassOf rdf:resource="#Global:Group"/>
+        <rdfs:label xml:lang="en">Global Role</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a generalized role a user can have within a platform or community.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:ModeratorRole">
+        <rdfs:subClassOf rdf:resource="#Global:Role"/>
+        <rdfs:label xml:lang="en">Global Moderator Role</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents the role of a moderator.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:Moderator">
+        <rdfs:subClassOf rdf:resource="#Global:ModeratorRole"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a moderator assigned to a community with specific roles and permissions.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#Moderator</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:Moderator">
+        <rdfs:subClassOf rdf:resource="#Global:ModeratorRole"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a moderator role in a group.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#Moderator</alignWithOSN>
+    </owl:Class>
+    <!--Reputation-->
+    <owl:Class rdf:about="#OFB:CommunityReputation">
+        <rdfs:subClassOf rdf:resource="#OFB:Community"/>
+        <rdfs:label xml:lang="en">Community Reputation</rdfs:label>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Defines a community's reputation metrics, including karma points and levels.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:ReputationSystem">
+        <rdfs:subClassOf rdf:resource="#OFB:CommunityReputation"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the reputation mechanisms within a community.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:Leaderboard">
+        <rdfs:subClassOf rdf:resource="#OFB:CommunityReputation"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents leaderboards within the community.</OFBcomment>
+    </owl:Class>
+
+<!--Search and Recommendation-->
+
+    <owl:Class rdf:about="#Global:SearchFunctionality">
+        <rdfs:label xml:lang="en">Global Search Functionality</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents the capability and actions related to searching.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:Search"> 
+        <rdfs:subClassOf rdf:resource="#Global:SearchFunctionality"/> 
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the capability and actions related to searching within the platform</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:SearchAndRecommendation"> 
+        <rdfs:subClassOf rdf:resource="#Global:SearchFunctionality"/> 
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Handles recommendations generated based on user activity and preferences.</MCSScomment>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:DiscoveryAndSearchFeature"> 
+        <rdfs:subClassOf rdf:resource="#Global:SearchFunctionality"/> 
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents features for discovering and searching content, people, and topics on a microblogging platform.</MPcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:SearchFeature"> 
+        <rdfs:subClassOf rdf:resource="#Global:SearchFunctionality"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Defines various search-related features.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:GlobalSearchFeature"> 
+        <rdfs:subClassOf rdf:resource="#OFB:SearchFeature"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents global search functionality for different targets.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:AdvancedSearchFeature"> 
+        <rdfs:subClassOf rdf:resource="#OFB:SearchFeature"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents advanced search functionalities with additional filters.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:TrendSearchFeature"> 
+        <rdfs:subClassOf rdf:resource="#OFB:SearchFeature"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents trends observed in user searches.</OFBcomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OFB:SearchFilterFeature"> 
+        <rdfs:subClassOf rdf:resource="#OFB:SearchFeature"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents filters used in advanced search queries.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:SearchAndDiscoveryFeature"> 
+        <rdfs:subClassOf rdf:resource="#OFB:SearchFeature"/>
+         <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the overall structure for search and discovery functionalities.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:RecommendationFeature"> 
+        <rdfs:subClassOf rdf:resource="#OFB:SearchFeature"/> 
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the system that provides recommendations to users.</OFBcomment>
+    </owl:Class>
+    
+<!--Marketplace-->
+    <owl:Class rdf:about="#Global:Marketplace">
+    <rdfs:comment xml:lang="en">Represents the marketplace feature</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:Marketplace">
+    <rdfs:subClassOf rdf:resource="#Global:Marketplace"/>
+    <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the marketplace feature in the online social network site.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:ListingFeature">
+        <rdfs:subClassOf rdf:resource="#OSN:Marketplace"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the listings created by users in the marketplace.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:ListingManagementActivity">
+        <rdfs:subClassOf rdf:resource="#OSN:Marketplace"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the management of listings in the marketplace, including metrics and status.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:ListingDetails">
+        <rdfs:subClassOf rdf:resource="#OSN:Marketplace"/> 
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Details about a specific listing, including metadata and attributes.</OSNcomment>
+    </owl:Class>
+
+
+<!--User Management-->
+    <owl:Class rdf:about="#Global:UserManagement">
+        <rdfs:subClassOf rdf:resource="#Global:UserAccount"/>
+        <rdfs:label xml:lang="en">Global User Management Activity</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents activities related to managing user accounts or their interactions.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#OSN:UserManagement">
+        <rdfs:subClassOf rdf:resource="#Global:UserManagement"/>
+        <OSNcomment>The primary class representing user management activities in Online Social Network Sites.</OSNcomment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MP:UserManagement">
+        <rdfs:subClassOf rdf:resource="#Global:UserManagement"/>
+        <MPcomment>The primary class representing user management activities in Microblogging Platforms.</MPcomment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:UserManagement">
+        <rdfs:subClassOf rdf:resource="#Global:UserManagement"/>
+        <MCSScomment>The primary class representing user management activities in MediaContentSharingSites.</MCSScomment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#OFB:UserManagement">
+        <rdfs:subClassOf rdf:resource="#Global:UserManagement"/>
+        <OFBcomment>The primary class representing user management activities in OnlineForumBlogs.</OFBcomment>
+    </owl:Class>
+
+<!--News Content-->
+    <owl:Class rdf:about="#Global:NewsContent">
+        <rdfs:subClassOf rdf:resource="#Global:Content"/>
+        <rdfs:label xml:lang="en">Global News Content</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents news-related content items.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:NewsInformationFeature">
+        <rdfs:subClassOf rdf:resource="#Global:NewsContent"/>
+        <rdfs:label xml:lang="en">MCSS News Information Content</rdfs:label>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents functionalities and components related to news information in the system.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#NewsInformation</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:BreakingNews">
+        <rdfs:subClassOf rdf:resource="#MCSS:NewsInformationFeature"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the breaking news section in the system.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#BreakingNews</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:TopNews">
+        <rdfs:subClassOf rdf:resource="#MCSS:NewsInformationFeature"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the top news section in the system.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#TopNews</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:TrendingContent">
+        <rdfs:subClassOf rdf:resource="#Global:NewsContent"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents content identified as trending based on user activities.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#TrendingContent</alignWithOFB>
+    </owl:Class>
+
+
+
+<!--Global:AdditionalFeature-->
+    <owl:Class rdf:about="#Global:AdditionalFeature">
+    <rdfs:comment xml:lang="en">Represents the additional existing unique feature per social media category</rdfs:comment>
+    </owl:Class>
+    <!--OSN:AdditionalFeature-->
+    <owl:Class rdf:about="#OSN:AdditionalFeature">
+    <rdfs:subClassOf rdf:resource="#Global:AdditionalFeature"/> 
+    </owl:Class>
+    <!--OSN:Gaming-->
+    <owl:Class rdf:about="#OSN:Gaming">
+        <rdfs:subClassOf rdf:resource="#OSN:AdditionalFeature"/> 
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents gaming-related actions and player information.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:Games">
+        <rdfs:subClassOf rdf:resource="#OSN:Gaming"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents game on online social network sites platforms.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:PlayerInfo">
+        <rdfs:subClassOf rdf:resource="#OSN:Gaming"/> <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents player-related details.</OSNcomment>
+    </owl:Class>
+    <!--OSN:Page-->
+    <owl:Class rdf:about="#OSN:Page">
+        <rdfs:subClassOf rdf:resource="#OSN:AdditionalFeature"/>
+        </owl:Class>
+    <owl:Class rdf:about="#OSN:PageManagementActivity">
+        <rdfs:subClassOf rdf:resource="#OSN:Page"/> 
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Handles creation, activation, deactivation, and merging of Pages.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:PageInsight">
+        <rdfs:subClassOf rdf:resource="#OSN:Page"/> 
+        <rdfs:comment xml:lang="en">Represents insights for OSN Pages.</rdfs:comment>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents insights like views, reach, and engagement for a page.</OSNcomment>
+        </owl:Class>
+    <owl:Class rdf:about="#OSN:PageFeature">
+        <rdfs:subClassOf rdf:resource="#OSN:Page"/> 
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents features such as events, posts, photos, and videos available on a page.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:PageSettings">
+        <rdfs:subClassOf rdf:resource="#OSN:Page"/> 
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents configurable settings for a page.</OSNcomment>
+    </owl:Class>
+    <!--OSN:MessengerKids-->
+    <owl:Class rdf:about="#OSN:MessengerKids">
+        <rdfs:subClassOf rdf:resource="#OSN:AdditionalFeature"/>
+        <rdfs:comment xml:lang="en">Represents features and activities related to Messenger Kids (OSN specific).</rdfs:comment>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents activities and information related to Messenger Kids accounts.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:ChildInformation">
+        <rdfs:subClassOf rdf:resource="#OSN:MessengerKids"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Contains information about the child using Messenger Kids.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:ConnectKids">
+        <rdfs:subClassOf rdf:resource="#OSN:MessengerKids"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the connection status and timestamps for Messenger Kids users.</OSNcomment>
+    </owl:Class>
+    <!--From Meta-->
+    <owl:Class rdf:about="#OSN:MetaVerifiedFeature">
+        <rdfs:subClassOf rdf:resource="#OSN:AdditionalFeature"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Handles verification and public presence-related features for users.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:AlsoFromMetaFeature">
+        <rdfs:subClassOf rdf:resource="#OSN:AdditionalFeature"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents other applications and services provided by Meta.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:OtherAppsFeature">
+        <rdfs:subClassOf rdf:resource="#OSN:AlsoFromMetaFeature"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents other Meta apps that can connect to the user's account.</OSNcomment>
+    </owl:Class>
+    <!--Media Enhancement-->
+    <owl:Class rdf:about="#OSN:MediaEnhancementFeature">
+        <rdfs:subClassOf rdf:resource="#OSN:AdditionalFeature"/>
+        <rdfs:label xml:lang="en">Global Media Enhancement Feature</rdfs:label>
+        <rdfs:comment xml:lang="en">Features for enhancing media content like reels or videos.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:ReelEffect">
+        <rdfs:subClassOf rdf:resource="#OSN:MediaEnhancementFeature"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fitur efek pada reel</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:ReelRemixFeature">
+        <rdfs:subClassOf rdf:resource="#OSN:MediaEnhancementFeature"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents remix content that is added to or derived from another user's reel.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:ReelMusic">
+        <rdfs:subClassOf rdf:resource="#OSN:MediaEnhancementFeature"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents music that is added to a reel video.</OSNcomment>
+    </owl:Class>
+
+    <!--OFB:Additional Feature-->
+    <owl:Class rdf:about="#OFB:AdditionalFeature">
+    <rdfs:subClassOf rdf:resource="#Global:AdditionalFeature"/> 
+    </owl:Class>
+
+    <!--Anonymous Mode-->
+    <owl:Class rdf:about="#OFB:AnonymousMode">
+    <rdfs:subClassOf rdf:resource="#OFB:AdditionalFeature"/>
+    <sourceOrigin rdf:datatype="http://www.w3.org/2001/XMLSchema#string">subClassOf:Content_from:OFB</sourceOrigin>
+    <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the functionality of sharing content anonymously within a community.</OFBcomment>
+    </owl:Class>
+    <!--Activity Summary-->
+    <owl:Class rdf:about="#OFB:ActivitySummary">
+        <rdfs:subClassOf rdf:resource="#OFB:AdditionalFeature"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents activity summary notifications like digests.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#ActivitySummaries</alignWithOFB>
+    </owl:Class>
+
+    <owl:Class rdf:about="#OFB:WeeklyDigest">
+        <rdfs:subClassOf rdf:resource="#OFB:ActivitySummary"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents weekly digest activity summaries.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#WeeklyDigests</alignWithOFB>
+    </owl:Class>
+
+    <owl:Class rdf:about="#OFB:DigestSummary">
+        <rdfs:subClassOf rdf:resource="#OFB:ActivitySummary"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a summary of weekly activity digest.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#DigestSummary</alignWithOFB>
+    </owl:Class>
+    <!--Flair-->
+    <owl:Class rdf:about="#OFB:Flair">
+        <rdfs:subClassOf rdf:resource="#OFB:AdditionalFeature"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents flair tags associated with posts or content.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:FlairSearch">
+        <rdfs:subClassOf rdf:resource="#OFB:Flair"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the ability to search for content by specific flair tags.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:FlairSystemFeature">
+        <rdfs:subClassOf rdf:resource="#OFB:Flair"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a system for assigning flair labels to posts or users to provide additional context or categorization.</OFBcomment>
+    </owl:Class>
+    <!--Analytics Data-->
+    <owl:Class rdf:about="#OFB:Analytics">
+        <rdfs:subClassOf rdf:resource="#OFB:AdditionalFeature"/> 
+        <rdfs:label xml:lang="en">Global Setting</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents analytics feature for online forum blogs.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:StatsAndInsight">
+        <rdfs:subClassOf rdf:resource="#OFB:Analytics"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents statistical and insight data.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:EngagementMetric">
+        <rdfs:subClassOf rdf:resource="#OFB:StatsAndInsight"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents engagement metrics for content.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:CommunityMetric">
+        <rdfs:subClassOf rdf:resource="#OFB:StatsAndInsight"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents metrics for communities, including growth and engagement.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:UserInsight">
+        <rdfs:subClassOf rdf:resource="#OFB:StatsAndInsight"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents insights for users based on their drafts or contributions.</OFBcomment>
+    </owl:Class>
+    <!--Monetization-->
+    <owl:Class rdf:about="#OFB:AdRevenueFeature">
+        <rdfs:subClassOf rdf:resource="#OFB:AdditionalFeature"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents revenue generated through advertisements.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:DonationFeature">
+        <rdfs:subClassOf rdf:resource="#OFB:AdditionalFeature"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents donations made to creators or content.</OFBcomment>
+    </owl:Class>
+
+    <!--MCSS Additional Feature-->
+    <owl:Class rdf:about="#MCSS:AdditionalFeature">
+    <rdfs:subClassOf rdf:resource="#Global:AdditionalFeature"/> 
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:MessageAnalytics">
+        <rdfs:subClassOf rdf:resource="#MCSS:AdditionalFeature"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents analytics related to messages, such as open rate and response time.</MCSScomment>
+    </owl:Class>
+        <owl:Class rdf:about="#MCSS:ShoppingFeature">
+        <rdfs:subClassOf rdf:resource="#MCSS:AdditionalFeature"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents shopping-related features within the platform.</MCSScomment>
+    </owl:Class>
+
+<!--Global:Setting-->
+    <owl:Class rdf:about="#Global:Setting">
+    <rdfs:subClassOf rdf:resource="#Global:UserAccount"/> 
+        <rdfs:label xml:lang="en">Global Setting</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a generalized configuration or setting related to user accounts, profiles, or platform features.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan konfigurasi atau pengaturan umum terkait akun pengguna, profil, atau fitur platform.</rdfs:comment>
+    </owl:Class>
+    <!--Accessibilities-->
+    <owl:Class rdf:about="#Global:Accessibility">
+        <rdfs:label xml:lang="en">Global User Accessibility</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Global:Setting"/>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:Accessibility">
+        <rdfs:subClassOf rdf:resource="#Global:Accessibility"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents display-related accessibility settings.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#AccessibilitySettings</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:LanguageSettings">
+        <rdfs:subClassOf rdf:resource="#OFB:Accessibility"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents user language preferences for accessibility.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#LanguageSettings</alignWithOFB>
+    </owl:Class>
+        <owl:Class rdf:about="#MP:Accessibility">
+        <rdfs:subClassOf rdf:resource="#Global:Accessibility"/> 
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents settings for accessibility, display, language, and data usage on the platform.</MPcomment>
+    </owl:Class>
+
+    <!--Security Settings-->
+    <owl:Class rdf:about="#Global:SecuritySettings">
+        <rdfs:subClassOf rdf:resource="#Global:Setting"/>
+        <rdfs:label xml:lang="en">Global Security Settings</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents security-related settings for a user account or profile.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:SecuritySettings">
+        <rdfs:subClassOf rdf:resource="#Global:SecuritySettings"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Settings related to managing the user's profile security.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#SecuritySettings</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:SecuritySettings">
+        <rdfs:subClassOf rdf:resource="#Global:SecuritySettings"/>
+        <rdfs:subClassOf rdf:resource="#OSN:AccountSettings"/> 
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#SecuritySettings</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:SecuritySettings"> 
+        <rdfs:subClassOf rdf:resource="#Global:SecuritySettings"/>
+        <rdfs:comment xml:lang="en">Security settings for MP users.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:SecuritySettings"> 
+        <rdfs:subClassOf rdf:resource="#Global:SecuritySettings"/>
+        <rdfs:comment xml:lang="en">Security settings for MCSS users.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:PrivacySettings">
+        <rdfs:subClassOf rdf:resource="#Global:Setting"/>
+        <rdfs:label xml:lang="en">Global Privacy Settings</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents privacy-related settings for a user account or profile.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:PrivacySettings">
+        <rdfs:subClassOf rdf:resource="#Global:PrivacySettings"/>
+        <rdfs:subClassOf rdf:resource="#OSN:AccountSettings"/> 
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the privacy settings related to the user's account, including blocked accounts and story settings.</OSNcomment>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#PrivacySettings</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:PrivacySettings"> 
+        <rdfs:subClassOf rdf:resource="#Global:PrivacySettings"/>
+        <rdfs:comment xml:lang="en">Privacy settings for MP users.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:PrivacySettings"> 
+        <rdfs:subClassOf rdf:resource="#Global:PrivacySettings"/>
+        <rdfs:comment xml:lang="en">Privacy settings for MCSS users.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:PrivacySettings"> 
+        <rdfs:subClassOf rdf:resource="#Global:PrivacySettings"/>
+        <rdfs:comment xml:lang="en">Privacy settings for OFB users.</rdfs:comment>
+    </owl:Class>
+
+
+</rdf:RDF>

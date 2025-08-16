@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/gsmfo.owl#"  xml:base="http://example.org/gsmfo.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:Global="http://example.org/GlobalOntology#"   
+     xmlns:market="http://example.org/gsmfo/marketplace#"
+     xmlns:OSN="http://saralutami.org/OnlineSocialNetworkSites#"
+     xmlns:MP="http://saralutami.org/MicrobloggingPlatforms#"
+     xmlns:MCSS="http://saralutami.org/MediaContentSharingSites#"
+     xmlns:OFB="http://saralutami.org/OnlineForumsBlogs#"
+     xmlns:GSMFO="http://saralutami.org/GSMFO#">  
+
+
+    <owl:Ontology rdf:about="http://example.org/gsmfo.owl">
+        <dc:title xml:lang="en">GSMFO - Dummy Case for hasPostTimestamp</dc:title>
+    </owl:Ontology>
+
+    <!-- Definisikan annotation properties di luar -->
+    <owl:AnnotationProperty rdf:about="http://example.org/gsmfo.owl#MCSScomment"/>
+    <owl:AnnotationProperty rdf:about="http://example.org/gsmfo.owl#MPcomment"/>
+    <owl:AnnotationProperty rdf:about="http://example.org/gsmfo.owl#OFBcomment"/>
+    <owl:AnnotationProperty rdf:about="http://example.org/gsmfo.owl#alignWithMCSS"/>
+    <owl:AnnotationProperty rdf:about="http://example.org/gsmfo.owl#alignWithMP"/>
+    <owl:AnnotationProperty rdf:about="http://example.org/gsmfo.owl#alignWithOFB"/>
+
+
+    <owl:Class rdf:about="#Global_Content"/>
+
+    <owl:Class rdf:about="#Global_Post">
+        <rdfs:subClassOf rdf:resource="#Global_Content"/>
+        <rdfs:label xml:lang="en">Global Post</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a generalized user-generated post.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MCSS_Post">
+        <rdfs:subClassOf rdf:resource="#Global_Post"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a generic post on the platform, including audience type and schedule time.</MCSScomment>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#Post</alignWithMCSS>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MP_Post">
+        <rdfs:subClassOf rdf:resource="#Global_Post"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a specific post or piece of content created by a user.</MPcomment>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#Post</alignWithMP>
+    </owl:Class>
+
+    <owl:Class rdf:about="#OFB_Post">
+        <rdfs:subClassOf rdf:resource="#Global_Post"/>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents posts created by users, which may contain text, media, and other metadata.</OFBcomment>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#Post</alignWithOFB>
+    </owl:Class>
+
+    <owl:DatatypeProperty rdf:about="#Global_hasPostTimestamp">
+        <rdfs:label xml:lang="en">has Post Timestamp</rdfs:label>
+        <rdfs:comment xml:lang="en">Records the date and time when the post was created or published.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Mencatat tanggal dan waktu ketika postingan dibuat atau dipublikasikan.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global_Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasPostTimestamp</alignWithMP>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasPostTimestamp</alignWithOSN>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasPostCreationTimestamp</alignWithOFB>
+        </owl:DatatypeProperty>
+
+    <owl:NamedIndividual rdf:about="#MCSS_Post_123">
+        <rdf:type rdf:resource="#MCSS_Post"/>
+        <rdfs:label xml:lang="en">MCSS Post Example 123</rdfs:label>
+        <Global_hasPostTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-09T10:30:00Z</Global_hasPostTimestamp>
+        <MCSS_Post_SpecificProperty>Some MCSS specific value</MCSS_Post_SpecificProperty>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MP_Post_456">
+        <rdf:type rdf:resource="#MP_Post"/>
+        <rdfs:label xml:lang="en">MP Post Example 456</rdfs:label>
+        <Global_hasPostTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-08T15:45:10Z</Global_hasPostTimestamp>
+        <MP_Post_Content>This is a microblog post content.</MP_Post_Content>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#OFB_Post_789">
+        <rdf:type rdf:resource="#OFB_Post"/>
+        <rdfs:label xml:lang="en">OFB Post Example 789</rdfs:label>
+        <Global_hasPostTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-07T08:00:55Z</Global_hasPostTimestamp>
+        <OFB_Post_Title>Discussion about Ontologies</OFB_Post_Title>
+    </owl:NamedIndividual>
+
+    <owl:Class rdf:about="#OSN_Post">
+        <rdfs:subClassOf rdf:resource="#Global_Post"/>
+        </owl:Class>
+    <owl:Class rdf:about="#OSN_BirthdayPost">
+        <rdfs:subClassOf rdf:resource="#OSN_Post"/>
+        </owl:Class>
+
+    <owl:NamedIndividual rdf:about="#OSN_BirthdayPost_001">
+        <rdf:type rdf:resource="#OSN_BirthdayPost"/>
+        <rdfs:label xml:lang="en">OSN Birthday Post Example 001</rdfs:label>
+        <Global_hasPostTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-15T00:01:00Z</Global_hasPostTimestamp>
+        <OSN_BirthdayPost_Message>Happy Birthday!</OSN_BirthdayPost_Message>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

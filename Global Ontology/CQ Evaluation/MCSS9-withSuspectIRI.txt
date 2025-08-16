@@ -1,0 +1,44 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+PREFIX MCSS: <http://saralutami.org/MediaContentSharingSites#> # Untuk properti spesifik MCSS
+
+SELECT
+  ?suspectUserIRI ?suspectLabel
+  ?channelIRI ?channelName
+  ?videoEvidenceIRI ?videoTitle ?videoContentURL ?uploadTimestamp
+  ?videoDescription ?videoTags ?videoLocation ?platform
+WHERE {
+  # !!! PENTING: Ganti <IRI_TERSANGKA_DISINI> dengan IRI akun pengguna tersangka !!!
+  # Contoh: VALUES ?suspectUserIRI { genosisOwl:User_WanderlustTravels_YouTube }
+  VALUES ?suspectUserIRI { genosisOwl:User_WanderlustTravels_YouTube }
+
+  ?suspectUserIRI rdf:type/rdfs:subClassOf* genosisOwl:Global:UserAccount ; # Memastikan ini adalah akun pengguna
+                  genosisOwl:belongsToPlatform ?platform ;
+                  genosisOwl:ownsChannel ?channelIRI .       # Tersangka memiliki channel
+
+  OPTIONAL { ?suspectUserIRI rdfs:label ?suspectLabel . }
+  OPTIONAL { ?channelIRI genosisOwl:hasChannelName ?channelName . } # Nama channel tersangka
+
+  # Filter hanya untuk platform MCSS (YouTube atau TikTok sesuai data Anda)
+  FILTER(STR(?platform) = "YouTube" || STR(?platform) = "TikTok")
+
+  # Channel tersebut mengunggah video
+  ?channelIRI genosisOwl:uploadsVideo ?videoEvidenceIRI .
+
+  # Pastikan ?videoEvidenceIRI adalah instance dari MCSS:Video dan ambil metadatanya
+  ?videoEvidenceIRI rdf:type genosisOwl:MCSS:Video ;  # Kelas spesifik untuk video MCSS
+                    genosisOwl:hasTitle ?videoTitle . # Judul video
+
+  OPTIONAL { ?videoEvidenceIRI genosisOwl:hasContentURL ?videoContentURL . } # URL konten video
+  # Menggunakan MCSS:hasPublicationDate yang spesifik untuk video di MCSS
+  OPTIONAL { ?videoEvidenceIRI MCSS:hasPublicationDate ?uploadTimestamp . } 
+  # Metadata tambahan yang mungkin berguna sebagai bukti
+  OPTIONAL { ?videoEvidenceIRI genosisOwl:hasVideoDescription ?videoDescription . }
+  OPTIONAL { ?videoEvidenceIRI genosisOwl:hasVideoTags ?videoTags . }
+  OPTIONAL { ?videoEvidenceIRI genosisOwl:hasLocation ?videoLocation . } # Lokasi terkait video
+
+  # Jika Bunda ingin fokus pada satu video spesifik (seperti di query lokal):
+  # FILTER(?videoEvidenceIRI = genosisOwl:Video_StolenSwissAlpsVideo_YouTube) # Ganti dengan IRI video yang relevan
+}
+ORDER BY DESC(?uploadTimestamp) ?videoTitle

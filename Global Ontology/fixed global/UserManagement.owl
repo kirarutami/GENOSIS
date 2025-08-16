@@ -1,0 +1,47 @@
+## Jadikan data property/object property aja ini
+
+
+    <owl:Class rdf:about="#Global:UserManagement">
+        <rdfs:subClassOf rdf:resource="#Global:Activity"/>
+        <rdfs:label xml:lang="en">Global User Management Activity</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents activities related to managing user accounts or their interactions.</rdfs:comment>
+    </owl:Class>
+    
+    <owl:Class rdf:about="#OFB:BlockUserActivity">
+        <rdfs:subClassOf rdf:resource="#Global:UserManagement"/>
+        <rdfs:comment xml:lang="en">Activity of a user blocking another user in OFB.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:UnblockUserActivity">
+        <rdfs:subClassOf rdf:resource="#Global:UserManagement"/>
+        <rdfs:comment xml:lang="en">Activity of a user unblocking another user in OFB.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:MuteUserActivity">
+        <rdfs:subClassOf rdf:resource="#Global:UserManagement"/>
+        <rdfs:comment xml:lang="en">Activity of a user muting another user in OFB.</rdfs:comment>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents muting actions on users or topics.</OFBcomment> 
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:AccountDeletionActivity">
+        <rdfs:subClassOf rdf:resource="#Global:UserManagement"/>
+        <rdfs:comment xml:lang="en">Activity of deleting an account in OSN (refactored from OFB:AccountDeletion for consistency).</rdfs:comment>
+        <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Handles the process and properties related to account deletion.</OFBcomment> 
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:LogoutActivity">
+        <rdfs:subClassOf rdf:resource="#Global:UserManagement"/>
+        <rdfs:comment xml:lang="en">Activity of a user logging out in OSN.</rdfs:comment>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the action of a user logging out of the system.</OSNcomment> 
+    </owl:Class>
+    <owl:Class rdf:about="#MP:FollowerRequestHandlingActivity">
+        <rdfs:subClassOf rdf:resource="#Global:UserManagement"/>
+        <rdfs:comment xml:lang="en">Activity of handling follower requests in MP.</rdfs:comment>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents follower requests that a user can accept or decline.</MPcomment> 
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:HidingFromUserActivity">
+        <rdfs:subClassOf rdf:resource="#Global:UserManagement"/>
+        <rdfs:comment xml:lang="en">Activity of a user hiding content/profile from another user in OSN.</rdfs:comment>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a list of users from whom a specific story is hidden.</OSNcomment> 
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:ConnectingKidsActivity">
+        <rdfs:subClassOf rdf:resource="#Global:UserManagement"/>
+        <rdfs:comment xml:lang="en">Activity related to connecting Messenger Kids accounts in OSN.</rdfs:comment>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the connection status and timestamps for Messenger Kids users.</OSNcomment> 
+    </owl:Class>

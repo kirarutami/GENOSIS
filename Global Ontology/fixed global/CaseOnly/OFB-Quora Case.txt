@@ -1,0 +1,203 @@
+<!--QuoraCase-->
+
+    <owl:NamedIndividual rdf:about="#User_DavidHistory_Quora">
+        <rdf:type rdf:resource="#OFB:User"/>
+        <rdfs:label>DavidHistory (Quora User)</rdfs:label>
+        <hasUsername>DavidHistory</hasUsername>
+        <hasBio>History professor trying to combat misinformation.</hasBio>
+        <hasProfileVisibility>Public</hasProfileVisibility>
+        <hasPasswordHash>hash_pw_david</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasTwoFactorAuthenticationEnabled>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-07-10T12:00:00Z</hasCreationTimestamp> <hasLastLoginIP>192.168.1.88</hasLastLoginIP>
+        <belongsToPlatform>Quora</belongsToPlatform>
+        </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="#User_AnonymousUser_Q_Quora"> <rdf:type rdf:resource="#OFB:User"/>
+        <rdfs:label>AnonymousUser_Q (Quora User - Asker)</rdfs:label>
+        <hasUsername>AnonymousUser_Q</hasUsername> <hasProfileVisibility>Anonymous</hasProfileVisibility>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_AnonymousUser_1_Quora">
+        <rdf:type rdf:resource="#OFB:User"/>
+        <rdfs:label>AnonymousUser_1 (Quora User - Commenter)</rdfs:label>
+        <hasUsername>AnonymousUser_1</hasUsername>
+        <hasBio>Anon user exploiting Quora's anonymous mode for radical content.</hasBio>
+        <hasProfileVisibility>Anonymous</hasProfileVisibility>
+        <hasPasswordHash>hash_anon_pw1</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasTwoFactorAuthenticationEnabled>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-01T10:00:00Z</hasCreationTimestamp>
+        <hasLastLoginIP>185.220.101.45</hasLastLoginIP>
+        <belongsToPlatform>Quora</belongsToPlatform>
+        </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="#User_AnonymousUser_2_Quora">
+        <rdf:type rdf:resource="#OFB:User"/>
+        <rdfs:label>AnonymousUser_2 (Quora User - Commenter)</rdfs:label>
+        <hasUsername>AnonymousUser_2</hasUsername>
+        <hasBio>Quora user leveraging anonymity for extremist propaganda.</hasBio>
+        <hasProfileVisibility>Anonymous</hasProfileVisibility>
+        <hasPasswordHash>hash_anon_pw2</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasTwoFactorAuthenticationEnabled>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T08:30:00Z</hasCreationTimestamp>
+        <hasLastLoginIP>185.220.101.45</hasLastLoginIP>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_AnonymousUser_3_Quora">
+        <rdf:type rdf:resource="#OFB:User"/>
+        <rdfs:label>AnonymousUser_3 (Quora User - Commenter/Harasser)</rdfs:label>
+        <hasUsername>AnonymousUser_3</hasUsername>
+        <hasBio>Harassing professor, doxxing attempts.</hasBio>
+        <hasProfileVisibility>Anonymous</hasProfileVisibility>
+        <hasPasswordHash>hash_anon_pw3</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasTwoFactorAuthenticationEnabled>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-11T09:45:00Z</hasCreationTimestamp>
+        <hasLastLoginIP>185.220.101.45</hasLastLoginIP>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_AnonymousUser_4_Quora">
+        <rdf:type rdf:resource="#OFB:User"/>
+        <rdfs:label>AnonymousUser_4 (Quora User - Commenter/Doxxer)</rdfs:label>
+        <hasUsername>AnonymousUser_4</hasUsername>
+        <hasBio>Extremist harasser, doxxer, possibly multiple burner accounts.</hasBio>
+        <hasProfileVisibility>Anonymous</hasProfileVisibility>
+        <hasPasswordHash>hash_anon_pw4</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasTwoFactorAuthenticationEnabled>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-12T07:50:00Z</hasCreationTimestamp>
+        <hasLastLoginIP>185.220.101.45</hasLastLoginIP>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_AnonymousUser_DM_Quora"> <rdf:type rdf:resource="#OFB:User"/>
+        <rdfs:label>AnonymousUser_DM (Quora User - DM Sender)</rdfs:label>
+        <hasUsername>AnonymousUser_DM</hasUsername> <hasProfileVisibility>Anonymous</hasProfileVisibility>
+        <hasLastLoginIP>103.45.88.200</hasLastLoginIP> <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+
+
+    <owl:NamedIndividual rdf:about="#Post_AnonQuestion_Quora">
+        <rdf:type rdf:resource="#OFB:Post"/> <rdfs:label>Anonymous Question on Political Change</rdfs:label>
+        <hasPostTitle>"Why is violence sometimes necessary for political change?"</hasPostTitle>
+        <hasContentText>"Historically, hasn't it been the only way to overthrow corrupt regimes?"</hasContentText>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-22T14:45:00Z</hasCreationTimestamp>
+        <attributedToUser rdf:resource="#User_AnonymousUser_Q_Quora"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_AnonAnswer1_Quora">
+        <rdf:type rdf:resource="#OFB:CommentAction"/>
+        <rdfs:label>Anonymous Answer 1 to Political Question</rdfs:label>
+        <performedBy rdf:resource="#User_AnonymousUser_1_Quora"/>
+        <hasContentText>"History has proven that peaceful protests are useless. Every great revolution required blood..."</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-22T15:10:00Z</hasInteractionTimestamp>
+        <hasCommentSpecificIP>185.220.101.45</hasCommentSpecificIP>
+        <hasCommentDevice>Android (Tor VPN)</hasCommentDevice>
+        <commentsOn rdf:resource="#Post_AnonQuestion_Quora"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_AnonAnswer2_Quora">
+        <rdf:type rdf:resource="#OFB:CommentAction"/>
+        <rdfs:label>Anonymous Answer 2 to Political Question</rdfs:label>
+        <performedBy rdf:resource="#User_AnonymousUser_2_Quora"/>
+        <hasContentText>"The media and elites keep people asleep... We need a new order."</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-22T15:30:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_AnonQuestion_Quora"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_DavidAnswer_Quora">
+        <rdf:type rdf:resource="#OFB:CommentAction"/>
+        <rdfs:label>DavidHistory's Answer to Political Question</rdfs:label>
+        <performedBy rdf:resource="#User_DavidHistory_Quora"/>
+        <hasContentText>"That's dangerous thinking. There are plenty of examples of successful nonviolent movements..."</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-22T15:45:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_AnonQuestion_Quora"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_AnonAnswer3_Quora">
+        <rdf:type rdf:resource="#OFB:CommentAction"/>
+        <rdfs:label>Anonymous Answer 3 (Threat to David)</rdfs:label>
+        <performedBy rdf:resource="#User_AnonymousUser_3_Quora"/>
+        <hasContentText>"Shut up, professor. You're part of the problem. Maybe we should start with people like you first."</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-22T16:00:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_AnonQuestion_Quora"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_AnonAnswer4_Quora">
+        <rdf:type rdf:resource="#OFB:CommentAction"/>
+        <rdfs:label>Anonymous Answer 4 (Doxxing Threat to David)</rdfs:label>
+        <performedBy rdf:resource="#User_AnonymousUser_4_Quora"/>
+        <hasContentText>"David is a perfect example of a traitor who deserves what's coming. Maybe we should expose him."</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-22T16:15:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_AnonQuestion_Quora"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_AnonToDavid_1_Quora">
+        <rdf:type rdf:resource="#OFB:DirectMessage"/>
+        <rdfs:label>DM from AnonymousUser_DM to DavidHistory (Threat 1)</rdfs:label>
+        <attributedToUser rdf:resource="#User_AnonymousUser_DM_Quora"/>
+        <messageReceiver rdf:resource="#User_DavidHistory_Quora"/>
+        <hasMessageContent>"You think you're safe, professor? You shouldn't have spoken up."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-22T17:00:00Z</hasMessageSentTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+        <hasMessageSpecificIP>103.45.88.200</hasMessageSpecificIP>
+        <hasMessageDevice>Android (VPN)</hasMessageDevice>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_DavidToAnon_1_Quora">
+        <rdf:type rdf:resource="#OFB:DirectMessage"/>
+        <rdfs:label>DM from DavidHistory to AnonymousUser_DM (Reply 1)</rdfs:label>
+        <attributedToUser rdf:resource="#User_DavidHistory_Quora"/>
+        <messageReceiver rdf:resource="#User_AnonymousUser_DM_Quora"/>
+        <hasMessageContent>"Who are you? Why are you messaging me?"</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-22T17:10:00Z</hasMessageSentTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+        <hasMessageSpecificIP>192.168.1.88</hasMessageSpecificIP>
+        <hasMessageDevice>Quora Web (Windows 11)</hasMessageDevice>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_AnonToDavid_2_Quora">
+        <rdf:type rdf:resource="#OFB:DirectMessage"/>
+        <rdfs:label>DM from AnonymousUser_DM to DavidHistory (Threat 2)</rdfs:label>
+        <attributedToUser rdf:resource="#User_AnonymousUser_DM_Quora"/>
+        <messageReceiver rdf:resource="#User_DavidHistory_Quora"/>
+        <hasMessageContent>"You don't need to know who I am. Just know that we know who YOU are. And so does everyone else now."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-22T17:15:00Z</hasMessageSentTimestamp>
+        <hasMessageStatus>delivered</hasMessageStatus>
+        <hasMessageSpecificIP>103.45.88.200</hasMessageSpecificIP>
+        <hasMessageDevice>Android (VPN)</hasMessageDevice>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_DavidToAnon_2_Quora">
+        <rdf:type rdf:resource="#OFB:DirectMessage"/>
+        <rdfs:label>DM from DavidHistory to AnonymousUser_DM (Reply 2 - Reporting)</rdfs:label>
+        <attributedToUser rdf:resource="#User_DavidHistory_Quora"/>
+        <messageReceiver rdf:resource="#User_AnonymousUser_DM_Quora"/>
+        <hasMessageContent>"Are you threatening me? I'm reporting this to Quora and the police."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-22T17:20:00Z</hasMessageSentTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+        <hasMessageSpecificIP>192.168.1.88</hasMessageSpecificIP>
+        <hasMessageDevice>Quora Web (Windows 11)</hasMessageDevice>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_AnonToDavid_3_Quora">
+        <rdf:type rdf:resource="#OFB:DirectMessage"/>
+        <rdfs:label>DM from AnonymousUser_DM to DavidHistory (Threat 3 - Email)</rdfs:label>
+        <attributedToUser rdf:resource="#User_AnonymousUser_DM_Quora"/>
+        <messageReceiver rdf:resource="#User_DavidHistory_Quora"/>
+        <hasMessageContent>"Report all you want. Nothing will happen. Maybe check your email. 😊"</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-22T17:25:00Z</hasMessageSentTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+        <hasMessageSpecificIP>103.45.88.200</hasMessageSpecificIP>
+        <hasMessageDevice>Android (VPN)</hasMessageDevice>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </owl:NamedIndividual>
+

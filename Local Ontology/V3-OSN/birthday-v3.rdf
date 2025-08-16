@@ -1,0 +1,46 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Birthdays Class -->
+    <owl:Class rdf:about="#Birthdays">
+        <rdfs:comment>Represents actions and posts related to birthdays.</rdfs:comment>
+    </owl:Class>
+
+    <!-- BirthdayPosts Sub-class -->
+    <owl:Class rdf:about="#BirthdayPosts">
+        <rdfs:subClassOf rdf:resource="#Birthdays"/>
+        <rdfs:comment>Represents posts created for birthdays.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for BirthdayPosts -->
+    <owl:DatatypeProperty rdf:about="#hasBirthdayPostTimestamp">
+        <rdfs:domain rdf:resource="#BirthdayPosts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the birthday post was created.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasBirthdayMessageContent">
+        <rdfs:domain rdf:resource="#BirthdayPosts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The message content sent in the birthday post.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for Birthdays -->
+    <owl:ObjectProperty rdf:about="#writesBirthdayOnTimeline">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user to another user's timeline where they write birthday messages.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#sendBirthdayMessageTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user to another user they send a birthday message to.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+</rdf:RDF>

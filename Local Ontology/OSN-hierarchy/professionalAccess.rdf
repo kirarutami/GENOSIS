@@ -1,0 +1,20 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas ProfessionalAccess -->
+    <owl:Class rdf:about="#ProfessionalAccess"/>
+
+    <!-- Sub-kelas MetaVerified -->
+    <owl:Class rdf:about="#MetaVerified">
+        <rdfs:subClassOf rdf:resource="#ProfessionalAccess"/>
+    </owl:Class>
+
+    <!-- Individu di dalam MetaVerified -->
+    <owl:NamedIndividual rdf:about="#PublicPresence">
+        <rdf:type rdf:resource="#MetaVerified"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can apply for Meta Verified status to enhance public presence.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

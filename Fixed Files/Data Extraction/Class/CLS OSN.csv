@@ -1,0 +1,94 @@
+class,subClass,classComment,subClassComment
+User,UserProfile,The primary class representing the user in the system.,"Represents the profile of a user, containing personal information such as profile picture, username, and email."
+User,PrivacySettings,The primary class representing the user in the system.,"Represents the privacy settings related to the user's account, including blocked accounts and story settings."
+User,PrivacySettings,The primary class representing the user in the system.,Privacy-related configurations for a user's account.
+User,SecuritySettings,The primary class representing the user in the system.,"Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts."
+User,SecuritySettings,The primary class representing the user in the system.,Handles security configurations like two-factor authentication and password management.
+ContentCreation,Posts,"The main class representing content creation functionality, including posts, stories, and reels.","Represents posts created by users, including media posts, location check-ins, and live videos."
+ContentCreation,Stories,"The main class representing content creation functionality, including posts, stories, and reels.","Represents temporary stories shared by users, which expire after a certain period of time."
+ContentCreation,Reels,"The main class representing content creation functionality, including posts, stories, and reels.","Represents short videos shared by users, often with music, effects, or remixing."
+ContentCreation,Reels,"The main class representing content creation functionality, including posts, stories, and reels.","Represents reels, a type of short video content."
+Posts,PhotoVideo,"Represents posts created by users, including media posts, location check-ins, and live videos.",Represents posts containing photos or videos uploaded by the user.
+Posts,FeelingActivity,"Represents posts created by users, including media posts, location check-ins, and live videos.",Represents posts expressing user emotions or activities.
+Posts,CheckIn,"Represents posts created by users, including media posts, location check-ins, and live videos.",Represents posts where users check-in to a specific location.
+Posts,LiveVideo,"Represents posts created by users, including media posts, location check-ins, and live videos.",Represents live video broadcasts created by the user.
+Posts,LifeEvent,"Represents posts created by users, including media posts, location check-ins, and live videos.","Represents significant life events shared by the user, such as marriage or graduation."
+Stories,StoryPhotoVideo,"Represents temporary stories shared by users, which expire after a certain period of time.",Represents a story containing a photo or video.
+Stories,StoryText,"Represents temporary stories shared by users, which expire after a certain period of time.",Represents a story containing only text.
+Stories,StoryHighlights,"Represents temporary stories shared by users, which expire after a certain period of time.",Represents story highlights that can be saved beyond their expiration date.
+Stories,HideFrom,"Represents temporary stories shared by users, which expire after a certain period of time.",Represents a list of users from whom a specific story is hidden.
+Stories,CloseFriends,"Represents temporary stories shared by users, which expire after a certain period of time.",Represents a list of close friends who can view exclusive stories from the user.
+Reels,ReelVideo,"Represents short videos shared by users, often with music, effects, or remixing.",Represents a short video that is part of a reel.
+Reels,ReelVideo,"Represents reels, a type of short video content.",Represents a short video that is part of a reel.
+Reels,ReelMusic,"Represents short videos shared by users, often with music, effects, or remixing.",Represents music that is added to a reel video.
+Reels,ReelMusic,"Represents reels, a type of short video content.",Represents music that is added to a reel video.
+Reels,ReelEffects,"Represents short videos shared by users, often with music, effects, or remixing.","Represents effects applied to a reel video, such as filters or transitions."
+Reels,ReelEffects,"Represents reels, a type of short video content.","Represents effects applied to a reel video, such as filters or transitions."
+Reels,ReelRemix,"Represents short videos shared by users, often with music, effects, or remixing.",Represents remix content that is added to or derived from another user's reel.
+Reels,ReelRemix,"Represents reels, a type of short video content.",Represents remix content that is added to or derived from another user's reel.
+Reels,ReelSettings,"Represents short videos shared by users, often with music, effects, or remixing.","Represents settings applicable to reels, such as captions, quality, and playback speed."
+Reels,ReelSettings,"Represents reels, a type of short video content.","Represents settings applicable to reels, such as captions, quality, and playback speed."
+ContentInteraction,LikesReactions,"The class representing user interactions with content, such as likes, reactions, and comments.",Represents user interactions involving likes and reactions to content.
+ContentInteraction,Comments,"The class representing user interactions with content, such as likes, reactions, and comments.",Represents user interactions involving comments on content.
+LikesReactions,Like,Represents user interactions involving likes and reactions to content.,Represents a user's 'like' interaction on a post or content.
+LikesReactions,React,Represents user interactions involving likes and reactions to content.,"Represents a user's reaction to a post, such as love, angry, etc."
+Comments,TextComment,Represents user interactions involving comments on content.,Represents a text-based comment made by a user.
+Comments,GIFComment,Represents user interactions involving comments on content.,Represents a comment made by a user that contains a GIF.
+Comments,EmojiComment,Represents user interactions involving comments on content.,Represents a comment made by a user that contains an emoji.
+VideoContent,Videos,"The main class representing video-related content in the system, including video history and notifications.","Represents video content watched by users, including viewing history and notifications."
+Videos,VideoNotifications,"Represents video content watched by users, including viewing history and notifications.","Represents notifications related to video content, such as new video uploads, reminders, and other updates."
+ShortVideoContent,Reels,Represents short video content shared on social network platforms.,"Represents short videos shared by users, often with music, effects, or remixing."
+ShortVideoContent,Reels,Represents short video content shared on social network platforms.,"Represents reels, a type of short video content."
+DirectMessages,TextMessage,Represents direct messaging interactions among users on the platform.,Represents text-based messages sent within the platform.
+DirectMessages,GroupChat,Represents direct messaging interactions among users on the platform.,Represents group chat interactions within direct messaging.
+DirectMessages,MessageNotifications,Represents direct messaging interactions among users on the platform.,Represents notification settings related to direct messages.
+DirectMessages,VideoCalls,Represents direct messaging interactions among users on the platform.,Represents video call interactions within direct messages.
+DirectMessages,VoiceCalls,Represents direct messaging interactions among users on the platform.,Represents voice call interactions within direct messages.
+Marketplace,Listings,Represents the marketplace feature in the online social network site.,Represents the listings created by users in the marketplace.
+Marketplace,ListingsManagement,Represents the marketplace feature in the online social network site.,"Represents the management of listings in the marketplace, including metrics and status."
+Marketplace,MessageSeller,Represents the marketplace feature in the online social network site.,Represents communication between a buyer and a seller.
+Marketplace,SellerInformation,Represents the marketplace feature in the online social network site.,Details about the seller in the marketplace.
+Listings,ListingDetails,Represents the listings created by users in the marketplace.,"Details about a specific listing, including metadata and attributes."
+Groups,GroupSettings,Represents groups in the online social network site.,Represents the settings of a group.
+Groups,GroupRoles,Represents groups in the online social network site.,Represents the roles within a group.
+Groups,GroupFeatures,Represents groups in the online social network site.,Represents features available in a group.
+Groups,GroupModeration,Represents groups in the online social network site.,Represents the moderation activities and policies within a group.
+GroupSettings,PinnedGroups,Represents the settings of a group.,Represents groups that a user has pinned.
+GroupSettings,GroupNotifications,Represents the settings of a group.,Represents notification settings for a group.
+GroupSettings,GroupPrivacy,Represents the settings of a group.,Represents privacy settings for a group.
+GroupRoles,Admin,Represents the roles within a group.,Represents an admin role in a group.
+GroupRoles,Moderator,Represents the roles within a group.,Represents a moderator role in a group.
+GroupRoles,Member,Represents the roles within a group.,Represents a member role in a group.
+GroupFeatures,Events,Represents features available in a group.,Represents group events.
+GroupFeatures,Events,Represents features available in a group.,Represents events created and managed by users.
+GroupFeatures,Files,Represents features available in a group.,Represents files uploaded to a group.
+GroupFeatures,Announcements,Represents features available in a group.,Represents announcements made in a group.
+GroupFeatures,Polls,Represents features available in a group.,Represents polls created in a group.
+Events,EventInvitations,Represents group events.,Handles invitations for events.
+Events,EventInvitations,Represents events created and managed by users.,Handles invitations for events.
+Events,EventTypes,Represents group events.,Represents different types of events.
+Events,EventTypes,Represents events created and managed by users.,Represents different types of events.
+GroupModeration,ModerationActions,Represents the moderation activities and policies within a group.,Represents actions that moderators or admins can take in group moderation.
+GroupModeration,Violations,Represents the moderation activities and policies within a group.,Represents violations reported within the group.
+GroupModeration,GroupRules,Represents the moderation activities and policies within a group.,Represents the rules set for a group.
+Avatars,AvatarPosts,"Represents the avatars created, edited, and customized by users.",Represents posts created using avatars.
+Birthdays,BirthdayPosts,Represents actions and posts related to birthdays.,Represents posts created for birthdays.
+Gaming,PlayGames,Represents gaming-related actions and player information.,Represents game-playing activities.
+Gaming,PlayerInfo,Represents gaming-related actions and player information.,Represents player-related details.
+MessengerKids,ChildInformation,Represents activities and information related to Messenger Kids accounts.,Contains information about the child using Messenger Kids.
+MessengerKids,ConnectKids,Represents activities and information related to Messenger Kids accounts.,Represents the connection status and timestamps for Messenger Kids users.
+Pages,PagesManagement,Represents Pages in the online social network context.,"Handles creation, activation, deactivation, and merging of Pages."
+Pages,PagesFeatures,Represents Pages in the online social network context.,"Represents features such as events, posts, photos, and videos available on a page."
+Pages,PagesInsights,Represents Pages in the online social network context.,"Represents insights like views, reach, and engagement for a page."
+PagesManagement,PagesSettings,"Handles creation, activation, deactivation, and merging of Pages.",Represents configurable settings for a page.
+SettingsPrivacy,AccountSettings,Represents privacy-related settings for a user's account.,"Handles general, privacy, security, and account management settings."
+AccountSettings,PrivacySettings,"Handles general, privacy, security, and account management settings.","Represents the privacy settings related to the user's account, including blocked accounts and story settings."
+AccountSettings,PrivacySettings,"Handles general, privacy, security, and account management settings.",Privacy-related configurations for a user's account.
+AccountSettings,SecuritySettings,"Handles general, privacy, security, and account management settings.","Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts."
+AccountSettings,SecuritySettings,"Handles general, privacy, security, and account management settings.",Handles security configurations like two-factor authentication and password management.
+AccountSettings,DataUsageSettings,"Handles general, privacy, security, and account management settings.",Handles data usage configurations for cellular and WiFi connections.
+AccountSettings,NotificationSettings,"Handles general, privacy, security, and account management settings.","Handles configurations for notifications like push, email, and SMS."
+AccountSettings,AccountManagement,"Handles general, privacy, security, and account management settings.","Handles configurations for deactivating, deleting, downloading, or transferring account information."
+AccountSettings,DeviceManagement,"Handles general, privacy, security, and account management settings.",Handles authorized devices associated with the user's account.
+ProfessionalAccess,MetaVerified,Represents professional access features and services.,Handles verification and public presence-related features for users.
+AlsoFromMeta,OtherApps,Represents other applications and services provided by Meta.,Represents other Meta apps that can connect to the user's account.

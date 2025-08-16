@@ -1,0 +1,224 @@
+====OSN CQ5====
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>  # Sesuaikan dengan namespace RDF Anda
+
+SELECT ?suspect ?groupName
+WHERE {
+    ?suspect ex:isMemberOf ?group .
+    ?group ex:hasGroupName ?groupName .
+}
+ORDER BY ?groupName
+
+
+
+
+
+
+====MP CQ5====
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?user1 ?user2 ?sharedDM ?platform
+WHERE {
+  # Pengguna 1 dan Pengguna 2 yang saling mengirim pesan DM
+  ?dm1 rdf:type ex:DirectMessages ;
+       ex:dmSender ?user1 ;
+       ex:dmReceiver ?user2 ;
+       ex:hasDMContent ?sharedDM ;
+       ex:belongsToPlatform ?platform .
+
+  ?dm2 rdf:type ex:DirectMessages ;
+       ex:dmSender ?user2 ;
+       ex:dmReceiver ?user1 ;
+       ex:hasDMContent ?content2 ;
+       ex:belongsToPlatform ?platform .
+
+  FILTER (?user1 != ?user2)
+
+  # Menggunakan REGEX untuk mencari DM yang mengandung kata 'collaborate' atau 'coordinate'
+  FILTER (
+    REGEX(?content1, "collaborate", "i") ||
+    REGEX(?content1, "coordinate", "i") ||
+    REGEX(?content2, "stole", "i") 
+  )
+}
+ORDER BY ?user1 ?user2
+
+
+
+
+====MCSS CQ5====
+=====Versi 1 MCSS CQ5 pakai TikTok DMs
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# Menggunakan namespace dasar dari file RDF untuk elemen ontologi
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+# CQ5: How can social media analysis help in identifying networks or associations between suspects?
+# Pendekatan 1: Mengidentifikasi komunikasi langsung (Direct Messages) antar pengguna.
+# Contoh: Menampilkan asosiasi antara Ethan dan MaxDares melalui DM.
+
+SELECT DISTINCT ?user1 ?user2 ?messageTimestamp ?messageContent
+WHERE {
+  # Temukan instance pesan langsung
+  ?dm rdf:type ex:DirectMessage .
+  ?dm ex:sentBy ?user1 .          # Pengirim
+  ?dm ex:sentTo ?user2 .          # Penerima
+  ?dm ex:hasTimestamp ?messageTimestamp . # Waktu pesan
+  ?dm ex:hasTextContent ?messageContent .  # Isi pesan
+
+  # Pastikan keduanya adalah User
+  ?user1 rdf:type ex:User .
+  ?user2 rdf:type ex:User .
+
+  # Filter untuk menunjukkan interaksi spesifik antara Ethan dan MaxDares
+  FILTER( (?user1 = ex:Ethan && ?user2 = ex:MaxDares) || (?user1 = ex:MaxDares && ?user2 = ex:Ethan) )
+
+  # Opsional: bisa filter keluar DM dari orang tua jika hanya fokus pada interaksi antar 'tersangka' langsung.
+  # FILTER(?dm != ex:DM010)
+}
+ORDER BY ?messageTimestamp
+
+=====Versi 2 MCSS CQ5 Pakai VT
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# Menggunakan namespace dasar dari file RDF untuk elemen ontologi
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+# CQ5: How can social media analysis help in identifying networks or associations between suspects?
+# Pendekatan 2: Mengidentifikasi pengguna yang berinteraksi (misal, berkomentar)
+# pada konten yang sama, menunjukkan jaringan di sekitar suatu peristiwa/konten.
+# Contoh: Pengguna yang berkomentar di postingan challenge Ethan.
+
+SELECT DISTINCT ?commenter ?commentTimestamp ?commentText
+WHERE {
+  # Tentukan konten yang menjadi fokus (Postingan challenge Ethan)
+  BIND(ex:EthanBlackoutChallengePost AS ?contentOfInterest)
+
+  # Temukan komentar pada konten tersebut
+  ?comment rdf:type ex:Comment ;
+           ex:commentsOnContent ?contentOfInterest ; # Terkait dengan konten fokus
+           ex:commentedBy ?commenter ;           # Pengguna yang berkomentar
+           ex:hasCommentTimestamp ?commentTimestamp ;
+           ex:hasCommentText ?commentText .
+
+  # Pastikan komentator adalah User
+  ?commenter rdf:type ex:User .
+
+  # Opsional: Bisa filter hanya untuk tersangka yang diketahui, atau tampilkan semua untuk melihat jaringan lengkap.
+  # FILTER(?commenter IN (ex:MaxDares, ex:SarahCares, ex:RiskyKing, ex:JakeMaster))
+}
+ORDER BY ?commentTimestamp
+
+
+
+=====Versi 3 MCSS CQ5 dari YouTube
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# Menggunakan namespace dasar dari file RDF untuk elemen ontologi
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+# CQ5: How can social media analysis help in identifying networks or associations between suspects?
+# Pendekatan (YouTube Case): Mengidentifikasi pengguna yang berasosiasi melalui
+# komentar pada video-video yang menjadi pusat sengketa hak cipta.
+
+SELECT DISTINCT ?commenter ?videoCommentedOnLabel ?commentTimestamp ?commentText
+WHERE {
+  # Tentukan video yang menjadi fokus sengketa
+  VALUES ?videoCommentedOn { ex:LisaSwissAlpsVideo ex:StolenSwissAlpsVideo }
+
+  # Temukan komentar pada video-video tersebut
+  ?comment rdf:type ex:Comment ;
+           ex:commentsOnContent ?videoCommentedOn ; # Terkait dengan salah satu video fokus
+           ex:commentedBy ?commenter ;           # Pengguna yang berkomentar
+           ex:hasCommentTimestamp ?commentTimestamp ;
+           ex:hasCommentText ?commentText .
+
+  # Dapatkan label video (URI saja dalam kasus ini, bisa diganti jika ada rdfs:label)
+  BIND(STR(?videoCommentedOn) AS ?videoCommentedOnLabel)
+
+  # Pastikan komentator adalah User
+  ?commenter rdf:type ex:User .
+}
+ORDER BY ?commentTimestamp
+
+
+
+
+
+
+====OFB CQ5====
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#> # Ontology namespace
+
+# Query Example for CQ5: Identifying Networks/Associations between Users (CONCAT Removed)
+
+SELECT DISTINCT ?user1 ?user2 ?associationType (GROUP_CONCAT(DISTINCT STR(?context); SEPARATOR=", ") AS ?contexts)
+WHERE {
+  {
+    # Association Type 1: Direct Messaging (either direction)
+    BIND("Direct Message Interaction" AS ?associationType)
+    {
+      ?dm rdf:type ex:DirectMessaging .
+      ?dm ex:messageSender ?user1 .
+      ?dm ex:messageReceiver ?user2 .
+      ?dm ex:belongsToPlatform ?context .
+    } UNION {
+      ?dm rdf:type ex:DirectMessaging .
+      ?dm ex:messageSender ?user2 .
+      ?dm ex:messageReceiver ?user1 .
+      ?dm ex:belongsToPlatform ?context .
+    }
+  }
+  UNION
+  {
+    # Association Type 2: Commenting on each other's posts
+    BIND("Commenting on each other's posts" AS ?associationType)
+    ?comment rdf:type ex:Comment .
+    ?comment ex:performedBy ?user1 .
+    ?comment ex:associatedWithContent ?post .
+    ?post rdf:type ex:Post .
+    ?post ex:associatedWithUser ?user2 .
+    ?comment ex:belongsToPlatform ?context .
+  }
+  UNION
+  {
+    # Association Type 3: Membership in the same *suspicious* community
+    VALUES ?suspiciousCommunity { ex:DeepMarketSub ex:CardingHubSub }
+
+    # *** BIND DIMODIFIKASI DI SINI (CONCAT DIHAPUS) ***
+    BIND("Shared Suspicious Community" AS ?associationType) # Label lebih sederhana
+    BIND(?suspiciousCommunity AS ?context) # ?context menyimpan URI komunitas spesifik
+
+    ?user1 rdf:type ex:User .
+    { ?user1 ex:joinsCommunity ?suspiciousCommunity . } UNION { ?user1 ex:followsCommunity ?suspiciousCommunity . }
+    ?user2 rdf:type ex:User .
+    { ?user2 ex:joinsCommunity ?suspiciousCommunity . } UNION { ?user2 ex:followsCommunity ?suspiciousCommunity . }
+  }
+
+  # Common Filters
+  FILTER (?user1 != ?user2)
+  FILTER (STR(?user1) < STR(?user2))
+
+}
+GROUP BY ?user1 ?user2 ?associationType
+ORDER BY ?user1 ?user2 ?associationType

@@ -1,0 +1,167 @@
+Ontology Consistency Check Log Started: 2025-05-27 14:25:52
+===================================================================
+
+
+--- Running Minimal In-Script Consistency Test ---
+  Minimal Test: Individual 'MinimalConflictingIndividual' (IRI: http://temporary.org/test_ontology#MinimalConflictingIndividual) created.
+    Asserted types: ['TestClassA', 'TestClassB']
+  Minimal Test: Owlready2 Internal Pre-Reasoner Check:
+    PRE-REASONER INCONSISTENCY (Minimal Test): Individual 'MinimalConflictingIndividual' is instance of 'TestClassA' and 'TestClassB' which are disjoint.
+  Minimal Test: Synchronizing with HermiT reasoner...
+    * Owlready2 (Minimal Test) * Running HermiT with command:
+      'C:\Program Files\Common Files\Oracle\Java\javapath\java.EXE' -Xmx2000M -cp 'D:\thesis\.venv\lib\site-packages\owlready2\hermit;D:\thesis\.venv\lib\site-packages\owlready2\hermit\HermiT.jar' org.semanticweb.HermiT.cli.CommandLine -c -O -D -I file:///C:/Users/saral/AppData/Local/Temp/owlready_hermit_minimal_0tzdr85d.owl -Y
+    * Owlready2 (Minimal Test) * Using temporary file: C:\Users\saral\AppData\Local\Temp\owlready_hermit_minimal_0tzdr85d.owl
+    >>> ACTION (Minimal Test): If this test fails with a Java error, try running the above HermiT command manually in your terminal using the specified temporary file.
+* Owlready2 * Running HermiT...
+    C:\Program Files\Common Files\Oracle\Java\javapath\java.EXE -Xmx2000M -cp D:\thesis\.venv\lib\site-packages\owlready2\hermit;D:\thesis\.venv\lib\site-packages\owlready2\hermit\HermiT.jar org.semanticweb.HermiT.cli.CommandLine -c -O -D -I file:///C:/Users/saral/AppData/Local/Temp/tmpobgd5ca3
+    SUCCESS (Minimal Test - OwlReadyInconsistentOntologyError): Owlready2 reported that HermiT found the ontology inconsistent.
+    Minimal test temporary file kept at: C:\Users\saral\AppData\Local\Temp\owlready_hermit_minimal_0tzdr85d.owl
+--- End of Minimal In-Script Consistency Test (Overall Result: SUCCESS) ---
+
+--- Starting Check for Main Ontology File ---
+  Attempting to destroy pre-existing ontology: http://anonymous/
+Loading ontology from file: D:\thesis\Global Ontology\fixed global\GSMFO.owl
+
+Checking against relevant namespaces (includes main ontology and its imports): ['http://saralutami.org/OnlineForumsBlogs#', 'http://saralutami.org/GSMFO#', 'http://example.org/gsmfo.owl#', 'http://saralutami.org/OnlineSocialNetworkSites#', 'http://saralutami.org/MicrobloggingPlatforms#', 'http://saralutami.org/MediaContentSharingSites#']
+
+--- Ontology Namespaces and Prefixes ---
+  Main ontology (GSMFO) Base IRI: http://example.org/genosis.owl#
+  Prefixes known to Owlready2:
+    - No prefixes explicitly registered.
+
+  Namespaces detected from entities within 'relevant_namespace_iris':
+    - No namespaces from entities matching 'relevant_namespace_iris' were found.
+--- End of Namespaces and Prefixes ---
+
+--- Class Definitions from Relevant Namespaces in Ontology: GSMFO ---
+  No user-defined Classes found in the relevant namespaces.
+
+--- End of Class Definitions ---
+
+--- Object Property Definitions from Relevant Namespaces in Ontology: GSMFO ---
+  No Object Propertys found in the relevant namespaces.
+
+--- Data Property Definitions from Relevant Namespaces in Ontology: GSMFO ---
+  No Data Propertys found in the relevant namespaces.
+
+--- End of Property Definitions ---
+
+--- Details of All Relevant Individuals (Before Reasoning) ---
+  No individuals found in relevant namespaces to log before reasoning.
+--- End of Details of All Relevant Individuals (Before Reasoning) ---
+
+--- Owlready2 Internal Pre-Reasoner Inconsistency Check (Main Ontology) ---
+  No obvious disjointness violations found by Owlready2's internal check for the main ontology.
+--- End of Owlready2 Internal Pre-Reasoner Inconsistency Check (Main Ontology) ---
+
+Synchronizing with HermiT reasoner (Main Ontology)...
+  IMPORTANT: The temporary file used by HermiT will be kept for manual inspection if keep_tmp_file=True.
+  Look for a line like '* Owlready2 * Running HermiT...' in the log to find the command and temp file path.
+    * Owlready2 (Main Ontology) * Will attempt to run HermiT with a command similar to:
+      'C:\Program Files\Common Files\Oracle\Java\javapath\java.EXE' -Xmx2000M -cp 'D:\thesis\.venv\lib\site-packages\owlready2\hermit;D:\thesis\.venv\lib\site-packages\owlready2\hermit\HermiT.jar' org.semanticweb.HermiT.cli.CommandLine -c -O -D -I file:///PATH_TO_TEMP_OWL_FILE -Y
+    >>> ACTION (Main Ontology): If reasoning fails, check HermiT's output (with debug=1) for the actual temp file path and run manually.
+* Owlready2 * Running HermiT...
+    C:\Program Files\Common Files\Oracle\Java\javapath\java.EXE -Xmx2000M -cp D:\thesis\.venv\lib\site-packages\owlready2\hermit;D:\thesis\.venv\lib\site-packages\owlready2\hermit\HermiT.jar org.semanticweb.HermiT.cli.CommandLine -c -O -D -I file:///C:/Users/saral/AppData/Local/Temp/tmplyj71a0e -Y
+* Owlready2 * HermiT took 0.9836025238037109 seconds
+* Owlready * Reparenting GSMFO.Global:sendsVoiceNoteTo: {owl.ObjectProperty, GSMFO.Global:sendsMessageTo, owl.IrreflexiveProperty} => {GSMFO.Global:sendsMessageTo}
+* Owlready * Reparenting GSMFO.Global:reportsAccount: {owl.ObjectProperty, GSMFO.Global:reports} => {GSMFO.Global:reports}
+* Owlready * Reparenting GSMFO.Global:reportsChannel: {owl.ObjectProperty, GSMFO.Global:reports} => {GSMFO.Global:reports}
+* Owlready * Reparenting GSMFO.Global:postedBy: {owl.ObjectProperty, GSMFO.Global:attributedToUser, owl.FunctionalProperty} => {GSMFO.Global:attributedToUser}
+* Owlready * Reparenting GSMFO.MCSS:associatedWithUser: {owl.ObjectProperty, GSMFO.Global:attributedToUser} => {GSMFO.Global:attributedToUser}
+* Owlready * Reparenting GSMFO.MCSS:associatedWithCommentedPost: {owl.ObjectProperty, GSMFO.Global:commentsOn} => {GSMFO.Global:commentsOn}
+* Owlready * Reparenting GSMFO.MCSS:commentsOnContent: {owl.ObjectProperty, GSMFO.Global:commentsOn} => {GSMFO.Global:commentsOn}
+* Owlready * Reparenting GSMFO.MCSS:commentedBy: {owl.ObjectProperty, GSMFO.Global:commentedBy} => {GSMFO.Global:commentedBy}
+* Owlready * Reparenting GSMFO.MP:commentedBy: {owl.ObjectProperty, GSMFO.Global:commentedBy} => {GSMFO.Global:commentedBy}
+* Owlready * Reparenting GSMFO.OSN:commentedBy: {owl.ObjectProperty, GSMFO.Global:commentedBy} => {GSMFO.Global:commentedBy}
+* Owlready * Reparenting GSMFO.Global:pinsGroup: {owl.ObjectProperty, GSMFO.Global:pinsItem} => {GSMFO.Global:pinsItem}
+* Owlready * Reparenting GSMFO.Global:userPinsCommunity: {owl.ObjectProperty, GSMFO.Global:pinsItem} => {GSMFO.Global:pinsItem}
+* Owlready * Reparenting GSMFO.Global:followsCommunity: {owl.ObjectProperty, GSMFO.Global:follows, owl.AsymmetricProperty} => {GSMFO.Global:follows}
+* Owlready * Reparenting GSMFO.Global:followsList: {owl.ObjectProperty, GSMFO.Global:follows, owl.AsymmetricProperty} => {GSMFO.Global:follows}
+* Owlready * Reparenting GSMFO.hasAnonymousPostMedia: {GSMFO.OFB:hasAnonymousDetails, owl.DatatypeProperty} => {GSMFO.OFB:hasAnonymousDetails}
+* Owlready * Reparenting GSMFO.hasAnonymousPostContent: {GSMFO.OFB:hasAnonymousDetails, owl.DatatypeProperty} => {GSMFO.OFB:hasAnonymousDetails}
+* Owlready * Reparenting GSMFO.hasAnonymousSessionID: {GSMFO.OFB:hasAnonymousDetails, owl.DatatypeProperty} => {GSMFO.OFB:hasAnonymousDetails}
+* Owlready * Reparenting GSMFO.hasAnonymousPostTitle: {GSMFO.OFB:hasAnonymousDetails, owl.DatatypeProperty} => {GSMFO.OFB:hasAnonymousDetails}
+* Owlready * Reparenting GSMFO.hasAccountVerification: {owl.DatatypeProperty, GSMFO.Global:hasProfileSetting} => {GSMFO.Global:hasProfileSetting}
+* Owlready * Reparenting GSMFO.Global:viewCount: {GSMFO.Global:count, owl.DatatypeProperty} => {GSMFO.Global:count}
+* Owlready * Reparenting GSMFO.Global:likeCount: {GSMFO.Global:count, owl.DatatypeProperty} => {GSMFO.Global:count}
+* Owlready * Reparenting GSMFO.Global:commentCount: {GSMFO.Global:count, owl.DatatypeProperty} => {GSMFO.Global:count}
+* Owlready * Reparenting GSMFO.Global:postCount: {GSMFO.Global:count, owl.DatatypeProperty} => {GSMFO.Global:count}
+* Owlready * Reparenting GSMFO.Global:eventCount: {GSMFO.Global:count, owl.DatatypeProperty} => {GSMFO.Global:count}
+* Owlready * Reparenting GSMFO.Global:videoCount: {GSMFO.Global:count, owl.DatatypeProperty} => {GSMFO.Global:count}
+* Owlready * Reparenting GSMFO.Global:voteCount: {GSMFO.Global:count, owl.DatatypeProperty} => {GSMFO.Global:count}
+* Owlready * Reparenting GSMFO.hasSearchHistory: {GSMFO.Global:hasSearchData, owl.DatatypeProperty} => {GSMFO.Global:hasSearchData}
+* Owlready * Reparenting GSMFO.hasFilterType: {GSMFO.Global:hasSearchData, owl.DatatypeProperty} => {GSMFO.Global:hasSearchData}
+* Owlready * Reparenting GSMFO.hasFilterValue: {GSMFO.Global:hasSearchData, owl.DatatypeProperty} => {GSMFO.Global:hasSearchData}
+* Owlready * Reparenting GSMFO.hasTrendingKeyword: {GSMFO.Global:hasSearchData, owl.DatatypeProperty} => {GSMFO.Global:hasSearchData}
+* Owlready * Reparenting GSMFO.hasSearchCriteria: {GSMFO.Global:hasSearchData, owl.DatatypeProperty} => {GSMFO.Global:hasSearchData}
+* Owlready * Reparenting GSMFO.hasModeratorNotes: {owl.DatatypeProperty, GSMFO.Global:hasModeration} => {GSMFO.Global:hasModeration}
+* Owlready * Reparenting GSMFO.hasModeratorPermissions: {owl.DatatypeProperty, GSMFO.Global:hasModeration} => {GSMFO.Global:hasModeration}
+* Owlready * Reparenting GSMFO.hasModeratorRoleType: {owl.DatatypeProperty, GSMFO.Global:hasModeration} => {GSMFO.Global:hasModeration}
+* Owlready * Reparenting GSMFO.hasActivityLevel: {GSMFO.Global:hasGroupPostStatistic, owl.DatatypeProperty} => {GSMFO.Global:hasGroupPostStatistic}
+* Owlready * Reparenting GSMFO.hasPostingRules: {owl.DatatypeProperty, GSMFO.Global:hasGroupActivity} => {GSMFO.Global:hasGroupActivity}
+* Owlready * Reparenting GSMFO.hasBannerImageURL: {owl.DatatypeProperty, GSMFO.Global:hasGroupActivity} => {GSMFO.Global:hasGroupActivity}
+* Owlready * Reparenting GSMFO.hasReportResolutionStatus: {owl.DatatypeProperty, GSMFO.Global:hasGroupActivity} => {GSMFO.Global:hasGroupActivity}
+* Owlready * Reparenting GSMFO.appliesToContentType: {owl.DatatypeProperty, GSMFO.Global:hasGroupActivity} => {GSMFO.Global:hasGroupActivity}
+* Owlready * Reparenting GSMFO.hasDraftContent: {GSMFO.OFB:hasPostOptions, owl.DatatypeProperty} => {GSMFO.OFB:hasPostOptions}
+* Owlready * Reparenting GSMFO.hasDraftTitle: {GSMFO.OFB:hasPostOptions, owl.DatatypeProperty} => {GSMFO.OFB:hasPostOptions}
+* Owlready * Reparenting GSMFO.hasCrosspostedTitle: {GSMFO.OFB:hasPostOptions, owl.DatatypeProperty} => {GSMFO.OFB:hasPostOptions}
+* Owlready * Reparenting GSMFO.hasCrosspostedMedia: {GSMFO.OFB:hasPostOptions, owl.DatatypeProperty} => {GSMFO.OFB:hasPostOptions}
+* Owlready * Reparenting GSMFO.hasCrosspostedContent: {GSMFO.OFB:hasPostOptions, owl.DatatypeProperty} => {GSMFO.OFB:hasPostOptions}
+* Owlready * Reparenting GSMFO.hasScheduledPostTitle: {GSMFO.OFB:hasPostOptions, owl.DatatypeProperty} => {GSMFO.OFB:hasPostOptions}
+* Owlready * Reparenting GSMFO.hasDraftMedia: {GSMFO.OFB:hasPostOptions, owl.DatatypeProperty} => {GSMFO.OFB:hasPostOptions}
+* Owlready * Reparenting GSMFO.hasScheduledPostContent: {GSMFO.OFB:hasPostOptions, owl.DatatypeProperty} => {GSMFO.OFB:hasPostOptions}
+* Owlready * Reparenting GSMFO.hasScheduledPostMedia: {GSMFO.OFB:hasPostOptions, owl.DatatypeProperty} => {GSMFO.OFB:hasPostOptions}
+* Owlready * Reparenting GSMFO.Global:hasCreationTimestamp: {GSMFO.Global:hasTimestampData, owl.DatatypeProperty} => {GSMFO.Global:hasTimestampData}
+* Owlready * Reparenting GSMFO.Global:hasInteractionTimestamp: {GSMFO.Global:hasTimestampData, owl.DatatypeProperty} => {GSMFO.Global:hasTimestampData}
+* Owlready * Reparenting GSMFO.Global:hasLastActivityTimestamp: {GSMFO.Global:hasTimestampData, owl.DatatypeProperty} => {GSMFO.Global:hasTimestampData}
+* Owlready * Reparenting GSMFO.Global:hasMessageSentTimestamp: {GSMFO.Global:hasTimestampData, owl.DatatypeProperty} => {GSMFO.Global:hasTimestampData}
+* Owlready * Reparenting GSMFO.hasLastName: {GSMFO.Global:hasProfileDetails, owl.DatatypeProperty} => {GSMFO.Global:hasProfileDetails}
+* Owlready * Reparenting GSMFO.hasHighlights: {GSMFO.Global:hasProfileDetails, owl.DatatypeProperty} => {GSMFO.Global:hasProfileDetails}
+* Owlready * Reparenting GSMFO.hasUsername: {GSMFO.Global:hasProfileDetails, owl.DatatypeProperty} => {GSMFO.Global:hasProfileDetails}
+* Owlready * Reparenting GSMFO.hasProfilePicture: {GSMFO.Global:hasProfileDetails, owl.DatatypeProperty} => {GSMFO.Global:hasProfileDetails}
+* Owlready * Reparenting GSMFO.hasPhoneNumber: {GSMFO.Global:hasProfileDetails, owl.DatatypeProperty} => {GSMFO.Global:hasProfileDetails}
+* Owlready * Reparenting GSMFO.hasLinkedAccount: {GSMFO.Global:hasProfileDetails, owl.DatatypeProperty} => {GSMFO.Global:hasProfileDetails}
+* Owlready * Reparenting GSMFO.hasProfilePictureHash: {GSMFO.Global:hasProfileDetails, owl.DatatypeProperty} => {GSMFO.Global:hasProfileDetails}
+* Owlready * Reparenting GSMFO.hasEmail: {GSMFO.Global:hasProfileDetails, owl.DatatypeProperty} => {GSMFO.Global:hasProfileDetails}
+* Owlready * Reparenting GSMFO.hasBio: {GSMFO.Global:hasProfileDetails, owl.DatatypeProperty} => {GSMFO.Global:hasProfileDetails}
+* Owlready * Reparenting GSMFO.hasFirstName: {GSMFO.Global:hasProfileDetails, owl.DatatypeProperty} => {GSMFO.Global:hasProfileDetails}
+* Owlready * Reparenting GSMFO.hasCoverPhotoURL: {GSMFO.Global:hasProfileDetails, owl.DatatypeProperty} => {GSMFO.Global:hasProfileDetails}
+* Owlready * Reparenting GSMFO.hasMiddleName: {GSMFO.Global:hasProfileDetails, owl.DatatypeProperty} => {GSMFO.Global:hasProfileDetails}
+* Owlready * Reparenting GSMFO.hasLinkedPages: {GSMFO.Global:hasGroupDetails, owl.DatatypeProperty} => {GSMFO.Global:hasGroupDetails}
+* Owlready * Reparenting GSMFO.hasSpotlightReason: {GSMFO.Global:hasGroupDetails, owl.DatatypeProperty} => {GSMFO.Global:hasGroupDetails}
+* Owlready * Reparenting GSMFO.hasGroupCategory: {GSMFO.Global:hasGroupDetails, owl.DatatypeProperty} => {GSMFO.Global:hasGroupDetails}
+* Owlready * Reparenting GSMFO.hasPrivacyLevel: {GSMFO.Global:hasGroupDetails, owl.DatatypeProperty} => {GSMFO.Global:hasGroupDetails}
+* Owlready * Reparenting GSMFO.hasGroupBadges: {GSMFO.Global:hasGroupDetails, owl.DatatypeProperty} => {GSMFO.Global:hasGroupDetails}
+* Owlready * Reparenting GSMFO.hasGroupDescription: {GSMFO.Global:hasGroupDetails, owl.DatatypeProperty} => {GSMFO.Global:hasGroupDetails}
+* Owlready * Reparenting GSMFO.hasRuleType: {GSMFO.Global:hasGroupDetails, owl.DatatypeProperty} => {GSMFO.Global:hasGroupDetails}
+* Owlready * Reparenting GSMFO.hasCommunityTheme: {GSMFO.Global:hasGroupDetails, owl.DatatypeProperty} => {GSMFO.Global:hasGroupDetails}
+* Owlready * Reparenting GSMFO.hasGroupRules: {GSMFO.Global:hasGroupDetails, owl.DatatypeProperty} => {GSMFO.Global:hasGroupDetails}
+* Owlready * Reparenting GSMFO.hasReputationLevel: {GSMFO.Global:hasGroupDetails, owl.DatatypeProperty} => {GSMFO.Global:hasGroupDetails}
+* Owlready * Reparenting GSMFO.hasGroupCoverPhoto: {GSMFO.Global:hasGroupDetails, owl.DatatypeProperty} => {GSMFO.Global:hasGroupDetails}
+* Owlready * Reparenting GSMFO.hasGroupName: {GSMFO.Global:hasGroupDetails, owl.DatatypeProperty} => {GSMFO.Global:hasGroupDetails}
+* Owlready * Reparenting GSMFO.Video_StolenSwissAlpsVideo_YouTube: {GSMFO.MCSS:Video} => {GSMFO.OSN:PageInsight, GSMFO.MCSS:Video}
+* Owlready * Reparenting GSMFO.User_MeanQueen_Instagram: {GSMFO.OSN:User} => {GSMFO.Global:ProfileSettings, GSMFO.OSN:User}
+* Owlready * Reparenting GSMFO.ShortVideo_EthanBlackoutChallenge_TikTok: {GSMFO.MCSS:ShortVideo} => {GSMFO.OSN:PageInsight, GSMFO.MCSS:ShortVideo}
+* Owlready * Reparenting GSMFO.User_Sophia_Instagram: {GSMFO.OSN:User} => {GSMFO.Global:ProfileSettings, GSMFO.OSN:User}
+* Owlready * Reparenting GSMFO.User_Michael_OSN: {GSMFO.OSN:User} => {GSMFO.Global:ProfileSettings, GSMFO.OSN:User}
+* Owlready * Reparenting GSMFO.User_FriendlyUser_Instagram: {GSMFO.OSN:User} => {GSMFO.Global:ProfileSettings, GSMFO.OSN:User}
+* Owlready * Reparenting GSMFO.User_JamesRecommends_OSN: {GSMFO.OSN:User} => {GSMFO.Global:ProfileSettings, GSMFO.OSN:User}
+* Owlready * Reparenting GSMFO.User_DarkWolf_Instagram: {GSMFO.OSN:User} => {GSMFO.Global:ProfileSettings, GSMFO.OSN:User}
+* Owlready * Reparenting GSMFO.User_BestDealsOnline_OSN: {GSMFO.OSN:User} => {GSMFO.Global:ProfileSettings, GSMFO.OSN:User}
+* Owlready * Reparenting GSMFO.Video_LisaSwissAlpsVideo_YouTube: {GSMFO.MCSS:Video} => {GSMFO.OSN:PageInsight, GSMFO.MCSS:Video}
+* Owlready * (NB: only changes on entities loaded in Python are shown, other changes are done but not listed)
+
+--- Status After Reasoning (Main Ontology) ---
+
+--- Instance Details & Consistency Check (Relevant Namespaces, After Reasoning) ---
+  DEBUG: Individuals inferred as owl.Nothing by reasoner: None
+  No individuals found in the specified relevant namespaces.
+--- End of Instance Details & Consistency Check (After Reasoning) ---
+
+Checking for inconsistent classes (Main Ontology)...
+
+--- Explicit Functional Property Violation Check (Relevant Namespaces) ---
+  No functional property violations explicitly detected from relevant namespaces.
+--- End of Functional Property Check ---
+
+✅ MAIN ONTOLOGY IS CONSISTENT.

@@ -1,0 +1,128 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Anotasi untuk kelas User -->
+    <owl:Class rdf:about="#User">
+        <rdfs:label>User</rdfs:label>
+        <rdfs:comment>An individual account in an Online Social Network Site (OSN).</rdfs:comment>
+    </owl:Class>
+
+    <!-- Subkelas UserProfile -->
+    <owl:Class rdf:about="#UserProfile">
+        <rdfs:label>User Profile</rdfs:label>
+        <rdfs:comment>Information associated with a user’s account, including pictures and other personal data.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#User"/>
+    </owl:Class>
+
+    <!-- Individual ProfilePicture -->
+    <rdf:Description rdf:about="#ProfilePicture">
+        <rdfs:label>Profile Picture</rdfs:label>
+        <rdfs:comment>The main image representing a user's identity in their profile.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Individual Username -->
+    <rdf:Description rdf:about="#Username">
+        <rdfs:label>Username</rdfs:label>
+        <rdfs:comment>A unique identifier used by the user to log in and display their identity to others.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Subclass Fullname dan individunya -->
+    <owl:Class rdf:about="#Fullname">
+        <rdfs:label>Full Name</rdfs:label>
+        <rdfs:comment>The full name of a user, including first, middle, and last names.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#UserProfile"/>
+    </owl:Class>
+
+    <rdf:Description rdf:about="#FirstName">
+        <rdfs:label>First Name</rdfs:label>
+        <rdfs:comment>The first name of the user.</rdfs:comment>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#MiddleName">
+        <rdfs:label>Middle Name</rdfs:label>
+        <rdfs:comment>The middle name of the user, if applicable.</rdfs:comment>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#LastName">
+        <rdfs:label>Last Name</rdfs:label>
+        <rdfs:comment>The last name or family name of the user.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Subclass PrivacySettings -->
+    <owl:Class rdf:about="#PrivacySettings">
+        <rdfs:label>Privacy Settings</rdfs:label>
+        <rdfs:comment>Settings controlling the visibility and interaction options for a user's content and profile.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#User"/>
+    </owl:Class>
+
+    <!-- Subclass AccountPrivacy -->
+    <owl:Class rdf:about="#AccountPrivacy">
+        <rdfs:label>Account Privacy</rdfs:label>
+        <rdfs:comment>Options related to the overall privacy of a user account, such as public or private status.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#PrivacySettings"/>
+    </owl:Class>
+
+    <!-- Individual PrivateAccount -->
+    <rdf:Description rdf:about="#PrivateAccount">
+        <rdfs:label>Private Account</rdfs:label>
+        <rdfs:comment>A privacy setting where only approved followers can view the user’s content.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Subclass SecuritySettings -->
+    <owl:Class rdf:about="#SecuritySettings">
+        <rdfs:label>Security Settings</rdfs:label>
+        <rdfs:comment>Settings related to the security of the user's account, such as two-factor authentication.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#User"/>
+    </owl:Class>
+
+    <!-- Individual TwoFactorAuthentication -->
+    <rdf:Description rdf:about="#TwoFactorAuthentication">
+        <rdfs:label>Two-Factor Authentication</rdfs:label>
+        <rdfs:comment>An additional layer of security requiring both a password and a secondary method of authentication.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Properti Objek dengan karakteristik Functional, Symmetric, Asymmetric -->
+    <owl:ObjectProperty rdf:about="#follow">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdf:type rdf:resource="owl:AsymmetricProperty"/>
+        <rdfs:label>follow</rdfs:label>
+        <rdfs:comment>Indicates that a user follows another user. This relationship is asymmetric because it is not reciprocal.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#blockUser">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdf:type rdf:resource="owl:AsymmetricProperty"/>
+        <rdfs:label>blockUser</rdfs:label>
+        <rdfs:comment>Indicates that a user blocks another user. It is an asymmetric relationship.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isConnectedTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdf:type rdf:resource="owl:SymmetricProperty"/>
+        <rdfs:label>isConnectedTo</rdfs:label>
+        <rdfs:comment>Indicates that two users are mutually connected or friends. This relationship is symmetric.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Properti Objek postContent -->
+    <owl:ObjectProperty rdf:about="#postContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ContentCreation"/>
+        <rdfs:label>postContent</rdfs:label>
+        <rdfs:comment>Indicates that a user creates a new post or content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Disjointness antara subclass -->
+    <owl:AllDisjointClasses>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="#UserProfile"/>
+            <rdf:Description rdf:about="#PrivacySettings"/>
+            <rdf:Description rdf:about="#SecuritySettings"/>
+        </owl:members>
+    </owl:AllDisjointClasses>
+
+</rdf:RDF>

@@ -1,0 +1,30 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas HelpSupport -->
+    <owl:Class rdf:about="#HelpSupport"/>
+
+    <!-- Sub-kelas SupportCenter -->
+    <owl:Class rdf:about="#SupportCenter">
+        <rdfs:subClassOf rdf:resource="#HelpSupport"/>
+    </owl:Class>
+
+    <!-- Individu di dalam SupportCenter -->
+    <owl:NamedIndividual rdf:about="#HelpCenter">
+        <rdf:type rdf:resource="#SupportCenter"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can access help resources and documentation.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ReportAProblem">
+        <rdf:type rdf:resource="#SupportCenter"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can report issues or problems.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SupportInbox">
+        <rdf:type rdf:resource="#SupportCenter"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view and manage support messages and notifications.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

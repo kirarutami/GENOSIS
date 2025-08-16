@@ -1,0 +1,69 @@
+Updated Steps for Creating the RDF File (Including Object Properties)
+Step 1: Initial Hierarchy Review
+We reviewed the class hierarchy and identified potential misclassifications of subclasses and individuals. We examined whether individuals should be transformed into subclasses, or if they should remain as individuals, considering how they relate to object and data properties.
+
+Step 2: Supervisor's Feedback Integration
+In this step, we addressed the feedback from your supervisor, especially around:
+
+Using verb-based object properties for clear S-P-O (Subject-Predicate-Object) structures.
+Adding disjointness definitions to avoid class overlaps.
+Ensuring proper use of object properties to represent relationships between classes and subclasses (not individuals).
+Step 3: Subclasses and Object Properties
+We determined whether specific elements needed to be converted from individuals to subclasses (such as ProfilePicture, Username, etc.). The focus was on ensuring that object properties were linking appropriate classes or subclasses, not individuals.
+
+Step 4: Object Property Creation (Expanded)
+We then focused on the creation of object properties:
+
+We analyzed the relationships in the hierarchy and determined where object properties were necessary to link different classes or subclasses.
+Domain and Range Definitions: For each object property, we specified the appropriate domain (the subject class) and range (the object class).
+Object Property Characteristics: For each property, we determined whether it should have specific characteristics, such as:
+Functional: Ensuring only one value is allowed for that property.
+Symmetric: If the relationship goes both ways (e.g., isConnectedTo).
+Asymmetric: If the relationship is one-directional (e.g., blocks).
+Some of the object properties we created included:
+
+hasProfilePicture to link a user to their profile picture.
+hasUsername to link a user to their username.
+hasAccountVerification to link a user to their account verification status.
+hasLoginSecurity to link a user to their security settings.
+hasSessionManagement to manage sessions across devices.
+These object properties were created based on their context and digital forensics requirements, focusing on capturing investigable relationships (e.g., linking account security features with a user).
+
+Step 5: Handling Data Properties
+We handled data properties for literal information like names, phone numbers, languages, etc. This step was crucial to ensure that we did not use object properties for informational content that could be represented with literal values, such as hasFirstName, hasPhoneNumber.
+
+Step 6: Populating Object Properties in RDF
+We populated the object properties in the RDF file with the following approach:
+
+Domain and Range: Ensuring that each object property connected the correct classes.
+Characteristics: Defining the characteristics for each object property as needed.
+Annotations: Adding comments for clarity on what each object property does and how it links two classes or subclasses.
+For example:
+
+xml
+Copy code
+<owl:ObjectProperty rdf:about="#hasProfilePicture">
+    <rdfs:domain rdf:resource="#User"/>
+    <rdfs:range rdf:resource="#ProfilePicture"/>
+    <rdfs:comment>Links a user to their profile picture.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+Here, the domain is User, the range is ProfilePicture, and the property is defined as functional, meaning a user can have only one profile picture.
+
+Step 7: Annotations and Disjointness
+In this step, we added rdfs
+annotations to every class, object property, and data property. This made the ontology more understandable by explaining each element's role. We also applied disjointness to ensure no overlapping between unrelated classes (e.g., between Fullname, ProfilePicture, and PrivacySettings).
+
+Step 8: Final RDF Construction
+We compiled everything into the complete RDF file:
+
+Class and subclass definitions.
+Object properties linking relevant classes.
+Data properties for literal information.
+Characteristics for object properties.
+Annotations for clarity.
+Disjointness to maintain separation between distinct classes.
+Step 9: Validation and Final Review
+Finally, we validated the RDF file by ensuring there were no incorrect connections (like linking object properties to individuals) and reviewed it against digital forensics requirements to ensure it captured key relationships relevant to investigations.
+
+This updated process highlights how object properties were central to building the relationships between classes and how they fit into the overall RDF construction.

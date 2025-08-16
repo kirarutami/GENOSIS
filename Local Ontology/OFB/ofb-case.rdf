@@ -1,0 +1,715 @@
+<!--Reddit-->
+    <!-- Daniel: A cybersecurity researcher -->
+    <rdf:Description rdf:about="#CyberSentinel">
+        <rdf:type rdf:resource="#User"/>
+
+        <!-- Data properties umum -->
+        <hasUsername>CyberSentinel</hasUsername>
+        <hasBio>Cybersecurity researcher investigating dark web marketplaces.</hasBio>
+        <hasProfileVisibility>Public</hasProfileVisibility>
+        <hasPasswordHash>hashed_password_ABC123</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>true</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>false</hasNSFWVisibilitySetting>
+
+        <!-- Metadata forensik tambahan -->
+        <hasRegistrationDate>2023-11-20T10:30:00Z</hasRegistrationDate>
+        <hasLastLoginIP>192.168.1.47</hasLastLoginIP>
+
+        <!-- Tanda platform -->
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+    <!-- DarkTraderX: penjual CC -->
+    <rdf:Description rdf:about="#DarkTraderX">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>DarkTraderX</hasUsername>
+        <hasBio>Vendor of premium CC dumps and stolen data. No refunds.</hasBio>
+        <hasProfileVisibility>Private</hasProfileVisibility>
+        <hasPasswordHash>hashed_password_XYZ999</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <hasRegistrationDate>2024-01-05T03:00:00Z</hasRegistrationDate>
+        <hasLastLoginIP>185.220.101.45</hasLastLoginIP> <!-- Tor Exit Node -->
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+    <!-- CryptoWhale420: user yang mengaku beli CC -->
+    <rdf:Description rdf:about="#CryptoWhale420">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>CryptoWhale420</hasUsername>
+        <hasBio>Investor in altcoins and rare opportunities. YOLO!</hasBio>
+        <hasProfileVisibility>Public</hasProfileVisibility>
+        <hasPasswordHash>hashed_pass_whale420</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <hasRegistrationDate>2024-02-01T12:00:00Z</hasRegistrationDate>
+        <hasLastLoginIP>10.45.88.200</hasLastLoginIP> <!-- Possibly a VPN or NAT -->
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+    <!-- AnonBuyer99: user pembeli -->
+    <rdf:Description rdf:about="#AnonBuyer99">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>AnonBuyer99</hasUsername>
+        <hasBio>Here for quick deals. No questions asked.</hasBio>
+        <hasProfileVisibility>Private</hasProfileVisibility>
+        <hasPasswordHash>hashed_pass_anon99</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <hasRegistrationDate>2024-03-15T09:25:00Z</hasRegistrationDate>
+        <hasLastLoginIP>172.16.0.33</hasLastLoginIP> <!-- Another VPN or NAT -->
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+    <!-- SecurityWatchdog: user yang berusaha memperingatkan, lalu di-shadowban -->
+    <rdf:Description rdf:about="#SecurityWatchdog">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>SecurityWatchdog</hasUsername>
+        <hasBio>Fighting fraud and illegal content on the web.</hasBio>
+        <hasProfileVisibility>Public</hasProfileVisibility>
+        <hasPasswordHash>hashed_pass_watchdog</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>true</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>false</hasNSFWVisibilitySetting>
+
+        <hasRegistrationDate>2023-12-10T16:00:00Z</hasRegistrationDate>
+        <hasLastLoginIP>203.44.55.66</hasLastLoginIP>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+    <!-- DeepMarketMod: moderator yang mengancam Daniel -->
+    <rdf:Description rdf:about="#DeepMarketMod">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>DeepMarketMod</hasUsername>
+        <hasBio>Official mod of r/DeepMarket. Keep it clean or get out.</hasBio>
+        <hasProfileVisibility>Private</hasProfileVisibility>
+        <hasPasswordHash>hashed_pass_deepmod</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <hasRegistrationDate>2023-10-20T02:00:00Z</hasRegistrationDate>
+        <hasLastLoginIP>103.45.88.77</hasLastLoginIP> <!-- VPN IP -->
+        
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+    <!-- Contoh: DeepMarketMod requests account deletion to cover tracks -->
+    <rdf:Description rdf:about="#Deletion_DeepMarketMod_001">
+        <rdf:type rdf:resource="#AccountDeletion"/>
+        <isAccountDeleted>true</isAccountDeleted>
+        <deletionReason>Covering tracks after suspicious activity.</deletionReason>
+        <deletionRequestedOn>2024-04-22T10:00:00Z</deletionRequestedOn>
+
+        <!-- belongsToPlatform = Reddit -->
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+
+
+
+
+
+    <!-- Instance: r/DeepMarket Subreddit -->
+    <rdf:Description rdf:about="#DeepMarketSub">
+        <rdf:type rdf:resource="#Community"/>
+        <rdfs:comment>Represents the subreddit r/DeepMarket, known for illicit trade discussions.</rdfs:comment>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Post DarkTraderX (Main Thread) ========== -->
+    <rdf:Description rdf:about="#Post_DarkTraderX_001">
+        <rdf:type rdf:resource="#Post"/>
+
+        <!-- Properti Post -->
+        <hasPostTitle>Premium CC Dumps – Fresh & Verified 💳</hasPostTitle>
+        <hasPostContent>
+        "Looking for untraceable payment methods? We have fresh CC dumps from USA, EU, and Asia. 
+        Each card comes with full info. Prices start at $50 per card...
+        Visit our marketplace: [hidden Tor link]"
+        </hasPostContent>
+        <hasPostMedia>None</hasPostMedia>
+        <hasPostCreationTimestamp>2024-04-20T15:00:00Z</hasPostCreationTimestamp>
+
+        <!-- Relasi ke User & Community -->
+        <associatedWithUser rdf:resource="#DarkTraderX"/>
+        <associatedWithCommunity rdf:resource="#DeepMarketSub"/>
+
+        <!-- Terkait domain: #User -> #Post (createsPost) -->
+        <!-- Boleh redundan: -->
+        <!-- <rdf:Description rdf:about="#DarkTraderX">
+            <createsPost rdf:resource="#Post_DarkTraderX_001"/>
+            </rdf:Description> -->
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== ScheduledPost by DeepMarketMod ========== -->
+    <rdf:Description rdf:about="#ScheduledPost_DeepMarketMod_001">
+        <rdf:type rdf:resource="#ScheduledPost"/>
+
+        <hasScheduledPostTitle>"Sub Maintenance Notice"</hasScheduledPostTitle>
+        <hasScheduledPostContent>
+        "We will be performing some cleanup. If you see any suspicious or 
+        spam content, let the mods know. We'll keep transactions safe."
+        </hasScheduledPostContent>
+        <hasScheduledPostMedia>None</hasScheduledPostMedia>
+        <hasScheduledPublishTimestamp>2024-04-22T12:00:00Z</hasScheduledPublishTimestamp>
+
+        <associatedWithUser rdf:resource="#DeepMarketMod"/>
+        <associatedWithCommunity rdf:resource="#DeepMarketSub"/>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Kita definisikan community baru: r/CardingHub -->
+    <rdf:Description rdf:about="#CardingHubSub">
+        <rdf:type rdf:resource="#Community"/>
+        <rdfs:comment>Represents subreddit r/CardingHub, also known for carding tips.</rdfs:comment>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== CrossPost by AnonBuyer99 ========== -->
+    <rdf:Description rdf:about="#CrossPost_AnonBuyer99_001">
+        <rdf:type rdf:resource="#CrossPost"/>
+
+        <hasCrosspostedTitle>"[X-Post] Premium CC Dumps from r/DeepMarket"</hasCrosspostedTitle>
+        <hasCrosspostedContent>
+        "Check out this vendor's listing. Verified by some users. 
+        Reposting for those interested in advanced carding methods."
+        </hasCrosspostedContent>
+        <hasCrosspostedMedia>None</hasCrosspostedMedia>
+
+        <!-- Tautan ke original post DarkTraderX_001 -->
+        <associatedWithOriginalPost rdf:resource="#Post_DarkTraderX_001"/>
+
+        <!-- Timestamps dsb. mirip post -->
+        <hasPostCreationTimestamp>2024-04-20T18:00:00Z</hasPostCreationTimestamp>
+
+        <!-- Keterkaitan user & community -->
+        <associatedWithUser rdf:resource="#AnonBuyer99"/>
+        <associatedWithCommunity rdf:resource="#CardingHubSub"/>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Upvote Instance ========== -->
+    <rdf:Description rdf:about="#Upvote_CryptoWhale420_001">
+        <rdf:type rdf:resource="#UpvoteDownvote"/>
+
+        <!-- Siapa pelaku upvote -->
+        <performedBy rdf:resource="#CryptoWhale420"/>
+
+        <!-- Konten apa yang di-upvote: Post_DarkTraderX_001 -->
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+
+        <!-- Timestamp upvote -->
+        <hasUpvoteTimestamp>2024-04-20T16:25:00Z</hasUpvoteTimestamp>
+
+        <!-- belongsToPlatform agar jelas ini di Reddit -->
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Downvote Instance ========== -->
+    <rdf:Description rdf:about="#Downvote_SecurityWatchdog_001">
+        <rdf:type rdf:resource="#UpvoteDownvote"/>
+
+        <!-- Siapa pelaku downvote -->
+        <performedBy rdf:resource="#SecurityWatchdog"/>
+
+        <!-- Konten yang di-downvote -->
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+
+        <!-- Timestamp -->
+        <hasDownvoteTimestamp>2024-04-20T17:05:00Z</hasDownvoteTimestamp>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Comment by CryptoWhale420 -->
+    <rdf:Description rdf:about="#Comment_CryptoWhale420_001">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <!-- Siapa yang berkomentar -->
+        <performedBy rdf:resource="#CryptoWhale420"/>
+
+        <!-- Teks dan waktu komentar -->
+        <hasCommentText>
+        "Legit seller. Bought last week, no issues. Cards worked like a charm!"
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-20T16:20:00Z</hasCommentTimestamp>
+
+        <!-- Post yang dikomentari (post utama DarkTraderX) -->
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+
+        <!-- Platform -->
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Comment by AnonBuyer99 -->
+    <rdf:Description rdf:about="#Comment_AnonBuyer99_001">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#AnonBuyer99"/>
+        <hasCommentText>"Can I use Bitcoin or Monero for payment?"</hasCommentText>
+        <hasCommentTimestamp>2024-04-20T16:30:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Comment by DarkTraderX (reply to payment question) -->
+    <rdf:Description rdf:about="#Comment_DarkTraderX_002">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#DarkTraderX"/>
+        <hasCommentText>
+        "Only Monero (XMR). BTC isn't private enough. Send PM if interested."
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-20T16:35:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Comment by SecurityWatchdog -->
+    <rdf:Description rdf:about="#Comment_SecurityWatchdog_001">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#SecurityWatchdog"/>
+        <hasCommentText>"This is illegal. Hope Reddit takes this down."</hasCommentText>
+        <hasCommentTimestamp>2024-04-20T17:00:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Comment by DarkTraderX (agresif ke SecurityWatchdog) -->
+    <rdf:Description rdf:about="#Comment_DarkTraderX_003">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#DarkTraderX"/>
+        <hasCommentText>
+        "Mind your business. Nobody forced you to be here."
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-20T17:10:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Comment by DarkTraderX - more intense version -->
+    <rdf:Description rdf:about="#Comment_DarkTraderX_003A">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#DarkTraderX"/>
+        <hasCommentText>
+        "Get lost, @SecurityWatchdog. We have ways to handle nosy people like you. 
+        Next time, think before interfering."
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-20T17:10:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+
+
+    <!-- ========== Block Instance ========== -->
+    <rdf:Description rdf:about="#BlockAction_DeepMarketMod_001">
+        <rdf:type rdf:resource="#BlockUnblockUser"/>
+
+        <!-- Pelaku block -->
+        <blockInitiator rdf:resource="#DeepMarketMod"/>
+
+        <!-- Target yang diblokir -->
+        <blockedTargetUser rdf:resource="#SecurityWatchdog"/>
+
+        <!-- Alasan & waktu block -->
+        <hasBlockReason>Criticizing the sub for illegal activity</hasBlockReason>
+        <hasBlockTimestamp>2024-04-20T17:20:00Z</hasBlockTimestamp>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_DeepMarketMod_1">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#DeepMarketMod"/>
+        <messageReceiver rdf:resource="#CyberSentinel"/>
+
+        <hasMessageContent>
+        "Hey. I saw you poking around in our sub. I'd suggest you stop before you regret it."
+        </hasMessageContent>
+        <hasMessageTimestamp>2024-04-19T02:15:00Z</hasMessageTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+        <hasMessageIP>103.45.88.77</hasMessageIP> <!-- Misal IP moderator -->
+        <hasMessageDevice>Android (VPN)</hasMessageDevice>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_CyberSentinel_1">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#CyberSentinel"/>
+        <messageReceiver rdf:resource="#DeepMarketMod"/>
+
+        <hasMessageContent>
+        "You guys are selling stolen financial info. That's illegal, and I'm reporting this."
+        </hasMessageContent>
+        <hasMessageTimestamp>2024-04-19T02:20:00Z</hasMessageTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+        <hasMessageIP>192.168.1.47</hasMessageIP> <!-- IP milik Daniel -->
+        <hasMessageDevice>Windows PC (Reddit Web)</hasMessageDevice>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_DeepMarketMod_2">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#DeepMarketMod"/>
+        <messageReceiver rdf:resource="#CyberSentinel"/>
+
+        <hasMessageContent>
+        "Report all you want. Accounts get banned, but we're always back. Maybe you should worry about your OWN privacy instead. Nice IP address, by the way. 😉"
+        </hasMessageContent>
+        <hasMessageTimestamp>2024-04-19T02:30:00Z</hasMessageTimestamp>
+        <hasMessageStatus>delivered</hasMessageStatus>
+        <hasMessageIP>103.45.88.77</hasMessageIP>
+        <hasMessageDevice>Android (VPN)</hasMessageDevice>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_CyberSentinel_2">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#CyberSentinel"/>
+        <messageReceiver rdf:resource="#DeepMarketMod"/>
+
+        <hasMessageContent>"Is that a threat?"</hasMessageContent>
+        <hasMessageTimestamp>2024-04-19T02:35:00Z</hasMessageTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+        <hasMessageIP>192.168.1.47</hasMessageIP>
+        <hasMessageDevice>Windows PC (Reddit Web)</hasMessageDevice>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DMBlock_CyberSentinel_1">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <hasBlocksTimestamp>2024-04-19T02:45:00Z</hasBlocksTimestamp>
+        <hasMessageStatus>blocked</hasMessageStatus>
+
+        <!-- Sisi user -> user: -->
+        <!-- Daniel <blocksUser> DeepMarketMod (Jika memakai property bawaan: domain #User, range #User) -->
+        <!-- Atau jika kita butuh satu instance yang menampung detail forensik, 
+            kita definisikan property kustom #blockInitiator dsb. 
+            Tergantung style Anda. -->
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+
+<!--Quora Dummy Case-->
+    <!-- David (@DavidHistory) -->
+    <rdf:Description rdf:about="#DavidHistory">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>DavidHistory</hasUsername>
+        <hasBio>History professor trying to combat misinformation.</hasBio>
+        <hasProfileVisibility>Public</hasProfileVisibility>
+        <hasPasswordHash>hash_pw_david</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>true</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>false</hasNSFWVisibilitySetting>
+
+        <!-- Opsional: info forensik tambahan -->
+        <hasLastLoginIP>192.168.1.88</hasLastLoginIP>
+        <hasRegistrationDate>2023-07-10T12:00:00Z</hasRegistrationDate>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- AnonymousUser_1, (Sunday, 3:10 PM -> "History has proven...") -->
+    <rdf:Description rdf:about="#AnonymousUser_1">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>AnonymousUser_1</hasUsername>
+        <hasBio>Anon user exploiting Quora's anonymous mode for radical content.</hasBio>
+        <hasProfileVisibility>Anonymous</hasProfileVisibility>
+        <hasPasswordHash>hash_anon_pw1</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <!-- info forensik tambahan (opsional) -->
+        <hasLastLoginIP>185.220.101.45</hasLastLoginIP>
+        <hasRegistrationDate>2024-04-01T10:00:00Z</hasRegistrationDate>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- AnonymousUser_2, (Sunday, 3:30 PM -> "We need a new order...") -->
+    <rdf:Description rdf:about="#AnonymousUser_2">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>AnonymousUser_2</hasUsername>
+        <hasBio>Quora user leveraging anonymity for extremist propaganda.</hasBio>
+        <hasProfileVisibility>Anonymous</hasProfileVisibility>
+        <hasPasswordHash>hash_anon_pw2</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <hasLastLoginIP>185.220.101.45</hasLastLoginIP>
+        <hasRegistrationDate>2024-04-10T08:30:00Z</hasRegistrationDate>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- AnonymousUser_3, (Sunday, 4:00 PM -> "Shut up, professor...") -->
+    <rdf:Description rdf:about="#AnonymousUser_3">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>AnonymousUser_3</hasUsername>
+        <hasBio>Harassing professor, doxxing attempts.</hasBio>
+        <hasProfileVisibility>Anonymous</hasProfileVisibility>
+        <hasPasswordHash>hash_anon_pw3</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <hasLastLoginIP>185.220.101.45</hasLastLoginIP>
+        <hasRegistrationDate>2024-04-11T09:45:00Z</hasRegistrationDate>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- AnonymousUser_4, (Sunday, 4:15 PM -> "Maybe we should expose him...") -->
+    <rdf:Description rdf:about="#AnonymousUser_4">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>AnonymousUser_4</hasUsername>
+        <hasBio>Extremist harasser, doxxer, possibly multiple burner accounts.</hasBio>
+        <hasProfileVisibility>Anonymous</hasProfileVisibility>
+        <hasPasswordHash>hash_anon_pw4</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <hasLastLoginIP>185.220.101.45</hasLastLoginIP>
+        <hasRegistrationDate>2024-04-12T07:50:00Z</hasRegistrationDate>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+
+
+    <!-- ========== Post: Anonymous User's Question ========== -->
+    <rdf:Description rdf:about="#Post_AnonQuestion">
+        <rdf:type rdf:resource="#Post"/>
+
+        <hasPostTitle>"Why is violence sometimes necessary for political change?"</hasPostTitle>
+        <hasPostContent>
+        "Historically, hasn't it been the only way to overthrow corrupt regimes?"
+        </hasPostContent>
+        <hasPostCreationTimestamp>2024-04-22T14:45:00Z</hasPostCreationTimestamp>
+        
+        <!-- Pertanyaan ini diposting oleh AnonymousUser_Q -->
+        <associatedWithUser rdf:resource="#AnonymousUser_Q"/>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Comment / Answer 1 ========== -->
+    <rdf:Description rdf:about="#Comment_AnonAnswer1">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <!-- Siapa penulis jawaban -->
+        <performedBy rdf:resource="#AnonymousUser_1"/>
+
+        <!-- Teks jawaban -->
+        <hasCommentText>
+        "History has proven that peaceful protests are useless. Every great revolution required blood..."
+        </hasCommentText>
+        <!-- Timestamp -->
+        <hasCommentTimestamp>2024-04-22T15:10:00Z</hasCommentTimestamp>
+
+        <!-- Tautkan ke post utama Quora (pertanyaannya) -->
+        <associatedWithContent rdf:resource="#Post_AnonQuestion"/>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Comment / Answer 2 ========== -->
+    <rdf:Description rdf:about="#Comment_AnonAnswer2">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#AnonymousUser_2"/>
+        <hasCommentText>
+        "The media and elites keep people asleep... We need a new order."
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-22T15:30:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_AnonQuestion"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Comment / Answer by David ========== -->
+    <rdf:Description rdf:about="#Comment_DavidAnswer">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#DavidHistory"/>
+        <hasCommentText>
+        "That's dangerous thinking. There are plenty of examples of successful nonviolent movements..."
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-22T15:45:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_AnonQuestion"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Comment / Answer 3 ========== -->
+    <rdf:Description rdf:about="#Comment_AnonAnswer3">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#AnonymousUser_3"/>
+        <hasCommentText>
+        "Shut up, professor. You're part of the problem. Maybe we should start with people like you first."
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-22T16:00:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_AnonQuestion"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Comment / Answer 4 ========== -->
+    <rdf:Description rdf:about="#Comment_AnonAnswer4">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#AnonymousUser_4"/>
+        <hasCommentText>
+        "David is a perfect example of a traitor who deserves what's coming. Maybe we should expose him."
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-22T16:15:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_AnonQuestion"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_AnonAnswer1">
+        <rdf:type rdf:resource="#Comment"/>
+        <performedBy rdf:resource="#AnonymousUser_1"/>
+        <hasCommentText>"History has proven..."</hasCommentText>
+        <hasCommentTimestamp>2024-04-22T15:10:00Z</hasCommentTimestamp>
+        <hasCommentIP>185.220.101.45</hasCommentIP>
+        <hasCommentDevice>Android (Tor VPN)</hasCommentDevice>
+        <associatedWithContent rdf:resource="#Post_AnonQuestion"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_Anon_1">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#AnonymousUser_DM"/>
+        <messageReceiver rdf:resource="#DavidHistory"/>
+
+        <hasMessageContent>
+        "You think you’re safe, professor? You shouldn’t have spoken up."
+        </hasMessageContent>
+        <hasMessageTimestamp>2024-04-22T17:00:00Z</hasMessageTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+
+        <!-- If you have custom IP, device -->
+        <hasMessageIP>103.45.88.200</hasMessageIP>
+        <hasMessageDevice>Android (VPN)</hasMessageDevice>
+
+        <!-- Quora platform -->
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_David_1">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#DavidHistory"/>
+        <messageReceiver rdf:resource="#AnonymousUser_DM"/>
+
+        <hasMessageContent>"Who are you? Why are you messaging me?"</hasMessageContent>
+        <hasMessageTimestamp>2024-04-22T17:10:00Z</hasMessageTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+
+        <hasMessageIP>192.168.1.88</hasMessageIP>
+        <hasMessageDevice>Quora Web (Windows 11)</hasMessageDevice>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_Anon_2">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#AnonymousUser_DM"/>
+        <messageReceiver rdf:resource="#DavidHistory"/>
+
+        <hasMessageContent>
+        "You don’t need to know who I am. Just know that we know who YOU are. And so does everyone else now."
+        </hasMessageContent>
+        <hasMessageTimestamp>2024-04-22T17:15:00Z</hasMessageTimestamp>
+        <hasMessageStatus>delivered</hasMessageStatus>
+
+        <hasMessageIP>103.45.88.200</hasMessageIP>
+        <hasMessageDevice>Android (VPN)</hasMessageDevice>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_David_2">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#DavidHistory"/>
+        <messageReceiver rdf:resource="#AnonymousUser_DM"/>
+
+        <hasMessageContent>"Are you threatening me? I’m reporting this to Quora and the police."</hasMessageContent>
+        <hasMessageTimestamp>2024-04-22T17:20:00Z</hasMessageTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+
+        <hasMessageIP>192.168.1.88</hasMessageIP>
+        <hasMessageDevice>Quora Web (Windows 11)</hasMessageDevice>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_Anon_3">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#AnonymousUser_DM"/>
+        <messageReceiver rdf:resource="#DavidHistory"/>
+
+        <hasMessageContent>
+        "Report all you want. Nothing will happen. Maybe check your email. 😊"
+        </hasMessageContent>
+        <hasMessageTimestamp>2024-04-22T17:25:00Z</hasMessageTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+
+        <hasMessageIP>103.45.88.200</hasMessageIP>
+        <hasMessageDevice>Android (VPN)</hasMessageDevice>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+
+    <!-- ========== End of OFB Case RDF ========== -->
+
+
+
+
+
+
+
+

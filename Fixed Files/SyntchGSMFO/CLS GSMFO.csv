@@ -1,0 +1,332 @@
+class,subClass,classComment,subClassComment
+"Global:UserAccount,MCSS:User,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,""An MCSS:User is distinct from users of other platforms (MP:User, OFB:User, OSN:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is removed to address inconsistencies with OSN settings classes, assuming settings can be related to specific user types."""
+"Global:UserAccount,MCSS:User,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,""An MCSS:User is distinct from users of other platforms (MP:User, OFB:User, OSN:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is removed to address inconsistencies with OSN settings classes, assuming settings can be related to specific user types."""
+"Global:UserAccount,MCSS:User,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",""An MCSS:User is distinct from users of other platforms (MP:User, OFB:User, OSN:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is removed to address inconsistencies with OSN settings classes, assuming settings can be related to specific user types."""
+"Global:UserAccount,MP:User,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,""An MP:User is distinct from users of other platforms (MCSS:User, OFB:User, OSN:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is removed. MP:List and MP:Bookmark are distinct concepts associated with MP:User."""
+"Global:UserAccount,MP:User,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,""An MP:User is distinct from users of other platforms (MCSS:User, OFB:User, OSN:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is removed. MP:List and MP:Bookmark are distinct concepts associated with MP:User."""
+"Global:UserAccount,MP:User,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",""An MP:User is distinct from users of other platforms (MCSS:User, OFB:User, OSN:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is removed. MP:List and MP:Bookmark are distinct concepts associated with MP:User."""
+"Global:UserAccount,OFB:User,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,""An OFB:User is distinct from users of other platforms (MCSS:User, MP:User, OSN:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is removed."""
+"Global:UserAccount,OFB:User,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,""An OFB:User is distinct from users of other platforms (MCSS:User, MP:User, OSN:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is removed."""
+"Global:UserAccount,OFB:User,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",""An OFB:User is distinct from users of other platforms (MCSS:User, MP:User, OSN:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is removed."""
+"Global:UserAccount,OSN:User,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,""An OSN:User is distinct from users of other platforms (MCSS:User, MP:User, OFB:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is REMOVED to prevent inconsistencies with OSN-specific setting classes that are modeled under Global:Setting but are inherently tied to OSN:User."""
+"Global:UserAccount,OSN:User,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,""An OSN:User is distinct from users of other platforms (MCSS:User, MP:User, OFB:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is REMOVED to prevent inconsistencies with OSN-specific setting classes that are modeled under Global:Setting but are inherently tied to OSN:User."""
+"Global:UserAccount,OSN:User,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",""An OSN:User is distinct from users of other platforms (MCSS:User, MP:User, OFB:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is REMOVED to prevent inconsistencies with OSN-specific setting classes that are modeled under Global:Setting but are inherently tied to OSN:User."""
+Global:UserAccount,Global:UserManagement,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,Represents activities related to managing user accounts or their interactions.
+"Global:UserAccount,Global:UserManagement,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,""Global:UserManagement (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User). Disjointness with OSN:User is REMOVED to prevent potential inconsistencies if UserManagement aspects are closely tied to OSN:User."""
+Global:UserAccount,Global:UserManagement,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,Represents activities related to managing user accounts or their interactions.
+"Global:UserAccount,Global:UserManagement,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,""Global:UserManagement (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User). Disjointness with OSN:User is REMOVED to prevent potential inconsistencies if UserManagement aspects are closely tied to OSN:User."""
+"Global:UserAccount,Global:UserManagement,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",Represents activities related to managing user accounts or their interactions."
+"Global:UserAccount,Global:UserManagement,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",""Global:UserManagement (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User). Disjointness with OSN:User is REMOVED to prevent potential inconsistencies if UserManagement aspects are closely tied to OSN:User."""
+"Global:UserAccount,Global:Setting,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,""Represents a generalized configuration or setting related to user accounts, profiles, or platform features."""
+"Global:UserAccount,Global:Setting,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,""Merepresentasikan konfigurasi atau pengaturan umum terkait akun pengguna, profil, atau fitur platform."""
+"Global:UserAccount,Global:Setting,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,""Global:Setting (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User) - this disjointness is REMOVED for OSN:User to resolve inconsistencies. It remains distinct from Global:UserManagement."""
+"Global:UserAccount,Global:Setting,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,""Represents a generalized configuration or setting related to user accounts, profiles, or platform features."""
+"Global:UserAccount,Global:Setting,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,""Merepresentasikan konfigurasi atau pengaturan umum terkait akun pengguna, profil, atau fitur platform."""
+"Global:UserAccount,Global:Setting,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,""Global:Setting (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User) - this disjointness is REMOVED for OSN:User to resolve inconsistencies. It remains distinct from Global:UserManagement."""
+"Global:UserAccount,Global:Setting,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",""Represents a generalized configuration or setting related to user accounts, profiles, or platform features."""
+"Global:UserAccount,Global:Setting,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",""Merepresentasikan konfigurasi atau pengaturan umum terkait akun pengguna, profil, atau fitur platform."""
+"Global:UserAccount,Global:Setting,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",""Global:Setting (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User) - this disjointness is REMOVED for OSN:User to resolve inconsistencies. It remains distinct from Global:UserManagement."""
+"MP:User,MP:List,""An MP:User is distinct from users of other platforms (MCSS:User, OFB:User, OSN:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is removed. MP:List and MP:Bookmark are distinct concepts associated with MP:User."",""Following the provided hierarchy, an MP:List is distinct from an MP:Bookmark if they are the only direct, distinct sub-concepts of MP:User. This modeling is unusual as lists and bookmarks are typically associated entities, not user subtypes."""
+"MP:User,MP:Bookmark,""An MP:User is distinct from users of other platforms (MCSS:User, OFB:User, OSN:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is removed. MP:List and MP:Bookmark are distinct concepts associated with MP:User."",""Following the provided hierarchy, an MP:Bookmark is distinct from an MP:List if they are the only direct, distinct sub-concepts of MP:User."""
+"OSN:User,OSN:CloseFriendList,""An OSN:User is distinct from users of other platforms (MCSS:User, MP:User, OFB:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is REMOVED to prevent inconsistencies with OSN-specific setting classes that are modeled under Global:Setting but are inherently tied to OSN:User."","
+"OSN:User,OSN:Avatars,""An OSN:User is distinct from users of other platforms (MCSS:User, MP:User, OFB:User). It is also distinct from Global:UserManagement. Disjointness with Global:Setting is REMOVED to prevent inconsistencies with OSN-specific setting classes that are modeled under Global:Setting but are inherently tied to OSN:User."",""Represents the avatars created, edited, and customized by users."""
+Global:Content,Global:Post,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,Represents a generalized user-generated post.
+"Global:Content,Global:Post,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,""A Global:Post is distinct from other types of Global:Content such as VideoContent, LiveContent, Poll, Story, or NewsContent."""
+Global:Content,Global:Post,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,Represents a generalized user-generated post.
+"Global:Content,Global:Post,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,""A Global:Post is distinct from other types of Global:Content such as VideoContent, LiveContent, Poll, Story, or NewsContent."""
+"Global:Content,Global:Post,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",Represents a generalized user-generated post."
+"Global:Content,Global:Post,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""A Global:Post is distinct from other types of Global:Content such as VideoContent, LiveContent, Poll, Story, or NewsContent."""
+"Global:Content,Global:VideoContent,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,""Represents video content, including standard videos, short videos, and reels."""
+"Global:Content,Global:VideoContent,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,""A Global:VideoContent is distinct from other types of Global:Content such as Post, LiveContent, Poll, Story, or NewsContent."""
+"Global:Content,Global:VideoContent,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,""Represents video content, including standard videos, short videos, and reels."""
+"Global:Content,Global:VideoContent,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,""A Global:VideoContent is distinct from other types of Global:Content such as Post, LiveContent, Poll, Story, or NewsContent."""
+"Global:Content,Global:VideoContent,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""Represents video content, including standard videos, short videos, and reels."""
+"Global:Content,Global:VideoContent,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""A Global:VideoContent is distinct from other types of Global:Content such as Post, LiveContent, Poll, Story, or NewsContent."""
+Global:Content,Global:LiveContent,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,Represents content generated during or associated with live streaming sessions.
+"Global:Content,Global:LiveContent,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,""A Global:LiveContent is distinct from other types of Global:Content such as Post, VideoContent, Poll, Story, or NewsContent."""
+Global:Content,Global:LiveContent,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,Represents content generated during or associated with live streaming sessions.
+"Global:Content,Global:LiveContent,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,""A Global:LiveContent is distinct from other types of Global:Content such as Post, VideoContent, Poll, Story, or NewsContent."""
+"Global:Content,Global:LiveContent,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",Represents content generated during or associated with live streaming sessions."
+"Global:Content,Global:LiveContent,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""A Global:LiveContent is distinct from other types of Global:Content such as Post, VideoContent, Poll, Story, or NewsContent."""
+Global:Content,Global:Poll,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,Represents a poll created by users for interaction.
+"Global:Content,Global:Poll,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,""A Global:Poll is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Story, or NewsContent."""
+Global:Content,Global:Poll,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,Represents a poll created by users for interaction.
+"Global:Content,Global:Poll,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,""A Global:Poll is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Story, or NewsContent."""
+"Global:Content,Global:Poll,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",Represents a poll created by users for interaction."
+"Global:Content,Global:Poll,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""A Global:Poll is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Story, or NewsContent."""
+"Global:Content,Global:Story,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,""Represents temporary content, often visual, that expires after a period."""
+"Global:Content,Global:Story,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,""A Global:Story is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Poll, or NewsContent."""
+"Global:Content,Global:Story,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,""Represents temporary content, often visual, that expires after a period."""
+"Global:Content,Global:Story,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,""A Global:Story is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Poll, or NewsContent."""
+"Global:Content,Global:Story,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""Represents temporary content, often visual, that expires after a period."""
+"Global:Content,Global:Story,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""A Global:Story is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Poll, or NewsContent."""
+Global:Content,Global:NewsContent,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,Represents news-related content items.
+"Global:Content,Global:NewsContent,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,""A Global:NewsContent is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Poll, or Story."""
+Global:Content,Global:NewsContent,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,Represents news-related content items.
+"Global:Content,Global:NewsContent,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,""A Global:NewsContent is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Poll, or Story."""
+"Global:Content,Global:NewsContent,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",Represents news-related content items."
+"Global:Content,Global:NewsContent,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""A Global:NewsContent is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Poll, or Story."""
+Global:Post,MCSS:Post,Represents a generalized user-generated post.,
+"Global:Post,MCSS:Post,""A Global:Post is distinct from other types of Global:Content such as VideoContent, LiveContent, Poll, Story, or NewsContent."","
+Global:Post,MP:Post,Represents a generalized user-generated post.,
+"Global:Post,MP:Post,""A Global:Post is distinct from other types of Global:Content such as VideoContent, LiveContent, Poll, Story, or NewsContent."","
+Global:Post,OFB:Post,Represents a generalized user-generated post.,
+"Global:Post,OFB:Post,""A Global:Post is distinct from other types of Global:Content such as VideoContent, LiveContent, Poll, Story, or NewsContent."","
+Global:Post,OSN:Post,Represents a generalized user-generated post.,
+"Global:Post,OSN:Post,""A Global:Post is distinct from other types of Global:Content such as VideoContent, LiveContent, Poll, Story, or NewsContent."","
+OFB:Post,OFB:ScheduledPost,,
+OFB:Post,OFB:CrossPostContent,,Content that has been cross-posted from another source within OFB.
+OFB:Post,OFB:DraftContent,,Content saved as a draft within OFB.
+OSN:Post,OSN:BirthdayPost,,
+"Global:VideoContent,MCSS:Video,""Represents video content, including standard videos, short videos, and reels."","
+"Global:VideoContent,MCSS:Video,""A Global:VideoContent is distinct from other types of Global:Content such as Post, LiveContent, Poll, Story, or NewsContent."","
+"Global:VideoContent,MCSS:ShortVideo,""Represents video content, including standard videos, short videos, and reels."","
+"Global:VideoContent,MCSS:ShortVideo,""A Global:VideoContent is distinct from other types of Global:Content such as Post, LiveContent, Poll, Story, or NewsContent."","
+"Global:VideoContent,OSN:VideoContent,""Represents video content, including standard videos, short videos, and reels."","
+"Global:VideoContent,OSN:VideoContent,""A Global:VideoContent is distinct from other types of Global:Content such as Post, LiveContent, Poll, Story, or NewsContent."","
+OSN:VideoContent,OSN:ReelVideo,,
+OSN:VideoContent,OSN:ShortVideoContent,,
+Global:LiveContent,MCSS:Live,Represents content generated during or associated with live streaming sessions.,
+"Global:LiveContent,MCSS:Live,""A Global:LiveContent is distinct from other types of Global:Content such as Post, VideoContent, Poll, Story, or NewsContent."","
+Global:LiveContent,OSN:Live,Represents content generated during or associated with live streaming sessions.,
+"Global:LiveContent,OSN:Live,""A Global:LiveContent is distinct from other types of Global:Content such as Post, VideoContent, Poll, Story, or NewsContent."","
+Global:LiveContent,MP:Live,Represents content generated during or associated with live streaming sessions.,
+"Global:LiveContent,MP:Live,""A Global:LiveContent is distinct from other types of Global:Content such as Post, VideoContent, Poll, Story, or NewsContent."","
+MCSS:Live,MCSS:SuperChat,,
+MP:Live,MP:LiveInteractionActivity,,
+MP:Live,MP:LiveSpacesRoomsActivity,,Activities related to MP Live Spaces/Rooms.
+MP:Live,MP:UpcomingSessionInteraction,,Interactions related to upcoming MP live sessions.
+Global:Poll,OFB:Poll,Represents a poll created by users for interaction.,
+"Global:Poll,OFB:Poll,""A Global:Poll is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Story, or NewsContent."","
+Global:Poll,OSN:Poll,Represents a poll created by users for interaction.,
+"Global:Poll,OSN:Poll,""A Global:Poll is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Story, or NewsContent."","
+"Global:Story,OSN:Story,""Represents temporary content, often visual, that expires after a period."","
+"Global:Story,OSN:Story,""A Global:Story is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Poll, or NewsContent."","
+"Global:Story,MCSS:Story,""Represents temporary content, often visual, that expires after a period."",Represents a story feature in MCSS platforms."
+"Global:Story,MCSS:Story,""A Global:Story is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Poll, or NewsContent."",Represents a story feature in MCSS platforms."
+OSN:Story,OSN:StoryHighlight,,
+Global:Message,Global:DirectMessage,Represents any form of message exchanged between users or in groups.,Represents a private message sent between users.
+"Global:Message,Global:DirectMessage,""An instance of Global:Message cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",Represents a private message sent between users."
+Global:Message,Global:GroupMessage,Represents any form of message exchanged between users or in groups.,Represents a message sent within a group chat context.
+"Global:Message,Global:GroupMessage,""An instance of Global:Message cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",Represents a message sent within a group chat context."
+Global:DirectMessage,MCSS:DirectMessage,Represents a private message sent between users.,
+Global:DirectMessage,OFB:DirectMessage,Represents a private message sent between users.,
+Global:DirectMessage,OSN:DirectMessage,Represents a private message sent between users.,
+Global:DirectMessage,MP:DirectMessage,Represents a private message sent between users.,
+Global:GroupMessage,MCSS:GroupMessage,Represents a message sent within a group chat context.,
+Global:GroupMessage,OSN:GroupMessage,Represents a message sent within a group chat context.,Represents messages within an OSN group chat.
+"Global:ContentInteraction,Global:SharingAction,Represents any interaction a user has with content or other users related to content.,""Represents the action of sharing, reposting, or reblogging content."""
+"Global:ContentInteraction,Global:SharingAction,""An instance of Global:ContentInteraction cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""Represents the action of sharing, reposting, or reblogging content."""
+Global:ContentInteraction,Global:CommentOrReplyAction,Represents any interaction a user has with content or other users related to content.,Represents the action of commenting or replying.
+"Global:ContentInteraction,Global:CommentOrReplyAction,""An instance of Global:ContentInteraction cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",Represents the action of commenting or replying."
+"Global:ContentInteraction,Global:ReactionAction,Represents any interaction a user has with content or other users related to content.,""Represents the action of reacting to content (e.g., liking, disliking)."""
+"Global:ContentInteraction,Global:ReactionAction,""An instance of Global:ContentInteraction cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""Represents the action of reacting to content (e.g., liking, disliking)."""
+"Global:ContentInteraction,Global:ReportAction,Represents any interaction a user has with content or other users related to content.,""Represents the action of reporting content, users, or messages."""
+"Global:ContentInteraction,Global:ReportAction,""An instance of Global:ContentInteraction cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""Represents the action of reporting content, users, or messages."""
+"Global:ContentInteraction,Global:AdditionalInteraction,Represents any interaction a user has with content or other users related to content.,""Represents the action of reporting content, users, or messages."""
+"Global:ContentInteraction,Global:AdditionalInteraction,""An instance of Global:ContentInteraction cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""Represents the action of reporting content, users, or messages."""
+"Global:SharingAction,MCSS:ShareAction,""Represents the action of sharing, reposting, or reblogging content."","
+"Global:SharingAction,MP:ReblogRetweetAction,""Represents the action of sharing, reposting, or reblogging content."","
+"Global:SharingAction,OFB:CrossPostAction,""Represents the action of sharing, reposting, or reblogging content."",The action of creating a cross-post in OFB."
+Global:CommentOrReplyAction,MCSS:CommentAction,Represents the action of commenting or replying.,
+Global:CommentOrReplyAction,MP:CommentAction,Represents the action of commenting or replying.,
+Global:CommentOrReplyAction,OFB:CommentAction,Represents the action of commenting or replying.,
+Global:CommentOrReplyAction,OFB:ReplyToCommentAction,Represents the action of commenting or replying.,
+Global:CommentOrReplyAction,OSN:CommentAction,Represents the action of commenting or replying.,Represents the action of commenting in OSN.
+"Global:ReactionAction,MCSS:DislikeAction,""Represents the action of reacting to content (e.g., liking, disliking)."","
+"Global:ReactionAction,MCSS:LikeAction,""Represents the action of reacting to content (e.g., liking, disliking)."","
+"Global:ReactionAction,MP:LikeAction,""Represents the action of reacting to content (e.g., liking, disliking)."","
+"Global:ReactionAction,OFB:LikeAction,""Represents the action of reacting to content (e.g., liking, disliking)."","
+"Global:ReactionAction,OSN:LikesReactions,""Represents the action of reacting to content (e.g., liking, disliking)."","
+"Global:ReportAction,MCSS:ReportAction,""Represents the action of reporting content, users, or messages."","
+"Global:ReportAction,MP:ReportAction,""Represents the action of reporting content, users, or messages."","
+"Global:ReportAction,OFB:ReportAction,""Represents the action of reporting content, users, or messages."",Represents the action of filing a report in OFB."
+"Global:ReportAction,OSN:ReportAction,""Represents the action of reporting content, users, or messages."",Represents the action of reporting in OSN."
+"Global:AdditionalInteraction,MCSS:WatchLaterAction,""Represents the action of reporting content, users, or messages."","
+"Global:AdditionalInteraction,MCSS:GiftAction,""Represents the action of reporting content, users, or messages."","
+"Global:AdditionalInteraction,OFB:BookmarkAction,""Represents the action of reporting content, users, or messages."","
+"Global:AdditionalInteraction,OFB:GiveAwardAction,""Represents the action of reporting content, users, or messages."","
+"Global:AdditionalInteraction,OFB:FollowTopicAction,""Represents the action of reporting content, users, or messages."","
+"Global:AdditionalInteraction,OFB:PinPostAction,""Represents the action of reporting content, users, or messages."","
+"Global:ProfileSettings,MCSS:ProfileSettings,Represents user-configurable settings related to their profile.,""MCSS:ProfileSettings are distinct from MP:ProfileSettings, OFB:ProfileSettings, and OSN:AccountSettings as they represent profile settings for different platform contexts or types."""
+"Global:ProfileSettings,MCSS:ProfileSettings,""ProfileSettings are distinct from NotificationSettings, SecuritySettings, PrivacySettings, and Accessibility settings."",""MCSS:ProfileSettings are distinct from MP:ProfileSettings, OFB:ProfileSettings, and OSN:AccountSettings as they represent profile settings for different platform contexts or types."""
+"Global:ProfileSettings,MP:ProfileSettings,Represents user-configurable settings related to their profile.,""MP:ProfileSettings are distinct from MCSS:ProfileSettings, OFB:ProfileSettings, and OSN:AccountSettings."""
+"Global:ProfileSettings,MP:ProfileSettings,""ProfileSettings are distinct from NotificationSettings, SecuritySettings, PrivacySettings, and Accessibility settings."",""MP:ProfileSettings are distinct from MCSS:ProfileSettings, OFB:ProfileSettings, and OSN:AccountSettings."""
+"Global:ProfileSettings,OFB:ProfileSettings,Represents user-configurable settings related to their profile.,""OFB:ProfileSettings are distinct from MCSS:ProfileSettings, MP:ProfileSettings, and OSN:AccountSettings."""
+"Global:ProfileSettings,OFB:ProfileSettings,""ProfileSettings are distinct from NotificationSettings, SecuritySettings, PrivacySettings, and Accessibility settings."",""OFB:ProfileSettings are distinct from MCSS:ProfileSettings, MP:ProfileSettings, and OSN:AccountSettings."""
+"Global:ProfileSettings,OSN:AccountSettings,Represents user-configurable settings related to their profile.,""OSN:AccountSettings are distinct from MCSS:ProfileSettings, MP:ProfileSettings, and OFB:ProfileSettings."""
+"Global:ProfileSettings,OSN:AccountSettings,""ProfileSettings are distinct from NotificationSettings, SecuritySettings, PrivacySettings, and Accessibility settings."",""OSN:AccountSettings are distinct from MCSS:ProfileSettings, MP:ProfileSettings, and OFB:ProfileSettings."""
+"OSN:AccountSettings,OSN:DataUsageSettings,""OSN:AccountSettings are distinct from MCSS:ProfileSettings, MP:ProfileSettings, and OFB:ProfileSettings."","
+"OSN:AccountSettings,OSN:AccountManagementSettings,""OSN:AccountSettings are distinct from MCSS:ProfileSettings, MP:ProfileSettings, and OFB:ProfileSettings."","
+"OSN:AccountSettings,OSN:DeviceManagementSettings,""OSN:AccountSettings are distinct from MCSS:ProfileSettings, MP:ProfileSettings, and OFB:ProfileSettings."","
+Global:NotificationSettings,MCSS:NotificationSettings,Represents user-configurable settings related to notifications.,
+"Global:NotificationSettings,MCSS:NotificationSettings,""NotificationSettings are distinct from ProfileSettings, SecuritySettings, PrivacySettings, and Accessibility settings."","
+Global:NotificationSettings,MP:NotificationSettings,Represents user-configurable settings related to notifications.,
+"Global:NotificationSettings,MP:NotificationSettings,""NotificationSettings are distinct from ProfileSettings, SecuritySettings, PrivacySettings, and Accessibility settings."","
+Global:NotificationSettings,OFB:NotificationSettings,Represents user-configurable settings related to notifications.,
+"Global:NotificationSettings,OFB:NotificationSettings,""NotificationSettings are distinct from ProfileSettings, SecuritySettings, PrivacySettings, and Accessibility settings."","
+Global:NotificationSettings,OSN:NotificationSettings,Represents user-configurable settings related to notifications.,
+"Global:NotificationSettings,OSN:NotificationSettings,""NotificationSettings are distinct from ProfileSettings, SecuritySettings, PrivacySettings, and Accessibility settings."","
+OFB:NotificationSettings,OFB:PushNotification,,
+OFB:NotificationSettings,OFB:NotificationPreferences,,
+OFB:NotificationSettings,OFB:CommunityNotification,,
+OSN:NotificationSettings,OSN:GroupNotification,,
+OSN:NotificationSettings,OSN:MessageNotification,,
+OSN:NotificationSettings,OSN:VideoNotification,,
+Global:Group,OSN:Group,Represents a generalized group or community entity within a social media platform.,
+Global:Group,OSN:Group,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,OSN:Group,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+Global:Group,OFB:Community,Represents a generalized group or community entity within a social media platform.,
+Global:Group,OFB:Community,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,OFB:Community,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+Global:Group,Global:ModerationAction,Represents a generalized group or community entity within a social media platform.,Represents actions performed by moderators or administrators.
+Global:Group,Global:ModerationAction,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,Represents actions performed by moderators or administrators.
+"Global:Group,Global:ModerationAction,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",Represents actions performed by moderators or administrators."
+Global:Group,Global:GroupManagementActivity,Represents a generalized group or community entity within a social media platform.,Represents activities related to the management of groups or communities.
+Global:Group,Global:GroupManagementActivity,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,Represents activities related to the management of groups or communities.
+"Global:Group,Global:GroupManagementActivity,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",Represents activities related to the management of groups or communities."
+Global:Group,Global:Role,Represents a generalized group or community entity within a social media platform.,Represents a generalized role a user can have within a platform or community.
+Global:Group,Global:Role,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,Represents a generalized role a user can have within a platform or community.
+"Global:Group,Global:Role,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",Represents a generalized role a user can have within a platform or community."
+OFB:Community,OFB:SpotlightCommunity,,
+OFB:Community,OFB:CommunityReputation,,
+Global:ModerationAction,OFB:ModeratorAction,Represents actions performed by moderators or administrators.,
+Global:ModerationAction,OSN:ModerationAction,Represents actions performed by moderators or administrators.,
+Global:ModerationAction,OFB:CommunityModerationAction,Represents actions performed by moderators or administrators.,
+"Global:ModerationAction,OFB:ModerationQueue,Represents actions performed by moderators or administrators.,""Represents a queue for flagged content (OFB specific concept, related to moderation activity)."""
+Global:ModerationAction,OFB:ModeratorStatistics,Represents actions performed by moderators or administrators.,Represents statistics about a moderator's activity (OFB specific concept).
+Global:GroupManagementActivity,OFB:CommunityCreationActivity,Represents activities related to the management of groups or communities.,
+Global:GroupManagementActivity,OFB:CommunityEntryActivity,Represents activities related to the management of groups or communities.,
+Global:Role,Global:ModeratorRole,Represents a generalized role a user can have within a platform or community.,Represents the role of a moderator.
+Global:ModeratorRole,OFB:Moderator,Represents the role of a moderator.,
+Global:ModeratorRole,OSN:Moderator,Represents the role of a moderator.,
+OFB:CommunityReputation,OFB:ReputationSystem,,
+OFB:CommunityReputation,OFB:Leaderboard,,
+Global:SearchFunctionality,OSN:Search,Represents the capability and actions related to searching.,
+"Global:SearchFunctionality,OSN:Search,""An instance of Global:SearchFunctionality cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:Marketplace, or Global:AdditionalFeature."","
+Global:SearchFunctionality,MCSS:SearchAndRecommendation,Represents the capability and actions related to searching.,
+"Global:SearchFunctionality,MCSS:SearchAndRecommendation,""An instance of Global:SearchFunctionality cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:Marketplace, or Global:AdditionalFeature."","
+Global:SearchFunctionality,MP:DiscoveryAndSearchFeature,Represents the capability and actions related to searching.,
+"Global:SearchFunctionality,MP:DiscoveryAndSearchFeature,""An instance of Global:SearchFunctionality cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:Marketplace, or Global:AdditionalFeature."","
+Global:SearchFunctionality,OFB:SearchFeature,Represents the capability and actions related to searching.,
+"Global:SearchFunctionality,OFB:SearchFeature,""An instance of Global:SearchFunctionality cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:Marketplace, or Global:AdditionalFeature."","
+OFB:SearchFeature,OFB:GlobalSearchFeature,,
+OFB:SearchFeature,OFB:AdvancedSearchFeature,,
+OFB:SearchFeature,OFB:TrendSearchFeature,,
+OFB:SearchFeature,OFB:SearchFilterFeature,,
+OFB:SearchFeature,OFB:SearchAndDiscoveryFeature,,
+OFB:SearchFeature,OFB:RecommendationFeature,,
+Global:Marketplace,OSN:Marketplace,Represents the marketplace feature,
+"Global:Marketplace,OSN:Marketplace,""An instance of Global:Marketplace cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, or Global:AdditionalFeature."","
+OSN:Marketplace,OSN:ListingFeature,,
+OSN:Marketplace,OSN:ListingManagementActivity,,
+OSN:Marketplace,OSN:ListingDetails,,
+Global:UserManagement,OSN:UserManagement,Represents activities related to managing user accounts or their interactions.,
+"Global:UserManagement,OSN:UserManagement,""Global:UserManagement (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User). Disjointness with OSN:User is REMOVED to prevent potential inconsistencies if UserManagement aspects are closely tied to OSN:User."","
+Global:UserManagement,MP:UserManagement,Represents activities related to managing user accounts or their interactions.,
+"Global:UserManagement,MP:UserManagement,""Global:UserManagement (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User). Disjointness with OSN:User is REMOVED to prevent potential inconsistencies if UserManagement aspects are closely tied to OSN:User."","
+Global:UserManagement,MCSS:UserManagement,Represents activities related to managing user accounts or their interactions.,
+"Global:UserManagement,MCSS:UserManagement,""Global:UserManagement (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User). Disjointness with OSN:User is REMOVED to prevent potential inconsistencies if UserManagement aspects are closely tied to OSN:User."","
+Global:UserManagement,OFB:UserManagement,Represents activities related to managing user accounts or their interactions.,
+"Global:UserManagement,OFB:UserManagement,""Global:UserManagement (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User). Disjointness with OSN:User is REMOVED to prevent potential inconsistencies if UserManagement aspects are closely tied to OSN:User."","
+OFB:UserManagement,OFB:AccountDeletionActivity,,Represents the process or request of deleting a user account on an OFB platform.
+Global:NewsContent,MCSS:NewsInformationFeature,Represents news-related content items.,
+"Global:NewsContent,MCSS:NewsInformationFeature,""A Global:NewsContent is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Poll, or Story."","
+Global:NewsContent,OFB:TrendingContent,Represents news-related content items.,
+"Global:NewsContent,OFB:TrendingContent,""A Global:NewsContent is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Poll, or Story."","
+MCSS:NewsInformationFeature,MCSS:BreakingNews,,
+MCSS:NewsInformationFeature,MCSS:TopNews,,
+Global:AdditionalFeature,OSN:AdditionalFeature,Represents the additional existing unique feature per social media category,
+"Global:AdditionalFeature,OSN:AdditionalFeature,""An instance of Global:AdditionalFeature cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, or Global:Marketplace."","
+Global:AdditionalFeature,OFB:AdditionalFeature,Represents the additional existing unique feature per social media category,
+"Global:AdditionalFeature,OFB:AdditionalFeature,""An instance of Global:AdditionalFeature cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, or Global:Marketplace."","
+Global:AdditionalFeature,MCSS:AdditionalFeature,Represents the additional existing unique feature per social media category,
+"Global:AdditionalFeature,MCSS:AdditionalFeature,""An instance of Global:AdditionalFeature cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, or Global:Marketplace."","
+OSN:AdditionalFeature,OSN:Gaming,,Represents gaming-related actions and player information.
+OSN:AdditionalFeature,OSN:Page,,Represents Pages in the online social network context.
+OSN:AdditionalFeature,OSN:MessengerKids,,Represents features and activities related to Messenger Kids (OSN specific).
+OSN:AdditionalFeature,OSN:MessengerKids,,Represents activities and information related to Messenger Kids accounts.
+OSN:AdditionalFeature,OSN:MetaVerifiedFeature,,
+OSN:AdditionalFeature,OSN:AlsoFromMetaFeature,,
+OSN:AdditionalFeature,OSN:MediaEnhancementFeature,,Features for enhancing media content like reels or videos.
+OSN:AdditionalFeature,OSN:Events,,Represents events created and managed by users.
+OSN:Gaming,OSN:Games,Represents gaming-related actions and player information.,Represents game-playing activities.
+OSN:Gaming,OSN:PlayerInfo,Represents gaming-related actions and player information.,Represents player-related details.
+"OSN:Page,OSN:PageManagementActivity,Represents Pages in the online social network context.,""Handles creation, activation, deactivation, and merging of Pages."""
+"OSN:Page,OSN:PageFeature,Represents Pages in the online social network context.,""Represents features such as events, posts, photos, and videos available on a page."""
+"OSN:Page,OSN:PageInsight,Represents Pages in the online social network context.,""Represents insights like views, reach, and engagement for a page."""
+"OSN:PageManagementActivity,OSN:PageSettings,""Handles creation, activation, deactivation, and merging of Pages."",Represents configurable settings for a page."
+OSN:MessengerKids,OSN:ChildInformation,Represents features and activities related to Messenger Kids (OSN specific).,Contains information about the child using Messenger Kids.
+OSN:MessengerKids,OSN:ChildInformation,Represents activities and information related to Messenger Kids accounts.,Contains information about the child using Messenger Kids.
+OSN:MessengerKids,OSN:ConnectKids,Represents features and activities related to Messenger Kids (OSN specific).,Represents the connection status and timestamps for Messenger Kids users.
+OSN:MessengerKids,OSN:ConnectKids,Represents activities and information related to Messenger Kids accounts.,Represents the connection status and timestamps for Messenger Kids users.
+OSN:AlsoFromMetaFeature,OSN:OtherAppsFeature,,
+OSN:MediaEnhancementFeature,OSN:ReelEffect,Features for enhancing media content like reels or videos.,
+OSN:MediaEnhancementFeature,OSN:ReelRemixFeature,Features for enhancing media content like reels or videos.,
+OSN:MediaEnhancementFeature,OSN:ReelMusic,Features for enhancing media content like reels or videos.,
+OFB:AdditionalFeature,OFB:AnonymousMode,,
+OFB:AdditionalFeature,OFB:ActivitySummary,,
+OFB:AdditionalFeature,OFB:Flair,,
+OFB:AdditionalFeature,OFB:Analytics,,Represents analytics feature for online forum blogs.
+OFB:AdditionalFeature,OFB:AdRevenueFeature,,
+OFB:AdditionalFeature,OFB:DonationFeature,,
+OFB:ActivitySummary,OFB:WeeklyDigest,,
+OFB:ActivitySummary,OFB:DigestSummary,,
+OFB:Flair,OFB:FlairSearch,,
+OFB:Flair,OFB:FlairSystemFeature,,
+OFB:Analytics,OFB:StatsAndInsight,Represents analytics feature for online forum blogs.,
+OFB:StatsAndInsight,OFB:EngagementMetric,,
+OFB:StatsAndInsight,OFB:CommunityMetric,,
+OFB:StatsAndInsight,OFB:UserInsight,,
+MCSS:AdditionalFeature,MCSS:MessageAnalytics,,
+MCSS:AdditionalFeature,MCSS:ShoppingFeature,,
+"MCSS:AdditionalFeature,MCSS:Channel,,""Represents a content creator's channel on the platform, with attributes and relationships to content and users."""
+"Global:Setting,Global:ProfileSettings,""Represents a generalized configuration or setting related to user accounts, profiles, or platform features."",Represents user-configurable settings related to their profile."
+"Global:Setting,Global:ProfileSettings,""Represents a generalized configuration or setting related to user accounts, profiles, or platform features."",""ProfileSettings are distinct from NotificationSettings, SecuritySettings, PrivacySettings, and Accessibility settings."""
+"Global:Setting,Global:ProfileSettings,""Merepresentasikan konfigurasi atau pengaturan umum terkait akun pengguna, profil, atau fitur platform."",Represents user-configurable settings related to their profile."
+"Global:Setting,Global:ProfileSettings,""Merepresentasikan konfigurasi atau pengaturan umum terkait akun pengguna, profil, atau fitur platform."",""ProfileSettings are distinct from NotificationSettings, SecuritySettings, PrivacySettings, and Accessibility settings."""
+"Global:Setting,Global:ProfileSettings,""Global:Setting (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User) - this disjointness is REMOVED for OSN:User to resolve inconsistencies. It remains distinct from Global:UserManagement."",Represents user-configurable settings related to their profile."
+"Global:Setting,Global:ProfileSettings,""Global:Setting (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User) - this disjointness is REMOVED for OSN:User to resolve inconsistencies. It remains distinct from Global:UserManagement."",""ProfileSettings are distinct from NotificationSettings, SecuritySettings, PrivacySettings, and Accessibility settings."""
+"Global:Setting,Global:NotificationSettings,""Represents a generalized configuration or setting related to user accounts, profiles, or platform features."",Represents user-configurable settings related to notifications."
+"Global:Setting,Global:NotificationSettings,""Represents a generalized configuration or setting related to user accounts, profiles, or platform features."",""NotificationSettings are distinct from ProfileSettings, SecuritySettings, PrivacySettings, and Accessibility settings."""
+"Global:Setting,Global:NotificationSettings,""Merepresentasikan konfigurasi atau pengaturan umum terkait akun pengguna, profil, atau fitur platform."",Represents user-configurable settings related to notifications."
+"Global:Setting,Global:NotificationSettings,""Merepresentasikan konfigurasi atau pengaturan umum terkait akun pengguna, profil, atau fitur platform."",""NotificationSettings are distinct from ProfileSettings, SecuritySettings, PrivacySettings, and Accessibility settings."""
+"Global:Setting,Global:NotificationSettings,""Global:Setting (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User) - this disjointness is REMOVED for OSN:User to resolve inconsistencies. It remains distinct from Global:UserManagement."",Represents user-configurable settings related to notifications."
+"Global:Setting,Global:NotificationSettings,""Global:Setting (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User) - this disjointness is REMOVED for OSN:User to resolve inconsistencies. It remains distinct from Global:UserManagement."",""NotificationSettings are distinct from ProfileSettings, SecuritySettings, PrivacySettings, and Accessibility settings."""
+"Global:Setting,Global:Accessibility,""Represents a generalized configuration or setting related to user accounts, profiles, or platform features."",""Accessibility settings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and PrivacySettings."""
+"Global:Setting,Global:Accessibility,""Merepresentasikan konfigurasi atau pengaturan umum terkait akun pengguna, profil, atau fitur platform."",""Accessibility settings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and PrivacySettings."""
+"Global:Setting,Global:Accessibility,""Global:Setting (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User) - this disjointness is REMOVED for OSN:User to resolve inconsistencies. It remains distinct from Global:UserManagement."",""Accessibility settings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and PrivacySettings."""
+"Global:Setting,Global:SecuritySettings,""Represents a generalized configuration or setting related to user accounts, profiles, or platform features."",Represents security-related settings for a user account or profile."
+"Global:Setting,Global:SecuritySettings,""Represents a generalized configuration or setting related to user accounts, profiles, or platform features."",""SecuritySettings are distinct from ProfileSettings, NotificationSettings, PrivacySettings, and Accessibility settings."""
+"Global:Setting,Global:SecuritySettings,""Merepresentasikan konfigurasi atau pengaturan umum terkait akun pengguna, profil, atau fitur platform."",Represents security-related settings for a user account or profile."
+"Global:Setting,Global:SecuritySettings,""Merepresentasikan konfigurasi atau pengaturan umum terkait akun pengguna, profil, atau fitur platform."",""SecuritySettings are distinct from ProfileSettings, NotificationSettings, PrivacySettings, and Accessibility settings."""
+"Global:Setting,Global:SecuritySettings,""Global:Setting (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User) - this disjointness is REMOVED for OSN:User to resolve inconsistencies. It remains distinct from Global:UserManagement."",Represents security-related settings for a user account or profile."
+"Global:Setting,Global:SecuritySettings,""Global:Setting (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User) - this disjointness is REMOVED for OSN:User to resolve inconsistencies. It remains distinct from Global:UserManagement."",""SecuritySettings are distinct from ProfileSettings, NotificationSettings, PrivacySettings, and Accessibility settings."""
+"Global:Setting,Global:PrivacySettings,""Represents a generalized configuration or setting related to user accounts, profiles, or platform features."",Represents privacy-related settings for a user account or profile."
+"Global:Setting,Global:PrivacySettings,""Represents a generalized configuration or setting related to user accounts, profiles, or platform features."",""PrivacySettings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and Accessibility settings."""
+"Global:Setting,Global:PrivacySettings,""Merepresentasikan konfigurasi atau pengaturan umum terkait akun pengguna, profil, atau fitur platform."",Represents privacy-related settings for a user account or profile."
+"Global:Setting,Global:PrivacySettings,""Merepresentasikan konfigurasi atau pengaturan umum terkait akun pengguna, profil, atau fitur platform."",""PrivacySettings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and Accessibility settings."""
+"Global:Setting,Global:PrivacySettings,""Global:Setting (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User) - this disjointness is REMOVED for OSN:User to resolve inconsistencies. It remains distinct from Global:UserManagement."",Represents privacy-related settings for a user account or profile."
+"Global:Setting,Global:PrivacySettings,""Global:Setting (a sub-concept under Global:UserAccount in this hierarchy) is distinct from specific platform user types (MCSS:User, MP:User, OFB:User) - this disjointness is REMOVED for OSN:User to resolve inconsistencies. It remains distinct from Global:UserManagement."",""PrivacySettings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and Accessibility settings."""
+"Global:Accessibility,OFB:Accessibility,""Accessibility settings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and PrivacySettings."","
+"Global:Accessibility,MP:Accessibility,""Accessibility settings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and PrivacySettings."","
+OFB:Accessibility,OFB:LanguageSettings,,
+Global:SecuritySettings,OFB:SecuritySettings,Represents security-related settings for a user account or profile.,
+"Global:SecuritySettings,OFB:SecuritySettings,""SecuritySettings are distinct from ProfileSettings, NotificationSettings, PrivacySettings, and Accessibility settings."","
+Global:SecuritySettings,OSN:SecuritySettings,Represents security-related settings for a user account or profile.,
+"Global:SecuritySettings,OSN:SecuritySettings,""SecuritySettings are distinct from ProfileSettings, NotificationSettings, PrivacySettings, and Accessibility settings."","
+Global:SecuritySettings,MP:SecuritySettings,Represents security-related settings for a user account or profile.,Security settings for MP users.
+"Global:SecuritySettings,MP:SecuritySettings,""SecuritySettings are distinct from ProfileSettings, NotificationSettings, PrivacySettings, and Accessibility settings."",Security settings for MP users."
+Global:SecuritySettings,MCSS:SecuritySettings,Represents security-related settings for a user account or profile.,Security settings for MCSS users.
+"Global:SecuritySettings,MCSS:SecuritySettings,""SecuritySettings are distinct from ProfileSettings, NotificationSettings, PrivacySettings, and Accessibility settings."",Security settings for MCSS users."
+Global:PrivacySettings,OSN:PrivacySettings,Represents privacy-related settings for a user account or profile.,
+"Global:PrivacySettings,OSN:PrivacySettings,""PrivacySettings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and Accessibility settings."","
+Global:PrivacySettings,MP:PrivacySettings,Represents privacy-related settings for a user account or profile.,Privacy settings for MP users.
+"Global:PrivacySettings,MP:PrivacySettings,""PrivacySettings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and Accessibility settings."",Privacy settings for MP users."
+Global:PrivacySettings,MCSS:PrivacySettings,Represents privacy-related settings for a user account or profile.,Privacy settings for MCSS users.
+"Global:PrivacySettings,MCSS:PrivacySettings,""PrivacySettings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and Accessibility settings."",Privacy settings for MCSS users."
+Global:PrivacySettings,OFB:PrivacySettings,Represents privacy-related settings for a user account or profile.,Privacy settings for OFB users.
+"Global:PrivacySettings,OFB:PrivacySettings,""PrivacySettings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and Accessibility settings."",Privacy settings for OFB users."
+"OSN:Avatars,OSN:AvatarPost,""Represents the avatars created, edited, and customized by users."",Represents posts created using avatars."
+OSN:Events,EventInvitations,Represents events created and managed by users.,Handles invitations for events.
+OSN:Events,EventTypes,Represents events created and managed by users.,Represents different types of events.

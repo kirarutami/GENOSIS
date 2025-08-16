@@ -1,0 +1,46 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Activity -->
+    <owl:Class rdf:about="#Activity"/>
+
+    <!-- Sub-kelas ManageActivity -->
+    <owl:Class rdf:about="#ManageActivity">
+        <rdfs:subClassOf rdf:resource="#Activity"/>
+    </owl:Class>
+
+    <!-- Sub-kelas ViewActivity di dalam ManageActivity -->
+    <owl:Class rdf:about="#ViewActivity">
+        <rdfs:subClassOf rdf:resource="#ManageActivity"/>
+    </owl:Class>
+
+    <!-- Individu di dalam ViewActivity -->
+    <owl:NamedIndividual rdf:about="#LikesActivities">
+        <rdf:type rdf:resource="#ViewActivity"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view their likes activities.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#CommentsActivities">
+        <rdf:type rdf:resource="#ViewActivity"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view their comments activities.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TagsActivities">
+        <rdf:type rdf:resource="#ViewActivity"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view their tags activities.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ReviewsActivities">
+        <rdf:type rdf:resource="#ViewActivity"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view their reviews activities.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Individu DownloadInformation di dalam Activity -->
+    <owl:NamedIndividual rdf:about="#DownloadInformation">
+        <rdf:type rdf:resource="#Activity"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can download their account information.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

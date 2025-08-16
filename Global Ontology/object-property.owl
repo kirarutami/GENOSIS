@@ -1,0 +1,2565 @@
+<owl:ObjectProperty rdf:about="#hasProfileOn">
+  <rdfs:domain rdf:resource="#UserProfile"/>
+  <rdfs:range rdf:resource="#OnlineSocialNetworkSites"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a UserProfile exists on a specific Online Social Network Site (e.g., Facebook, Instagram, LinkedIn).</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#belongsTo">
+  <rdfs:domain rdf:resource="#OnlineSocialNetworkSites"/>
+  <rdfs:range rdf:resource="#UserProfile"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The inverse property of 'hasProfileOn', indicating that a social media profile belongs to a user on a given platform.</OSNcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#associatedWithUser</alignWithMCSS>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#belongsTo</alignWithOSN>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isLinkedTo">
+  <rdfs:domain rdf:resource="#UserProfile"/>
+  <rdfs:range rdf:resource="#UserProfile"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a UserProfile on one platform is linked to another profile on a different platform. This property is symmetric.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#follows">
+  <rdfs:domain rdf:resource="#UserProfile"/>
+  <rdfs:range rdf:resource="#UserProfile"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFollowedBy">
+  <rdfs:domain rdf:resource="#UserProfile"/>
+  <rdfs:range rdf:resource="#UserProfile"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFriendOf">
+  <rdfs:domain rdf:resource="#UserProfile"/>
+  <rdfs:range rdf:resource="#UserProfile"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isMemberOf">
+  <rdfs:domain rdf:resource="#UserProfile"/>
+  <rdfs:range rdf:resource="#Groups"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user is a member of a group.</OSNcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#isMemberOf</alignWithOSN>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#joinsCommunity</alignWithMP>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#joinsCommunity</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sameAs">
+  <rdfs:domain rdf:resource="#UserProfile"/>
+  <rdfs:range rdf:resource="#UserProfile"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that two profiles on different Online Social Network Sites belong to the same person. This property is functional and inverse functional.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#linksAccount">
+  <rdfs:domain rdf:resource="#UserProfile"/>
+  <rdfs:range rdf:resource="#OnlineSocialNetworkSites"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to their associated social network accounts.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#postedBy">
+  <rdfs:domain rdf:resource="#Stories"/>
+  <rdfs:range rdf:resource="#UserProfile"/>
+  <rdfs:domain rdf:resource="#Post"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the poster of a story.</OSNcomment>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+        Indicates the user who created or published this post.
+        </MPcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#createsPost</alignWithOFB>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#postedBy</alignWithOSN>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#postedBy</alignWithMP>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#associatedWithUser</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isTargetedToContent">
+  <rdfs:domain rdf:resource="#ContentInteraction"/>
+  <rdfs:range rdf:resource="#ContentCreation"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links user interactions (like, reaction, comment) with the targeted content (posts, videos, reels).</OSNcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#associatedWithContent</alignWithOFB>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#isTargetedToContent</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#associatedWithContent</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#commentedBy">
+  <rdfs:domain rdf:resource="#Comments"/>
+  <rdfs:range rdf:resource="#User"/>
+  <rdfs:domain rdf:resource="#Comment"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a comment with the User who made the comment.</OSNcomment>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Points to the user who wrote this comment.
+        </MPcomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a comment with the User who made the comment.</MCSScomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#commentedBy</alignWithMP>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#commentedBy</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#commentedBy</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#commentsOn">
+  <rdfs:domain rdf:resource="#Comments"/>
+  <rdfs:range rdf:resource="#ContentCreation"/>
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a comment with the ContentCreation that was commented on.</OSNcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the content they have commented on.</OFBcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#commentedOn</alignWithMP>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#associatedWithCommentedPost</alignWithMCSS>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#commentsOn</alignWithOSN>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#commentsOn</alignWithOFB>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#commentsOnContent</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#likedBy">
+  <rdfs:domain rdf:resource="#Like"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a like interaction with the User who liked the content.</OSNcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#likesContent</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#likesContent</alignWithOFB>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#likedBy</alignWithOSN>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reactedBy">
+  <rdfs:domain rdf:resource="#React"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a reaction interaction with the User who reacted to the content.</OSNcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#addsReactionTo</alignWithMP>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#reactedBy</alignWithOSN>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#interactsWithVideo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Videos"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a User's interaction with a video (e.g., watching history) to the specific video content.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#interactsWithReel">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Reels"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a User's interaction with a short video or reel to the specific reel content.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#viewsMessages">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#DirectMessages"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the messages they have viewed.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sendsTextMessage">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#TextMessage"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user sent a text message.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sendsPhotoVideoMessage">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#TextMessage"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user sent a photo or video message.</OSNcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#sendsMediaTo</alignWithMP>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#sendsPhotoVideoMessage</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sendsMediaMessageTo</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sendsVoiceMessage">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#TextMessage"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user sent a voice message.</OSNcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sendsVoiceNoteTo</alignWithMCSS>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#sendsVoiceMessage</alignWithOSN>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#sendsVoiceNotesTo</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#createsGroupChat">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#GroupChat"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the creation of a group chat.</OSNcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#createsGroupMessageThreadWith</alignWithMCSS>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#createsGroupChat</alignWithOSN>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#addsMembersTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#GroupChat"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the action of adding members to a group chat.</OSNcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#addsMembersTo</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#addsParticipantsToGroup</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#removesMembersFrom">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#GroupChat"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the action of removing members from a group chat.</OSNcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#removesParticipantsFromGroup</alignWithMCSS>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#removesMembersFrom</alignWithOSN>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#enablesNotifications">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#MessageNotifications"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the action of enabling notifications.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#disablesNotifications">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#MessageNotifications"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the action of disabling notifications.</OSNcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#disablesNotifications</alignWithOSN>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#mutesNotifications</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#callsOneOnOneVideoCall">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#VideoCalls"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to a one-on-one video call.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#callsGroupVideoCall">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#VideoCalls"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to a group video call.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#callsOneOnOneVoiceCall">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#VoiceCalls"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to a one-on-one voice call.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#callsGroupVoiceCall">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#VoiceCalls"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to a group voice call.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#listsItemTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Listings"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to an item listing they have created.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#listsVehicleTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Listings"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to a vehicle listing they have created.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#listsPropertyTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Listings"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to a property listing they have created.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#pinsGroup">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#PinnedGroups"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the groups they have pinned.</OSNcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#createsShortcutForCommunity</alignWithMP>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#pinsGroup</alignWithOSN>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#enablesGroupNotifications">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#GroupNotifications"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to enabling notifications for a group.</OSNcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#enablesGroupNotifications</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#enablesNotificationForGroupMessages</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#disablesGroupNotifications">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#GroupNotifications"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to disabling notifications for a group.</OSNcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#disablesGroupNotifications</alignWithOSN>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#mutesGroupChat</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAdminRole">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Admin"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to an admin role in a group.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasModeratorRole">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Moderator"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to a moderator role in a group.</OSNcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasModeratorRole</alignWithOSN>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#isAssignedAsModeratorIn</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasMemberRole">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Member"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to a member role in a group.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#createsGroupEvents">
+  <rdfs:domain rdf:resource="#Moderator"/>
+  <rdfs:range rdf:resource="#Events"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a moderator to creating group events.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#cancelsGroupEvents">
+  <rdfs:domain rdf:resource="#Moderator"/>
+  <rdfs:range rdf:resource="#Events"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a moderator to canceling group events.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCoHost">
+  <rdfs:domain rdf:resource="#Events"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links an event to its co-host user(s).</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#setsMemberToAdmin">
+  <rdfs:domain rdf:resource="#Moderator"/>
+  <rdfs:range rdf:resource="#Admin"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows a moderator to assign a user as an admin.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#removesAdmin">
+  <rdfs:domain rdf:resource="#Moderator"/>
+  <rdfs:range rdf:resource="#Admin"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows a moderator to remove an admin role from a user.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#deletesGroup">
+  <rdfs:domain rdf:resource="#Moderator"/>
+  <rdfs:range rdf:resource="#Groups"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows a moderator to delete a group.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#removesMember">
+  <rdfs:domain rdf:resource="#Admin"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows an admin to remove a member from the group.</OSNcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#removesMember</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#removesParticipantsFromGroup</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#approvesPost">
+  <rdfs:domain rdf:resource="#Admin"/>
+  <rdfs:range rdf:resource="#Posts"/>
+  <rdfs:domain rdf:resource="#Moderator"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows an admin to approve a post submitted by a group member.</OSNcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a moderator has approved a post in the community.</OFBcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#approvesPost</alignWithOFB>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#approvesPost</alignWithOSN>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#deniesPost">
+  <rdfs:domain rdf:resource="#Admin"/>
+  <rdfs:range rdf:resource="#Posts"/>
+  <rdfs:domain rdf:resource="#Moderator"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows an admin to deny a post submitted by a group member.</OSNcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a moderator has denied a post in the community.</OFBcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#deniesPost</alignWithOSN>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#deniesPost</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#setsGroupRuleViolation">
+  <rdfs:domain rdf:resource="#Admin"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows an admin to flag a user for violating group rules.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reviewsReportedContent">
+  <rdfs:domain rdf:resource="#Admin"/>
+  <rdfs:range rdf:resource="#Posts"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows an admin to review reported content for rule violations.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sendsEventInvitationTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user sending an event invitation to another user.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#acceptsEventInvitationFrom">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user accepting an event invitation from another user.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#createsAvatar">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Avatars"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the creation of a new avatar.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#editsAvatar">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Avatars"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to editing an existing avatar.</OSNcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#canEditProfilePicture</alignWithMCSS>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#editsAvatar</alignWithOSN>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#buysClothesFor">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Avatars"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the action of buying clothes for an avatar.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#triesNewOutfitsFor">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Avatars"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the action of trying new outfits for an avatar.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#createAvatarPosts">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Posts"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the creation of posts featuring their avatar.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#writesBirthdayOnTimeline">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to another user's timeline where they write birthday messages.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sendBirthdayMessageTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to another user they send a birthday message to.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#savesGame">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#PlayGames"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to saved games.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sharesGame">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#PlayGames"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to shared games.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#connectsGame">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#PlayGames"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to connected games or gaming notifications.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#createChildAccount">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#MessengerKids"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the creation of a child’s account on Messenger Kids.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#connectMessengerKid">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#MessengerKids"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the connection of Messenger Kids accounts.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#createPage">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Pages"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the creation of a new page.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#activatePage">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Pages"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the activation of a page.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#deactivatePage">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Pages"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the deactivation of a page.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mergePages">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Pages"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the process of merging two or more pages.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#settingsTwoFactorAuthentication">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SecuritySettings"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to two-factor authentication settings.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#settingsLoginAlerts">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SecuritySettings"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to login alert settings.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#settingsPasswordManagement">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SecuritySettings"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to password management settings.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#deactivatesAccount">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#AccountManagement"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to account deactivation actions.</OSNcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#deactivatesAccount</alignWithOSN>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#AccountDeactivation</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#deletesAccount">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#AccountManagement"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to account deletion actions.</OSNcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#AccountDeletion</alignWithOFB>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#deletesAccount</alignWithOSN>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#downloadsYourInformation">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#AccountManagement"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to downloading account information actions.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#transfersYourInformation">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#AccountManagement"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to transferring account information actions.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#accessHelpCenter">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#HelpSupport"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to accessing the help center.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#submitsReportProblem">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#HelpSupport"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to submitting a problem report.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#accessSupportInbox">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#HelpSupport"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to accessing the support inbox.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#Messenger">
+  <rdfs:domain rdf:resource="#OtherApps"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links the user to the Messenger app.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#WhatsApp">
+  <rdfs:domain rdf:resource="#OtherApps"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links the user to the WhatsApp app.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#likesActivities">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ActivityLog"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Records activities related to liking content.</OSNcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#likesActivities</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#Like</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#Like</alignWithOFB>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#Likes</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#commentsActivities">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ActivityLog"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Records activities related to commenting on content.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#tagsActivities">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ActivityLog"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Records activities related to tagging others.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reviewsActivities">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ActivityLog"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Records activities related to reviewing content.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#downloadsInformation">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ActivityLog"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents user activity for downloading their account information.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#LogoutAction">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Logout"/>
+  <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the logout action performed.</OSNcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canEditProfile">
+  <rdfs:domain rdf:resource="#ProfileSettings"/>
+  <rdfs:range rdf:resource="#User"/>
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ProfileSettings"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates permission to edit profile information.</MPcomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that the user can edit their general profile settings.</MCSScomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user can edit their profile settings.</OFBcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#canEditProfile</alignWithOFB>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#canEditProfile</alignWithMCSS>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#canEditProfile</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canEditAvatar">
+  <rdfs:domain rdf:resource="#ProfileSettings"/>
+  <rdfs:range rdf:resource="#User"/>
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ProfileSettings"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates permission to edit profile avatar.</MPcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user can edit their avatar.</OFBcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#canEditProfilePicture</alignWithMCSS>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#canEditAvatar</alignWithMP>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#canEditAvatar</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canEditHeader">
+  <rdfs:domain rdf:resource="#ProfileSettings"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates permission to edit profile header.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#retweetedBy">
+  <rdfs:domain rdf:resource="#ReblogRetweetPost"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Menunjukkan pengguna yang melakukan aksi retweet atau reblog ini.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#retweetsOriginalPost">
+  <rdfs:domain rdf:resource="#ReblogRetweetPost"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Menunjukkan postingan asli yang di-retweet atau di-reblog.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#addToQueue">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ContentCreation"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows a user to add a post to a queue for later publication.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#schedulePost">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ContentCreation"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Schedules a post to be published at a specified time.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#saveAsDraft">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ContentCreation"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saves a post as a draft for future editing or posting.</MPcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#savesPostAsDraft</alignWithOFB>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#saveAsDraft</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#postAsPrivate">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ContentCreation"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Posts content with a private visibility setting.</MPcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasPostVisibility</alignWithOSN>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#postAsPrivate</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#addContentLabel">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ContentCreation"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adds a label or tag to the content for categorization or filtering.</MPcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#addTagsOnContent</alignWithOFB>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#addContentLabel</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#controlReblogRetweet">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ContentCreation"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enables or disables the option for other users to reblog or retweet the content.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#postMedia">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ContentCreation"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Posts media content such as images, videos, or GIFs.</MPcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasPostMedia</alignWithOFB>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#postMedia</alignWithMP>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#PhotoVideo</alignWithOSN>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#postLink">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ContentCreation"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Posts a link within the content.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#likesPost">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Post"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#likesComment">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Comment"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#likesReblogRetweetPost">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ReblogRetweetPost"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#likesReplies">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Reply"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reblogsRetweetsA">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Post"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reblogsRetweetsComment">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Comment"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reblogsRetweetsAgainA">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ReblogRetweetPost"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#commentsOnReblogRetweetPost">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ReblogRetweetPost"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#commentedOn">
+  <rdfs:domain rdf:resource="#Comment"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Points to the post on which this comment was made.
+            For reblog/retweet, you could similarly add commentedOnReblogRetweetPost, etc.
+        </MPcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#commentedOn</alignWithMP>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#associatedWithCommentedPost</alignWithMCSS>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#commentsOn</alignWithOSN>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#repliesOnComment">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Comment"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#deletesReblogRetweetPost">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Reply"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#blockInitiator">
+  <rdfs:domain rdf:resource="#Block"/>
+  <rdfs:range rdf:resource="#User"/>
+  <rdfs:domain rdf:resource="#BlockUnblockUser"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            The user who initiates the block action.
+        </MPcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+        Indicates the user who initiates the blocking action.
+        </OFBcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#blockInitiator</alignWithOFB>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#blockInitiator</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#blockedUser">
+  <rdfs:domain rdf:resource="#Block"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            The user who is being blocked.
+        </MPcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#blockedTargetUser</alignWithOFB>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#blockedUser</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#blocks">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#unblocks">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reports">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reportPost">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Post"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reportsReply">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Reply"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reportComment">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Comment"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#follow">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#unfollow">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#asks">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mutesNotifications">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Notifications"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user mutes notifications.</MPcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#disablesNotifications</alignWithOSN>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#mutesNotifications</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mutesWords">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Words"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user mutes specific words.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mutesAccounts">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user mutes another user account.</MPcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hidesUserNotificationsFor</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#mutesUser</alignWithOFB>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#mutesAccounts</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#searchFor">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows a user to search for other users within the platform.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#searchTopicsOn">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SearchFunctionality"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows a user to search for specific topics within the platform.</MPcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#searchTopicsOn</alignWithMP>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#SearchFunctionality</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#saveSearchesFor">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SearchFunctionality"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows a user to save their searches for future reference.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#useAdvancedSearchOn">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SearchFunctionality"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows a user to use advanced search options for more specific query parameters.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#searchContentBasedOnLocationOn">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SearchFunctionality"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Displays content based on the user's location.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#personalizeTrendsOn">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ExploreSettings"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Personalizes trending content for the user based on their interests.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#dmSender">
+  <rdfs:domain rdf:resource="#DirectMessages"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            The user who initiates/sends this direct message.
+        </MPcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#messageSender</alignWithOFB>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sentBy</alignWithMCSS>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#dmSender</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#dmReceiver">
+  <rdfs:domain rdf:resource="#DirectMessages"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            The user who receives this direct message.
+        </MPcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#dmReceiver</alignWithMP>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sentTo</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#messageReceiver</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sendsMediaTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user sends media files (photos, videos) to another user.</MPcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#sendsMediaTo</alignWithMP>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#sendsPhotoVideoMessage</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sendsMediaMessageTo</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sendsVoiceNotesTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user sends voice notes to another user.</MPcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#sendsVoiceMessage</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sendsVoiceNoteTo</alignWithMCSS>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#sendsVoiceNotesTo</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#repliesToMessage">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#DirectMessages"/>
+  <rdfs:range rdf:resource="#MessageContent"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user replies to a specific direct message.</MPcomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user replying to a specific message.</MCSScomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#repliesToMessage</alignWithMCSS>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#repliesToMessage</alignWithMP>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#Reply</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#deletesMessage">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#DirectMessages"/>
+  <rdfs:range rdf:resource="#MessageContent"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user deletes a specific direct message.</MPcomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user deleting a specific message.</MCSScomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#deletesMessage</alignWithMP>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#deletesMessage</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#addsReactionTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#DirectMessages"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user adds a reaction (like, emoji) to a specific direct message.</MPcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#LikesReactions</alignWithOSN>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#addsReactionTo</alignWithMP>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#reactsToMessage</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reportsMessage">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#DirectMessages"/>
+  <rdfs:range rdf:resource="#MessageContent"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user reports a specific direct message for inappropriate content.</MPcomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user reporting a message for review.</MCSScomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#reportsMessage</alignWithMCSS>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#reportsMessage</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isSubscribedTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Subscription"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to a specific subscription they are subscribed to.</MPcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#isSubscribedTo</alignWithMP>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#subscribesTo</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#receivesAdvertisements">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Advertisement"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to advertisements they receive on the platform.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#searchesForCommunity">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Community"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user is searching for a specific community.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#joinsCommunity">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Community"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has joined a specific community.</MPcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has joined a community.</OFBcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#isMemberOf</alignWithOSN>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#joinsCommunity</alignWithMP>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#joinsCommunity</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#spotlightsCommunity">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Community"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user is highlighting or promoting a specific community.</MPcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#spotlightsCommunity</alignWithMP>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#highlightsCommunity</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#pinsCommunity">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Community"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has pinned a specific community to their profile or feed.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#createsShortcutForCommunity">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Community"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has created a shortcut for quick access to a community.</MPcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#createsShortcutForCommunity</alignWithMP>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#pinsGroup</alignWithOSN>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sharesCommunity">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Community"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has shared a community with others.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reportsCommunity">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Community"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has reported a community for inappropriate content or behavior.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#startsListeningTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has started listening to a live space or room.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#requestsToSpeak">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has requested to speak in a live space or room.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#replaysLiveSession">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user is replaying a live session.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#followsHost">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user is following the host of a live space or room.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#viewsGuestLists">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user is viewing the guest list of a live space or room.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usesReactions">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user is using reactions in a live space or room.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sharesLiveSession">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user is sharing a live session.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#leavesLiveSession">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has left a live session.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#setsReminder">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#UpcomingSessions"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has set a reminder for an upcoming session.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#addsToCalendar">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#UpcomingSessions"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has added an upcoming session to their calendar.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#savesDraftsOn">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Drafts"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has saved content as a draft.</MPcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#savesDraftsOn</alignWithMP>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#savesPostAsDraft</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#addsOrFollowsList">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Lists"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user adds or follows a list on the platform.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#pinsList">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Lists"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has pinned a specific list for quick access.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reportsList">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Lists"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has reported a list on the platform.</MPcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#reportsList</alignWithMP>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#Report</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#blocksListCreator">
+  <rdfs:domain rdf:resource="#User"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has blocked the creator of a specific list.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sharesList">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Lists"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has shared a list with others.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#searchesForLists">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Lists"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has searched for specific lists on the platform.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#clearsAllBookmarks">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Bookmarks"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user clears all saved bookmarks.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#acceptsFollowerRequests">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#FollowerRequests"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user accepts  follower requests.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#declinesFollowerRequests">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#FollowerRequests"/>
+  <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user declines follower requests.</MPcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ownsChannel">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Channel"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user owns a specific channel on the platform.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#managesChannel">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Channel"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user manages (collaborates on) a specific channel on the platform.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canEditProfilePicture">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ProfileSettings"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that the user can edit their profile picture within the profile settings.</MCSScomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#canEditAvatar</alignWithOFB>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#editsAvatar</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#canEditProfilePicture</alignWithMCSS>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#canEditAvatar</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canEditUsername">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ProfileSettings"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that the user can edit their username within the profile settings.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithUser">
+  <rdfs:domain rdf:resource="#Channel"/>
+  <rdfs:range rdf:resource="#User"/>
+  <rdfs:domain rdf:resource="#TagContent"/>
+  <rdfs:domain rdf:resource="#CrossPost"/>
+  <rdfs:domain rdf:resource="#ScheduledPost"/>
+  <rdfs:domain rdf:resource="#Post"/>
+  <rdfs:domain rdf:resource="#FlairSystem"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links the channel to the user who owns or manages it.</MCSScomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a post to the user who created it.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a scheduled post to the user who created it.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a cross-post to the user who created it.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links tagged content to the user who created the tag.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a flair to a specific user in the system.</OFBcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#associatedWithUser</alignWithMCSS>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#belongsTo</alignWithOSN>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#postedBy</alignWithMP>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#associatedWithUser</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#uploadsContent">
+  <rdfs:domain rdf:resource="#Channel"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">General property linking the channel to uploaded content.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#uploadsVideo">
+  <rdfs:domain rdf:resource="#Channel"/>
+  <rdfs:range rdf:resource="#Video"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links the channel to uploaded video content.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#uploadsShortVideo">
+  <rdfs:domain rdf:resource="#Channel"/>
+  <rdfs:range rdf:resource="#ShortVideo"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links the channel to uploaded short videos.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#uploadsLive">
+  <rdfs:domain rdf:resource="#Channel"/>
+  <rdfs:range rdf:resource="#Live"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links the channel to live sessions conducted through it.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithMonetization">
+  <rdfs:domain rdf:resource="#Channel"/>
+  <rdfs:range rdf:resource="#Monetization"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links the channel to monetization settings or features.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#likesContent">
+  <rdfs:domain rdf:resource="#Channel"/>
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user likes a specific content.</MCSScomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a channel likes a specific content.</MCSScomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the content they have liked.</OFBcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#likesContent</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#likesContent</alignWithOFB>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#likedBy</alignWithOSN>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#Likes</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithContent">
+  <rdfs:domain rdf:resource="#Like"/>
+  <rdfs:domain rdf:resource="#ShortVideoPost"/>
+  <rdfs:domain rdf:resource="#Report"/>
+  <rdfs:domain rdf:resource="#Dislike"/>
+  <rdfs:domain rdf:resource="#Post"/>
+  <rdfs:domain rdf:resource="#Comment"/>
+  <rdfs:domain rdf:resource="#VideoPost"/>
+  <rdfs:domain rdf:resource="#Share"/>
+  <rdfs:domain rdf:resource="#LivePost"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <rdfs:domain rdf:resource="#GiveAwards"/>
+  <rdfs:domain rdf:resource="#TrendingContent"/>
+  <rdfs:domain rdf:resource="#ShareRepost"/>
+  <rdfs:domain rdf:resource="#UpvoteDownvote"/>
+  <rdfs:domain rdf:resource="#RecommendedContent"/>
+  <rdfs:domain rdf:resource="#Flair"/>
+  <rdfs:domain rdf:resource="#Bookmark"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a like is associated with a specific content.</MCSScomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a comment is associated with specific content.</MCSScomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a share is associated with specific content.</MCSScomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a dislike is associated with specific content.</MCSScomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a report is associated with specific content.</MCSScomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a post to its associated content.</MCSScomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a Video post to its associated content.</MCSScomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a Short Video post to its associated content.</MCSScomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a Live post to its associated content.</MCSScomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links an upvote or downvote action to the associated content.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a like action to the associated content.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a share or repost action to the associated content.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a bookmark action to the associated content.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links an award action to the associated content.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a comment to the content it is associated with.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links trending content to the actual content it represents.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links recommended content to its associated content entity.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a flair tag to specific content.</OFBcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#associatedWithContent</alignWithOFB>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#isTargetedToContent</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#associatedWithContent</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithLikedPost">
+  <rdfs:domain rdf:resource="#Like"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a like is associated with a liked post.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithLikedVideo">
+  <rdfs:domain rdf:resource="#Like"/>
+  <rdfs:range rdf:resource="#Video"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a like is associated with a liked video.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithLikedShortVideo">
+  <rdfs:domain rdf:resource="#Like"/>
+  <rdfs:range rdf:resource="#ShortVideo"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a like is associated with a liked short video.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithLikedLive">
+  <rdfs:domain rdf:resource="#Like"/>
+  <rdfs:range rdf:resource="#Live"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a like is associated with a liked live session.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#commentsOnContent">
+  <rdfs:domain rdf:resource="#Channel"/>
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user comments on specific content.</MCSScomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a channel comments on specific content.</MCSScomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#commentsOn</alignWithOFB>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#commentsOnContent</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithCommentedPost">
+  <rdfs:domain rdf:resource="#Comment"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a comment is associated with a commented post.</MCSScomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#commentedOn</alignWithMP>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#associatedWithCommentedPost</alignWithMCSS>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#commentsOn</alignWithOSN>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithCommentedVideo">
+  <rdfs:domain rdf:resource="#Comment"/>
+  <rdfs:range rdf:resource="#Video"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a comment is associated with a commented video.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithCommentedShortVideo">
+  <rdfs:domain rdf:resource="#Comment"/>
+  <rdfs:range rdf:resource="#ShortVideo"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a comment is associated with a commented short video.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithCommentedLive">
+  <rdfs:domain rdf:resource="#Comment"/>
+  <rdfs:range rdf:resource="#Live"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a comment is associated with a commented live session.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sharesContent">
+  <rdfs:domain rdf:resource="#Channel"/>
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user shares specific content.</MCSScomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a channel shares specific content.</MCSScomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the content they have shared or reposted.</OFBcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sharesContent</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#sharesContent</alignWithOFB>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#Share</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithSharedPost">
+  <rdfs:domain rdf:resource="#Share"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a share is associated with a shared post.</MCSScomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#ReblogRetweetPost</alignWithMP>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#associatedWithSharedPost</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithSharedVideo">
+  <rdfs:domain rdf:resource="#Share"/>
+  <rdfs:range rdf:resource="#Video"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a share is associated with a shared video.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithSharedShortVideo">
+  <rdfs:domain rdf:resource="#Share"/>
+  <rdfs:range rdf:resource="#ShortVideo"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a share is associated with a shared short video.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithSharedLive">
+  <rdfs:domain rdf:resource="#Share"/>
+  <rdfs:range rdf:resource="#Live"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a share is associated with a shared live session.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#dislikesContent">
+  <rdfs:domain rdf:resource="#Channel"/>
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user dislikes specific content.</MCSScomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a channel dislikes specific content.</MCSScomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#dislikesContent</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#downvotesContent</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithDislikedPost">
+  <rdfs:domain rdf:resource="#Dislike"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a dislike is associated with a disliked post.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithDislikedVideo">
+  <rdfs:domain rdf:resource="#Dislike"/>
+  <rdfs:range rdf:resource="#Video"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a dislike is associated with a disliked video.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithDislikedShortVideo">
+  <rdfs:domain rdf:resource="#Dislike"/>
+  <rdfs:range rdf:resource="#ShortVideo"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a dislike is associated with a disliked short video.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithDislikedLive">
+  <rdfs:domain rdf:resource="#Dislike"/>
+  <rdfs:range rdf:resource="#Live"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a dislike is associated with a disliked live session.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reportsContent">
+  <rdfs:domain rdf:resource="#Channel"/>
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user reports specific content.</MCSScomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a channel reports specific content.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reportsChannel">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Channel"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user reports specific channel.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reportsUser">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user reports specific user.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithReportedPost">
+  <rdfs:domain rdf:resource="#Report"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a report is associated with a reported post.</MCSScomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#isFiledFor</alignWithOFB>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#associatedWithReportedPost</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithReportedVideo">
+  <rdfs:domain rdf:resource="#Report"/>
+  <rdfs:range rdf:resource="#Video"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a report is associated with a reported video.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithReportedShortVideo">
+  <rdfs:domain rdf:resource="#Report"/>
+  <rdfs:range rdf:resource="#ShortVideo"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a report is associated with a reported short video.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithReportedLive">
+  <rdfs:domain rdf:resource="#Report"/>
+  <rdfs:range rdf:resource="#Live"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a report is associated with a reported live session.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#addsVideoToWatchLater">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Video"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user adds a video to their watch later list.</MCSScomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#addsVideoToWatchLater</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#Bookmark</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithVideo">
+  <rdfs:domain rdf:resource="#WatchLater"/>
+  <rdfs:range rdf:resource="#Video"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a watch later action is associated with a specific video.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sendsGiftInLive">
+  <rdfs:domain rdf:resource="#Channel"/>
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Live"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user sends a gift during a live session.</MCSScomment>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a channel sends a gift during a live session.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#receivesGiftInLive">
+  <rdfs:domain rdf:resource="#Channel"/>
+  <rdfs:range rdf:resource="#Live"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user receive a gift during a live session.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithLive">
+  <rdfs:domain rdf:resource="#Gift"/>
+  <rdfs:range rdf:resource="#Live"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a gift interaction is associated with a specific live session.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#searchesForContent">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SearchFunctionality"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user searches for specific content using search functionality.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#deletesSearchHistory">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SearchFunctionality"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user deletes their search history.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#viewsRecommendationsBasedOnWatchHistory">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SearchRecommendation"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user views recommendations based on their watch history.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#viewsRecommendationsBasedOnSearchHistory">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SearchRecommendation"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user views recommendations based on their search history.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#viewsRecommendationsBasedOnSubscriptions">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SearchRecommendation"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user views recommendations based on their subscriptions.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#viewsRecommendationsBasedOnLikes">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SearchRecommendation"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user views recommendations based on their likes.</MCSScomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#PersonalizedFeed</alignWithOFB>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#viewsRecommendationsBasedOnLikes</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#viewsRecommendationsBasedOnDislikes">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SearchRecommendation"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user views recommendations based on their dislikes.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#editsRecommendations">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SearchRecommendation"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user edits their recommendation preferences.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#pausesRecommendations">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SearchRecommendation"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user pauses their recommendations.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#providesSurveyFeedbackFor">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SearchRecommendation"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user provides feedback for their recommendations via a survey.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#viewsNewsWatchPage">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#NewsWatchPage"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user views the news watch page.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#viewsBreakingNews">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#BreakingNews"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user views the breaking news section.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#viewsTopNews">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#TopNews"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user views the top news section.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#donor">
+  <rdfs:domain rdf:resource="#SuperChat"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the user who made the SuperChat donation.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#belongsToLive">
+  <rdfs:domain rdf:resource="#SuperChat"/>
+  <rdfs:range rdf:resource="#Live"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links the SuperChat donation to the corresponding live stream event.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#viewsShoppingFeatures">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Shopping"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a User views shopping-related features.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#interactsWithShop">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Shopping"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a User interacts with shopping-related features.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#subscribesToCreator">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Subscription"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a User subscribes to a content creator.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#unsubscribesFromCreator">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Subscription"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a User unsubscribes from a content creator.</MCSScomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#FollowUnfollow</alignWithMP>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#unsubscribesFromCreator</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#exploresCreatorMarketplace">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#CreatorMarketplace"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a User explores the creator marketplace.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#purchasesCreatorContent">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#CreatorMarketplace"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a User purchases content from the creator marketplace.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hidesUserNotificationsFor">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a User hides notifications for another User.</MCSScomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hidesUserNotificationsFor</alignWithMCSS>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#mutesAccounts</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hidesChannelNotificationsFor">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Channel"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a User hides notifications for a specific Channel.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#managesUserMentionsFor">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a User manages mentions for specific users.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#managesChannelMentionsFor">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Channel"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a User manages mentions for specific users.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sentTo">
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the recipient of a direct message.</MCSScomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#dmReceiver</alignWithMP>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sentTo</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#messageReceiver</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sentBy">
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the sender of a direct message.</MCSScomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#messageSender</alignWithOFB>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sentBy</alignWithMCSS>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#dmSender</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sendsMessageTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user sending a message to another user.</MCSScomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user who sends a direct message to another user.</OFBcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sendsMessageTo</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#sendsMessageTo</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sendsMediaMessageTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user sending a media message to another user.</MCSScomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#sendsMediaTo</alignWithMP>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#sendsPhotoVideoMessage</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sendsMediaMessageTo</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sendsVoiceNoteTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user sending a voice note to another user.</MCSScomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#sendsVoiceMessage</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sendsVoiceNoteTo</alignWithMCSS>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#sendsVoiceNotesTo</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reactsToMessage">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#MessageContent"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user reacting to a message with an emoji or other reaction.</MCSScomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#addsReactionTo</alignWithMP>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#React</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#reactsToMessage</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#forwardsMessageTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user forwarding a message to another user.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#marksMessageAsUnread">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#MessageContent"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user marking a message as unread.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#archivesMessage">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#MessageContent"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user archiving a specific message.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#setsMessagePriority">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#MessageContent"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows a user to set priority for a specific message.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#enablesMessageEncryptionFor">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enables encryption for messages sent to a specific user.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sendsGiftInMessageTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows a user to send a gift within a message to another user.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#schedulesMessageFor">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Schedules a message to be sent at a later time.</MCSScomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#schedulesMessageFor</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#ScheduledPost</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#recallsMessage">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#MessageContent"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Recalls a previously sent message.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#pinsMessageInChat">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#MessageContent"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows a user to pin a specific message in a chat.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mutesMessageNotificationsFrom">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mutes notifications from a specific user.</MCSScomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#mutesUser</alignWithOFB>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#mutesMessageNotificationsFrom</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#enablesReadReceiptsFor">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enables read receipts for messages sent to a specific user.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#disablesReadReceiptsFor">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disables read receipts for messages sent to a specific user.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#enablesNotificationForGroupMessages">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#GroupMessage"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enables notifications for group messages.</MCSScomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#enablesGroupNotifications</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#enablesNotificationForGroupMessages</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#createsGroupMessageThreadWith">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#GroupMessage"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user creating a group message thread with participants.</MCSScomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#createsGroupMessageThreadWith</alignWithMCSS>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#createsGroupChat</alignWithOSN>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasGroupParticipants">
+  <rdfs:domain rdf:resource="#GroupMessage"/>
+  <rdfs:range rdf:resource="#User"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents participants in a group message thread.</MCSScomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasGroupParticipants</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasParticipants</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#leavesGroupMessageThread">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#GroupMessage"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user leaving a group message thread.</MCSScomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#leavesGroupChat</alignWithOFB>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#leavesGroupMessageThread</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#addsParticipantsToGroup">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#GroupMessage"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user adding participants to a group message thread.</MCSScomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#addsMembersTo</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#addsParticipantsToGroup</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#removesParticipantsFromGroup">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#GroupMessage"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user removing participants from a group message thread.</MCSScomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#removesMember</alignWithOSN>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#removesParticipantsFromGroup</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#viewsMessageStats">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#MessageContent"/>
+  <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a user viewing analytics for a specific message.</MCSScomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canEditBio">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ProfileSettings"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user can edit their bio.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canSetProfileVisibility">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ProfileSettings"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user can set their profile visibility (Public or Private).</OFBcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasPrivacySetting</alignWithMP>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#canSetProfileVisibility</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#updatedBy">
+  <rdfs:domain rdf:resource="#SecuritySettings"/>
+  <rdfs:domain rdf:resource="#NotificationSettings"/>
+  <rdfs:domain rdf:resource="#ProfileSettings"/>
+  <rdfs:range rdf:resource="#UserAction"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links profile settings to the user actions that updated them.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links notification settings to the user actions that updated them.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canEditPassword">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SecuritySettings"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user can edit their password.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canEnableTwoFactorAuthentication">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SecuritySettings"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user can enable two-factor authentication.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#canSetNSFWVisibility">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SecuritySettings"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user can set NSFW content visibility settings.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#subscribesTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SubscriptionPlan"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the subscription plan they have subscribed to.</OFBcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#isSubscribedTo</alignWithMP>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#subscribesTo</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#unsubscribesFrom">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SubscriptionPlan"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the subscription plan they have unsubscribed from.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithSubscriptionPlan">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#SubscriptionPlan"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Associates a user with their subscription plan.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#configuresPushNotifications">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#NotificationSettings"/>
+  <rdfs:range rdf:resource="#NotificationDevice"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the configuration of push notifications.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to their push notification device settings.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#configuresEmailNotifications">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ProfileSettings"/>
+  <rdfs:range rdf:resource="#NotificationSettings"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the configuration of email notifications.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to their email notification settings.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#configuresInAppNotifications">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#NotificationSettings"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the configuration of in-app notifications.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#enablesAnonymousMode">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#AnonymousSession"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user enables anonymous mode.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#disablesAnonymousMode">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#AnonymousSession"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user disables anonymous mode.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#anonymousActivityLoggedBy">
+  <rdfs:domain rdf:resource="#AnonymousMode"/>
+  <rdfs:domain rdf:resource="#AnonymousSession"/>
+  <rdfs:range rdf:resource="#AnonymousSession"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links anonymous activity with the session that logged it.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that the anonymous activity is logged by a specific anonymous session.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#requestsAccountDeactivation">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#UserAction"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user requests account deactivation.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#deactivationRequestedBy">
+  <rdfs:domain rdf:resource="#AccountDeactivation"/>
+  <rdfs:range rdf:resource="#UserAction"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links account deactivation with the user action that initiated it.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#requestsAccountDeletion">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#UserAction"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has requested account deletion.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#deletionRequestedBy">
+  <rdfs:domain rdf:resource="#AccountDeletion"/>
+  <rdfs:range rdf:resource="#UserAction"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links the account deletion process to the user action that initiated it.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#logsOutFromSession">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Session"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the session they logged out from.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#logoutPerformedBy">
+  <rdfs:domain rdf:resource="#Session"/>
+  <rdfs:range rdf:resource="#UserAction"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a session to the user action that performed the logout.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#performedBy">
+  <rdfs:domain rdf:resource="#UserAction"/>
+  <rdfs:domain rdf:resource="#ContentInteraction"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user action to the user who performed it.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+        Links an interaction instance (UpvoteDownvote, Like, Comment, etc.)
+        to the user who performed the action.
+        </OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#createsPost">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user created a post.</OFBcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#postedBy</alignWithOSN>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#createsPost</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithCommunity">
+  <rdfs:domain rdf:resource="#Polls"/>
+  <rdfs:domain rdf:resource="#CrossPost"/>
+  <rdfs:domain rdf:resource="#Draft"/>
+  <rdfs:domain rdf:resource="#CommunityRules"/>
+  <rdfs:domain rdf:resource="#AnonymousMode"/>
+  <rdfs:domain rdf:resource="#ScheduledPost"/>
+  <rdfs:domain rdf:resource="#Post"/>
+  <rdfs:range rdf:resource="#Community"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a post to the community it belongs to.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a draft to the community it belongs to.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a scheduled post to the community it belongs to.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a cross-post to the community it belongs to.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links polls to the community they are associated with.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links an anonymous post to the community it belongs to.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a rule to the community it governs.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#savesPostAsDraft">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Draft"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user saved a post as a draft.</OFBcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#savesDraftsOn</alignWithMP>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#savesPostAsDraft</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#editsDraft">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Draft"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user edited a draft.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#postsDraft">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Draft"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user posted a draft.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#postsScheduledPost">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ScheduledPost"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the scheduled post they have created.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#editsScheduledPost">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#ScheduledPost"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user edits an existing scheduled post.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#postsCrossPost">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#CrossPost"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the cross-post they have created.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#editsCrossPost">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#CrossPost"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user edits an existing cross-post.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithOriginalPost">
+  <rdfs:domain rdf:resource="#CrossPost"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a cross-post to its original post.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#addTagsOnContent">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has tagged a piece of content.</OFBcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasPostTags</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#addTagsOnContent</alignWithOFB>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#addContentLabel</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithPost">
+  <rdfs:domain rdf:resource="#PinPosts"/>
+  <rdfs:domain rdf:resource="#TagContent"/>
+  <rdfs:domain rdf:resource="#Flair"/>
+  <rdfs:domain rdf:resource="#FlairSystem"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links tagged content to the post it is associated with.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a flair to a specific post in the system.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a pinning action to the associated post.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a flair tag to a specific post.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#opensPoll">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Polls"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has created or opened a poll.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#postsContentAsAnonymous">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user has posted content anonymously.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#createdByUser">
+  <rdfs:domain rdf:resource="#CommunityCreation"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links the creation of a community to the user who created it.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCommunityRules">
+  <rdfs:domain rdf:resource="#CommunityCreation"/>
+  <rdfs:range rdf:resource="#CommunityRules"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a community to its associated rules or guidelines.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#followsCommunity">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Community"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user is following a community.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#addedByModerator">
+  <rdfs:domain rdf:resource="#CommunityRules"/>
+  <rdfs:range rdf:resource="#Moderator"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates which moderator added a specific rule to the community.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#highlightsCommunity">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Community"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user highlights or promotes a community.</OFBcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#spotlightsCommunity</alignWithMP>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#highlightsCommunity</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#customizesCommunityNotification">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Community"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a user customizes notification settings for a community.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#earnedByUser">
+  <rdfs:domain rdf:resource="#CommunityReputation"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links reputation metrics to the user who earned them.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasLeaderboard">
+  <rdfs:domain rdf:resource="#Community"/>
+  <rdfs:range rdf:resource="#Leaderboards"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a community to its associated leaderboard.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#displaysTopContributor">
+  <rdfs:domain rdf:resource="#Leaderboards"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the user displayed as the top contributor in the leaderboard.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#displaysTopEngagement">
+  <rdfs:domain rdf:resource="#Leaderboards"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the user displayed as the top engager in the leaderboard.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isAssignedAsModeratorIn">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Community"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user who is assigned as a moderator to the community they moderate.</OFBcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasModeratorRole</alignWithOSN>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#isAssignedAsModeratorIn</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#moderatesCommunity">
+  <rdfs:domain rdf:resource="#Moderator"/>
+  <rdfs:range rdf:resource="#Community"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a moderator to the community they moderate.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAssignedBy">
+  <rdfs:domain rdf:resource="#Moderator"/>
+  <rdfs:range rdf:resource="#Moderator"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the administrator who assigned the user as a moderator.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#bansUser">
+  <rdfs:domain rdf:resource="#Moderator"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a moderator has banned a user from the community.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#unbansUser">
+  <rdfs:domain rdf:resource="#Moderator"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a moderator has unbanned a user in the community.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#locksPost">
+  <rdfs:domain rdf:resource="#Moderator"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a moderator has locked a post in the community.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#unlocksPost">
+  <rdfs:domain rdf:resource="#Moderator"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a moderator has unlocked a post in the community.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#removesComment">
+  <rdfs:domain rdf:resource="#Moderator"/>
+  <rdfs:range rdf:resource="#Comment"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that a moderator has removed a comment from the community.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#managesRules">
+  <rdfs:domain rdf:resource="#Moderator"/>
+  <rdfs:range rdf:resource="#CommunityRules"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a moderator to the rules they manage in the community.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#containsFlaggedContent">
+  <rdfs:domain rdf:resource="#ModerationQueue"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a moderation queue to flagged content.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#processedByModerator">
+  <rdfs:domain rdf:resource="#ModerationQueue"/>
+  <rdfs:range rdf:resource="#Moderator"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a moderation queue to the moderator who processed it.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRules">
+  <rdfs:domain rdf:resource="#Community"/>
+  <rdfs:range rdf:resource="#CommunityRules"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a community to its rules.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#createdByModerator">
+  <rdfs:domain rdf:resource="#CommunityRules"/>
+  <rdfs:range rdf:resource="#Moderator"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a community rule to the moderator who created it.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#lastUpdatedBy">
+  <rdfs:domain rdf:resource="#CommunityRules"/>
+  <rdfs:range rdf:resource="#Moderator"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a community rule to the moderator who last updated it.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFiledAgainst">
+  <rdfs:domain rdf:resource="#Reports"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a report to the user it is filed against.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFiledFor">
+  <rdfs:domain rdf:resource="#Reports"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a report to the post it is filed for.</OFBcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#isFiledFor</alignWithOFB>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#associatedWithReportedPost</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFiledBy">
+  <rdfs:domain rdf:resource="#Reports"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a report to the user who filed it.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reviewedBy">
+  <rdfs:domain rdf:resource="#Reports"/>
+  <rdfs:range rdf:resource="#Moderator"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a report to the moderator who reviewed it.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasSettings">
+  <rdfs:domain rdf:resource="#Community"/>
+  <rdfs:range rdf:resource="#CommunitySettings"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a community to its settings.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasDefaultFlair">
+  <rdfs:domain rdf:resource="#CommunitySettings"/>
+  <rdfs:range rdf:resource="#Community"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links the community settings to its default flair for posts.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#upvotesContent">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the content they have upvoted.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#downvotesContent">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the content they have downvoted.</OFBcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#Dislike</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#downvotesContent</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#repliesToComment">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Comment"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the comment they have replied to.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithComment">
+  <rdfs:domain rdf:resource="#ReplyToComments"/>
+  <rdfs:range rdf:resource="#Comment"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a reply action to the associated comment.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#sharedToCommunity">
+  <rdfs:domain rdf:resource="#ShareRepost"/>
+  <rdfs:range rdf:resource="#Community"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links shared content to the community where it was reposted.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#bookmarksContent">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the content they have bookmarked.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#givesAwardToContent">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the content they have awarded.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithAwardingUser">
+  <rdfs:domain rdf:resource="#GiveAwards"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links an award action to the user who awarded the content.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#blocksUser">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to another user they have blocked.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user who blocks another user.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#unblocksUser">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to another user they have unblocked.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mutesUser">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to another user they have muted.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user who mutes another user.</OFBcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#mutesUser</alignWithOFB>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#mutesAccounts</alignWithMP>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#mutesMessageNotificationsFrom</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mutesTopic">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Topic"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to a topic they have muted.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedWithTopic">
+  <rdfs:domain rdf:resource="#FollowTopics"/>
+  <rdfs:domain rdf:resource="#RecommendedContent"/>
+  <rdfs:domain rdf:resource="#TrendingContent"/>
+  <rdfs:domain rdf:resource="#Mute"/>
+  <rdfs:range rdf:resource="#Topic"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a muting action to the associated topic.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a following action to the associated topic.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links trending content to a topic it is associated with.</OFBcomment>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links recommended content to the topic it is associated with.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#followsTopic">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Topic"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to a topic they are following.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#pinsPost">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to a post they have pinned.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#pinsPostByCommunity">
+  <rdfs:domain rdf:resource="#Community"/>
+  <rdfs:range rdf:resource="#Post"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a community to a post it has pinned.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#blockedTargetUser">
+  <rdfs:domain rdf:resource="#BlockUnblockUser"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+        Indicates the user who is being blocked.
+        </OFBcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#blockedTargetUser</alignWithOFB>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#blockedUser</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#searchesFor">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the target of their search query.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#appliesSearchFilter">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#AdvancedSearch"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the advanced search filters they applied.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#viewsTrendingContent">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#TrendingContent"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to trending content they viewed.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#receivesRecommendations">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#RecommendedContent"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the content recommended to them.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#browsesCategory">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Category"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the category they are browsing.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#searchesByFlair">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Flair"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the flair they used in their search.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#customizesInAppNotifications">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#NotificationPreferences"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to their in-app notification preferences.</OFBcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#customizesInAppNotifications</alignWithOFB>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasNotificationPreferences</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#receivesWeeklyDigest">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#DigestSummary"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to their weekly digest summary.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasContentHighlights">
+  <rdfs:domain rdf:resource="#DigestSummary"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links digest summaries to content highlights.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#receivesMessageFrom">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user who receives a direct message from another user.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#participatesInGroupMessage">
+  <rdfs:domain rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user participating in a group message thread.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasParticipants">
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a group message thread to its participants.</OFBcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasGroupParticipants</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasParticipants</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#joinsGroupChat">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#GroupMessaging"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the group chat they joined.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#leavesGroupChat">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#GroupMessaging"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the group chat they left.</OFBcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#leavesGroupChat</alignWithOFB>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#leavesGroupMessageThread</alignWithMCSS>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mutesGroupChat">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#GroupMessaging"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to the group chat they muted.</OFBcomment>
+  <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#disablesGroupNotifications</alignWithOSN>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#mutesGroupChat</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#messageSender">
+  <rdfs:domain rdf:resource="#DirectMessaging"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+        Indicates the user who sent this particular direct message instance.
+        </OFBcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#messageSender</alignWithOFB>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sentBy</alignWithMCSS>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#dmSender</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#messageReceiver">
+  <rdfs:domain rdf:resource="#DirectMessaging"/>
+  <rdfs:range rdf:resource="#User"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+        Indicates the user who received this particular direct message instance.
+        </OFBcomment>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#dmReceiver</alignWithMP>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sentTo</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#messageReceiver</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#enablesSubscriptionFor">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user enabling subscription for specific content.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#receivesAdRevenueFrom">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user receiving ad revenue from specific content.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#donatesTo">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Content"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user donating to specific content or creators.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#adjustsDisplayPreferences">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#AccessibilitySettings"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to their display preferences in accessibility settings.</OFBcomment>
+  <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasAccessibilityPreferences</alignWithMCSS>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#adjustsDisplayPreferences</alignWithOFB>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#choosesLanguagePreference">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#LanguageSettings"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a user to their preferred language settings.</OFBcomment>
+  <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#choosesLanguagePreference</alignWithOFB>
+  <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasLanguagePreferences</alignWithMP>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#tracksGrowth">
+  <rdfs:domain rdf:resource="#Community"/>
+  <rdfs:range rdf:resource="#CommunityMetrics"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a community to its growth metrics.</OFBcomment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#tracksPerformance">
+  <rdfs:domain rdf:resource="#Draft"/>
+  <rdfs:range rdf:resource="#UserInsights"/>
+  <OFBcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a draft to user insights on its performance.</OFBcomment>
+</owl:ObjectProperty>

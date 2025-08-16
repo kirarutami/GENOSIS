@@ -1,0 +1,29 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?post ?media ?timestamp ?location ?platform
+WHERE {
+  {
+    ?post ex:hasPostMedia ?media .
+    OPTIONAL { ?post ex:hasPostTimestamp ?timestamp . }
+    OPTIONAL { ?post ex:hasMessageLocation ?location . }
+    OPTIONAL { ?post ex:belongsToPlatform ?platform . }
+  }
+  UNION
+  {
+    ?post ex:hasStoryMedia ?media .
+    OPTIONAL { ?post ex:hasStoryTimestamp ?timestamp . }
+    OPTIONAL { ?post ex:hasMessageLocation ?location . }
+    OPTIONAL { ?post ex:belongsToPlatform ?platform . }
+  }
+  UNION
+  {
+    ?post ex:hasReelMedia ?media .
+    OPTIONAL { ?post ex:hasReelTimestamp ?timestamp . }
+    OPTIONAL { ?post ex:hasMessageLocation ?location . }
+    OPTIONAL { ?post ex:belongsToPlatform ?platform . }
+  }
+}

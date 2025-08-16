@@ -1,0 +1,532 @@
+
+<!--TwitterCase-->
+
+    <owl:NamedIndividual rdf:about="#User_AminaReports_Twitter">
+        <rdf:type rdf:resource="#MP:User"/>
+        <rdfs:label>AminaReports (Twitter User)</rdfs:label>
+        <hasUsername>AminaReports</hasUsername>
+        <hasEmail>amina.reporter@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasUserBirthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1985-06-15</hasUserBirthday>
+        <hasSecuritySettingsValue>2FA enabled</hasSecuritySettingsValue>
+        <hasSubscriptionStatus>premium</hasSubscriptionStatus>
+        <hasNotificationsSettingValue>enabled</hasNotificationsSettingValue>
+        <hasUserPrivacySettingValue>public</hasUserPrivacySettingValue>
+        <hasLogoutStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasLogoutStatus>
+        <hasBio>Journalist covering climate change and economic policies.</hasBio>
+        <hasLocation>New York, USA</hasLocation>
+        <hasProfileWebsite>https://aminareports.com</hasProfileWebsite>
+        <hasTips>Stay informed, stay engaged.</hasTips>
+        <hasProfilePicture>https://aminareports.com/profile.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-07-20T10:00:00Z</hasCreationTimestamp>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_RealPatriot99_Twitter">
+        <rdf:type rdf:resource="#MP:User"/>
+        <rdfs:label>RealPatriot99 (Twitter User)</rdfs:label>
+        <hasUsername>RealPatriot99</hasUsername>
+        <hasEmail>realpatriot99@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasUserBirthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1978-11-22</hasUserBirthday>
+        <hasSecuritySettingsValue>2FA disabled</hasSecuritySettingsValue>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSettingValue>enabled</hasNotificationsSettingValue>
+        <hasUserPrivacySettingValue>public</hasUserPrivacySettingValue>
+        <hasLogoutStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasLogoutStatus>
+        <hasBio>Fighting for free speech and truth.</hasBio>
+        <hasLocation>Unknown</hasLocation>
+        <hasProfileWebsite>None</hasProfileWebsite>
+        <hasTips>Speak your mind.</hasTips>
+        <hasProfilePicture>https://realpatriot99.com/profile.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-10T12:00:00Z</hasCreationTimestamp>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_FreeSpeechWarrior_Twitter">
+        <rdf:type rdf:resource="#MP:User"/>
+        <rdfs:label>FreeSpeechWarrior (Twitter User)</rdfs:label>
+        <hasUsername>FreeSpeechWarrior</hasUsername>
+        <hasEmail>freespeechwarrior@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasUserBirthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1982-03-10</hasUserBirthday>
+        <hasSecuritySettingsValue>2FA disabled</hasSecuritySettingsValue>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSettingValue>enabled</hasNotificationsSettingValue>
+        <hasUserPrivacySettingValue>public</hasUserPrivacySettingValue>
+        <hasLogoutStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasLogoutStatus>
+        <hasBio>Defender of free speech.</hasBio>
+        <hasLocation>Unknown</hasLocation>
+        <hasProfileWebsite>None</hasProfileWebsite>
+        <hasTips>Freedom above all.</hasTips>
+        <hasProfilePicture>https://freespeechwarrior.com/profile.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-11-05T15:30:00Z</hasCreationTimestamp>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_AnonDestroyer_Twitter">
+        <rdf:type rdf:resource="#MP:User"/>
+        <rdfs:label>AnonDestroyer (Twitter User)</rdfs:label>
+        <hasUsername>AnonDestroyer</hasUsername>
+        <hasEmail>anondestroyer@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasUserBirthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1990-07-05</hasUserBirthday>
+        <hasSecuritySettingsValue>2FA disabled</hasSecuritySettingsValue>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSettingValue>enabled</hasNotificationsSettingValue>
+        <hasUserPrivacySettingValue>public</hasUserPrivacySettingValue>
+        <hasLogoutStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasLogoutStatus>
+        <hasBio>Anonymous and unstoppable.</hasBio>
+        <hasLocation>Unknown</hasLocation>
+        <hasProfileWebsite>None</hasProfileWebsite>
+        <hasTips>Stay anonymous.</hasTips>
+        <hasProfilePicture>https://anondestroyer.com/profile.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-02T08:00:00Z</hasCreationTimestamp>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_BotReplier55_Twitter">
+        <rdf:type rdf:resource="#MP:User"/>
+        <rdfs:label>BotReplier55 (Twitter User - Bot)</rdfs:label>
+        <hasUsername>BotReplier55</hasUsername>
+        <hasEmail>botreplier55@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasUserBirthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2000-01-01</hasUserBirthday>
+        <hasSecuritySettingsValue>2FA disabled</hasSecuritySettingsValue>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSettingValue>enabled</hasNotificationsSettingValue>
+        <hasUserPrivacySettingValue>public</hasUserPrivacySettingValue>
+        <hasLogoutStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasLogoutStatus>
+        <hasBio>Automated responses for truth.</hasBio>
+        <hasLocation>Unknown</hasLocation>
+        <hasProfileWebsite>None</hasProfileWebsite>
+        <hasTips>Automation is key.</hasTips>
+        <hasProfilePicture>https://botreplier55.com/profile.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-03-15T00:00:00Z</hasCreationTimestamp>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Post_Amina001_Twitter">
+        <rdf:type rdf:resource="#MP:Post"/>
+        <rdfs:label>Amina's Climate Article Post</rdfs:label>
+        <postedBy rdf:resource="#User_AminaReports_Twitter"/>
+        <hasContentURL>https://twitter.com/AminaReports/status/123456</hasContentURL>
+        <hasPostDeviceInfo>Twitter Web (MacBook Pro)</hasPostDeviceInfo>
+        <hasIpAddress>192.168.1.12</hasIpAddress>
+        <hasLocation>New York, USA</hasLocation>
+        <hasContentText>"Just published my latest article on climate policies..."</hasContentText>
+        <hasPostTags>#ClimateChange #EconomicGrowth</hasPostTags>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T12:30:00Z</hasCreationTimestamp>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Post_RP99_Draft_001_Twitter">
+        <rdf:type rdf:resource="#MP:Post"/>
+        <rdfs:label>RealPatriot99's Draft Post</rdfs:label>
+        <postedBy rdf:resource="#User_RealPatriot99_Twitter"/>
+        <hasPostDeviceInfo>Twitter Android App</hasPostDeviceInfo>
+        <hasIpAddress>10.0.0.99</hasIpAddress>
+        <hasLocation>Unknown</hasLocation>
+        <hasContentText>"Drafting a post calling out mainstream media..."</hasContentText>
+        <hasPostTags>#SpeakTruth</hasPostTags>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-01T10:00:00Z</hasCreationTimestamp>
+        <hasPostStatus>draft</hasPostStatus>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Post_Amina_Scheduled_001_Twitter">
+        <rdf:type rdf:resource="#MP:Post"/>
+        <rdfs:label>Amina's Scheduled Post</rdfs:label>
+        <postedBy rdf:resource="#User_AminaReports_Twitter"/>
+        <hasPostDeviceInfo>Twitter Web (MacBook)</hasPostDeviceInfo>
+        <hasIpAddress>192.168.1.12</hasIpAddress>
+        <hasAttachmentURL>https://aminareports.com/images/teaser.png</hasAttachmentURL>
+        <hasLocation>New York, USA</hasLocation>
+        <hasContentText>"[Scheduled] New insights on climate policy to be posted soon."</hasContentText>
+        <hasPostTags>#ClimateDebate #ScheduledPost</hasPostTags>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-02T09:00:00Z</hasCreationTimestamp>
+        <hasPostStatus>scheduled</hasPostStatus>
+        <hasScheduledPublishTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-05-02T16:30:00Z</hasScheduledPublishTimestamp>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_RealPatriot99_1_Twitter">
+        <rdf:type rdf:resource="#MP:CommentAction"/>
+        <rdfs:label>RealPatriot99 Comment 1 on Amina's Post</rdfs:label>
+        <commentedBy rdf:resource="#User_RealPatriot99_Twitter"/>
+        <commentsOn rdf:resource="#Post_Amina001_Twitter"/>
+        <hasContentText>"Another fake news journalist pushing the globalist agenda. Maybe go back to your kitchen where you belong. #WomenShouldntReport"</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T13:05:00Z</hasInteractionTimestamp>
+        <hasCommentSpecificIP>10.0.0.101</hasCommentSpecificIP>
+        <hasCommentDevice>Android (VPN)</hasCommentDevice>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_FreeSpeechWarrior_1_Twitter">
+        <rdf:type rdf:resource="#MP:CommentAction"/>
+        <rdfs:label>FreeSpeechWarrior Comment 1 on Amina's Post</rdfs:label>
+        <commentedBy rdf:resource="#User_FreeSpeechWarrior_Twitter"/>
+        <commentsOn rdf:resource="#Post_Amina001_Twitter"/>
+        <hasContentText>"The climate scam is the biggest hoax in history. People like you are the real problem. Hope you lose your job."</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T13:10:00Z</hasInteractionTimestamp>
+        <hasCommentSpecificIP>10.0.0.102</hasCommentSpecificIP>
+        <hasCommentDevice>Windows PC (VPN)</hasCommentDevice>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_AnonDestroyer_1_Twitter">
+        <rdf:type rdf:resource="#MP:CommentAction"/>
+        <rdfs:label>AnonDestroyer Doxing Comment on Amina's Post</rdfs:label>
+        <commentedBy rdf:resource="#User_AnonDestroyer_Twitter"/>
+        <commentsOn rdf:resource="#Post_Amina001_Twitter"/>
+        <hasContentText>"Her real name is Amina K. She lives in Brooklyn. Here's her email: amina.reporter[at]mail.com. Let's send her some messages!"</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T13:20:00Z</hasInteractionTimestamp>
+        <hasCommentSpecificIP>10.0.0.103</hasCommentSpecificIP>
+        <hasCommentDevice>Windows (Multi-VPN)</hasCommentDevice>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_RealPatriot99_2_Twitter">
+        <rdf:type rdf:resource="#MP:CommentAction"/>
+        <rdfs:label>RealPatriot99 Comment 2 on Amina's Post</rdfs:label>
+        <commentedBy rdf:resource="#User_RealPatriot99_Twitter"/>
+        <commentsOn rdf:resource="#Post_Amina001_Twitter"/>
+        <hasContentText>"Cry more. If you can't handle criticism, get off Twitter. #FreeSpeech"</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T13:30:00Z</hasInteractionTimestamp>
+        <hasCommentSpecificIP>10.0.0.105</hasCommentSpecificIP>
+        <hasCommentDevice>Android (VPN)</hasCommentDevice>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_BotReplier55_1_Twitter">
+        <rdf:type rdf:resource="#MP:CommentAction"/>
+        <rdfs:label>BotReplier55 Comment on Amina's Post</rdfs:label>
+        <commentedBy rdf:resource="#User_BotReplier55_Twitter"/>
+        <commentsOn rdf:resource="#Post_Amina001_Twitter"/>
+        <hasContentText>"This journalist is a fraud. BLOCK HER ACCOUNT NOW. #FakeNews #GlobalistLies"</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T13:35:00Z</hasInteractionTimestamp>
+        <hasCommentSpecificIP>10.0.0.106</hasCommentSpecificIP>
+        <hasCommentDevice>Automated Bot Script</hasCommentDevice>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_AnonDestroyer_to_Amina_1_Twitter">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>AnonDestroyer Threat DM to Amina 1</rdfs:label>
+        <attributedToUser rdf:resource="#User_AnonDestroyer_Twitter"/>
+        <messageReceiver rdf:resource="#User_AminaReports_Twitter"/>
+        <hasMessageContent>"We know where you live. If you don't stop spreading lies, we'll make sure you regret it. Watch your back."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T14:00:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>8.8.8.8</hasDMSpecificIP>
+        <hasDMDevice>Windows PC (VPN)</hasDMDevice>
+        <hasDMThreatLevel>high</hasDMThreatLevel>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_Amina_to_AnonDestroyer_1_Twitter">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>Amina Reply DM to AnonDestroyer 1</rdfs:label>
+        <attributedToUser rdf:resource="#User_AminaReports_Twitter"/>
+        <messageReceiver rdf:resource="#User_AnonDestroyer_Twitter"/>
+        <hasMessageContent>"Who are you? Why are you doing this?"</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T14:05:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>192.168.1.12</hasDMSpecificIP>
+        <hasDMDevice>MacBook Pro (Twitter Web)</hasDMDevice>
+        <hasDMThreatLevel>low</hasDMThreatLevel>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_AnonDestroyer_to_Amina_2_Twitter">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>AnonDestroyer Threat DM to Amina 2</rdfs:label>
+        <attributedToUser rdf:resource="#User_AnonDestroyer_Twitter"/>
+        <messageReceiver rdf:resource="#User_AminaReports_Twitter"/>
+        <hasMessageContent>"LOL, you think you're important? Just shut up and stop writing your garbage articles. Or we'll take it to the next level."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T14:10:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>8.8.4.4</hasDMSpecificIP>
+        <hasDMDevice>Windows PC (VPN)</hasDMDevice>
+        <hasDMThreatLevel>high</hasDMThreatLevel>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_RealPatriot99_to_Amina_1_Twitter">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>RealPatriot99 Threat DM to Amina</rdfs:label>
+        <attributedToUser rdf:resource="#User_RealPatriot99_Twitter"/>
+        <messageReceiver rdf:resource="#User_AminaReports_Twitter"/>
+        <hasMessageContent>"You should just delete your account. Nobody wants to hear from you. Maybe something 'unfortunate' will happen if you don't."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T14:15:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>10.0.0.99</hasDMSpecificIP>
+        <hasDMDevice>Android (VPN)</hasDMDevice>
+        <hasDMThreatLevel>high</hasDMThreatLevel>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <!-- <owl:NamedIndividual rdf:about="#Block_Amina_Anon_001_Twitter">
+        <rdf:type rdf:resource="#MP:BlockAction"/>
+        <rdfs:label>Amina blocks AnonDestroyer</rdfs:label>
+        <performedBy rdf:resource="#User_AminaReports_Twitter"/>
+        <targetUser rdf:resource="#User_AnonDestroyer_Twitter"/>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T14:20:00Z</hasInteractionTimestamp>
+        <hasIpAddress>192.168.1.12</hasIpAddress>
+        <hasInteractionDevice>Twitter Web</hasInteractionDevice>
+        <hasBlockReason>Threatening DMs</hasBlockReason>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual> -->
+
+    <!-- <owl:NamedIndividual rdf:about="#Block_Amina_RP99_001_Twitter">
+        <rdf:type rdf:resource="#MP:BlockAction"/>
+        <rdfs:label>Amina blocks RealPatriot99</rdfs:label>
+        <performedBy rdf:resource="#User_AminaReports_Twitter"/>
+        <targetUser rdf:resource="#User_RealPatriot99_Twitter"/>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-15T14:20:00Z</hasInteractionTimestamp>
+        <hasIpAddress>192.168.1.12</hasIpAddress>
+        <hasInteractionDevice>Twitter Web</hasInteractionDevice>
+        <hasBlockReason>Threatening DM</hasBlockReason>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </owl:NamedIndividual> -->
+
+<!--TumblrCase-->
+
+    <owl:NamedIndividual rdf:about="#User_NoahDrawsStuff_Tumblr">
+        <rdf:type rdf:resource="#MP:User"/>
+        <rdfs:label>NoahDrawsStuff (Tumblr User)</rdfs:label>
+        <hasUsername>NoahDrawsStuff</hasUsername>
+        <hasEmail>noah.draws@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasUserBirthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-08-15</hasUserBirthday>
+        <hasSecuritySettingsValue>2FA enabled</hasSecuritySettingsValue>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSettingValue>enabled</hasNotificationsSettingValue>
+        <hasUserPrivacySettingValue>public</hasUserPrivacySettingValue>
+        <hasLogoutStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasLogoutStatus>
+        <hasBio>18-year-old digital artist, love sharing my work on Tumblr.</hasBio>
+        <hasLocation>Seattle, USA</hasLocation>
+        <hasTips>Keep creating, keep dreaming.</hasTips>
+        <hasProfilePicture>https://noahdrawsstuff.tumblr.com/profile.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-10T18:00:00Z</hasCreationTimestamp> <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_DarkAestheticNSFW_Tumblr">
+        <rdf:type rdf:resource="#MP:User"/>
+        <rdfs:label>DarkAestheticNSFW (Tumblr User)</rdfs:label>
+        <hasUsername>DarkAestheticNSFW</hasUsername>
+        <hasEmail>darkaesthetic@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasUserBirthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1990-02-10</hasUserBirthday>
+        <hasSecuritySettingsValue>2FA disabled</hasSecuritySettingsValue>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSettingValue>enabled</hasNotificationsSettingValue>
+        <hasUserPrivacySettingValue>public</hasUserPrivacySettingValue>
+        <hasLogoutStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasLogoutStatus>
+        <hasBio>Anonymous curator of edgy content.</hasBio>
+        <hasLocation>Unknown (VPN)</hasLocation>
+        <hasTips>Push the boundaries.</hasTips>
+        <hasProfilePicture>https://darkaestheticnsfw.tumblr.com/profile.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-05-15T10:00:00Z</hasCreationTimestamp> <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_MidnightObsession_Tumblr">
+        <rdf:type rdf:resource="#MP:User"/>
+        <rdfs:label>MidnightObsession (Tumblr User - Pelaku Kedua)</rdfs:label>
+        <hasUsername>MidnightObsession</hasUsername>
+        <hasEmail>midnight.obsession@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasUserBirthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1988-01-01</hasUserBirthday>
+        <hasSecuritySettingsValue>2FA disabled</hasSecuritySettingsValue>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSettingValue>enabled</hasNotificationsSettingValue>
+        <hasUserPrivacySettingValue>public</hasUserPrivacySettingValue>
+        <hasLogoutStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasLogoutStatus>
+        <hasBio>Dark corners of the internet, reuploading spicy content.</hasBio>
+        <hasLocation>Unknown (VPN chain)</hasLocation>
+        <hasTips>Everything can be exploited.</hasTips>
+        <hasProfilePicture>https://midnightobsession.tumblr.com/profile.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T02:00:00Z</hasCreationTimestamp> <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Post_NoahTumblr_001_Tumblr">
+        <rdf:type rdf:resource="#MP:Post"/>
+        <rdfs:label>Noah's Original Art Setup Post</rdfs:label>
+        <postedBy rdf:resource="#User_NoahDrawsStuff_Tumblr"/>
+        <hasContentURL>https://tumblr.com/NoahDrawsStuff/TMBL65432XYZ</hasContentURL>
+        <hasPostDeviceInfo>Tumblr Web (MacBook Air)</hasPostDeviceInfo>
+        <hasIpAddress>192.168.1.56</hasIpAddress>
+        <hasAttachmentURL>https://noahdrawsstuff.tumblr.com/images/self-portrait.jpg</hasAttachmentURL>
+        <hasLocation>Seattle, USA</hasLocation>
+        <hasContentText>"Late-night work grind! ✨ Here's my little art setup. Can't wait to finish my next project!"</hasContentText>
+        <hasPostTags>#art #artistsonTumblr #digitalart</hasPostTags>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-18T20:00:00Z</hasCreationTimestamp>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Post_DarkAesthetic_001_Tumblr">
+        <rdf:type rdf:resource="#MP:Post"/>
+        <rdfs:label>DarkAestheticNSFW's Altered Post</rdfs:label>
+        <postedBy rdf:resource="#User_DarkAestheticNSFW_Tumblr"/>
+        <hasContentURL>https://tumblr.com/DarkAestheticNSFW/TMBL99999ABC</hasContentURL>
+        <hasPostDeviceInfo>Android Device (VPN)</hasPostDeviceInfo>
+        <hasIpAddress>185.200.112.44</hasIpAddress>
+        <hasAttachmentURL>https://tumblr.com/DarkAestheticNSFW/images/NSFW-deepfake.jpg</hasAttachmentURL>
+        <hasLocation>Unknown</hasLocation>
+        <hasContentText>"Art is better when the artist is exposed… 🔥 #NSFW"</hasContentText>
+        <hasPostTags>#aesthetic #hotboys #secretphotos</hasPostTags>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-19T22:30:00Z</hasCreationTimestamp>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Post_MidnightObs_001_Tumblr">
+        <rdf:type rdf:resource="#MP:Post"/>
+        <rdfs:label>MidnightObsession's Reuploaded Explicit Post</rdfs:label>
+        <postedBy rdf:resource="#User_MidnightObsession_Tumblr"/>
+        <hasContentURL>https://tumblr.com/MidnightObsession/TMBL88888ZZZ</hasContentURL>
+        <hasPostDeviceInfo>Linux (Tor Browser)</hasPostDeviceInfo>
+        <hasIpAddress>46.45.123.77</hasIpAddress>
+        <hasAttachmentURL>https://midnightobsession.tumblr.com/images/noah-deepfake-v2.jpg</hasAttachmentURL>
+        <hasLocation>Unknown</hasLocation>
+        <hasContentText>"Exclusive leaked content from an 'innocent' artist. This time, more explicit touches. Enjoy or send requests! #NSFW"</hasContentText>
+        <hasPostTags>#deepfake #exposed #forcedcontent</hasPostTags>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T03:00:00Z</hasCreationTimestamp>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_DarkAestheticNSFW_to_Noah_1_Tumblr">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>DM DarkAestheticNSFW to Noah (1)</rdfs:label>
+        <attributedToUser rdf:resource="#User_DarkAestheticNSFW_Tumblr"/>
+        <messageReceiver rdf:resource="#User_NoahDrawsStuff_Tumblr"/>
+        <hasMessageContent>"Hey, you should be proud. Your face fits perfectly in my collection. Maybe I'll make more."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-19T23:45:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>201.45.88.123</hasDMSpecificIP>
+        <hasDMDevice>Android (VPN)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_Noah_to_DarkAestheticNSFW_1_Tumblr">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>DM Noah to DarkAestheticNSFW (1)</rdfs:label>
+        <attributedToUser rdf:resource="#User_NoahDrawsStuff_Tumblr"/>
+        <messageReceiver rdf:resource="#User_DarkAestheticNSFW_Tumblr"/>
+        <hasMessageContent>"WTF? You stole my pictures. Take them down NOW."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-19T23:50:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>192.168.1.56</hasDMSpecificIP>
+        <hasDMDevice>MacBook Air (Tumblr Web)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_DarkAestheticNSFW_to_Noah_2_Tumblr">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>DM DarkAestheticNSFW to Noah (2)</rdfs:label>
+        <attributedToUser rdf:resource="#User_DarkAestheticNSFW_Tumblr"/>
+        <messageReceiver rdf:resource="#User_NoahDrawsStuff_Tumblr"/>
+        <hasMessageContent>"Why? You look great. If you don't want them here, maybe you should send me REAL ones instead. 😉"</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-19T23:55:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>201.45.88.123</hasDMSpecificIP>
+        <hasDMDevice>Android (VPN)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_Noah_to_DarkAestheticNSFW_2_Tumblr">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>DM Noah to DarkAestheticNSFW (2)</rdfs:label>
+        <attributedToUser rdf:resource="#User_NoahDrawsStuff_Tumblr"/>
+        <messageReceiver rdf:resource="#User_DarkAestheticNSFW_Tumblr"/>
+        <hasMessageContent>"Are you serious? This is illegal. I'll report you."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T00:00:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>192.168.1.56</hasDMSpecificIP>
+        <hasDMDevice>MacBook Air (Tumblr Web)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_DarkAestheticNSFW_to_Noah_3_Tumblr">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>DM DarkAestheticNSFW to Noah (3 - Threat)</rdfs:label>
+        <attributedToUser rdf:resource="#User_DarkAestheticNSFW_Tumblr"/>
+        <messageReceiver rdf:resource="#User_NoahDrawsStuff_Tumblr"/>
+        <hasMessageContent>"Go ahead. I have backups. If you try too hard, maybe these images will show up somewhere worse. Ever heard of the dark web?"</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T00:05:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>201.45.88.123</hasDMSpecificIP>
+        <hasDMDevice>Android (VPN)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_Noah_to_DarkAestheticNSFW_3_Tumblr">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>DM Noah to DarkAestheticNSFW (3)</rdfs:label>
+        <attributedToUser rdf:resource="#User_NoahDrawsStuff_Tumblr"/>
+        <messageReceiver rdf:resource="#User_DarkAestheticNSFW_Tumblr"/>
+        <hasMessageContent>"You're sick."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T00:10:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>192.168.1.56</hasDMSpecificIP>
+        <hasDMDevice>MacBook Air (Tumblr Web)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_DarkAestheticNSFW_to_Noah_4_Tumblr">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>DM DarkAestheticNSFW to Noah (4)</rdfs:label>
+        <attributedToUser rdf:resource="#User_DarkAestheticNSFW_Tumblr"/>
+        <messageReceiver rdf:resource="#User_NoahDrawsStuff_Tumblr"/>
+        <hasMessageContent>"And you're famous now. Enjoy the attention. 😘"</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T00:15:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>201.45.88.123</hasDMSpecificIP>
+        <hasDMDevice>Android (VPN)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_MidnightObsession_to_Noah_1_Tumblr">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>DM MidnightObsession to Noah (Blackmail)</rdfs:label>
+        <attributedToUser rdf:resource="#User_MidnightObsession_Tumblr"/>
+        <messageReceiver rdf:resource="#User_NoahDrawsStuff_Tumblr"/>
+        <hasMessageContent>"So, you thought I was gone? I'm back with hotter edits. If you want me to remove them, send $500 in crypto. Or I'll make an even dirtier version."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T03:15:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>46.45.123.77</hasDMSpecificIP>
+        <hasDMDevice>Tor Browser (VPN chain)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_Noah_to_MidnightObsession_1_Tumblr">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>DM Noah to MidnightObsession (1)</rdfs:label>
+        <attributedToUser rdf:resource="#User_NoahDrawsStuff_Tumblr"/>
+        <messageReceiver rdf:resource="#User_MidnightObsession_Tumblr"/>
+        <hasMessageContent>"I won't pay you a dime. This is extortion. I'm saving all evidence and will contact the authorities."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T03:20:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>192.168.1.56</hasDMSpecificIP>
+        <hasDMDevice>MacBook Air (Tumblr Web)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_MidnightObsession_to_Noah_2_Tumblr">
+        <rdf:type rdf:resource="#MP:DirectMessage"/>
+        <rdfs:label>DM MidnightObsession to Noah (Threat 2)</rdfs:label>
+        <attributedToUser rdf:resource="#User_MidnightObsession_Tumblr"/>
+        <messageReceiver rdf:resource="#User_NoahDrawsStuff_Tumblr"/>
+        <hasMessageContent>"Authorities? Good luck. I've got more where that came from. Maybe I'll leak your address next. You want that?"</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T03:25:00Z</hasMessageSentTimestamp>
+        <hasDMSpecificIP>46.45.123.77</hasDMSpecificIP>
+        <hasDMDevice>Unknown (Dark Net Proxy)</hasDMDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <!-- <owl:NamedIndividual rdf:about="#Block_Noah_MidnightObs_001_Tumblr">
+        <rdf:type rdf:resource="#MP:BlockAction"/>
+        <rdfs:label>Noah blocks MidnightObsession</rdfs:label>
+        <performedBy rdf:resource="#User_NoahDrawsStuff_Tumblr"/>
+        <targetUser rdf:resource="#User_MidnightObsession_Tumblr"/>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T03:30:00Z</hasInteractionTimestamp>
+        <hasIpAddress>192.168.1.56</hasIpAddress>
+        <hasInteractionDevice>MacBook Air (Tumblr Web)</hasInteractionDevice>
+        <hasBlockReason>Blackmail / Non-consensual NSFW content</hasBlockReason>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual> -->
+
+    <owl:NamedIndividual rdf:about="#Report_Noah_MidnightObs_001_Tumblr">
+        <rdf:type rdf:resource="#MP:ReportAction"/> <rdfs:label>Noah reports MidnightObsession</rdfs:label>
+        <performedBy rdf:resource="#User_NoahDrawsStuff_Tumblr"/> <targetUser rdf:resource="#User_MidnightObsession_Tumblr"/> <hasReportReason>"User is posting non-consensual deepfake, blackmailing me for money."</hasReportReason>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T03:35:00Z</hasInteractionTimestamp>
+        <hasIpAddress>192.168.1.56</hasIpAddress>
+        <hasInteractionDevice>MacBook Air (Tumblr Web)</hasInteractionDevice>
+        <belongsToPlatform>Tumblr</belongsToPlatform>
+    </owl:NamedIndividual>

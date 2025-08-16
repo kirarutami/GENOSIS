@@ -1,0 +1,520 @@
+    <!-- Instance: User 1 -->
+    <rdf:Description rdf:about="#User_001">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>87456239</hasUserID>
+        <hasUsername>ShadowHunter91</hasUsername>
+        <hasEmail>shadowhunter91@example.com</hasEmail>
+        <hasPhoneNumber>+1-555-1234</hasPhoneNumber>
+        <hasProfilePicture>https://platform.com/profiles/shadowhunter91.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2022-11-15T14:30:00Z</hasAccountCreationDate>
+        <hasLastLoginDate>2025-01-25T18:30:12Z</hasLastLoginDate>
+        <hasPasswordHash>$2a$10$VbHBsRjK/PnZQ9f...</hasPasswordHash>
+        <hasTwoFactorAuthenticationStatus>true</hasTwoFactorAuthenticationStatus>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <hasPrivacySettings>Private</hasPrivacySettings>
+        <hasNotificationPreferences>Email, Push</hasNotificationPreferences>
+        <hasAccessibilityPreferences>Dark Mode</hasAccessibilityPreferences>
+    </rdf:Description>
+
+    <!-- Instance: User 2 -->
+    <rdf:Description rdf:about="#User_002">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>90238571</hasUserID>
+        <hasUsername>DarkWebSeeker</hasUsername>
+        <hasEmail>darkwebseeker@protonmail.com</hasEmail>
+        <hasPhoneNumber>+44-7895-6789</hasPhoneNumber>
+        <hasProfilePicture>https://platform.com/profiles/darkwebseeker.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2023-04-10T09:15:00Z</hasAccountCreationDate>
+        <hasLastLoginDate>2025-01-26T03:12:45Z</hasLastLoginDate>
+        <hasPasswordHash>$2y$12$ZtMNhJv/FhL1S...</hasPasswordHash>
+        <hasTwoFactorAuthenticationStatus>true</hasTwoFactorAuthenticationStatus>
+        <hasSubscriptionStatus>false</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <hasPrivacySettings>Public</hasPrivacySettings>
+        <hasNotificationPreferences>None</hasNotificationPreferences>
+        <hasAccessibilityPreferences>Standard</hasAccessibilityPreferences>
+    </rdf:Description>
+
+    <!-- Instance: Video Post -->
+    <rdf:Description rdf:about="#Video_839201">
+        <rdf:type rdf:resource="#Post"/>
+        <hasUserID>87456239</hasUserID>
+        <hasTitle>Secret Club Exclusive - 2025 Compilation</hasTitle>
+        <hasUploadDate>2025-01-20T14:23:11Z</hasUploadDate>
+        <hasViewCount>152000</hasViewCount>
+        <hasLikeCount>12500</hasLikeCount>
+        <hasDislikeCount>350</hasDislikeCount>
+        <hasCommentCount>4500</hasCommentCount>
+        <hasTags>#ExclusiveClub #SpecialContent #HiddenTreasures</hasTags>
+        <hasDescription>Only for the real ones! Join our Telegram group for *more* exclusive releases. (Encrypted link)</hasDescription>
+        <hasURL>hxxps://platform.com/watch?v=839201</hasURL>
+    </rdf:Description>
+
+    <!-- Instance: Comment on Post -->
+    <rdf:Description rdf:about="#Comment_1245">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentID>1245</hasCommentID>
+        <hasUserID>90238571</hasUserID>
+        <hasCommentText>🔥🔥 Finally got it! Who else is in the club?</hasCommentText>
+        <hasCommentTimestamp>2025-01-20T15:00:02Z</hasCommentTimestamp>
+        <hasCommentLikeCount>87</hasCommentLikeCount>
+    </rdf:Description>
+
+    <!-- Instance: Direct Message -->
+    <rdf:Description rdf:about="#Message_001">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasSenderID>90238571</hasSenderID>
+        <hasReceiverID>87456239</hasReceiverID>
+        <hasMessageContent>The new drop is insane. Do you have the full version?</hasMessageContent>
+        <hasMessageTimestamp>2025-01-20T16:10:11Z</hasMessageTimestamp>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Message_002">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasSenderID>87456239</hasSenderID>
+        <hasReceiverID>90238571</hasReceiverID>
+        <hasMessageContent>You know the rules. BTC transfer first. Then access granted.</hasMessageContent>
+        <hasMessageTimestamp>2025-01-20T16:15:20Z</hasMessageTimestamp>
+    </rdf:Description>
+
+    <!-- Instance: Live Stream -->
+    <rdf:Description rdf:about="#LiveStream_52934">
+        <rdf:type rdf:resource="#LiveStream"/>
+        <hasStreamID>52934</hasStreamID>
+        <hasHostID>87456239</hasHostID>
+        <hasCoHostID>90238571</hasCoHostID>
+        <hasStartTime>2025-01-21T02:00:00Z</hasStartTime>
+        <hasDuration>25</hasDuration>
+        <hasViewerCount>2300</hasViewerCount>
+    </rdf:Description>
+
+    <!-- Instance: Channel 1 -->
+    <rdf:Description rdf:about="#Channel_001">
+        <rdf:type rdf:resource="#Channel"/>
+        <hasChannelID>CH_87456</hasChannelID>
+        <hasChannelName>Dark Secrets Club</hasChannelName>
+        <hasChannelDescription>A private content-sharing channel for exclusive members.</hasChannelDescription>
+        <hasChannelCreationDate>2023-02-10T12:45:00Z</hasChannelCreationDate>
+        <hasChannelProfilePicture>https://platform.com/channel/darksecrets.jpg</hasChannelProfilePicture>
+        <hasSubscriberCount>15700</hasSubscriberCount>
+        <hasPlaylist>Exclusive Drops, Hidden Files</hasPlaylist>
+        <hasTotalViews>2100000</hasTotalViews>
+        <associatedWithUser rdf:resource="#User_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Channel 2 -->
+    <rdf:Description rdf:about="#Channel_002">
+        <rdf:type rdf:resource="#Channel"/>
+        <hasChannelID>CH_90238</hasChannelID>
+        <hasChannelName>Anonymous Archives</hasChannelName>
+        <hasChannelDescription>Curated and mysterious content collections from the dark web.</hasChannelDescription>
+        <hasChannelCreationDate>2024-06-15T10:00:00Z</hasChannelCreationDate>
+        <hasChannelProfilePicture>https://platform.com/channel/anonymousarchives.jpg</hasChannelProfilePicture>
+        <hasSubscriberCount>29300</hasSubscriberCount>
+        <hasPlaylist>Secret Vault, Insider Content</hasPlaylist>
+        <hasTotalViews>870000</hasTotalViews>
+        <associatedWithUser rdf:resource="#User_002"/>
+    </rdf:Description>
+
+    <!-- Instance: Video Uploaded to Channel 1 -->
+    <rdf:Description rdf:about="#Video_839201">
+        <rdf:type rdf:resource="#Video"/>
+        <hasTitle>Underground Secrets Exposed</hasTitle>
+        <hasUploadDate>2025-01-20T14:23:11Z</hasUploadDate>
+        <hasViewCount>152000</hasViewCount>
+        <hasLikeCount>12500</hasLikeCount>
+        <hasDislikeCount>350</hasDislikeCount>
+        <hasCommentCount>4500</hasCommentCount>
+        <hasTags>#ExclusiveContent #HiddenTruth</hasTags>
+        <hasDescription>Join our special group for full uncensored footage.</hasDescription>
+        <hasURL>hxxps://platform.com/watch?v=839201</hasURL>
+        <uploadsVideo rdf:resource="#Channel_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Short Video Uploaded to Channel 2 -->
+    <rdf:Description rdf:about="#ShortVideo_768102">
+        <rdf:type rdf:resource="#ShortVideo"/>
+        <hasTitle>Darkest Web Secrets - Part 1</hasTitle>
+        <hasUploadDate>2025-01-15T21:10:45Z</hasUploadDate>
+        <hasViewCount>92000</hasViewCount>
+        <hasLikeCount>7200</hasLikeCount>
+        <hasDislikeCount>150</hasDislikeCount>
+        <hasCommentCount>2300</hasCommentCount>
+        <hasTags>#DarkWeb #Conspiracy</hasTags>
+        <hasDescription>What they don’t want you to see...</hasDescription>
+        <hasURL>hxxps://platform.com/watch?v=768102</hasURL>
+        <uploadsShortVideo rdf:resource="#Channel_002"/>
+    </rdf:Description>
+
+    <!-- Instance: Live Stream Uploaded to Channel 1 -->
+    <rdf:Description rdf:about="#Live_52934">
+        <rdf:type rdf:resource="#Live"/>
+        <hasStreamID>52934</hasStreamID>
+        <hasTitle>VIP Exclusive Livestream</hasTitle>
+        <hasStartTime>2025-01-21T02:00:00Z</hasStartTime>
+        <hasDuration>25</hasDuration>
+        <hasViewerCount>2300</hasViewerCount>
+        <uploadsLive rdf:resource="#Channel_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Monetization for Channel 1 -->
+    <rdf:Description rdf:about="#Monetization_001">
+        <rdf:type rdf:resource="#Monetization"/>
+        <hasRevenueModel>Bitcoin Payments</hasRevenueModel>
+        <hasTotalEarnings>2.4</hasTotalEarnings>
+        <hasCurrency>BTC</hasCurrency>
+        <associatedWithMonetization rdf:resource="#Channel_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Video Content -->
+    <rdf:Description rdf:about="#Video_001">
+        <rdf:type rdf:resource="#Video"/>
+        <hasTitle>Deep Web Secrets: Hidden Layers</hasTitle>
+        <hasDescription>An exclusive look at content hidden in the deep web.</hasDescription>
+        <hasDurationInMinutes>15</hasDurationInMinutes>
+        <hasPublicationDate>2025-01-10T16:30:00Z</hasPublicationDate>
+        <hasViewCount>85000</hasViewCount>
+        <hasLikeCount>5400</hasLikeCount>
+        <hasDislikeCount>220</hasDislikeCount>
+        <hasCommentCount>1300</hasCommentCount>
+        <hasVideoTags>#DarkWeb #HiddenFiles #Secrets</hasVideoTags>
+        <hasVideoLocation>Undisclosed Location</hasVideoLocation>
+        <hasContentRating>18+</hasContentRating>
+    </rdf:Description>
+
+    <!-- Instance: Short Video Content -->
+    <rdf:Description rdf:about="#ShortVideo_002">
+        <rdf:type rdf:resource="#ShortVideo"/>
+        <hasTitle>Leaked Surveillance Footage</hasTitle>
+        <hasShortDescription>A glimpse of real-time surveillance footage leaked online.</hasShortDescription>
+        <hasDurationInSeconds>45</hasDurationInSeconds>
+        <hasShortUploadDate>2025-01-18T22:15:00Z</hasShortUploadDate>
+        <hasShortVideoTags>#Leaked #SecurityFootage</hasShortVideoTags>
+        <hasShortVideoLocation>Anonymous Source</hasShortVideoLocation>
+        <hasMusicUsedInShort>None</hasMusicUsedInShort>
+        <hasEffectsUsedInShort>Blurred Faces</hasEffectsUsedInShort>
+        <hasRemixableStatus>false</hasRemixableStatus>
+    </rdf:Description>
+
+    <!-- Instance: Live Streaming Content -->
+    <rdf:Description rdf:about="#Live_003">
+        <rdf:type rdf:resource="#Live"/>
+        <hasTitle>Exclusive Dark Web Access Tutorial</hasTitle>
+        <hasLiveDurationInMinutes>30</hasLiveDurationInMinutes>
+        <hasViewerCountInLive>4200</hasViewerCountInLive>
+        <hasReactionCountInLive>210</hasReactionCountInLive>
+        <hasLiveStartTime>2025-01-25T20:00:00Z</hasLiveStartTime>
+        <hasLiveEndTime>2025-01-25T20:30:00Z</hasLiveEndTime>
+        <hasLiveTags>#TorNetwork #CyberSecurity</hasLiveTags>
+        <hasLiveLocation>Virtual Private Network</hasLiveLocation>
+        <hasSuperChatRevenue>3.5</hasSuperChatRevenue>
+    </rdf:Description>
+
+    <!-- Instance: Like Interaction -->
+    <rdf:Description rdf:about="#Like_001">
+        <rdf:type rdf:resource="#Like"/>
+        <hasLikeTimestamp>2025-01-20T15:45:30Z</hasLikeTimestamp>
+        <associatedWithLikedVideo rdf:resource="#Video_001"/>
+        <associatedWithContent rdf:resource="#Video_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment Interaction -->
+    <rdf:Description rdf:about="#Comment_002">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>This content is insane! Where can I get the full version?</hasCommentText>
+        <hasCommentTimestamp>2025-01-20T16:10:11Z</hasCommentTimestamp>
+        <associatedWithCommentedVideo rdf:resource="#Video_001"/>
+        <associatedWithContent rdf:resource="#Video_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Share Interaction -->
+    <rdf:Description rdf:about="#Share_003">
+        <rdf:type rdf:resource="#Share"/>
+        <hasShareTimestamp>2025-01-21T08:30:00Z</hasShareTimestamp>
+        <associatedWithSharedVideo rdf:resource="#Video_001"/>
+        <associatedWithContent rdf:resource="#Video_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Dislike Interaction -->
+    <rdf:Description rdf:about="#Dislike_004">
+        <rdf:type rdf:resource="#Dislike"/>
+        <hasDislikeTimestamp>2025-01-22T12:15:00Z</hasDislikeTimestamp>
+        <associatedWithDislikedVideo rdf:resource="#Video_002"/>
+        <associatedWithContent rdf:resource="#Video_002"/>
+    </rdf:Description>
+
+    <!-- Instance: Report Interaction -->
+    <rdf:Description rdf:about="#Report_005">
+        <rdf:type rdf:resource="#Report"/>
+        <hasReportReason>Violates community guidelines</hasReportReason>
+        <hasReportTimestamp>2025-01-22T14:05:00Z</hasReportTimestamp>
+        <associatedWithReportedVideo rdf:resource="#Video_002"/>
+        <associatedWithContent rdf:resource="#Video_002"/>
+    </rdf:Description>
+
+    <!-- Instance: Watch Later Interaction -->
+    <rdf:Description rdf:about="#WatchLater_006">
+        <rdf:type rdf:resource="#WatchLater"/>
+        <hasWatchLaterTimestamp>2025-01-23T18:45:00Z</hasWatchLaterTimestamp>
+        <associatedWithVideo rdf:resource="#Video_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Gift Interaction -->
+    <rdf:Description rdf:about="#Gift_007">
+        <rdf:type rdf:resource="#Gift"/>
+        <hasGiftComment>Keep up the great content!</hasGiftComment>
+        <hasGiftPrice>5.00</hasGiftPrice>
+        <hasGiftTimestamp>2025-01-25T20:15:00Z</hasGiftTimestamp>
+        <associatedWithLive rdf:resource="#Live_003"/>
+    </rdf:Description>
+
+    <!-- Instance: Direct Message 1 -->
+    <rdf:Description rdf:about="#Message_001">
+        <rdf:type rdf:resource="#MessageContent"/>
+        <hasTextContent>Transfer the files via our private server. No traces.</hasTextContent>
+        <hasMediaAttachment>https://darkweb.example.com/files.zip</hasMediaAttachment>
+        <hasTimestamp>2025-01-20T16:10:11Z</hasTimestamp>
+        <hasMessageStatus>Read</hasMessageStatus>
+        <hasMessageReaction>🔥</hasMessageReaction>
+        <isMessageFlagged>true</isMessageFlagged>
+        <isMessageEncrypted>true</isMessageEncrypted>
+    </rdf:Description>
+
+    <!-- Instance: Direct Message 2 -->
+    <rdf:Description rdf:about="#Message_002">
+        <rdf:type rdf:resource="#MessageContent"/>
+        <hasTextContent>Payment received. Access link: hxxps://darknetvault.com/secure</hasTextContent>
+        <hasTimestamp>2025-01-20T16:15:20Z</hasTimestamp>
+        <hasMessageStatus>Delivered</hasMessageStatus>
+        <hasMessageReaction>✅</hasMessageReaction>
+        <isMessageFlagged>true</isMessageFlagged>
+        <isMessageEncrypted>true</isMessageEncrypted>
+    </rdf:Description>
+
+    <!-- Instance: Message Action 1 -->
+    <rdf:Description rdf:about="#MessageAction_001">
+        <rdf:type rdf:resource="#MessageActions"/>
+        <sendsMessageTo rdf:resource="#User_002"/>
+        <sendsMediaMessageTo rdf:resource="#User_002"/>
+    </rdf:Description>
+
+    <!-- Instance: Message Action 2 -->
+    <rdf:Description rdf:about="#MessageAction_002">
+        <rdf:type rdf:resource="#MessageActions"/>
+        <forwardsMessageTo rdf:resource="#User_003"/>
+        <marksMessageAsUnread rdf:resource="#Message_002"/>
+    </rdf:Description>
+
+    <!-- Instance: Group Message Thread -->
+    <rdf:Description rdf:about="#GroupMessage_001">
+        <rdf:type rdf:resource="#GroupMessage"/>
+        <hasGroupMessageTitle>Private Trading Room</hasGroupMessageTitle>
+        <hasGroupMessageCreatedTimestamp>2025-01-18T10:00:00Z</hasGroupMessageCreatedTimestamp>
+        <hasGroupMessageLastActivity>2025-01-22T23:45:00Z</hasGroupMessageLastActivity>
+        <hasGroupParticipants rdf:resource="#User_001"/>
+        <hasGroupParticipants rdf:resource="#User_002"/>
+        <hasGroupParticipants rdf:resource="#User_003"/>
+    </rdf:Description>
+
+    <!-- Instance: Message Analytics -->
+    <rdf:Description rdf:about="#MessageAnalytics_001">
+        <rdf:type rdf:resource="#MessageAnalytics"/>
+        <hasOpenRate>87.5</hasOpenRate>
+        <hasClickThroughRate>54.3</hasClickThroughRate>
+        <hasResponseTime>5.2</hasResponseTime>
+        <isMessageBoosted>false</isMessageBoosted>
+    </rdf:Description>
+
+    <!-- Instance: Shopping Interaction -->
+    <rdf:Description rdf:about="#Shopping_001">
+        <rdf:type rdf:resource="#Shopping"/>
+        <hasShoppingFeatureDescription>Limited edition merchandise available only for VIP members.</hasShoppingFeatureDescription>
+    </rdf:Description>
+
+    <!-- Instance: User Shopping Interaction -->
+    <rdf:Description rdf:about="#User_001">
+        <rdf:type rdf:resource="#User"/>
+        <viewsShoppingFeatures rdf:resource="#Shopping_001"/>
+        <interactsWithShop rdf:resource="#Shopping_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Subscription Interaction -->
+    <rdf:Description rdf:about="#Subscription_002">
+        <rdf:type rdf:resource="#Subscription"/>
+        <hasSubscriptionBenefits>Access to exclusive videos and behind-the-scenes content.</hasSubscriptionBenefits>
+    </rdf:Description>
+
+    <!-- Instance: User Subscription -->
+    <rdf:Description rdf:about="#User_002">
+        <rdf:type rdf:resource="#User"/>
+        <subscribesToCreator rdf:resource="#Subscription_002"/>
+    </rdf:Description>
+
+    <!-- Instance: Creator Marketplace -->
+    <rdf:Description rdf:about="#CreatorMarketplace_003">
+        <rdf:type rdf:resource="#CreatorMarketplace"/>
+        <hasMarketplaceDetails>Users can purchase special video content and direct interactions with creators.</hasMarketplaceDetails>
+    </rdf:Description>
+
+    <!-- Instance: User Exploring Marketplace -->
+    <rdf:Description rdf:about="#User_003">
+        <rdf:type rdf:resource="#User"/>
+        <exploresCreatorMarketplace rdf:resource="#CreatorMarketplace_003"/>
+        <purchasesCreatorContent rdf:resource="#CreatorMarketplace_003"/>
+    </rdf:Description>
+
+    <!-- Instance: News Watch Page -->
+    <rdf:Description rdf:about="#NewsWatchPage_001">
+        <rdf:type rdf:resource="#NewsWatchPage"/>
+        <hasNewsPageContentType>Video</hasNewsPageContentType>
+    </rdf:Description>
+
+    <!-- Instance: User Viewing News Watch Page -->
+    <rdf:Description rdf:about="#User_001">
+        <rdf:type rdf:resource="#User"/>
+        <viewsNewsWatchPage rdf:resource="#NewsWatchPage_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Breaking News -->
+    <rdf:Description rdf:about="#BreakingNews_002">
+        <rdf:type rdf:resource="#BreakingNews"/>
+        <hasBreakingNewsPriority>High</hasBreakingNewsPriority>
+    </rdf:Description>
+
+    <!-- Instance: User Viewing Breaking News -->
+    <rdf:Description rdf:about="#User_002">
+        <rdf:type rdf:resource="#User"/>
+        <viewsBreakingNews rdf:resource="#BreakingNews_002"/>
+    </rdf:Description>
+
+    <!-- Instance: Top News -->
+    <rdf:Description rdf:about="#TopNews_003">
+        <rdf:type rdf:resource="#TopNews"/>
+        <hasTopNewsAlgorithm>Trending Topics Based</hasTopNewsAlgorithm>
+    </rdf:Description>
+
+    <!-- Instance: User Viewing Top News -->
+    <rdf:Description rdf:about="#User_003">
+        <rdf:type rdf:resource="#User"/>
+        <viewsTopNews rdf:resource="#TopNews_003"/>
+    </rdf:Description>
+
+    <!-- Instance: Hidden Notifications -->
+    <rdf:Description rdf:about="#HideNotifications_001">
+        <rdf:type rdf:resource="#HideNotifications"/>
+        <hasHiddenNotificationReason>Spam notifications from this user.</hasHiddenNotificationReason>
+    </rdf:Description>
+
+    <!-- Instance: User Hiding Notifications for Another User -->
+    <rdf:Description rdf:about="#User_001">
+        <rdf:type rdf:resource="#User"/>
+        <hidesUserNotificationsFor rdf:resource="#User_002"/>
+    </rdf:Description>
+
+    <!-- Instance: User Hiding Notifications for a Channel -->
+    <rdf:Description rdf:about="#User_002">
+        <rdf:type rdf:resource="#User"/>
+        <hidesChannelNotificationsFor rdf:resource="#Channel_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Manage Mentions -->
+    <rdf:Description rdf:about="#ManageMentions_002">
+        <rdf:type rdf:resource="#ManageMentions"/>
+        <hasMentionedContentDetails>User was mentioned in a controversial post regarding financial fraud.</hasMentionedContentDetails>
+    </rdf:Description>
+
+    <!-- Instance: User Managing Mentions -->
+    <rdf:Description rdf:about="#User_003">
+        <rdf:type rdf:resource="#User"/>
+        <managesUserMentionsFor rdf:resource="#User_004"/>
+    </rdf:Description>
+
+    <!-- Instance: User Managing Channel Mentions -->
+    <rdf:Description rdf:about="#User_004">
+        <rdf:type rdf:resource="#User"/>
+        <managesChannelMentionsFor rdf:resource="#Channel_002"/>
+    </rdf:Description>
+
+    <!-- Instance: General Post -->
+    <rdf:Description rdf:about="#Post_001">
+        <rdf:type rdf:resource="#Post"/>
+        <hasPostAudienceType>Public</hasPostAudienceType>
+        <hasPostScheduleTime>2025-01-20T10:00:00Z</hasPostScheduleTime>
+        <associatedWithContent rdf:resource="#Content_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Video Post -->
+    <rdf:Description rdf:about="#VideoPost_002">
+        <rdf:type rdf:resource="#VideoPost"/>
+        <hasVideoPostAudienceType>Subscribers Only</hasVideoPostAudienceType>
+        <hasVideoPostScheduleTime>2025-01-22T15:30:00Z</hasVideoPostScheduleTime>
+        <associatedWithContent rdf:resource="#Video_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Short Video Post -->
+    <rdf:Description rdf:about="#ShortVideoPost_003">
+        <rdf:type rdf:resource="#ShortVideoPost"/>
+        <hasShortVideoPostAudienceType>Friends</hasShortVideoPostAudienceType>
+        <hasShortVideoPostRemixableStatus>true</hasShortVideoPostRemixableStatus>
+        <hasShortVideoPostScheduleTime>2025-01-23T08:45:00Z</hasShortVideoPostScheduleTime>
+        <associatedWithContent rdf:resource="#ShortVideo_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Live Post -->
+    <rdf:Description rdf:about="#LivePost_004">
+        <rdf:type rdf:resource="#LivePost"/>
+        <hasLivePostAudienceType>Private</hasLivePostAudienceType>
+        <hasLivePostStreamType>Exclusive Members</hasLivePostStreamType>
+        <hasLivePostScheduleTime>2025-01-25T20:00:00Z</hasLivePostScheduleTime>
+        <associatedWithContent rdf:resource="#Live_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Search Functionality -->
+    <rdf:Description rdf:about="#SearchFunctionality_001">
+        <rdf:type rdf:resource="#SearchFunctionality"/>
+        <hasSearchKeyword>dark web marketplace</hasSearchKeyword>
+    </rdf:Description>
+
+    <!-- Instance: User Searching for Content -->
+    <rdf:Description rdf:about="#User_001">
+        <rdf:type rdf:resource="#User"/>
+        <searchesForContent rdf:resource="#SearchFunctionality_001"/>
+    </rdf:Description>
+
+    <!-- Instance: User Deleting Search History -->
+    <rdf:Description rdf:about="#User_002">
+        <rdf:type rdf:resource="#User"/>
+        <deletesSearchHistory rdf:resource="#SearchFunctionality_001"/>
+    </rdf:Description>
+
+    <!-- Instance: Search Recommendation -->
+    <rdf:Description rdf:about="#SearchRecommendation_002">
+        <rdf:type rdf:resource="#SearchRecommendation"/>
+        <hasRecommendationAlgorithm>AI-Based Behavioral Analysis</hasRecommendationAlgorithm>
+    </rdf:Description>
+
+    <!-- Instance: User Viewing Recommendations Based on Watch History -->
+    <rdf:Description rdf:about="#User_003">
+        <rdf:type rdf:resource="#User"/>
+        <viewsRecommendationsBasedOnWatchHistory rdf:resource="#SearchRecommendation_002"/>
+    </rdf:Description>
+
+    <!-- Instance: User Viewing Recommendations Based on Search History -->
+    <rdf:Description rdf:about="#User_004">
+        <rdf:type rdf:resource="#User"/>
+        <viewsRecommendationsBasedOnSearchHistory rdf:resource="#SearchRecommendation_002"/>
+    </rdf:Description>
+
+    <!-- Instance: User Editing Recommendations Preferences -->
+    <rdf:Description rdf:about="#User_005">
+        <rdf:type rdf:resource="#User"/>
+        <editsRecommendations rdf:resource="#SearchRecommendation_002"/>
+    </rdf:Description>
+
+    <!-- Instance: User Pausing Recommendations -->
+    <rdf:Description rdf:about="#User_006">
+        <rdf:type rdf:resource="#User"/>
+        <pausesRecommendations rdf:resource="#SearchRecommendation_002"/>
+    </rdf:Description>
+

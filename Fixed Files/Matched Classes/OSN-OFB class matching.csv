@@ -1,0 +1,49 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+OSN:ContentInteraction,OFB:ContentInteraction,100.0,"OSN:The class representing user interactions with content, such as likes, reactions, and comments.","OFB:Represents all forms of user interactions with content, including voting, liking, and replying."
+OSN:Like,OFB:Like,100.0,OSN:Represents a user's 'like' interaction on a post or content.,OFB:Represents a like action on content.
+OSN:Moderator,OFB:Moderator,100.0,OSN:Represents a moderator role in a group.,OFB:Represents a moderator assigned to a community with specific roles and permissions.
+OSN:NotificationSettings,OFB:NotificationSettings,100.0,"OSN:Handles configurations for notifications like push, email, and SMS.",OFB:Represents notification settings for a user.
+OSN:Polls,OFB:Polls,100.0,OSN:Represents polls created in a group.,OFB:Represents polls created by users with questions and options for interaction.
+OSN:SecuritySettings,OFB:SecuritySettings,100.0,"OSN:Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.",OFB:Settings related to managing the user's profile security.
+OSN:User,OFB:User,100.0,OSN:The primary class representing the user in the system.,OFB:Represents a user in the online forum or blog system.
+OSN:Comments,OFB:Comment,93.33,OSN:Represents user interactions involving comments on content.,OFB:Represents comments made by users on content.
+OSN:ModerationActions,OFB:ModeratorActions,90.91,OSN:Represents actions that moderators or admins can take in group moderation.,OFB:Represents the actions a moderator can perform in a community.
+OSN:AvatarPosts,OFB:Post,90.0,OSN:Represents posts created using avatars.,"OFB:Represents posts created by users, which may contain text, media, and other metadata."
+OSN:BirthdayPosts,OFB:Post,90.0,OSN:Represents posts created for birthdays.,"OFB:Represents posts created by users, which may contain text, media, and other metadata."
+OSN:Comments,OFB:ReplyToComments,90.0,OSN:Represents user interactions involving comments on content.,OFB:Represents a reply to a comment action.
+OSN:ContentCreation,OFB:Content,90.0,"OSN:The main class representing content creation functionality, including posts, stories, and reels.","OFB:Represents all forms of user-generated content, including posts and drafts, within the platform."
+OSN:ContentInteraction,OFB:Content,90.0,"OSN:The class representing user interactions with content, such as likes, reactions, and comments.","OFB:Represents all forms of user-generated content, including posts and drafts, within the platform."
+OSN:EmojiComment,OFB:Comment,90.0,OSN:Represents a comment made by a user that contains an emoji.,OFB:Represents comments made by users on content.
+OSN:Files,OFB:ProfileSettings,90.0,OSN:Represents files uploaded to a group.,OFB:Settings related to managing the user's profile.
+OSN:LikesReactions,OFB:Like,90.0,OSN:Represents user interactions involving likes and reactions to content.,OFB:Represents a like action on content.
+OSN:MessageNotifications,OFB:Notifications,90.0,OSN:Represents notification settings related to direct messages.,OFB:Represents notifications and their configurations.
+OSN:Moderator,OFB:ModeratorActions,90.0,OSN:Represents a moderator role in a group.,OFB:Represents the actions a moderator can perform in a community.
+OSN:Moderator,OFB:ModeratorStatistics,90.0,OSN:Represents a moderator role in a group.,OFB:Represents various statistics associated with a moderator's activity in the community.
+OSN:NotificationSettings,OFB:Notifications,90.0,"OSN:Handles configurations for notifications like push, email, and SMS.",OFB:Represents notifications and their configurations.
+OSN:Posts,OFB:PinPosts,90.0,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",OFB:Represents pinning actions for posts by users or communities.
+OSN:ShortVideoContent,OFB:Content,90.0,OSN:Represents short video content shared on social network platforms.,"OFB:Represents all forms of user-generated content, including posts and drafts, within the platform."
+OSN:TextComment,OFB:Comment,90.0,OSN:Represents a text-based comment made by a user.,OFB:Represents comments made by users on content.
+OSN:User,OFB:BlockUnblockUser,90.0,OSN:The primary class representing the user in the system.,OFB:Represents blocking and unblocking actions between users.
+OSN:User,OFB:UserInsights,90.0,OSN:The primary class representing the user in the system.,OFB:Represents insights for users based on their drafts or contributions.
+OSN:UserProfile,OFB:User,90.0,"OSN:Represents the profile of a user, containing personal information such as profile picture, username, and email.",OFB:Represents a user in the online forum or blog system.
+OSN:VideoContent,OFB:Content,90.0,"OSN:The main class representing video-related content in the system, including video history and notifications.","OFB:Represents all forms of user-generated content, including posts and drafts, within the platform."
+OSN:Posts,OFB:Post,88.89,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.","OFB:Represents posts created by users, which may contain text, media, and other metadata."
+OSN:GroupNotifications,OFB:Notifications,83.87,OSN:Represents notification settings for a group.,OFB:Represents notifications and their configurations.
+OSN:VideoNotifications,OFB:Notifications,83.87,"OSN:Represents notifications related to video content, such as new video uploads, reminders, and other updates.",OFB:Represents notifications and their configurations.
+OSN:DirectMessages,OFB:DirectMessaging,82.76,OSN:Represents direct messaging interactions among users on the platform.,OFB:Represents one-on-one messaging interactions.
+OSN:GIFComment,OFB:Comment,82.35,OSN:Represents a comment made by a user that contains a GIF.,OFB:Represents comments made by users on content.
+OSN:Groups,OFB:GroupMessaging,81.82,OSN:Represents groups in the online social network site.,OFB:Represents group messaging interactions.
+OSN:AccountSettings,OFB:CommunitySettings,81.25,"OSN:Handles general, privacy, security, and account management settings.","OFB:Represents settings for a community, including posting rules, banner, and flair."
+OSN:AccountManagement,OFB:Engagement,80.0,"OSN:Handles configurations for deactivating, deleting, downloading, or transferring account information.",OFB:Represents various types of engagement actions performed on content.
+OSN:DeviceManagement,OFB:Engagement,80.0,OSN:Handles authorized devices associated with the user's account.,OFB:Represents various types of engagement actions performed on content.
+OSN:GroupModeration,OFB:Moderator,80.0,OSN:Represents the moderation activities and policies within a group.,OFB:Represents a moderator assigned to a community with specific roles and permissions.
+OSN:GroupNotifications,OFB:PushNotifications,80.0,OSN:Represents notification settings for a group.,OFB:Represents push notification settings.
+OSN:ListingsManagement,OFB:Engagement,80.0,"OSN:Represents the management of listings in the marketplace, including metrics and status.",OFB:Represents various types of engagement actions performed on content.
+OSN:ModerationActions,OFB:Donations,80.0,OSN:Represents actions that moderators or admins can take in group moderation.,OFB:Represents donations made to creators or content.
+OSN:ModerationActions,OFB:Moderator,80.0,OSN:Represents actions that moderators or admins can take in group moderation.,OFB:Represents a moderator assigned to a community with specific roles and permissions.
+OSN:Moderator,OFB:CommunityModeration,80.0,OSN:Represents a moderator role in a group.,"OFB:Represents moderation functionalities for a community, including moderators and their actions."
+OSN:Moderator,OFB:ModerationQueue,80.0,OSN:Represents a moderator role in a group.,OFB:Represents a queue that contains flagged content for moderation.
+OSN:PagesManagement,OFB:Engagement,80.0,"OSN:Handles creation, activation, deactivation, and merging of Pages.",OFB:Represents various types of engagement actions performed on content.
+OSN:Posts,OFB:CrossPost,80.0,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",OFB:Represents posts that are cross-posted from other communities or original posts.
+OSN:Posts,OFB:ScheduledPost,80.0,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",OFB:Represents posts scheduled by users to be published at a future timestamp.
+OSN:Posts,OFB:ShareRepost,80.0,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",OFB:Represents sharing or reposting content to a community or other platforms.

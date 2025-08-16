@@ -1,0 +1,73 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- ShortVideoContent Class -->
+    <owl:Class rdf:about="#ShortVideoContent">
+        <rdfs:comment>Represents short video content shared on social network platforms.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Reels Sub-class -->
+    <owl:Class rdf:about="#Reels">
+        <rdfs:subClassOf rdf:resource="#ShortVideoContent"/>
+        <rdfs:comment>Represents reels, a type of short video content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ReelSettings Sub-class -->
+    <owl:Class rdf:about="#ReelSettings">
+        <rdfs:subClassOf rdf:resource="#Reels"/>
+        <rdfs:comment>Represents settings applicable to reels, such as captions, quality, and playback speed.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for ReelSettings -->
+    <owl:DatatypeProperty rdf:about="#hasReelClosedCaption">
+        <rdfs:domain rdf:resource="#ReelSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether closed captions are enabled for the reel.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hascQuality">
+        <rdfs:domain rdf:resource="#ReelSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the quality setting for the reel, e.g., HD or SD.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasReelDataSaver">
+        <rdfs:domain rdf:resource="#ReelSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether the data saver mode is enabled for reels.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasReelPlaybackSpeed">
+        <rdfs:domain rdf:resource="#ReelSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the playback speed of the reel, e.g., 1.0x, 1.5x.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Properties for Reels -->
+    <owl:DatatypeProperty rdf:about="#hasReelWatchTimestamp">
+        <rdfs:domain rdf:resource="#Reels"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp of when the reel was watched.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasReelWatchDuration">
+        <rdfs:domain rdf:resource="#Reels"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Duration of time the reel was watched, in seconds.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasReelWatchIP">
+        <rdfs:domain rdf:resource="#Reels"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>IP address of the user while watching the reel.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasReelDeviceInfo">
+        <rdfs:domain rdf:resource="#Reels"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Device information of the user while watching the reel.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

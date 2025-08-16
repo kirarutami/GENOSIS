@@ -1,0 +1,100 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+
+SELECT
+  ?timestamp 
+  ?engagementType 
+  ?userIRI ?userLabel 
+  ?contentItemIRI ?contentItemLabelOrDetail 
+  ?platform  # ?platform akan berasal dari pengguna yang diinvestigasi
+WHERE {
+  # !!! PENTING: Ganti <IRI_PENGGUNA_OFB_DISINI> dengan IRI akun pengguna OFB yang ingin dilacak !!!
+  VALUES ?userIRI { genosisOwl:User_CryptoWhale420_Reddit } # Contoh, ganti sesuai kebutuhan Bunda
+
+  ?userIRI rdf:type/rdfs:subClassOf* genosisOwl:Global:UserAccount ;
+           genosisOwl:belongsToPlatform ?platform . # Platform utama pengguna
+  FILTER(STR(?platform) = "Reddit" || STR(?platform) = "Quora") # Fokus ke OFB
+
+  OPTIONAL { ?userIRI rdfs:label ?userLabel . }
+
+  {
+    BIND("Like/Upvote" AS ?engagementType)
+    ?interactionIRI rdf:type genosisOwl:OFB:LikeAction ; 
+                    genosisOwl:performedBy ?userIRI ;
+                    genosisOwl:reactedTo ?contentItemIRI_like ; 
+                    genosisOwl:hasInteractionTimestamp ?timestamp .
+    # Platform diasumsikan sama dengan platform pengguna
+    OPTIONAL { 
+        ?contentItemIRI_like rdfs:label ?itemLabel_like . 
+        OPTIONAL { ?contentItemIRI_like genosisOwl:hasPostTitle ?itemTitle_like . }
+    }
+    BIND(COALESCE(STR(?itemTitle_like), STR(?itemLabel_like), STR(?contentItemIRI_like)) AS ?contentItemLabelOrDetail)
+    BIND(?contentItemIRI_like AS ?contentItemIRI)
+  }
+  UNION
+  {
+    BIND("Comment Made" AS ?engagementType)
+    ?interactionIRI rdf:type genosisOwl:OFB:CommentAction ; 
+                    genosisOwl:performedBy ?userIRI ;
+                    genosisOwl:hasInteractionTimestamp ?timestamp .
+    # Platform diasumsikan sama dengan platform pengguna
+    BIND(?interactionIRI AS ?contentItemIRI) 
+    OPTIONAL { ?interactionIRI genosisOwl:hasContentText ?commentText . }
+    BIND(COALESCE(STR(?commentText), "Comment (No text available)") AS ?contentItemLabelOrDetail)
+  }
+  UNION
+  {
+    BIND("Reply Made" AS ?engagementType)
+    ?interactionIRI rdf:type genosisOwl:OFB:ReplyToCommentAction ; 
+                    genosisOwl:performedBy ?userIRI ;
+                    genosisOwl:hasInteractionTimestamp ?timestamp ;
+                    genosisOwl:repliesToComment ?originalCommentActionIRI . 
+    # Platform diasumsikan sama dengan platform pengguna
+    BIND(?originalCommentActionIRI AS ?contentItemIRI) 
+    OPTIONAL { ?interactionIRI genosisOwl:hasContentText ?replyText . }
+    BIND(COALESCE(STR(?replyText), "Reply (No text available)") AS ?contentItemLabelOrDetail)
+  }
+  UNION
+  {
+    # Untuk Cross-Post, platformnya adalah platform tempat crosspost dibuat, yang seharusnya sama dengan platform user.
+    BIND("Cross-Post Created" AS ?engagementType)
+    ?contentItemIRI_crosspost rdf:type genosisOwl:OFB:CrossPostContent ; 
+                            genosisOwl:attributedToUser ?userIRI ;      
+                            genosisOwl:hasCreationTimestamp ?timestamp ;
+                            genosisOwl:belongsToPlatform ?platform_crosspost . # Platform dari crosspost
+    FILTER(?platform_crosspost = ?platform) # Memastikan konsistensi platform jika perlu, atau biarkan jika bisa beda
+    OPTIONAL { ?contentItemIRI_crosspost genosisOwl:hasCrosspostedTitle ?crosspostTitle . }
+    BIND(COALESCE(STR(?crosspostTitle), "Cross-Posted Content") AS ?contentItemLabelOrDetail)
+    BIND(?contentItemIRI_crosspost AS ?contentItemIRI)
+  }
+  UNION
+  {
+    BIND("Bookmark Added" AS ?engagementType)
+    ?interactionIRI rdf:type genosisOwl:OFB:BookmarkAction ;  
+                    genosisOwl:performedBy ?userIRI ;
+                    genosisOwl:hasInteractionTimestamp ?timestamp .
+    # Platform diasumsikan sama dengan platform pengguna
+    OPTIONAL { 
+        ?interactionIRI genosisOwl:associatedWithContent ?contentItemIRI_bm . 
+        OPTIONAL { ?contentItemIRI_bm rdfs:label ?lbl_bm . }
+    }
+    BIND(COALESCE(STR(?lbl_bm), "Bookmarked Item") AS ?contentItemLabelOrDetail)
+    BIND(COALESCE(?contentItemIRI_bm, ?interactionIRI) AS ?contentItemIRI)
+  }
+  UNION
+  {
+    BIND("Award Given" AS ?engagementType)
+    ?interactionIRI rdf:type genosisOwl:OFB:GiveAwardAction ; 
+                    genosisOwl:performedBy ?userIRI ;
+                    genosisOwl:hasInteractionTimestamp ?timestamp .
+    # Platform diasumsikan sama dengan platform pengguna
+    OPTIONAL { 
+        ?interactionIRI genosisOwl:associatedWithContent ?contentItemIRI_aw . 
+        OPTIONAL { ?contentItemIRI_aw rdfs:label ?lbl_aw . }
+    }
+    BIND(COALESCE(STR(?lbl_aw), "Awarded Item/User") AS ?contentItemLabelOrDetail)
+    BIND(COALESCE(?contentItemIRI_aw, ?interactionIRI) AS ?contentItemIRI)
+  }
+}
+ORDER BY ?timestamp

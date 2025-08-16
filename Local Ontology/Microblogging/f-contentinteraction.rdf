@@ -1,0 +1,269 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Content Interaction Class -->
+    <owl:Class rdf:about="#ContentInteraction"/>
+    
+    <!-- Likes Sub-class -->
+    <owl:Class rdf:about="#Likes">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#ReblogRetweetPost"/>
+        <owl:disjointWith rdf:resource="#Comment"/>
+        <owl:disjointWith rdf:resource="#Reply"/>
+        <owl:disjointWith rdf:resource="#Block"/>
+        <owl:disjointWith rdf:resource="#Report"/>
+        <owl:disjointWith rdf:resource="#FollowUnfollow"/>
+        <owl:disjointWith rdf:resource="#Ask"/>
+    </owl:Class>
+
+    <!-- Object Properties for Likes -->
+    <owl:ObjectProperty rdf:about="#likesPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Post"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#likesComment">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Comment"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#likesReblogRetweetPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ReblogRetweetPost"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#likesReplies">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reply"/>
+    </owl:ObjectProperty>
+
+    <!-- ReblogRetweetPost Sub-class -->
+    <owl:Class rdf:about="#ReblogRetweetPost">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#Likes"/>
+        <owl:disjointWith rdf:resource="#Comment"/>
+        <owl:disjointWith rdf:resource="#Reply"/>
+        <owl:disjointWith rdf:resource="#Block"/>
+        <owl:disjointWith rdf:resource="#Report"/>
+        <owl:disjointWith rdf:resource="#FollowUnfollow"/>
+        <owl:disjointWith rdf:resource="#Ask"/>
+    </owl:Class>
+
+    <!-- Object Properties for ReblogRetweetPost -->
+    <owl:ObjectProperty rdf:about="#reblogsRetweetsA">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Post"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#reblogsRetweetsComment">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Comment"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#reblogsRetweetsAgainA">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ReblogRetweetPost"/>
+    </owl:ObjectProperty>
+
+    <!-- Comment Sub-class -->
+    <owl:Class rdf:about="#Comment">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#Likes"/>
+        <owl:disjointWith rdf:resource="#ReblogRetweetPost"/>
+        <owl:disjointWith rdf:resource="#Reply"/>
+        <owl:disjointWith rdf:resource="#Block"/>
+        <owl:disjointWith rdf:resource="#Report"/>
+        <owl:disjointWith rdf:resource="#FollowUnfollow"/>
+        <owl:disjointWith rdf:resource="#Ask"/>
+    </owl:Class>
+
+    <!-- Object Properties for Comment -->
+    <owl:ObjectProperty rdf:about="#commentsOn">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Post"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#commentsOnReblogRetweetPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ReblogRetweetPost"/>
+    </owl:ObjectProperty>
+
+    <!-- Reply Sub-class -->
+    <owl:Class rdf:about="#Reply">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#Likes"/>
+        <owl:disjointWith rdf:resource="#ReblogRetweetPost"/>
+        <owl:disjointWith rdf:resource="#Comment"/>
+        <owl:disjointWith rdf:resource="#Block"/>
+        <owl:disjointWith rdf:resource="#Report"/>
+        <owl:disjointWith rdf:resource="#FollowUnfollow"/>
+        <owl:disjointWith rdf:resource="#Ask"/>
+    </owl:Class>
+
+    <!-- Object Properties for Reply -->
+    <owl:ObjectProperty rdf:about="#repliesOnComment">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Comment"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#deletesReblogRetweetPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reply"/>
+    </owl:ObjectProperty>
+
+    <!-- Block Sub-class -->
+    <owl:Class rdf:about="#Block">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#Likes"/>
+        <owl:disjointWith rdf:resource="#ReblogRetweetPost"/>
+        <owl:disjointWith rdf:resource="#Comment"/>
+        <owl:disjointWith rdf:resource="#Reply"/>
+        <owl:disjointWith rdf:resource="#Report"/>
+        <owl:disjointWith rdf:resource="#FollowUnfollow"/>
+        <owl:disjointWith rdf:resource="#Ask"/>
+    </owl:Class>
+
+    <!-- Object Properties for Block -->
+    <owl:ObjectProperty rdf:about="#blocks">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#unblocks">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+    </owl:ObjectProperty>
+
+    <!-- Report Sub-class -->
+    <owl:Class rdf:about="#Report">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#Likes"/>
+        <owl:disjointWith rdf:resource="#ReblogRetweetPost"/>
+        <owl:disjointWith rdf:resource="#Comment"/>
+        <owl:disjointWith rdf:resource="#Reply"/>
+        <owl:disjointWith rdf:resource="#Block"/>
+        <owl:disjointWith rdf:resource="#FollowUnfollow"/>
+        <owl:disjointWith rdf:resource="#Ask"/>
+    </owl:Class>
+
+    <!-- Object Properties for Report -->
+    <owl:ObjectProperty rdf:about="#reports">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#reportPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Post"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#reportsReply">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reply"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#reportComment">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Comment"/>
+    </owl:ObjectProperty>
+
+    <!-- FollowUnfollow Sub-class -->
+    <owl:Class rdf:about="#FollowUnfollow">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#Likes"/>
+        <owl:disjointWith rdf:resource="#ReblogRetweetPost"/>
+        <owl:disjointWith rdf:resource="#Comment"/>
+        <owl:disjointWith rdf:resource="#Reply"/>
+        <owl:disjointWith rdf:resource="#Block"/>
+        <owl:disjointWith rdf:resource="#Report"/>
+        <owl:disjointWith rdf:resource="#Ask"/>
+    </owl:Class>
+
+    <!-- Object Properties for FollowUnfollow -->
+    <owl:ObjectProperty rdf:about="#follow">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#unfollow">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+    </owl:ObjectProperty>
+
+    <!-- Ask Sub-class -->
+    <owl:Class rdf:about="#Ask">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#Likes"/>
+        <owl:disjointWith rdf:resource="#ReblogRetweetPost"/>
+        <owl:disjointWith rdf:resource="#Comment"/>
+        <owl:disjointWith rdf:resource="#Reply"/>
+        <owl:disjointWith rdf:resource="#Block"/>
+        <owl:disjointWith rdf:resource="#Report"/>
+        <owl:disjointWith rdf:resource="#FollowUnfollow"/>
+    </owl:Class>
+
+    <!-- Object Property for Ask -->
+    <owl:ObjectProperty rdf:about="#asks">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+    </owl:ObjectProperty>
+
+    <!-- Likes Sub-class -->
+    <owl:Class rdf:about="#Post">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#ReblogRetweetPost"/>
+        <owl:disjointWith rdf:resource="#Comment"/>
+        <owl:disjointWith rdf:resource="#Reply"/>
+        <owl:disjointWith rdf:resource="#Block"/>
+        <owl:disjointWith rdf:resource="#Report"/>
+        <owl:disjointWith rdf:resource="#FollowUnfollow"/>
+        <owl:disjointWith rdf:resource="#Ask"/>
+        <owl:disjointWith rdf:resource="#Words"/>
+    </owl:Class>
+
+    <!-- Words Sub-class -->
+    <owl:Class rdf:about="#Words">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#ReblogRetweetPost"/>
+        <owl:disjointWith rdf:resource="#Comment"/>
+        <owl:disjointWith rdf:resource="#Reply"/>
+        <owl:disjointWith rdf:resource="#Block"/>
+        <owl:disjointWith rdf:resource="#Report"/>
+        <owl:disjointWith rdf:resource="#FollowUnfollow"/>
+        <owl:disjointWith rdf:resource="#Ask"/>
+        <owl:disjointWith rdf:resource="#Post"/>
+    </owl:Class>
+
+    <!-- Object Properties for BlockingAndMuting -->
+    <owl:ObjectProperty rdf:about="#mutesNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Notifications"/>
+        <rdfs:comment>Indicates that a user mutes notifications.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#mutesWords">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Words"/>
+        <rdfs:comment>Indicates that a user mutes specific words.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#mutesAccounts">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Indicates that a user mutes another user account.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Characteristics for Object Properties -->
+    <rdf:Description rdf:about="#likesPost">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#reblogsRetweetsA">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#commentsOn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#blocks">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#reports">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#follow">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </rdf:Description>
+
+</rdf:RDF>

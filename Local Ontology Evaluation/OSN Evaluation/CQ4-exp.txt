@@ -1,0 +1,25 @@
+Peran Direct Messaging dalam Investigasi Kriminal
+Mengungkap Komunikasi Langsung Pelaku
+
+Pesan langsung bisa digunakan untuk mengancam korban, menyebarkan ujaran kebencian, melakukan pemerasan, atau merencanakan kejahatan.
+Investigator dapat menelusuri percakapan mencurigakan antara tersangka dan korban.
+Menghubungkan Identitas Tersangka di Berbagai Platform
+
+Dengan Linked Accounts atau Email yang Sama, investigator dapat menemukan hubungan antar-akun di berbagai media sosial (misalnya Facebook & Instagram).
+Menelusuri Modus Operandi Pelaku
+
+Apakah pelaku sering menggunakan ancaman?
+Apakah mereka meminta transfer uang sebagai bentuk pemerasan?
+Apakah ada pola komunikasi yang sama dengan korban lain?
+Mendapatkan Bukti Digital yang Kuat
+
+Tanda waktu (timestamp), alamat IP, dan perangkat yang digunakan bisa menghubungkan pesan ke individu tertentu.
+Investigasi bisa mengungkap siapa yang mengirim pesan ancaman pertama, seberapa sering mereka menghubungi korban, dan apakah ada pemaksaan/pemerasan.
+
+Keunggulan Tambahan dengan Timestamp
+✅ Menentukan Kronologi Kejadian → Investigator bisa melihat kapan ancaman atau pemerasan terjadi
+✅ Menghubungkan Pesan ke Bukti Lainnya → Bisa dibandingkan dengan laporan korban atau tangkapan layar
+✅ Menganalisis Pola Perilaku Pelaku → Apakah dia mengulangi modusnya pada jam tertentu?
+✅ Membantu dalam Digital Forensic → Bisa dibandingkan dengan log server atau metadata lainnya
+
+💡 Langkah Selanjutnya: Bisa diperluas dengan menambahkan alamat IP pengirim, perangkat yang digunakan, atau geo-location jika tersedia untuk memperkuat investigasi! 🚀

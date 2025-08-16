@@ -1,0 +1,96 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#> # Namespace ontologi OFB Anda
+
+# Contoh Query untuk OFB9: Mengekstrak Linimasa Engagement Pengguna
+
+# --- PENTING: Ganti ex:UserOfInterest dengan URI pengguna yang relevan ---
+# Contoh: ex:CryptoWhale420, ex:AnonBuyer99, ex:SecurityWatchdog
+
+SELECT ?timestamp ?engagementType ?user ?contentItem ?platform
+WHERE {
+  # Tentukan pengguna yang ingin dilacak engagement-nya
+  BIND(ex:CryptoWhale420 AS ?user) # <<< GANTI URI PENGGUNA DI SINI
+
+  { # Blok 1: Upvote/Downvote
+    # Cari interaksi UpvoteDownvote yang dilakukan oleh ?user
+    ?interaction rdf:type ex:UpvoteDownvote ;
+                 ex:performedBy ?user ;          # Dilakukan oleh pengguna target
+                 ex:associatedWithContent ?contentItem . # Terkait konten tertentu
+    # Cek platform (dari interaksi atau pengguna)
+    OPTIONAL { ?interaction ex:belongsToPlatform ?platform . }
+    OPTIONAL { FILTER(!BOUND(?platform)) ?user ex:belongsToPlatform ?platform . }
+    # Ambil timestamp upvote ATAU downvote
+    { ?interaction ex:hasUpvoteTimestamp ?timestamp . BIND("Upvote" AS ?engagementType) }
+    UNION
+    { ?interaction ex:hasDownvoteTimestamp ?timestamp . BIND("Downvote" AS ?engagementType) }
+  }
+  UNION
+  { # Blok 2: Like
+    BIND("Like" AS ?engagementType)
+    ?interaction rdf:type ex:Like ;
+                 ex:performedBy ?user ;
+                 ex:associatedWithContent ?contentItem ;
+                 ex:hasLikeTimestamp ?timestamp .
+    OPTIONAL { ?interaction ex:belongsToPlatform ?platform . }
+    OPTIONAL { FILTER(!BOUND(?platform)) ?user ex:belongsToPlatform ?platform . }
+  }
+  UNION
+  { # Blok 3: Comment Made (Komentar dibuat oleh pengguna)
+    BIND("Comment Made" AS ?engagementType)
+    ?comment rdf:type ex:Comment ;
+             ex:performedBy ?user ;
+             ex:hasCommentTimestamp ?timestamp .
+    BIND(?comment AS ?contentItem) # Item terkait adalah komentar itu sendiri
+    OPTIONAL { ?comment ex:belongsToPlatform ?platform . }
+    OPTIONAL { FILTER(!BOUND(?platform)) ?user ex:belongsToPlatform ?platform . }
+  }
+  UNION
+  { # Blok 4: Reply Made (Balasan dibuat oleh pengguna)
+    BIND("Reply Made" AS ?engagementType)
+    ?reply rdf:type ex:ReplyToComments ;
+           ex:performedBy ?user ;
+           ex:hasReplyTimestamp ?timestamp ;
+           ex:associatedWithComment ?contentItem . # Item terkait adalah komentar yang dibalas
+    OPTIONAL { ?reply ex:belongsToPlatform ?platform . }
+    OPTIONAL { FILTER(!BOUND(?platform)) ?user ex:belongsToPlatform ?platform . }
+  }
+  UNION
+  { # Blok 5: Share/Repost
+    BIND("Share/Repost" AS ?engagementType)
+    ?share rdf:type ex:ShareRepost ;
+           ex:performedBy ?user ;
+           ex:associatedWithContent ?contentItem ;
+           ex:hasShareTimestamp ?timestamp .
+    OPTIONAL { ?share ex:belongsToPlatform ?platform . }
+    OPTIONAL { FILTER(!BOUND(?platform)) ?user ex:belongsToPlatform ?platform . }
+  }
+  UNION
+  { # Blok 6: Bookmark
+    BIND("Bookmark" AS ?engagementType)
+    ?bookmark rdf:type ex:Bookmark ;
+             ex:performedBy ?user ;
+             ex:associatedWithContent ?contentItem ;
+             ex:hasBookmarkTimestamp ?timestamp .
+    OPTIONAL { ?bookmark ex:belongsToPlatform ?platform . }
+    OPTIONAL { FILTER(!BOUND(?platform)) ?user ex:belongsToPlatform ?platform . }
+  }
+  UNION
+  { # Blok 7: Give Award
+    BIND("Award Given" AS ?engagementType)
+    # Asumsi instance GiveAwards memiliki performedBy dan timestamp
+    ?award rdf:type ex:GiveAwards ;
+           ex:performedBy ?user ;
+           ex:associatedWithContent ?contentItem ;
+           ex:hasAwardTimestamp ?timestamp .
+    OPTIONAL { ?award ex:belongsToPlatform ?platform . }
+    OPTIONAL { FILTER(!BOUND(?platform)) ?user ex:belongsToPlatform ?platform . }
+  }
+  # --- Tambahkan blok UNION untuk tipe engagement lain jika perlu ---
+  # Contoh: PinPosts
+}
+# Urutkan hasil secara kronologis (waktu paling awal dulu)
+ORDER BY ?timestamp

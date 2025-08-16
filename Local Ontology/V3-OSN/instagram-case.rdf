@@ -1,0 +1,121 @@
+    <!-- Instance: User Sophia -->
+    <rdf:Description rdf:about="#User_Sophia">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasUsername>SophiaShines</hasUsername>
+        <hasEmail>sophia@example.com</hasEmail>
+        <hasBio>High school student, loves photography and music.</hasBio>
+        <hasProfilePicture>http://example.com/profiles/sophia.jpg</hasProfilePicture>
+        <hasProfilePictureHash>abc987hash</hasProfilePictureHash>
+        <hasCoverPhoto>http://example.com/profiles/sophia_cover.jpg</hasCoverPhoto>
+        <hasAccountCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-08-15T09:30:00Z</hasAccountCreationDate>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasAccountVerification>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: User MeanQueen -->
+    <rdf:Description rdf:about="#User_MeanQueen">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasUsername>MeanQueen</hasUsername>
+        <hasEmail>meanqueen@example.com</hasEmail>
+        <hasBio>Popular and always speaking the truth 😉.</hasBio>
+        <hasProfilePicture>http://example.com/profiles/meanqueen.jpg</hasProfilePicture>
+        <hasProfilePictureHash>xyz654hash</hasProfilePictureHash>
+        <hasCoverPhoto>http://example.com/profiles/meanqueen_cover.jpg</hasCoverPhoto>
+        <hasAccountCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-12-01T12:00:00Z</hasAccountCreationDate>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasAccountVerification>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: User DarkWolf -->
+    <rdf:Description rdf:about="#User_DarkWolf">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasUsername>DarkWolf</hasUsername>
+        <hasEmail>darkwolf@example.com</hasEmail>
+        <hasBio>Not afraid to expose the truth.</hasBio>
+        <hasProfilePicture>http://example.com/profiles/darkwolf.jpg</hasProfilePicture>
+        <hasProfilePictureHash>uvw123hash</hasProfilePictureHash>
+        <hasCoverPhoto>http://example.com/profiles/darkwolf_cover.jpg</hasCoverPhoto>
+        <hasAccountCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-10T14:45:00Z</hasAccountCreationDate>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasAccountVerification>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: User FriendlyUser -->
+    <rdf:Description rdf:about="#User_FriendlyUser">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasUsername>FriendlyUser</hasUsername>
+        <hasEmail>friendlyuser@example.com</hasEmail>
+        <hasBio>Be kind and spread positivity. 💙</hasBio>
+        <hasProfilePicture>http://example.com/profiles/friendlyuser.jpg</hasProfilePicture>
+        <hasProfilePictureHash>pqr567hash</hasProfilePictureHash>
+        <hasCoverPhoto>http://example.com/profiles/friendlyuser_cover.jpg</hasCoverPhoto>
+        <hasAccountCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-06-20T10:15:00Z</hasAccountCreationDate>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasAccountVerification>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </rdf:Description>
+
+        <rdf:Description rdf:about="#Post_Sophia_CharityEvent">
+        <rdf:type rdf:resource="#Posts"/>
+        <hasPostContent>Had a great time at the school charity event! 💖 #SchoolPride #FriendsForever</hasPostContent>
+        <hasPostMedia>http://example.com/images/sophia_charity.jpg</hasPostMedia>
+        <hasPostTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T18:00:00Z</hasPostTimestamp>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: Escalated Negative Comments -->
+    <rdf:Description rdf:about="#Comment_MeanQueen_1">
+        <rdf:type rdf:resource="#TextComment"/>
+        <hasCommentText>Why do you even exist? Nobody wants you here. #Pathetic #JustDisappear</hasCommentText>
+        <hasCommentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T18:10:00Z</hasCommentTimestamp>
+        <associatedWithContent rdf:resource="#Post_Sophia_CharityEvent"/>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_DarkWolf_1">
+        <rdf:type rdf:resource="#TextComment"/>
+        <hasCommentText>Not surprising. I heard she flirts with teachers to get good grades. #Disgusting</hasCommentText>
+        <hasCommentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T18:12:00Z</hasCommentTimestamp>
+        <associatedWithContent rdf:resource="#Post_Sophia_CharityEvent"/>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: Direct Message with Extreme Harassment -->
+    <rdf:Description rdf:about="#DM_MeanQueen_Threat1">
+        <rdf:type rdf:resource="#TextMessage"/>
+        <hasMessageContentType>text</hasMessageContentType>
+        <hasMessageSendTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T20:42:00Z</hasMessageSendTimestamp>
+        <sendsTextMessage rdf:resource="#User_MeanQueen"/>
+        <viewsMessages rdf:resource="#User_SophiaShines"/>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+        <hasMessageText>You are the ugliest, most useless waste of space ever. No wonder nobody likes you. Just end it already. 😂</hasMessageText>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_MeanQueen_Threat2">
+        <rdf:type rdf:resource="#TextMessage"/>
+        <hasMessageContentType>text</hasMessageContentType>
+        <hasMessageSendTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T20:47:00Z</hasMessageSendTimestamp>
+        <sendsTextMessage rdf:resource="#User_MeanQueen"/>
+        <viewsMessages rdf:resource="#User_SophiaShines"/>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+        <hasMessageText>If you don't disappear from Instagram, I'll make sure everyone sees what I have. Private photos, personal details, your address. I'm not joking.</hasMessageText>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_MeanQueen_FinalThreat">
+        <rdf:type rdf:resource="#TextMessage"/>
+        <hasMessageContentType>text</hasMessageContentType>
+        <hasMessageSendTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T20:52:00Z</hasMessageSendTimestamp>
+        <sendsTextMessage rdf:resource="#User_MeanQueen"/>
+        <viewsMessages rdf:resource="#User_SophiaShines"/>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+        <hasMessageText>Block me, and I swear I will ruin your life. You have NO idea what I can do. Watch your back.</hasMessageText>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_Sophia_Responds">
+        <rdf:type rdf:resource="#TextMessage"/>
+        <hasMessageContentType>text</hasMessageContentType>
+        <hasMessageSendTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T20:50:00Z</hasMessageSendTimestamp>
+        <sendsTextMessage rdf:resource="#User_SophiaShines"/>
+        <viewsMessages rdf:resource="#User_MeanQueen"/>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+        <hasMessageText>Leave me alone! What do you even want from me?</hasMessageText>
+    </rdf:Description>

@@ -1,0 +1,75 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+# Tidak perlu prefix spesifik platform lain untuk kondisi ini,
+# kecuali jika ada properti unik yang belum teridentifikasi dalam pemetaan ke genosisOwl.
+
+SELECT DISTINCT 
+  ?suspectUser ?suspectLabel 
+  ?victimUserIRI ?victimLabel 
+  ?platform ?timestamp ?messageText 
+  ?threatClassification ?abuseClassification ?blackmailClassification ?illicitTradeClassification
+WHERE {
+  # !!! PENTING: Ganti <IRI_KORBAN_DISINI> dengan IRI lengkap akun pengguna korban !!!
+  # Contoh: VALUES ?victimUserIRI { genosisOwl:User_Sophia_Instagram }
+  # Contoh: VALUES ?victimUserIRI { genosisOwl:User_AminaReports_Twitter }
+  # Contoh: VALUES ?victimUserIRI { genosisOwl:User_NoahDrawsStuff_Tumblr }
+  # Contoh: VALUES ?victimUserIRI { genosisOwl:User_Ethan_TikTok }
+  # Contoh: VALUES ?victimUserIRI { genosisOwl:User_CyberSentinel_Reddit }
+
+  VALUES ?victimUserIRI { genosisOwl:User_Sophia_Instagram }
+
+  # Mencari DM yang dikirim OLEH ?suspectUser KEPADA ?victimUserIRI
+  ?dm rdf:type/rdfs:subClassOf* genosisOwl:Global:DirectMessage ;
+      genosisOwl:attributedToUser ?suspectUser ;    # Pengirim adalah calon tersangka
+      genosisOwl:messageReceiver ?victimUserIRI ;   # Penerima adalah korban yang sudah ditentukan
+      genosisOwl:hasMessageContent ?messageText ;
+      genosisOwl:hasMessageSentTimestamp ?timestamp ;
+      genosisOwl:belongsToPlatform ?platform .
+
+  # Pastikan ?suspectUser bukan korban itu sendiri (jika ada kasus aneh)
+  FILTER(?suspectUser != ?victimUserIRI)
+
+  # Mengambil label untuk ?suspectUser dan ?victimUserIRI (opsional)
+  OPTIONAL { ?suspectUser rdfs:label ?suspectLabel . }
+  OPTIONAL { ?victimUserIRI rdfs:label ?victimLabel . } # Mengambil label korban
+
+  # --- Klasifikasi Konten Pesan (Menggabungkan kata kunci dari semua query lokal) ---
+
+  # Klasifikasi Kategori 1: Ancaman (Threat)
+  BIND (
+    IF (
+      REGEX(?messageText, "end it|ruin your life|watch your back|just disappear|we know where you live|make you regret it|take it to the next level|you should just do it|don't back down|if you don't do it, you will regret it|this will blow up|regret it|handle nosy people|worry about your own privacy|threat|expose|deserves what's coming", "i"),
+      "Threat", ""
+    ) AS ?threatClassification
+  )
+
+  # Klasifikasi Kategori 2: Pelecehan Verbal / Cacian (Verbal Abuse / Harassment)
+  BIND (
+    IF (
+      REGEX(?messageText, "nobody likes you|loser|pathetic|ugly|shut up|garbage articles|you're sick|nobody wants to hear from you|everyone's done it|just a few seconds|nothing's going to happen|get lost|traitor|part of the problem|stupid|idiot|wimp", "i"),
+      "Verbal Abuse/Harassment", ""
+    ) AS ?abuseClassification
+  )
+  
+  # Klasifikasi Kategori 3: Pemerasan / Blackmail (Blackmail / Extortion)
+  BIND (
+    IF (
+      REGEX(?messageText, "I have private pictures|pay me or else|leak private|take it to the next level|leak your address|dark web|if something goes wrong|you better not back out|I have proof and backups|send me REAL ones instead", "i"),
+      "Blackmail/Extortion", ""
+    ) AS ?blackmailClassification
+  )
+
+  # Klasifikasi Kategori 4: Diskusi Perdagangan Ilegal (Illicit Trade) - dari OFB
+  BIND (
+    IF (
+      REGEX(?messageText, "cc dumps|stolen data|monero|untraceable payment|premium cc|vendor|dumps|carding", "i"),
+      "Illicit Trade Discussion", ""
+    ) AS ?illicitTradeClassification
+  )
+
+  # Filter agar hanya menampilkan pesan yang masuk setidaknya satu klasifikasi
+  FILTER(?threatClassification != "" || ?abuseClassification != "" || ?blackmailClassification != "" || ?illicitTradeClassification != "")
+
+}
+ORDER BY DESC(?timestamp) ?suspectUser

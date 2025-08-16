@@ -1,0 +1,24 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+OSN:commentedBy,MP:commentedBy,100.0,Links a comment with the User who made the comment.,"
+            Points to the user who wrote this comment.
+        "
+OSN:commentsOn,MP:commentsOn,100.0,Links a comment with the ContentCreation that was commented on.,
+OSN:postedBy,MP:postedBy,100.0,Indicates the poster of a story.,"
+        Indicates the user who created or published this post.
+        "
+OSN:follows,MP:follow,92.31,,
+OSN:commentsOn,MP:commentsOnReblogRetweetPost,90.0,Links a comment with the ContentCreation that was commented on.,
+OSN:follows,MP:addsOrFollowsList,90.0,,Indicates that a user adds or follows a list on the platform.
+OSN:follows,MP:followsHost,90.0,,Indicates that a user is following the host of a live space or room.
+OSN:isFollowedBy,MP:follow,90.0,,
+OSN:commentsOn,MP:commentedOn,85.71,Links a comment with the ContentCreation that was commented on.,"
+            Points to the post on which this comment was made.
+            For reblog/retweet, you could similarly add commentedOnReblogRetweetPost, etc.
+        "
+OSN:editsAvatar,MP:canEditAvatar,83.33,Links a user to editing an existing avatar.,Indicates permission to edit profile avatar.
+OSN:commentedBy,MP:commentedOn,81.82,Links a comment with the User who made the comment.,"
+            Points to the post on which this comment was made.
+            For reblog/retweet, you could similarly add commentedOnReblogRetweetPost, etc.
+        "
+OSN:commentsActivities,MP:commentsOn,80.0,Records activities related to commenting on content.,
+OSN:follows,MP:unfollow,80.0,,

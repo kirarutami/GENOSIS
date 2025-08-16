@@ -1,0 +1,34 @@
+class,subClass,classComment,subClassComment
+User,ProfileSettings,The primary class representing individual users in the system.,Sub-class representing settings a user can edit in their profile.
+User,ProfileSettings,The primary class representing individual users in the system.,"Represents the settings that can be edited in a user's profile, including profile picture, username, and personal details."
+ContentInteraction,InteractionType,Represents interactions on content within the platform.,Represents different types of interactions with content.
+InteractionType,Like,Represents different types of interactions with content.,Represents a like interaction with content.
+InteractionType,Comment,Represents different types of interactions with content.,Represents a comment interaction with content.
+InteractionType,Share,Represents different types of interactions with content.,Represents a share interaction with content.
+InteractionType,Dislike,Represents different types of interactions with content.,Represents a dislike interaction with content.
+InteractionType,Report,Represents different types of interactions with content.,Represents a report interaction with content.
+InteractionType,WatchLater,Represents different types of interactions with content.,Represents the watch later feature for videos.
+InteractionType,Gift,Represents different types of interactions with content.,Represents gifting interactions during live sessions.
+Search,SearchFunctionality,Represents search functionalities and recommendations within the system.,Handles direct search actions performed by users.
+Search,SearchRecommendation,Represents search functionalities and recommendations within the system.,Handles recommendations generated based on user activity and preferences.
+NewsInformation,NewsWatchPage,Represents functionalities and components related to news information in the system.,Represents the page where users watch or read news content.
+NewsInformation,BreakingNews,Represents functionalities and components related to news information in the system.,Represents the breaking news section in the system.
+NewsInformation,TopNews,Represents functionalities and components related to news information in the system.,Represents the top news section in the system.
+Content,Video,Represents all types of content on the platform.,Represents video content in the system.
+Content,ShortVideo,Represents all types of content on the platform.,Represents short video content in the system.
+Content,Live,Represents all types of content on the platform.,Represents live streaming content within the system.
+Content,SuperChat,Represents all types of content on the platform.,Represents a SuperChat donation event during live streaming.
+Monetization,Shopping,Represents all monetization-related features and interactions.,Represents shopping-related features within the platform.
+Monetization,Subscription,Represents all monetization-related features and interactions.,Represents subscription-related features on the platform.
+Monetization,CreatorMarketplace,Represents all monetization-related features and interactions.,Represents interactions with the creator marketplace.
+Notifications,HideNotifications,Represents notifications and related interactions in the platform.,Represents the functionality to hide notifications for users or channels.
+Notifications,ManageMentions,Represents notifications and related interactions in the platform.,Represents the functionality to manage mentions and their related details.
+Post,VideoPost,"Represents a generic post on the platform, including audience type and schedule time.",Represents posts that are associated with videos.
+Post,ShortVideoPost,"Represents a generic post on the platform, including audience type and schedule time.",Represents posts associated with short videos.
+Post,LivePost,"Represents a generic post on the platform, including audience type and schedule time.",Represents posts associated with live sessions.
+DirectMessages,MessageContent,Represents the functionality and content of direct messages in the system.,"Represents the content of a message, including text, media, and metadata."
+DirectMessages,MessageActions,Represents the functionality and content of direct messages in the system.,"Represents user actions performed on messages, such as sending or deleting."
+DirectMessages,AdvancedMessagingFeatures,Represents the functionality and content of direct messages in the system.,"Represents advanced features for messaging, such as encryption and priority settings."
+DirectMessages,NotificationSettings,Represents the functionality and content of direct messages in the system.,Represents settings for managing message notifications.
+DirectMessages,GroupMessage,Represents the functionality and content of direct messages in the system.,Represents group message threads and related interactions.
+DirectMessages,MessageAnalytics,Represents the functionality and content of direct messages in the system.,"Represents analytics related to messages, such as open rate and response time."

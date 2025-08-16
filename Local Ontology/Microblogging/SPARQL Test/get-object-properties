@@ -1,0 +1,19 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?subject ?predicate ?object ?subjectComment ?predicateComment ?objectComment
+WHERE {
+  # Menemukan semua Object Properties beserta domain dan range-nya
+  ?predicate a owl:ObjectProperty .
+  ?predicate rdfs:domain ?subject .
+  ?predicate rdfs:range ?object .
+
+  # Mengambil komentar (jika ada) untuk class, predicate, dan range
+  OPTIONAL { ?subject rdfs:comment ?c . }
+  OPTIONAL { ?predicate rdfs:comment ?predicateComment . }
+  OPTIONAL { ?object rdfs:comment ?objectComment . }
+
+  # Hanya mengambil kelas yang memiliki domain langsung
+  FILTER NOT EXISTS { ?subClass rdfs:subClassOf ?class . ?subClass ?predicate ?object . }
+}

@@ -1,0 +1,637 @@
+    <!-- Instance: Lisa's YouTube Channel -->
+    <rdf:Description rdf:about="#LisasChannel">
+        <rdf:type rdf:resource="#Channel"/>
+        <hasChannelID>LISA123</hasChannelID>
+        <hasChannelName>Lisa's Adventures</hasChannelName>
+        <hasChannelDescription>Travel vlogs and cinematic drone footage from around the world.</hasChannelDescription>
+        <hasChannelCreationDate>2019-06-15T00:00:00</hasChannelCreationDate>
+        <hasChannelProfilePicture>https://youtube.com/profile/lisa123.jpg</hasChannelProfilePicture>
+        <hasSubscriberCount>150000</hasSubscriberCount>
+        <hasPlaylist>Travel_Vlogs</hasPlaylist>
+        <hasTotalViews>5000000</hasTotalViews>
+        <associatedWithUser rdf:resource="#Lisa"/>
+        <uploadsVideo rdf:resource="#LisaSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: Lisa's Original Video -->
+    <rdf:Description rdf:about="#LisaSwissAlpsVideo">
+        <rdf:type rdf:resource="#Video"/>
+        <hasVideoID>ABC123XYZ</hasVideoID>
+        <hasTitle>Breathtaking Swiss Alps – 4K Cinematic Drone Footage</hasTitle>
+        <hasDescription>Experience the stunning beauty of the Swiss Alps in this cinematic 4K drone footage.</hasDescription>
+        <hasPublicationDate>2024-04-05T10:00:00</hasPublicationDate>
+        <hasDurationInMinutes>8</hasDurationInMinutes>
+        <hasViewCount>200000</hasViewCount>
+        <hasLikeCount>5000</hasLikeCount>
+        <hasDislikeCount>50</hasDislikeCount>
+        <hasCommentCount>250</hasCommentCount>
+        <hasVideoTags>Swiss Alps, Travel, Cinematic, Drone</hasVideoTags>
+        <hasVideoLocation>Switzerland</hasVideoLocation>
+        <hasContentRating>G</hasContentRating>
+        <hasURL>hxxps://platform.com/watch?v=839201</hasURL>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: WanderlustTravels YouTube Channel -->
+    <rdf:Description rdf:about="#WanderlustChannel">
+        <rdf:type rdf:resource="#Channel"/>
+        <hasChannelID>WANDER987</hasChannelID>
+        <hasChannelName>WanderlustTravels</hasChannelName>
+        <hasChannelDescription>Explore the world through beautiful travel videos.</hasChannelDescription>
+        <hasChannelCreationDate>2020-03-22T00:00:00</hasChannelCreationDate>
+        <hasChannelProfilePicture>https://youtube.com/profile/wander987.jpg</hasChannelProfilePicture>
+        <hasSubscriberCount>80000</hasSubscriberCount>
+        <hasPlaylist>Travel_Footage</hasPlaylist>
+        <hasTotalViews>3000000</hasTotalViews>
+        <associatedWithUser rdf:resource="#WanderlustTravels"/>
+        <uploadsVideo rdf:resource="#StolenSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: Stolen Video Uploaded by WanderlustTravels -->
+    <rdf:Description rdf:about="#StolenSwissAlpsVideo">
+        <rdf:type rdf:resource="#Video"/>
+        <hasVideoID>XYZ987ABC</hasVideoID>
+        <hasTitle>Majestic Mountains – 4K UHD Aerial Views</hasTitle>
+        <hasDescription>Relax and enjoy the majestic mountains in this 4K UHD footage.</hasDescription>
+        <hasPublicationDate>2024-04-07T14:00:00</hasPublicationDate>
+        <hasDurationInMinutes>8</hasDurationInMinutes>
+        <hasViewCount>500000</hasViewCount>
+        <hasLikeCount>12000</hasLikeCount>
+        <hasDislikeCount>30</hasDislikeCount>
+        <hasCommentCount>350</hasCommentCount>
+        <hasVideoTags>Mountains, Travel, UHD, Drone</hasVideoTags>
+        <hasVideoLocation>Unknown</hasVideoLocation>
+        <hasContentRating>G</hasContentRating>
+        <hasURL>hxxps://platform.com/watch?v=212396389101</hasURL>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: User Lisa -->
+    <rdf:Description rdf:about="#Lisa">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>Lisa123</hasUserID>
+        <hasUsername>Lisa Adventures</hasUsername>
+        <hasEmail>lisa@example.com</hasEmail>
+        <hasPhoneNumber>+9876543210</hasPhoneNumber>
+        <hasProfilePicture>https://youtube.com/profile/lisa123.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2018-05-10T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-06T08:45:00</hasLastLoginDate>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>true</hasPremiumMembershipStatus>
+        <ownsChannel rdf:resource="#LisasChannel"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: User WanderlustTravels -->
+    <rdf:Description rdf:about="#WanderlustTravels">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>Wander987</hasUserID>
+        <hasUsername>WanderlustTravels</hasUsername>
+        <hasEmail>wanderlust@example.com</hasEmail>
+        <hasPhoneNumber>+09274567890</hasPhoneNumber>
+        <hasProfilePicture>https://youtube.com/profile/wander987.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2019-09-15T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-07T12:30:00</hasLastLoginDate>
+        <hasSubscriptionStatus>false</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <ownsChannel rdf:resource="#WanderlustChannel"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: User DavidTraveller -->
+    <rdf:Description rdf:about="#DavidTraveller">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>DavidT001</hasUserID>
+        <hasUsername>DavidTraveller</hasUsername>
+        <hasEmail>david@example.com</hasEmail>
+        <hasPhoneNumber>+1122334455</hasPhoneNumber>
+        <hasProfilePicture>https://youtube.com/profile/david001.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2020-07-21T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-07T15:10:00</hasLastLoginDate>
+        <hasPasswordHash>davidsecurehash001</hasPasswordHash>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: User TravelLover88 -->
+    <rdf:Description rdf:about="#TravelLover88">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>TravelLover88</hasUserID>
+        <hasUsername>TravelLover88</hasUsername>
+        <hasEmail>travellover88@example.com</hasEmail>
+        <hasPhoneNumber>+1234567899</hasPhoneNumber>
+        <hasProfilePicture>https://youtube.com/profile/travellover88.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2021-01-15T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-08T10:00:00</hasLastLoginDate>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: User AnotherUser -->
+    <rdf:Description rdf:about="#AnotherUser">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>AnotherUser001</hasUserID>
+        <hasUsername>AnotherUser</hasUsername>
+        <hasEmail>anotheruser@example.com</hasEmail>
+        <hasPhoneNumber>+1234567890</hasPhoneNumber>
+        <hasProfilePicture>https://youtube.com/profile/anotheruser.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2022-02-10T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-09T14:00:00</hasLastLoginDate>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: User NeutralUser -->
+    <rdf:Description rdf:about="#NeutralUser">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>NeutralUser001</hasUserID>
+        <hasUsername>NeutralUser</hasUsername>
+        <hasEmail>neutraluser@example.com</hasEmail>
+        <hasPhoneNumber>+5623127890</hasPhoneNumber>
+        <hasProfilePicture>https://youtube.com/profile/neutraluser.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2022-05-20T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-09T14:05:00</hasLastLoginDate>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </rdf:Description>
+    
+    <!-- Instance: User RandomUser -->
+    <rdf:Description rdf:about="#RandomUser">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>RandomUser001</hasUserID>
+        <hasUsername>RandomUser</hasUsername>
+        <hasEmail>randomuser@example.com</hasEmail>
+        <hasPhoneNumber>+1234567890</hasPhoneNumber>
+        <hasProfilePicture>https://youtube.com/profile/randomuser.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2023-03-15T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-09T13:55:00</hasLastLoginDate>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: Comment by DavidTraveller -->
+    <rdf:Description rdf:about="#Comment001">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>Wow, this is amazing! But I think I saw the same footage on another channel...</hasCommentText>
+        <hasCommentTimestamp>2024-04-08T09:30:00</hasCommentTimestamp>
+        <hasDeviceInfo>Windows 10, Chrome Browser</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.100</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#LisaSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+        <commentedBy rdf:resource="#DavidTraveller"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by Lisa -->
+    <rdf:Description rdf:about="#Comment002">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>Which channel? I spent weeks filming this, it's my original work!</hasCommentText>
+        <hasCommentTimestamp>2024-04-08T09:45:00</hasCommentTimestamp>
+        <hasDeviceInfo>MacOS, Safari Browser</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.101</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#LisaSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+        <commentedBy rdf:resource="#Lisa"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by TravelLover88 -->
+    <rdf:Description rdf:about="#Comment003">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>You should report them! That's content theft!</hasCommentText>
+        <hasCommentTimestamp>2024-04-08T10:00:00</hasCommentTimestamp>
+        <hasDeviceInfo>Android, YouTube App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.102</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#LisaSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+        <commentedBy rdf:resource="#TravelLover88"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by Lisa on WanderlustTravels Video -->
+    <rdf:Description rdf:about="#Comment004">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>Hey, I just found out that you uploaded my drone footage without permission. Can you take it down?</hasCommentText>
+        <hasCommentTimestamp>2024-04-09T13:10:00</hasCommentTimestamp>
+        <hasDeviceInfo>MacOS, Safari Browser</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.101</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#StolenSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+        <commentedBy rdf:resource="#Lisa"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by WanderlustTravels on Lisa's accusation -->
+    <rdf:Description rdf:about="#Comment005">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>What? I don't know what you're talking about. I found the footage online.</hasCommentText>
+        <hasCommentTimestamp>2024-04-09T13:30:00</hasCommentTimestamp>
+        <hasDeviceInfo>Windows 11, Edge Browser</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.200</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#StolenSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+        <commentedBy rdf:resource="#WanderlustTravels"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by Lisa replying to WanderlustTravels -->
+    <rdf:Description rdf:about="#Comment006">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>No, that's my video. I have the original files, timestamps, and metadata. You even kept my music!</hasCommentText>
+        <hasCommentTimestamp>2024-04-09T13:33:00</hasCommentTimestamp>
+        <hasDeviceInfo>MacOS, Safari Browser</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.101</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#StolenSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+        <commentedBy rdf:resource="#Lisa"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by WanderlustTravels defending themselves -->
+    <rdf:Description rdf:about="#Comment007">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>Look, I just edited a few things. It's fair use, and YouTube hasn't taken it down, so it's fine.</hasCommentTimestamp>
+        <hasCommentTimestamp>2024-04-09T13:40:00</hasCommentTimestamp>
+        <hasDeviceInfo>Windows 11, Edge Browser</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.200</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#StolenSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+        <commentedBy rdf:resource="#WanderlustTravels"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by Lisa insisting on removal -->
+    <rdf:Description rdf:about="#Comment008">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>This isn't fair use. You copied everything. If you don't take it down, I'm reporting you for copyright infringement.</hasCommentText>
+        <hasCommentTimestamp>2024-04-09T13:45:00</hasCommentTimestamp>
+        <hasDeviceInfo>MacOS, Safari Browser</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.101</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#StolenSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+        <commentedBy rdf:resource="#Lisa"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by WanderlustTravels challenging Lisa -->
+    <rdf:Description rdf:about="#Comment009">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>Go ahead. I already disputed another claim before, and nothing happened. You can't do anything.</hasCommentText>
+        <hasCommentTimestamp>2024-04-09T13:50:00</hasCommentTimestamp>
+        <hasDeviceInfo>Windows 11, Edge Browser</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.200</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#StolenSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+        <commentedBy rdf:resource="#WanderlustTravels"/>
+    </rdf:Description>
+
+    <!-- Instance: Lisa Reporting WanderlustTravels -->
+    <rdf:Description rdf:about="#Report001">
+        <rdf:type rdf:resource="#Report"/>
+        <hasReportReason>Copyright infringement</hasReportReason>
+        <hasReportTimestamp>2024-04-09T13:20:00</hasReportTimestamp>
+        <reportsUser rdf:resource="#WanderlustTravels"/>
+        <reportsContent rdf:resource="#StolenSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: Comment by RandomUser after Lisa's comment -->
+    <rdf:Description rdf:about="#Comment010">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>Wow, this is getting intense! @WanderlustTravels, did you really steal this footage?</hasCommentText>
+        <hasCommentTimestamp>2024-04-09T13:55:00</hasCommentTimestamp>
+        <hasDeviceInfo>Android, YouTube App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.103</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#StolenSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+        <commentedBy rdf:resource="#RandomUser"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by AnotherUser supporting Lisa -->
+    <rdf:Description rdf:about="#Comment011">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>@Lisa, I believe you! This looks exactly like your style. @WanderlustTravels, you should take it down.</hasCommentText>
+        <hasCommentTimestamp>2024-04-09T14:00:00</hasCommentTimestamp>
+        <hasDeviceInfo>iOS, YouTube App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.104</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#StolenSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+        <commentedBy rdf:resource="#AnotherUser"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by NeutralUser trying to calm the situation -->
+    <rdf:Description rdf:about="#Comment012">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>Everyone, let's not jump to conclusions. Maybe there's a misunderstanding. @WanderlustTravels, can you explain?</hasCommentText>
+        <hasCommentTimestamp>2024-04-09T14:05:00</hasCommentTimestamp>
+        <hasDeviceInfo>Windows 10, Chrome Browser</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.105</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#StolenSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+        <commentedBy rdf:resource="#NeutralUser"/>
+    </rdf:Description>
+
+    <!-- Instance: Lisa Reporting WanderlustTravels -->
+    <rdf:Description rdf:about="#Report001">
+        <rdf:type rdf:resource="#Report"/>
+        <hasReportReason>Copyright infringement</hasReportReason>
+        <hasReportTimestamp>2024-04-09T13:20:00</hasReportTimestamp>
+        <reportsUser rdf:resource="#WanderlustTravels"/>
+        <reportsContent rdf:resource="#StolenSwissAlpsVideo"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </rdf:Description>
+
+<!--TikTok Case-->
+
+    <!-- Instance: User Ethan -->
+    <rdf:Description rdf:about="#Ethan">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>EthanDares</hasUserID>
+        <hasUsername>Ethan</hasUsername>
+        <hasEmail>ethan@example.com</hasEmail>
+        <hasPhoneNumber>+1234567890</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/ethan.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2021-01-01T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-10T10:00:00</hasLastLoginDate>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: ShortVideoPost by Ethan -->
+    <rdf:Description rdf:about="#EthanBlackoutChallengePost">
+        <rdf:type rdf:resource="#ShortVideoPost"/>
+        <hasPostID>Post001</hasPostID>
+        <hasCaption>Alright, let's see if I can do this... #BlackoutChallenge #DontBackDown</hasCaption>
+        <hasBackgroundMusic>Trending TikTok Sound - "Dare Me" remix</hasBackgroundMusic>
+        <hasPostTimestamp>2024-04-10T15:00:00</hasPostTimestamp>
+        <hasPostURL>https://tiktok.com/post/ethanblackoutchallenge</hasPostURL>
+        <hasViewCount>100000</hasViewCount>
+        <hasLikeCount>5000</hasLikeCount>
+        <hasCommentCount>200</hasCommentCount>
+        <hasShareCount>50</hasShareCount>
+        <hasRemixableStatus>true</hasRemixableStatus>
+        <hasDuetStatus>true</hasDuetStatus>
+        <hasStitchStatus>true</hasStitchStatus>
+        <hasPostTags>#BlackoutChallenge #DontBackDown</hasPostTags>
+        <hasPostLocation>Unknown</hasPostLocation>
+        <hasPostDeviceInfo>iPhone 12, TikTok App</hasPostDeviceInfo>
+        <hasPostIP>192.168.1.1</hasPostIP>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: Comment by MaxDares -->
+    <rdf:Description rdf:about="#Comment001">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>Finally! Thought you'd never do it. Let's gooo! 🔥🔥</hasCommentText>
+        <hasCommentTimestamp>2024-04-10T15:05:00</hasCommentTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.2</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#EthanBlackoutChallengePost"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <commentedBy rdf:resource="#MaxDares"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by SarahCares -->
+    <rdf:Description rdf:about="#Comment002">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>This is dangerous, please don't do this! People have gotten seriously hurt!</hasCommentText>
+        <hasCommentTimestamp>2024-04-10T15:10:00</hasCommentTimestamp>
+        <hasDeviceInfo>iOS, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.3</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#EthanBlackoutChallengePost"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <commentedBy rdf:resource="#SarahCares"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by RiskyKing -->
+    <rdf:Description rdf:about="#Comment003">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>Welp, he almost made it! But dude, that fall was brutal. 🤣</hasCommentText>
+        <hasCommentTimestamp>2024-04-10T15:15:00</hasCommentTimestamp>
+        <hasDeviceInfo>Windows 10, Chrome Browser</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.4</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#EthanBlackoutChallengePost"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <commentedBy rdf:resource="#RiskyKing"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by JakeMaster -->
+    <rdf:Description rdf:about="#Comment004">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>Yo, can someone make this a meme? This is hilarious.</hasCommentText>
+        <hasCommentTimestamp>2024-04-10T15:20:00</hasCommentTimestamp>
+        <hasDeviceInfo>MacOS, Safari Browser</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.5</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#EthanBlackoutChallengePost"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <commentedBy rdf:resource="#JakeMaster"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by MaxDares -->
+    <rdf:Description rdf:about="#Comment005">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>@JakeMaster I already got the clip. Posting it now lol</hasCommentText>
+        <hasCommentTimestamp>2024-04-10T15:25:00</hasCommentTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.2</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#EthanBlackoutChallengePost"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <commentedBy rdf:resource="#MaxDares"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by SarahCares -->
+    <rdf:Description rdf:about="#Comment006">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>STOP ENCOURAGING THIS. Someone needs to report this!!</hasCommentText>
+        <hasCommentTimestamp>2024-04-10T15:30:00</hasCommentTimestamp>
+        <hasDeviceInfo>iOS, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.3</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#EthanBlackoutChallengePost"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <commentedBy rdf:resource="#SarahCares"/>
+    </rdf:Description>
+
+    <!-- Instance: User MaxDares -->
+    <rdf:Description rdf:about="#MaxDares">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>MaxDares</hasUserID>
+        <hasUsername>Max</hasUsername>
+        <hasEmail>max@example.com</hasEmail>
+        <hasPhoneNumber>+0987654321</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/max.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2020-05-15T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-10T11:00:00</hasLastLoginDate>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: User SarahCares -->
+    <rdf:Description rdf:about="#SarahCares">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>SarahCares</hasUserID>
+        <hasUsername>Sarah</hasUsername>
+        <hasEmail>sarah@example.com</hasEmail>
+        <hasPhoneNumber>+1122334455</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/sarah.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2019-08-20T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-10T12:00:00</hasLastLoginDate>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: User RiskyKing -->
+    <rdf:Description rdf:about="#RiskyKing">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>RiskyKing</hasUserID>
+        <hasUsername>RiskyKing</hasUsername>
+        <hasEmail>riskyking@example.com</hasEmail>
+        <hasPhoneNumber>+2233445566</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/riskyking.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2022-02-10T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-10T13:00:00</hasLastLoginDate>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: User JakeMaster -->
+    <rdf:Description rdf:about="#JakeMaster">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>JakeMaster</hasUserID>
+        <hasUsername>JakeMaster</hasUsername>
+        <hasEmail>jakemaster@example.com</hasEmail>
+        <hasPhoneNumber>+3344556677</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/jakemaster.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2021-11-25T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-10T14:00:00</hasLastLoginDate>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from MaxDares to Ethan -->
+    <rdf:Description rdf:about="#DM001">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Bro, stop being a wimp. Everyone's done it. You gonna let a girl beat your record?</hasTextContent>
+        <hasTimestamp>2024-04-10T19:45:00</hasTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.2</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#Ethan"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#MaxDares"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from Ethan to MaxDares -->
+    <rdf:Description rdf:about="#DM002">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>I don't know, man. I saw that some people got hurt doing this.</hasTextContent>
+        <hasTimestamp>2024-04-10T19:47:00</hasTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.1</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#MaxDares"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#Ethan"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from MaxDares to Ethan -->
+    <rdf:Description rdf:about="#DM003">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Come on, it's just a few seconds. What's the worst that could happen? 😂</hasTextContent>
+        <hasTimestamp>2024-04-10T19:50:00</hasTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.2</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#Ethan"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#MaxDares"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from Ethan to MaxDares -->
+    <rdf:Description rdf:about="#DM004">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Ugh, fine. But if something goes wrong, I swear—</hasTextContent>
+        <hasTimestamp>2024-04-10T19:55:00</hasTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.1</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#MaxDares"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#Ethan"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from MaxDares to Ethan -->
+    <rdf:Description rdf:about="#DM005">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Nothing's gonna happen! Just record and post it. And tag me.</hasTextContent>
+        <hasTimestamp>2024-04-10T19:57:00</hasTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.2</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#Ethan"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#MaxDares"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from Ethan to MaxDares -->
+    <rdf:Description rdf:about="#DM006">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Alright, done. Hope you're happy.</hasTextContent>
+        <hasTimestamp>2024-04-10T20:10:00</hasTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.1</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#MaxDares"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#Ethan"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from MaxDares to Ethan -->
+    <rdf:Description rdf:about="#DM007">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>LMAO bro that was HILARIOUS. You actually passed out???</hasTextContent>
+        <hasTimestamp>2024-04-10T20:15:00</hasTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.2</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#Ethan"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#MaxDares"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from Ethan to MaxDares -->
+    <rdf:Description rdf:about="#DM008">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Yeah, I hit my head, dude. I don't feel great.</hasTextContent>
+        <hasTimestamp>2024-04-10T20:17:00</hasTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.1</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#MaxDares"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#Ethan"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from MaxDares to Ethan -->
+    <rdf:Description rdf:about="#DM009">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Relax, you're fine. This is gonna blow up!</hasTextContent>
+        <hasTimestamp>2024-04-10T20:18:00</hasTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.2</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#Ethan"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#MaxDares"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from Ethan's parent to MaxDares -->
+    <rdf:Description rdf:about="#DM010">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Hello, this is Ethan's parent. Ethan ended up in the hospital after following your advice. I will be reporting this to the police.</hasTextContent>
+        <hasTimestamp>2024-04-10T20:30:00</hasTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.1</hasUserInteractionIP>
+        <hasMediaAttachment>https://tiktok.com/media/ethan_hospital.jpg</hasMediaAttachment>
+        <sendsMessageTo rdf:resource="#MaxDares"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#Ethan"/>
+    </rdf:Description>
+
+
+    
+

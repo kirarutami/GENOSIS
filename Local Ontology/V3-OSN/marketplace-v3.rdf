@@ -1,0 +1,148 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Marketplace Class -->
+    <owl:Class rdf:about="#Marketplace">
+        <rdfs:comment>Represents the marketplace feature in the online social network site.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Listings Sub-class -->
+    <owl:Class rdf:about="#Listings">
+        <rdfs:subClassOf rdf:resource="#Marketplace"/>
+        <rdfs:comment>Represents the listings created by users in the marketplace.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for Listings -->
+    <owl:ObjectProperty rdf:about="#listsItemTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Listing"/>
+        <rdfs:comment>Links a user to an item listing they have created.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#listsVehicleTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Listing"/>
+        <rdfs:comment>Links a user to a vehicle listing they have created.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#listsPropertyTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Listing"/>
+        <rdfs:comment>Links a user to a property listing they have created.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- ListingDetails Sub-class -->
+    <owl:Class rdf:about="#ListingDetails">
+        <rdfs:subClassOf rdf:resource="#Listings"/>
+        <rdfs:comment>Details about a specific listing, including metadata and attributes.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for ListingDetails -->
+    <owl:DatatypeProperty rdf:about="#hasListingTitle">
+        <rdfs:domain rdf:resource="#ListingDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The title of the listing.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasListingPrice">
+        <rdfs:domain rdf:resource="#ListingDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>The price of the listed item.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasListingCategory">
+        <rdfs:domain rdf:resource="#ListingDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The category of the listing, e.g., Electronics, Vehicles.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasListingCreationTimestamp">
+        <rdfs:domain rdf:resource="#ListingDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the listing was created.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasListingUpdateTimestamp">
+        <rdfs:domain rdf:resource="#ListingDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when the listing was last updated.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasSellerLocation">
+        <rdfs:domain rdf:resource="#ListingDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The location of the seller for the listing.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasListingViews">
+        <rdfs:domain rdf:resource="#ListingDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The number of views the listing has received.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasListingBoostStatus">
+        <rdfs:domain rdf:resource="#ListingDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether the listing is boosted for higher visibility.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- ListingsManagement Sub-class -->
+    <owl:Class rdf:about="#ListingsManagement">
+        <rdfs:subClassOf rdf:resource="#Marketplace"/>
+        <rdfs:comment>Represents the management of listings in the marketplace, including metrics and status.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for ListingsManagement -->
+    <owl:DatatypeProperty rdf:about="#hasActiveListingsCount">
+        <rdfs:domain rdf:resource="#ListingsManagement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The number of active listings managed by the user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasInactiveListingsCount">
+        <rdfs:domain rdf:resource="#ListingsManagement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The number of inactive listings managed by the user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- MessageSeller Sub-class -->
+    <owl:Class rdf:about="#MessageSeller">
+        <rdfs:subClassOf rdf:resource="#Marketplace"/>
+        <rdfs:comment>Represents communication between a buyer and a seller.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for MessageSeller -->
+    <owl:DatatypeProperty rdf:about="#hasMessageSentTimestamp">
+        <rdfs:domain rdf:resource="#MessageSeller"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The timestamp when a message was sent to the seller.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- SellerInformation Sub-class -->
+    <owl:Class rdf:about="#SellerInformation">
+        <rdfs:subClassOf rdf:resource="#Marketplace"/>
+        <rdfs:comment>Details about the seller in the marketplace.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for SellerInformation -->
+    <owl:DatatypeProperty rdf:about="#hasSellerRating">
+        <rdfs:domain rdf:resource="#SellerInformation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>The seller's rating based on customer feedback.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasNumberOfSales">
+        <rdfs:domain rdf:resource="#SellerInformation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The number of successful sales by the seller.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasSellerVerificationStatus">
+        <rdfs:domain rdf:resource="#SellerInformation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether the seller is verified on the platform.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

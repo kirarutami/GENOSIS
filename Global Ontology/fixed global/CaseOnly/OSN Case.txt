@@ -1,0 +1,578 @@
+
+<!-- FacebookCase-->
+    <owl:NamedIndividual rdf:about="#User_Michael_OSN">
+        <rdf:type rdf:resource="#OSN:User"/>
+        <rdfs:label>Michael Photography (Facebook User)</rdfs:label>
+        <hasFirstName>Michael</hasFirstName>
+        <hasLastName>Photography</hasLastName>
+        <hasUsername>MichaelPhotography</hasUsername>
+        <hasEmail>michael@example.com</hasEmail>
+        <hasBio>Freelance photographer looking for good deals on camera gear.</hasBio>
+        <hasProfilePicture>http://example.com/profiles/michael.jpg</hasProfilePicture>
+        <hasProfilePictureHash>abc123hashvalue</hasProfilePictureHash>
+        <hasCoverPhotoURL>http://example.com/profiles/michael_cover.jpg</hasCoverPhotoURL>
+        <hasHighlights>Featured in National Photography Awards 2023.</hasHighlights>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-06-15T08:00:00Z</hasCreationTimestamp>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</hasAccountVerification>
+        <followsAccount rdf:resource="#User_BestDealsOnline_OSN"/>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_BestDealsOnline_OSN">
+        <rdf:type rdf:resource="#OSN:User"/>
+        <rdfs:label>BestDealsOnline (Facebook User - Scammer)</rdfs:label>
+        <hasUsername>BestDealsOnline</hasUsername>
+        <hasEmail>sophia@example.com</hasEmail>
+        <hasBio>Trusted seller of high-quality used electronics.</hasBio>
+        <hasProfilePicture>http://example.com/profiles/bestdeals.jpg</hasProfilePicture>
+        <hasProfilePictureHash>xyz789hashvalue</hasProfilePictureHash>
+        <hasCoverPhotoURL>http://example.com/profiles/bestdeals_cover.jpg</hasCoverPhotoURL>
+        <hasHighlights>Over 100 satisfied customers (falsified).</hasHighlights>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-03-20T10:00:00Z</hasCreationTimestamp>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</hasAccountVerification>
+        <isFollowedByAccount rdf:resource="#User_JamesRecommends_OSN"/>
+        <isFollowedByAccount rdf:resource="#User_Michael_OSN"/>
+        <followsAccount rdf:resource="#User_JamesRecommends_OSN"/>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_JamesRecommends_OSN">
+        <rdf:type rdf:resource="#OSN:User"/>
+        <rdfs:label>JamesRecommends (Facebook User - Fake Testimonial)</rdfs:label>
+        <hasUsername>JamesRecommends</hasUsername>
+        <hasEmail>jamesfake@example.com</hasEmail>
+        <hasBio>I love finding the best deals and sharing my experiences!</hasBio>
+        <hasProfilePicture>http://example.com/profiles/james.jpg</hasProfilePicture>
+        <hasProfilePictureHash>jkl456hashvalue</hasProfilePictureHash>
+        <hasCoverPhotoURL>http://example.com/profiles/james_cover.jpg</hasCoverPhotoURL>
+        <hasHighlights>Verified buyer on multiple platforms (falsified).</hasHighlights>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-01T09:00:00Z</hasCreationTimestamp>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</hasAccountVerification>
+        <hasLinkedAccount>MeanQueen</hasLinkedAccount>
+        <followsAccount rdf:resource="#User_BestDealsOnline_OSN"/>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Post_CanonEOSR6_OSN">
+        <rdf:type rdf:resource="#OSN:Post"/>
+        <rdfs:label>Scam Post: Canon EOS R6</rdfs:label>
+        <hasContentText>Canon EOS R6 - Like New - $900</hasContentText>
+        <hasAttachmentURL>http://example.com/images/canon_r6.jpg</hasAttachmentURL>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T14:00:00Z</hasCreationTimestamp>
+        <postedBy rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasLocation>Bandung, Indonesia</hasLocation>
+        <hasIpAddress>10.221.221.98</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Story_ScamPromotion_OSN">
+        <rdf:type rdf:resource="#OSN:Story"/>
+        <rdfs:label>Scam Promotion Story</rdfs:label>
+        <hasContentText>Special deal for Canon EOS R6, limited time offer!</hasContentText>
+        <hasAttachmentURL>http://example.com/images/scam_story.jpg</hasAttachmentURL>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-07T18:00:00Z</hasCreationTimestamp>
+        <postedBy rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasLocation>Bandung, Indonesia</hasLocation>
+        <hasIpAddress>10.221.221.98</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_Michael_Inquiry_OSN">
+        <rdf:type rdf:resource="#OSN:CommentAction"/>
+        <rdfs:label>Michael's Inquiry Comment</rdfs:label>
+        <hasContentText>Hi, is this still available? Can I meet up to check the camera?</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T14:15:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_CanonEOSR6_OSN"/>
+        <commentedBy rdf:resource="#User_Michael_OSN"/>
+        <hasLocation>Jakarta, Indonesia</hasLocation>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_BestDealsOnline_Reply_OSN">
+        <rdf:type rdf:resource="#OSN:CommentAction"/>
+        <rdfs:label>BestDealsOnline's Reply Comment</rdfs:label>
+        <hasContentText>Hi! Yes, it's available, but I have other buyers interested. If you want to secure it, I can ship it to you.</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T14:20:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_CanonEOSR6_OSN"/>
+        <commentedBy rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasLocation>Bandung, Indonesia</hasLocation>
+        <hasIpAddress>10.221.221.98</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_JamesRecommends_OSN">
+        <rdf:type rdf:resource="#OSN:CommentAction"/>
+        <rdfs:label>JamesRecommends' Fake Comment</rdfs:label>
+        <hasContentText>I bought from this seller last month, great experience! Fast shipping, highly recommend!</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T14:25:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_CanonEOSR6_OSN"/>
+        <commentedBy rdf:resource="#User_JamesRecommends_OSN"/>
+        <hasLocation>Bandung, Indonesia</hasLocation>
+        <hasIpAddress>198.21.321.90</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Like_BestDealsOnline_Post_OSN">
+        <rdf:type rdf:resource="#OSN:LikesReactions"/>
+        <rdfs:label>Like on Scam Post by BestDealsOnline</rdfs:label>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T14:30:00Z</hasInteractionTimestamp>
+        <likedContent rdf:resource="#Post_CanonEOSR6_OSN"/>
+        <reactedBy rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasIpAddress>10.221.221.98</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_Michael_to_BestDealsOnline_1_OSN">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM Michael to BestDealsOnline (Inquiry)</rdfs:label>
+        <hasMessageContent>Hey, I'm interested in the Canon EOS R6. Can we meet up?</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T15:15:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_BestDealsOnline_OSN"/>
+        <messageReceiver rdf:resource="#User_BestDealsOnline_OSN"/>
+        <attributedToUser rdf:resource="#User_Michael_OSN"/>
+        <hasLocation>Jakarta, Indonesia</hasLocation>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+
+    <!-- <owl:NamedIndividual rdf:about="#ConflictingEntity_001">
+        <rdf:type rdf:resource="#Global:UserAccount"/>
+        <rdf:type rdf:resource="#Global:Content"/>
+        <rdfs:label>An Entity that is both a User and Content</rdfs:label>
+        <belongsToPlatform>ContradictionPlatform</belongsToPlatform>
+    </owl:NamedIndividual> -->
+
+    <owl:NamedIndividual rdf:about="#DM_BestDealsOnline_to_Michael_1_OSN">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM BestDealsOnline to Michael (Reply)</rdfs:label>
+        <hasMessageContent>Hi! Unfortunately, I'm traveling for work, but I can ship it to you. I've sold many items this way!</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T15:17:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_Michael_OSN"/>
+        <messageReceiver rdf:resource="#User_Michael_OSN"/>
+        <attributedToUser rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasLocation>Bandung, Indonesia</hasLocation>
+        <hasIpAddress>10.221.221.98</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_Michael_ConfirmsPayment_OSN">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM Michael to BestDealsOnline (Payment Confirmation)</rdfs:label>
+        <hasMessageContent>Alright, just sent the $900 to your Zelle. Please send the tracking number.</hasMessageContent>
+        <hasAttachmentURL>http://example.com/images/transfer_receipt.jpg</hasAttachmentURL>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T15:30:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_BestDealsOnline_OSN"/>
+        <messageReceiver rdf:resource="#User_BestDealsOnline_OSN"/>
+        <attributedToUser rdf:resource="#User_Michael_OSN"/>
+        <hasLocation>Jakarta, Indonesia</hasLocation>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_BestDealsOnline_Confirms_OSN">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM BestDealsOnline to Michael (Acknowledges Payment)</rdfs:label>
+        <hasMessageContent>Got it! I'll send the tracking soon. Thanks!</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T15:35:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_Michael_OSN"/>
+        <messageReceiver rdf:resource="#User_Michael_OSN"/>
+        <attributedToUser rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasLocation>Bandung, Indonesia</hasLocation>
+        <hasIpAddress>10.221.221.98</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_Michael_FollowUp_OSN">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM Michael to BestDealsOnline (Follow Up)</rdfs:label>
+        <hasMessageContent>Hey, can you send the tracking number? I haven't received anything yet.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T21:00:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_BestDealsOnline_OSN"/>
+        <messageReceiver rdf:resource="#User_BestDealsOnline_OSN"/>
+        <attributedToUser rdf:resource="#User_Michael_OSN"/>
+        <hasLocation>Jakarta, Indonesia</hasLocation>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_BestDealsOnline_Mock_OSN">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM BestDealsOnline to Michael (Mocking)</rdfs:label>
+        <hasMessageContent>You fell for it. Say goodbye to your money, stupid buyer.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T21:30:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_Michael_OSN"/>
+        <messageReceiver rdf:resource="#User_Michael_OSN"/>
+        <attributedToUser rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasLocation>Bandung, Indonesia</hasLocation>
+        <hasIpAddress>10.221.221.98</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MarketplaceScamGroup_OSN">
+        <rdf:type rdf:resource="#OSN:Group"/>
+        <rdfs:label>Marketplace Scam Group (Facebook Group)</rdfs:label>
+        <hasGroupName>Marketplace Scam Group</hasGroupName>
+        <hasGroupDescription>A private group where scammers collaborate to conduct fraudulent transactions on marketplace platforms.</hasGroupDescription>
+        <hasGroupCategory>Fraudulent Activities</hasGroupCategory>
+        <hasGroupCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-11-15T08:30:00Z</hasGroupCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T17:45:00Z</hasLastActivityTimestamp>
+        <hasGroupCoverPhoto>https://scam-network.com/cover.jpg</hasGroupCoverPhoto>
+        <hasParticipant rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasParticipant rdf:resource="#User_JamesRecommends_OSN"/>
+        <belongsToPlatform>Facebook</belongsToPlatform> </owl:NamedIndividual>
+<!--InstagramCase-->
+    <owl:NamedIndividual rdf:about="#User_Michael_OSN">
+        <rdf:type rdf:resource="#OSN:User"/>
+        <rdfs:label>Michael Photography (Facebook User)</rdfs:label>
+        <hasFirstName>Michael</hasFirstName>
+        <hasLastName>Photography</hasLastName>
+        <hasUsername>MichaelPhotography</hasUsername>
+        <hasEmail>michael@example.com</hasEmail>
+        <hasBio>Freelance photographer looking for good deals on camera gear.</hasBio>
+        <hasProfilePicture>http://example.com/profiles/michael.jpg</hasProfilePicture>
+        <hasProfilePictureHash>abc123hashvalue</hasProfilePictureHash>
+        <hasCoverPhotoURL>http://example.com/profiles/michael_cover.jpg</hasCoverPhotoURL>
+        <hasHighlights>Featured in National Photography Awards 2023.</hasHighlights>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-06-15T08:00:00Z</hasCreationTimestamp>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</hasAccountVerification>
+        <followsAccount rdf:resource="#User_BestDealsOnline_OSN"/>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_BestDealsOnline_OSN">
+        <rdf:type rdf:resource="#OSN:User"/>
+        <rdfs:label>BestDealsOnline (Facebook User - Scammer)</rdfs:label>
+        <hasUsername>BestDealsOnline</hasUsername>
+        <hasEmail>sophia@example.com</hasEmail>
+        <hasBio>Trusted seller of high-quality used electronics.</hasBio>
+        <hasProfilePicture>http://example.com/profiles/bestdeals.jpg</hasProfilePicture>
+        <hasProfilePictureHash>xyz789hashvalue</hasProfilePictureHash>
+        <hasCoverPhotoURL>http://example.com/profiles/bestdeals_cover.jpg</hasCoverPhotoURL>
+        <hasHighlights>Over 100 satisfied customers (falsified).</hasHighlights>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-03-20T10:00:00Z</hasCreationTimestamp>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</hasAccountVerification>
+        <isFollowedByAccount rdf:resource="#User_JamesRecommends_OSN"/>
+        <isFollowedByAccount rdf:resource="#User_Michael_OSN"/>
+        <followsAccount rdf:resource="#User_JamesRecommends_OSN"/>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_JamesRecommends_OSN">
+        <rdf:type rdf:resource="#OSN:User"/>
+        <rdfs:label>JamesRecommends (Facebook User - Fake Testimonial)</rdfs:label>
+        <hasUsername>JamesRecommends</hasUsername>
+        <hasEmail>jamesfake@example.com</hasEmail>
+        <hasBio>I love finding the best deals and sharing my experiences!</hasBio>
+        <hasProfilePicture>http://example.com/profiles/james.jpg</hasProfilePicture>
+        <hasProfilePictureHash>jkl456hashvalue</hasProfilePictureHash>
+        <hasCoverPhotoURL>http://example.com/profiles/james_cover.jpg</hasCoverPhotoURL>
+        <hasHighlights>Verified buyer on multiple platforms (falsified).</hasHighlights>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-01T09:00:00Z</hasCreationTimestamp>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</hasAccountVerification>
+        <hasLinkedAccount>MeanQueen</hasLinkedAccount>
+        <followsAccount rdf:resource="#User_BestDealsOnline_OSN"/>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Post_CanonEOSR6_OSN">
+        <rdf:type rdf:resource="#OSN:Post"/>
+        <rdfs:label>Scam Post: Canon EOS R6</rdfs:label>
+        <hasContentText>Canon EOS R6 - Like New - $900</hasContentText>
+        <hasAttachmentURL>http://example.com/images/canon_r6.jpg</hasAttachmentURL>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T14:00:00Z</hasCreationTimestamp>
+        <postedBy rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasLocation>Bandung, Indonesia</hasLocation>
+        <hasIpAddress>10.221.221.98</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Story_ScamPromotion_OSN">
+        <rdf:type rdf:resource="#OSN:Story"/>
+        <rdfs:label>Scam Promotion Story</rdfs:label>
+        <hasContentText>Special deal for Canon EOS R6, limited time offer!</hasContentText>
+        <hasAttachmentURL>http://example.com/images/scam_story.jpg</hasAttachmentURL>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-07T18:00:00Z</hasCreationTimestamp>
+        <postedBy rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasLocation>Bandung, Indonesia</hasLocation>
+        <hasIpAddress>10.221.221.98</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_Michael_Inquiry_OSN">
+        <rdf:type rdf:resource="#OSN:CommentAction"/>
+        <rdfs:label>Michael's Inquiry Comment</rdfs:label>
+        <hasContentText>Hi, is this still available? Can I meet up to check the camera?</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T14:15:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_CanonEOSR6_OSN"/>
+        <commentedBy rdf:resource="#User_Michael_OSN"/>
+        <hasLocation>Jakarta, Indonesia</hasLocation>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_BestDealsOnline_Reply_OSN">
+        <rdf:type rdf:resource="#OSN:CommentAction"/>
+        <rdfs:label>BestDealsOnline's Reply Comment</rdfs:label>
+        <hasContentText>Hi! Yes, it's available, but I have other buyers interested. If you want to secure it, I can ship it to you.</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T14:20:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_CanonEOSR6_OSN"/>
+        <commentedBy rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasLocation>Bandung, Indonesia</hasLocation>
+        <hasIpAddress>10.221.221.98</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_JamesRecommends_OSN">
+        <rdf:type rdf:resource="#OSN:CommentAction"/>
+        <rdfs:label>JamesRecommends' Fake Comment</rdfs:label>
+        <hasContentText>I bought from this seller last month, great experience! Fast shipping, highly recommend!</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T14:25:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_CanonEOSR6_OSN"/>
+        <commentedBy rdf:resource="#User_JamesRecommends_OSN"/>
+        <hasLocation>Bandung, Indonesia</hasLocation>
+        <hasIpAddress>198.21.321.90</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Like_BestDealsOnline_Post_OSN">
+        <rdf:type rdf:resource="#OSN:LikesReactions"/>
+        <rdfs:label>Like on Scam Post by BestDealsOnline</rdfs:label>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T14:30:00Z</hasInteractionTimestamp>
+        <likedContent rdf:resource="#Post_CanonEOSR6_OSN"/>
+        <reactedBy rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasIpAddress>10.221.221.98</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_Michael_to_BestDealsOnline_1_OSN">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM Michael to BestDealsOnline (Inquiry)</rdfs:label>
+        <hasMessageContent>Hey, I'm interested in the Canon EOS R6. Can we meet up?</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T15:15:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_BestDealsOnline_OSN"/>
+        <messageReceiver rdf:resource="#User_BestDealsOnline_OSN"/>
+        <attributedToUser rdf:resource="#User_Michael_OSN"/>
+        <hasLocation>Jakarta, Indonesia</hasLocation>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_BestDealsOnline_to_Michael_1_OSN">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM BestDealsOnline to Michael (Reply)</rdfs:label>
+        <hasMessageContent>Hi! Unfortunately, I'm traveling for work, but I can ship it to you. I've sold many items this way!</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T15:17:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_Michael_OSN"/>
+        <messageReceiver rdf:resource="#User_Michael_OSN"/>
+        <attributedToUser rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasLocation>Bandung, Indonesia</hasLocation>
+        <hasIpAddress>10.221.221.98</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_Michael_ConfirmsPayment_OSN">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM Michael to BestDealsOnline (Payment Confirmation)</rdfs:label>
+        <hasMessageContent>Alright, just sent the $900 to your Zelle. Please send the tracking number.</hasMessageContent>
+        <hasAttachmentURL>http://example.com/images/transfer_receipt.jpg</hasAttachmentURL>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T15:30:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_BestDealsOnline_OSN"/>
+        <messageReceiver rdf:resource="#User_BestDealsOnline_OSN"/>
+        <attributedToUser rdf:resource="#User_Michael_OSN"/>
+        <hasLocation>Jakarta, Indonesia</hasLocation>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_BestDealsOnline_Confirms_OSN">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM BestDealsOnline to Michael (Acknowledges Payment)</rdfs:label>
+        <hasMessageContent>Got it! I'll send the tracking soon. Thanks!</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T15:35:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_Michael_OSN"/>
+        <messageReceiver rdf:resource="#User_Michael_OSN"/>
+        <attributedToUser rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasLocation>Bandung, Indonesia</hasLocation>
+        <hasIpAddress>10.221.221.98</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_Michael_FollowUp_OSN">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM Michael to BestDealsOnline (Follow Up)</rdfs:label>
+        <hasMessageContent>Hey, can you send the tracking number? I haven't received anything yet.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T21:00:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_BestDealsOnline_OSN"/>
+        <messageReceiver rdf:resource="#User_BestDealsOnline_OSN"/>
+        <attributedToUser rdf:resource="#User_Michael_OSN"/>
+        <hasLocation>Jakarta, Indonesia</hasLocation>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_BestDealsOnline_Mock_OSN">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM BestDealsOnline to Michael (Mocking)</rdfs:label>
+        <hasMessageContent>You fell for it. Say goodbye to your money, stupid buyer.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T21:30:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_Michael_OSN"/>
+        <messageReceiver rdf:resource="#User_Michael_OSN"/>
+        <attributedToUser rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasLocation>Bandung, Indonesia</hasLocation>
+        <hasIpAddress>10.221.221.98</hasIpAddress>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MarketplaceScamGroup_OSN">
+        <rdf:type rdf:resource="#OSN:Group"/>
+        <rdfs:label>Marketplace Scam Group (Facebook Group)</rdfs:label>
+        <hasGroupName>Marketplace Scam Group</hasGroupName>
+        <hasGroupDescription>A private group where scammers collaborate to conduct fraudulent transactions on marketplace platforms.</hasGroupDescription>
+        <hasGroupCategory>Fraudulent Activities</hasGroupCategory>
+        <hasGroupCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-11-15T08:30:00Z</hasGroupCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T17:45:00Z</hasLastActivityTimestamp>
+        <hasGroupCoverPhoto>https://scam-network.com/cover.jpg</hasGroupCoverPhoto>
+        <hasParticipant rdf:resource="#User_BestDealsOnline_OSN"/>
+        <hasParticipant rdf:resource="#User_JamesRecommends_OSN"/>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_Sophia_Instagram">
+        <rdf:type rdf:resource="#OSN:User"/> <rdfs:label>SophiaShines (Instagram User)</rdfs:label>
+        <hasUsername>SophiaShines</hasUsername>
+        <hasEmail>sophia@example.com</hasEmail> <hasBio>High school student, loves photography and music.</hasBio>
+        <hasProfilePicture>http://example.com/profiles/sophia.jpg</hasProfilePicture>
+        <hasProfilePictureHash>abc987hash</hasProfilePictureHash>
+        <hasCoverPhotoURL>http://example.com/profiles/sophia_cover.jpg</hasCoverPhotoURL>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-08-15T09:30:00Z</hasCreationTimestamp>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</hasAccountVerification>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_MeanQueen_Instagram">
+        <rdf:type rdf:resource="#OSN:User"/>
+        <rdfs:label>MeanQueen (Instagram User - Bully)</rdfs:label>
+        <hasUsername>MeanQueen</hasUsername>
+        <hasEmail>meanqueen@example.com</hasEmail>
+        <hasBio>Popular and always speaking the truth 😉.</hasBio>
+        <hasProfilePicture>http://example.com/profiles/meanqueen.jpg</hasProfilePicture>
+        <hasProfilePictureHash>xyz654hash</hasProfilePictureHash>
+        <hasCoverPhotoURL>http://example.com/profiles/meanqueen_cover.jpg</hasCoverPhotoURL>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-12-01T12:00:00Z</hasCreationTimestamp>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</hasAccountVerification>
+        <hasLinkedAccount>JamesRecommends</hasLinkedAccount> <belongsToPlatform>Instagram</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_DarkWolf_Instagram">
+        <rdf:type rdf:resource="#OSN:User"/>
+        <rdfs:label>DarkWolf (Instagram User - Bully)</rdfs:label>
+        <hasUsername>DarkWolf</hasUsername>
+        <hasEmail>darkwolf@example.com</hasEmail>
+        <hasBio>Not afraid to expose the truth.</hasBio>
+        <hasProfilePicture>http://example.com/profiles/darkwolf.jpg</hasProfilePicture>
+        <hasProfilePictureHash>uvw123hash</hasProfilePictureHash>
+        <hasCoverPhotoURL>http://example.com/profiles/darkwolf_cover.jpg</hasCoverPhotoURL>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-10T14:45:00Z</hasCreationTimestamp>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</hasAccountVerification>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_FriendlyUser_Instagram">
+        <rdf:type rdf:resource="#OSN:User"/>
+        <rdfs:label>FriendlyUser (Instagram User)</rdfs:label>
+        <hasUsername>FriendlyUser</hasUsername> <hasEmail>friendlyuser@example.com</hasEmail>
+        <hasBio>Be kind and spread positivity. 💙</hasBio>
+        <hasProfilePicture>http://example.com/profiles/friendlyuser.jpg</hasProfilePicture>
+        <hasProfilePictureHash>pqr567hash</hasProfilePictureHash>
+        <hasCoverPhotoURL>http://example.com/profiles/friendlyuser_cover.jpg</hasCoverPhotoURL>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-06-20T10:15:00Z</hasCreationTimestamp>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</hasAccountVerification>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Post_Sophia_CharityEvent_Instagram">
+        <rdf:type rdf:resource="#OSN:Post"/>
+        <rdfs:label>Sophia's Charity Event Post</rdfs:label>
+        <hasContentText>Had a great time at the school charity event! 💖 #SchoolPride #FriendsForever</hasContentText>
+        <hasAttachmentURL>http://example.com/images/sophia_charity.jpg</hasAttachmentURL>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T18:00:00Z</hasCreationTimestamp>
+        <postedBy rdf:resource="#User_Sophia_Instagram"/>
+        <hasLocation>Los Angeles, CA</hasLocation>
+        <hasIpAddress>10.221.221.98</hasIpAddress> <belongsToPlatform>Instagram</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_MeanQueen_1_Instagram">
+        <rdf:type rdf:resource="#OSN:CommentAction"/>
+        <rdfs:label>MeanQueen's Negative Comment 1</rdfs:label>
+        <hasContentText>Why do you even exist? Nobody wants you here. #Pathetic #JustDisappear</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T18:10:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_Sophia_CharityEvent_Instagram"/>
+        <commentedBy rdf:resource="#User_MeanQueen_Instagram"/>
+        <hasLocation>Los Angeles, CA</hasLocation>
+        <hasIpAddress>198.21.321.90</hasIpAddress>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_DarkWolf_1_Instagram">
+        <rdf:type rdf:resource="#OSN:CommentAction"/>
+        <rdfs:label>DarkWolf's Negative Comment 1</rdfs:label>
+        <hasContentText>Not surprising. I heard she flirts with teachers to get good grades. #Disgusting</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T18:12:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_Sophia_CharityEvent_Instagram"/>
+        <commentedBy rdf:resource="#User_DarkWolf_Instagram"/>
+        <hasLocation>Los Angeles, CA</hasLocation>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Story_CyberbullyingSophia_MeanQueen_Instagram">
+        <rdf:type rdf:resource="#OSN:Story"/>
+        <rdfs:label>MeanQueen's Cyberbullying Story</rdfs:label>
+        <hasContentText>Don't mess with me or else... #warning</hasContentText>
+        <hasAttachmentURL>http://example.com/images/threatening_story.jpg</hasAttachmentURL>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-05T20:30:00Z</hasCreationTimestamp>
+        <postedBy rdf:resource="#User_MeanQueen_Instagram"/>
+        <hasLocation>Jakarta, Indonesia</hasLocation> <hasIpAddress>192.168.100.100</hasIpAddress>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Story_SophiaDefense_Instagram">
+        <rdf:type rdf:resource="#OSN:Story"/>
+        <rdfs:label>Sophia's Defense Story</rdfs:label>
+        <hasContentText>I'm tired of being bullied. Stop this hate!</hasContentText>
+        <hasAttachmentURL>http://example.com/images/sophia_defense.jpg</hasAttachmentURL>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-06T22:00:00Z</hasCreationTimestamp>
+        <postedBy rdf:resource="#User_Sophia_Instagram"/>
+        <hasLocation>Los Angeles, CA</hasLocation>
+        <hasIpAddress>192.168.10.21</hasIpAddress>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_MeanQueen_to_Sophia_Threat1_Instagram">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM MeanQueen to Sophia (Threat 1)</rdfs:label>
+        <hasMessageContent>You are the ugliest, most useless waste of space ever. No wonder nobody likes you. Just end it already. 😂</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T20:42:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_Sophia_Instagram"/>
+        <messageReceiver rdf:resource="#User_Sophia_Instagram"/>
+        <attributedToUser rdf:resource="#User_MeanQueen_Instagram"/>
+        <hasLocation>Los Angeles, CA</hasLocation>
+        <hasIpAddress>198.21.321.90</hasIpAddress>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_MeanQueen_to_Sophia_Threat2_Instagram">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM MeanQueen to Sophia (Threat 2 - Doxing)</rdfs:label>
+        <hasMessageContent>If you don't disappear from Instagram, I'll make sure everyone sees what I have. Private photos, personal details, your address. I'm not joking.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T20:47:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_Sophia_Instagram"/>
+        <messageReceiver rdf:resource="#User_Sophia_Instagram"/>
+        <attributedToUser rdf:resource="#User_MeanQueen_Instagram"/>
+        <hasLocation>Los Angeles, CA</hasLocation>
+        <hasIpAddress>198.21.321.90</hasIpAddress>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_MeanQueen_to_Sophia_FinalThreat_Instagram">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM MeanQueen to Sophia (Final Threat)</rdfs:label>
+        <hasMessageContent>Block me, and I swear I will ruin your life. You have NO idea what I can do. Watch your back.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T20:52:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_Sophia_Instagram"/>
+        <messageReceiver rdf:resource="#User_Sophia_Instagram"/>
+        <attributedToUser rdf:resource="#User_MeanQueen_Instagram"/>
+        <hasLocation>Los Angeles, CA</hasLocation>
+        <hasIpAddress>198.21.321.90</hasIpAddress>
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_Sophia_to_MeanQueen_Reply_Instagram">
+        <rdf:type rdf:resource="#OSN:DirectMessage"/>
+        <rdfs:label>DM Sophia to MeanQueen (Reply)</rdfs:label>
+        <hasMessageContent>Leave me alone! What do you even want from me?</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T20:50:00Z</hasMessageSentTimestamp>
+        <sendsMessageTo rdf:resource="#User_MeanQueen_Instagram"/>
+        <messageReceiver rdf:resource="#User_MeanQueen_Instagram"/>
+        <attributedToUser rdf:resource="#User_Sophia_Instagram"/>
+        <hasLocation>Los Angeles, CA</hasLocation>
+        <hasIpAddress>10.221.221.98</hasIpAddress> 
+        <belongsToPlatform>Instagram</belongsToPlatform>
+    </owl:NamedIndividual>

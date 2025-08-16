@@ -1,0 +1,25 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas AlsoFromMeta -->
+    <owl:Class rdf:about="#AlsoFromMeta"/>
+
+    <!-- Sub-kelas OtherApps -->
+    <owl:Class rdf:about="#OtherApps">
+        <rdfs:subClassOf rdf:resource="#AlsoFromMeta"/>
+    </owl:Class>
+
+    <!-- Individu di dalam OtherApps -->
+    <owl:NamedIndividual rdf:about="#Messenger">
+        <rdf:type rdf:resource="#OtherApps"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can access the Messenger app.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#WhatsApp">
+        <rdf:type rdf:resource="#OtherApps"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can access the WhatsApp app.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

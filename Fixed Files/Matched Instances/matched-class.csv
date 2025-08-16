@@ -1,0 +1,140 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+OSN:ContentCreation,MP:ContentCreation,100,"OSN:The main class representing content creation functionality, including posts, stories, and reels.",MP:Represents actions related to creating and managing content on a microblogging platform.
+OSN:ContentInteraction,MP:ContentInteraction,100,"OSN:The class representing user interactions with content, such as likes, reactions, and comments.",MP:
+OSN:NotificationSettings,MP:NotificationSettings,100,"OSN:Handles configurations for notifications like push, email, and SMS.",MP:Represents settings related to notifications that the user can configure.
+OSN:User,MP:User,100,OSN:The primary class representing the user in the system.,"MP:Represents a user in a microblogging platform (e.g., Twitter, Tumblr)."
+OSN:Comments,MP:Comment,93.33,OSN:Represents user interactions involving comments on content.,MP:
+OSN:AvatarPosts,MP:Post,90,OSN:Represents posts created using avatars.,MP:Represents a specific post or piece of content created by a user.
+OSN:BirthdayPosts,MP:Post,90,OSN:Represents posts created for birthdays.,MP:Represents a specific post or piece of content created by a user.
+OSN:EmojiComment,MP:Comment,90,OSN:Represents a comment made by a user that contains an emoji.,MP:
+OSN:Files,MP:ProfileSettings,90,OSN:Represents files uploaded to a group.,MP:Represents profile customization settings for the user.
+OSN:LikesReactions,MP:Likes,90,OSN:Represents user interactions involving likes and reactions to content.,MP:
+OSN:MessageNotifications,MP:Notifications,90,OSN:Represents notification settings related to direct messages.,MP:Represents user notifications and their related settings on the platform.
+OSN:NotificationSettings,MP:Notifications,90,"OSN:Handles configurations for notifications like push, email, and SMS.",MP:Represents user notifications and their related settings on the platform.
+OSN:TextComment,MP:Comment,90,OSN:Represents a text-based comment made by a user.,MP:
+OSN:UserProfile,MP:User,90,"OSN:Represents the profile of a user, containing personal information such as profile picture, username, and email.","MP:Represents a user in a microblogging platform (e.g., Twitter, Tumblr)."
+OSN:Like,MP:Likes,88.89,OSN:Represents a user's 'like' interaction on a post or content.,MP:
+OSN:Posts,MP:Post,88.89,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",MP:Represents a specific post or piece of content created by a user.
+OSN:GroupNotifications,MP:Notifications,83.87,OSN:Represents notification settings for a group.,MP:Represents user notifications and their related settings on the platform.
+OSN:VideoNotifications,MP:Notifications,83.87,"OSN:Represents notifications related to video content, such as new video uploads, reminders, and other updates.",MP:Represents user notifications and their related settings on the platform.
+OSN:GIFComment,MP:Comment,82.35,OSN:Represents a comment made by a user that contains a GIF.,MP:
+OSN:Posts,MP:ReblogRetweetPost,80,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",MP:
+OSN:ContentInteraction,MCSS:ContentInteraction,100,"OSN:The class representing user interactions with content, such as likes, reactions, and comments.",MCSS:Represents interactions on content within the platform.
+OSN:DirectMessages,MCSS:DirectMessages,100,OSN:Represents direct messaging interactions among users on the platform.,MCSS:Represents the functionality and content of direct messages in the system.
+OSN:Like,MCSS:Like,100,OSN:Represents a user's 'like' interaction on a post or content.,MCSS:Represents a like interaction with content.
+OSN:NotificationSettings,MCSS:NotificationSettings,100,"OSN:Handles configurations for notifications like push, email, and SMS.",MCSS:Represents settings for managing message notifications.
+OSN:User,MCSS:User,100,OSN:The primary class representing the user in the system.,MCSS:The primary class representing individual users in the system.
+OSN:Comments,MCSS:Comment,93.33,OSN:Represents user interactions involving comments on content.,MCSS:Represents a comment interaction with content.
+OSN:VideoNotifications,MCSS:HideNotifications,91.43,"OSN:Represents notifications related to video content, such as new video uploads, reminders, and other updates.",MCSS:Represents the functionality to hide notifications for users or channels.
+OSN:Videos,MCSS:Video,90.91,"OSN:Represents video content watched by users, including viewing history and notifications.",MCSS:Represents video content in the system.
+OSN:AvatarPosts,MCSS:Post,90,OSN:Represents posts created using avatars.,"MCSS:Represents a generic post on the platform, including audience type and schedule time."
+OSN:BirthdayPosts,MCSS:Post,90,OSN:Represents posts created for birthdays.,"MCSS:Represents a generic post on the platform, including audience type and schedule time."
+OSN:ContentCreation,MCSS:Content,90,"OSN:The main class representing content creation functionality, including posts, stories, and reels.",MCSS:Represents all types of content on the platform.
+OSN:ContentInteraction,MCSS:Content,90,"OSN:The class representing user interactions with content, such as likes, reactions, and comments.",MCSS:Represents all types of content on the platform.
+OSN:EmojiComment,MCSS:Comment,90,OSN:Represents a comment made by a user that contains an emoji.,MCSS:Represents a comment interaction with content.
+OSN:Files,MCSS:ProfileSettings,90,OSN:Represents files uploaded to a group.,MCSS:Sub-class representing settings a user can edit in their profile.
+OSN:Like,MCSS:Dislike,90,OSN:Represents a user's 'like' interaction on a post or content.,MCSS:Represents a dislike interaction with content.
+OSN:LikesReactions,MCSS:Like,90,OSN:Represents user interactions involving likes and reactions to content.,MCSS:Represents a like interaction with content.
+OSN:LiveVideo,MCSS:Live,90,OSN:Represents live video broadcasts created by the user.,MCSS:Represents live streaming content within the system.
+OSN:LiveVideo,MCSS:Video,90,OSN:Represents live video broadcasts created by the user.,MCSS:Represents video content in the system.
+OSN:Marketplace,MCSS:CreatorMarketplace,90,OSN:Represents the marketplace feature in the online social network site.,MCSS:Represents interactions with the creator marketplace.
+OSN:MessageNotifications,MCSS:Notifications,90,OSN:Represents notification settings related to direct messages.,MCSS:Represents notifications and related interactions in the platform.
+OSN:NotificationSettings,MCSS:Notifications,90,"OSN:Handles configurations for notifications like push, email, and SMS.",MCSS:Represents notifications and related interactions in the platform.
+OSN:PhotoVideo,MCSS:Video,90,OSN:Represents posts containing photos or videos uploaded by the user.,MCSS:Represents video content in the system.
+OSN:ReelVideo,MCSS:Video,90,OSN:Represents a short video that is part of a reel.,MCSS:Represents video content in the system.
+OSN:ShortVideoContent,MCSS:Content,90,OSN:Represents short video content shared on social network platforms.,MCSS:Represents all types of content on the platform.
+OSN:ShortVideoContent,MCSS:ShortVideo,90,OSN:Represents short video content shared on social network platforms.,MCSS:Represents short video content in the system.
+OSN:ShortVideoContent,MCSS:Video,90,OSN:Represents short video content shared on social network platforms.,MCSS:Represents video content in the system.
+OSN:StoryPhotoVideo,MCSS:Video,90,OSN:Represents a story containing a photo or video.,MCSS:Represents video content in the system.
+OSN:TextComment,MCSS:Comment,90,OSN:Represents a text-based comment made by a user.,MCSS:Represents a comment interaction with content.
+OSN:UserProfile,MCSS:User,90,"OSN:Represents the profile of a user, containing personal information such as profile picture, username, and email.",MCSS:The primary class representing individual users in the system.
+OSN:VideoCalls,MCSS:Video,90,OSN:Represents video call interactions within direct messages.,MCSS:Represents video content in the system.
+OSN:VideoContent,MCSS:Content,90,"OSN:The main class representing video-related content in the system, including video history and notifications.",MCSS:Represents all types of content on the platform.
+OSN:VideoContent,MCSS:Video,90,"OSN:The main class representing video-related content in the system, including video history and notifications.",MCSS:Represents video content in the system.
+OSN:VideoNotifications,MCSS:Video,90,"OSN:Represents notifications related to video content, such as new video uploads, reminders, and other updates.",MCSS:Represents video content in the system.
+OSN:Posts,MCSS:Post,88.89,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.","MCSS:Represents a generic post on the platform, including audience type and schedule time."
+OSN:GroupNotifications,MCSS:Notifications,83.87,OSN:Represents notification settings for a group.,MCSS:Represents notifications and related interactions in the platform.
+OSN:VideoNotifications,MCSS:Notifications,83.87,"OSN:Represents notifications related to video content, such as new video uploads, reminders, and other updates.",MCSS:Represents notifications and related interactions in the platform.
+OSN:GIFComment,MCSS:Comment,82.35,OSN:Represents a comment made by a user that contains a GIF.,MCSS:Represents a comment interaction with content.
+OSN:Groups,MCSS:GroupMessage,81.82,OSN:Represents groups in the online social network site.,MCSS:Represents group message threads and related interactions.
+OSN:Videos,MCSS:ShortVideo,81.82,"OSN:Represents video content watched by users, including viewing history and notifications.",MCSS:Represents short video content in the system.
+OSN:Videos,MCSS:VideoPost,81.82,"OSN:Represents video content watched by users, including viewing history and notifications.",MCSS:Represents posts that are associated with videos.
+OSN:Pages,MCSS:DirectMessages,80,OSN:Represents Pages in the online social network context.,MCSS:Represents the functionality and content of direct messages in the system.
+OSN:Pages,MCSS:NewsWatchPage,80,OSN:Represents Pages in the online social network context.,MCSS:Represents the page where users watch or read news content.
+OSN:PhotoVideo,MCSS:ShortVideo,80,OSN:Represents posts containing photos or videos uploaded by the user.,MCSS:Represents short video content in the system.
+OSN:Posts,MCSS:LivePost,80,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",MCSS:Represents posts associated with live sessions.
+OSN:Posts,MCSS:ShortVideoPost,80,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",MCSS:Represents posts associated with short videos.
+OSN:Posts,MCSS:VideoPost,80,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",MCSS:Represents posts that are associated with videos.
+OSN:ContentInteraction,OFB:ContentInteraction,100,"OSN:The class representing user interactions with content, such as likes, reactions, and comments.","OFB:Represents all forms of user interactions with content, including voting, liking, and replying."
+OSN:Like,OFB:Like,100,OSN:Represents a user's 'like' interaction on a post or content.,OFB:Represents a like action on content.
+OSN:Moderator,OFB:Moderator,100,OSN:Represents a moderator role in a group.,OFB:Represents a moderator assigned to a community with specific roles and permissions.
+OSN:NotificationSettings,OFB:NotificationSettings,100,"OSN:Handles configurations for notifications like push, email, and SMS.",OFB:Represents notification settings for a user.
+OSN:Polls,OFB:Polls,100,OSN:Represents polls created in a group.,OFB:Represents polls created by users with questions and options for interaction.
+OSN:SecuritySettings,OFB:SecuritySettings,100,"OSN:Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.",OFB:Settings related to managing the user's profile security.
+OSN:User,OFB:User,100,OSN:The primary class representing the user in the system.,OFB:Represents a user in the online forum or blog system.
+OSN:Comments,OFB:Comment,93.33,OSN:Represents user interactions involving comments on content.,OFB:Represents comments made by users on content.
+OSN:ModerationActions,OFB:ModeratorActions,90.91,OSN:Represents actions that moderators or admins can take in group moderation.,OFB:Represents the actions a moderator can perform in a community.
+OSN:AvatarPosts,OFB:Post,90,OSN:Represents posts created using avatars.,"OFB:Represents posts created by users, which may contain text, media, and other metadata."
+OSN:BirthdayPosts,OFB:Post,90,OSN:Represents posts created for birthdays.,"OFB:Represents posts created by users, which may contain text, media, and other metadata."
+OSN:Comments,OFB:ReplyToComments,90,OSN:Represents user interactions involving comments on content.,OFB:Represents a reply to a comment action.
+OSN:ContentCreation,OFB:Content,90,"OSN:The main class representing content creation functionality, including posts, stories, and reels.","OFB:Represents all forms of user-generated content, including posts and drafts, within the platform."
+OSN:ContentInteraction,OFB:Content,90,"OSN:The class representing user interactions with content, such as likes, reactions, and comments.","OFB:Represents all forms of user-generated content, including posts and drafts, within the platform."
+OSN:EmojiComment,OFB:Comment,90,OSN:Represents a comment made by a user that contains an emoji.,OFB:Represents comments made by users on content.
+OSN:Files,OFB:ProfileSettings,90,OSN:Represents files uploaded to a group.,OFB:Settings related to managing the user's profile.
+OSN:LikesReactions,OFB:Like,90,OSN:Represents user interactions involving likes and reactions to content.,OFB:Represents a like action on content.
+OSN:MessageNotifications,OFB:Notifications,90,OSN:Represents notification settings related to direct messages.,OFB:Represents notifications and their configurations.
+OSN:Moderator,OFB:ModeratorActions,90,OSN:Represents a moderator role in a group.,OFB:Represents the actions a moderator can perform in a community.
+OSN:Moderator,OFB:ModeratorStatistics,90,OSN:Represents a moderator role in a group.,OFB:Represents various statistics associated with a moderator's activity in the community.
+OSN:NotificationSettings,OFB:Notifications,90,"OSN:Handles configurations for notifications like push, email, and SMS.",OFB:Represents notifications and their configurations.
+OSN:Posts,OFB:PinPosts,90,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",OFB:Represents pinning actions for posts by users or communities.
+OSN:ShortVideoContent,OFB:Content,90,OSN:Represents short video content shared on social network platforms.,"OFB:Represents all forms of user-generated content, including posts and drafts, within the platform."
+OSN:TextComment,OFB:Comment,90,OSN:Represents a text-based comment made by a user.,OFB:Represents comments made by users on content.
+OSN:User,OFB:BlockUnblockUser,90,OSN:The primary class representing the user in the system.,OFB:Represents blocking and unblocking actions between users.
+OSN:User,OFB:UserInsights,90,OSN:The primary class representing the user in the system.,OFB:Represents insights for users based on their drafts or contributions.
+OSN:UserProfile,OFB:User,90,"OSN:Represents the profile of a user, containing personal information such as profile picture, username, and email.",OFB:Represents a user in the online forum or blog system.
+OSN:VideoContent,OFB:Content,90,"OSN:The main class representing video-related content in the system, including video history and notifications.","OFB:Represents all forms of user-generated content, including posts and drafts, within the platform."
+OSN:Posts,OFB:Post,88.89,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.","OFB:Represents posts created by users, which may contain text, media, and other metadata."
+OSN:GroupNotifications,OFB:Notifications,83.87,OSN:Represents notification settings for a group.,OFB:Represents notifications and their configurations.
+OSN:VideoNotifications,OFB:Notifications,83.87,"OSN:Represents notifications related to video content, such as new video uploads, reminders, and other updates.",OFB:Represents notifications and their configurations.
+OSN:DirectMessages,OFB:DirectMessaging,82.76,OSN:Represents direct messaging interactions among users on the platform.,OFB:Represents one-on-one messaging interactions.
+OSN:GIFComment,OFB:Comment,82.35,OSN:Represents a comment made by a user that contains a GIF.,OFB:Represents comments made by users on content.
+OSN:Groups,OFB:GroupMessaging,81.82,OSN:Represents groups in the online social network site.,OFB:Represents group messaging interactions.
+OSN:AccountSettings,OFB:CommunitySettings,81.25,"OSN:Handles general, privacy, security, and account management settings.","OFB:Represents settings for a community, including posting rules, banner, and flair."
+OSN:AccountManagement,OFB:Engagement,80,"OSN:Handles configurations for deactivating, deleting, downloading, or transferring account information.",OFB:Represents various types of engagement actions performed on content.
+OSN:DeviceManagement,OFB:Engagement,80,OSN:Handles authorized devices associated with the user's account.,OFB:Represents various types of engagement actions performed on content.
+OSN:GroupModeration,OFB:Moderator,80,OSN:Represents the moderation activities and policies within a group.,OFB:Represents a moderator assigned to a community with specific roles and permissions.
+OSN:GroupNotifications,OFB:PushNotifications,80,OSN:Represents notification settings for a group.,OFB:Represents push notification settings.
+OSN:ListingsManagement,OFB:Engagement,80,"OSN:Represents the management of listings in the marketplace, including metrics and status.",OFB:Represents various types of engagement actions performed on content.
+OSN:ModerationActions,OFB:Donations,80,OSN:Represents actions that moderators or admins can take in group moderation.,OFB:Represents donations made to creators or content.
+OSN:ModerationActions,OFB:Moderator,80,OSN:Represents actions that moderators or admins can take in group moderation.,OFB:Represents a moderator assigned to a community with specific roles and permissions.
+OSN:Moderator,OFB:CommunityModeration,80,OSN:Represents a moderator role in a group.,"OFB:Represents moderation functionalities for a community, including moderators and their actions."
+OSN:Moderator,OFB:ModerationQueue,80,OSN:Represents a moderator role in a group.,OFB:Represents a queue that contains flagged content for moderation.
+OSN:PagesManagement,OFB:Engagement,80,"OSN:Handles creation, activation, deactivation, and merging of Pages.",OFB:Represents various types of engagement actions performed on content.
+OSN:Posts,OFB:CrossPost,80,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",OFB:Represents posts that are cross-posted from other communities or original posts.
+OSN:Posts,OFB:ScheduledPost,80,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",OFB:Represents posts scheduled by users to be published at a future timestamp.
+OSN:Posts,OFB:ShareRepost,80,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",OFB:Represents sharing or reposting content to a community or other platforms.
+MP:Comment,MCSS:Comment,100,MP:,MCSS:Represents a comment interaction with content.
+MP:ContentInteraction,MCSS:ContentInteraction,100,MP:,MCSS:Represents interactions on content within the platform.
+MP:Monetization,MCSS:Monetization,100,"MP:Represents features related to monetization on the platform, including subscriptions and advertisements.",MCSS:Represents all monetization-related features and interactions.
+MP:NotificationSettings,MCSS:NotificationSettings,100,MP:Represents settings related to notifications that the user can configure.,MCSS:Represents settings for managing message notifications.
+MP:Notifications,MCSS:Notifications,100,MP:Represents user notifications and their related settings on the platform.,MCSS:Represents notifications and related interactions in the platform.
+MP:Post,MCSS:Post,100,MP:Represents a specific post or piece of content created by a user.,"MCSS:Represents a generic post on the platform, including audience type and schedule time."
+MP:ProfileSettings,MCSS:ProfileSettings,100,MP:Represents profile customization settings for the user.,MCSS:Sub-class representing settings a user can edit in their profile.
+MP:Report,MCSS:Report,100,MP:,MCSS:Represents a report interaction with content.
+MP:SearchFunctionality,MCSS:SearchFunctionality,100,MP:Represents search functionalities within the platform.,MCSS:Handles direct search actions performed by users.
+MP:Subscription,MCSS:Subscription,100,MP:Represents subscription-related features for monetization.,MCSS:Represents subscription-related features on the platform.
+MP:User,MCSS:User,100,"MP:Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",MCSS:The primary class representing individual users in the system.
+MP:ContentCreation,MCSS:Content,90,MP:Represents actions related to creating and managing content on a microblogging platform.,MCSS:Represents all types of content on the platform.
+MP:ContentInteraction,MCSS:Content,90,MP:,MCSS:Represents all types of content on the platform.
+MP:DiscoveryAndSearch,MCSS:Search,90,"MP:Represents features for discovering and searching content, people, and topics on a microblogging platform.",MCSS:Represents search functionalities and recommendations within the system.
+MP:LiveInteractions,MCSS:Live,90,"MP:Represents live interaction features on the platform, including live spaces, rooms, and upcoming sessions.",MCSS:Represents live streaming content within the system.
+MP:LiveSpacesRooms,MCSS:Live,90,"MP:Represents live spaces or rooms for users to listen, speak, and interact during live sessions.",MCSS:Represents live streaming content within the system.
+MP:NotificationSettings,MCSS:Notifications,90,MP:Represents settings related to notifications that the user can configure.,MCSS:Represents notifications and related interactions in the platform.
+MP:Notifications,MCSS:NotificationSettings,90,MP:Represents user notifications and their related settings on the platform.,MCSS:Represents settings for managing message notifications.
+MP:Post,MCSS:LivePost,90,MP:Represents a specific post or piece of content created by a user.,MCSS:Represents posts associated with live sessions.
+MP:Post,MCSS:ShortVideoPost,90,MP:Represents a specific post or piece of content created by a user.,MCSS:Represents posts associated with short videos.
+MP:Post,MCSS:VideoPost,90,MP:Represents a specific post or piece of content created by a user.,MCSS:Represents posts that are associated with videos.
+MP:ReblogRetweetPost,MCSS:Post,90,MP:,"MCSS:Represents a generic post on the platform, including audience type and schedule time."
+MP:SearchFunctionality,MCSS:Search,90,MP:Represents search functionalities within the platform.,MCSS:Represents search functionalities and recommendations within the system.
+MP:Likes,MCSS:Like,88.89,MP:,MCSS:Represents a like interaction with content.
+MP:Notifications,MCSS:HideNotifications,86.67,MP:Represents user notifications and their related settings on the platform.,MCSS:Represents the functionality to hide notifications for users or channels.

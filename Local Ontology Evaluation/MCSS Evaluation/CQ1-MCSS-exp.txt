@@ -1,0 +1,6 @@
+Query ini mencari seluruh User yang menjadi objek laporan (reportsUser), serta alasan laporan (hasReportReason). Dengan kata lain, siapa pun yang muncul di sini dapat dianggap memiliki kondisi awal “tersangka”.
+
+Penjelasan:
+?report rdf:type ex:Report menandakan kita hanya mengambil instance yang bertipe Report.
+ex:reportsUser ?reportedUser mengambil siapa yang dilaporkan (calon tersangka).
+ex:hasReportReason ?reportReason mencantumkan alasan laporan (contohnya copyright infringement).

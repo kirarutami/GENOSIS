@@ -1,0 +1,72 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas DiscoveryAndSearch -->
+    <owl:Class rdf:about="#DiscoveryAndSearch">
+        <rdfs:comment>Represents features for discovering and searching content, people, and topics on a microblogging platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas SearchFunctionality -->
+    <owl:Class rdf:about="#SearchFunctionality">
+        <rdfs:subClassOf rdf:resource="#DiscoveryAndSearch"/>
+        <rdfs:comment>Represents search functionalities within the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas ExploreSettings -->
+    <owl:Class rdf:about="#ExploreSettings">
+        <rdfs:subClassOf rdf:resource="#DiscoveryAndSearch"/>
+        <rdfs:comment>Represents settings for exploring content based on location and personalization.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: searchFor -->
+    <owl:ObjectProperty rdf:about="#searchFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Allows a user to search for other users within the platform.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: searchTopicsOn -->
+    <owl:ObjectProperty rdf:about="#searchTopicsOn">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchFunctionality"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Allows a user to search for specific topics within the platform.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: saveSearches -->
+    <owl:ObjectProperty rdf:about="#saveSearchesFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchFunctionality"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Allows a user to save their searches for future reference.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: useAdvancedSearch -->
+    <owl:ObjectProperty rdf:about="#useAdvancedSearchOn">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchFunctionality"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Allows a user to use advanced search options for more specific query parameters.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- [RAGU]Object Property: showContentBasedOnLocation -->
+    <owl:ObjectProperty rdf:about="#searchContentBasedOnLocationOn">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchFunctionality"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Displays content based on the user’s location.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- [RAGU]Object Property: personalizeTrends -->
+    <owl:ObjectProperty rdf:about="#personalizeTrendsOn">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ExploreSettings"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Personalizes trending content for the user based on their interests.</rdfs:comment>
+    </owl:ObjectProperty>
+
+
+</rdf:RDF>

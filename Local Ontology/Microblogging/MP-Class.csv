@@ -1,0 +1,23 @@
+class,subClass,classComment,subClassComment
+Agent,CriminalGroup,"Represents the general concept of an agent, which may be a criminal group, organisation, or individual suspects.",Represents a group involved in criminal activities.
+Agent,CriminalOrganisation,"Represents the general concept of an agent, which may be a criminal group, organisation, or individual suspects.",Represents an organised criminal entity.
+Agent,Suspects,"Represents the general concept of an agent, which may be a criminal group, organisation, or individual suspects.",Represents individuals suspected of criminal activity based on their interactions in OSNs.
+User,ProfileSettings,"Represents a user in a microblogging platform (e.g., Twitter, Tumblr).",Represents profile customization settings for the user.
+ContentInteraction,Likes,,
+ContentInteraction,ReblogRetweetPost,,
+ContentInteraction,Comment,,
+ContentInteraction,Reply,,
+ContentInteraction,Block,,
+ContentInteraction,Report,,
+ContentInteraction,FollowUnfollow,,
+ContentInteraction,Ask,,
+ContentInteraction,Post,,
+ContentInteraction,Words,,
+DiscoveryAndSearch,SearchFunctionality,"Represents features for discovering and searching content, people, and topics on a microblogging platform.",Represents search functionalities within the platform.
+DiscoveryAndSearch,ExploreSettings,"Represents features for discovering and searching content, people, and topics on a microblogging platform.",Represents settings for exploring content based on location and personalization.
+Notifications,NotificationSettings,Represents user notifications and their related settings on the platform.,Represents settings related to notifications that the user can configure.
+Notifications,Preferences,Represents user notifications and their related settings on the platform.,"Represents user-specific notification preferences, such as unread counts and badges."
+Monetization,Subscription,"Represents features related to monetization on the platform, including subscriptions and advertisements.",Represents subscription-related features for monetization.
+Monetization,Advertisement,"Represents features related to monetization on the platform, including subscriptions and advertisements.",Represents advertisement-related features for monetization.
+LiveInteractions,LiveSpacesRooms,"Represents live interaction features on the platform, including live spaces, rooms, and upcoming sessions.","Represents live spaces or rooms for users to listen, speak, and interact during live sessions."
+LiveInteractions,UpcomingSessions,"Represents live interaction features on the platform, including live spaces, rooms, and upcoming sessions.",Represents scheduled live sessions that users can set reminders for or add to their calendar.

@@ -1,0 +1,234 @@
+
+Kelompok OP #1 (Ukuran: 34):
+  - MCSS:associatedWithCommentedLive: Indicates that a comment is associated with a commented live session.
+  - MCSS:associatedWithCommentedPost: Indicates that a comment is associated with a commented post.
+  - MCSS:associatedWithCommentedShortVideo: Indicates that a comment is associated with a commented short video.
+  - MCSS:associatedWithCommentedVideo: Indicates that a comment is associated with a commented video.
+  - MCSS:associatedWithContent: Indicates that a like is associated with a specific content.
+  - MCSS:associatedWithDislikedPost: Indicates that a dislike is associated with a disliked post.
+  - MCSS:associatedWithLikedPost: Indicates that a like is associated with a liked post.
+  - MCSS:associatedWithLive: Indicates that a gift interaction is associated with a specific live session.
+  - MCSS:associatedWithReportedPost: Indicates that a report is associated with a reported post.
+  - MCSS:associatedWithReportedShortVideo: Indicates that a report is associated with a reported short video.
+  - MCSS:associatedWithReportedVideo: Indicates that a report is associated with a reported video.
+  - MCSS:associatedWithSharedPost: Indicates that a share is associated with a shared post.
+  - MCSS:associatedWithSharedShortVideo: Indicates that a share is associated with a shared short video.
+  - MCSS:associatedWithUser: Links the channel to the user who owns or manages it.
+  - MCSS:associatedWithVideo: Indicates that a watch later action is associated with a specific video.
+  - MCSS:commentedBy: Links a comment with the User who made the comment.
+  - MCSS:commentsOnContent: Indicates that a user comments on specific content.
+  - MP:commentedBy:Points to the user who wrote this comment.     
+  - MP:commentedOn:Points to the post on which this comment was madeFor reblog/retweet, you could similarly add commentedOnReblogRetweetPost, etc.     
+  - MP:commentsOn: 
+  - MP:commentsOnReblogRetweetPost: 
+  - MP:likesPost: 
+  - OFB:associatedWithAwardingUser: Links an award action to the user who awarded the content.
+  - OFB:associatedWithComment: Links a reply action to the associated comment.
+  - OFB:associatedWithCommunity: Links a post to the community it belongs to.
+  - OFB:associatedWithContent: Links an upvote or downvote action to the associated content.
+  - OFB:associatedWithPost: Links tagged content to the post it is associated with.
+  - OFB:associatedWithSubscriptionPlan: Associates a user with their subscription plan.
+  - OFB:associatedWithTopic: Links a muting action to the associated topic.
+  - OFB:associatedWithUser: Links a post to the user who created it.
+  - OFB:commentsOn: Links a user to the content they have commented on.
+  - OSN:commentedBy: Links a comment with the User who made the comment.
+  - OSN:commentsActivities: Records activities related to commenting on content.
+  - OSN:commentsOn: Links a comment with the ContentCreation that was commented on.
+
+
+Kelompok OP #2 (Ukuran: 9):
+  - MP:blockInitiator:The user who initiates the block action.     
+  - MP:blockedUser:The user who is being blocked.     
+  - MP:blocks: 
+  - MP:unblocks: 
+  - OFB:blockInitiator:      Indicates the user who initiates the blocking action.     
+  - OFB:blockedTargetUser:      Indicates the user who is being blocked.     
+  - OFB:blocksUser: Links a user to another user they have blocked.
+  - OFB:locksPost: Indicates that a moderator has locked a post in the community.
+  - OFB:unblocksUser: Links a user to another user they have unblocked.
+
+
+Kelompok OP #3 (Ukuran: 8):
+  - MP:addsOrFollowsList: Indicates that a user adds or follows a list on the platform.
+  - MP:follow: 
+  - MP:followsHost: Indicates that a user is following the host of a live space or room.
+  - MP:unfollow: 
+  - OFB:followsCommunity: Indicates that a user is following a community.
+  - OFB:followsTopic: Links a user to a topic they are following.
+  - OSN:follows: 
+  - OSN:isFollowedBy: 
+
+
+Kelompok OP #4 (Ukuran: 7):
+  - MCSS:reportsChannel: Indicates that a user reports specific channel.
+  - MCSS:reportsContent: Indicates that a user reports specific content.
+  - MCSS:reportsMessage: Represents a user reporting a message for review.
+  - MCSS:reportsUser: Indicates that a user reports specific user.
+  - MP:reportComment: 
+  - MP:reports: 
+  - MP:reportsMessage: Indicates that a user reports a specific direct message for inappropriate content.
+
+
+Kelompok OP #5 (Ukuran: 6):
+  - MCSS:sendsGiftInMessageTo: Allows a user to send a gift within a message to another user.
+  - MCSS:sendsMediaMessageTo: Represents a user sending a media message to another user.
+  - MCSS:sendsMessageTo: Represents a user sending a message to another user.
+  - MP:sendsMediaTo: Indicates that a user sends media files (photos, videos) to another user.
+  - OFB:sendsMessageTo: Links a user who sends a direct message to another user.
+  - OSN:sendsTextMessage: Indicates that a user sent a text message.
+
+
+Kelompok OP #6 (Ukuran: 6):
+  - MCSS:searchesForContent: Indicates that a user searches for specific content using search functionality.
+  - MP:saveSearchesFor: Allows a user to save their searches for future reference.
+  - MP:searchFor: Allows a user to search for other users within the platform.
+  - MP:searchesForCommunity: Indicates that a user is searching for a specific community.
+  - MP:searchesForLists: Indicates that a user has searched for specific lists on the platform.
+  - OFB:searchesFor: Links a user to the target of their search query.
+
+
+Kelompok OP #7 (Ukuran: 5):
+  - MCSS:canEditProfile: Indicates that the user can edit their general profile settings.
+  - MCSS:canEditProfilePicture: Indicates that the user can edit their profile picture within the profile settings.
+  - MP:canEditProfile: Indicates permission to edit profile information.
+  - OFB:canEditProfile: Indicates that a user can edit their profile settings.
+  - OFB:canSetProfileVisibility: Indicates that a user can set their profile visibility (Public or Private).
+
+
+Kelompok OP #8 (Ukuran: 4):
+  - MCSS:dislikesContent: Indicates that a user dislikes specific content.
+  - MCSS:likesContent: Indicates that a user likes a specific content.
+  - MP:likesComment: 
+  - OFB:likesContent: Links a user to the content they have liked.
+
+
+Kelompok OP #9 (Ukuran: 4):
+  - MP:joinsCommunity: Indicates that a user has joined a specific community.
+  - MP:pinsCommunity: Indicates that a user has pinned a specific community to their profile or feed.
+  - OFB:joinsCommunity: Indicates that a user has joined a community.
+  - OFB:pinsPostByCommunity: Links a community to a post it has pinned.
+
+
+Kelompok OP #10 (Ukuran: 3):
+  - MP:canEditAvatar: Indicates permission to edit profile avatar.
+  - OFB:canEditAvatar: Indicates that a user can edit their avatar.
+  - OSN:editsAvatar: Links a user to editing an existing avatar.
+
+
+Kelompok OP #11 (Ukuran: 3):
+  - OFB:leavesGroupChat: Links a user to the group chat they left.
+  - OFB:mutesGroupChat: Links a user to the group chat they muted.
+  - OSN:createsGroupChat: Links a user to the creation of a group chat.
+
+
+Kelompok OP #12 (Ukuran: 3):
+  - MCSS:subscribesToCreator: Indicates that a User subscribes to a content creator.
+  - MP:isSubscribedTo: Links a user to a specific subscription they are subscribed to.
+  - OFB:subscribesTo: Links a user to the subscription plan they have subscribed to.
+
+
+Kelompok OP #13 (Ukuran: 3):
+  - MP:schedulePost: Schedules a post to be published at a specified time.
+  - OFB:editsScheduledPost: Indicates that a user edits an existing scheduled post.
+  - OFB:postsScheduledPost: Links a user to the scheduled post they have created.
+
+
+Kelompok OP #14 (Ukuran: 2):
+  - MP:postedBy:      Indicates the user who created or published this post.     
+  - OSN:postedBy: Indicates the poster of a story.
+
+
+Kelompok OP #15 (Ukuran: 2):
+  - MCSS:enablesNotificationForGroupMessages: Enables notifications for group messages.
+  - OSN:enablesNotifications: Links a user to the action of enabling notifications.
+
+
+Kelompok OP #16 (Ukuran: 2):
+  - MCSS:viewsMessageStats: Represents a user viewing analytics for a specific message.
+  - OSN:viewsMessages: Links a user to the messages they have viewed.
+
+
+Kelompok OP #17 (Ukuran: 2):
+  - MCSS:belongsToLive: Links the SuperChat donation to the corresponding live stream event.
+  - OSN:belongsTo: The inverse property of 'hasProfileOn', indicating that a social media profile belongs to a user on a given platform.
+
+
+Kelompok OP #18 (Ukuran: 2):
+  - MCSS:interactsWithShop: Indicates that a User interacts with shopping-related features.
+  - OSN:interactsWithVideo: Links a User's interaction with a video (e.g., watching history) to the specific video content.
+
+
+Kelompok OP #19 (Ukuran: 2):
+  - OFB:approvesPost: Indicates that a moderator has approved a post in the community.
+  - OSN:approvesPost: Allows an admin to approve a post submitted by a group member.
+
+
+Kelompok OP #20 (Ukuran: 2):
+  - OFB:deniesPost: Indicates that a moderator has denied a post in the community.
+  - OSN:deniesPost: Allows an admin to deny a post submitted by a group member.
+
+
+Kelompok OP #21 (Ukuran: 2):
+  - OFB:joinsGroupChat: Links a user to the group chat they joined.
+  - OSN:pinsGroup: Links a user to the groups they have pinned.
+
+
+Kelompok OP #22 (Ukuran: 2):
+  - OFB:createdByModerator: Links a community rule to the moderator who created it.
+  - OSN:reactedBy: Links a reaction interaction with the User who reacted to the content.
+
+
+Kelompok OP #23 (Ukuran: 2):
+  - MCSS:deletesMessage: Represents a user deleting a specific message.
+  - MP:deletesMessage: Indicates that a user deletes a specific direct message.
+
+
+Kelompok OP #24 (Ukuran: 2):
+  - MCSS:repliesToMessage: Represents a user replying to a specific message.
+  - MP:repliesToMessage: Indicates that a user replies to a specific direct message.
+
+
+Kelompok OP #25 (Ukuran: 2):
+  - MCSS:sendsVoiceNoteTo: Represents a user sending a voice note to another user.
+  - MP:sendsVoiceNotesTo: Indicates that a user sends voice notes to another user.
+
+
+Kelompok OP #26 (Ukuran: 2):
+  - MP:repliesOnComment: 
+  - OFB:repliesToComment: Links a user to the comment they have replied to.
+
+
+Kelompok OP #27 (Ukuran: 2):
+  - MP:sharesCommunity: Indicates that a user has shared a community with others.
+  - OFB:sharedToCommunity: Links shared content to the community where it was reposted.
+
+
+Kelompok OP #28 (Ukuran: 2):
+  - MP:saveAsDraft: Saves a post as a draft for future editing or posting.
+  - OFB:savesPostAsDraft: Indicates that a user saved a post as a draft.
+
+
+Kelompok OP #29 (Ukuran: 2):
+  - MP:dmReceiver:The user who receives this direct message.     
+  - OFB:messageReceiver:      Indicates the user who received this particular direct message instance.     
+
+
+Kelompok OP #30 (Ukuran: 2):
+  - MCSS:sharesContent: Indicates that a user shares specific content.
+  - OFB:sharesContent: Links a user to the content they have shared or reposted.
+
+
+Kelompok OP #31 (Ukuran: 2):
+  - MCSS:hasGroupParticipants: Represents participants in a group message thread.
+  - OFB:hasParticipants: Links a group message thread to its participants.
+
+
+Kelompok OP #32 (Ukuran: 2):
+  - MCSS:editsRecommendations: Indicates that a user edits their recommendation preferences.
+  - OFB:receivesRecommendations: Links a user to the content recommended to them.
+
+
+Kelompok OP #33 (Ukuran: 2):
+  - MCSS:unsubscribesFromCreator: Indicates that a User unsubscribes from a content creator.
+  - OFB:unsubscribesFrom: Links a user to the subscription plan they have unsubscribed from.
+

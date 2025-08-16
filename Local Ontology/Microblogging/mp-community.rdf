@@ -1,0 +1,98 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Community -->
+    <owl:Class rdf:about="#Community">
+        <rdfs:comment>Represents a group or community on the platform where users can join, interact, and share content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasCommunityName -->
+    <owl:DatatypeProperty rdf:about="#hasCommunityName">
+        <rdfs:domain rdf:resource="#Community"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the name of the community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasCommunityDescription -->
+    <owl:DatatypeProperty rdf:about="#hasCommunityDescription">
+        <rdfs:domain rdf:resource="#Community"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Provides a description of the community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasMemberCount -->
+    <owl:DatatypeProperty rdf:about="#hasMemberCount">
+        <rdfs:domain rdf:resource="#Community"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the number of members in the community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasCreationDate -->
+    <owl:DatatypeProperty rdf:about="#hasCreationDate">
+        <rdfs:domain rdf:resource="#Community"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates the creation date of the community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: searchesForCommunity -->
+    <owl:ObjectProperty rdf:about="#searchesForCommunity">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user is searching for a specific community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: joinsCommunity -->
+    <owl:ObjectProperty rdf:about="#joinsCommunity">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has joined a specific community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: spotlightsCommunity -->
+    <owl:ObjectProperty rdf:about="#spotlightsCommunity">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user is highlighting or promoting a specific community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: pinsCommunity -->
+    <owl:ObjectProperty rdf:about="#pinsCommunity">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has pinned a specific community to their profile or feed.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: createsShortcutForCommunity -->
+    <owl:ObjectProperty rdf:about="#createsShortcutForCommunity">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has created a shortcut for quick access to a community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: sharesCommunity -->
+    <owl:ObjectProperty rdf:about="#sharesCommunity">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has shared a community with others.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: reportsCommunity -->
+    <owl:ObjectProperty rdf:about="#reportsCommunity">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has reported a community for inappropriate content or behavior.</rdfs:comment>
+    </owl:ObjectProperty>
+
+</rdf:RDF>

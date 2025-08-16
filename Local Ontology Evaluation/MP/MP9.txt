@@ -1,0 +1,26 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# Menggunakan prefix 'ex:' sesuai base IRI ontologi
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?suspect ?post ?timestamp ?postContent ?postMedia ?postTags ?deviceInfo ?ipAddress
+WHERE {
+  # Tentukan individu yang dianggap sebagai suspect
+  VALUES ?suspect { ex:DarkAestheticNSFW ex:MidnightObsession }
+
+  # Cari postingan yang dibuat oleh suspect
+  ?post rdf:type ex:Post ;
+        ex:postedBy ?suspect ;
+        ex:hasPostTimestamp ?timestamp ;
+        ex:hasPostContent ?postContent .
+
+  # Ambil metadata tambahan (opsional, jika ada)
+  OPTIONAL { ?post ex:hasPostMedia ?postMedia . }
+  OPTIONAL { ?post ex:hasPostTags ?postTags . }
+  OPTIONAL { ?post ex:hasPostDeviceInfo ?deviceInfo . }
+  OPTIONAL { ?post ex:hasPostInteractionIP ?ipAddress . }
+}
+ORDER BY ?suspect ?timestamp

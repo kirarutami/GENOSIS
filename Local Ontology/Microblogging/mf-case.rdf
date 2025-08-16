@@ -1,0 +1,638 @@
+    <!-- Instance of ContentCreation: Post Creation -->
+    <rdf:Description rdf:about="#Post_001">
+        <rdf:type rdf:resource="#ContentCreation"/>
+        <rdfs:comment>Post created by user 'DarkPhantom99' targeting another user with defamatory content.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of makePost -->
+    <rdf:Description rdf:about="#makePost_001">
+        <rdf:type rdf:resource="#makePost"/>
+        <rdfs:comment>User 'DarkPhantom99' made a post accusing 'SkyGazer21' of fraudulent behavior with the hashtag #Exposed.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of addToQueue -->
+    <rdf:Description rdf:about="#Queue_001">
+        <rdf:type rdf:resource="#addToQueue"/>
+        <rdfs:comment>User 'DarkPhantom99' scheduled multiple posts about 'SkyGazer21' to create a wave of defamation over a period of time.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of schedulePost -->
+    <rdf:Description rdf:about="#ScheduledPost_001">
+        <rdf:type rdf:resource="#schedulePost"/>
+        <rdfs:comment>Post about 'SkyGazer21' was scheduled for release at 10:00 AM EST to maximize visibility.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of saveAsDraft -->
+    <rdf:Description rdf:about="#Draft_001">
+        <rdf:type rdf:resource="#saveAsDraft"/>
+        <rdfs:comment>User 'DarkPhantom99' saved an unfinished post containing personal threats against 'SkyGazer21'.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of postAsPrivate -->
+    <rdf:Description rdf:about="#PrivatePost_001">
+        <rdf:type rdf:resource="#postAsPrivate"/>
+        <rdfs:comment>Suspicious private post was shared only among a closed group discussing targeted harassment strategies.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of addContentLabel -->
+    <rdf:Description rdf:about="#ContentLabel_001">
+        <rdf:type rdf:resource="#addContentLabel"/>
+        <rdfs:comment>Post tagged with #Exposed and #ScaredYet, suggesting intent to harass a specific user.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of controlReblogRetweet -->
+    <rdf:Description rdf:about="#ReblogRetweet_001">
+        <rdf:type rdf:resource="#controlReblogRetweet"/>
+        <rdfs:comment>User disabled retweets on certain defamatory posts to limit visibility while keeping harassment contained.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of postMedia -->
+    <rdf:Description rdf:about="#MediaPost_001">
+        <rdf:type rdf:resource="#postMedia"/>
+        <rdfs:comment>User 'DarkPhantom99' posted an edited image of 'SkyGazer21' with derogatory text, inciting more attacks.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of postLink -->
+    <rdf:Description rdf:about="#LinkPost_001">
+        <rdf:type rdf:resource="#postLink"/>
+        <rdfs:comment>User 'DarkPhantom99' posted a link to a private forum where doxxing details of 'SkyGazer21' were discussed.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of User: Suspect -->
+    <rdf:Description rdf:about="#User_001">
+        <rdf:type rdf:resource="#User"/>
+        <rdfs:comment>User 'DarkPhantom99' who has been involved in online harassment and targeted attacks.</rdfs:comment>
+        <hasEmail>darkphantom99@tempemail.com</hasEmail>
+        <hasPassword>EncryptedPassword123</hasPassword>
+        <hasBirthday>2000-06-15</hasBirthday>
+        <hasSecuritySettings>2FA Disabled, Recovery Email: temp-email@protonmail.com</hasSecuritySettings>
+        <hasSubscriptionStatus>Premium</hasSubscriptionStatus>
+        <hasNotificationsSetting>Disabled</hasNotificationsSetting>
+        <hasPrivacySetting>Private Profile</hasPrivacySetting>
+        <hasLogoutStatus>false</hasLogoutStatus>
+        <canEditProfileOn rdf:resource="#ProfileSettings_001"/>
+        <canEditAvatarOn rdf:resource="#ProfileSettings_001"/>
+        <canEditHeaderOn rdf:resource="#ProfileSettings_001"/>
+    </rdf:Description>
+
+    <!-- Instance of ProfileSettings: Suspect -->
+    <rdf:Description rdf:about="#ProfileSettings_001">
+        <rdf:type rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Profile settings of 'DarkPhantom99', with strict privacy settings to hide identity while harassing others.</rdfs:comment>
+        <hasBio>"Bringing justice. #Exposed"</hasBio>
+        <hasLocation>Unknown (VPN Detected)</hasLocation>
+        <hasWebsite>https://suspiciousforum.xyz</hasWebsite>
+        <hasBirthDate>2000-06-15</hasBirthDate>
+        <hasTips>"The truth always comes out."</hasTips>
+    </rdf:Description>
+
+    <!-- Instance of User: Victim -->
+    <rdf:Description rdf:about="#User_002">
+        <rdf:type rdf:resource="#User"/>
+        <rdfs:comment>User 'SkyGazer21', the target of cyber harassment and doxxing attempts.</rdfs:comment>
+        <hasEmail>skygazer21@email.com</hasEmail>
+        <hasPassword>EncryptedSecurePass456</hasPassword>
+        <hasBirthday>1998-02-25</hasBirthday>
+        <hasSecuritySettings>2FA Enabled, Recovery Email: secure-recovery@email.com</hasSecuritySettings>
+        <hasSubscriptionStatus>Free</hasSubscriptionStatus>
+        <hasNotificationsSetting>Enabled</hasNotificationsSetting>
+        <hasPrivacySetting>Public Profile</hasPrivacySetting>
+        <hasLogoutStatus>true</hasLogoutStatus>
+        <canEditProfileOn rdf:resource="#ProfileSettings_002"/>
+        <canEditAvatarOn rdf:resource="#ProfileSettings_002"/>
+        <canEditHeaderOn rdf:resource="#ProfileSettings_002"/>
+    </rdf:Description>
+
+    <!-- Instance of ProfileSettings: Victim -->
+    <rdf:Description rdf:about="#ProfileSettings_002">
+        <rdf:type rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Profile settings of 'SkyGazer21', recently changed to private due to continuous online threats.</rdfs:comment>
+        <hasBio>"Dream big, stay strong." #PositiveVibes</hasBio>
+        <hasLocation>New York, USA</hasLocation>
+        <hasWebsite>https://skygazerblog.com</hasWebsite>
+        <hasBirthDate>1998-02-25</hasBirthDate>
+        <hasTips>"The stars remind us how small our worries really are."</hasTips>
+    </rdf:Description>
+
+    <!-- Instance of DiscoveryAndSearch -->
+    <rdf:Description rdf:about="#DiscoveryAndSearch_001">
+        <rdf:type rdf:resource="#DiscoveryAndSearch"/>
+        <rdfs:comment>Case where 'DarkPhantom99' used search features to find 'SkyGazer21' and track discussions about them.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of SearchFunctionality -->
+    <rdf:Description rdf:about="#SearchFunctionality_001">
+        <rdf:type rdf:resource="#SearchFunctionality"/>
+        <rdfs:comment>Search logs of 'DarkPhantom99' show repeated searches for 'SkyGazer21' and related hashtags.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of ExploreSettings -->
+    <rdf:Description rdf:about="#ExploreSettings_001">
+        <rdf:type rdf:resource="#ExploreSettings"/>
+        <rdfs:comment>Explore settings of 'DarkPhantom99' were altered to display location-based posts for targeted harassment.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of searchFor -->
+    <rdf:Description rdf:about="#SearchFor_001">
+        <rdf:type rdf:resource="#searchFor"/>
+        <rdfs:comment>User 'DarkPhantom99' repeatedly searched for 'SkyGazer21' to monitor their activity and target their posts.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of searchTopicsOn -->
+    <rdf:Description rdf:about="#SearchTopics_001">
+        <rdf:type rdf:resource="#searchTopicsOn"/>
+        <rdfs:comment>User 'DarkPhantom99' searched for trending topics and hashtags related to doxxing and harassment (#Exposed, #Fake).</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of saveSearches -->
+    <rdf:Description rdf:about="#SaveSearch_001">
+        <rdf:type rdf:resource="#saveSearchesFor"/>
+        <rdfs:comment>Saved searches in 'DarkPhantom99' account included keywords like 'SkyGazer21 personal info' and 'how to report anonymously'.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of useAdvancedSearch -->
+    <rdf:Description rdf:about="#AdvancedSearch_001">
+        <rdf:type rdf:resource="#useAdvancedSearchOn"/>
+        <rdfs:comment>User 'DarkPhantom99' used advanced search filters to locate older tweets from 'SkyGazer21' to misrepresent their statements.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of searchContentBasedOnLocation -->
+    <rdf:Description rdf:about="#LocationBasedSearch_001">
+        <rdf:type rdf:resource="#searchContentBasedOnLocationOn"/>
+        <rdfs:comment>User 'DarkPhantom99' filtered posts based on location settings to target victims nearby.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of personalizeTrends -->
+    <rdf:Description rdf:about="#PersonalizedTrends_001">
+        <rdf:type rdf:resource="#personalizeTrendsOn"/>
+        <rdfs:comment>Trending topics personalized for 'DarkPhantom99' include recommendations based on past searches related to harassment.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of Bookmarks -->
+    <rdf:Description rdf:about="#Bookmarks_001">
+        <rdf:type rdf:resource="#Bookmarks"/>
+        <rdfs:comment>User 'DarkPhantom99' saved multiple bookmarks related to 'SkyGazer21', including their old posts and personal details.</rdfs:comment>
+        <hasBookmarkCount>15</hasBookmarkCount>
+        <hasBookmarkDate>2024-01-15T14:30:00</hasBookmarkDate>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Bookmarks_002">
+        <rdf:type rdf:resource="#Bookmarks"/>
+        <rdfs:comment>User 'SkyGazer21' bookmarked evidence of harassment before reporting to platform moderators.</rdfs:comment>
+        <hasBookmarkCount>10</hasBookmarkCount>
+        <hasBookmarkDate>2024-01-16T09:45:00</hasBookmarkDate>
+    </rdf:Description>
+
+    <!-- Instance of clearsAllBookmarks -->
+    <rdf:Description rdf:about="#ClearBookmarks_001">
+        <rdf:type rdf:resource="#clearsAllBookmarks"/>
+        <rdfs:comment>On 2024-01-17, 'DarkPhantom99' cleared all bookmarks to erase traces of their tracking behavior.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of FollowerRequests -->
+    <rdf:Description rdf:about="#FollowerRequests_001">
+        <rdf:type rdf:resource="#FollowerRequests"/>
+        <rdfs:comment>User 'DarkPhantom99' sent a suspicious follower request to 'SkyGazer21' under a different username.</rdfs:comment>
+        <hasRequestDate>2024-01-12T21:20:00</hasRequestDate>
+        <isRequestAccepted>false</isRequestAccepted>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#FollowerRequests_002">
+        <rdf:type rdf:resource="#FollowerRequests"/>
+        <rdfs:comment>User 'SkyGazer21' received multiple unknown follower requests after posting about the harassment.</rdfs:comment>
+        <hasRequestDate>2024-01-13T10:05:00</hasRequestDate>
+        <isRequestAccepted>false</isRequestAccepted>
+    </rdf:Description>
+
+    <!-- Instance of acceptsFollowerRequests -->
+    <rdf:Description rdf:about="#AcceptFollowerRequests_001">
+        <rdf:type rdf:resource="#acceptsFollowerRequests"/>
+        <rdfs:comment>User 'SkyGazer21' accepted a request from a new follower, later identified as an alt account of 'DarkPhantom99'.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of declinesFollowerRequests -->
+    <rdf:Description rdf:about="#DeclineFollowerRequests_001">
+        <rdf:type rdf:resource="#declinesFollowerRequests"/>
+        <rdfs:comment>User 'SkyGazer21' declined a suspicious follower request from an anonymous account linked to previous threats.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of Community -->
+    <rdf:Description rdf:about="#Community_001">
+        <rdf:type rdf:resource="#Community"/>
+        <rdfs:comment>Community 'ExposeTheLies' created to spread misinformation and target individuals, including 'SkyGazer21'.</rdfs:comment>
+        <hasCommunityName>ExposeTheLies</hasCommunityName>
+        <hasCommunityDescription>A community dedicated to 'revealing truths' but frequently used for doxxing and targeted harassment.</hasCommunityDescription>
+        <hasMemberCount>1500</hasMemberCount>
+        <hasCreationDate>2023-11-10T18:30:00</hasCreationDate>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Community_002">
+        <rdf:type rdf:resource="#Community"/>
+        <rdfs:comment>Community 'CyberSafetySupport' created to help victims of online harassment and raise awareness.</rdfs:comment>
+        <hasCommunityName>CyberSafetySupport</hasCommunityName>
+        <hasCommunityDescription>A safe space for users to report harassment, share resources, and support each other.</hasCommunityDescription>
+        <hasMemberCount>3200</hasMemberCount>
+        <hasCreationDate>2023-05-22T09:15:00</hasCreationDate>
+    </rdf:Description>
+
+    <!-- Instance of searchesForCommunity -->
+    <rdf:Description rdf:about="#SearchCommunity_001">
+        <rdf:type rdf:resource="#searchesForCommunity"/>
+        <rdfs:comment>User 'DarkPhantom99' repeatedly searched for 'ExposeTheLies' to engage in coordinated harassment campaigns.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of joinsCommunity -->
+    <rdf:Description rdf:about="#JoinCommunity_001">
+        <rdf:type rdf:resource="#joinsCommunity"/>
+        <rdfs:comment>User 'DarkPhantom99' joined 'ExposeTheLies' to participate in discussions targeting 'SkyGazer21'.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of spotlightsCommunity -->
+    <rdf:Description rdf:about="#SpotlightCommunity_001">
+        <rdf:type rdf:resource="#spotlightsCommunity"/>
+        <rdfs:comment>User 'DarkPhantom99' promoted 'ExposeTheLies' by tagging others and encouraging mass reporting of targets.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of pinsCommunity -->
+    <rdf:Description rdf:about="#PinCommunity_001">
+        <rdf:type rdf:resource="#pinsCommunity"/>
+        <rdfs:comment>User 'DarkPhantom99' pinned 'ExposeTheLies' to their profile for quick access to ongoing harassment discussions.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of createsShortcutForCommunity -->
+    <rdf:Description rdf:about="#ShortcutCommunity_001">
+        <rdf:type rdf:resource="#createsShortcutForCommunity"/>
+        <rdfs:comment>User 'DarkPhantom99' created a shortcut for 'ExposeTheLies' to easily navigate to posts related to targeted users.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of sharesCommunity -->
+    <rdf:Description rdf:about="#ShareCommunity_001">
+        <rdf:type rdf:resource="#sharesCommunity"/>
+        <rdfs:comment>User 'DarkPhantom99' shared 'ExposeTheLies' with other users, encouraging more members to join harassment campaigns.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of reportsCommunity -->
+    <rdf:Description rdf:about="#ReportCommunity_001">
+        <rdf:type rdf:resource="#reportsCommunity"/>
+        <rdfs:comment>User 'SkyGazer21' reported 'ExposeTheLies' for violating platform policies on harassment and doxxing.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of ContentModeration -->
+    <rdf:Description rdf:about="#ContentModeration_001">
+        <rdf:type rdf:resource="#ContentModeration"/>
+        <rdfs:comment>Moderation activity involving reports against 'DarkPhantom99' for harassment and misinformation.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of Reporting -->
+    <rdf:Description rdf:about="#Reporting_001">
+        <rdf:type rdf:resource="#Reporting"/>
+        <rdfs:comment>User 'SkyGazer21' reported multiple posts by 'DarkPhantom99' for cyber harassment and defamation.</rdfs:comment>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Reporting_002">
+        <rdf:type rdf:resource="#Reporting"/>
+        <rdfs:comment>Multiple users reported 'ExposeTheLies' community for organizing harassment campaigns.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of BlockingAndMuting -->
+    <rdf:Description rdf:about="#BlockingAndMuting_001">
+        <rdf:type rdf:resource="#BlockingAndMuting"/>
+        <rdfs:comment>User 'SkyGazer21' blocked 'DarkPhantom99' after receiving multiple threats.</rdfs:comment>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#BlockingAndMuting_002">
+        <rdf:type rdf:resource="#BlockingAndMuting"/>
+        <rdfs:comment>User 'SkyGazer21' muted posts containing the hashtag #Exposed to avoid further harassment.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of reportsPost -->
+    <rdf:Description rdf:about="#ReportPost_001">
+        <rdf:type rdf:resource="#reportsPost"/>
+        <rdfs:comment>Post P1005 by 'DarkPhantom99' containing direct threats was reported by multiple users.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of reportsUser -->
+    <rdf:Description rdf:about="#ReportUser_001">
+        <rdf:type rdf:resource="#reportsUser"/>
+        <rdfs:comment>User 'SkyGazer21' reported 'DarkPhantom99' for targeted harassment and doxxing.</rdfs:comment>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#ReportUser_002">
+        <rdf:type rdf:resource="#reportsUser"/>
+        <rdfs:comment>Platform moderators flagged 'DarkPhantom99' after reviewing multiple reports.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of DirectMessages -->
+    <rdf:Description rdf:about="#DirectMessages_001">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <rdfs:comment>User 'DarkPhantom99' sent a threatening message to 'SkyGazer21' demanding they delete their posts.</rdfs:comment>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DirectMessages_002">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <rdfs:comment>User 'SkyGazer21' received multiple anonymous messages containing harassment and intimidation.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of sendsMediaTo -->
+    <rdf:Description rdf:about="#SendMedia_001">
+        <rdf:type rdf:resource="#sendsMediaTo"/>
+        <rdfs:comment>User 'DarkPhantom99' sent manipulated images to 'SkyGazer21' to intimidate them.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of sendsVoiceNotesTo -->
+    <rdf:Description rdf:about="#SendVoiceNotes_001">
+        <rdf:type rdf:resource="#sendsVoiceNotesTo"/>
+        <rdfs:comment>User 'DarkPhantom99' sent voice notes containing verbal threats to 'SkyGazer21'.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of repliesToMessage -->
+    <rdf:Description rdf:about="#ReplyMessage_001">
+        <rdf:type rdf:resource="#repliesToMessage"/>
+        <rdfs:comment>User 'SkyGazer21' responded to one of the threatening messages by warning 'DarkPhantom99' they would report them.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of deletesMessage -->
+    <rdf:Description rdf:about="#DeleteMessage_001">
+        <rdf:type rdf:resource="#deletesMessage"/>
+        <rdfs:comment>User 'DarkPhantom99' deleted messages after realizing they could be used as evidence.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of addsReactionTo -->
+    <rdf:Description rdf:about="#ReactMessage_001">
+        <rdf:type rdf:resource="#addsReactionTo"/>
+        <rdfs:comment>User 'DarkPhantom99' reacted with a laughing emoji to 'SkyGazer21’s' message pleading them to stop harassment.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of reportsMessage -->
+    <rdf:Description rdf:about="#ReportMessage_001">
+        <rdf:type rdf:resource="#reportsMessage"/>
+        <rdfs:comment>User 'SkyGazer21' reported a threatening message from 'DarkPhantom99' to platform moderators.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of Drafts -->
+    <rdf:Description rdf:about="#Drafts_001">
+        <rdf:type rdf:resource="#Drafts"/>
+        <rdfs:comment>User 'DarkPhantom99' saved an unfinished post containing threats against 'SkyGazer21'.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of savesDraftsOn -->
+    <rdf:Description rdf:about="#SaveDrafts_001">
+        <rdf:type rdf:resource="#savesDraftsOn"/>
+        <rdfs:comment>User 'DarkPhantom99' frequently saved drafts with hostile messages before deciding whether to post them.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of Lists -->
+    <rdf:Description rdf:about="#Lists_001">
+        <rdf:type rdf:resource="#Lists"/>
+        <rdfs:comment>List named 'TargetWatch' created to track and harass specific users, including 'SkyGazer21'.</rdfs:comment>
+        <hasListName>TargetWatch</hasListName>
+        <hasListDescription>Monitors users who need to be exposed.</hasListDescription>
+        <setsListPrivacy>Private</setsListPrivacy>
+        <hasListPhoto>https://suspiciousplatform.com/list/targetwatch.jpg</hasListPhoto>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Lists_002">
+        <rdf:type rdf:resource="#Lists"/>
+        <rdfs:comment>List named 'SafeSpace' created to support victims of online harassment.</rdfs:comment>
+        <hasListName>SafeSpace</hasListName>
+        <hasListDescription>A community-driven effort to protect users from cyberbullying.</hasListDescription>
+        <setsListPrivacy>Public</setsListPrivacy>
+        <hasListPhoto>https://platform.com/list/safespace.jpg</hasListPhoto>
+    </rdf:Description>
+
+    <!-- Instance of addsOrFollowsList -->
+    <rdf:Description rdf:about="#FollowList_001">
+        <rdf:type rdf:resource="#addsOrFollowsList"/>
+        <rdfs:comment>User 'DarkPhantom99' followed 'TargetWatch' to stay updated on victims.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of pinsList -->
+    <rdf:Description rdf:about="#PinList_001">
+        <rdf:type rdf:resource="#pinsList"/>
+        <rdfs:comment>User 'DarkPhantom99' pinned 'TargetWatch' for quick access.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of reportsList -->
+    <rdf:Description rdf:about="#ReportList_001">
+        <rdf:type rdf:resource="#reportsList"/>
+        <rdfs:comment>User 'SkyGazer21' reported 'TargetWatch' for coordinating online harassment.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of blocksListCreator -->
+    <rdf:Description rdf:about="#BlockListCreator_001">
+        <rdf:type rdf:resource="#blocksListCreator"/>
+        <rdfs:comment>User 'SkyGazer21' blocked the creator of 'TargetWatch' to avoid further harassment.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of sharesList -->
+    <rdf:Description rdf:about="#ShareList_001">
+        <rdf:type rdf:resource="#sharesList"/>
+        <rdfs:comment>User 'DarkPhantom99' shared 'TargetWatch' in multiple group chats to encourage mass reporting of specific users.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of searchesForLists -->
+    <rdf:Description rdf:about="#SearchList_001">
+        <rdf:type rdf:resource="#searchesForLists"/>
+        <rdfs:comment>User 'DarkPhantom99' searched for new harassment-related lists to follow.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of LiveInteractions -->
+    <rdf:Description rdf:about="#LiveInteractions_001">
+        <rdf:type rdf:resource="#LiveInteractions"/>
+        <rdfs:comment>Live session used by 'DarkPhantom99' to incite harassment against 'SkyGazer21'.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of LiveSpacesRooms -->
+    <rdf:Description rdf:about="#LiveSpacesRooms_001">
+        <rdf:type rdf:resource="#LiveSpacesRooms"/>
+        <rdfs:comment>Live room named 'ExposingFrauds' hosted by 'DarkPhantom99' discussing false allegations against 'SkyGazer21'.</rdfs:comment>
+        <hasSpacesName>ExposingFrauds</hasSpacesName>
+        <hasHostName>DarkPhantom99</hasHostName>
+        <hasParticipantCount>200</hasParticipantCount>
+        <hasSessionDuration>PT1H30M</hasSessionDuration>
+        <hasSessionType>Public</hasSessionType>
+    </rdf:Description>
+
+    <!-- Instance of UpcomingSessions -->
+    <rdf:Description rdf:about="#UpcomingSessions_001">
+        <rdf:type rdf:resource="#UpcomingSessions"/>
+        <rdfs:comment>Upcoming session scheduled by 'DarkPhantom99' titled 'Revealing the Truth about SkyGazer21'.</rdfs:comment>
+        <hasScheduledTime>2024-02-10T20:00:00</hasScheduledTime>
+        <hasReminder>true</hasReminder>
+    </rdf:Description>
+
+    <!-- Instance of startsListeningTo -->
+    <rdf:Description rdf:about="#StartListening_001">
+        <rdf:type rdf:resource="#startsListeningTo"/>
+        <rdfs:comment>User 'AnonymousUserX' joined 'ExposingFrauds' live room and engaged in spreading misinformation.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of requestsToSpeak -->
+    <rdf:Description rdf:about="#RequestToSpeak_001">
+        <rdf:type rdf:resource="#requestsToSpeak"/>
+        <rdfs:comment>User 'TrollAccount42' requested to speak in 'ExposingFrauds' to contribute false claims.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of replaysLiveSession -->
+    <rdf:Description rdf:about="#ReplaySession_001">
+        <rdf:type rdf:resource="#replaysLiveSession"/>
+        <rdfs:comment>User 'CuriousUser' replayed 'ExposingFrauds' to analyze harassment evidence.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of followsHost -->
+    <rdf:Description rdf:about="#FollowHost_001">
+        <rdf:type rdf:resource="#followsHost"/>
+        <rdfs:comment>User 'AnonymousFollower' followed 'DarkPhantom99' after attending the live room.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of viewsGuestLists -->
+    <rdf:Description rdf:about="#ViewGuestList_001">
+        <rdf:type rdf:resource="#viewsGuestLists"/>
+        <rdfs:comment>User 'ObserverX' checked the guest list of 'ExposingFrauds' to identify participants.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of usesReactions -->
+    <rdf:Description rdf:about="#UseReactions_001">
+        <rdf:type rdf:resource="#usesReactions"/>
+        <rdfs:comment>User 'TrollAccount42' used laughing emojis to mock 'SkyGazer21' during the live session.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of sharesLiveSession -->
+    <rdf:Description rdf:about="#ShareLiveSession_001">
+        <rdf:type rdf:resource="#sharesLiveSession"/>
+        <rdfs:comment>User 'MisinformationGroup' shared the live session link on external forums to attract more participants.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of leavesLiveSession -->
+    <rdf:Description rdf:about="#LeaveLiveSession_001">
+        <rdf:type rdf:resource="#leavesLiveSession"/>
+        <rdfs:comment>User 'NeutralViewer' left the live session after realizing the false allegations being spread.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of setsReminder -->
+    <rdf:Description rdf:about="#SetReminder_001">
+        <rdf:type rdf:resource="#setsReminder"/>
+        <rdfs:comment>User 'SupporterY' set a reminder for 'Revealing the Truth about SkyGazer21' to participate in the discussion.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of addsToCalendar -->
+    <rdf:Description rdf:about="#AddToCalendar_001">
+        <rdf:type rdf:resource="#addsToCalendar"/>
+        <rdfs:comment>User 'CuriousUser' added 'Revealing the Truth about SkyGazer21' to their calendar for future reference.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of Monetization -->
+    <rdf:Description rdf:about="#Monetization_001">
+        <rdf:type rdf:resource="#Monetization"/>
+        <rdfs:comment>User 'DarkPhantom99' used premium subscription features to avoid advertisements and maintain anonymity while conducting targeted harassment.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of Subscription -->
+    <rdf:Description rdf:about="#Subscription_001">
+        <rdf:type rdf:resource="#Subscription"/>
+        <rdfs:comment>User 'DarkPhantom99' subscribed to the premium service, which allowed them to edit posts and use anonymous browsing mode.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of Advertisement -->
+    <rdf:Description rdf:about="#Advertisement_001">
+        <rdf:type rdf:resource="#Advertisement"/>
+        <rdfs:comment>User 'SkyGazer21' was targeted with political and financial scam advertisements due to manipulated interest categories.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of hasSubscribed -->
+    <rdf:Description rdf:about="#HasSubscribed_001">
+        <rdf:type rdf:resource="#hasSubscribed"/>
+        <rdfs:comment>User 'DarkPhantom99' has an active premium subscription, removing platform restrictions on post visibility.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of isSubscribedTo -->
+    <rdf:Description rdf:about="#IsSubscribedTo_001">
+        <rdf:type rdf:resource="#isSubscribedTo"/>
+        <rdfs:comment>User 'DarkPhantom99' subscribed to 'PremiumPlus', allowing them to access hidden engagement data.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of receivesAdvertisements -->
+    <rdf:Description rdf:about="#ReceivesAds_001">
+        <rdf:type rdf:resource="#receivesAdvertisements"/>
+        <rdfs:comment>User 'SkyGazer21' received aggressive scam advertisements after a data breach linked to targeted users.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of hasAdvertisements -->
+    <rdf:Description rdf:about="#HasAdvertisements_001">
+        <rdf:type rdf:resource="#hasAdvertisements"/>
+        <rdfs:comment>User 'SkyGazer21' has unwanted advertisements forced into their feed despite opting out of personalized ads.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of AccessibilityAndDisplay -->
+    <rdf:Description rdf:about="#AccessibilityAndDisplay_001">
+        <rdf:type rdf:resource="#AccessibilityAndDisplay"/>
+        <rdfs:comment>User 'SkyGazer21' adjusted accessibility settings after experiencing sudden UI modifications, possibly due to an external breach.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of hasAccessibilitySettings -->
+    <rdf:Description rdf:about="#AccessibilitySettings_001">
+        <rdf:type rdf:resource="#hasAccessibilitySettings"/>
+        <rdfs:comment>User 'SkyGazer21' enabled text-to-speech and high-contrast mode after reporting vision impairment issues.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of hasDisplaySettings -->
+    <rdf:Description rdf:about="#DisplaySettings_001">
+        <rdf:type rdf:resource="#hasDisplaySettings"/>
+        <rdfs:comment>User 'SkyGazer21' noticed unauthorized changes to display settings, suspected account compromise.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of hasLanguagePreferences -->
+    <rdf:Description rdf:about="#LanguagePreferences_001">
+        <rdf:type rdf:resource="#hasLanguagePreferences"/>
+        <rdfs:comment>User 'SkyGazer21' found their language preferences changed to an unfamiliar language, indicating a potential unauthorized access attempt.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of hasDataUsageSettings -->
+    <rdf:Description rdf:about="#DataUsageSettings_001">
+        <rdf:type rdf:resource="#hasDataUsageSettings"/>
+        <rdfs:comment>User 'DarkPhantom99' modified their data usage settings to prevent tracking while engaging in malicious activities.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of Notifications -->
+    <rdf:Description rdf:about="#Notifications_001">
+        <rdf:type rdf:resource="#Notifications"/>
+        <rdfs:comment>User 'SkyGazer21' received multiple spam notifications after being targeted by mass reports.</rdfs:comment>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Notifications_002">
+        <rdf:type rdf:resource="#Notifications"/>
+        <rdfs:comment>User 'DarkPhantom99' manipulated notification settings to avoid detection after sending abusive messages.</rdfs:comment>
+    </rdf:Description>
+
+    <!-- Instance of NotificationSettings -->
+    <rdf:Description rdf:about="#NotificationSettings_001">
+        <rdf:type rdf:resource="#NotificationSettings"/>
+        <rdfs:comment>User 'SkyGazer21' enabled the quality filter to reduce harassment notifications.</rdfs:comment>
+        <hasQualityFilter>true</hasQualityFilter>
+        <receivesPushNotifications>true</receivesPushNotifications>
+        <receivesSMSNotifications>false</receivesSMSNotifications>
+        <receivesEmailNotifications>true</receivesEmailNotifications>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#NotificationSettings_002">
+        <rdf:type rdf:resource="#NotificationSettings"/>
+        <rdfs:comment>User 'DarkPhantom99' disabled email notifications to prevent moderation alerts from reaching them.</rdfs:comment>
+        <hasQualityFilter>false</hasQualityFilter>
+        <receivesPushNotifications>false</receivesPushNotifications>
+        <receivesSMSNotifications>false</receivesSMSNotifications>
+        <receivesEmailNotifications>false</receivesEmailNotifications>
+    </rdf:Description>
+
+    <!-- Instance of Preferences -->
+    <rdf:Description rdf:about="#Preferences_001">
+        <rdf:type rdf:resource="#Preferences"/>
+        <rdfs:comment>User 'SkyGazer21' had a high unread notification count due to mass reporting attempts.</rdfs:comment>
+        <hasUnreadNotificationCountBadge>99</hasUnreadNotificationCountBadge>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Preferences_002">
+        <rdf:type rdf:resource="#Preferences"/>
+        <rdfs:comment>User 'DarkPhantom99' cleared all unread notifications to remove evidence of received warnings.</rdfs:comment>
+        <hasUnreadNotificationCountBadge>0</hasUnreadNotificationCountBadge>
+    </rdf:Description>
+`

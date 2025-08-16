@@ -1,0 +1,713 @@
+
+<!--YouTubeCase-->
+
+
+    <owl:NamedIndividual rdf:about="#User_Lisa_YouTube">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>Lisa (YouTube User)</rdfs:label>
+        <hasUserID>Lisa123</hasUserID>
+        <hasUsername>Lisa Adventures</hasUsername>
+        <hasEmail>lisa@example.com</hasEmail>
+        <hasPhoneNumber>+9876543210</hasPhoneNumber>
+        <hasProfilePicture>https://youtube.com/profile/lisa123.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-10T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-06T08:45:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus> <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasPremiumMembershipStatus>
+        <ownsChannel rdf:resource="#Channel_LisasChannel_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_WanderlustTravels_YouTube">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>WanderlustTravels (YouTube User)</rdfs:label>
+        <hasUserID>Wander987</hasUserID>
+        <hasUsername>WanderlustTravels</hasUsername>
+        <hasEmail>wanderlust@example.com</hasEmail>
+        <hasPhoneNumber>+09274567890</hasPhoneNumber>
+        <hasProfilePicture>https://youtube.com/profile/wander987.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-09-15T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-07T12:30:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>false</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <ownsChannel rdf:resource="#Channel_WanderlustChannel_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_DavidTraveller_YouTube">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>DavidTraveller (YouTube User)</rdfs:label>
+        <hasUserID>DavidT001</hasUserID>
+        <hasUsername>DavidTraveller</hasUsername>
+        <hasEmail>david@example.com</hasEmail>
+        <hasPhoneNumber>+1122334455</hasPhoneNumber>
+        <hasProfilePicture>https://youtube.com/profile/david001.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-07-21T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-07T15:10:00Z</hasLastActivityTimestamp>
+        <hasPasswordHash>davidsecurehash001</hasPasswordHash>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_TravelLover88_YouTube">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>TravelLover88 (YouTube User)</rdfs:label>
+        <hasUserID>TravelLover88</hasUserID>
+        <hasUsername>TravelLover88</hasUsername>
+        <hasEmail>travellover88@example.com</hasEmail>
+        <hasPhoneNumber>+1234567899</hasPhoneNumber>
+        <hasProfilePicture>https://youtube.com/profile/travellover88.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-15T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T10:00:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_AnotherUser_YouTube">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>AnotherUser (YouTube User)</rdfs:label>
+        <hasUserID>AnotherUser001</hasUserID>
+        <hasUsername>AnotherUser</hasUsername>
+        <hasEmail>anotheruser@example.com</hasEmail>
+        <hasPhoneNumber>+1234567890</hasPhoneNumber>
+        <hasProfilePicture>https://youtube.com/profile/anotheruser.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-09T14:00:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_NeutralUser_YouTube">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>NeutralUser (YouTube User)</rdfs:label>
+        <hasUserID>NeutralUser001</hasUserID>
+        <hasUsername>NeutralUser</hasUsername>
+        <hasEmail>neutraluser@example.com</hasEmail>
+        <hasPhoneNumber>+5623127890</hasPhoneNumber>
+        <hasProfilePicture>https://youtube.com/profile/neutraluser.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-20T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-09T14:05:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_RandomUser_YouTube">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>RandomUser (YouTube User)</rdfs:label>
+        <hasUserID>RandomUser001</hasUserID>
+        <hasUsername>RandomUser</hasUsername>
+        <hasEmail>randomuser@example.com</hasEmail>
+        <hasPhoneNumber>+1234567890</hasPhoneNumber>
+        <hasProfilePicture>https://youtube.com/profile/randomuser.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-03-15T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-09T13:55:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Channel_LisasChannel_YouTube">
+        <rdf:type rdf:resource="#MCSS:Channel"/>
+        <rdfs:label>Lisa's Adventures Channel</rdfs:label>
+        <hasChannelID>LISA123</hasChannelID>
+        <hasChannelName>Lisa's Adventures</hasChannelName>
+        <hasChannelDescription>Travel vlogs and cinematic drone footage from around the world.</hasChannelDescription>
+        <hasChannelCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-06-15T00:00:00Z</hasChannelCreationDate>
+        <hasChannelProfilePicture>https://youtube.com/profile/lisa123.jpg</hasChannelProfilePicture>
+        <hasSubscriberCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150000</hasSubscriberCount>
+        <hasPlaylist>Travel_Vlogs</hasPlaylist>
+        <hasTotalViews rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5000000</hasTotalViews>
+        <associatedWithUser rdf:resource="#User_Lisa_YouTube"/>
+        <uploadsVideo rdf:resource="#Video_LisaSwissAlpsVideo_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Channel_WanderlustChannel_YouTube">
+        <rdf:type rdf:resource="#MCSS:Channel"/>
+        <rdfs:label>WanderlustTravels Channel</rdfs:label>
+        <hasChannelID>WANDER987</hasChannelID>
+        <hasChannelName>WanderlustTravels</hasChannelName>
+        <hasChannelDescription>Explore the world through beautiful travel videos.</hasChannelDescription>
+        <hasChannelCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-03-22T00:00:00Z</hasChannelCreationDate>
+        <hasChannelProfilePicture>https://youtube.com/profile/wander987.jpg</hasChannelProfilePicture>
+        <hasSubscriberCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80000</hasSubscriberCount>
+        <hasPlaylist>Travel_Footage</hasPlaylist>
+        <hasTotalViews rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3000000</hasTotalViews>
+        <associatedWithUser rdf:resource="#User_WanderlustTravels_YouTube"/>
+        <uploadsVideo rdf:resource="#Video_StolenSwissAlpsVideo_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Video_LisaSwissAlpsVideo_YouTube">
+        <rdf:type rdf:resource="#MCSS:Video"/>
+        <rdfs:label>Lisa's Original Swiss Alps Video</rdfs:label>
+        <hasVideoID>ABC123XYZ</hasVideoID>
+        <hasTitle>Breathtaking Swiss Alps – 4K Cinematic Drone Footage</hasTitle>
+        <hasVideoDescription>Experience the stunning beauty of the Swiss Alps in this cinematic 4K drone footage.</hasVideoDescription>
+        <hasPublicationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-05T10:00:00Z</hasPublicationDate>
+        <hasDurationInMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hasDurationInMinutes>
+        <hasViewCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200000</hasViewCount>
+        <hasLikeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5000</hasLikeCount>
+        <hasDislikeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</hasDislikeCount>
+        <hasCommentCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</hasCommentCount>
+        <hasVideoTags>Swiss Alps, Travel, Cinematic, Drone</hasVideoTags>
+        <hasLocation>Switzerland</hasLocation>
+        <hasContentRating>G</hasContentRating>
+        <hasContentURL>hxxps://platform.com/watch?v=839201</hasContentURL> <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Video_StolenSwissAlpsVideo_YouTube">
+        <rdf:type rdf:resource="#MCSS:Video"/>
+        <rdfs:label>WanderlustTravels' Stolen Swiss Alps Video</rdfs:label>
+        <hasVideoID>XYZ987ABC</hasVideoID>
+        <hasTitle>Majestic Mountains – 4K UHD Aerial Views</hasTitle>
+        <hasVideoDescription>Relax and enjoy the majestic mountains in this 4K UHD footage.</hasVideoDescription>
+        <hasPublicationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-07T14:00:00Z</hasPublicationDate>
+        <hasDurationInMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hasDurationInMinutes>
+        <hasViewCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500000</hasViewCount>
+        <hasLikeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12000</hasLikeCount>
+        <hasDislikeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</hasDislikeCount>
+        <hasCommentCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">350</hasCommentCount>
+        <hasVideoTags>Mountains, Travel, UHD, Drone</hasVideoTags>
+        <hasLocation>Unknown</hasLocation>
+        <hasContentRating>G</hasContentRating>
+        <hasContentURL>hxxps://platform.com/watch?v=212396389101</hasContentURL>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_DavidOnLisaVideo_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>David's comment on Lisa's video</rdfs:label>
+        <hasContentText>Wow, this is amazing! But I think I saw the same footage on another channel...</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T09:30:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>Windows 10, Chrome Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.100</hasIpAddress>
+        <commentsOnContent rdf:resource="#Video_LisaSwissAlpsVideo_YouTube"/>
+        <commentedBy rdf:resource="#User_DavidTraveller_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_LisaReplyToDavid_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>Lisa's reply to David's comment</rdfs:label>
+        <hasContentText>Which channel? I spent weeks filming this, it's my original work!</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T09:45:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>MacOS, Safari Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.101</hasIpAddress>
+        <commentsOnContent rdf:resource="#Video_LisaSwissAlpsVideo_YouTube"/>
+        <commentedBy rdf:resource="#User_Lisa_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_TravelLoverOnLisaVideo_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>TravelLover88's comment on Lisa's video</rdfs:label>
+        <hasContentText>You should report them! That's content theft!</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T10:00:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>Android, YouTube App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.102</hasIpAddress>
+        <commentsOnContent rdf:resource="#Video_LisaSwissAlpsVideo_YouTube"/>
+        <commentedBy rdf:resource="#User_TravelLover88_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_LisaOnStolenVideo_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>Lisa's comment on WanderlustTravels' video</rdfs:label>
+        <hasContentText>Hey, I just found out that you uploaded my drone footage without permission. Can you take it down?</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-09T13:10:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>MacOS, Safari Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.101</hasIpAddress>
+        <commentsOnContent rdf:resource="#Video_StolenSwissAlpsVideo_YouTube"/>
+        <commentedBy rdf:resource="#User_Lisa_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_WanderlustReplyToLisa_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>WanderlustTravels' reply to Lisa</rdfs:label>
+        <hasContentText>What? I don't know what you're talking about. I found the footage online.</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-09T13:30:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>Windows 11, Edge Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.200</hasIpAddress>
+        <commentsOnContent rdf:resource="#Video_StolenSwissAlpsVideo_YouTube"/>
+        <commentedBy rdf:resource="#User_WanderlustTravels_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_LisaReplyToWanderlust2_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>Lisa's second reply to WanderlustTravels</rdfs:label>
+        <hasContentText>No, that's my video. I have the original files, timestamps, and metadata. You even kept my music!</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-09T13:33:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>MacOS, Safari Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.101</hasIpAddress>
+        <commentsOnContent rdf:resource="#Video_StolenSwissAlpsVideo_YouTube"/>
+        <commentedBy rdf:resource="#User_Lisa_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_WanderlustDefense_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>WanderlustTravels' defense</rdfs:label>
+        <hasContentText>Look, I just edited a few things. It's fair use, and YouTube hasn't taken it down, so it's fine.</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-09T13:40:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>Windows 11, Edge Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.200</hasIpAddress>
+        <commentsOnContent rdf:resource="#Video_StolenSwissAlpsVideo_YouTube"/>
+        <commentedBy rdf:resource="#User_WanderlustTravels_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_LisaInsistsRemoval_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>Lisa insists on removal</rdfs:label>
+        <hasContentText>This isn't fair use. You copied everything. If you don't take it down, I'm reporting you for copyright infringement.</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-09T13:45:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>MacOS, Safari Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.101</hasIpAddress>
+        <commentsOnContent rdf:resource="#Video_StolenSwissAlpsVideo_YouTube"/>
+        <commentedBy rdf:resource="#User_Lisa_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_WanderlustChallenge_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>WanderlustTravels challenges Lisa</rdfs:label>
+        <hasContentText>Go ahead. I already disputed another claim before, and nothing happened. You can't do anything.</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-09T13:50:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>Windows 11, Edge Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.200</hasIpAddress>
+        <commentsOnContent rdf:resource="#Video_StolenSwissAlpsVideo_YouTube"/>
+        <commentedBy rdf:resource="#User_WanderlustTravels_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_RandomUserOnStolen_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>RandomUser's comment on stolen video</rdfs:label>
+        <hasContentText>Wow, this is getting intense! @WanderlustTravels, did you really steal this footage?</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-09T13:55:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>Android, YouTube App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.103</hasIpAddress>
+        <commentsOnContent rdf:resource="#Video_StolenSwissAlpsVideo_YouTube"/>
+        <commentedBy rdf:resource="#User_RandomUser_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_AnotherUserSupportsLisa_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>AnotherUser supports Lisa</rdfs:label>
+        <hasContentText>@Lisa, I believe you! This looks exactly like your style. @WanderlustTravels, you should take it down.</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-09T14:00:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>iOS, YouTube App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.104</hasIpAddress>
+        <commentsOnContent rdf:resource="#Video_StolenSwissAlpsVideo_YouTube"/>
+        <commentedBy rdf:resource="#User_AnotherUser_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_NeutralUserCalms_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>NeutralUser tries to calm situation</rdfs:label>
+        <hasContentText>Everyone, let's not jump to conclusions. Maybe there's a misunderstanding. @WanderlustTravels, can you explain?</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-09T14:05:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>Windows 10, Chrome Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.105</hasIpAddress>
+        <commentsOnContent rdf:resource="#Video_StolenSwissAlpsVideo_YouTube"/>
+        <commentedBy rdf:resource="#User_NeutralUser_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Report_LisaVsWanderlust_YouTube">
+        <rdf:type rdf:resource="#MCSS:ReportAction"/>
+        <rdfs:label>Lisa reports WanderlustTravels for copyright</rdfs:label>
+        <hasReportReason>Copyright infringement</hasReportReason>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-09T13:20:00Z</hasInteractionTimestamp> <reportsUser rdf:resource="#User_WanderlustTravels_YouTube"/>
+        <reportsContent rdf:resource="#Video_StolenSwissAlpsVideo_YouTube"/>
+        <performedBy rdf:resource="#User_Lisa_YouTube"/> <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LiveEvent_LisaProof_YouTube">
+        <rdf:type rdf:resource="#MCSS:Live"/>
+        <rdfs:label>Lisa's Live Event - Proof of Ownership</rdfs:label>
+        <hasLiveStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T18:00:00Z</hasLiveStartTime>
+        <hasLiveEndTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T19:30:00Z</hasLiveEndTime>
+        <hasLiveDurationInMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</hasLiveDurationInMinutes>
+        <hasViewerCountInLive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">450</hasViewerCountInLive>
+        <hasReactionCountInLive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</hasReactionCountInLive>
+        <hasLiveTags>Travel, Swiss Alps, Drone, Behind the Scenes, Copyright</hasLiveTags>
+        <hasLocation>Switzerland</hasLocation> <hasSuperChatRevenue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200.00</hasSuperChatRevenue>
+        <attributedToUser rdf:resource="#User_Lisa_YouTube"/> <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LiveComment_TravelLoverOnLisaLive_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>TravelLover88's comment on Lisa's live</rdfs:label>
+        <hasContentText>Lisa, is this the same footage that WanderlustTravels used?</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T18:15:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>Android, YouTube App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.106</hasIpAddress>
+        <commentsOnContent rdf:resource="#LiveEvent_LisaProof_YouTube"/>
+        <commentedBy rdf:resource="#User_TravelLover88_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LiveComment_LisaReplyOnLive_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>Lisa's reply during live event</rdfs:label>
+        <hasContentText>Yes, they stole it. That's why I'm going live now to show proof and answer questions!</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T18:17:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>MacOS, Safari Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.101</hasIpAddress>
+        <commentsOnContent rdf:resource="#LiveEvent_LisaProof_YouTube"/>
+        <commentedBy rdf:resource="#User_Lisa_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LiveComment_DavidAsksProof_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>DavidTraveller asks for proof on live</rdfs:label>
+        <hasContentText>Can you show the raw footage and metadata?</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T18:20:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>Windows 10, Chrome Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.107</hasIpAddress>
+        <commentsOnContent rdf:resource="#LiveEvent_LisaProof_YouTube"/>
+        <commentedBy rdf:resource="#User_DavidTraveller_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LiveComment_LisaShowsProof_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>Lisa shows proof during live</rdfs:label>
+        <hasContentText>Sure, here is the metadata and timestamped files. I hope this clears things up.</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T18:25:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>MacOS, Safari Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.101</hasIpAddress>
+        <commentsOnContent rdf:resource="#LiveEvent_LisaProof_YouTube"/>
+        <commentedBy rdf:resource="#User_Lisa_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LiveComment_AnotherUserSupportsLisaLive_YouTube">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>AnotherUser supports Lisa on live</rdfs:label>
+        <hasContentText>Wow, clear evidence! You should totally report this again!</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T18:30:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>iOS, YouTube App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.108</hasIpAddress>
+        <commentsOnContent rdf:resource="#LiveEvent_LisaProof_YouTube"/>
+        <commentedBy rdf:resource="#User_AnotherUser_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SuperChat_TravelLoverToLisa_YouTube">
+        <rdf:type rdf:resource="#MCSS:SuperChat"/>
+        <rdfs:label>SuperChat from TravelLover88 to Lisa</rdfs:label>
+        <hasDonationAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.00</hasDonationAmount>
+        <donatedBy rdf:resource="#User_TravelLover88_YouTube"/>
+        <hasDonationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T18:35:00Z</hasDonationTimestamp>
+        <belongsToLive rdf:resource="#LiveEvent_LisaProof_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SuperChat_DavidToLisa_YouTube">
+        <rdf:type rdf:resource="#MCSS:SuperChat"/>
+        <rdfs:label>SuperChat from DavidTraveller to Lisa</rdfs:label>
+        <hasDonationAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150.00</hasDonationAmount>
+        <donatedBy rdf:resource="#User_DavidTraveller_YouTube"/>
+        <hasDonationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T18:40:00Z</hasDonationTimestamp>
+        <belongsToLive rdf:resource="#LiveEvent_LisaProof_YouTube"/>
+        <belongsToPlatform>YouTube</belongsToPlatform>
+    </owl:NamedIndividual>
+
+<!--TikTokCase-->
+
+    <owl:NamedIndividual rdf:about="#User_Ethan_TikTok">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>Ethan (TikTok User)</rdfs:label>
+        <hasUserID>EthanDares</hasUserID>
+        <hasUsername>Ethan</hasUsername>
+        <hasEmail>ethan@example.com</hasEmail>
+        <hasPhoneNumber>+1234567890</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/ethan.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-01T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T10:00:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_MaxDares_TikTok">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>MaxDares (TikTok User)</rdfs:label>
+        <hasUserID>MaxDares</hasUserID>
+        <hasUsername>Max</hasUsername>
+        <hasEmail>max@example.com</hasEmail>
+        <hasPhoneNumber>+0987654321</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/max.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-05-15T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T11:00:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_SarahCares_TikTok">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>SarahCares (TikTok User)</rdfs:label>
+        <hasUserID>SarahCares</hasUserID>
+        <hasUsername>Sarah</hasUsername>
+        <hasEmail>sarah@example.com</hasEmail>
+        <hasPhoneNumber>+1122334455</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/sarah.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-08-20T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T12:00:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_RiskyKing_TikTok">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>RiskyKing (TikTok User)</rdfs:label>
+        <hasUserID>RiskyKing</hasUserID>
+        <hasUsername>RiskyKing</hasUsername>
+        <hasEmail>riskyking@example.com</hasEmail>
+        <hasPhoneNumber>+2233445566</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/riskyking.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T13:00:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#User_JakeMaster_TikTok">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>JakeMaster (TikTok User)</rdfs:label>
+        <hasUserID>JakeMaster</hasUserID>
+        <hasUsername>JakeMaster</hasUsername>
+        <hasEmail>jakemaster@example.com</hasEmail>
+        <hasPhoneNumber>+3344556677</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/jakemaster.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-25T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T14:00:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ShortVideo_EthanBlackoutChallenge_TikTok">
+        <rdf:type rdf:resource="#MCSS:ShortVideo"/>
+        <rdfs:label>Ethan's Blackout Challenge Video</rdfs:label>
+        <hasShortVideoID>Post001</hasShortVideoID> <hasCaption>Alright, let's see if I can do this... #BlackoutChallenge #DontBackDown</hasCaption>
+        <hasBackgroundMusic>Trending TikTok Sound - "Dare Me" remix</hasBackgroundMusic>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T15:00:00Z</hasCreationTimestamp>
+        <hasContentURL>https://tiktok.com/post/ethanblackoutchallenge</hasContentURL>
+        <hasViewCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100000</hasViewCount>
+        <hasLikeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5000</hasLikeCount>
+        <hasCommentCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</hasCommentCount>
+        <hasShareCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</hasShareCount>
+        <hasRemixableStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasRemixableStatus>
+        <hasDuetStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasDuetStatus>
+        <hasStitchStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasStitchStatus>
+        <hasPostTags>#BlackoutChallenge #DontBackDown</hasPostTags>
+        <hasLocation>Unknown</hasLocation>
+        <hasPostDeviceInfo>iPhone 12, TikTok App</hasPostDeviceInfo>
+        <hasIpAddress>192.168.1.1</hasIpAddress>
+        <postedBy rdf:resource="#User_Ethan_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_MaxOnEthanVideo_TikTok">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>MaxDares' comment on Ethan's video</rdfs:label>
+        <hasContentText>Finally! Thought you'd never do it. Let's gooo! 🔥🔥</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T15:05:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.2</hasIpAddress>
+        <commentsOnContent rdf:resource="#ShortVideo_EthanBlackoutChallenge_TikTok"/>
+        <commentedBy rdf:resource="#User_MaxDares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_SarahOnEthanVideo_TikTok">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>SarahCares' comment on Ethan's video</rdfs:label>
+        <hasContentText>This is dangerous, please don't do this! People have gotten seriously hurt!</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T15:10:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>iOS, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.3</hasIpAddress>
+        <commentsOnContent rdf:resource="#ShortVideo_EthanBlackoutChallenge_TikTok"/>
+        <commentedBy rdf:resource="#User_SarahCares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_RiskyKingOnEthanVideo_TikTok">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>RiskyKing's comment on Ethan's video</rdfs:label>
+        <hasContentText>Welp, he almost made it! But dude, that fall was brutal. 🤣</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T15:15:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>Windows 10, Chrome Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.4</hasIpAddress>
+        <commentsOnContent rdf:resource="#ShortVideo_EthanBlackoutChallenge_TikTok"/>
+        <commentedBy rdf:resource="#User_RiskyKing_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_JakeMasterOnEthanVideo_TikTok">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>JakeMaster's comment on Ethan's video</rdfs:label>
+        <hasContentText>Yo, can someone make this a meme? This is hilarious.</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T15:20:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>MacOS, Safari Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.5</hasIpAddress>
+        <commentsOnContent rdf:resource="#ShortVideo_EthanBlackoutChallenge_TikTok"/>
+        <commentedBy rdf:resource="#User_JakeMaster_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_MaxReplyToJake_TikTok">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>MaxDares' reply to JakeMaster</rdfs:label>
+        <hasContentText>@JakeMaster I already got the clip. Posting it now lol</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T15:25:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.2</hasIpAddress>
+        <commentsOnContent rdf:resource="#ShortVideo_EthanBlackoutChallenge_TikTok"/> <commentedBy rdf:resource="#User_MaxDares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment_SarahEncouragesReport_TikTok">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>SarahCares encourages reporting</rdfs:label>
+        <hasContentText>STOP ENCOURAGING THIS. Someone needs to report this!!</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T15:30:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>iOS, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.3</hasIpAddress>
+        <commentsOnContent rdf:resource="#ShortVideo_EthanBlackoutChallenge_TikTok"/>
+        <commentedBy rdf:resource="#User_SarahCares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_MaxToEthan_1_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from MaxDares to Ethan (1)</rdfs:label>
+        <hasMessageContent>Bro, stop being a wimp. Everyone's done it. You gonna let a girl beat your record?</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T19:45:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.2</hasIpAddress>
+        <attributedToUser rdf:resource="#User_MaxDares_TikTok"/>
+        <messageReceiver rdf:resource="#User_Ethan_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_EthanToMax_1_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from Ethan to MaxDares (1)</rdfs:label>
+        <hasMessageContent>I don't know, man. I saw that some people got hurt doing this.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T19:47:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.1</hasIpAddress>
+        <attributedToUser rdf:resource="#User_Ethan_TikTok"/>
+        <messageReceiver rdf:resource="#User_MaxDares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_MaxToEthan_2_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from MaxDares to Ethan (2)</rdfs:label>
+        <hasMessageContent>Come on, it's just a few seconds. What's the worst that could happen? 😂</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T19:50:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.2</hasIpAddress>
+        <attributedToUser rdf:resource="#User_MaxDares_TikTok"/>
+        <messageReceiver rdf:resource="#User_Ethan_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_EthanToMax_2_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from Ethan to MaxDares (2)</rdfs:label>
+        <hasMessageContent>Ugh, fine. But if something goes wrong, I swear—</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T19:55:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.1</hasIpAddress>
+        <attributedToUser rdf:resource="#User_Ethan_TikTok"/>
+        <messageReceiver rdf:resource="#User_MaxDares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_MaxToEthan_3_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from MaxDares to Ethan (3)</rdfs:label>
+        <hasMessageContent>Nothing's gonna happen! Just record and post it. And tag me.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T19:57:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.2</hasIpAddress>
+        <attributedToUser rdf:resource="#User_MaxDares_TikTok"/>
+        <messageReceiver rdf:resource="#User_Ethan_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_EthanToMax_3_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from Ethan to MaxDares (3)</rdfs:label>
+        <hasMessageContent>Alright, done. Hope you're happy.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T20:10:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.1</hasIpAddress>
+        <attributedToUser rdf:resource="#User_Ethan_TikTok"/>
+        <messageReceiver rdf:resource="#User_MaxDares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_MaxToEthan_4_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from MaxDares to Ethan (4)</rdfs:label>
+        <hasMessageContent>LMAO bro that was HILARIOUS. You actually passed out???</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T20:15:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.2</hasIpAddress>
+        <attributedToUser rdf:resource="#User_MaxDares_TikTok"/>
+        <messageReceiver rdf:resource="#User_Ethan_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_EthanToMax_4_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from Ethan to MaxDares (4)</rdfs:label>
+        <hasMessageContent>Yeah, I hit my head, dude. I don't feel great.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T20:17:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.1</hasIpAddress>
+        <attributedToUser rdf:resource="#User_Ethan_TikTok"/>
+        <messageReceiver rdf:resource="#User_MaxDares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_MaxToEthan_5_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from MaxDares to Ethan (5)</rdfs:label>
+        <hasMessageContent>Relax, you're fine. This is gonna blow up!</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T20:18:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.2</hasIpAddress>
+        <attributedToUser rdf:resource="#User_MaxDares_TikTok"/>
+        <messageReceiver rdf:resource="#User_Ethan_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DM_EthansParentToMax_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from Ethan's Parent to MaxDares</rdfs:label>
+        <hasMessageContent>Hello, this is Ethan's parent. Ethan ended up in the hospital after following your advice. I will be reporting this to the police.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T20:30:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo> <hasIpAddress>192.168.1.1</hasIpAddress> <hasAttachmentURL>https://tiktok.com/media/ethan_hospital.jpg</hasAttachmentURL>
+        <attributedToUser rdf:resource="#User_Ethan_TikTok"/> <messageReceiver rdf:resource="#User_MaxDares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </owl:NamedIndividual>

@@ -1,0 +1,416 @@
+
+Kelompok DP #1 (Ukuran: 101):
+  - MCSS:donationTime: The timestamp when the donation was made.
+  - MCSS:hasCommentTimestamp: Records the timestamp when a comment interaction occurred.
+  - MCSS:hasDislikeTimestamp: Records the timestamp when a dislike interaction occurred.
+  - MCSS:hasGiftComment: Stores a comment provided with the gift.
+  - MCSS:hasGiftPrice: Stores the price of the gift sent during a live session.
+  - MCSS:hasGiftTimestamp: Records the timestamp when a gift was sent during a live session.
+  - MCSS:hasGroupMessageCreatedTimestamp: Represents the timestamp when the group message thread was created.
+  - MCSS:hasGroupMessageLastActivity: Represents the timestamp of the last activity in the group message thread.
+  - MCSS:hasGroupMessageTitle: Represents the title of a group message thread.
+  - MCSS:hasLikeTimestamp: Records the timestamp when a like interaction occurred.
+  - MCSS:hasMediaAttachment: Represents the URL of a media attachment in the message.
+  - MCSS:hasMessageReaction: Represents an array of emojis reacting to the message.
+  - MCSS:hasNewsPageContentType: Indicates the type of content displayed on the news watch page (e.g., video, article).
+  - MCSS:hasPostIP: IP address used to create the short video post.
+  - MCSS:hasReportTimestamp: Records the timestamp when a report interaction occurred.
+  - MCSS:hasShareTimestamp: Records the timestamp when a share interaction occurred.
+  - MCSS:hasTimestamp: Represents the timestamp of when the message was sent.
+  - MCSS:hasUserID: Unique identifier for the user.
+  - MCSS:hasUserInteractionIP: Stores the IP information of the user device who gave a comment.
+  - MP:hasBio: Stores the bio or description on the user's profile.
+  - MP:hasBirthDate: Records the user's birth date displayed on their profile.
+  - MP:hasBirthday: Stores the user's birth date.
+  - MP:hasBookmarkCount: Stores the count of items saved in bookmarks.
+  - MP:hasBookmarkDate: Records the date and time when a bookmark was saved.
+  - MP:hasCommentIP:The IP address of the device used to post the commentCritical for digital forensics or geolocation.     
+  - MP:hasCommentTimestamp:The date and time when this comment was createdUseful for forensic timeline reconstruction.     
+  - MP:hasDMTimestamp:The date and time when the DM was sent.     
+  - MP:hasPostInteractionIP:Captures the IP address from which the user posted.Useful for forensic tracing of post origin.     
+  - MP:hasPostTimestamp:Records the date and time when the post was created or published.     
+  - MP:hasRetweetTimestamp: Mencatat tanggal dan waktu ketika retweet atau reblog terjadi.
+  - OFB:hasAnonymousPostTimestamp: Records the timestamp of when the anonymous post was created.
+  - OFB:hasAwardTimestamp: Records the timestamp when an award was given.
+  - OFB:hasBio: The bio of the user.
+  - OFB:hasBlockTimestamp: Records the timestamp when a user was blocked.
+  - OFB:hasBlocksTimestamp: Specifies when a user blocked another user.
+  - OFB:hasBookmarkTimestamp: Records the timestamp when content was bookmarked.
+  - OFB:hasCommentTimestamp: Records the timestamp when a comment was made.
+  - OFB:hasDonationTimestamp: Specifies the timestamp of the donation.
+  - OFB:hasDraftSavedTimestamp: Timestamp of when the draft was saved.
+  - OFB:hasFollowTimestamp: Records the timestamp when a user started following a topic.
+  - OFB:hasGroupMessageContent: Represents the content of a group message.
+  - OFB:hasGroupMessageFrequency: Indicates the frequency of messages within the group chat.
+  - OFB:hasGroupName: Represents the name of the group chat.
+  - OFB:hasJoinTimestamp: Records the timestamp of when a user joined the community.
+  - OFB:hasLeaveTimestamp: Specifies the timestamp when a user left the group chat.
+  - OFB:hasLikeTimestamp: Records the timestamp when a like was made.
+  - OFB:hasLogoutTimestamp: The date and time when the session was logged out.
+  - OFB:hasMessageContent: Represents the content of a direct message.
+  - OFB:hasMessageIP: Represents the IP address used during direct messaging.
+  - OFB:hasMessageTimestamp: Specifies the timestamp of a direct message.
+  - OFB:hasMuteTimestamp: Records the timestamp when a topic or user was muted.
+  - OFB:hasPinTimestamp: Records the timestamp when a post was pinned.
+  - OFB:hasPostCreationTimestamp: Timestamp of when the post was created.
+  - OFB:hasPostingRules: Specifies the rules for posting in the community.
+  - OFB:hasProfileVisibility: Specifies whether the user's profile is Public or Private.
+  - OFB:hasQueueCreationTimestamp: Records the timestamp when the moderation queue was created.
+  - OFB:hasReplyTimestamp: Records the timestamp when a reply was made.
+  - OFB:hasReportTimestamp: Records the timestamp when the report was filed.
+  - OFB:hasScheduledPublishTimestamp: Timestamp indicating when the scheduled post will be published.
+  - OFB:hasSearchTimestamp: Records the timestamp of a search query.
+  - OFB:hasShareTimestamp: Records the timestamp when content was shared.
+  - OFB:hasTimestamp: Records the date and time when the user action was performed.
+  - OFB:hasUnblockTimestamp: Records the timestamp when a user was unblocked.
+  - OFB:hasUpvoteTimestamp: Records the timestamp when an upvote was made.
+  - OSN:hasAvatarCreationTimestamp: The timestamp when the avatar was created.
+  - OSN:hasBio: Stores the biography or short description of the user.
+  - OSN:hasBirthday: The birthday of the child.
+  - OSN:hasBirthdayPostTimestamp: The timestamp when the birthday post was created.
+  - OSN:hasCommentLocation: Stores Comment's geotag location
+  - OSN:hasConnectionTimestamp: The timestamp when the connection was created.
+  - OSN:hasEditTimestamp: The timestamp of the last edit made to the avatar.
+  - OSN:hasEventCreationTimestamp: The timestamp when the event was created.
+  - OSN:hasEventEndTimestamp: The timestamp when the event ends.
+  - OSN:hasEventInteractionIP: The IP address of the user managing the event.
+  - OSN:hasFileUploadTimestamp: The timestamp when the file was uploaded.
+  - OSN:hasGIF: Stores the GIF attached to a post, if any.
+  - OSN:hasGameSaveTimestamp: The timestamp when the game was saved.
+  - OSN:hasGroupCreationTimestamp: The creation timestamp of the group.
+  - OSN:hasGroupName: The name of the group.
+  - OSN:hasInboxAccessTimestamp: Timestamp for accessing the support inbox.
+  - OSN:hasListingCreationTimestamp: The timestamp when the listing was created.
+  - OSN:hasLogoutTimestamp: Timestamp indicating when the logout occurred.
+  - OSN:hasMessageAttachment: Attachment on direct messages sent by the user.
+  - OSN:hasMessageContent: The message content sent in the birthday post.
+  - OSN:hasMessageContentType: Specifies the type of content in the message, e.g., text, photo, video.
+  - OSN:hasMessageLocation: Location on direct messages sent by the user.
+  - OSN:hasMessageSendTimestamp: Timestamp of when a text message was sent.
+  - OSN:hasMessageSentTimestamp: The timestamp when a message was sent to the seller.
+  - OSN:hasMessageViewTimestamp: Timestamp of when a message was viewed by the user.
+  - OSN:hasNotificationActionTimestamp: Timestamp of notification-related actions.
+  - OSN:hasNotificationTimestamp: Stores the timestamp when the video notification was received.
+  - OSN:hasPollCreationTimestamp: The timestamp when the poll was created.
+  - OSN:hasPostCreationTimestamp: The timestamp when the avatar post was created.
+  - OSN:hasPostTimestamp: Stores post's timestamp
+  - OSN:hasPostVisibility: The visibility level of the avatar post (e.g., Public, Private).
+  - OSN:hasReelWatchTimestamp: Timestamp of when the reel was watched.
+  - OSN:hasReportTimestamp: Timestamp for submitting a problem report.
+  - OSN:hasRuleCreationTimestamp: The timestamp when the rule was created.
+  - OSN:hasSupportAccessTimestamp: Timestamp for accessing the support center.
+  - OSN:hasTimestamp: Stores the timestamp when the like was given.
+  - OSN:hasUserInteractionIP: Stores the IP address of the user who gave the like.
+
+
+Kelompok DP #2 (Ukuran: 17):
+  - MCSS:hasLiveLocation: Represents the location associated with the live session.
+  - MCSS:hasPostLocation: Location associated with the short video post.
+  - MCSS:hasPostURL: URL of the short video post.
+  - MCSS:hasShortVideoLocation: Represents the location associated with the short video.
+  - MCSS:hasVideoLocation: Represents the location associated with the video.
+  - MP:hasLocation: Indicates the user's location as shown on their profile.
+  - MP:hasPostLocation:Geographical location or place the user tagged(e.g., 'New York, USA').     
+  - MP:hasPostURL:Contains the public URL or permalink to the post, if availableUseful for referencing the post directly from an external link.     
+  - OSN:hasClosedCaption: Indicates whether a reel video has closed captions enabled.
+  - OSN:hasEventLocation: The location of the event.
+  - OSN:hasLocation: The location of the page.
+  - OSN:hasPostCaption: The caption associated with the avatar post.
+  - OSN:hasPostLocation: Stores Post's geotag location
+  - OSN:hasReelLocation: Stores Reel's geotag location
+  - OSN:hasSellerLocation: The location of the seller for the listing.
+  - OSN:hasStoryLocation: Stores story's geotag location
+  - OSN:hasVideoLocation: Stores Video's geotag location
+
+
+Kelompok DP #3 (Ukuran: 15):
+  - MCSS:hasLikeCount: Represents the number of likes the video has received.
+  - MCSS:hasViewCount: Represents the number of views the video has received.
+  - MP:hasPostContent:Main textual content or body of the post,including any caption or message written by the user.     
+  - OFB:hasAnonymousPostContent: Defines the content of an anonymous post.
+  - OFB:hasCrosspostedContent: Content of the cross-posted content.
+  - OFB:hasDraftViewsCount: Represents the number of views on a user's draft.
+  - OFB:hasPostContent: Content of the post, typically text or markdown.
+  - OFB:hasViewsCount: Represents the total number of views for a content item.
+  - OFB:hasVotesCount: Represents the total number of votes for a content item.
+  - OSN:hasEventCount: The number of events on the page.
+  - OSN:hasLinkedAccount: Stores the username or identifier of the linked social media account.
+  - OSN:hasPollVotesCount: The total number of votes for the poll.
+  - OSN:hasPostCount: The number of posts on the page.
+  - OSN:hasVideoCount: The number of videos on the page.
+  - OSN:hasViewCount: The total number of views on the page.
+
+
+Kelompok DP #4 (Ukuran: 10):
+  - MCSS:hasNotificationPreferences: Notification preferences set by the user.
+  - MCSS:hasNotificationSoundSetting: Indicates the user's chosen notification sound setting.
+  - MP:hasNotificationsSetting: Specifies the user's notifications settings (e.g., email notifications enabled).
+  - OFB:hasNotificationFrequency: Defines the frequency of notifications for a community (e.g., Instant or Daily Digest).
+  - OFB:hasNotificationType: Specifies the type of community notifications, such as Post or Comment.
+  - OSN:hasNotificationFrequency: The frequency of group notifications (e.g., Daily, Weekly).
+  - OSN:hasNotificationIP: Stores the IP address of the user who received the video notification.
+  - OSN:hasNotificationSoundsSettings: Settings for notification sounds.
+  - OSN:hasNotificationStatus: Indicates whether the video notification is active or inactive.
+  - OSN:hasNotificationType: Indicates the type of video notification, such as new upload, reminder, or other alerts.
+
+
+Kelompok DP #5 (Ukuran: 10):
+  - MCSS:hasChannelDescription: Description of the channel.
+  - MCSS:hasDescription: Stores the description of the video.
+  - MCSS:hasShortDescription: Stores the description of the short video.
+  - MP:hasListDescription: Stores the description of the list.
+  - OFB:hasDescription: Provides a description for the community.
+  - OFB:hasRuleDescription: Provides a textual description of a specific community rule.
+  - OSN:hasDescription: The description of the page.
+  - OSN:hasEventDescription: The description of the event.
+  - OSN:hasGroupDescription: A description of the group.
+  - OSN:hasRuleDescription: The description of the group rule.
+
+
+Kelompok DP #6 (Ukuran: 9):
+  - MCSS:hasAccountCreationDate: The date and time when the user's account was created.
+  - MCSS:hasChannelCreationDate: Date when the channel was created.
+  - MP:hasCreationDate: Indicates the creation date of the community.
+  - OFB:hasActionType: Specifies the type of action performed by the user, such as EditProfile, EnableTwoFactorAuth, or RequestAccountDeletion.
+  - OFB:hasCommunityCreationDate: Records the date and time the community was created.
+  - OFB:hasRegistrationDate:The date and time when the user registered on the platformUseful for forensic timeline and account history.     
+  - OSN:hasAccountCreationDate: Stores the account creation date for the user.
+  - OSN:hasReactionType: Stores the type of reaction given, such as Love, Angry, etc.
+  - OSN:hasViolationType: The type of violation reported (e.g., Spam, Harassment).
+
+
+Kelompok DP #7 (Ukuran: 8):
+  - MCSS:hasDeviceInfo: Stores the device information of the user device who gave a comment.
+  - MCSS:hasPostDeviceInfo: Device information used to create the short video post.
+  - MP:hasDMDevice:The device/app used to send this DM (e.g., 'Twitter Web', 'Android App').     
+  - MP:hasPostDeviceInfo:Stores information about the device or app used to create the pos(e.g., 'Twitter Web on MacBook Pro', 'Android App').     
+  - OFB:hasDeviceID: Represents the unique identifier of the notification device.
+  - OSN:hasDeviceInfo: Stores the device information of the user who gave the like.
+  - OSN:hasEventDeviceInfo: Device information of the user managing the event.
+  - OSN:hasReelDeviceInfo: Device information of the user while watching the reel.
+
+
+Kelompok DP #8 (Ukuran: 7):
+  - MCSS:hasEmail: The email address associated with the user.
+  - MP:hasEmail: Stores the email address associated with the user's account.
+  - OFB:hasEmail: The email address associated with the user account.
+  - OFB:hasEmailFrequency: Indicates the frequency of email notifications.
+  - OFB:hasEmailNotificationEnabled: Indicates whether email notifications are enabled for a user.
+  - OSN:hasEmail: Stores the email address of the user.
+  - OSN:hasEmailNotificationsStatus: Status of email notifications (enabled/disabled).
+
+
+Kelompok DP #9 (Ukuran: 7):
+  - MCSS:hasLastMessagePreview: Displays a preview of the most recent message.
+  - MP:hasHostName: Stores the name of the host of the live session.
+  - MP:hasListName: Stores the name of the list.
+  - OFB:hasFlairName: Specifies the name of the flair tag used.
+  - OSN:hasFirstName: Stores the first name of the user.
+  - OSN:hasLastName: Stores the last name of the user.
+  - OSN:hasPlayerName: The name of the player.
+
+
+Kelompok DP #10 (Ukuran: 7):
+  - MCSS:hasCommentCount: Represents the number of comments on the video.
+  - MCSS:hasCommentText: Stores the text of a comment.
+  - MP:hasCommentContent:Holds the main text/body of a comment posted by a user.     
+  - OFB:hasCommentText: Stores the text of a comment.
+  - OFB:hasCommentsCount: Represents the total number of comments for a content item.
+  - OFB:hasDraftCommentsCount: Represents the number of comments on a user's draft.
+  - OSN:hasCommentText: Stores the text of the comment.
+
+
+Kelompok DP #11 (Ukuran: 4):
+  - MCSS:hasPhoneNumber: The phone number associated with the user.
+  - OFB:hasPhoneNumber: The phone number associated with the user account.
+  - OSN:hasPhoneNumber: Stores the user's phone number.
+  - OSN:hasPhoneNumberVerificationStatus: Indicates the verification status of the user's phone number.
+
+
+Kelompok DP #12 (Ukuran: 4):
+  - MCSS:hasChannelProfilePicture: URL of the channel's profile picture.
+  - MCSS:hasProfilePicture: URL of the user's profile picture.
+  - OSN:hasProfilePicture: Stores the URL or file path to the user's profile picture.
+  - OSN:hasProfilePictureHash: For verifying the integrity of the profile picture using hash.
+
+
+Kelompok DP #13 (Ukuran: 4):
+  - MCSS:hasLastLoginDate: The date and time of the user's last login.
+  - OFB:hasLastLoginIP:The IP address used during the user's last loginImportant for digital forensics or geolocation.     
+  - OSN:hasLastLogin: Stores the date and time of the user's last login.
+  - OSN:hasLoginIP: Stores the IP address used during the user's last login session.
+
+
+Kelompok DP #14 (Ukuran: 4):
+  - MCSS:hasSubscriptionStatus: Indicates whether the user has an active subscription.
+  - MP:hasSubscriptionStatus: Indicates the user's subscription status (e.g., premium, free).
+  - OFB:hasSubscriptionStartDate: Records the start date of a user's subscription.
+  - OFB:hasSubscriptionType: Indicates the type of subscription (e.g., Free, Premium).
+
+
+Kelompok DP #15 (Ukuran: 4):
+  - MCSS:hasPostScheduleTime: Specifies the scheduled time for the post to be published.
+  - MP:hasScheduledTime:If the post status is "scheduled", records the date and timwhen the post will be published.     
+  - OFB:hasScheduledPostMedia: Media attachment for the scheduled post, such as an image or video.
+  - OFB:hasScheduledPostTitle: Title of the scheduled post.
+
+
+Kelompok DP #16 (Ukuran: 4):
+  - MCSS:hasSubscriptionBenefits: Describes the benefits associated with a subscription.
+  - OFB:hasSubscriptionBenefits: Describes the benefits included in the subscription.
+  - OFB:hasSubscriptionEndDate: Records the end date of a user's subscription.
+  - OFB:hasSubscriptionFee: Represents the subscription fee.
+
+
+Kelompok DP #17 (Ukuran: 3):
+  - MP:hasDataUsageSettings: Stores the user's data usage settings.
+  - OSN:hasCellularDataUsageSettings: Data usage settings for cellular connections.
+  - OSN:hasWiFiDataUsageSettings: Data usage settings for WiFi connections.
+
+
+Kelompok DP #18 (Ukuran: 3):
+  - MP:hasQualityFilter: Indicates if the quality filter is enabled for notifications.
+  - OSN:Quality: Represents the quality setting for the reel, e.g., HD or SD.
+  - OSN:hasQuality: Stores the video quality of a reel.
+
+
+Kelompok DP #19 (Ukuran: 3):
+  - MCSS:hasPrivacySettings: Privacy settings defined by the user.
+  - MP:hasPrivacySetting: Specifies the user's privacy settings (e.g., public profile, private account).
+  - OSN:hasProfilePrivacySettings: Settings for profile visibility and privacy.
+
+
+Kelompok DP #20 (Ukuran: 3):
+  - MCSS:hasUsername: The username chosen by the user.
+  - OFB:hasUsername: The username of the user.
+  - OSN:hasUsername: Stores the unique username of the user.
+
+
+Kelompok DP #21 (Ukuran: 3):
+  - OFB:hasFilterType: Specifies the type of filter used (e.g., flair, tags).
+  - OFB:hasRuleType: Defines the type of rule (e.g., Content, Behavior).
+  - OSN:hasFileType: The type of the file (e.g., PDF, Image).
+
+
+Kelompok DP #22 (Ukuran: 3):
+  - OFB:hasLastUpdatedTimestamp: Records the last updated timestamp of the community rule.
+  - OSN:hasEventUpdateTimestamp: The timestamp when the event was last updated.
+  - OSN:hasListingUpdateTimestamp: The timestamp when the listing was last updated.
+
+
+Kelompok DP #23 (Ukuran: 3):
+  - MCSS:hasPostTags: Tags associated with the short video post.
+  - MP:hasPostStatus:Indicates the publishing status of the post (e.g., "draft", "scheduled", or "published")Useful for distinguishing between different post states.     
+  - MP:hasPostTags:Contains hashtags, labels, or additional tags associated with the postUseful for categorizing or searching content by topic.     
+
+
+Kelompok DP #24 (Ukuran: 3):
+  - MCSS:hasPasswordHash: Hashed password of the user.
+  - MP:hasPassword: Stores the password for the user's account.
+  - OFB:hasPasswordHash: The hashed password of the user.
+
+
+Kelompok DP #25 (Ukuran: 3):
+  - MP:hasCommunityName: Stores the name of the community.
+  - OFB:hasCommunityName: Defines the name of the community.
+  - OFB:hasCommunityTheme: Defines the theme or aesthetic of the community.
+
+
+Kelompok DP #26 (Ukuran: 3):
+  - MP:hasMemberCount: Stores the number of members in the community.
+  - OFB:hasActiveMembersCount: Represents the number of active members in a community.
+  - OFB:hasMemberCount: Represents the total number of members in a community.
+
+
+Kelompok DP #27 (Ukuran: 3):
+  - MP:hasPostMedia:Holds the URL(s) or reference to media (images, videos, GIFs)attached to the post.     
+  - OFB:hasAnonymousPostMedia: Defines the media (e.g., images or videos) associated with an anonymous post.
+  - OFB:hasPostMedia: Media associated with the post, such as images, GIFs, or videos.
+
+
+Kelompok DP #28 (Ukuran: 3):
+  - MCSS:amount: The amount donated in the SuperChat.
+  - OFB:hasDonationAmount: Specifies the amount donated.
+  - OFB:hasRevenueAmount: Represents the total revenue generated from ads.
+
+
+Kelompok DP #29 (Ukuran: 3):
+  - MCSS:hasResponseTime: Represents the average response time for a message in seconds.
+  - OFB:hasAverageResponseTime: Specifies the average response time of the moderator in hours.
+  - OFB:hasReason: Optional property specifying the reason for the action, such as privacy concerns or security.
+
+
+Kelompok DP #30 (Ukuran: 2):
+  - MP:hasWebsite: Contains the website link provided by the user in their profile.
+  - OSN:hasWebsite: The website link associated with the page.
+
+
+Kelompok DP #31 (Ukuran: 2):
+  - OFB:hasPollOptions: Represents the options provided in a poll, stored as an array of strings.
+  - OSN:hasPollOptions: The options for the poll (Array).
+
+
+Kelompok DP #32 (Ukuran: 2):
+  - OFB:hasPollQuestion: Represents the question posed in a poll.
+  - OSN:hasPollQuestion: The question for the poll.
+
+
+Kelompok DP #33 (Ukuran: 2):
+  - OFB:hasCategoryName: Specifies the name of the category being explored.
+  - OSN:hasCategory: The category of the page.
+
+
+Kelompok DP #34 (Ukuran: 2):
+  - MP:hasCommunityDescription: Provides a description of the community.
+  - OFB:hasCommunityDescription: Provides a description for the community.
+
+
+Kelompok DP #35 (Ukuran: 2):
+  - MP:hasSessionDuration: Stores the duration of the live session.
+  - OFB:hasSessionID: Unique identifier for the session.
+
+
+Kelompok DP #36 (Ukuran: 2):
+  - MP:hasDMContent:The text/body of the direct message.     
+  - OFB:hasDraftContent: Content of the draft, typically text or markdown.
+
+
+Kelompok DP #37 (Ukuran: 2):
+  - MCSS:hasMessageStatus: Represents the status of the message, such as sent, delivered, or read.
+  - OFB:hasMessageStatus: Represents the status of a direct message (e.g., sent, delivered, read).
+
+
+Kelompok DP #38 (Ukuran: 2):
+  - MCSS:hasRecommendationAlgorithm: Stores the algorithm used for generating recommendations.
+  - OFB:hasRecommendationAlgorithm: Indicates the algorithm used to generate recommendations.
+
+
+Kelompok DP #39 (Ukuran: 2):
+  - MCSS:hasReportReason: Indicates the reason for reporting specific content.
+  - OFB:hasReportReason: Specifies the reason for filing the report (e.g., Spam, Harassment, Policy Violation).
+
+
+Kelompok DP #40 (Ukuran: 2):
+  - MCSS:hasSearchKeyword: Stores the keyword used in a search action.
+  - OFB:hasSearchKeyword: Stores the keyword used in a search query.
+
+
+Kelompok DP #41 (Ukuran: 2):
+  - MCSS:hasTwoFactorAuthenticationStatus: Status of two-factor authentication for the user (enabled/disabled).
+  - OFB:hasTwoFactorAuthenticationEnabled: Indicates if two-factor authentication is enabled for the user.
+
+
+Kelompok DP #42 (Ukuran: 2):
+  - MCSS:hasLiveStartTime: Represents the start time of the live session.
+  - OFB:hasPollStartTime: Indicates the start time of a poll.
+
+
+Kelompok DP #43 (Ukuran: 2):
+  - MCSS:hasTitle: Stores the title of the video.
+  - OFB:hasPostTitle: Title of the post.
+
+
+Kelompok DP #44 (Ukuran: 2):
+  - MCSS:hasUnreadMessageCount: Represents the number of unread messages for a user.
+  - OFB:hasUnreadCount: Indicates the number of unread notifications.
+

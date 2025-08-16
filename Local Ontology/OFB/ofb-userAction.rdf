@@ -1,0 +1,58 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- UserAction Class -->
+    <owl:Class rdf:about="#UserAction">
+        <rdfs:comment>Represents actions performed by users within the system, such as editing profiles, enabling two-factor authentication, or requesting account deletion.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasActionType -->
+    <owl:DatatypeProperty rdf:about="#hasActionType">
+        <rdfs:domain rdf:resource="#UserAction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of action performed by the user, such as EditProfile, EnableTwoFactorAuth, or RequestAccountDeletion.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasTimestamp -->
+    <owl:DatatypeProperty rdf:about="#hasTimestamp">
+        <rdfs:domain rdf:resource="#UserAction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the date and time when the user action was performed.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasReason -->
+    <owl:DatatypeProperty rdf:about="#hasReason">
+        <rdfs:domain rdf:resource="#UserAction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Optional property specifying the reason for the action, such as privacy concerns or security.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: performedBy -->
+    <owl:ObjectProperty rdf:about="#performedBy">
+        <rdfs:domain rdf:resource="#UserAction"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user action to the user who performed it.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: associatedWithEntity -->
+    <owl:ObjectProperty rdf:about="#associatedWithEntity">
+        <rdfs:domain rdf:resource="#UserAction"/>
+        <rdfs:range rdf:resource="#AnyEntity"/>
+        <rdfs:comment>Links a user action to an associated entity, such as ProfileSettings, SecuritySettings, or SubscriptionPlan.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: loggedBySystem -->
+    <owl:ObjectProperty rdf:about="#loggedBySystem">
+        <rdfs:domain rdf:resource="#UserAction"/>
+        <rdfs:range rdf:resource="#SystemLogger"/>
+        <rdfs:comment>Indicates that the action was logged by the system logger.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+</rdf:RDF>

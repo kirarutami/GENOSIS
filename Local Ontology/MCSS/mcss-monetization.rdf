@@ -1,0 +1,101 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Class: Monetization -->
+    <owl:Class rdf:about="#Monetization">
+        <rdfs:comment>Represents all monetization-related features and interactions.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-class: Shopping -->
+    <owl:Class rdf:about="#Shopping">
+        <rdfs:subClassOf rdf:resource="#Monetization"/>
+        <rdfs:comment>Represents shopping-related features within the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: viewsShoppingFeatures -->
+    <owl:ObjectProperty rdf:about="#viewsShoppingFeatures">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Shopping"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a User views shopping-related features.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: interactsWithShop -->
+    <owl:ObjectProperty rdf:about="#interactsWithShop">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Shopping"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a User interacts with shopping-related features.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasShoppingFeatureDescription -->
+    <owl:DatatypeProperty rdf:about="#hasShoppingFeatureDescription">
+        <rdfs:domain rdf:resource="#Shopping"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Describes the specific shopping feature available.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: Subscription -->
+    <owl:Class rdf:about="#Subscription">
+        <rdfs:subClassOf rdf:resource="#Monetization"/>
+        <rdfs:comment>Represents subscription-related features on the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: subscribesToCreator -->
+    <owl:ObjectProperty rdf:about="#subscribesToCreator">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Subscription"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a User subscribes to a content creator.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: unsubscribesFromCreator -->
+    <owl:ObjectProperty rdf:about="#unsubscribesFromCreator">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Subscription"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a User unsubscribes from a content creator.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasSubscriptionBenefits -->
+    <owl:DatatypeProperty rdf:about="#hasSubscriptionBenefits">
+        <rdfs:domain rdf:resource="#Subscription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Describes the benefits associated with a subscription.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: CreatorMarketplace -->
+    <owl:Class rdf:about="#CreatorMarketplace">
+        <rdfs:subClassOf rdf:resource="#Monetization"/>
+        <rdfs:comment>Represents interactions with the creator marketplace.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: exploresCreatorMarketplace -->
+    <owl:ObjectProperty rdf:about="#exploresCreatorMarketplace">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#CreatorMarketplace"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a User explores the creator marketplace.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: purchasesCreatorContent -->
+    <owl:ObjectProperty rdf:about="#purchasesCreatorContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#CreatorMarketplace"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a User purchases content from the creator marketplace.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasMarketplaceDetails -->
+    <owl:DatatypeProperty rdf:about="#hasMarketplaceDetails">
+        <rdfs:domain rdf:resource="#CreatorMarketplace"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Describes the details of the creator marketplace.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

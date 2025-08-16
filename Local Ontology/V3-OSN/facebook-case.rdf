@@ -1,0 +1,185 @@
+<!-- User -->
+    <!-- Instance: Michael -->
+    <rdf:Description rdf:about="#User_Michael">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFirstName>Michael</hasFirstName>
+        <hasLastName>Photography</hasLastName>
+        <hasUsername>MichaelPhotography</hasUsername>
+        <hasEmail>michael@example.com</hasEmail>
+        <hasBio>Freelance photographer looking for good deals on camera gear.</hasBio>
+        <hasProfilePicture>http://example.com/profiles/michael.jpg</hasProfilePicture>
+        <hasProfilePictureHash>abc123hashvalue</hasProfilePictureHash>
+        <hasCoverPhoto>http://example.com/profiles/michael_cover.jpg</hasCoverPhoto>
+        <hasDetails>Passionate about photography, specializing in landscape and portrait photography.</hasDetails>
+        <hasHighlights>Featured in National Photography Awards 2023.</hasHighlights>
+        <hasAccountCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-06-15T08:00:00Z</hasAccountCreationDate>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasAccountVerification>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: BestDealsOnline (Scammer) -->
+    <rdf:Description rdf:about="#User_BestDealsOnline">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasUsername>BestDealsOnline</hasUsername>
+        <hasEmail>scammer@example.com</hasEmail>
+        <hasBio>Trusted seller of high-quality used electronics.</hasBio>
+        <hasProfilePicture>http://example.com/profiles/bestdeals.jpg</hasProfilePicture>
+        <hasProfilePictureHash>xyz789hashvalue</hasProfilePictureHash>
+        <hasCoverPhoto>http://example.com/profiles/bestdeals_cover.jpg</hasCoverPhoto>
+        <hasDetails>Providing top-quality electronics at unbeatable prices.</hasDetails>
+        <hasHighlights>Over 100 satisfied customers (falsified).</hasHighlights>
+        <hasAccountCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-03-20T10:00:00Z</hasAccountCreationDate>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasAccountVerification>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: JamesRecommends (Fake Testimonial Account) -->
+    <rdf:Description rdf:about="#User_JamesRecommends">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasUsername>JamesRecommends</hasUsername>
+        <hasEmail>jamesfake@example.com</hasEmail>
+        <hasBio>I love finding the best deals and sharing my experiences!</hasBio>
+        <hasProfilePicture>http://example.com/profiles/james.jpg</hasProfilePicture>
+        <hasProfilePictureHash>jkl456hashvalue</hasProfilePictureHash>
+        <hasCoverPhoto>http://example.com/profiles/james_cover.jpg</hasCoverPhoto>
+        <hasDetails>Regularly reviews online sellers (suspected bot account).</hasDetails>
+        <hasHighlights>Verified buyer on multiple platforms (falsified).</hasHighlights>
+        <hasAccountCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-01T09:00:00Z</hasAccountCreationDate>
+        <hasAccountVerification rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasAccountVerification>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </rdf:Description>
+
+<!-- Post -->
+
+    <!-- Instance: Post related to Scam -->
+    <rdf:Description rdf:about="#Post_CanonEOSR6">
+        <rdf:type rdf:resource="#Posts"/>
+        <hasPostContent>Canon EOS R6 - Like New - $900</hasPostContent>
+        <hasPostMedia>http://example.com/images/canon_r6.jpg</hasPostMedia>
+        <hasPostTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T14:00:00Z</hasPostTimestamp>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: Story related to scam promotion -->
+    <rdf:Description rdf:about="#Story_ScamPromotion">
+        <rdf:type rdf:resource="#Stories"/>
+        <hasStoryContent>Special deal for Canon EOS R6, limited time offer!</hasStoryContent>
+        <hasStoryMedia>http://example.com/images/scam_story.jpg</hasStoryMedia>
+        <hasStoryTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-07T18:00:00Z</hasStoryTimestamp>
+        <hasStoryMusic>FakePromoTrack.mp3</hasStoryMusic>
+        <hasStoryStickers>Limited Offer, Buy Now!</hasStoryStickers>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: Reel related to scam promotion -->
+    <rdf:Description rdf:about="#Reel_ScamVideo">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasReelContent>Check out this amazing deal for a Canon EOS R6!</hasReelContent>
+        <hasReelMedia>http://example.com/videos/scam_reel.mp4</hasReelMedia>
+        <hasReelTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-06T16:30:00Z</hasReelTimestamp>
+        <hasQuality>1080p</hasQuality>
+        <hasPlaybackSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</hasPlaybackSpeed>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+    </rdf:Description>
+
+<!-- Content Interaction -->
+    <!-- Instance: Comment by Michael -->
+    <rdf:Description rdf:about="#Comment_Michael_Inquiry">
+        <rdf:type rdf:resource="#TextComment"/>
+        <hasCommentText>Hi, is this still available? Can I meet up to check the camera?</hasCommentText>
+        <hasCommentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T14:15:00Z</hasCommentTimestamp>
+        <associatedWithContent rdf:resource="#Post_CanonEOSR6"/>
+    </rdf:Description>
+
+    <!-- Instance: Reply from BestDealsOnline -->
+    <rdf:Description rdf:about="#Comment_BestDealsOnline_Reply">
+        <rdf:type rdf:resource="#TextComment"/>
+        <hasCommentText>Hi! Yes, it's available, but I have other buyers interested. If you want to secure it, I can ship it to you.</hasCommentText>
+        <hasCommentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T14:20:00Z</hasCommentTimestamp>
+        <associatedWithContent rdf:resource="#Post_CanonEOSR6"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment from Fake Reviewer -->
+    <rdf:Description rdf:about="#Comment_JamesRecommends">
+        <rdf:type rdf:resource="#TextComment"/>
+        <hasCommentText>I bought from this seller last month, great experience! Fast shipping, highly recommend!</hasCommentText>
+        <hasCommentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T14:25:00Z</hasCommentTimestamp>
+        <associatedWithContent rdf:resource="#Post_CanonEOSR6"/>
+    </rdf:Description>
+
+    <!-- Instance: Like Interaction on Post -->
+    <rdf:Description rdf:about="#Like_BestDealsOnline">
+        <rdf:type rdf:resource="#Like"/>
+        <hasLikeTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T14:30:00Z</hasLikeTimestamp>
+        <associatedWithContent rdf:resource="#Post_CanonEOSR6"/>
+    </rdf:Description>
+
+<!-- Direct Message -->
+    <!-- Instance: Direct Message from Michael to BestDealsOnline -->
+    <rdf:Description rdf:about="#DM_Michael_BestDealsOnline">
+        <rdf:type rdf:resource="#TextMessage"/>
+        <hasMessageContentType>text</hasMessageContentType>
+        <hasMessageSendTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T15:15:00Z</hasMessageSendTimestamp>
+        <sendsTextMessage rdf:resource="#User_Michael"/>
+        <viewsMessages rdf:resource="#User_BestDealsOnline"/>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+        <hasMessageText>Hey, I'm interested in the Canon EOS R6. Can we meet up?</hasMessageText>
+    </rdf:Description>
+
+    <!-- Instance: Reply from BestDealsOnline to Michael -->
+    <rdf:Description rdf:about="#DM_BestDealsOnline_Michael">
+        <rdf:type rdf:resource="#TextMessage"/>
+        <hasMessageContentType>text</hasMessageContentType>
+        <hasMessageSendTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T15:17:00Z</hasMessageSendTimestamp>
+        <sendsTextMessage rdf:resource="#User_BestDealsOnline"/>
+        <viewsMessages rdf:resource="#User_Michael"/>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+        <hasMessageText>Hi! Unfortunately, I'm traveling for work, but I can ship it to you. I've sold many items this way!</hasMessageText>
+    </rdf:Description>
+
+    <!-- Instance: Michael confirms payment -->
+    <rdf:Description rdf:about="#DM_Michael_ConfirmsPayment">
+        <rdf:type rdf:resource="#TextMessage"/>
+        <hasMessageContentType>text</hasMessageContentType>
+        <hasMessageSendTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T15:30:00Z</hasMessageSendTimestamp>
+        <sendsTextMessage rdf:resource="#User_Michael"/>
+        <viewsMessages rdf:resource="#User_BestDealsOnline"/>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+        <hasMessageText>Alright, just sent the $900 to your Zelle. Please send the tracking number.</hasMessageText>
+        <hasMessageAttachment>http://example.com/images/transfer_receipt.jpg</hasMessageAttachment>
+    </rdf:Description>
+
+    <!-- Instance: BestDealsOnline acknowledges payment -->
+    <rdf:Description rdf:about="#DM_BestDealsOnline_Confirms">
+        <rdf:type rdf:resource="#TextMessage"/>
+        <hasMessageContentType>text</hasMessageContentType>
+        <hasMessageSendTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T15:35:00Z</hasMessageSendTimestamp>
+        <sendsTextMessage rdf:resource="#User_BestDealsOnline"/>
+        <viewsMessages rdf:resource="#User_Michael"/>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+        <hasMessageText>Got it! I'll send the tracking soon. Thanks!</hasMessageText>
+    </rdf:Description>
+
+    <!-- Instance: Michael follows up for tracking number -->
+    <rdf:Description rdf:about="#DM_Michael_FollowUp">
+        <rdf:type rdf:resource="#TextMessage"/>
+        <hasMessageContentType>text</hasMessageContentType>
+        <hasMessageSendTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T21:00:00Z</hasMessageSendTimestamp>
+        <sendsTextMessage rdf:resource="#User_Michael"/>
+        <viewsMessages rdf:resource="#User_BestDealsOnline"/>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+        <hasMessageText>Hey, can you send the tracking number? I haven't received anything yet.</hasMessageText>
+    </rdf:Description>
+
+    <!-- Instance: Message not delivered (BestDealsOnline deleted or blocked) -->
+    <rdf:Description rdf:about="#DM_Michael_MessageNotDelivered">
+        <rdf:type rdf:resource="#TextMessage"/>
+        <hasMessageContentType>text</hasMessageContentType>
+        <hasMessageSendTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-08T21:05:00Z</hasMessageSendTimestamp>
+        <sendsTextMessage rdf:resource="#User_Michael"/>
+        <belongsToPlatform>Facebook</belongsToPlatform>
+        <hasMessageText>(❌ Message not delivered. User has blocked Michael or deleted the account.)</hasMessageText>
+    </rdf:Description>
+
+
+

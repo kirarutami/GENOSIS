@@ -1,0 +1,362 @@
+<!-- 
+
+    <owl:Ontology rdf:about="http://example.org/gsmfo.owl">
+        <dc:title xml:lang="en">GSMFO - Global Social Media Forensic Ontology (TikTok Case)</dc:title>
+        <owl:DatatypeProperty rdf:about="#belongsToPlatform">
+            <rdfs:label xml:lang="en">belongs to Platform</rdfs:label>
+            <rdfs:comment xml:lang="en">Indicates the social media platform to which an entity (e.g., user account, post, message) belongs.</rdfs:comment>
+            <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasUserID"/>
+        <owl:DatatypeProperty rdf:about="#hasUsername"/>
+        <owl:DatatypeProperty rdf:about="#hasEmail"/>
+        <owl:DatatypeProperty rdf:about="#hasPhoneNumber"/>
+        <owl:DatatypeProperty rdf:about="#hasProfilePicture"/>
+        <owl:DatatypeProperty rdf:about="#hasCreationTimestamp"/>
+        <owl:DatatypeProperty rdf:about="#hasLastActivityTimestamp"/>
+        <owl:DatatypeProperty rdf:about="#hasSubscriptionStatus"/>
+        <owl:DatatypeProperty rdf:about="#hasPremiumMembershipStatus"/>
+
+        <owl:DatatypeProperty rdf:about="#hasShortVideoID">
+            <rdfs:label xml:lang="en">has Short Video ID</rdfs:label>
+            <rdfs:comment xml:lang="en">A unique identifier for the short video post.</rdfs:comment>
+            <rdfs:domain rdf:resource="#MCSS:ShortVideo"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+        <owl:DatatypeProperty rdf:about="#hasCaption"> <rdfs:subPropertyOf rdf:resource="#Global:hasCaptionText"/>
+        </owl:DatatypeProperty>
+        <owl:DatatypeProperty rdf:about="#hasBackgroundMusic">
+            <rdfs:label xml:lang="en">has Background Music</rdfs:label>
+            <rdfs:comment xml:lang="en">The background music or sound used in a short video.</rdfs:comment>
+            <rdfs:domain rdf:resource="#MCSS:ShortVideo"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+        <owl:DatatypeProperty rdf:about="#hasShareCount">
+            <rdfs:label xml:lang="en">has Share Count</rdfs:label>
+            <rdfs:comment xml:lang="en">The number of times a content item has been shared.</rdfs:comment>
+            <rdfs:subPropertyOf rdf:resource="#Global:count"/>
+            <rdfs:domain rdf:resource="#Global:Content"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        </owl:DatatypeProperty>
+        <owl:DatatypeProperty rdf:about="#hasRemixableStatus">
+            <rdfs:label xml:lang="en">has Remixable Status</rdfs:label>
+            <rdfs:comment xml:lang="en">Indicates if the short video can be remixed.</rdfs:comment>
+            <rdfs:domain rdf:resource="#MCSS:ShortVideo"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        </owl:DatatypeProperty>
+        <owl:DatatypeProperty rdf:about="#hasDuetStatus">
+            <rdfs:label xml:lang="en">has Duet Status</rdfs:label>
+            <rdfs:comment xml:lang="en">Indicates if duets are allowed for the short video.</rdfs:comment>
+            <rdfs:domain rdf:resource="#MCSS:ShortVideo"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        </owl:DatatypeProperty>
+        <owl:DatatypeProperty rdf:about="#hasStitchStatus">
+            <rdfs:label xml:lang="en">has Stitch Status</rdfs:label>
+            <rdfs:comment xml:lang="en">Indicates if stitching is allowed for the short video.</rdfs:comment>
+            <rdfs:domain rdf:resource="#MCSS:ShortVideo"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        </owl:DatatypeProperty>
+        <owl:DatatypeProperty rdf:about="#hasPostTags"/> <owl:DatatypeProperty rdf:about="#hasPostDeviceInfo"/> <owl:DatatypeProperty rdf:about="#hasContentText"/>
+        <owl:DatatypeProperty rdf:about="#hasInteractionTimestamp"/>
+        <owl:DatatypeProperty rdf:about="#hasDeviceInfo"/>
+        <owl:DatatypeProperty rdf:about="#hasIpAddress"/>
+        <owl:ObjectProperty rdf:about="#commentsOnContent"/>
+        <owl:ObjectProperty rdf:about="#commentedBy"/>
+
+        <owl:DatatypeProperty rdf:about="#hasMessageContent"/>
+        <owl:DatatypeProperty rdf:about="#hasMessageSentTimestamp"/>
+        <owl:DatatypeProperty rdf:about="#hasAttachmentURL"/> <owl:ObjectProperty rdf:about="#attributedToUser"/> <owl:ObjectProperty rdf:about="#messageReceiver"/> <owl:DatatypeProperty rdf:about="#hasViewCount"/>
+        <owl:DatatypeProperty rdf:about="#hasLikeCount"/>
+        <owl:DatatypeProperty rdf:about="#hasCommentCount"/>
+        <owl:DatatypeProperty rdf:about="#hasLocation"/>
+        <owl:DatatypeProperty rdf:about="#hasContentURL"/>
+        
+    </owl:Ontology> -->
+
+    <rdf:Description rdf:about="#User_Ethan_TikTok">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>Ethan (TikTok User)</rdfs:label>
+        <hasUserID>EthanDares</hasUserID>
+        <hasUsername>Ethan</hasUsername>
+        <hasEmail>ethan@example.com</hasEmail>
+        <hasPhoneNumber>+1234567890</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/ethan.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-01T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T10:00:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#User_MaxDares_TikTok">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>MaxDares (TikTok User)</rdfs:label>
+        <hasUserID>MaxDares</hasUserID>
+        <hasUsername>Max</hasUsername>
+        <hasEmail>max@example.com</hasEmail>
+        <hasPhoneNumber>+0987654321</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/max.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-05-15T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T11:00:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#User_SarahCares_TikTok">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>SarahCares (TikTok User)</rdfs:label>
+        <hasUserID>SarahCares</hasUserID>
+        <hasUsername>Sarah</hasUsername>
+        <hasEmail>sarah@example.com</hasEmail>
+        <hasPhoneNumber>+1122334455</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/sarah.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-08-20T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T12:00:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#User_RiskyKing_TikTok">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>RiskyKing (TikTok User)</rdfs:label>
+        <hasUserID>RiskyKing</hasUserID>
+        <hasUsername>RiskyKing</hasUsername>
+        <hasEmail>riskyking@example.com</hasEmail>
+        <hasPhoneNumber>+2233445566</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/riskyking.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T13:00:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#User_JakeMaster_TikTok">
+        <rdf:type rdf:resource="#MCSS:User"/>
+        <rdfs:label>JakeMaster (TikTok User)</rdfs:label>
+        <hasUserID>JakeMaster</hasUserID>
+        <hasUsername>JakeMaster</hasUsername>
+        <hasEmail>jakemaster@example.com</hasEmail>
+        <hasPhoneNumber>+3344556677</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/jakemaster.jpg</hasProfilePicture>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-25T00:00:00Z</hasCreationTimestamp>
+        <hasLastActivityTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T14:00:00Z</hasLastActivityTimestamp>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#ShortVideo_EthanBlackoutChallenge_TikTok">
+        <rdf:type rdf:resource="#MCSS:ShortVideo"/>
+        <rdfs:label>Ethan's Blackout Challenge Video</rdfs:label>
+        <hasShortVideoID>Post001</hasShortVideoID> <hasCaption>Alright, let's see if I can do this... #BlackoutChallenge #DontBackDown</hasCaption>
+        <hasBackgroundMusic>Trending TikTok Sound - "Dare Me" remix</hasBackgroundMusic>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T15:00:00Z</hasCreationTimestamp>
+        <hasContentURL>https://tiktok.com/post/ethanblackoutchallenge</hasContentURL>
+        <hasViewCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100000</hasViewCount>
+        <hasLikeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5000</hasLikeCount>
+        <hasCommentCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</hasCommentCount>
+        <hasShareCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</hasShareCount>
+        <hasRemixableStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasRemixableStatus>
+        <hasDuetStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasDuetStatus>
+        <hasStitchStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasStitchStatus>
+        <hasPostTags>#BlackoutChallenge #DontBackDown</hasPostTags>
+        <hasLocation>Unknown</hasLocation>
+        <hasPostDeviceInfo>iPhone 12, TikTok App</hasPostDeviceInfo>
+        <hasIpAddress>192.168.1.1</hasIpAddress>
+        <postedBy rdf:resource="#User_Ethan_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_MaxOnEthanVideo_TikTok">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>MaxDares' comment on Ethan's video</rdfs:label>
+        <hasContentText>Finally! Thought you'd never do it. Let's gooo! 🔥🔥</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T15:05:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.2</hasIpAddress>
+        <commentsOnContent rdf:resource="#ShortVideo_EthanBlackoutChallenge_TikTok"/>
+        <commentedBy rdf:resource="#User_MaxDares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_SarahOnEthanVideo_TikTok">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>SarahCares' comment on Ethan's video</rdfs:label>
+        <hasContentText>This is dangerous, please don't do this! People have gotten seriously hurt!</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T15:10:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>iOS, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.3</hasIpAddress>
+        <commentsOnContent rdf:resource="#ShortVideo_EthanBlackoutChallenge_TikTok"/>
+        <commentedBy rdf:resource="#User_SarahCares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_RiskyKingOnEthanVideo_TikTok">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>RiskyKing's comment on Ethan's video</rdfs:label>
+        <hasContentText>Welp, he almost made it! But dude, that fall was brutal. 🤣</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T15:15:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>Windows 10, Chrome Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.4</hasIpAddress>
+        <commentsOnContent rdf:resource="#ShortVideo_EthanBlackoutChallenge_TikTok"/>
+        <commentedBy rdf:resource="#User_RiskyKing_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_JakeMasterOnEthanVideo_TikTok">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>JakeMaster's comment on Ethan's video</rdfs:label>
+        <hasContentText>Yo, can someone make this a meme? This is hilarious.</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T15:20:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>MacOS, Safari Browser</hasDeviceInfo>
+        <hasIpAddress>192.168.1.5</hasIpAddress>
+        <commentsOnContent rdf:resource="#ShortVideo_EthanBlackoutChallenge_TikTok"/>
+        <commentedBy rdf:resource="#User_JakeMaster_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_MaxReplyToJake_TikTok">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>MaxDares' reply to JakeMaster</rdfs:label>
+        <hasContentText>@JakeMaster I already got the clip. Posting it now lol</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T15:25:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.2</hasIpAddress>
+        <commentsOnContent rdf:resource="#ShortVideo_EthanBlackoutChallenge_TikTok"/> <commentedBy rdf:resource="#User_MaxDares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_SarahEncouragesReport_TikTok">
+        <rdf:type rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:label>SarahCares encourages reporting</rdfs:label>
+        <hasContentText>STOP ENCOURAGING THIS. Someone needs to report this!!</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T15:30:00Z</hasInteractionTimestamp>
+        <hasDeviceInfo>iOS, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.3</hasIpAddress>
+        <commentsOnContent rdf:resource="#ShortVideo_EthanBlackoutChallenge_TikTok"/>
+        <commentedBy rdf:resource="#User_SarahCares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_MaxToEthan_1_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from MaxDares to Ethan (1)</rdfs:label>
+        <hasMessageContent>Bro, stop being a wimp. Everyone's done it. You gonna let a girl beat your record?</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T19:45:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.2</hasIpAddress>
+        <attributedToUser rdf:resource="#User_MaxDares_TikTok"/>
+        <messageReceiver rdf:resource="#User_Ethan_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_EthanToMax_1_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from Ethan to MaxDares (1)</rdfs:label>
+        <hasMessageContent>I don't know, man. I saw that some people got hurt doing this.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T19:47:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.1</hasIpAddress>
+        <attributedToUser rdf:resource="#User_Ethan_TikTok"/>
+        <messageReceiver rdf:resource="#User_MaxDares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_MaxToEthan_2_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from MaxDares to Ethan (2)</rdfs:label>
+        <hasMessageContent>Come on, it's just a few seconds. What's the worst that could happen? 😂</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T19:50:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.2</hasIpAddress>
+        <attributedToUser rdf:resource="#User_MaxDares_TikTok"/>
+        <messageReceiver rdf:resource="#User_Ethan_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_EthanToMax_2_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from Ethan to MaxDares (2)</rdfs:label>
+        <hasMessageContent>Ugh, fine. But if something goes wrong, I swear—</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T19:55:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.1</hasIpAddress>
+        <attributedToUser rdf:resource="#User_Ethan_TikTok"/>
+        <messageReceiver rdf:resource="#User_MaxDares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_MaxToEthan_3_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from MaxDares to Ethan (3)</rdfs:label>
+        <hasMessageContent>Nothing's gonna happen! Just record and post it. And tag me.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T19:57:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.2</hasIpAddress>
+        <attributedToUser rdf:resource="#User_MaxDares_TikTok"/>
+        <messageReceiver rdf:resource="#User_Ethan_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_EthanToMax_3_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from Ethan to MaxDares (3)</rdfs:label>
+        <hasMessageContent>Alright, done. Hope you're happy.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T20:10:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.1</hasIpAddress>
+        <attributedToUser rdf:resource="#User_Ethan_TikTok"/>
+        <messageReceiver rdf:resource="#User_MaxDares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_MaxToEthan_4_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from MaxDares to Ethan (4)</rdfs:label>
+        <hasMessageContent>LMAO bro that was HILARIOUS. You actually passed out???</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T20:15:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.2</hasIpAddress>
+        <attributedToUser rdf:resource="#User_MaxDares_TikTok"/>
+        <messageReceiver rdf:resource="#User_Ethan_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_EthanToMax_4_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from Ethan to MaxDares (4)</rdfs:label>
+        <hasMessageContent>Yeah, I hit my head, dude. I don't feel great.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T20:17:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.1</hasIpAddress>
+        <attributedToUser rdf:resource="#User_Ethan_TikTok"/>
+        <messageReceiver rdf:resource="#User_MaxDares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_MaxToEthan_5_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from MaxDares to Ethan (5)</rdfs:label>
+        <hasMessageContent>Relax, you're fine. This is gonna blow up!</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T20:18:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasIpAddress>192.168.1.2</hasIpAddress>
+        <attributedToUser rdf:resource="#User_MaxDares_TikTok"/>
+        <messageReceiver rdf:resource="#User_Ethan_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_EthansParentToMax_TikTok">
+        <rdf:type rdf:resource="#MCSS:DirectMessage"/>
+        <rdfs:label>DM from Ethan's Parent to MaxDares</rdfs:label>
+        <hasMessageContent>Hello, this is Ethan's parent. Ethan ended up in the hospital after following your advice. I will be reporting this to the police.</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-10T20:30:00Z</hasMessageSentTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo> <hasIpAddress>192.168.1.1</hasIpAddress> <hasAttachmentURL>https://tiktok.com/media/ethan_hospital.jpg</hasAttachmentURL>
+        <attributedToUser rdf:resource="#User_Ethan_TikTok"/> <messageReceiver rdf:resource="#User_MaxDares_TikTok"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>

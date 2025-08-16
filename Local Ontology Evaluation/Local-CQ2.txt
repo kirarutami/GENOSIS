@@ -1,0 +1,231 @@
+==== OSN CQ2 ====
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>  # Sesuaikan dengan namespace RDF Anda
+
+SELECT ?identity ?profile1 ?platform1 ?profile2 ?platform2 ?matchType
+WHERE {
+  {
+    # Mencocokkan berdasarkan email yang sama
+    ?profile1 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform1 ;
+              ex:hasEmail ?email .
+
+    ?profile2 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform2 ;
+              ex:hasEmail ?email .
+
+    FILTER (?profile1 != ?profile2 && ?platform1 != ?platform2)  # Pastikan bukan akun yang sama di platform yang sama
+    BIND("Email Match" AS ?matchType)
+  }
+  UNION
+  {
+    # Mencocokkan berdasarkan username yang sama
+    ?profile1 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform1 ;
+              ex:hasUsername ?username .
+
+    ?profile2 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform2 ;
+              ex:hasUsername ?username .
+
+    FILTER (?profile1 != ?profile2 && ?platform1 != ?platform2)  
+    BIND("Username Match" AS ?matchType)
+  }
+  UNION
+  {
+    # Mencocokkan berdasarkan hasLinkedAccount
+    ?profile1 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform1 ;
+              ex:hasLinkedAccount ?linkedAcc .
+
+    ?profile2 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform2 ;
+              ex:hasUsername ?linkedAcc .
+
+    FILTER (?profile1 != ?profile2 && ?platform1 != ?platform2)  
+    BIND("Linked Account Match" AS ?matchType)
+  }
+  UNION
+  {
+    # Mencocokkan berdasarkan isLinkedTo
+    ?profile1 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform1 ;
+              ex:isLinkedTo ?profile2 .
+
+    ?profile2 rdf:type ex:UserProfile ;
+              ex:belongsToPlatform ?platform2 .
+
+    FILTER (?profile1 != ?profile2 && ?platform1 != ?platform2)  
+    BIND("isLinkedTo Match" AS ?matchType)
+  }
+}
+ORDER BY ?identity ?matchType ?platform1 ?platform2
+
+
+
+
+
+==== MP CQ2 ====
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?user1 ?platform1 ?user2 ?platform2 ?sharedProperty ?sharedValue
+WHERE {
+  ?user1 rdf:type ex:User ;
+         ex:belongsToPlatform ?platform1 .
+
+  ?user2 rdf:type ex:User ;
+         ex:belongsToPlatform ?platform2 .
+
+  FILTER (?user1 != ?user2)
+
+  {
+    ?user1 ex:hasEmail ?sharedValue .
+    ?user2 ex:hasEmail ?sharedValue .
+    FILTER (?sharedValue != "None")
+    BIND("Email" AS ?sharedProperty)
+  }
+  UNION
+  {
+    ?user1 ex:hasPhoneNumber ?sharedValue .
+    ?user2 ex:hasPhoneNumber ?sharedValue .
+    FILTER (?sharedValue != "None")
+    BIND("PhoneNumber" AS ?sharedProperty)
+  }
+  UNION
+  {
+    ?user1 ex:hasBirthDate ?sharedValue .
+    ?user2 ex:hasBirthDate ?sharedValue .
+    FILTER (?sharedValue != "None")
+    BIND("BirthDate" AS ?sharedProperty)
+  }
+  UNION
+  {
+    ?user1 ex:hasWebsite ?sharedValue .
+    ?user2 ex:hasWebsite ?sharedValue .
+    FILTER (?sharedValue != "None")
+    BIND("Website" AS ?sharedProperty)
+  }
+  UNION
+  {
+    ?user1 ex:hasProfilePicture ?sharedValue .
+    ?user2 ex:hasProfilePicture ?sharedValue .
+    FILTER (?sharedValue != "None")
+    BIND("ProfilePicture" AS ?sharedProperty)
+  }
+
+  FILTER(BOUND(?sharedValue))
+}
+ORDER BY ?sharedProperty ?sharedValue
+
+
+
+
+
+==== MCSS CQ2 ====
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>  # Sesuaikan dengan XML namespace Anda
+SELECT ?userA ?platformA ?userB ?platformB ?commonField ?fieldValue
+WHERE {
+  ?userA rdf:type ex:User ;
+         ex:belongsToPlatform ?platformA .
+  ?userB rdf:type ex:User ;
+         ex:belongsToPlatform ?platformB .
+
+  FILTER(?userA != ?userB)
+  FILTER(?platformA != ?platformB)
+
+  # 1) MATCH BASED ON EMAIL
+  {
+    ?userA ex:hasEmail ?fieldValue .
+    ?userB ex:hasEmail ?fieldValue .
+    BIND("email" AS ?commonField)
+  }
+  UNION
+  # 2) MATCH BASED ON PHONE
+  {
+    ?userA ex:hasPhoneNumber ?fieldValue .
+    ?userB ex:hasPhoneNumber ?fieldValue .
+    BIND("phone" AS ?commonField)
+  }
+  UNION
+  # 3) MATCH BASED ON USERNAME
+  {
+    ?userA ex:hasUsername ?fieldValue .
+    ?userB ex:hasUsername ?fieldValue .
+    BIND("username" AS ?commonField)
+  }
+  UNION
+  # 4) MATCH BASED ON PASSWORD HASH (Jika tersedia)
+  {
+    ?userA ex:hasPasswordHash ?fieldValue .
+    ?userB ex:hasPasswordHash ?fieldValue .
+    BIND("passwordHash" AS ?commonField)
+  }
+}
+ORDER BY ?userA ?userB ?commonField
+
+
+
+
+
+==== OFB CQ2 ====
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#> # Namespace ontologi OFB Anda
+
+SELECT DISTINCT ?matchType ?identifier ?user1 ?platform1 ?user2 ?platform2
+WHERE {
+  {
+    # ----- Blok 1: Mencocokkan berdasarkan Username -----
+    BIND("Username" AS ?matchType)
+    ?user1 rdf:type ex:User ;
+           ex:hasUsername ?identifier ;
+           ex:belongsToPlatform ?platform1 .
+    ?user2 rdf:type ex:User ;
+           ex:hasUsername ?identifier ;
+           ex:belongsToPlatform ?platform2 .
+  }
+  UNION
+  {
+    # ----- Blok 2: Mencocokkan berdasarkan Email -----
+    BIND("Email" AS ?matchType)
+    ?user1 rdf:type ex:User ;
+           ex:hasEmail ?identifier ;
+           ex:belongsToPlatform ?platform1 .
+    ?user2 rdf:type ex:User ;
+           ex:hasEmail ?identifier ;
+           ex:belongsToPlatform ?platform2 .
+    # FILTER STRLEN DIHAPUS DARI SINI
+  }
+  UNION
+  {
+    # ----- Blok 3: Mencocokkan berdasarkan Nomor Telepon -----
+    BIND("PhoneNumber" AS ?matchType)
+    ?user1 rdf:type ex:User ;
+           ex:hasPhoneNumber ?identifier ;
+           ex:belongsToPlatform ?platform1 .
+    ?user2 rdf:type ex:User ;
+           ex:hasPhoneNumber ?identifier ;
+           ex:belongsToPlatform ?platform2 .
+    # FILTER STRLEN DIHAPUS DARI SINI
+  }
+
+  # ----- Filter Umum yang Berlaku untuk SEMUA Blok UNION -----
+  FILTER (?user1 != ?user2)
+  FILTER (STR(?platform1) != STR(?platform2))
+  FILTER (STR(?user1) < STR(?user2))
+}
+ORDER BY ?identifier ?matchType ?user1 ?user2

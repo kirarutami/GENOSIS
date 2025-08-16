@@ -1,0 +1,310 @@
+class,dataProperty,classComment,dataPropertyComment
+UserProfile,hasLinkedAccount,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the username or identifier of the linked social media account.
+UserProfile,hasFirstName,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the first name of the user.
+UserProfile,hasFirstName,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",The first name of the child.
+ChildInformation,hasFirstName,Contains information about the child using Messenger Kids.,Stores the first name of the user.
+ChildInformation,hasFirstName,Contains information about the child using Messenger Kids.,The first name of the child.
+UserProfile,hasLastName,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the last name of the user.
+UserProfile,hasLastName,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",The last name of the child.
+ChildInformation,hasLastName,Contains information about the child using Messenger Kids.,Stores the last name of the user.
+ChildInformation,hasLastName,Contains information about the child using Messenger Kids.,The last name of the child.
+UserProfile,hasMiddleName,"Represents the profile of a user, containing personal information such as profile picture, username, and email.","Stores the middle name of the user, if applicable."
+UserProfile,hasProfilePicture,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the URL or file path to the user's profile picture.
+UserProfile,hasProfilePictureHash,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",For verifying the integrity of the profile picture using hash.
+UserProfile,hasCoverPhoto,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the URL or file path to the user's cover photo.
+UserProfile,hasUsername,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the unique username of the user.
+UserProfile,hasEmail,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the email address of the user.
+UserProfile,hasBio,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the biography or short description of the user.
+UserProfile,hasDetails,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores additional details about the user.
+UserProfile,hasHighlights,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores highlights associated with the user's profile.
+UserProfile,hasAccountCreationDate,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Stores the account creation date for the user.
+UserProfile,hasAccountVerification,"Represents the profile of a user, containing personal information such as profile picture, username, and email.",Indicates whether the user's account has been verified.
+PrivacySettings,hasAccountPrivacy,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.","Stores the privacy setting of the user's account, indicating whether the account is private or public."
+PrivacySettings,hasAccountPrivacy,Privacy-related configurations for a user's account.,"Stores the privacy setting of the user's account, indicating whether the account is private or public."
+PrivacySettings,hasPrivateAccount,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Indicates whether the user account is private.
+PrivacySettings,hasPrivateAccount,Privacy-related configurations for a user's account.,Indicates whether the user account is private.
+PrivacySettings,hasCloseFriends,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Indicates whether the user has a close friends list.
+PrivacySettings,hasCloseFriends,Privacy-related configurations for a user's account.,Indicates whether the user has a close friends list.
+PrivacySettings,hasBlockedAccounts,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Indicates whether the user has blocked accounts.
+PrivacySettings,hasBlockedAccounts,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",List of accounts blocked by the user.
+PrivacySettings,hasBlockedAccounts,Privacy-related configurations for a user's account.,Indicates whether the user has blocked accounts.
+PrivacySettings,hasBlockedAccounts,Privacy-related configurations for a user's account.,List of accounts blocked by the user.
+PrivacySettings,hasBlockingOptions,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Indicates the available blocking options for the user.
+PrivacySettings,hasBlockingOptions,Privacy-related configurations for a user's account.,Indicates the available blocking options for the user.
+PrivacySettings,hasBlockNotifications,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Indicates whether the user is notified about blocked accounts.
+PrivacySettings,hasBlockNotifications,Privacy-related configurations for a user's account.,Indicates whether the user is notified about blocked accounts.
+PrivacySettings,hasReviewBlockedAccounts,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Indicates whether the user has reviewed the list of blocked accounts.
+PrivacySettings,hasReviewBlockedAccounts,Privacy-related configurations for a user's account.,Indicates whether the user has reviewed the list of blocked accounts.
+PrivacySettings,hasHideStory,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Stores whether the user's story is hidden from certain users.
+PrivacySettings,hasHideStory,Privacy-related configurations for a user's account.,Stores whether the user's story is hidden from certain users.
+PrivacySettings,hasAllowStoryReplies,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Indicates whether replies to the user's story are allowed.
+PrivacySettings,hasAllowStoryReplies,Privacy-related configurations for a user's account.,Indicates whether replies to the user's story are allowed.
+PrivacySettings,hasStoryExpiration,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Stores the expiration time of the user's story.
+PrivacySettings,hasStoryExpiration,Privacy-related configurations for a user's account.,Stores the expiration time of the user's story.
+PrivacySettings,hasLastStoryUpdate,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Stores the time of the last update to the user's story.
+PrivacySettings,hasLastStoryUpdate,Privacy-related configurations for a user's account.,Stores the time of the last update to the user's story.
+SecuritySettings,hasActiveSessions,"Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.",Indicates the number of active sessions the user has.
+SecuritySettings,hasActiveSessions,Handles security configurations like two-factor authentication and password management.,Indicates the number of active sessions the user has.
+SecuritySettings,hasLastLogin,"Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.",Stores the date and time of the user's last login.
+SecuritySettings,hasLastLogin,Handles security configurations like two-factor authentication and password management.,Stores the date and time of the user's last login.
+SecuritySettings,hasLoginIP,"Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.",Stores the IP address used during the user's last login session.
+SecuritySettings,hasLoginIP,Handles security configurations like two-factor authentication and password management.,Stores the IP address used during the user's last login session.
+SecuritySettings,hasLogoutFromSessions,"Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.",Indicates whether the user has logged out from all active sessions.
+SecuritySettings,hasLogoutFromSessions,Handles security configurations like two-factor authentication and password management.,Indicates whether the user has logged out from all active sessions.
+SecuritySettings,hasPhoneNumberVerificationStatus,"Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.",Indicates the verification status of the user's phone number.
+SecuritySettings,hasPhoneNumberVerificationStatus,Handles security configurations like two-factor authentication and password management.,Indicates the verification status of the user's phone number.
+SecuritySettings,hasPhoneNumber,"Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.",Stores the user's phone number.
+SecuritySettings,hasPhoneNumber,Handles security configurations like two-factor authentication and password management.,Stores the user's phone number.
+Posts,hasBackgroundColor,"Represents posts created by users, including media posts, location check-ins, and live videos.",Stores the background color of a post.
+Posts,hasPostLocation,"Represents posts created by users, including media posts, location check-ins, and live videos.",Stores Post's geotag location
+Posts,hasPostTimestamp,"Represents posts created by users, including media posts, location check-ins, and live videos.",Stores post's timestamp
+Posts,hasGIF,"Represents posts created by users, including media posts, location check-ins, and live videos.","Stores the GIF attached to a post, if any."
+Stories,hasStoryMusic,"Represents temporary stories shared by users, which expire after a certain period of time.",Stores music added to a story.
+Stories,hasStoryLocation,"Represents temporary stories shared by users, which expire after a certain period of time.",Stores story's geotag location
+Stories,hasStoryStickers,"Represents temporary stories shared by users, which expire after a certain period of time.",Stores stickers added to a story.
+Reels,hasReelLocation,"Represents short videos shared by users, often with music, effects, or remixing.",Stores Reel's geotag location
+Reels,hasReelLocation,"Represents reels, a type of short video content.",Stores Reel's geotag location
+Reels,hasClosedCaption,"Represents short videos shared by users, often with music, effects, or remixing.",Indicates whether a reel video has closed captions enabled.
+Reels,hasClosedCaption,"Represents reels, a type of short video content.",Indicates whether a reel video has closed captions enabled.
+Reels,hasQuality,"Represents short videos shared by users, often with music, effects, or remixing.",Stores the video quality of a reel.
+Reels,hasQuality,"Represents reels, a type of short video content.",Stores the video quality of a reel.
+Reels,hasDataSaver,"Represents short videos shared by users, often with music, effects, or remixing.",Indicates whether the data saver mode is enabled for the reel.
+Reels,hasDataSaver,"Represents reels, a type of short video content.",Indicates whether the data saver mode is enabled for the reel.
+Reels,hasPlaybackSpeed,"Represents short videos shared by users, often with music, effects, or remixing.",Indicates the playback speed of a reel video.
+Reels,hasPlaybackSpeed,"Represents reels, a type of short video content.",Indicates the playback speed of a reel video.
+Like,hasTimestamp,Represents a user's 'like' interaction on a post or content.,Stores the timestamp when the like was given.
+Like,hasTimestamp,Represents a user's 'like' interaction on a post or content.,Stores the timestamp when the reaction was given.
+Like,hasTimestamp,Represents a user's 'like' interaction on a post or content.,Stores the timestamp when the comment was made.
+Like,hasTimestamp,Represents a user's 'like' interaction on a post or content.,Stores the timestamp when the GIF comment was made.
+Like,hasTimestamp,Represents a user's 'like' interaction on a post or content.,Stores the timestamp when the emoji comment was made.
+React,hasTimestamp,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the timestamp when the like was given.
+React,hasTimestamp,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the timestamp when the reaction was given.
+React,hasTimestamp,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the timestamp when the comment was made.
+React,hasTimestamp,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the timestamp when the GIF comment was made.
+React,hasTimestamp,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the timestamp when the emoji comment was made.
+TextComment,hasTimestamp,Represents a text-based comment made by a user.,Stores the timestamp when the like was given.
+TextComment,hasTimestamp,Represents a text-based comment made by a user.,Stores the timestamp when the reaction was given.
+TextComment,hasTimestamp,Represents a text-based comment made by a user.,Stores the timestamp when the comment was made.
+TextComment,hasTimestamp,Represents a text-based comment made by a user.,Stores the timestamp when the GIF comment was made.
+TextComment,hasTimestamp,Represents a text-based comment made by a user.,Stores the timestamp when the emoji comment was made.
+GIFComment,hasTimestamp,Represents a comment made by a user that contains a GIF.,Stores the timestamp when the like was given.
+GIFComment,hasTimestamp,Represents a comment made by a user that contains a GIF.,Stores the timestamp when the reaction was given.
+GIFComment,hasTimestamp,Represents a comment made by a user that contains a GIF.,Stores the timestamp when the comment was made.
+GIFComment,hasTimestamp,Represents a comment made by a user that contains a GIF.,Stores the timestamp when the GIF comment was made.
+GIFComment,hasTimestamp,Represents a comment made by a user that contains a GIF.,Stores the timestamp when the emoji comment was made.
+EmojiComment,hasTimestamp,Represents a comment made by a user that contains an emoji.,Stores the timestamp when the like was given.
+EmojiComment,hasTimestamp,Represents a comment made by a user that contains an emoji.,Stores the timestamp when the reaction was given.
+EmojiComment,hasTimestamp,Represents a comment made by a user that contains an emoji.,Stores the timestamp when the comment was made.
+EmojiComment,hasTimestamp,Represents a comment made by a user that contains an emoji.,Stores the timestamp when the GIF comment was made.
+EmojiComment,hasTimestamp,Represents a comment made by a user that contains an emoji.,Stores the timestamp when the emoji comment was made.
+Like,hasUserInteractionIP,Represents a user's 'like' interaction on a post or content.,Stores the IP address of the user who gave the like.
+Like,hasUserInteractionIP,Represents a user's 'like' interaction on a post or content.,Stores the IP address of the user who gave the reaction.
+Like,hasUserInteractionIP,Represents a user's 'like' interaction on a post or content.,Stores the IP address of the user who made the comment.
+Like,hasUserInteractionIP,Represents a user's 'like' interaction on a post or content.,Stores the IP address of the user who made the GIF comment.
+Like,hasUserInteractionIP,Represents a user's 'like' interaction on a post or content.,Stores the IP address of the user who made the emoji comment.
+React,hasUserInteractionIP,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the IP address of the user who gave the like.
+React,hasUserInteractionIP,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the IP address of the user who gave the reaction.
+React,hasUserInteractionIP,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the IP address of the user who made the comment.
+React,hasUserInteractionIP,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the IP address of the user who made the GIF comment.
+React,hasUserInteractionIP,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the IP address of the user who made the emoji comment.
+TextComment,hasUserInteractionIP,Represents a text-based comment made by a user.,Stores the IP address of the user who gave the like.
+TextComment,hasUserInteractionIP,Represents a text-based comment made by a user.,Stores the IP address of the user who gave the reaction.
+TextComment,hasUserInteractionIP,Represents a text-based comment made by a user.,Stores the IP address of the user who made the comment.
+TextComment,hasUserInteractionIP,Represents a text-based comment made by a user.,Stores the IP address of the user who made the GIF comment.
+TextComment,hasUserInteractionIP,Represents a text-based comment made by a user.,Stores the IP address of the user who made the emoji comment.
+GIFComment,hasUserInteractionIP,Represents a comment made by a user that contains a GIF.,Stores the IP address of the user who gave the like.
+GIFComment,hasUserInteractionIP,Represents a comment made by a user that contains a GIF.,Stores the IP address of the user who gave the reaction.
+GIFComment,hasUserInteractionIP,Represents a comment made by a user that contains a GIF.,Stores the IP address of the user who made the comment.
+GIFComment,hasUserInteractionIP,Represents a comment made by a user that contains a GIF.,Stores the IP address of the user who made the GIF comment.
+GIFComment,hasUserInteractionIP,Represents a comment made by a user that contains a GIF.,Stores the IP address of the user who made the emoji comment.
+EmojiComment,hasUserInteractionIP,Represents a comment made by a user that contains an emoji.,Stores the IP address of the user who gave the like.
+EmojiComment,hasUserInteractionIP,Represents a comment made by a user that contains an emoji.,Stores the IP address of the user who gave the reaction.
+EmojiComment,hasUserInteractionIP,Represents a comment made by a user that contains an emoji.,Stores the IP address of the user who made the comment.
+EmojiComment,hasUserInteractionIP,Represents a comment made by a user that contains an emoji.,Stores the IP address of the user who made the GIF comment.
+EmojiComment,hasUserInteractionIP,Represents a comment made by a user that contains an emoji.,Stores the IP address of the user who made the emoji comment.
+Like,hasDeviceInfo,Represents a user's 'like' interaction on a post or content.,Stores the device information of the user who gave the like.
+Like,hasDeviceInfo,Represents a user's 'like' interaction on a post or content.,Stores the device information of the user who gave the reaction.
+Like,hasDeviceInfo,Represents a user's 'like' interaction on a post or content.,Stores the device information of the user who made the comment.
+Like,hasDeviceInfo,Represents a user's 'like' interaction on a post or content.,Stores the device information of the user who made the GIF comment.
+Like,hasDeviceInfo,Represents a user's 'like' interaction on a post or content.,Stores the device information of the user who made the emoji comment.
+React,hasDeviceInfo,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the device information of the user who gave the like.
+React,hasDeviceInfo,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the device information of the user who gave the reaction.
+React,hasDeviceInfo,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the device information of the user who made the comment.
+React,hasDeviceInfo,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the device information of the user who made the GIF comment.
+React,hasDeviceInfo,"Represents a user's reaction to a post, such as love, angry, etc.",Stores the device information of the user who made the emoji comment.
+TextComment,hasDeviceInfo,Represents a text-based comment made by a user.,Stores the device information of the user who gave the like.
+TextComment,hasDeviceInfo,Represents a text-based comment made by a user.,Stores the device information of the user who gave the reaction.
+TextComment,hasDeviceInfo,Represents a text-based comment made by a user.,Stores the device information of the user who made the comment.
+TextComment,hasDeviceInfo,Represents a text-based comment made by a user.,Stores the device information of the user who made the GIF comment.
+TextComment,hasDeviceInfo,Represents a text-based comment made by a user.,Stores the device information of the user who made the emoji comment.
+GIFComment,hasDeviceInfo,Represents a comment made by a user that contains a GIF.,Stores the device information of the user who gave the like.
+GIFComment,hasDeviceInfo,Represents a comment made by a user that contains a GIF.,Stores the device information of the user who gave the reaction.
+GIFComment,hasDeviceInfo,Represents a comment made by a user that contains a GIF.,Stores the device information of the user who made the comment.
+GIFComment,hasDeviceInfo,Represents a comment made by a user that contains a GIF.,Stores the device information of the user who made the GIF comment.
+GIFComment,hasDeviceInfo,Represents a comment made by a user that contains a GIF.,Stores the device information of the user who made the emoji comment.
+EmojiComment,hasDeviceInfo,Represents a comment made by a user that contains an emoji.,Stores the device information of the user who gave the like.
+EmojiComment,hasDeviceInfo,Represents a comment made by a user that contains an emoji.,Stores the device information of the user who gave the reaction.
+EmojiComment,hasDeviceInfo,Represents a comment made by a user that contains an emoji.,Stores the device information of the user who made the comment.
+EmojiComment,hasDeviceInfo,Represents a comment made by a user that contains an emoji.,Stores the device information of the user who made the GIF comment.
+EmojiComment,hasDeviceInfo,Represents a comment made by a user that contains an emoji.,Stores the device information of the user who made the emoji comment.
+DirectMessages,hasDeviceInfo,Represents direct messaging interactions among users on the platform.,Stores the device information of the user who gave the like.
+DirectMessages,hasDeviceInfo,Represents direct messaging interactions among users on the platform.,Stores the device information of the user who gave the reaction.
+DirectMessages,hasDeviceInfo,Represents direct messaging interactions among users on the platform.,Stores the device information of the user who made the comment.
+DirectMessages,hasDeviceInfo,Represents direct messaging interactions among users on the platform.,Stores the device information of the user who made the GIF comment.
+DirectMessages,hasDeviceInfo,Represents direct messaging interactions among users on the platform.,Stores the device information of the user who made the emoji comment.
+React,hasReactionType,"Represents a user's reaction to a post, such as love, angry, etc.","Stores the type of reaction given, such as Love, Angry, etc."
+TextComment,hasCommentText,Represents a text-based comment made by a user.,Stores the text of the comment.
+TextComment,hasCommentLocation,Represents a text-based comment made by a user.,Stores Comment's geotag location
+GIFComment,hasGIFLink,Represents a comment made by a user that contains a GIF.,Stores the link to the GIF used in the comment.
+EmojiComment,hasEmojiCode,Represents a comment made by a user that contains an emoji.,Stores the code of the emoji used in the comment.
+Videos,hasVideoHistory,"Represents video content watched by users, including viewing history and notifications.",Stores the video watch history for a user.
+Videos,hasVideoLocation,"Represents video content watched by users, including viewing history and notifications.",Stores Video's geotag location
+VideoNotifications,hasNotificationTimestamp,"Represents notifications related to video content, such as new video uploads, reminders, and other updates.",Stores the timestamp when the video notification was received.
+VideoNotifications,hasNotificationStatus,"Represents notifications related to video content, such as new video uploads, reminders, and other updates.",Indicates whether the video notification is active or inactive.
+VideoNotifications,hasNotificationType,"Represents notifications related to video content, such as new video uploads, reminders, and other updates.","Indicates the type of video notification, such as new upload, reminder, or other alerts."
+VideoNotifications,hasNotificationType,"Represents notifications related to video content, such as new video uploads, reminders, and other updates.","The type of group notifications (e.g., Posts, Events)."
+GroupNotifications,hasNotificationType,Represents notification settings for a group.,"Indicates the type of video notification, such as new upload, reminder, or other alerts."
+GroupNotifications,hasNotificationType,Represents notification settings for a group.,"The type of group notifications (e.g., Posts, Events)."
+VideoNotifications,hasNotificationIP,"Represents notifications related to video content, such as new video uploads, reminders, and other updates.",Stores the IP address of the user who received the video notification.
+VideoNotifications,hasNotificationDeviceInfo,"Represents notifications related to video content, such as new video uploads, reminders, and other updates.",Stores the device information used when the video notification was received.
+ReelSettings,ClosedCaption,"Represents settings applicable to reels, such as captions, quality, and playback speed.",Indicates whether closed captions are enabled for the reel.
+ReelSettings,Quality,"Represents settings applicable to reels, such as captions, quality, and playback speed.","Represents the quality setting for the reel, e.g., HD or SD."
+ReelSettings,DataSaver,"Represents settings applicable to reels, such as captions, quality, and playback speed.",Indicates whether the data saver mode is enabled for reels.
+ReelSettings,PlaybackSpeed,"Represents settings applicable to reels, such as captions, quality, and playback speed.","Represents the playback speed of the reel, e.g., 1.0x, 1.5x."
+Reels,hasReelWatchTimestamp,"Represents short videos shared by users, often with music, effects, or remixing.",Timestamp of when the reel was watched.
+Reels,hasReelWatchTimestamp,"Represents reels, a type of short video content.",Timestamp of when the reel was watched.
+Reels,hasReelWatchDuration,"Represents short videos shared by users, often with music, effects, or remixing.","Duration of time the reel was watched, in seconds."
+Reels,hasReelWatchDuration,"Represents reels, a type of short video content.","Duration of time the reel was watched, in seconds."
+Reels,hasReelWatchIP,"Represents short videos shared by users, often with music, effects, or remixing.",IP address of the user while watching the reel.
+Reels,hasReelWatchIP,"Represents reels, a type of short video content.",IP address of the user while watching the reel.
+Reels,hasReelDeviceInfo,"Represents short videos shared by users, often with music, effects, or remixing.",Device information of the user while watching the reel.
+Reels,hasReelDeviceInfo,"Represents reels, a type of short video content.",Device information of the user while watching the reel.
+DirectMessages,hasMessageViewTimestamp,Represents direct messaging interactions among users on the platform.,Timestamp of when a message was viewed by the user.
+DirectMessages,hasMessageLocation,Represents direct messaging interactions among users on the platform.,Location on direct messages sent by the user.
+DirectMessages,hasMessageAttachment,Represents direct messaging interactions among users on the platform.,Attachment on direct messages sent by the user.
+TextMessage,hasMessageContentType,Represents text-based messages sent within the platform.,"Specifies the type of content in the message, e.g., text, photo, video."
+TextMessage,hasMessageSendTimestamp,Represents text-based messages sent within the platform.,Timestamp of when a text message was sent.
+GroupChat,hasGroupChatActionTimestamp,Represents group chat interactions within direct messaging.,Timestamp of actions performed within the group chat.
+MessageNotifications,hasNotificationActionTimestamp,Represents notification settings related to direct messages.,Timestamp of notification-related actions.
+VideoCalls,hasVideoCallTimestamp,Represents video call interactions within direct messages.,Timestamp of a video call.
+VideoCalls,hasVideoCallType,Represents video call interactions within direct messages.,"Type of video call, e.g., one-on-one or group."
+VoiceCalls,hasVoiceCallTimestamp,Represents voice call interactions within direct messages.,Timestamp of a voice call.
+VoiceCalls,hasVoiceCallType,Represents voice call interactions within direct messages.,"Type of voice call, e.g., one-on-one or group."
+ListingDetails,hasListingTitle,"Details about a specific listing, including metadata and attributes.",The title of the listing.
+ListingDetails,hasListingPrice,"Details about a specific listing, including metadata and attributes.",The price of the listed item.
+ListingDetails,hasListingCategory,"Details about a specific listing, including metadata and attributes.","The category of the listing, e.g., Electronics, Vehicles."
+ListingDetails,hasListingCreationTimestamp,"Details about a specific listing, including metadata and attributes.",The timestamp when the listing was created.
+ListingDetails,hasListingUpdateTimestamp,"Details about a specific listing, including metadata and attributes.",The timestamp when the listing was last updated.
+ListingDetails,hasSellerLocation,"Details about a specific listing, including metadata and attributes.",The location of the seller for the listing.
+ListingDetails,hasListingViews,"Details about a specific listing, including metadata and attributes.",The number of views the listing has received.
+ListingDetails,hasListingBoostStatus,"Details about a specific listing, including metadata and attributes.",Indicates whether the listing is boosted for higher visibility.
+ListingsManagement,hasActiveListingsCount,"Represents the management of listings in the marketplace, including metrics and status.",The number of active listings managed by the user.
+ListingsManagement,hasInactiveListingsCount,"Represents the management of listings in the marketplace, including metrics and status.",The number of inactive listings managed by the user.
+MessageSeller,hasMessageSentTimestamp,Represents communication between a buyer and a seller.,The timestamp when a message was sent to the seller.
+SellerInformation,hasSellerRating,Details about the seller in the marketplace.,The seller's rating based on customer feedback.
+SellerInformation,hasNumberOfSales,Details about the seller in the marketplace.,The number of successful sales by the seller.
+SellerInformation,hasSellerVerificationStatus,Details about the seller in the marketplace.,Indicates whether the seller is verified on the platform.
+Groups,hasGroupName,Represents groups in the online social network site.,The name of the group.
+Groups,hasGroupDescription,Represents groups in the online social network site.,A description of the group.
+Groups,hasMembershipRequestsCount,Represents groups in the online social network site.,The number of membership requests for the group.
+Groups,hasGroupCategory,Represents groups in the online social network site.,"The category of the group (e.g., Travel, Education)."
+Groups,hasGroupCreationTimestamp,Represents groups in the online social network site.,The creation timestamp of the group.
+Groups,hasLastActivityTimestamp,Represents groups in the online social network site.,The timestamp of the last activity in the group.
+Groups,hasGroupCoverPhoto,Represents groups in the online social network site.,The cover photo of the group.
+PinnedGroups,hasGroupPinnedTimestamp,Represents groups that a user has pinned.,The timestamp when the group was pinned.
+GroupNotifications,hasNotificationFrequency,Represents notification settings for a group.,"The frequency of group notifications (e.g., Daily, Weekly)."
+GroupPrivacy,hasPrivacyLevel,Represents privacy settings for a group.,"The privacy level of the group (e.g., Public, Private, Hidden)."
+GroupPrivacy,hasMembershipApprovalStatus,Represents privacy settings for a group.,Indicates if membership approval is required for the group.
+GroupPrivacy,hasLinkedPages,Represents privacy settings for a group.,The pages linked to the group.
+GroupPrivacy,hasGroupBadges,Represents privacy settings for a group.,The badges or achievements of the group.
+GroupPrivacy,hasGroupRules,Represents privacy settings for a group.,The rules of the group.
+Events,hasEventCreationTimestamp,Represents group events.,The timestamp when the event was created.
+Events,hasEventCreationTimestamp,Represents events created and managed by users.,The timestamp when the event was created.
+Events,hasEventTitle,Represents group events.,The title of the event.
+Events,hasEventTitle,Represents events created and managed by users.,The title of the event.
+Events,hasEventDescription,Represents group events.,The description of the event.
+Events,hasEventDescription,Represents events created and managed by users.,The description of the event.
+Events,hasEventDate,Represents group events.,The date of the event.
+Events,hasEventDate,Represents events created and managed by users.,The date of the event.
+Events,hasEventLocation,Represents group events.,The location of the event.
+Events,hasEventLocation,Represents events created and managed by users.,The location of the event.
+Files,hasFileUploadTimestamp,Represents files uploaded to a group.,The timestamp when the file was uploaded.
+Files,hasFileName,Represents files uploaded to a group.,The name of the file uploaded to the group.
+Files,hasFileType,Represents files uploaded to a group.,"The type of the file (e.g., PDF, Image)."
+Announcements,hasAnnouncementTitle,Represents announcements made in a group.,The title of the announcement.
+Announcements,hasAnnouncementTimestamp,Represents announcements made in a group.,The timestamp when the announcement was made.
+Announcements,hasAnnouncementBody,Represents announcements made in a group.,The body text of the announcement.
+Polls,hasPollCreationTimestamp,Represents polls created in a group.,The timestamp when the poll was created.
+Polls,hasPollQuestion,Represents polls created in a group.,The question for the poll.
+Polls,hasPollOptions,Represents polls created in a group.,The options for the poll (Array).
+Polls,hasPollVotesCount,Represents polls created in a group.,The total number of votes for the poll.
+Violations,hasViolationType,Represents violations reported within the group.,"The type of violation reported (e.g., Spam, Harassment)."
+Violations,hasViolationReportedTimestamp,Represents violations reported within the group.,The timestamp when the violation was reported.
+Violations,hasViolationResolvedStatus,Represents violations reported within the group.,"The resolution status of the violation (e.g., Resolved, Pending)."
+Violations,hasViolationActionsTaken,Represents violations reported within the group.,"The actions taken in response to the violation (e.g., Warning, Removal)."
+GroupRules,hasRuleDescription,Represents the rules set for a group.,The description of the group rule.
+GroupRules,hasRuleCreationTimestamp,Represents the rules set for a group.,The timestamp when the rule was created.
+GroupRules,hasRuleModifiedTimestamp,Represents the rules set for a group.,The timestamp when the rule was last modified.
+Events,hasEventUpdateTimestamp,Represents group events.,The timestamp when the event was last updated.
+Events,hasEventUpdateTimestamp,Represents events created and managed by users.,The timestamp when the event was last updated.
+Events,hasEventStartTimestamp,Represents group events.,The timestamp when the event starts.
+Events,hasEventStartTimestamp,Represents events created and managed by users.,The timestamp when the event starts.
+Events,hasEventEndTimestamp,Represents group events.,The timestamp when the event ends.
+Events,hasEventEndTimestamp,Represents events created and managed by users.,The timestamp when the event ends.
+Events,hasEventInteractionIP,Represents group events.,The IP address of the user managing the event.
+Events,hasEventInteractionIP,Represents events created and managed by users.,The IP address of the user managing the event.
+Events,hasEventDeviceInfo,Represents group events.,Device information of the user managing the event.
+Events,hasEventDeviceInfo,Represents events created and managed by users.,Device information of the user managing the event.
+EventInvitations,hasInvitationSentTimestamp,Handles invitations for events.,The timestamp when the invitation was sent.
+EventInvitations,hasInviteAcceptanceTimestamp,Handles invitations for events.,The timestamp when the invitation was accepted.
+Avatars,hasAvatarCreationTimestamp,"Represents the avatars created, edited, and customized by users.",The timestamp when the avatar was created.
+Avatars,hasClothingItem,"Represents the avatars created, edited, and customized by users.",The clothing item selected or purchased for the avatar.
+Avatars,hasOutfitCategory,"Represents the avatars created, edited, and customized by users.",The category of outfits the avatar is trying or wearing.
+Avatars,hasEditTimestamp,"Represents the avatars created, edited, and customized by users.",The timestamp of the last edit made to the avatar.
+AvatarPosts,hasPostCreationTimestamp,Represents posts created using avatars.,The timestamp when the avatar post was created.
+AvatarPosts,hasPostCaption,Represents posts created using avatars.,The caption associated with the avatar post.
+AvatarPosts,hasPostVisibility,Represents posts created using avatars.,"The visibility level of the avatar post (e.g., Public, Private)."
+BirthdayPosts,hasBirthdayPostTimestamp,Represents posts created for birthdays.,The timestamp when the birthday post was created.
+BirthdayPosts,hasMessageContent,Represents posts created for birthdays.,The message content sent in the birthday post.
+PlayGames,hasGameSaveTimestamp,Represents game-playing activities.,The timestamp when the game was saved.
+PlayGames,hasGameSharePlatform,Represents game-playing activities.,"The platform where the game was shared (e.g., Facebook, Instagram)."
+PlayGames,hasGameConnectionType,Represents game-playing activities.,"The type of connection used for gaming (e.g., Wi-Fi, Mobile Data)."
+PlayerInfo,hasPlayerName,Represents player-related details.,The name of the player.
+PlayerInfo,hasPlayerAvatar,Represents player-related details.,The avatar of the player (URL).
+ChildInformation,hasBirthday,Contains information about the child using Messenger Kids.,The birthday of the child.
+ConnectKids,hasConnectionTimestamp,Represents the connection status and timestamps for Messenger Kids users.,The timestamp when the connection was created.
+ConnectKids,hasConnectionStatus,Represents the connection status and timestamps for Messenger Kids users.,"The connection status (e.g., Active, Pending)."
+PagesSettings,hasName,Represents configurable settings for a page.,The name of the page.
+PagesSettings,hasDescription,Represents configurable settings for a page.,The description of the page.
+PagesSettings,hasCategory,Represents configurable settings for a page.,The category of the page.
+PagesSettings,hasContactInfo,Represents configurable settings for a page.,The contact information for the page.
+PagesSettings,hasLocation,Represents configurable settings for a page.,The location of the page.
+PagesSettings,hasHours,Represents configurable settings for a page.,The operating hours of the page.
+PagesSettings,hasWebsite,Represents configurable settings for a page.,The website link associated with the page.
+PagesSettings,hasUserRoles,Represents configurable settings for a page.,"The roles of users associated with the page (e.g., Admin, Moderator)."
+PagesFeatures,hasEventCount,"Represents features such as events, posts, photos, and videos available on a page.",The number of events on the page.
+PagesFeatures,hasPostCount,"Represents features such as events, posts, photos, and videos available on a page.",The number of posts on the page.
+PagesFeatures,hasPhotoCount,"Represents features such as events, posts, photos, and videos available on a page.",The number of photos on the page.
+PagesFeatures,hasVideoCount,"Represents features such as events, posts, photos, and videos available on a page.",The number of videos on the page.
+PagesInsights,hasViewCount,"Represents insights like views, reach, and engagement for a page.",The total number of views on the page.
+PagesInsights,hasPostReach,"Represents insights like views, reach, and engagement for a page.",The reach of posts on the page.
+AccountSettings,hasGeneralSettings,"Handles general, privacy, security, and account management settings.",General settings for the user's account.
+PrivacySettings,hasProfilePrivacySettings,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.",Settings for profile visibility and privacy.
+PrivacySettings,hasProfilePrivacySettings,Privacy-related configurations for a user's account.,Settings for profile visibility and privacy.
+PrivacySettings,hasActivityStatus,"Represents the privacy settings related to the user's account, including blocked accounts and story settings.","Activity status visibility (e.g., Online, Offline)."
+PrivacySettings,hasActivityStatus,Privacy-related configurations for a user's account.,"Activity status visibility (e.g., Online, Offline)."
+DataUsageSettings,hasCellularDataUsageSettings,Handles data usage configurations for cellular and WiFi connections.,Data usage settings for cellular connections.
+DataUsageSettings,hasWiFiDataUsageSettings,Handles data usage configurations for cellular and WiFi connections.,Data usage settings for WiFi connections.
+NotificationSettings,hasPushNotificationsStatus,"Handles configurations for notifications like push, email, and SMS.",Status of push notifications (enabled/disabled).
+NotificationSettings,hasEmailNotificationsStatus,"Handles configurations for notifications like push, email, and SMS.",Status of email notifications (enabled/disabled).
+NotificationSettings,hasSMSNotificationsStatus,"Handles configurations for notifications like push, email, and SMS.",Status of SMS notifications (enabled/disabled).
+NotificationSettings,hasNotificationSoundsSettings,"Handles configurations for notifications like push, email, and SMS.",Settings for notification sounds.
+DeviceManagement,hasAuthorizedDevices,Handles authorized devices associated with the user's account.,Authorized devices for the user's account.
+HelpSupport,hasSupportAccessTimestamp,Represents support and help-related features for users.,Timestamp for accessing the support center.
+HelpSupport,hasReportTimestamp,Represents support and help-related features for users.,Timestamp for submitting a problem report.
+HelpSupport,hasInboxAccessTimestamp,Represents support and help-related features for users.,Timestamp for accessing the support inbox.
+MetaVerified,hasPublicPresenceStatus,Handles verification and public presence-related features for users.,Indicates whether the user has a verified public presence.
+OtherApps,hasConnectedAppStatus,Represents other Meta apps that can connect to the user's account.,Status indicating whether the app is connected to the user's account.
+ActivityLog,hasActivityTimestamp,Represents a record of activities performed by a user.,Timestamp indicating when the activity was performed.
+ActivityLog,hasActivityType,Represents a record of activities performed by a user.,"Type of activity performed, e.g., like, comment, tag, review."
+Logout,hasLogoutTimestamp,Represents the action of a user logging out of the system.,Timestamp indicating when the logout occurred.

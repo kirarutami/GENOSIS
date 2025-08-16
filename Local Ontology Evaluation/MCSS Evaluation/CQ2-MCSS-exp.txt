@@ -1,0 +1,8 @@
+Do different profiles in different social media platforms belong to the same person?”
+
+Secara konsep, untuk menjawab pertanyaan ini, kita perlu mendeteksi apakah dua (atau lebih) instance User yang berbeda—dengan platform berbeda—sebenarnya merepresentasikan orang yang sama. Ada beberapa pendekatan:
+
+Menyamakan Identitas Berdasarkan Email/Phone
+Jika dua User memiliki email atau phoneNumber yang sama, kemungkinan besar mereka adalah orang yang sama (kecuali jika ada pengecualian).
+Menyamakan Identitas Berdasarkan Atribut Unik Lain
+Bisa menggunakan hashed password, ID resmi, dsb.

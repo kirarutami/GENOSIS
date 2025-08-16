@@ -1,0 +1,257 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:forensic="http://example.org/ontology/forensic#">
+
+    <!-- Class Definitions with Descriptions -->
+    <owl:Class rdf:about="forensic:User">
+        <rdfs:comment>Represents an individual, including both suspects and victims.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:Victim">
+        <rdfs:subClassOf rdf:resource="forensic:User"/>
+        <rdfs:comment>Represents a user who has been a victim of an online crime.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:Suspect">
+        <rdfs:subClassOf rdf:resource="forensic:User"/>
+        <rdfs:comment>Represents a user suspected of committing an online crime.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:Communication">
+        <rdfs:comment>Represents online communication activity such as messages or comments.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:Crime">
+        <rdfs:comment>Represents an online crime involving a suspect and a victim.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:UserProfile">
+        <rdfs:comment>Represents a user's profile, which may exist on different platforms.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:PlatformProfile">
+        <rdfs:subClassOf rdf:resource="forensic:UserProfile"/>
+        <rdfs:comment>Represents a profile on a particular platform.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:SocialMediaProfile">
+        <rdfs:subClassOf rdf:resource="forensic:PlatformProfile"/>
+        <rdfs:comment>Profile specifically on social media platforms, containing information like username, email, and phone number.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:SocialMediaPlatform">
+        <rdfs:comment>A social media platform where a user can have profiles.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:MatchingCriteria">
+        <rdfs:comment>Represents the criteria used to determine if two profiles potentially belong to the same person.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:MatchingProcess">
+        <rdfs:comment>The process of matching profiles across platforms, involving various criteria and confidence levels.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property Definitions with Characteristics, Domain, Range, and Comments -->
+    <owl:ObjectProperty rdf:about="forensic:communicatedWith">
+        <rdfs:domain rdf:resource="forensic:User"/>
+        <rdfs:range rdf:resource="forensic:User"/>
+        <rdfs:comment>Links a user to another user they communicated with.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:involvedIn">
+        <rdfs:domain rdf:resource="forensic:User"/>
+        <rdfs:range rdf:resource="forensic:Crime"/>
+        <rdfs:comment>Links an individual to a crime they are involved in.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:isFlaggedFor">
+        <rdfs:domain rdf:resource="forensic:Communication"/>
+        <rdfs:range rdf:resource="forensic:Crime"/>
+        <rdfs:comment>Indicates that a communication has been flagged for being related to a crime.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:hasCommunication">
+        <rdfs:domain rdf:resource="forensic:User"/>
+        <rdfs:range rdf:resource="forensic:Communication"/>
+        <rdfs:comment>Links a user to a communication they are involved in.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:hasProfile">
+        <rdfs:domain rdf:resource="forensic:User"/>
+        <rdfs:range rdf:resource="forensic:UserProfile"/>
+        <rdfs:comment>Links a person to their user profiles across different platforms.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:hasPlatform">
+        <rdfs:domain rdf:resource="forensic:SocialMediaProfile"/>
+        <rdfs:range rdf:resource="forensic:SocialMediaPlatform"/>
+        <rdfs:comment>Indicates the platform on which a specific profile exists.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:isPotentialMatch">
+        <rdfs:domain rdf:resource="forensic:MatchingCriteria"/>
+        <rdfs:range rdf:resource="forensic:UserProfile"/>
+        <rdfs:comment>Links matching criteria to potentially matching user profiles.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:basedOnUsername">
+        <rdfs:domain rdf:resource="forensic:MatchingCriteria"/>
+        <rdfs:range rdf:resource="forensic:UserProfile"/>
+        <rdfs:comment>Indicates a potential match based on similar usernames.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:basedOnEmail">
+        <rdfs:domain rdf:resource="forensic:MatchingCriteria"/>
+        <rdfs:range rdf:resource="forensic:UserProfile"/>
+        <rdfs:comment>Indicates a potential match based on matching email addresses.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:basedOnPhoneNumber">
+        <rdfs:domain rdf:resource="forensic:MatchingCriteria"/>
+        <rdfs:range rdf:resource="forensic:UserProfile"/>
+        <rdfs:comment>Indicates a potential match based on matching phone numbers.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:matchesProfile">
+        <rdfs:domain rdf:resource="forensic:MatchingProcess"/>
+        <rdfs:range rdf:resource="forensic:UserProfile"/>
+        <rdfs:comment>Relates a matching process to the profiles that are being compared.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:crossPlatformMatching">
+        <rdfs:domain rdf:resource="forensic:MatchingProcess"/>
+        <rdfs:range rdf:resource="forensic:UserProfile"/>
+        <rdfs:comment>Indicates profiles matched across different platforms.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property Definitions with Domain, Range, and Comments -->
+    <owl:DatatypeProperty rdf:about="forensic:hasKeywords">
+        <rdfs:domain rdf:resource="forensic:Communication"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+        <rdfs:comment>Represents keywords used in communication that might indicate malicious intent.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="forensic:hasFrequency">
+        <rdfs:domain rdf:resource="forensic:Communication"/>
+        <rdfs:range rdf:resource="xsd:integer"/>
+        <rdfs:comment>Indicates the frequency of communication between a suspect and a victim.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="forensic:hasTime">
+        <rdfs:domain rdf:resource="forensic:Communication"/>
+        <rdfs:range rdf:resource="xsd:dateTime"/>
+        <rdfs:comment>Represents the time at which the communication occurred.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="forensic:Username">
+        <rdfs:domain rdf:resource="forensic:SocialMediaProfile"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+        <rdfs:comment>Represents the username of a social media profile.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="forensic:Email">
+        <rdfs:domain rdf:resource="forensic:SocialMediaProfile"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+        <rdfs:comment>Represents the email address associated with a social media profile.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="forensic:PhoneNumber">
+        <rdfs:domain rdf:resource="forensic:SocialMediaProfile"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+        <rdfs:comment>Represents the phone number associated with a social media profile.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="forensic:matchingConfidence">
+        <rdfs:domain rdf:resource="forensic:MatchingCriteria"/>
+        <rdfs:range rdf:resource="xsd:float"/>
+        <rdfs:comment>Indicates the confidence level of a profile match (0 to 1.0).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="forensic:crossPlatformMatchingConfidence">
+        <rdfs:domain rdf:resource="forensic:MatchingProcess"/>
+        <rdfs:range rdf:resource="xsd:float"/>
+        <rdfs:comment>Confidence level for matching profiles across different platforms.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Example Instances with Comments -->
+    <forensic:Suspect rdf:about="forensic:Suspect1">
+        <forensic:hasCommunication rdf:resource="forensic:Communication1"/>
+        <forensic:communicatedWith rdf:resource="forensic:Victim1"/>
+        <forensic:involvedIn rdf:resource="forensic:Crime1"/>
+        <rdfs:comment>Suspect1 is involved in a crime and has communicated with Victim1.</rdfs:comment>
+    </forensic:Suspect>
+
+    <forensic:Victim rdf:about="forensic:Victim1">
+        <forensic:hasCommunication rdf:resource="forensic:Communication1"/>
+        <rdfs:comment>Victim1 has received communication from Suspect1.</rdfs:comment>
+    </forensic:Victim>
+
+    <forensic:Communication rdf:about="forensic:Communication1">
+        <forensic:hasKeywords>Bayar atau data Anda akan disebarkan</forensic:hasKeywords>
+        <forensic:hasFrequency rdf:datatype="xsd:integer">10</forensic:hasFrequency>
+        <forensic:hasTime rdf:datatype="xsd:dateTime">2024-11-25T14:00:00</forensic:hasTime>
+        <forensic:isFlaggedFor rdf:resource="forensic:Crime1"/>
+        <rdfs:comment>Communication1 contains threatening keywords and is flagged as related to Crime1.</rdfs:comment>
+    </forensic:Communication>
+
+    <forensic:Crime rdf:about="forensic:Crime1">
+        <rdfs:comment>Crime1 is an online crime involving Suspect1 and Victim1.</rdfs:comment>
+    </forensic:Crime>
+
+    <forensic:Person rdf:about="forensic:Person1">
+        <forensic:hasProfile rdf:resource="forensic:UserProfile1"/>
+        <forensic:hasProfile rdf:resource="forensic:UserProfile2"/>
+        <rdfs:comment>
+            Person1 has multiple profiles across different platforms, potentially linked through email, username, or phone number.
+        </rdfs:comment>
+    </forensic:Person>
+
+    <forensic:UserProfile rdf:about="forensic:UserProfile1">
+        <rdfs:comment>
+            Represents a specific user profile associated with Person1, which may exist across multiple social media platforms.
+        </rdfs:comment>
+    </forensic:UserProfile>
+
+    <forensic:UserProfile rdf:about="forensic:UserProfile2">
+        <rdfs:comment>
+            Represents another user profile associated with Person1, on a different social media platform.
+        </rdfs:comment>
+    </forensic:UserProfile>
+
+    <forensic:SocialMediaProfile rdf:about="forensic:SocialMediaProfile1">
+        <forensic:Username>john_doe123</forensic:Username>
+        <forensic:Email>john@example.com</forensic:Email>
+        <forensic:PhoneNumber>+1234567890</forensic:PhoneNumber>
+        <forensic:hasPlatform rdf:resource="forensic:SocialMediaPlatform1"/>
+        <rdfs:comment>
+            SocialMediaProfile1 is a profile associated with Person1 on Facebook, with username, email, and phone number.
+        </rdfs:comment>
+    </forensic:SocialMediaProfile>
+
+    <forensic:SocialMediaProfile rdf:about="forensic:SocialMediaProfile2">
+        <forensic:Username>john_doe_321</forensic:Username>
+        <forensic:Email>john@example.com</forensic:Email>
+        <forensic:PhoneNumber>+1234567890</forensic:PhoneNumber>
+        <forensic:hasPlatform rdf:resource="forensic:SocialMediaPlatform2"/>
+        <rdfs:comment>
+            SocialMediaProfile2 is another profile associated with Person1 on Instagram, sharing the same email and phone number.
+        </rdfs:comment>
+    </forensic:SocialMediaProfile>
+
+    <forensic:SocialMediaPlatform rdf:about="forensic:SocialMediaPlatform1">
+        <forensic:hasPlatformName>Facebook</forensic:hasPlatformName>
+        <rdfs:comment>
+            Represents the social media platform Facebook where SocialMediaProfile1 exists.
+        </rdfs:comment>
+    </forensic:SocialMediaPlatform>
+
+    <forensic:SocialMediaPlatform rdf:about="forensic:SocialMediaPlatform2">
+        <forensic:hasPlatformName>Instagram</forensic:hasPlatformName>
+        <rdfs:comment>
+            Represents the social media platform Instagram where SocialMediaProfile2 exists.
+        </rdfs:comment>
+    </forensic:SocialMediaPlatform>
+
+</rdf:RDF>

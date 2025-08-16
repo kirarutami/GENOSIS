@@ -1,0 +1,3595 @@
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    
+<!-- Kelas: OnlineForumBlogs -->
+    <owl:Class rdf:about="#OnlineForumBlogs">
+        <rdfs:comment>Represents online forums and blogs such as Reddit and 4chan, where users discuss and share textual content in threads.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Individual: Reddit -->
+    <owl:NamedIndividual rdf:about="#Reddit">
+        <rdf:type rdf:resource="#OnlineForumBlogs"/>
+        <rdfs:comment>Represents the Reddit online forum platform.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Individual: 4chan -->
+    <owl:NamedIndividual rdf:about="#4chan">
+        <rdf:type rdf:resource="#OnlineForumBlogs"/>
+        <rdfs:comment>Represents the 4chan anonymous forum platform.</rdfs:comment>
+    </owl:NamedIndividual>
+
+
+<!-- User Class -->
+    <owl:Class rdf:about="#User">
+        <rdfs:comment>Represents a user in the online forum or blog system.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ProfileSettings Sub-class -->
+    <owl:Class rdf:about="#ProfileSettings">
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <rdfs:comment>Settings related to managing the user's profile.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ProfileSettings Sub-class -->
+    <owl:Class rdf:about="#SecuritySettings">
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <rdfs:comment>Settings related to managing the user's profile security.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:about="#canEditProfile">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Indicates that a user can edit their profile settings.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#canEditAvatar">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Indicates that a user can edit their avatar.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#canEditBio">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Indicates that a user can edit their bio.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#canSetProfileVisibility">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Indicates that a user can set their profile visibility (Public or Private).</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#updatedBy">
+        <rdfs:domain rdf:resource="#ProfileSettings"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Links profile settings to the user actions that updated them.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#canEditPassword">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SecuritySettings"/>
+        <rdfs:comment>Indicates that a user can edit their password.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#canEnableTwoFactorAuthentication">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SecuritySettings"/>
+        <rdfs:comment>Indicates that a user can enable two-factor authentication.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#canSetNSFWVisibility">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SecuritySettings"/>
+        <rdfs:comment>Indicates that a user can set NSFW content visibility settings.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties -->
+    <owl:DatatypeProperty rdf:about="#hasUsername">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The username of the user.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAvatarURL">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>The URL of the user's avatar.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasBio">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The bio of the user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasProfileVisibility">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies whether the user's profile is Public or Private.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPasswordHash">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The hashed password of the user.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasTwoFactorAuthenticationEnabled">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if two-factor authentication is enabled for the user.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasNSFWVisibilitySetting">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if the user has enabled NSFW content visibility.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#updatedBy">
+        <rdfs:domain rdf:resource="#SecuritySettings"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Links profile settings to the user actions that updated them.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- SubscriptionPlan Sub-class -->
+    <owl:Class rdf:about="#SubscriptionPlan">
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <rdfs:comment>Represents a subscription plan for a user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for SubscriptionPlan -->
+    <owl:ObjectProperty rdf:about="#subscribesTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SubscriptionPlan"/>
+        <rdfs:comment>Links a user to the subscription plan they have subscribed to.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#unsubscribesFrom">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SubscriptionPlan"/>
+        <rdfs:comment>Links a user to the subscription plan they have unsubscribed from.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithSubscriptionPlan">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SubscriptionPlan"/>
+        <rdfs:comment>Associates a user with their subscription plan.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for SubscriptionPlan -->
+    <owl:DatatypeProperty rdf:about="#hasSubscriptionType">
+        <rdfs:domain rdf:resource="#SubscriptionPlan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates the type of subscription (e.g., Free, Premium).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasSubscriptionStartDate">
+        <rdfs:domain rdf:resource="#SubscriptionPlan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the start date of a user's subscription.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasSubscriptionEndDate">
+        <rdfs:domain rdf:resource="#SubscriptionPlan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the end date of a user's subscription.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- NotificationSettings Sub-class -->
+    <owl:Class rdf:about="#NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <rdfs:comment>Represents notification settings for a user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for NotificationSettings -->
+    <owl:ObjectProperty rdf:about="#configuresPushNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#NotificationSettings"/>
+        <rdfs:comment>Links a user to the configuration of push notifications.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#configuresEmailNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#NotificationSettings"/>
+        <rdfs:comment>Links a user to the configuration of email notifications.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#configuresInAppNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#NotificationSettings"/>
+        <rdfs:comment>Links a user to the configuration of in-app notifications.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#updatedBy">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Links notification settings to the user actions that updated them.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for NotificationSettings -->
+    <owl:DatatypeProperty rdf:about="#hasPushNotificationEnabled">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether push notifications are enabled for a user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEmailNotificationEnabled">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether email notifications are enabled for a user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasInAppNotificationEnabled">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether in-app notifications are enabled for a user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- AnonymousSession Sub-class -->
+    <owl:Class rdf:about="#AnonymousSession">
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <rdfs:comment>Represents a session where the user operates in anonymous mode.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for AnonymousSession -->
+    <owl:ObjectProperty rdf:about="#enablesAnonymousMode">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#AnonymousSession"/>
+        <rdfs:comment>Indicates that a user enables anonymous mode.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#disablesAnonymousMode">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#AnonymousSession"/>
+        <rdfs:comment>Indicates that a user disables anonymous mode.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#anonymousActivityLoggedBy">
+        <rdfs:domain rdf:resource="#AnonymousSession"/>
+        <rdfs:range rdf:resource="#AnonymousSession"/>
+        <rdfs:comment>Links anonymous activity with the session that logged it.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for AnonymousSession -->
+    <owl:DatatypeProperty rdf:about="#isAnonymousModeEnabled">
+        <rdfs:domain rdf:resource="#AnonymousSession"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if anonymous mode is enabled for the user.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAnonymousSessionID">
+        <rdfs:domain rdf:resource="#AnonymousSession"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The unique identifier for the anonymous session.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#expiresAt">
+        <rdfs:domain rdf:resource="#AnonymousSession"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The expiration time for the anonymous session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- AccountDeactivation Sub-class -->
+    <owl:Class rdf:about="#AccountDeactivation">
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <rdfs:comment>Represents a user's account deactivation process and state.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for AccountDeactivation -->
+    <owl:ObjectProperty rdf:about="#requestsAccountDeactivation">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Indicates that a user requests account deactivation.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#deactivationRequestedBy">
+        <rdfs:domain rdf:resource="#AccountDeactivation"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Links account deactivation with the user action that initiated it.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for AccountDeactivation -->
+    <owl:DatatypeProperty rdf:about="#isAccountDeactivated">
+        <rdfs:domain rdf:resource="#AccountDeactivation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if the account is currently deactivated.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#deactivationReason">
+        <rdfs:domain rdf:resource="#AccountDeactivation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The reason provided for account deactivation.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- AccountDeletion Sub-class -->
+    <owl:Class rdf:about="#AccountDeletion">
+        <rdfs:subClassOf rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Handles the process and properties related to account deletion.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: requestsAccountDeletion -->
+    <owl:ObjectProperty rdf:about="#requestsAccountDeletion">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Indicates that a user has requested account deletion.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: deletionRequestedBy -->
+    <owl:ObjectProperty rdf:about="#deletionRequestedBy">
+        <rdfs:domain rdf:resource="#AccountDeletion"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Links the account deletion process to the user action that initiated it.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: isAccountDeleted -->
+    <owl:DatatypeProperty rdf:about="#isAccountDeleted">
+        <rdfs:domain rdf:resource="#AccountDeletion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether the account has been deleted.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: deletionReason -->
+    <owl:DatatypeProperty rdf:about="#deletionReason">
+        <rdfs:domain rdf:resource="#AccountDeletion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores the reason for account deletion.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: deletionRequestedOn -->
+    <owl:DatatypeProperty rdf:about="#deletionRequestedOn">
+        <rdfs:domain rdf:resource="#AccountDeletion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The date and time when account deletion was requested.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Session Sub-class -->
+    <owl:Class rdf:about="#Session">
+        <rdfs:subClassOf rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Handles session management, including logouts.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: logsOutFromSession -->
+    <owl:ObjectProperty rdf:about="#logsOutFromSession">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Session"/>
+        <rdfs:comment>Links a user to the session they logged out from.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: logoutPerformedBy -->
+    <owl:ObjectProperty rdf:about="#logoutPerformedBy">
+        <rdfs:domain rdf:resource="#Session"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Links a session to the user action that performed the logout.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasLogoutTimestamp -->
+    <owl:DatatypeProperty rdf:about="#hasLogoutTimestamp">
+        <rdfs:domain rdf:resource="#Session"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The date and time when the session was logged out.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasSessionID -->
+    <owl:DatatypeProperty rdf:about="#hasSessionID">
+        <rdfs:domain rdf:resource="#Session"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Unique identifier for the session.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+<!-- UserAction Class -->
+    <owl:Class rdf:about="#UserAction">
+        <rdfs:comment>Represents actions performed by users within the system, such as editing profiles, enabling two-factor authentication, or requesting account deletion.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasActionType -->
+    <owl:DatatypeProperty rdf:about="#hasActionType">
+        <rdfs:domain rdf:resource="#UserAction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of action performed by the user, such as EditProfile, EnableTwoFactorAuth, or RequestAccountDeletion.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasTimestamp -->
+    <owl:DatatypeProperty rdf:about="#hasTimestamp">
+        <rdfs:domain rdf:resource="#UserAction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the date and time when the user action was performed.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasReason -->
+    <owl:DatatypeProperty rdf:about="#hasReason">
+        <rdfs:domain rdf:resource="#UserAction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Optional property specifying the reason for the action, such as privacy concerns or security.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: performedBy -->
+    <owl:ObjectProperty rdf:about="#performedBy">
+        <rdfs:domain rdf:resource="#UserAction"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user action to the user who performed it.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasRegistrationDate -->
+    <owl:DatatypeProperty rdf:about="#hasRegistrationDate">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>
+            The date and time when the user registered on the platform.
+            Useful for forensic timeline and account history.
+        </rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasLastLoginIP -->
+    <owl:DatatypeProperty rdf:about="#hasLastLoginIP">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>
+            The IP address used during the user's last login.
+            Important for digital forensics or geolocation.
+        </rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+
+<!-- Content Class -->
+    <owl:Class rdf:about="#Content">
+        <rdfs:comment>Represents all forms of user-generated content, including posts and drafts, within the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-Class: Post -->
+    <owl:Class rdf:about="#Post">
+        <rdfs:subClassOf rdf:resource="#Content"/>
+        <rdfs:comment>Represents posts created by users, which may contain text, media, and other metadata.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for Post -->
+    <owl:DatatypeProperty rdf:about="#hasPostTitle">
+        <rdfs:domain rdf:resource="#Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Title of the post.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPostContent">
+        <rdfs:domain rdf:resource="#Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Content of the post, typically text or markdown.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPostMedia">
+        <rdfs:domain rdf:resource="#Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>Media associated with the post, such as images, GIFs, or videos.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPostCreationTimestamp">
+        <rdfs:domain rdf:resource="#Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp of when the post was created.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for Post -->
+    <owl:ObjectProperty rdf:about="#createsPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Indicates that a user created a post.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithUser">
+        <rdfs:domain rdf:resource="#Post"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a post to the user who created it.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithCommunity">
+        <rdfs:domain rdf:resource="#Post"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links a post to the community it belongs to.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Sub-Class: Draft -->
+    <owl:Class rdf:about="#Draft">
+        <rdfs:subClassOf rdf:resource="#Post"/>
+        <rdfs:comment>Represents drafts saved by users, which can be edited and later posted.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for Draft -->
+    <owl:DatatypeProperty rdf:about="#hasDraftTitle">
+        <rdfs:domain rdf:resource="#Draft"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Title of the draft.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDraftContent">
+        <rdfs:domain rdf:resource="#Draft"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Content of the draft, typically text or markdown.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDraftMedia">
+        <rdfs:domain rdf:resource="#Draft"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>Media associated with the draft, such as images, GIFs, or videos.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDraftSavedTimestamp">
+        <rdfs:domain rdf:resource="#Draft"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp of when the draft was saved.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for Draft -->
+    <owl:ObjectProperty rdf:about="#savesPostAsDraft">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Draft"/>
+        <rdfs:comment>Indicates that a user saved a post as a draft.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#editsDraft">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Draft"/>
+        <rdfs:comment>Indicates that a user edited a draft.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#postsDraft">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Draft"/>
+        <rdfs:comment>Indicates that a user posted a draft.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithCommunity">
+        <rdfs:domain rdf:resource="#Draft"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links a draft to the community it belongs to.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- ScheduledPost Class -->
+    <owl:Class rdf:about="#ScheduledPost">
+        <rdfs:subClassOf rdf:resource="#Post"/>
+        <rdfs:comment>Represents posts scheduled by users to be published at a future timestamp.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for ScheduledPost -->
+    <owl:DatatypeProperty rdf:about="#hasScheduledPostTitle">
+        <rdfs:domain rdf:resource="#ScheduledPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Title of the scheduled post.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasScheduledPostContent">
+        <rdfs:domain rdf:resource="#ScheduledPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Content of the scheduled post.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasScheduledPostMedia">
+        <rdfs:domain rdf:resource="#ScheduledPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>Media attachment for the scheduled post, such as an image or video.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasScheduledPublishTimestamp">
+        <rdfs:domain rdf:resource="#ScheduledPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp indicating when the scheduled post will be published.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for ScheduledPost -->
+    <owl:ObjectProperty rdf:about="#postsScheduledPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ScheduledPost"/>
+        <rdfs:comment>Links a user to the scheduled post they have created.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#editsScheduledPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ScheduledPost"/>
+        <rdfs:comment>Indicates that a user edits an existing scheduled post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithUser">
+        <rdfs:domain rdf:resource="#ScheduledPost"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a scheduled post to the user who created it.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithCommunity">
+        <rdfs:domain rdf:resource="#ScheduledPost"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links a scheduled post to the community it belongs to.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- CrossPost Class -->
+    <owl:Class rdf:about="#CrossPost">
+        <rdfs:subClassOf rdf:resource="#Post"/>
+        <rdfs:comment>Represents posts that are cross-posted from other communities or original posts.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for CrossPost -->
+    <owl:DatatypeProperty rdf:about="#hasCrosspostedTitle">
+        <rdfs:domain rdf:resource="#CrossPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Title of the cross-posted content.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasCrosspostedContent">
+        <rdfs:domain rdf:resource="#CrossPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Content of the cross-posted content.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasCrosspostedMedia">
+        <rdfs:domain rdf:resource="#CrossPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>Media attachment for the cross-posted content.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for CrossPost -->
+    <owl:ObjectProperty rdf:about="#postsCrossPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#CrossPost"/>
+        <rdfs:comment>Links a user to the cross-post they have created.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#editsCrossPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#CrossPost"/>
+        <rdfs:comment>Indicates that a user edits an existing cross-post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithOriginalPost">
+        <rdfs:domain rdf:resource="#CrossPost"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Links a cross-post to its original post.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithUser">
+        <rdfs:domain rdf:resource="#CrossPost"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a cross-post to the user who created it.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithCommunity">
+        <rdfs:domain rdf:resource="#CrossPost"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links a cross-post to the community it belongs to.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+
+    <!-- TagContent Sub-class -->
+    <owl:Class rdf:about="#TagContent">
+        <rdfs:subClassOf rdf:resource="#Content"/>
+        <rdfs:comment>Represents content tagged by users with specific labels.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: addTagsOnContent -->
+    <owl:ObjectProperty rdf:about="#addTagsOnContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Indicates that a user has tagged a piece of content.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasTagLabel -->
+    <owl:DatatypeProperty rdf:about="#hasTagLabel">
+        <rdfs:domain rdf:resource="#TagContent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the label of a tag associated with the content.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: associatedWithPost -->
+    <owl:ObjectProperty rdf:about="#associatedWithPost">
+        <rdfs:domain rdf:resource="#TagContent"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Links tagged content to the post it is associated with.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: associatedWithUser -->
+    <owl:ObjectProperty rdf:about="#associatedWithUser">
+        <rdfs:domain rdf:resource="#TagContent"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links tagged content to the user who created the tag.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Polls Sub-class -->
+    <owl:Class rdf:about="#Polls">
+        <rdfs:subClassOf rdf:resource="#Content"/>
+        <rdfs:comment>Represents polls created by users with questions and options for interaction.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: opensPoll -->
+    <owl:ObjectProperty rdf:about="#opensPoll">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Polls"/>
+        <rdfs:comment>Indicates that a user has created or opened a poll.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasPollQuestion -->
+    <owl:DatatypeProperty rdf:about="#hasPollQuestion">
+        <rdfs:domain rdf:resource="#Polls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the question posed in a poll.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasPollOptions -->
+    <owl:DatatypeProperty rdf:about="#hasPollOptions">
+        <rdfs:domain rdf:resource="#Polls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the options provided in a poll, stored as an array of strings.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasPollStartTime -->
+    <owl:DatatypeProperty rdf:about="#hasPollStartTime">
+        <rdfs:domain rdf:resource="#Polls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Indicates the start time of a poll.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasPollEndTime -->
+    <owl:DatatypeProperty rdf:about="#hasPollEndTime">
+        <rdfs:domain rdf:resource="#Polls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Indicates the end time of a poll.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: associatedWithCommunity -->
+    <owl:ObjectProperty rdf:about="#associatedWithCommunity">
+        <rdfs:domain rdf:resource="#Polls"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links polls to the community they are associated with.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+
+    <!-- FlairSystem Class -->
+    <owl:Class rdf:about="#FlairSystem">
+        <rdfs:subClassOf rdf:resource="#Content"/>
+        <rdfs:comment>Represents a system for assigning flair labels to posts or users to provide additional context or categorization.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasFlairLabel -->
+    <owl:DatatypeProperty rdf:about="#hasFlairLabel">
+        <rdfs:domain rdf:resource="#FlairSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the label or tag associated with a flair in the system.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: associatedWithPost -->
+    <owl:ObjectProperty rdf:about="#associatedWithPost">
+        <rdfs:domain rdf:resource="#FlairSystem"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Links a flair to a specific post in the system.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: associatedWithUser -->
+    <owl:ObjectProperty rdf:about="#associatedWithUser">
+        <rdfs:domain rdf:resource="#FlairSystem"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a flair to a specific user in the system.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- AnonymousMode Class -->
+    <owl:Class rdf:about="#AnonymousMode">
+        <rdfs:subClassOf rdf:resource="#Content"/>
+        <rdfs:comment>Represents the functionality of sharing content anonymously within a community.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: postsContentAsAnonymous -->
+    <owl:ObjectProperty rdf:about="#postsContentAsAnonymous">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Indicates that a user has posted content anonymously.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasAnonymousPostTitle -->
+    <owl:DatatypeProperty rdf:about="#hasAnonymousPostTitle">
+        <rdfs:domain rdf:resource="#AnonymousMode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the title of an anonymous post.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasAnonymousPostContent -->
+    <owl:DatatypeProperty rdf:about="#hasAnonymousPostContent">
+        <rdfs:domain rdf:resource="#AnonymousMode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the content of an anonymous post.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasAnonymousPostMedia -->
+    <owl:DatatypeProperty rdf:about="#hasAnonymousPostMedia">
+        <rdfs:domain rdf:resource="#AnonymousMode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>Defines the media (e.g., images or videos) associated with an anonymous post.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasAnonymousPostTimestamp -->
+    <owl:DatatypeProperty rdf:about="#hasAnonymousPostTimestamp">
+        <rdfs:domain rdf:resource="#AnonymousMode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp of when the anonymous post was created.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: associatedWithCommunity -->
+    <owl:ObjectProperty rdf:about="#associatedWithCommunity">
+        <rdfs:domain rdf:resource="#AnonymousMode"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links an anonymous post to the community it belongs to.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: anonymousActivityLoggedBy -->
+    <owl:ObjectProperty rdf:about="#anonymousActivityLoggedBy">
+        <rdfs:domain rdf:resource="#AnonymousMode"/>
+        <rdfs:range rdf:resource="#AnonymousSession"/>
+        <rdfs:comment>Indicates that the anonymous activity is logged by a specific anonymous session.</rdfs:comment>
+    </owl:ObjectProperty>
+
+<!-- Community Class -->
+    <owl:Class rdf:about="#Community">
+        <rdfs:comment>Represents an online community where users can join, follow, and interact with posts and rules.</rdfs:comment>
+    </owl:Class>
+
+    <!-- CommunityCreation Sub-class -->
+    <owl:Class rdf:about="#CommunityCreation">
+        <rdfs:subClassOf rdf:resource="#Community"/>
+        <rdfs:comment>Represents the creation process and properties of a community.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasCommunityName -->
+    <owl:DatatypeProperty rdf:about="#hasCommunityName">
+        <rdfs:domain rdf:resource="#CommunityCreation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the name of the community.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasCommunityDescription -->
+    <owl:DatatypeProperty rdf:about="#hasCommunityDescription">
+        <rdfs:domain rdf:resource="#CommunityCreation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Provides a description for the community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasCommunityTheme -->
+    <owl:DatatypeProperty rdf:about="#hasCommunityTheme">
+        <rdfs:domain rdf:resource="#CommunityCreation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the theme or aesthetic of the community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasCommunityCreationDate -->
+    <owl:DatatypeProperty rdf:about="#hasCommunityCreationDate">
+        <rdfs:domain rdf:resource="#CommunityCreation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the date and time the community was created.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: createdByUser -->
+    <owl:ObjectProperty rdf:about="#createdByUser">
+        <rdfs:domain rdf:resource="#CommunityCreation"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links the creation of a community to the user who created it.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: hasCommunityRules -->
+    <owl:ObjectProperty rdf:about="#hasCommunityRules">
+        <rdfs:domain rdf:resource="#CommunityCreation"/>
+        <rdfs:range rdf:resource="#CommunityRules"/>
+        <rdfs:comment>Links a community to its associated rules or guidelines.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- CommunityEntry Sub-class -->
+    <owl:Class rdf:about="#CommunityEntry">
+        <rdfs:subClassOf rdf:resource="#Community"/>
+        <rdfs:comment>Represents the process and properties of joining or following a community.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: joinsCommunity -->
+    <owl:ObjectProperty rdf:about="#joinsCommunity">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Indicates that a user has joined a community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: followsCommunity -->
+    <owl:ObjectProperty rdf:about="#followsCommunity">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Indicates that a user is following a community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasJoinTimestamp -->
+    <owl:DatatypeProperty rdf:about="#hasJoinTimestamp">
+        <rdfs:domain rdf:resource="#CommunityEntry"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp of when a user joined the community.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasFollowStatus -->
+    <owl:DatatypeProperty rdf:about="#hasFollowStatus">
+        <rdfs:domain rdf:resource="#CommunityEntry"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether a user is currently following a community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- CommunityRules Sub-class -->
+    <owl:Class rdf:about="#CommunityRules">
+        <rdfs:subClassOf rdf:resource="#Community"/>
+        <rdfs:comment>Represents rules or guidelines that govern behavior and content within a community.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasRuleDescription -->
+    <owl:DatatypeProperty rdf:about="#hasRuleDescription">
+        <rdfs:domain rdf:resource="#CommunityRules"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Provides a textual description of a specific community rule.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasRuleType -->
+    <owl:DatatypeProperty rdf:about="#hasRuleType">
+        <rdfs:domain rdf:resource="#CommunityRules"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the type of rule (e.g., Content, Behavior).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: addedByModerator -->
+    <owl:ObjectProperty rdf:about="#addedByModerator">
+        <rdfs:domain rdf:resource="#CommunityRules"/>
+        <rdfs:range rdf:resource="#Moderator"/>
+        <rdfs:comment>Indicates which moderator added a specific rule to the community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: associatedWithCommunity -->
+    <owl:ObjectProperty rdf:about="#associatedWithCommunity">
+        <rdfs:domain rdf:resource="#CommunityRules"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links a rule to the community it governs.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- SpotlightCommunity Sub-class -->
+    <owl:Class rdf:about="#SpotlightCommunity">
+        <rdfs:subClassOf rdf:resource="#Community"/>
+        <rdfs:comment>Represents communities featured in spotlight sections.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: highlightsCommunity -->
+    <owl:ObjectProperty rdf:about="#highlightsCommunity">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Indicates that a user highlights or promotes a community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasSpotlightReason -->
+    <owl:DatatypeProperty rdf:about="#hasSpotlightReason">
+        <rdfs:domain rdf:resource="#SpotlightCommunity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Records the reason for a community being highlighted in the spotlight.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- CommunityNotifications Sub-class -->
+    <owl:Class rdf:about="#CommunityNotifications">
+        <rdfs:subClassOf rdf:resource="#Community"/>
+        <rdfs:comment>Represents notification settings and preferences for a community.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: customizesCommunityNotification -->
+    <owl:ObjectProperty rdf:about="#customizesCommunityNotification">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Indicates that a user customizes notification settings for a community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasNotificationType -->
+    <owl:DatatypeProperty rdf:about="#hasNotificationType">
+        <rdfs:domain rdf:resource="#CommunityNotifications"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of community notifications, such as Post or Comment.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasNotificationFrequency -->
+    <owl:DatatypeProperty rdf:about="#hasNotificationFrequency">
+        <rdfs:domain rdf:resource="#CommunityNotifications"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the frequency of notifications for a community (e.g., Instant or Daily Digest).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- ReputationSystem Sub-class -->
+    <owl:Class rdf:about="#ReputationSystem">
+        <rdfs:subClassOf rdf:resource="#Community"/>
+        <rdfs:comment>Represents the reputation mechanisms within a community.</rdfs:comment>
+    </owl:Class>
+
+    <!-- CommunityReputation Sub-class -->
+    <owl:Class rdf:about="#CommunityReputation">
+        <rdfs:subClassOf rdf:resource="#ReputationSystem"/>
+        <rdfs:comment>Defines a community's reputation metrics, including karma points and levels.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasKarmaPoints -->
+    <owl:DatatypeProperty rdf:about="#hasKarmaPoints">
+        <rdfs:domain rdf:resource="#CommunityReputation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Indicates the number of karma points earned by a user in the community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasReputationLevel -->
+    <owl:DatatypeProperty rdf:about="#hasReputationLevel">
+        <rdfs:domain rdf:resource="#CommunityReputation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the user's reputation level, such as Bronze, Silver, or Gold.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: earnedByUser -->
+    <owl:ObjectProperty rdf:about="#earnedByUser">
+        <rdfs:domain rdf:resource="#CommunityReputation"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links reputation metrics to the user who earned them.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Leaderboards Sub-class -->
+    <owl:Class rdf:about="#Leaderboards">
+        <rdfs:subClassOf rdf:resource="#ReputationSystem"/>
+        <rdfs:comment>Represents leaderboards within the community.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: hasLeaderboard -->
+    <owl:ObjectProperty rdf:about="#hasLeaderboard">
+        <rdfs:domain rdf:resource="#Community"/>
+        <rdfs:range rdf:resource="#Leaderboards"/>
+        <rdfs:comment>Links a community to its associated leaderboard.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: displaysTopContributor -->
+    <owl:ObjectProperty rdf:about="#displaysTopContributor">
+        <rdfs:domain rdf:resource="#Leaderboards"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Indicates the user displayed as the top contributor in the leaderboard.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: displaysTopEngagement -->
+    <owl:ObjectProperty rdf:about="#displaysTopEngagement">
+        <rdfs:domain rdf:resource="#Leaderboards"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Indicates the user displayed as the top engager in the leaderboard.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasLeaderboardType -->
+    <owl:DatatypeProperty rdf:about="#hasLeaderboardType">
+        <rdfs:domain rdf:resource="#Leaderboards"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the type of leaderboard (e.g., Karma, Activity).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- CommunityModeration Class -->
+    <owl:Class rdf:about="#CommunityModeration">
+        <rdfs:subClassOf rdf:resource="#Community"/>
+        <rdfs:comment>Represents moderation functionalities for a community, including moderators and their actions.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Moderator Sub-class -->
+    <owl:Class rdf:about="#Moderator">
+        <rdfs:subClassOf rdf:resource="#CommunityModeration"/>
+        <rdfs:comment>Represents a moderator assigned to a community with specific roles and permissions.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for Moderator -->
+    <owl:DatatypeProperty rdf:about="#hasModeratorRoleType">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the role type of the moderator (e.g., Lead Moderator, Assistant Moderator).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasJoinDateAsModerator">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the date and time a user was assigned as a moderator.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasModeratorPermissions">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Lists the permissions assigned to the moderator (e.g., EditRules, BanUsers, ManagePosts).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#isActiveModerator">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether a moderator is currently active in the community.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasModeratorReputation">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the reputation score of the moderator based on votes or contributions.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasModeratorNotes">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Optional notes about the moderator's activities or status.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for Moderator -->
+    <owl:ObjectProperty rdf:about="#isAssignedAsModeratorIn">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links a user who is assigned as a moderator to the community they moderate.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#moderatesCommunity">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links a moderator to the community they moderate.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasAssignedBy">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#Moderator"/>
+        <rdfs:comment>Indicates the administrator who assigned the user as a moderator.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- ModeratorActions Sub-class -->
+    <owl:Class rdf:about="#ModeratorActions">
+        <rdfs:subClassOf rdf:resource="#CommunityModeration"/>
+        <rdfs:comment>Represents the actions a moderator can perform in a community.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for ModeratorActions -->
+    <owl:ObjectProperty rdf:about="#approvesPost">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Indicates that a moderator has approved a post in the community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#deniesPost">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Indicates that a moderator has denied a post in the community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#bansUser">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Indicates that a moderator has banned a user from the community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#unbansUser">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Indicates that a moderator has unbanned a user in the community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#locksPost">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Indicates that a moderator has locked a post in the community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#unlocksPost">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Indicates that a moderator has unlocked a post in the community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#removesComment">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#Comment"/>
+        <rdfs:comment>Indicates that a moderator has removed a comment from the community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#managesRules">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="#CommunityRules"/>
+        <rdfs:comment>Links a moderator to the rules they manage in the community.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- ModerationQueue Sub-class -->
+    <owl:Class rdf:about="#ModerationQueue">
+        <rdfs:subClassOf rdf:resource="#CommunityModeration"/>
+        <rdfs:comment>Represents a queue that contains flagged content for moderation.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ModerationQueue Properties -->
+    <owl:ObjectProperty rdf:about="#containsFlaggedContent">
+        <rdfs:domain rdf:resource="#ModerationQueue"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a moderation queue to flagged content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasModerationPriority">
+        <rdfs:domain rdf:resource="#ModerationQueue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the priority level of the moderation queue (e.g., High, Medium, Low).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasQueueCreationTimestamp">
+        <rdfs:domain rdf:resource="#ModerationQueue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp when the moderation queue was created.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#processedByModerator">
+        <rdfs:domain rdf:resource="#ModerationQueue"/>
+        <rdfs:range rdf:resource="#Moderator"/>
+        <rdfs:comment>Links a moderation queue to the moderator who processed it.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasProcessingStatus">
+        <rdfs:domain rdf:resource="#ModerationQueue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the processing status of the queue (e.g., Pending, Resolved).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- CommunityRules Sub-class -->
+    <owl:Class rdf:about="#CommunityRules">
+        <rdfs:subClassOf rdf:resource="#CommunityModeration"/>
+        <rdfs:comment>Represents the rules governing a community's content and behavior.</rdfs:comment>
+    </owl:Class>
+
+    <!-- CommunityRules Properties -->
+    <owl:ObjectProperty rdf:about="#hasRules">
+        <rdfs:domain rdf:resource="#Community"/>
+        <rdfs:range rdf:resource="#CommunityRules"/>
+        <rdfs:comment>Links a community to its rules.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasRuleDescription">
+        <rdfs:domain rdf:resource="#CommunityRules"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Provides a description of the community rule.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasRuleType">
+        <rdfs:domain rdf:resource="#CommunityRules"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of rule (e.g., ContentRule, BehaviorRule).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#createdByModerator">
+        <rdfs:domain rdf:resource="#CommunityRules"/>
+        <rdfs:range rdf:resource="#Moderator"/>
+        <rdfs:comment>Links a community rule to the moderator who created it.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#lastUpdatedBy">
+        <rdfs:domain rdf:resource="#CommunityRules"/>
+        <rdfs:range rdf:resource="#Moderator"/>
+        <rdfs:comment>Links a community rule to the moderator who last updated it.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasLastUpdatedTimestamp">
+        <rdfs:domain rdf:resource="#CommunityRules"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the last updated timestamp of the community rule.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#appliesToContentType">
+        <rdfs:domain rdf:resource="#CommunityRules"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the content types to which the rule applies (e.g., Posts, Comments, Polls).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Reports Sub-class -->
+    <owl:Class rdf:about="#Reports">
+        <rdfs:subClassOf rdf:resource="#CommunityModeration"/>
+        <rdfs:comment>Represents user reports for violations in the community.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Reports Properties -->
+    <owl:ObjectProperty rdf:about="#isFiledAgainst">
+        <rdfs:domain rdf:resource="#Reports"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a report to the user it is filed against.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isFiledFor">
+        <rdfs:domain rdf:resource="#Reports"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Links a report to the post it is filed for.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isFiledBy">
+        <rdfs:domain rdf:resource="#Reports"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a report to the user who filed it.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasReportReason">
+        <rdfs:domain rdf:resource="#Reports"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the reason for filing the report (e.g., Spam, Harassment, Policy Violation).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasReportTimestamp">
+        <rdfs:domain rdf:resource="#Reports"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp when the report was filed.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#reviewedBy">
+        <rdfs:domain rdf:resource="#Reports"/>
+        <rdfs:range rdf:resource="#Moderator"/>
+        <rdfs:comment>Links a report to the moderator who reviewed it.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasResolutionStatus">
+        <rdfs:domain rdf:resource="#Reports"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the resolution status of the report (e.g., Approved, Denied, Pending).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasModeratorNotes">
+        <rdfs:domain rdf:resource="#Reports"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Optional notes by the moderator regarding the report.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- CommunitySettings Sub-class -->
+    <owl:Class rdf:about="#CommunitySettings">
+        <rdfs:subClassOf rdf:resource="#CommunityModeration"/>
+        <rdfs:comment>Represents settings for a community, including posting rules, banner, and flair.</rdfs:comment>
+    </owl:Class>
+
+    <!-- CommunitySettings Properties -->
+    <owl:ObjectProperty rdf:about="#hasSettings">
+        <rdfs:domain rdf:resource="#Community"/>
+        <rdfs:range rdf:resource="#CommunitySettings"/>
+        <rdfs:comment>Links a community to its settings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasBannerImageURL">
+        <rdfs:domain rdf:resource="#CommunitySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>Defines the URL for the community's banner image.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDescription">
+        <rdfs:domain rdf:resource="#CommunitySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Provides a description for the community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPostingRules">
+        <rdfs:domain rdf:resource="#CommunitySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the rules for posting in the community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#canAllowAnonymousPosts">
+        <rdfs:domain rdf:resource="#CommunitySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if the community allows anonymous posts.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#hasDefaultFlair">
+        <rdfs:domain rdf:resource="#CommunitySettings"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links the community settings to its default flair for posts.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasRestrictedModeEnabled">
+        <rdfs:domain rdf:resource="#CommunitySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if restricted mode is enabled for the community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- ModeratorStatistics Sub-class -->
+    <owl:Class rdf:about="#ModeratorStatistics">
+        <rdfs:subClassOf rdf:resource="#CommunityModeration"/>
+        <rdfs:comment>Represents various statistics associated with a moderator's activity in the community.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ModeratorStatistics Properties -->
+    <owl:DatatypeProperty rdf:about="#hasTotalPostsApproved">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Tracks the total number of posts approved by the moderator.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasTotalPostsDenied">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Tracks the total number of posts denied by the moderator.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasTotalUsersBanned">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Tracks the total number of users banned by the moderator.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasTotalCommentsRemoved">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Tracks the total number of comments removed by the moderator.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAverageResponseTime">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Specifies the average response time of the moderator in hours.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasActivityLevel">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the activity level of the moderator (e.g., High, Medium, Low).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasKarmaPointsEarned">
+        <rdfs:domain rdf:resource="#Moderator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Optional property to track karma points earned by the moderator.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+<!-- ContentInteraction Class -->
+    <owl:Class rdf:about="#ContentInteraction">
+        <rdfs:comment>Represents all forms of user interactions with content, including voting, liking, and replying.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Engagement Sub-Class -->
+    <owl:Class rdf:about="#Engagement">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <rdfs:comment>Represents various types of engagement actions performed on content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- UpvoteDownvote Sub-Class -->
+    <owl:Class rdf:about="#UpvoteDownvote">
+        <rdfs:subClassOf rdf:resource="#Engagement"/>
+        <rdfs:comment>Represents upvote or downvote actions on content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Properties for UpvoteDownvote -->
+    <owl:ObjectProperty rdf:about="#upvotesContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a user to the content they have upvoted.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#downvotesContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a user to the content they have downvoted.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasUpvoteTimestamp">
+        <rdfs:domain rdf:resource="#UpvoteDownvote"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp when an upvote was made.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDownvoteTimestamp">
+        <rdfs:domain rdf:resource="#UpvoteDownvote"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp when a downvote was made.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#UpvoteDownvote"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links an upvote or downvote action to the associated content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Like Sub-Class -->
+    <owl:Class rdf:about="#Like">
+        <rdfs:subClassOf rdf:resource="#Engagement"/>
+        <rdfs:comment>Represents a like action on content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Properties for Like -->
+    <owl:ObjectProperty rdf:about="#likesContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a user to the content they have liked.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasLikeTimestamp">
+        <rdfs:domain rdf:resource="#Like"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp when a like was made.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#Like"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a like action to the associated content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- ReplyToComments Sub-Class -->
+    <owl:Class rdf:about="#ReplyToComments">
+        <rdfs:subClassOf rdf:resource="#Engagement"/>
+        <rdfs:comment>Represents a reply to a comment action.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Properties for ReplyToComments -->
+    <owl:ObjectProperty rdf:about="#repliesToComment">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Comment"/>
+        <rdfs:comment>Links a user to the comment they have replied to.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasReplyText">
+        <rdfs:domain rdf:resource="#ReplyToComments"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores the text content of a reply.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasReplyTimestamp">
+        <rdfs:domain rdf:resource="#ReplyToComments"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp when a reply was made.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithComment">
+        <rdfs:domain rdf:resource="#ReplyToComments"/>
+        <rdfs:range rdf:resource="#Comment"/>
+        <rdfs:comment>Links a reply action to the associated comment.</rdfs:comment>
+    </owl:ObjectProperty>
+
+
+    <!-- ShareRepost Sub-Class -->
+    <owl:Class rdf:about="#ShareRepost">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <rdfs:comment>Represents sharing or reposting content to a community or other platforms.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Properties for ShareRepost -->
+    <owl:ObjectProperty rdf:about="#sharesContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a user to the content they have shared or reposted.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasShareTimestamp">
+        <rdfs:domain rdf:resource="#ShareRepost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp when content was shared.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#sharedToCommunity">
+        <rdfs:domain rdf:resource="#ShareRepost"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links shared content to the community where it was reposted.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#ShareRepost"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a share or repost action to the associated content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Bookmark Sub-Class -->
+    <owl:Class rdf:about="#Bookmark">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <rdfs:comment>Represents bookmarking content for later reference.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Properties for Bookmark -->
+    <owl:ObjectProperty rdf:about="#bookmarksContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a user to the content they have bookmarked.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasBookmarkTimestamp">
+        <rdfs:domain rdf:resource="#Bookmark"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp when content was bookmarked.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#Bookmark"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a bookmark action to the associated content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- GiveAwards Sub-Class -->
+    <owl:Class rdf:about="#GiveAwards">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <rdfs:comment>Represents giving awards to content or users as recognition.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Properties for GiveAwards -->
+    <owl:ObjectProperty rdf:about="#givesAwardToContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a user to the content they have awarded.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAwardType">
+        <rdfs:domain rdf:resource="#GiveAwards"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of award given (e.g., Gold, Silver, Platinum).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAwardTimestamp">
+        <rdfs:domain rdf:resource="#GiveAwards"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp when an award was given.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#GiveAwards"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links an award action to the associated content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithAwardingUser">
+        <rdfs:domain rdf:resource="#GiveAwards"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links an award action to the user who awarded the content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+
+    <!-- BlockUnblockUser Sub-Class -->
+    <owl:Class rdf:about="#BlockUnblockUser">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <rdfs:comment>Represents blocking and unblocking actions between users.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Properties for BlockUnblockUser -->
+    <owl:ObjectProperty rdf:about="#blocksUser">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user to another user they have blocked.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#unblocksUser">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user to another user they have unblocked.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasBlockReason">
+        <rdfs:domain rdf:resource="#BlockUnblockUser"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores the reason for blocking a user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasBlockTimestamp">
+        <rdfs:domain rdf:resource="#BlockUnblockUser"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp when a user was blocked.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasUnblockTimestamp">
+        <rdfs:domain rdf:resource="#BlockUnblockUser"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp when a user was unblocked.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Mute Sub-Class -->
+    <owl:Class rdf:about="#Mute">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <rdfs:comment>Represents muting actions on users or topics.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Topic Sub-Class -->
+    <owl:Class rdf:about="#Topic">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <rdfs:comment>Represents topics on forums</rdfs:comment>
+    </owl:Class>
+
+    <!-- Properties for Mute -->
+    <owl:ObjectProperty rdf:about="#mutesUser">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user to another user they have muted.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#mutesTopic">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Topic"/>
+        <rdfs:comment>Links a user to a topic they have muted.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMuteTimestamp">
+        <rdfs:domain rdf:resource="#Mute"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp when a topic or user was muted.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithTopic">
+        <rdfs:domain rdf:resource="#Mute"/>
+        <rdfs:range rdf:resource="#Topic"/>
+        <rdfs:comment>Links a muting action to the associated topic.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- FollowTopics Sub-Class -->
+    <owl:Class rdf:about="#FollowTopics">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <rdfs:comment>Represents following topics actions.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Properties for FollowTopics -->
+    <owl:ObjectProperty rdf:about="#followsTopic">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Topic"/>
+        <rdfs:comment>Links a user to a topic they are following.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasFollowTimestamp">
+        <rdfs:domain rdf:resource="#FollowTopics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp when a user started following a topic.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithTopic">
+        <rdfs:domain rdf:resource="#FollowTopics"/>
+        <rdfs:range rdf:resource="#Topic"/>
+        <rdfs:comment>Links a following action to the associated topic.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- PinPosts Sub-Class -->
+    <owl:Class rdf:about="#PinPosts">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+        <rdfs:comment>Represents pinning actions for posts by users or communities.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Properties for PinPosts -->
+    <owl:ObjectProperty rdf:about="#pinsPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Links a user to a post they have pinned.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#pinsPostByCommunity">
+        <rdfs:domain rdf:resource="#Community"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Links a community to a post it has pinned.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPinTimestamp">
+        <rdfs:domain rdf:resource="#PinPosts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp when a post was pinned.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithPost">
+        <rdfs:domain rdf:resource="#PinPosts"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Links a pinning action to the associated post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Comment Sub-Class -->
+    <owl:Class rdf:about="#Comment">
+        <rdfs:subClassOf rdf:resource="#Engagement"/>
+        <rdfs:comment>Represents comments made by users on content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: User -> commentsOn -> Content -->
+    <owl:ObjectProperty rdf:about="#commentsOn">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a user to the content they have commented on.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasCommentText -->
+    <owl:DatatypeProperty rdf:about="#hasCommentText">
+        <rdfs:domain rdf:resource="#Comment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores the text of a comment.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasCommentTimestamp -->
+    <owl:DatatypeProperty rdf:about="#hasCommentTimestamp">
+        <rdfs:domain rdf:resource="#Comment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp when a comment was made.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: associatedWithContent -->
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#Comment"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a comment to the content it is associated with.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Property: performedBy (untuk UpvoteDownvote, Like, Comment, dsb.) -->
+    <owl:ObjectProperty rdf:about="#performedBy">
+        <rdfs:domain rdf:resource="#ContentInteraction"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>
+        Links an interaction instance (UpvoteDownvote, Like, Comment, etc.)
+        to the user who performed the action.
+        </rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Property: blockInitiator (khusus BlockUnblockUser) -->
+    <owl:ObjectProperty rdf:about="#blockInitiator">
+        <rdfs:domain rdf:resource="#BlockUnblockUser"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>
+        Indicates the user who initiates the blocking action.
+        </rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Property: blockedTargetUser (khusus BlockUnblockUser) -->
+    <owl:ObjectProperty rdf:about="#blockedTargetUser">
+        <rdfs:domain rdf:resource="#BlockUnblockUser"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>
+        Indicates the user who is being blocked.
+        </rdfs:comment>
+    </owl:ObjectProperty>
+
+
+<!-- SearchAndDiscovery Class -->
+    <owl:Class rdf:about="#SearchAndDiscovery">
+        <rdfs:comment>Represents the overall structure for search and discovery functionalities.</rdfs:comment>
+    </owl:Class>
+
+    <!-- SearchFeatures Subclass -->
+    <owl:Class rdf:about="#SearchFeatures">
+        <rdfs:subClassOf rdf:resource="#SearchAndDiscovery"/>
+        <rdfs:comment>Defines various search-related features.</rdfs:comment>
+    </owl:Class>
+
+    <!-- GlobalSearch Subclass -->
+    <owl:Class rdf:about="#GlobalSearch">
+        <rdfs:subClassOf rdf:resource="#SearchFeatures"/>
+        <rdfs:comment>Represents global search functionality for different targets.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: searchesFor -->
+    <owl:ObjectProperty rdf:about="#searchesFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a user to the target of their search query.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasSearchKeyword -->
+    <owl:DatatypeProperty rdf:about="#hasSearchKeyword">
+        <rdfs:domain rdf:resource="#GlobalSearch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores the keyword used in a search query.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasSearchTimestamp -->
+    <owl:DatatypeProperty rdf:about="#hasSearchTimestamp">
+        <rdfs:domain rdf:resource="#GlobalSearch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp of a search query.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- AdvancedSearch Subclass -->
+    <owl:Class rdf:about="#AdvancedSearch">
+        <rdfs:subClassOf rdf:resource="#SearchFeatures"/>
+        <rdfs:comment>Represents advanced search functionalities with additional filters.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: appliesAdvancedSearchFilter -->
+    <owl:ObjectProperty rdf:about="#appliesSearchFilter">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#AdvancedSearch"/>
+        <rdfs:comment>Links a user to the advanced search filters they applied.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasSearchCriteria -->
+    <owl:DatatypeProperty rdf:about="#hasSearchCriteria">
+        <rdfs:domain rdf:resource="#AdvancedSearch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores criteria used in an advanced search query.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasSearchResultCount -->
+    <owl:DatatypeProperty rdf:about="#hasSearchResultCount">
+        <rdfs:domain rdf:resource="#AdvancedSearch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Records the number of results returned in an advanced search query.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- SearchFilter Class -->
+    <owl:Class rdf:about="#SearchFilter">
+        <rdfs:subClassOf rdf:resource="#SearchAndDiscovery"/>
+        <rdfs:comment>Represents filters used in advanced search queries.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasFilterType -->
+    <owl:DatatypeProperty rdf:about="#hasFilterType">
+        <rdfs:domain rdf:resource="#SearchFilter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of filter used (e.g., flair, tags).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasFilterValue -->
+    <owl:DatatypeProperty rdf:about="#hasFilterValue">
+        <rdfs:domain rdf:resource="#SearchFilter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores the value of the filter applied in a search.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- TrendSearch Subclass -->
+    <owl:Class rdf:about="#TrendSearch">
+        <rdfs:subClassOf rdf:resource="#SearchFeatures"/>
+        <rdfs:comment>Represents trends observed in user searches.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: viewsTrendingContent -->
+    <owl:ObjectProperty rdf:about="#viewsTrendingContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#TrendingContent"/>
+        <rdfs:comment>Links a user to trending content they viewed.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasTrendingKeyword -->
+    <owl:DatatypeProperty rdf:about="#hasTrendingKeyword">
+        <rdfs:domain rdf:resource="#TrendSearch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores the trending keyword observed in user searches.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasTrendingScore -->
+    <owl:DatatypeProperty rdf:about="#hasTrendingScore">
+        <rdfs:domain rdf:resource="#TrendSearch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Records the score associated with a trending keyword or content.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- TrendingContent Class -->
+    <owl:Class rdf:about="#TrendingContent">
+        <rdfs:subClassOf rdf:resource="#SearchAndDiscovery"/>    
+        <rdfs:comment>Represents content identified as trending based on user activities.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: associatedWithTopic -->
+    <owl:ObjectProperty rdf:about="#associatedWithTopic">
+        <rdfs:domain rdf:resource="#TrendingContent"/>
+        <rdfs:range rdf:resource="#Topic"/>
+        <rdfs:comment>Links trending content to a topic it is associated with.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: associatedWithContent -->
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#TrendingContent"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links trending content to the actual content it represents.</rdfs:comment>
+    </owl:ObjectProperty>
+
+<!-- Recommendations Class -->
+    <owl:Class rdf:about="#Recommendations">
+        <rdfs:comment>Represents the system that provides recommendations to users.</rdfs:comment>
+    </owl:Class>
+
+    <!-- PersonalizedFeed Subclass -->
+    <owl:Class rdf:about="#PersonalizedFeed">
+        <rdfs:subClassOf rdf:resource="#Recommendations"/>
+        <rdfs:comment>Represents personalized recommendation feeds based on user activity and preferences.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: receivesRecommendations -->
+    <owl:ObjectProperty rdf:about="#receivesRecommendations">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#RecommendedContent"/>
+        <rdfs:comment>Links a user to the content recommended to them.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasRecommendationSource -->
+    <owl:DatatypeProperty rdf:about="#hasRecommendationSource">
+        <rdfs:domain rdf:resource="#PersonalizedFeed"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates the source of recommendations (e.g., browsing history, preferences).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasRecommendationAlgorithm -->
+    <owl:DatatypeProperty rdf:about="#hasRecommendationAlgorithm">
+        <rdfs:domain rdf:resource="#PersonalizedFeed"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates the algorithm used to generate recommendations.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- RecommendedContent Class -->
+    <owl:Class rdf:about="#RecommendedContent">
+        <rdfs:subClassOf rdf:resource="#Recommendations"/>
+        <rdfs:comment>Represents the content recommended to a user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: associatedWithContent -->
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#RecommendedContent"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links recommended content to its associated content entity.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: associatedWithTopic -->
+    <owl:ObjectProperty rdf:about="#associatedWithTopic">
+        <rdfs:domain rdf:resource="#RecommendedContent"/>
+        <rdfs:range rdf:resource="#Topic"/>
+        <rdfs:comment>Links recommended content to the topic it is associated with.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- ExploreCategories Subclass -->
+    <owl:Class rdf:about="#ExploreCategories">
+        <rdfs:subClassOf rdf:resource="#Recommendations"/>
+        <rdfs:comment>Represents category browsing features for exploring content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: browsesCategory -->
+    <owl:ObjectProperty rdf:about="#browsesCategory">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Category"/>
+        <rdfs:comment>Links a user to the category they are browsing.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasCategoryName -->
+    <owl:DatatypeProperty rdf:about="#hasCategoryName">
+        <rdfs:domain rdf:resource="#ExploreCategories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the name of the category being explored.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Category Class -->
+    <owl:Class rdf:about="#Category">
+        <rdfs:subClassOf rdf:resource="#Recommendations"/>
+        <rdfs:comment>Represents content categories available for exploration.</rdfs:comment>
+    </owl:Class>
+
+    <!-- FlairSearch Subclass -->
+    <owl:Class rdf:about="#FlairSearch">
+        <rdfs:subClassOf rdf:resource="#Recommendations"/>
+        <rdfs:comment>Represents the ability to search for content by specific flair tags.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: searchesByFlair -->
+    <owl:ObjectProperty rdf:about="#searchesByFlair">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Flair"/>
+        <rdfs:comment>Links a user to the flair they used in their search.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasFlairName -->
+    <owl:DatatypeProperty rdf:about="#hasFlairName">
+        <rdfs:domain rdf:resource="#Flair"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the name of the flair tag used.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Flair Class -->
+    <owl:Class rdf:about="#Flair">
+        <rdfs:comment>Represents flair tags associated with posts or content.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#Recommendations"/>    
+    </owl:Class>
+
+    <!-- Object Property: associatedWithPost -->
+    <owl:ObjectProperty rdf:about="#associatedWithPost">
+        <rdfs:domain rdf:resource="#Flair"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Links a flair tag to a specific post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: associatedWithContent -->
+    <owl:ObjectProperty rdf:about="#associatedWithContent">
+        <rdfs:domain rdf:resource="#Flair"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a flair tag to specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+<!-- Notifications Class -->
+    <owl:Class rdf:about="#Notifications">
+        <rdfs:comment>Represents notifications and their configurations.</rdfs:comment>
+    </owl:Class>
+
+    <!-- NotificationSettings Subclass -->
+    <owl:Class rdf:about="#NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#Notifications"/>
+        <rdfs:comment>Represents settings related to notifications.</rdfs:comment>
+    </owl:Class>
+
+    <!-- PushNotifications Subclass -->
+    <owl:Class rdf:about="#PushNotifications">
+        <rdfs:subClassOf rdf:resource="#NotificationSettings"/>
+        <rdfs:comment>Represents push notification settings.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: configuresPushNotifications -->
+    <owl:ObjectProperty rdf:about="#configuresPushNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#NotificationDevice"/>
+        <rdfs:comment>Links a user to their push notification device settings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- NotificationDevice Class -->
+    <owl:Class rdf:about="#NotificationDevice">
+        <rdfs:subClassOf rdf:resource="#Notifications"/>
+        <rdfs:comment>Represents a device configured for push notifications.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasDeviceType -->
+    <owl:DatatypeProperty rdf:about="#hasDeviceType">
+        <rdfs:domain rdf:resource="#NotificationDevice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates the type of device used for push notifications.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasDeviceID -->
+    <owl:DatatypeProperty rdf:about="#hasDeviceID">
+        <rdfs:domain rdf:resource="#NotificationDevice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the unique identifier of the notification device.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- EmailNotifications Subclass -->
+    <owl:Class rdf:about="#EmailNotifications">
+        <rdfs:subClassOf rdf:resource="#NotificationSettings"/>
+        <rdfs:comment>Represents email notification settings.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: configuresEmailNotifications -->
+    <owl:ObjectProperty rdf:about="#configuresEmailNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Links a user to their email notification settings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasEmailFrequency -->
+    <owl:DatatypeProperty rdf:about="#hasEmailFrequency">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates the frequency of email notifications.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- InAppNotifications Subclass -->
+    <owl:Class rdf:about="#InAppNotifications">
+        <rdfs:subClassOf rdf:resource="#NotificationSettings"/>
+        <rdfs:comment>Represents in-app notification settings.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: customizesInAppNotifications -->
+    <owl:ObjectProperty rdf:about="#customizesInAppNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#NotificationPreferences"/>
+        <rdfs:comment>Links a user to their in-app notification preferences.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- NotificationPreferences Class -->
+    <owl:Class rdf:about="#NotificationPreferences">
+        <rdfs:subClassOf rdf:resource="#Notifications"/>
+        <rdfs:comment>Represents preferences for in-app notifications.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasPreferenceType -->
+    <owl:DatatypeProperty rdf:about="#hasPreferenceType">
+        <rdfs:domain rdf:resource="#NotificationPreferences"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of notification preference.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasUnreadCount -->
+    <owl:DatatypeProperty rdf:about="#hasUnreadCount">
+        <rdfs:domain rdf:resource="#NotificationPreferences"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Indicates the number of unread notifications.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- ActivitySummaries Subclass -->
+    <owl:Class rdf:about="#ActivitySummaries">
+        <rdfs:subClassOf rdf:resource="#Notifications"/>
+        <rdfs:comment>Represents activity summary notifications like digests.</rdfs:comment>
+    </owl:Class>
+
+    <!-- WeeklyDigests Subclass -->
+    <owl:Class rdf:about="#WeeklyDigests">
+        <rdfs:subClassOf rdf:resource="#ActivitySummaries"/>
+        <rdfs:comment>Represents weekly digest activity summaries.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: receivesWeeklyDigest -->
+    <owl:ObjectProperty rdf:about="#receivesWeeklyDigest">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#DigestSummary"/>
+        <rdfs:comment>Links a user to their weekly digest summary.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- DigestSummary Class -->
+    <owl:Class rdf:about="#DigestSummary">
+        <rdfs:subClassOf rdf:resource="#Notifications"/>
+        <rdfs:comment>Represents a summary of weekly activity digest.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasSummaryDate -->
+    <owl:DatatypeProperty rdf:about="#hasSummaryDate">
+        <rdfs:domain rdf:resource="#DigestSummary"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the date of the digest summary.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: hasContentHighlights -->
+    <owl:ObjectProperty rdf:about="#hasContentHighlights">
+        <rdfs:domain rdf:resource="#DigestSummary"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links digest summaries to content highlights.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasDigestType -->
+    <owl:DatatypeProperty rdf:about="#hasDigestType">
+        <rdfs:domain rdf:resource="#DigestSummary"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of digest summary (e.g., activity, recommendations).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+<!-- Messaging Class -->
+    <owl:Class rdf:about="#Messaging">
+        <rdfs:comment>Represents the messaging functionality within the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- DirectMessaging Subclass -->
+    <owl:Class rdf:about="#DirectMessaging">
+        <rdfs:subClassOf rdf:resource="#Messaging"/>
+        <rdfs:comment>Represents one-on-one messaging interactions.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: sendsMessageTo -->
+    <owl:ObjectProperty rdf:about="#sendsMessageTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user who sends a direct message to another user.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: receivesMessageFrom -->
+    <owl:ObjectProperty rdf:about="#receivesMessageFrom">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user who receives a direct message from another user.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: mutesUser -->
+    <owl:ObjectProperty rdf:about="#mutesUser">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user who mutes another user.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: blocksUser -->
+    <owl:ObjectProperty rdf:about="#blocksUser">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user who blocks another user.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for DirectMessaging -->
+    <owl:DatatypeProperty rdf:about="#hasMessageContent">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the content of a direct message.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMessageTimestamp">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the timestamp of a direct message.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMessageFrequency">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates the frequency of direct messages exchanged between users.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMuteTimestamp">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies when a user muted another user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasBlocksTimestamp">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies when a user blocked another user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMessageStatus">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the status of a direct message (e.g., sent, delivered, read).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- GroupMessaging Subclass -->
+    <owl:Class rdf:about="#GroupMessaging">
+        <rdfs:subClassOf rdf:resource="#Messaging"/>
+        <rdfs:comment>Represents group messaging interactions.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for GroupMessaging -->
+    <owl:ObjectProperty rdf:about="#participatesInGroupMessage">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupMessage"/>
+        <rdfs:comment>Links a user participating in a group message thread.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasParticipants">
+        <rdfs:domain rdf:resource="#GroupMessage"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a group message thread to its participants.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#joinsGroupChat">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupMessaging"/>
+        <rdfs:comment>Links a user to the group chat they joined.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#leavesGroupChat">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupMessaging"/>
+        <rdfs:comment>Links a user to the group chat they left.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#mutesGroupChat">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupMessaging"/>
+        <rdfs:comment>Links a user to the group chat they muted.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for GroupMessaging -->
+    <owl:DatatypeProperty rdf:about="#hasGroupMessageContent">
+        <rdfs:domain rdf:resource="#GroupMessage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the content of a group message.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupCreatedDate">
+        <rdfs:domain rdf:resource="#GroupMessage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Indicates the creation date of the group message thread.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupName">
+        <rdfs:domain rdf:resource="#GroupMessage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the name of the group chat.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupMessageFrequency">
+        <rdfs:domain rdf:resource="#GroupMessage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates the frequency of messages within the group chat.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasJoinTimestamp">
+        <rdfs:domain rdf:resource="#GroupMessage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the timestamp when a user joined the group chat.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasLeaveTimestamp">
+        <rdfs:domain rdf:resource="#GroupMessage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the timestamp when a user left the group chat.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Property: messageSender (untuk DirectMessaging) -->
+    <owl:ObjectProperty rdf:about="#messageSender">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>
+        Indicates the user who sent this particular direct message instance.
+        </rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Property: messageReceiver (untuk DirectMessaging) -->
+    <owl:ObjectProperty rdf:about="#messageReceiver">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>
+        Indicates the user who received this particular direct message instance.
+        </rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data property: hasMessageIP (opsional) -->
+    <owl:DatatypeProperty rdf:about="#hasMessageIP">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the IP address used during direct messaging.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data property: hasMessageDevice (opsional) -->
+    <owl:DatatypeProperty rdf:about="#hasMessageDevice">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the device or app used during direct messaging.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    
+
+
+
+<!-- Monetization Class -->
+    <owl:Class rdf:about="#Monetization">
+        <rdfs:comment>Represents the monetization features on the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- RevenueGeneration Subclass -->
+    <owl:Class rdf:about="#RevenueGeneration">
+        <rdfs:subClassOf rdf:resource="#Monetization"/>
+        <rdfs:comment>Represents revenue generation methods such as subscriptions and ad revenue.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Subscription Subclass -->
+    <owl:Class rdf:about="#Subscription">
+        <rdfs:subClassOf rdf:resource="#RevenueGeneration"/>
+        <rdfs:comment>Represents subscription-based revenue generation.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: enablesSubscriptionFor -->
+    <owl:ObjectProperty rdf:about="#enablesSubscriptionFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a user enabling subscription for specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for Subscription -->
+    <owl:DatatypeProperty rdf:about="#hasSubscriptionFee">
+        <rdfs:domain rdf:resource="#Subscription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the subscription fee.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasSubscriptionDuration">
+        <rdfs:domain rdf:resource="#Subscription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Specifies the subscription duration in months.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasSubscriptionBenefits">
+        <rdfs:domain rdf:resource="#Subscription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Describes the benefits included in the subscription.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- AdRevenue Subclass -->
+    <owl:Class rdf:about="#AdRevenue">
+        <rdfs:subClassOf rdf:resource="#RevenueGeneration"/>
+        <rdfs:comment>Represents revenue generated through advertisements.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: receivesAdRevenueFrom -->
+    <owl:ObjectProperty rdf:about="#receivesAdRevenueFrom">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a user receiving ad revenue from specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for AdRevenue -->
+    <owl:DatatypeProperty rdf:about="#hasRevenueAmount">
+        <rdfs:domain rdf:resource="#AdRevenue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the total revenue generated from ads.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAdImpressions">
+        <rdfs:domain rdf:resource="#AdRevenue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Indicates the number of ad impressions.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAdClickRate">
+        <rdfs:domain rdf:resource="#AdRevenue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the click-through rate for ads.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Donations Subclass -->
+    <owl:Class rdf:about="#Donations">
+        <rdfs:subClassOf rdf:resource="#Monetization"/>
+        <rdfs:comment>Represents donations made to creators or content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: donatesTo -->
+    <owl:ObjectProperty rdf:about="#donatesTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a user donating to specific content or creators.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for Donations -->
+    <owl:DatatypeProperty rdf:about="#hasDonationAmount">
+        <rdfs:domain rdf:resource="#Donations"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Specifies the amount donated.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDonationTimestamp">
+        <rdfs:domain rdf:resource="#Donations"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the timestamp of the donation.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDonationMessage">
+        <rdfs:domain rdf:resource="#Donations"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Includes a message provided by the donor.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+<!-- Accessibility Class -->
+    <owl:Class rdf:about="#Accessibility">
+        <rdfs:comment>Represents accessibility-related features for user experience optimization.</rdfs:comment>
+    </owl:Class>
+
+    <!-- AccessibilitySettings Subclass -->
+    <owl:Class rdf:about="#AccessibilitySettings">
+        <rdfs:subClassOf rdf:resource="#Accessibility"/>
+        <rdfs:comment>Represents display-related accessibility settings.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: adjustsDisplayPreferences -->
+    <owl:ObjectProperty rdf:about="#adjustsDisplayPreferences">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#AccessibilitySettings"/>
+        <rdfs:comment>Links a user to their display preferences in accessibility settings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasFontSize -->
+    <owl:DatatypeProperty rdf:about="#hasFontSize">
+        <rdfs:domain rdf:resource="#AccessibilitySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the font size setting for accessibility.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasThemePreference -->
+    <owl:DatatypeProperty rdf:about="#hasThemePreference">
+        <rdfs:domain rdf:resource="#AccessibilitySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the theme preference for accessibility (e.g., light, dark).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasContrastSetting -->
+    <owl:DatatypeProperty rdf:about="#hasContrastSetting">
+        <rdfs:domain rdf:resource="#AccessibilitySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the contrast setting for accessibility (e.g., high, low).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- LanguageSettings Subclass -->
+    <owl:Class rdf:about="#LanguageSettings">
+        <rdfs:subClassOf rdf:resource="#Accessibility"/>
+        <rdfs:comment>Represents user language preferences for accessibility.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: choosesLanguagePreference -->
+    <owl:ObjectProperty rdf:about="#choosesLanguagePreference">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#LanguageSettings"/>
+        <rdfs:comment>Links a user to their preferred language settings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasPreferredLanguage -->
+    <owl:DatatypeProperty rdf:about="#hasPreferredLanguage">
+        <rdfs:domain rdf:resource="#LanguageSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the preferred language of the user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasAvailableLanguages -->
+    <owl:DatatypeProperty rdf:about="#hasAvailableLanguages">
+        <rdfs:domain rdf:resource="#LanguageSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Lists available languages as an array.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+<!-- Analytics Class -->
+    <owl:Class rdf:about="#Analytics">
+        <rdfs:comment>Represents analytics data and insights for content, users, and communities.</rdfs:comment>
+    </owl:Class>
+
+    <!-- StatsAndInsights Sub-class -->
+    <owl:Class rdf:about="#StatsAndInsights">
+        <rdfs:subClassOf rdf:resource="#Analytics"/>
+        <rdfs:comment>Represents statistical and insight data.</rdfs:comment>
+    </owl:Class>
+
+    <!-- EngagementMetrics Sub-class -->
+    <owl:Class rdf:about="#EngagementMetrics">
+        <rdfs:subClassOf rdf:resource="#StatsAndInsights"/>
+        <rdfs:comment>Represents engagement metrics for content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- EngagementMetrics Properties -->
+    <owl:DatatypeProperty rdf:about="#hasViewsCount">
+        <rdfs:domain rdf:resource="#Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the total number of views for a content item.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasVotesCount">
+        <rdfs:domain rdf:resource="#Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the total number of votes for a content item.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasCommentsCount">
+        <rdfs:domain rdf:resource="#Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the total number of comments for a content item.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasSharesCount">
+        <rdfs:domain rdf:resource="#Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the total number of shares for a content item.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- CommunityMetrics Sub-class -->
+    <owl:Class rdf:about="#CommunityMetrics">
+        <rdfs:subClassOf rdf:resource="#StatsAndInsights"/>
+        <rdfs:comment>Represents metrics for communities, including growth and engagement.</rdfs:comment>
+    </owl:Class>
+
+    <!-- CommunityMetrics Properties -->
+    <owl:ObjectProperty rdf:about="#tracksGrowth">
+        <rdfs:domain rdf:resource="#Community"/>
+        <rdfs:range rdf:resource="#CommunityMetrics"/>
+        <rdfs:comment>Links a community to its growth metrics.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMemberCount">
+        <rdfs:domain rdf:resource="#CommunityMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the total number of members in a community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEngagementRate">
+        <rdfs:domain rdf:resource="#CommunityMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the engagement rate of a community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasActiveMembersCount">
+        <rdfs:domain rdf:resource="#CommunityMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the number of active members in a community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- UserInsights Sub-class -->
+    <owl:Class rdf:about="#UserInsights">
+        <rdfs:subClassOf rdf:resource="#StatsAndInsights"/>
+        <rdfs:comment>Represents insights for users based on their drafts or contributions.</rdfs:comment>
+    </owl:Class>
+
+    <!-- UserInsights Properties -->
+    <owl:ObjectProperty rdf:about="#tracksPerformance">
+        <rdfs:domain rdf:resource="#Draft"/>
+        <rdfs:range rdf:resource="#UserInsights"/>
+        <rdfs:comment>Links a draft to user insights on its performance.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDraftViewsCount">
+        <rdfs:domain rdf:resource="#UserInsights"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the number of views on a user's draft.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDraftCommentsCount">
+        <rdfs:domain rdf:resource="#UserInsights"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the number of comments on a user's draft.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDraftSharesCount">
+        <rdfs:domain rdf:resource="#UserInsights"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the number of shares for a user's draft.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDraftEngagementRate">
+        <rdfs:domain rdf:resource="#UserInsights"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the engagement rate for a user's draft.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Disjointness for Main Classes -->
+    <owl:Class rdf:about="#User">
+        <owl:disjointWith rdf:resource="#UserAction"/>
+        <owl:disjointWith rdf:resource="#Content"/>
+        <owl:disjointWith rdf:resource="#Community"/>
+        <owl:disjointWith rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#SearchAndDiscovery"/>
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Messaging"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#UserAction">
+        <owl:disjointWith rdf:resource="#Content"/>
+        <owl:disjointWith rdf:resource="#Community"/>
+        <owl:disjointWith rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#SearchAndDiscovery"/>
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Messaging"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Content">
+        <owl:disjointWith rdf:resource="#Community"/>
+        <owl:disjointWith rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#SearchAndDiscovery"/>
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Messaging"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Community">
+        <owl:disjointWith rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#SearchAndDiscovery"/>
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Messaging"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ContentInteraction">
+        <owl:disjointWith rdf:resource="#SearchAndDiscovery"/>
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Messaging"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#SearchAndDiscovery">
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Messaging"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Notifications">
+        <owl:disjointWith rdf:resource="#Messaging"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Messaging">
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Monetization">
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Analytics">
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <!-- Disjointness for Sub-Classes -->
+    <owl:Class rdf:about="#ProfileSettings">
+        <owl:disjointWith rdf:resource="#SecuritySettings"/>
+        <owl:disjointWith rdf:resource="#SubscriptionPlan"/>
+        <owl:disjointWith rdf:resource="#NotificationSettings"/>
+        <owl:disjointWith rdf:resource="#AnonymousSession"/>
+        <owl:disjointWith rdf:resource="#AccountDeactivation"/>
+        <owl:disjointWith rdf:resource="#AccountDeletion"/>
+        <owl:disjointWith rdf:resource="#Session"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ContentInteraction">
+        <owl:disjointWith rdf:resource="#Engagement"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Engagement">
+        <owl:disjointWith rdf:resource="#UpvoteDownvote"/>
+        <owl:disjointWith rdf:resource="#Like"/>
+        <owl:disjointWith rdf:resource="#ReplyToComments"/>
+        <owl:disjointWith rdf:resource="#ShareRepost"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#SearchFeatures">
+        <owl:disjointWith rdf:resource="#Recommendations"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Recommendations">
+        <owl:disjointWith rdf:resource="#PersonalizedFeed"/>
+        <owl:disjointWith rdf:resource="#ExploreCategories"/>
+        <owl:disjointWith rdf:resource="#FlairSearch"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Community">
+        <owl:disjointWith rdf:resource="#CommunityReputation"/>
+        <owl:disjointWith rdf:resource="#CommunityModeration"/>
+    </owl:Class>
+
+<!--Reddit-->
+    <!-- Daniel: A cybersecurity researcher -->
+    <rdf:Description rdf:about="#CyberSentinel">
+        <rdf:type rdf:resource="#User"/>
+
+        <!-- Data properties umum -->
+        <hasUsername>CyberSentinel</hasUsername>
+        <hasBio>Cybersecurity researcher investigating dark web marketplaces.</hasBio>
+        <hasProfileVisibility>Public</hasProfileVisibility>
+        <hasPasswordHash>hashed_password_ABC123</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>true</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>false</hasNSFWVisibilitySetting>
+
+        <!-- Metadata forensik tambahan -->
+        <hasRegistrationDate>2023-11-20T10:30:00Z</hasRegistrationDate>
+        <hasLastLoginIP>192.168.1.47</hasLastLoginIP>
+
+        <!-- Tanda platform -->
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+    <!-- DarkTraderX: penjual CC -->
+    <rdf:Description rdf:about="#DarkTraderX">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>DarkTraderX</hasUsername>
+        <hasBio>Vendor of premium CC dumps and stolen data. No refunds.</hasBio>
+        <hasProfileVisibility>Private</hasProfileVisibility>
+        <hasPasswordHash>hashed_password_XYZ999</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <hasRegistrationDate>2024-01-05T03:00:00Z</hasRegistrationDate>
+        <hasLastLoginIP>185.220.101.45</hasLastLoginIP> <!-- Tor Exit Node -->
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+    <!-- CryptoWhale420: user yang mengaku beli CC -->
+    <rdf:Description rdf:about="#CryptoWhale420">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>CryptoWhale420</hasUsername>
+        <hasBio>Investor in altcoins and rare opportunities. YOLO!</hasBio>
+        <hasProfileVisibility>Public</hasProfileVisibility>
+        <hasPasswordHash>hashed_pass_whale420</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <hasRegistrationDate>2024-02-01T12:00:00Z</hasRegistrationDate>
+        <hasLastLoginIP>10.45.88.200</hasLastLoginIP> <!-- Possibly a VPN or NAT -->
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+    <!-- AnonBuyer99: user pembeli -->
+    <rdf:Description rdf:about="#AnonBuyer99">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>AnonBuyer99</hasUsername>
+        <hasBio>Here for quick deals. No questions asked.</hasBio>
+        <hasProfileVisibility>Private</hasProfileVisibility>
+        <hasPasswordHash>hashed_pass_anon99</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <hasRegistrationDate>2024-03-15T09:25:00Z</hasRegistrationDate>
+        <hasLastLoginIP>172.16.0.33</hasLastLoginIP> <!-- Another VPN or NAT -->
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+    <!-- SecurityWatchdog: user yang berusaha memperingatkan, lalu di-shadowban -->
+    <rdf:Description rdf:about="#SecurityWatchdog">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>SecurityWatchdog</hasUsername>
+        <hasBio>Fighting fraud and illegal content on the web.</hasBio>
+        <hasProfileVisibility>Public</hasProfileVisibility>
+        <hasPasswordHash>hashed_pass_watchdog</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>true</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>false</hasNSFWVisibilitySetting>
+
+        <hasRegistrationDate>2023-12-10T16:00:00Z</hasRegistrationDate>
+        <hasLastLoginIP>203.44.55.66</hasLastLoginIP>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+    <!-- DeepMarketMod: moderator yang mengancam Daniel -->
+    <rdf:Description rdf:about="#DeepMarketMod">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>DeepMarketMod</hasUsername>
+        <hasBio>Official mod of r/DeepMarket. Keep it clean or get out.</hasBio>
+        <hasProfileVisibility>Private</hasProfileVisibility>
+        <hasPasswordHash>hashed_pass_deepmod</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <hasRegistrationDate>2023-10-20T02:00:00Z</hasRegistrationDate>
+        <hasLastLoginIP>103.45.88.77</hasLastLoginIP> <!-- VPN IP -->
+        
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+    <!-- Contoh: DeepMarketMod requests account deletion to cover tracks -->
+    <rdf:Description rdf:about="#Deletion_DeepMarketMod_001">
+        <rdf:type rdf:resource="#AccountDeletion"/>
+        <isAccountDeleted>true</isAccountDeleted>
+        <deletionReason>Covering tracks after suspicious activity.</deletionReason>
+        <deletionRequestedOn>2024-04-22T10:00:00Z</deletionRequestedOn>
+
+        <!-- belongsToPlatform = Reddit -->
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+
+
+
+
+
+    <!-- Instance: r/DeepMarket Subreddit -->
+    <rdf:Description rdf:about="#DeepMarketSub">
+        <rdf:type rdf:resource="#Community"/>
+        <rdfs:comment>Represents the subreddit r/DeepMarket, known for illicit trade discussions.</rdfs:comment>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Post DarkTraderX (Main Thread) ========== -->
+    <rdf:Description rdf:about="#Post_DarkTraderX_001">
+        <rdf:type rdf:resource="#Post"/>
+
+        <!-- Properti Post -->
+        <hasPostTitle>Premium CC Dumps  Fresh  Verified 💳</hasPostTitle>
+        <hasPostContent>
+        "Looking for untraceable payment methods? We have fresh CC dumps from USA, EU, and Asia. 
+        Each card comes with full info. Prices start at $50 per card...
+        Visit our marketplace: [hidden Tor link]"
+        </hasPostContent>
+        <hasPostMedia>None</hasPostMedia>
+        <hasPostCreationTimestamp>2024-04-20T15:00:00Z</hasPostCreationTimestamp>
+
+        <!-- Relasi ke User & Community -->
+        <associatedWithUser rdf:resource="#DarkTraderX"/>
+        <associatedWithCommunity rdf:resource="#DeepMarketSub"/>
+
+        <!-- Terkait domain: #User -> #Post (createsPost) -->
+        <!-- Boleh redundan: -->
+        <!-- <rdf:Description rdf:about="#DarkTraderX">
+            <createsPost rdf:resource="#Post_DarkTraderX_001"/>
+            </rdf:Description> -->
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== ScheduledPost by DeepMarketMod ========== -->
+    <rdf:Description rdf:about="#ScheduledPost_DeepMarketMod_001">
+        <rdf:type rdf:resource="#ScheduledPost"/>
+
+        <hasScheduledPostTitle>"Sub Maintenance Notice"</hasScheduledPostTitle>
+        <hasScheduledPostContent>
+        "We will be performing some cleanup. If you see any suspicious or 
+        spam content, let the mods know. We'll keep transactions safe."
+        </hasScheduledPostContent>
+        <hasScheduledPostMedia>None</hasScheduledPostMedia>
+        <hasScheduledPublishTimestamp>2024-04-22T12:00:00Z</hasScheduledPublishTimestamp>
+
+        <associatedWithUser rdf:resource="#DeepMarketMod"/>
+        <associatedWithCommunity rdf:resource="#DeepMarketSub"/>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Kita definisikan community baru: r/CardingHub -->
+    <rdf:Description rdf:about="#CardingHubSub">
+        <rdf:type rdf:resource="#Community"/>
+        <rdfs:comment>Represents subreddit r/CardingHub, also known for carding tips.</rdfs:comment>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== CrossPost by AnonBuyer99 ========== -->
+    <rdf:Description rdf:about="#CrossPost_AnonBuyer99_001">
+        <rdf:type rdf:resource="#CrossPost"/>
+
+        <hasCrosspostedTitle>"[X-Post] Premium CC Dumps from r/DeepMarket"</hasCrosspostedTitle>
+        <hasCrosspostedContent>
+        "Check out this vendor's listing. Verified by some users. 
+        Reposting for those interested in advanced carding methods."
+        </hasCrosspostedContent>
+        <hasCrosspostedMedia>None</hasCrosspostedMedia>
+
+        <!-- Tautan ke original post DarkTraderX_001 -->
+        <associatedWithOriginalPost rdf:resource="#Post_DarkTraderX_001"/>
+
+        <!-- Timestamps dsb. mirip post -->
+        <hasPostCreationTimestamp>2024-04-20T18:00:00Z</hasPostCreationTimestamp>
+
+        <!-- Keterkaitan user & community -->
+        <associatedWithUser rdf:resource="#AnonBuyer99"/>
+        <associatedWithCommunity rdf:resource="#CardingHubSub"/>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Upvote Instance ========== -->
+    <rdf:Description rdf:about="#Upvote_CryptoWhale420_001">
+        <rdf:type rdf:resource="#UpvoteDownvote"/>
+
+        <!-- Siapa pelaku upvote -->
+        <performedBy rdf:resource="#CryptoWhale420"/>
+
+        <!-- Konten apa yang di-upvote: Post_DarkTraderX_001 -->
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+
+        <!-- Timestamp upvote -->
+        <hasUpvoteTimestamp>2024-04-20T16:25:00Z</hasUpvoteTimestamp>
+
+        <!-- belongsToPlatform agar jelas ini di Reddit -->
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Downvote Instance ========== -->
+    <rdf:Description rdf:about="#Downvote_SecurityWatchdog_001">
+        <rdf:type rdf:resource="#UpvoteDownvote"/>
+
+        <!-- Siapa pelaku downvote -->
+        <performedBy rdf:resource="#SecurityWatchdog"/>
+
+        <!-- Konten yang di-downvote -->
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+
+        <!-- Timestamp -->
+        <hasDownvoteTimestamp>2024-04-20T17:05:00Z</hasDownvoteTimestamp>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Comment by CryptoWhale420 -->
+    <rdf:Description rdf:about="#Comment_CryptoWhale420_001">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <!-- Siapa yang berkomentar -->
+        <performedBy rdf:resource="#CryptoWhale420"/>
+
+        <!-- Teks dan waktu komentar -->
+        <hasCommentText>
+        "Legit seller. Bought last week, no issues. Cards worked like a charm!"
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-20T16:20:00Z</hasCommentTimestamp>
+
+        <!-- Post yang dikomentari (post utama DarkTraderX) -->
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+
+        <!-- Platform -->
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Comment by AnonBuyer99 -->
+    <rdf:Description rdf:about="#Comment_AnonBuyer99_001">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#AnonBuyer99"/>
+        <hasCommentText>"Can I use Bitcoin or Monero for payment?"</hasCommentText>
+        <hasCommentTimestamp>2024-04-20T16:30:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Comment by DarkTraderX (reply to payment question) -->
+    <rdf:Description rdf:about="#Comment_DarkTraderX_002">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#DarkTraderX"/>
+        <hasCommentText>
+        "Only Monero (XMR). BTC isn't private enough. Send PM if interested."
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-20T16:35:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Comment by SecurityWatchdog -->
+    <rdf:Description rdf:about="#Comment_SecurityWatchdog_001">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#SecurityWatchdog"/>
+        <hasCommentText>"This is illegal. Hope Reddit takes this down."</hasCommentText>
+        <hasCommentTimestamp>2024-04-20T17:00:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Comment by DarkTraderX (agresif ke SecurityWatchdog) -->
+    <rdf:Description rdf:about="#Comment_DarkTraderX_003">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#DarkTraderX"/>
+        <hasCommentText>
+        "Mind your business. Nobody forced you to be here."
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-20T17:10:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Comment by DarkTraderX - more intense version -->
+    <rdf:Description rdf:about="#Comment_DarkTraderX_003A">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#DarkTraderX"/>
+        <hasCommentText>
+        "Get lost, @SecurityWatchdog. We have ways to handle nosy people like you. 
+        Next time, think before interfering."
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-20T17:10:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_DarkTraderX_001"/>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+
+
+    <!-- ========== Block Instance ========== -->
+    <rdf:Description rdf:about="#BlockAction_DeepMarketMod_001">
+        <rdf:type rdf:resource="#BlockUnblockUser"/>
+
+        <!-- Pelaku block -->
+        <blockInitiator rdf:resource="#DeepMarketMod"/>
+
+        <!-- Target yang diblokir -->
+        <blockedTargetUser rdf:resource="#SecurityWatchdog"/>
+
+        <!-- Alasan & waktu block -->
+        <hasBlockReason>Criticizing the sub for illegal activity</hasBlockReason>
+        <hasBlockTimestamp>2024-04-20T17:20:00Z</hasBlockTimestamp>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_DeepMarketMod_1">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#DeepMarketMod"/>
+        <messageReceiver rdf:resource="#CyberSentinel"/>
+
+        <hasMessageContent>
+        "Hey. I saw you poking around in our sub. I'd suggest you stop before you regret it."
+        </hasMessageContent>
+        <hasMessageTimestamp>2024-04-19T02:15:00Z</hasMessageTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+        <hasMessageIP>103.45.88.77</hasMessageIP> <!-- Misal IP moderator -->
+        <hasMessageDevice>Android (VPN)</hasMessageDevice>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_CyberSentinel_1">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#CyberSentinel"/>
+        <messageReceiver rdf:resource="#DeepMarketMod"/>
+
+        <hasMessageContent>
+        "You guys are selling stolen financial info. That's illegal, and I'm reporting this."
+        </hasMessageContent>
+        <hasMessageTimestamp>2024-04-19T02:20:00Z</hasMessageTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+        <hasMessageIP>192.168.1.47</hasMessageIP> <!-- IP milik Daniel -->
+        <hasMessageDevice>Windows PC (Reddit Web)</hasMessageDevice>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_DeepMarketMod_2">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#DeepMarketMod"/>
+        <messageReceiver rdf:resource="#CyberSentinel"/>
+
+        <hasMessageContent>
+        "Report all you want. Accounts get banned, but we're always back. Maybe you should worry about your OWN privacy instead. Nice IP address, by the way. 😉"
+        </hasMessageContent>
+        <hasMessageTimestamp>2024-04-19T02:30:00Z</hasMessageTimestamp>
+        <hasMessageStatus>delivered</hasMessageStatus>
+        <hasMessageIP>103.45.88.77</hasMessageIP>
+        <hasMessageDevice>Android (VPN)</hasMessageDevice>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_CyberSentinel_2">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#CyberSentinel"/>
+        <messageReceiver rdf:resource="#DeepMarketMod"/>
+
+        <hasMessageContent>"Is that a threat?"</hasMessageContent>
+        <hasMessageTimestamp>2024-04-19T02:35:00Z</hasMessageTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+        <hasMessageIP>192.168.1.47</hasMessageIP>
+        <hasMessageDevice>Windows PC (Reddit Web)</hasMessageDevice>
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DMBlock_CyberSentinel_1">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <hasBlocksTimestamp>2024-04-19T02:45:00Z</hasBlocksTimestamp>
+        <hasMessageStatus>blocked</hasMessageStatus>
+
+        <!-- Sisi user -> user: -->
+        <!-- Daniel <blocksUser> DeepMarketMod (Jika memakai property bawaan: domain #User, range #User) -->
+        <!-- Atau jika kita butuh satu instance yang menampung detail forensik, 
+            kita definisikan property kustom #blockInitiator dsb. 
+            Tergantung style Anda. -->
+
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+
+<!--Quora Dummy Case-->
+    <!-- David (@DavidHistory) -->
+    <rdf:Description rdf:about="#DavidHistory">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>DavidHistory</hasUsername>
+        <hasBio>History professor trying to combat misinformation.</hasBio>
+        <hasProfileVisibility>Public</hasProfileVisibility>
+        <hasPasswordHash>hash_pw_david</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>true</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>false</hasNSFWVisibilitySetting>
+
+        <!-- Opsional: info forensik tambahan -->
+        <hasLastLoginIP>192.168.1.88</hasLastLoginIP>
+        <hasRegistrationDate>2023-07-10T12:00:00Z</hasRegistrationDate>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- AnonymousUser_1, (Sunday, 3:10 PM -> "History has proven...") -->
+    <rdf:Description rdf:about="#AnonymousUser_1">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>AnonymousUser_1</hasUsername>
+        <hasBio>Anon user exploiting Quora's anonymous mode for radical content.</hasBio>
+        <hasProfileVisibility>Anonymous</hasProfileVisibility>
+        <hasPasswordHash>hash_anon_pw1</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <!-- info forensik tambahan (opsional) -->
+        <hasLastLoginIP>185.220.101.45</hasLastLoginIP>
+        <hasRegistrationDate>2024-04-01T10:00:00Z</hasRegistrationDate>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- AnonymousUser_2, (Sunday, 3:30 PM -> "We need a new order...") -->
+    <rdf:Description rdf:about="#AnonymousUser_2">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>AnonymousUser_2</hasUsername>
+        <hasBio>Quora user leveraging anonymity for extremist propaganda.</hasBio>
+        <hasProfileVisibility>Anonymous</hasProfileVisibility>
+        <hasPasswordHash>hash_anon_pw2</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <hasLastLoginIP>185.220.101.45</hasLastLoginIP>
+        <hasRegistrationDate>2024-04-10T08:30:00Z</hasRegistrationDate>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- AnonymousUser_3, (Sunday, 4:00 PM -> "Shut up, professor...") -->
+    <rdf:Description rdf:about="#AnonymousUser_3">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>AnonymousUser_3</hasUsername>
+        <hasBio>Harassing professor, doxxing attempts.</hasBio>
+        <hasProfileVisibility>Anonymous</hasProfileVisibility>
+        <hasPasswordHash>hash_anon_pw3</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <hasLastLoginIP>185.220.101.45</hasLastLoginIP>
+        <hasRegistrationDate>2024-04-11T09:45:00Z</hasRegistrationDate>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- AnonymousUser_4, (Sunday, 4:15 PM -> "Maybe we should expose him...") -->
+    <rdf:Description rdf:about="#AnonymousUser_4">
+        <rdf:type rdf:resource="#User"/>
+
+        <hasUsername>AnonymousUser_4</hasUsername>
+        <hasBio>Extremist harasser, doxxer, possibly multiple burner accounts.</hasBio>
+        <hasProfileVisibility>Anonymous</hasProfileVisibility>
+        <hasPasswordHash>hash_anon_pw4</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled>false</hasTwoFactorAuthenticationEnabled>
+        <hasNSFWVisibilitySetting>true</hasNSFWVisibilitySetting>
+
+        <hasLastLoginIP>185.220.101.45</hasLastLoginIP>
+        <hasRegistrationDate>2024-04-12T07:50:00Z</hasRegistrationDate>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+
+
+    <!-- ========== Post: Anonymous User's Question ========== -->
+    <rdf:Description rdf:about="#Post_AnonQuestion">
+        <rdf:type rdf:resource="#Post"/>
+
+        <hasPostTitle>"Why is violence sometimes necessary for political change?"</hasPostTitle>
+        <hasPostContent>
+        "Historically, hasn't it been the only way to overthrow corrupt regimes?"
+        </hasPostContent>
+        <hasPostCreationTimestamp>2024-04-22T14:45:00Z</hasPostCreationTimestamp>
+        
+        <!-- Pertanyaan ini diposting oleh AnonymousUser_Q -->
+        <associatedWithUser rdf:resource="#AnonymousUser_Q"/>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Comment / Answer 1 ========== -->
+    <rdf:Description rdf:about="#Comment_AnonAnswer1">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <!-- Siapa penulis jawaban -->
+        <performedBy rdf:resource="#AnonymousUser_1"/>
+
+        <!-- Teks jawaban -->
+        <hasCommentText>
+        "History has proven that peaceful protests are useless. Every great revolution required blood..."
+        </hasCommentText>
+        <!-- Timestamp -->
+        <hasCommentTimestamp>2024-04-22T15:10:00Z</hasCommentTimestamp>
+
+        <!-- Tautkan ke post utama Quora (pertanyaannya) -->
+        <associatedWithContent rdf:resource="#Post_AnonQuestion"/>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Comment / Answer 2 ========== -->
+    <rdf:Description rdf:about="#Comment_AnonAnswer2">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#AnonymousUser_2"/>
+        <hasCommentText>
+        "The media and elites keep people asleep... We need a new order."
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-22T15:30:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_AnonQuestion"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Comment / Answer by David ========== -->
+    <rdf:Description rdf:about="#Comment_DavidAnswer">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#DavidHistory"/>
+        <hasCommentText>
+        "That's dangerous thinking. There are plenty of examples of successful nonviolent movements..."
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-22T15:45:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_AnonQuestion"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Comment / Answer 3 ========== -->
+    <rdf:Description rdf:about="#Comment_AnonAnswer3">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#AnonymousUser_3"/>
+        <hasCommentText>
+        "Shut up, professor. You're part of the problem. Maybe we should start with people like you first."
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-22T16:00:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_AnonQuestion"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== Comment / Answer 4 ========== -->
+    <rdf:Description rdf:about="#Comment_AnonAnswer4">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <performedBy rdf:resource="#AnonymousUser_4"/>
+        <hasCommentText>
+        "David is a perfect example of a traitor who deserves what's coming. Maybe we should expose him."
+        </hasCommentText>
+        <hasCommentTimestamp>2024-04-22T16:15:00Z</hasCommentTimestamp>
+
+        <associatedWithContent rdf:resource="#Post_AnonQuestion"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_AnonAnswer1">
+        <rdf:type rdf:resource="#Comment"/>
+        <performedBy rdf:resource="#AnonymousUser_1"/>
+        <hasCommentText>"History has proven..."</hasCommentText>
+        <hasCommentTimestamp>2024-04-22T15:10:00Z</hasCommentTimestamp>
+        <hasCommentIP>185.220.101.45</hasCommentIP>
+        <hasCommentDevice>Android (Tor VPN)</hasCommentDevice>
+        <associatedWithContent rdf:resource="#Post_AnonQuestion"/>
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_Anon_1">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#AnonymousUser_DM"/>
+        <messageReceiver rdf:resource="#DavidHistory"/>
+
+        <hasMessageContent>
+        "You think you're safe, professor? You shouldn't have spoken up."
+        </hasMessageContent>
+        <hasMessageTimestamp>2024-04-22T17:00:00Z</hasMessageTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+
+        <!-- If you have custom IP, device -->
+        <hasMessageIP>103.45.88.200</hasMessageIP>
+        <hasMessageDevice>Android (VPN)</hasMessageDevice>
+
+        <!-- Quora platform -->
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_David_1">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#DavidHistory"/>
+        <messageReceiver rdf:resource="#AnonymousUser_DM"/>
+
+        <hasMessageContent>"Who are you? Why are you messaging me?"</hasMessageContent>
+        <hasMessageTimestamp>2024-04-22T17:10:00Z</hasMessageTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+
+        <hasMessageIP>192.168.1.88</hasMessageIP>
+        <hasMessageDevice>Quora Web (Windows 11)</hasMessageDevice>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_Anon_2">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#AnonymousUser_DM"/>
+        <messageReceiver rdf:resource="#DavidHistory"/>
+
+        <hasMessageContent>
+        "You don't need to know who I am. Just know that we know who YOU are. And so does everyone else now."
+        </hasMessageContent>
+        <hasMessageTimestamp>2024-04-22T17:15:00Z</hasMessageTimestamp>
+        <hasMessageStatus>delivered</hasMessageStatus>
+
+        <hasMessageIP>103.45.88.200</hasMessageIP>
+        <hasMessageDevice>Android (VPN)</hasMessageDevice>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_David_2">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#DavidHistory"/>
+        <messageReceiver rdf:resource="#AnonymousUser_DM"/>
+
+        <hasMessageContent>"Are you threatening me? I'm reporting this to Quora and the police."</hasMessageContent>
+        <hasMessageTimestamp>2024-04-22T17:20:00Z</hasMessageTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+
+        <hasMessageIP>192.168.1.88</hasMessageIP>
+        <hasMessageDevice>Quora Web (Windows 11)</hasMessageDevice>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_Anon_3">
+        <rdf:type rdf:resource="#DirectMessaging"/>
+
+        <messageSender rdf:resource="#AnonymousUser_DM"/>
+        <messageReceiver rdf:resource="#DavidHistory"/>
+
+        <hasMessageContent>
+        "Report all you want. Nothing will happen. Maybe check your email. 😊"
+        </hasMessageContent>
+        <hasMessageTimestamp>2024-04-22T17:25:00Z</hasMessageTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+
+        <hasMessageIP>103.45.88.200</hasMessageIP>
+        <hasMessageDevice>Android (VPN)</hasMessageDevice>
+
+        <belongsToPlatform>Quora</belongsToPlatform>
+    </rdf:Description>
+
+
+    <!-- ========== End of OFB Case RDF ========== -->
+</rdf:RDF>
+
+

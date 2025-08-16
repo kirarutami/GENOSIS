@@ -1,0 +1,41 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#> # Namespace ontologi OFB Anda
+
+SELECT ?suspect ?platform ?msgContent
+WHERE {
+  # Menargetkan instance DirectMessaging dari ontologi OFB
+  ?message rdf:type ex:DirectMessaging .
+
+  # Mendapatkan konten pesan, pengirim (suspect), dan platform
+  ?message ex:hasMessageContent ?msgContent .
+  ?message ex:messageSender ?suspect .      # Properti di OFB: messageSender menunjuk ke User
+  ?message ex:belongsToPlatform ?platform . # Properti dari contoh data di OFB
+
+  # Memastikan ?suspect adalah tipe User
+  ?suspect rdf:type ex:User .
+
+  # Filter konten pesan (?msgContent) untuk kata kunci/frasa mencurigakan
+  # Menggunakan REGEX dengan flag "i" untuk case-insensitive matching
+  FILTER (
+         REGEX(?msgContent, "regret it", "i") ||                # Contoh ancaman [cite: 237]
+         REGEX(?msgContent, "handle nosy people", "i") ||       # Contoh ancaman [cite: 234]
+         REGEX(?msgContent, "worry about your own privacy", "i") || # Contoh ancaman [cite: 241]
+         REGEX(?msgContent, "threat", "i") ||                   # Kata umum ancaman [cite: 263, 266]
+         REGEX(?msgContent, "expose", "i") ||                   # Terkait doxxing [cite: 259]
+         REGEX(?msgContent, "deserves what's coming", "i") ||   # Contoh ancaman
+         REGEX(?msgContent, "cc dumps", "i") ||                 # Terkait jual-beli ilegal
+         REGEX(?msgContent, "stolen data", "i") ||              # Terkait jual-beli ilegal
+         REGEX(?msgContent, "monero", "i") ||                   # Pembayaran ilegal [cite: 231]
+         REGEX(?msgContent, "untraceable payment", "i") ||      # Pembayaran ilegal [cite: 219]
+         REGEX(?msgContent, "shut up", "i") ||                  # Agresi/Pelecehan [cite: 257]
+         REGEX(?msgContent, "get lost", "i") ||                 # Agresi/Pelecehan [cite: 234]
+         REGEX(?msgContent, "illegal", "i") ||                  # Kata umum ilegal [cite: 232, 239]
+         REGEX(?msgContent, "report all you want", "i")        # Menantang pelaporan [cite: 241, 267]
+         # Tambahkan pola REGEX lain sesuai kebutuhan investigasi
+        )
+}
+ORDER BY ?suspect ?platform

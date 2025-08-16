@@ -1,0 +1,32 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# Menggunakan namespace dasar dari file RDF untuk elemen ontologi
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+# CQ5: How can social media analysis help in identifying networks or associations between suspects?
+# Pendekatan 2: Mengidentifikasi pengguna yang berinteraksi (misal, berkomentar)
+# pada konten yang sama, menunjukkan jaringan di sekitar suatu peristiwa/konten.
+# Contoh: Pengguna yang berkomentar di postingan challenge Ethan.
+
+SELECT DISTINCT ?commenter ?commentTimestamp ?commentText
+WHERE {
+  # Tentukan konten yang menjadi fokus (Postingan challenge Ethan)
+  BIND(ex:EthanBlackoutChallengePost AS ?contentOfInterest)
+
+  # Temukan komentar pada konten tersebut
+  ?comment rdf:type ex:Comment ;
+           ex:commentsOnContent ?contentOfInterest ; # Terkait dengan konten fokus
+           ex:commentedBy ?commenter ;           # Pengguna yang berkomentar
+           ex:hasCommentTimestamp ?commentTimestamp ;
+           ex:hasCommentText ?commentText .
+
+  # Pastikan komentator adalah User
+  ?commenter rdf:type ex:User .
+
+  # Opsional: Bisa filter hanya untuk tersangka yang diketahui, atau tampilkan semua untuk melihat jaringan lengkap.
+  # FILTER(?commenter IN (ex:MaxDares, ex:SarahCares, ex:RiskyKing, ex:JakeMaster))
+}
+ORDER BY ?commentTimestamp

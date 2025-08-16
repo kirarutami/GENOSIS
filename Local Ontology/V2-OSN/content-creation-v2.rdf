@@ -1,0 +1,414 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas ContentCreation -->
+    <owl:Class rdf:about="#ContentCreation">
+        <rdfs:comment>Represents content creation activities in the system.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas Posts -->
+    <owl:Class rdf:about="#Posts">
+        <rdfs:subClassOf rdf:resource="#ContentCreation"/>
+        <rdfs:comment>Represents posts created by the user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas untuk Posts -->
+    <owl:Class rdf:about="#PhotoVideo">
+        <rdfs:subClassOf rdf:resource="#Posts"/>
+        <rdfs:comment>Represents photo and video posts created by the user.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#TaggedPeople">
+        <rdfs:subClassOf rdf:resource="#Posts"/>
+        <rdfs:comment>Represents tagged people in posts created by the user.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#FeelingActivity">
+        <rdfs:subClassOf rdf:resource="#Posts"/>
+        <rdfs:comment>Represents feelings and activities associated with posts.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LocationCheckIn">
+        <rdfs:subClassOf rdf:resource="#Posts"/>
+        <rdfs:comment>Represents location check-ins associated with posts.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LiveVideo">
+        <rdfs:subClassOf rdf:resource="#Posts"/>
+        <rdfs:comment>Represents live video posts created by the user.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#BackgroundColor">
+        <rdfs:subClassOf rdf:resource="#Posts"/>
+        <rdfs:comment>Represents background color settings in text posts.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#GIF">
+        <rdfs:subClassOf rdf:resource="#Posts"/>
+        <rdfs:comment>Represents GIF posts created by the user.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LifeEvent">
+        <rdfs:subClassOf rdf:resource="#Posts"/>
+        <rdfs:comment>Represents life event posts shared by the user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas Stories -->
+    <owl:Class rdf:about="#Stories">
+        <rdfs:subClassOf rdf:resource="#ContentCreation"/>
+        <rdfs:comment>Represents stories created by the user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas untuk Stories -->
+    <owl:Class rdf:about="#StoryPhotoVideo">
+        <rdfs:subClassOf rdf:resource="#Stories"/>
+        <rdfs:comment>Represents photo and video content in stories.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#StoryText">
+        <rdfs:subClassOf rdf:resource="#Stories"/>
+        <rdfs:comment>Represents text content in stories.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#StoryHighlights">
+        <rdfs:subClassOf rdf:resource="#Stories"/>
+        <rdfs:comment>Represents highlights from stories shared by the user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for Stories -->
+    <owl:DatatypeProperty rdf:about="#StoryMusic">
+        <rdfs:domain rdf:resource="#Stories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents music associated with a story.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#StoryStickers">
+        <rdfs:domain rdf:resource="#Stories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents stickers applied to a story by the user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-sub-kelas StorySettings di dalam Stories -->
+    <owl:Class rdf:about="#StorySettings">
+        <rdfs:subClassOf rdf:resource="#Stories"/>
+        <rdfs:comment>Represents privacy and display settings for stories.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#HiddenUser">
+        <rdfs:subClassOf rdf:resource="#StorySettings"/>
+        <rdfs:comment>Represents the users from whom the story is hidden.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#CloseFriends">
+        <rdfs:subClassOf rdf:resource="#StorySettings"/>
+        <rdfs:comment>Represents the close friends who can view the story.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas Reels -->
+    <owl:Class rdf:about="#Reels">
+        <rdfs:subClassOf rdf:resource="#ContentCreation"/>
+        <rdfs:comment>Represents short-form video content (reels) created by the user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas untuk Reels -->
+    <owl:Class rdf:about="#ReelVideo">
+        <rdfs:subClassOf rdf:resource="#Reels"/>
+        <rdfs:comment>Represents video content in reels.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ReelMusic">
+        <rdfs:subClassOf rdf:resource="#Reels"/>
+        <rdfs:comment>Represents music added to reels by the user.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ReelEffects">
+        <rdfs:subClassOf rdf:resource="#Reels"/>
+        <rdfs:comment>Represents effects applied to reels by the user.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ReelRemix">
+        <rdfs:subClassOf rdf:resource="#Reels"/>
+        <rdfs:comment>Represents remixes created in reels by the user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for Content Creation -->
+    <owl:ObjectProperty rdf:about="#createsNewPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Posts"/>
+        <rdfs:comment>Defines the relationship where a user creates a new post.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#addsPhotoVideo">
+        <rdfs:domain rdf:resource="#Posts"/>
+        <rdfs:range rdf:resource="#PhotoVideo"/>
+        <rdfs:comment>Defines the relationship where a post includes photos or videos.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#tagsPeopleInPost">
+        <rdfs:domain rdf:resource="#Posts"/>
+        <rdfs:range rdf:resource="#TaggedPeople"/>
+        <rdfs:comment>Defines the relationship where people are tagged in a post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#addsFeelingActivity">
+        <rdfs:domain rdf:resource="#Posts"/>
+        <rdfs:range rdf:resource="#FeelingActivity"/>
+        <rdfs:comment>Defines the relationship where a post includes a feeling or activity.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#checksInAtLocation">
+        <rdfs:domain rdf:resource="#Posts"/>
+        <rdfs:range rdf:resource="#LocationCheckIn"/>
+        <rdfs:comment>Defines the relationship where a post includes a location check-in.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#addsGIF">
+        <rdfs:domain rdf:resource="#Posts"/>
+        <rdfs:range rdf:resource="#GIF"/>
+        <rdfs:comment>Defines the relationship where a post includes a GIF.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#addsBackgroundColor">
+        <rdfs:domain rdf:resource="#Posts"/>
+        <rdfs:range rdf:resource="#BackgroundColor"/>
+        <rdfs:comment>Defines the relationship where a post includes background color settings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#sharesLifeEvent">
+        <rdfs:domain rdf:resource="#Posts"/>
+        <rdfs:range rdf:resource="#LifeEvent"/>
+        <rdfs:comment>Defines the relationship where a user shares a life event in a post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Stories Object Properties -->
+    <owl:ObjectProperty rdf:about="#createsStory">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Stories"/>
+        <rdfs:comment>Defines the relationship where a user creates a new story.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#addsStoryPhotoVideo">
+        <rdfs:domain rdf:resource="#Stories"/>
+        <rdfs:range rdf:resource="#StoryPhotoVideo"/>
+        <rdfs:comment>Defines the relationship where a story includes photos or videos.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#addsStoryText">
+        <rdfs:domain rdf:resource="#Stories"/>
+        <rdfs:range rdf:resource="#StoryText"/>
+        <rdfs:comment>Defines the relationship where a story includes text content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#addsStoryHighlights">
+        <rdfs:domain rdf:resource="#Stories"/>
+        <rdfs:range rdf:resource="#StoryHighlights"/>
+        <rdfs:comment>Defines the relationship where a story includes highlights.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#appliesStorySettings">
+        <rdfs:domain rdf:resource="#Stories"/>
+        <rdfs:range rdf:resource="#StorySettings"/>
+        <rdfs:comment>Defines the relationship where a user applies privacy or display settings to their story.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hidesStoryFrom">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#HiddenUser"/>
+        <rdfs:comment>Defines the relationship where a story is hidden from certain users.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#postsToCloseFriends">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#CloseFriends"/>
+        <rdfs:comment>Defines the relationship where a story is posted only to close friends.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Reels Object Properties -->
+    <owl:ObjectProperty rdf:about="#createsReel">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reels"/>
+        <rdfs:comment>Defines the relationship where a user creates a new reel.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+
+    <owl:ObjectProperty rdf:about="#addsReelMusic">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ReelMusic"/>
+        <rdfs:comment>Defines the relationship where a reel includes music.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#addsReelEffects">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ReelEffects"/>
+        <rdfs:comment>Defines the relationship where effects are applied to a reel.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#remixesReel">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ReelRemix"/>
+        <rdfs:comment>Defines the relationship where a user creates a remix of a reel.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Karakteristik untuk Object Properties -->
+
+    <owl:FunctionalProperty rdf:about="#createsNewPost"/>
+    <owl:FunctionalProperty rdf:about="#createsStory"/>
+    <owl:FunctionalProperty rdf:about="#createsReel"/>
+
+    <owl:FunctionalProperty rdf:about="#addsPhotoVideo"/>
+    <owl:FunctionalProperty rdf:about="#addsStoryPhotoVideo"/>
+    <owl:FunctionalProperty rdf:about="#addsReelVideo"/>
+
+    <owl:FunctionalProperty rdf:about="#addsGIF"/>
+    <owl:FunctionalProperty rdf:about="#addsReelMusic"/>
+
+    <owl:AsymmetricProperty rdf:about="#tagsPeopleInPost"/>
+    <owl:AsymmetricProperty rdf:about="#hidesStoryFrom"/>
+    <owl:AsymmetricProperty rdf:about="#remixesReel"/>
+
+    <owl:SymmetricProperty rdf:about="#allowsCloseFriends"/>
+
+    <!-- Disjointness untuk Posts, Stories, dan Reels -->
+    <owl:Class rdf:about="#Posts">
+        <owl:disjointWith rdf:resource="#Stories"/>
+        <owl:disjointWith rdf:resource="#Reels"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Stories">
+        <owl:disjointWith rdf:resource="#Posts"/>
+        <owl:disjointWith rdf:resource="#Reels"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Reels">
+        <owl:disjointWith rdf:resource="#Posts"/>
+        <owl:disjointWith rdf:resource="#Stories"/>
+    </owl:Class>
+
+    <!-- Disjointness untuk Sub-sub-kelas di dalam Posts -->
+    <owl:Class rdf:about="#PhotoVideo">
+        <owl:disjointWith rdf:resource="#TaggedPeople"/>
+        <owl:disjointWith rdf:resource="#FeelingActivity"/>
+        <owl:disjointWith rdf:resource="#LocationCheckIn"/>
+        <owl:disjointWith rdf:resource="#LiveVideo"/>
+        <owl:disjointWith rdf:resource="#BackgroundColor"/>
+        <owl:disjointWith rdf:resource="#GIF"/>
+        <owl:disjointWith rdf:resource="#LifeEvent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#TaggedPeople">
+        <owl:disjointWith rdf:resource="#PhotoVideo"/>
+        <owl:disjointWith rdf:resource="#FeelingActivity"/>
+        <owl:disjointWith rdf:resource="#LocationCheckIn"/>
+        <owl:disjointWith rdf:resource="#LiveVideo"/>
+        <owl:disjointWith rdf:resource="#BackgroundColor"/>
+        <owl:disjointWith rdf:resource="#GIF"/>
+        <owl:disjointWith rdf:resource="#LifeEvent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#FeelingActivity">
+        <owl:disjointWith rdf:resource="#PhotoVideo"/>
+        <owl:disjointWith rdf:resource="#TaggedPeople"/>
+        <owl:disjointWith rdf:resource="#LocationCheckIn"/>
+        <owl:disjointWith rdf:resource="#LiveVideo"/>
+        <owl:disjointWith rdf:resource="#BackgroundColor"/>
+        <owl:disjointWith rdf:resource="#GIF"/>
+        <owl:disjointWith rdf:resource="#LifeEvent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LocationCheckIn">
+        <owl:disjointWith rdf:resource="#PhotoVideo"/>
+        <owl:disjointWith rdf:resource="#TaggedPeople"/>
+        <owl:disjointWith rdf:resource="#FeelingActivity"/>
+        <owl:disjointWith rdf:resource="#LiveVideo"/>
+        <owl:disjointWith rdf:resource="#BackgroundColor"/>
+        <owl:disjointWith rdf:resource="#GIF"/>
+        <owl:disjointWith rdf:resource="#LifeEvent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LiveVideo">
+        <owl:disjointWith rdf:resource="#PhotoVideo"/>
+        <owl:disjointWith rdf:resource="#TaggedPeople"/>
+        <owl:disjointWith rdf:resource="#FeelingActivity"/>
+        <owl:disjointWith rdf:resource="#LocationCheckIn"/>
+        <owl:disjointWith rdf:resource="#BackgroundColor"/>
+        <owl:disjointWith rdf:resource="#GIF"/>
+        <owl:disjointWith rdf:resource="#LifeEvent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#BackgroundColor">
+        <owl:disjointWith rdf:resource="#PhotoVideo"/>
+        <owl:disjointWith rdf:resource="#TaggedPeople"/>
+        <owl:disjointWith rdf:resource="#FeelingActivity"/>
+        <owl:disjointWith rdf:resource="#LocationCheckIn"/>
+        <owl:disjointWith rdf:resource="#LiveVideo"/>
+        <owl:disjointWith rdf:resource="#GIF"/>
+        <owl:disjointWith rdf:resource="#LifeEvent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#GIF">
+        <owl:disjointWith rdf:resource="#PhotoVideo"/>
+        <owl:disjointWith rdf:resource="#TaggedPeople"/>
+        <owl:disjointWith rdf:resource="#FeelingActivity"/>
+        <owl:disjointWith rdf:resource="#LocationCheckIn"/>
+        <owl:disjointWith rdf:resource="#LiveVideo"/>
+        <owl:disjointWith rdf:resource="#BackgroundColor"/>
+        <owl:disjointWith rdf:resource="#LifeEvent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LifeEvent">
+        <owl:disjointWith rdf:resource="#PhotoVideo"/>
+        <owl:disjointWith rdf:resource="#TaggedPeople"/>
+        <owl:disjointWith rdf:resource="#FeelingActivity"/>
+        <owl:disjointWith rdf:resource="#LocationCheckIn"/>
+        <owl:disjointWith rdf:resource="#LiveVideo"/>
+        <owl:disjointWith rdf:resource="#BackgroundColor"/>
+        <owl:disjointWith rdf:resource="#GIF"/>
+    </owl:Class>
+
+    <!-- Disjointness untuk Sub-sub-kelas di dalam Stories -->
+    <owl:Class rdf:about="#StoryPhotoVideo">
+        <owl:disjointWith rdf:resource="#StoryText"/>
+        <owl:disjointWith rdf:resource="#StoryHighlights"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#StoryText">
+        <owl:disjointWith rdf:resource="#StoryPhotoVideo"/>
+        <owl:disjointWith rdf:resource="#StoryHighlights"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#StoryHighlights">
+        <owl:disjointWith rdf:resource="#StoryPhotoVideo"/>
+        <owl:disjointWith rdf:resource="#StoryText"/>
+    </owl:Class>
+
+    <!-- Disjointness untuk Sub-sub-kelas di dalam Reels -->
+    <owl:Class rdf:about="#ReelVideo">
+        <owl:disjointWith rdf:resource="#ReelMusic"/>
+        <owl:disjointWith rdf:resource="#ReelEffects"/>
+        <owl:disjointWith rdf:resource="#ReelRemix"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ReelMusic">
+        <owl:disjointWith rdf:resource="#ReelVideo"/>
+        <owl:disjointWith rdf:resource="#ReelEffects"/>
+        <owl:disjointWith rdf:resource="#ReelRemix"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ReelEffects">
+        <owl:disjointWith rdf:resource="#ReelVideo"/>
+        <owl:disjointWith rdf:resource="#ReelMusic"/>
+        <owl:disjointWith rdf:resource="#ReelRemix"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ReelRemix">
+        <owl:disjointWith rdf:resource="#ReelVideo"/>
+        <owl:disjointWith rdf:resource="#ReelMusic"/>
+        <owl:disjointWith rdf:resource="#ReelEffects"/>
+    </owl:Class>
+
+</rdf:RDF>

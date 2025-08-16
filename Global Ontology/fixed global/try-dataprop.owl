@@ -1,0 +1,351 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/gsmfo.owl#"
+     xml:base="http://example.org/gsmfo.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <owl:DatatypeProperty rdf:about="#Global:hasCreationTimestamp">
+        <rdfs:label xml:lang="en">has Creation Timestamp</rdfs:label>
+        <rdfs:comment xml:lang="en">Timestamp indicating when an entity (e.g., account, post, group, file, event, poll, rule) was created.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Timestamp yang menunjukkan kapan sebuah entitas (misalnya, akun, postingan, grup, file, acara, polling, aturan) dibuat.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Content"/> 
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:domain rdf:resource="#Global:Group"/>
+        <rdfs:domain rdf:resource="#Global:Activity"/> <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasAccountCreationDate</alignWithMCSS>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasChannelCreationDate</alignWithMCSS>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasGroupMessageCreatedTimestamp</alignWithMCSS>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasAnonymousPostTimestamp</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasCommunityCreationDate</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasPostCreationTimestamp</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasQueueCreationTimestamp</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasRegistrationDate</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasAccountCreationDate</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasAvatarCreationTimestamp</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasBirthdayPostTimestamp</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasEventCreationTimestamp</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasFileUploadTimestamp</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasGroupCreationTimestamp</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasListingCreationTimestamp</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasPollCreationTimestamp</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasPostCreationTimestamp</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasRuleCreationTimestamp</alignWithOSN>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasPostTimestamp</alignWithMP>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasInteractionTimestamp">
+        <rdfs:label xml:lang="en">has Interaction Timestamp</rdfs:label>
+        <rdfs:comment xml:lang="en">Timestamp indicating when an interaction (e.g., like, comment, share, report, gift, award, block, bookmark, follow, reply, upvote) occurred.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:ContentInteraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasCommentTimestamp</alignWithMCSS>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasDislikeTimestamp</alignWithMCSS>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasGiftTimestamp</alignWithMCSS>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasLikeTimestamp</alignWithMCSS>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasReportTimestamp</alignWithMCSS>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasShareTimestamp</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasCommentTimestamp</alignWithMP>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasRetweetTimestamp</alignWithMP>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasAwardTimestamp</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasBlockTimestamp</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasBookmarkTimestamp</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasCommentTimestamp</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasFollowTimestamp</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasLikeTimestamp</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasReplyTimestamp</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasReportTimestamp</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasShareTimestamp</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasUpvoteTimestamp</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasTimestamp</alignWithOSN> </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasLastActivityTimestamp">
+        <rdfs:label xml:lang="en">has Last Activity Timestamp</rdfs:label>
+        <rdfs:comment xml:lang="en">Timestamp indicating the last recorded activity for an entity (e.g., group message thread, user login).</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:GroupMessage"/>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasGroupMessageLastActivity</alignWithMCSS>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasLastLogin</alignWithOSN> <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasLastLoginDate</alignWithMCSS>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasLogoutTimestamp</alignWithOFB> </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasMessageSentTimestamp">
+        <rdfs:label xml:lang="en">has Message Sent Timestamp</rdfs:label>
+        <rdfs:comment xml:lang="en">Timestamp indicating when a message was sent.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Message"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasTimestamp</alignWithMCSS> <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasDMTimestamp</alignWithMP>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasMessageTimestamp</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasMessageSendTimestamp</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasMessageSentTimestamp</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasIpAddress">
+        <rdfs:label xml:lang="en">has IP Address</rdfs:label>
+        <rdfs:comment xml:lang="en">The IP address associated with an activity or entity. The specific context (login, post, comment) should be inferred from the domain class or related properties.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Alamat IP yang terkait dengan aktivitas atau entitas. Konteks spesifik (login, post, komentar) harus disimpulkan dari kelas domain atau properti terkait.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/> <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasPostIP</alignWithMCSS>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasUserInteractionIP</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasCommentIP</alignWithMP>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasPostInteractionIP</alignWithMP>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasMessageIP</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasLastLoginIP</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasEventInteractionIP</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasLoginIP</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasNotificationIP</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasUserInteractionIP</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasUsername">
+        <rdfs:label xml:lang="en">has User ID</rdfs:label>
+        <rdfs:comment xml:lang="en">A unique identifier for a user account on a platform like User ID or Username.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasUserID</alignWithMCSS>
+        </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasUserBio">
+        <rdfs:label xml:lang="en">has User Bio</rdfs:label>
+        <rdfs:comment xml:lang="en">The biography or description provided by a user for their profile.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/> <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasBio</alignWithMP>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasBio</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasBio</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:GroupName">
+        <rdfs:label xml:lang="en">has Group Name</rdfs:label>
+        <rdfs:comment xml:lang="en">The name of a group or community.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Group"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasGroupMessageTitle</alignWithMCSS> <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasGroupName</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasGroupName</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasMessageContent">
+        <rdfs:label xml:lang="en">has Message Content</rdfs:label>
+        <rdfs:comment xml:lang="en">The textual content of a message.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Message"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasGroupMessageContent</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasMessageContent</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasMessageContent</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasMessageReaction">
+        <rdfs:label xml:lang="en">has Message Reaction</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents an emoji or other reaction to a message.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Message"/> <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasMessageReaction</alignWithMCSS>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasGiftPrice">
+        <rdfs:label xml:lang="en">has Gift Price</rdfs:label>
+        <rdfs:comment xml:lang="en">The monetary price of a gift sent during an interaction.</rdfs:comment>
+        <rdfs:domain rdf:resource="#MCSS:GiftAction"/> <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasGiftPrice</alignWithMCSS>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasAttachmentURL">
+        <rdfs:label xml:lang="en">has Attachment URL</rdfs:label>
+        <rdfs:comment xml:lang="en">The URL of a media attachment in a message or post.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Message"/>
+        <rdfs:domain rdf:resource="#Global:Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasMediaAttachment</alignWithMCSS>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasMessageAttachment</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasProfileVisibility">
+        <rdfs:label xml:lang="en">has Profile Visibility</rdfs:label>
+        <rdfs:comment xml:lang="en">Specifies whether a user's profile is public or private.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/> <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/> <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasProfileVisibility</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasAccountPrivacy</alignWithOSN> </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasLocation">
+        <rdfs:label xml:lang="en">has Location</rdfs:label>
+        <rdfs:comment xml:lang="en">Geographic location associated with an entity or activity (e.g., post, user profile, event).</rdfs:comment>
+        <rdfs:comment xml:lang="id">Lokasi geografis yang terkait dengan entitas atau aktivitas (misalnya, postingan, profil pengguna, acara).</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/> <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/> <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasLiveLocation</alignWithMCSS>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasPostLocation</alignWithMCSS>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasShortVideoLocation</alignWithMCSS>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasVideoLocation</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasLocation</alignWithMP>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasPostLocation</alignWithMP>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasEventLocation</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasLocation</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasPostLocation</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasReelLocation</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasSellerLocation</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasStoryLocation</alignWithOSN>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasVideoLocation</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasContentURL">
+        <rdfs:label xml:lang="en">has Content URL</rdfs:label>
+        <rdfs:comment xml:lang="en">The URL or permalink to a piece of content.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasPostURL</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasPostURL</alignWithMP>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasCaptionText">
+        <rdfs:label xml:lang="en">has Caption Text</rdfs:label>
+        <rdfs:comment xml:lang="en">The caption or descriptive text associated with a piece of content, typically media.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Content"/> <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasPostCaption</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasClosedCaptions">
+        <rdfs:label xml:lang="en">has Closed Captions</rdfs:label>
+        <rdfs:comment xml:lang="en">Indicates whether video content has closed captions available or enabled.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:VideoContent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasClosedCaption</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:hasContentText">
+        <rdfs:label xml:lang="en">has Content Text</rdfs:label>
+        <rdfs:comment xml:lang="en">The main textual content of an entity like a post or message.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Content"/> <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#hasPostContent</alignWithMP>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasAnonymousPostContent</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasCrosspostedContent</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasPostContent</alignWithOFB>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:count">
+        <rdfs:label xml:lang="en">has Count</rdfs:label>
+        <rdfs:comment xml:lang="en">A generic property for counts. Sub-properties should be used for specific counts (e.g., viewCount, likeCount).</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:viewCount">
+        <rdfs:subPropertyOf rdf:resource="#Global:count"/>
+        <rdfs:label xml:lang="en">has View Count</rdfs:label>
+        <rdfs:comment xml:lang="en">The number of views an entity (e.g., post, video, profile, page) has received.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Content"/>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/> <rdfs:domain rdf:resource="#Global:Page"/> <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasViewCount</alignWithMCSS>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasDraftViewsCount</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasViewsCount</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasViewCount</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:likeCount">
+        <rdfs:subPropertyOf rdf:resource="#Global:count"/>
+        <rdfs:label xml:lang="en">has Like Count</rdfs:label>
+        <rdfs:comment xml:lang="en">The number of likes an entity (e.g., post, comment, video) has received.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasLikeCount</alignWithMCSS>
+    </owl:DatatypeProperty>
+
+     <owl:DatatypeProperty rdf:about="#Global:voteCount">
+        <rdfs:subPropertyOf rdf:resource="#Global:count"/>
+        <rdfs:label xml:lang="en">has Vote Count</rdfs:label>
+        <rdfs:comment xml:lang="en">The number of votes an entity (e.g., post, poll option) has received.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Content"/>
+        <rdfs:domain rdf:resource="#Global:Poll"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasVotesCount</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasPollVotesCount</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:commentCount">
+        <rdfs:subPropertyOf rdf:resource="#Global:count"/>
+        <rdfs:label xml:lang="en">has Comment Count</rdfs:label>
+        <rdfs:comment xml:lang="en">The number of comments an entity (e.g., post, video) has received.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasCommentCount</alignWithMCSS>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasCommentsCount</alignWithOFB>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasDraftCommentsCount</alignWithOFB>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:postCount">
+        <rdfs:subPropertyOf rdf:resource="#Global:count"/>
+        <rdfs:label xml:lang="en">has Post Count</rdfs:label>
+        <rdfs:comment xml:lang="en">The number of posts associated with an entity (e.g., a Page).</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Page"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasPostCount</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:videoCount">
+        <rdfs:subPropertyOf rdf:resource="#Global:count"/>
+        <rdfs:label xml:lang="en">has Video Count</rdfs:label>
+        <rdfs:comment xml:lang="en">The number of videos associated with an entity (e.g., a Page).</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Page"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasVideoCount</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:eventCount">
+        <rdfs:subPropertyOf rdf:resource="#Global:count"/>
+        <rdfs:label xml:lang="en">has Event Count</rdfs:label>
+        <rdfs:comment xml:lang="en">The number of events associated with an entity (e.g., a Page).</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Page"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasEventCount</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:notificationFrequency">
+        <rdfs:label xml:lang="en">has Notification Frequency</rdfs:label>
+        <rdfs:comment xml:lang="en">Defines the frequency of notifications (e.g., Instant, Daily Digest).</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/> <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasNotificationFrequency</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasNotificationFrequency</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:notificationType">
+        <rdfs:label xml:lang="en">has Notification Type</rdfs:label>
+        <rdfs:comment xml:lang="en">Specifies the type of notification (e.g., Post, Comment, New Upload, Reminder).</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Notification"/> <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/> <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasNotificationType</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasNotificationType</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:isNotificationSoundEnabled">
+        <rdfs:label xml:lang="en">is Notification Sound Enabled</rdfs:label>
+        <rdfs:comment xml:lang="en">Indicates if sound is enabled for notifications.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasNotificationSoundSetting</alignWithMCSS>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasNotificationSoundsSettings</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Global:notificationStatus">
+        <rdfs:label xml:lang="en">has Notification Status</rdfs:label>
+        <rdfs:comment xml:lang="en">Indicates the status of a notification (e.g., active, inactive, read, unread).</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Notification"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/> <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#hasNotificationStatus</alignWithOSN>
+    </owl:DatatypeProperty>
+
+    </rdf:RDF>
+```
+
+**Penjelasan Tambahan untuk Fragmen Data Property:**
+
+1.  **Nama Global:** Saya menggunakan prefix `Global:` untuk data property yang digeneralisasi (misalnya, `#Global:creationTimestamp`, `#Global:ipAddress`).
+2.  **Domain ke Kelas Global:** `rdfs:domain` dari data property global ini diarahkan ke kelas global yang sesuai dari hierarki kelas yang telah kita buat (misalnya, `#Global:Post`, `#Global:UserAccount`, `#Global:ContentInteraction`). Ini memungkinkan properti tersebut digunakan oleh semua subkelas dari kelas global tersebut.
+    * Untuk properti yang sangat umum seperti `#Global:ipAddress` atau `#Global:location`, domainnya bisa dibuat sangat luas (`owl:Thing`) jika properti tersebut benar-benar dapat berlaku untuk berbagai jenis entitas. Namun, untuk konteks forensik, lebih baik mencoba mengaitkannya dengan domain yang lebih spesifik jika memungkinkan (misalnya, `#Global:Activity` untuk IP yang terkait dengan suatu aksi, `#Global:UserAccount` untuk IP login).
+3.  **Range:** `rdfs:range` disesuaikan dengan tipe data yang umum dari properti-properti lokal yang digeneralisasi (misalnya, `xsd:dateTime`, `xsd:string`, `xsd:integer`, `xsd:boolean`, `xsd:anyURI`).
+4.  **Sub-properti:** Untuk konsep seperti "jumlah" (`count`), saya mendefinisikan properti generik `#Global:count` dan kemudian properti yang lebih spesifik seperti `#Global:viewCount`, `#Global:likeCount` sebagai `rdfs:subPropertyOf` dari `#Global:count`. Ini adalah praktik yang baik untuk menunjukkan hubungan semantik antar properti.
+5.  **Anotasi `alignWith...`:** Anotasi ini penting untuk melacak properti lokal mana yang telah digeneralisasi menjadi properti global ini. Saya telah menyertakan beberapa contoh berdasarkan file `all-merged-content.txt` dan `data-property.txt` Anda. Anda perlu melengkapi ini untuk semua properti global yang Anda buat.
+6.  **Pemecahan Kelompok Besar (DP #1):** Sesuai saran PDF, properti dari Kelompok DP #1 dipecah menjadi beberapa properti global yang lebih spesifik berdasarkan maknanya (misalnya, berbagai jenis timestamp, IP, ID, teks deskriptif, dll.).
+7.  **Penamaan Ulang dan Klarifikasi:** Saya mencoba mengikuti saran penamaan dari PDF (`string matching per konsep utama.pdf`).
+
+**Langkah Selanjutnya:**
+
+* **Integrasi:** Anda perlu menyalin fragmen XML ini dan menambahkannya ke dalam file OWL `integrated_ontology_classes_owl_v2.owl` Anda, di dalam tag `<rdf:RDF>...</rdf:RDF>`, setelah definisi kelas.
+* **Lengkapi Definisi:** Fragmen ini mencakup beberapa kelompok awal. Anda perlu melanjutkan proses ini untuk semua kelompok data property (DP #4 hingga DP #44) dari file `dp_equivalence_groups_with_comments.txt` dan `string matching per konsep utama.pdf`, dengan membuat definisi data property global yang sesuai.
+* **Lengkapi Anotasi:** Pastikan untuk menambahkan anotasi `alignWith...` yang relevan untuk setiap properti global yang Anda definisikan, merujuk kembali ke properti lokal aslinya.
+* **Review Domain dan Range:** Periksa kembali domain dan range untuk setiap properti global untuk memastikan kesesuaian semantik.
+
+Ini adalah proses yang cukup detail. Fokus pada pembuatan properti global yang bermakna dan dapat digunakan kembali di seluruh ontologi An

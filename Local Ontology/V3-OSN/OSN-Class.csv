@@ -1,0 +1,33 @@
+class,subClass,classComment,subClassComment
+Agent,CriminalGroup,"Represents the general concept of an agent, which may be a criminal group, organisation, or individual suspects.",Represents a group involved in criminal activities.
+Agent,CriminalOrganisation,"Represents the general concept of an agent, which may be a criminal group, organisation, or individual suspects.",Represents an organised criminal entity.
+Agent,Suspects,"Represents the general concept of an agent, which may be a criminal group, organisation, or individual suspects.",Represents individuals suspected of criminal activity based on their interactions in OSNs.
+User,UserProfile,The primary class representing the user in the system.,"Represents the profile of a user, containing personal information such as profile picture, username, and email."
+User,PrivacySettings,The primary class representing the user in the system.,"Represents the privacy settings related to the user's account, including blocked accounts and story settings."
+User,SecuritySettings,The primary class representing the user in the system.,"Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts."
+ContentCreation,Posts,"The main class representing content creation functionality, including posts, stories, and reels.","Represents posts created by users, including media posts, location check-ins, and live videos."
+ContentCreation,Stories,"The main class representing content creation functionality, including posts, stories, and reels.","Represents temporary stories shared by users, which expire after a certain period of time."
+ContentCreation,Reels,"The main class representing content creation functionality, including posts, stories, and reels.","Represents short videos shared by users, often with music, effects, or remixing."
+Posts,PhotoVideo,"Represents posts created by users, including media posts, location check-ins, and live videos.",Represents posts containing photos or videos uploaded by the user.
+Posts,FeelingActivity,"Represents posts created by users, including media posts, location check-ins, and live videos.",Represents posts expressing user emotions or activities.
+Posts,CheckIn,"Represents posts created by users, including media posts, location check-ins, and live videos.",Represents posts where users check-in to a specific location.
+Posts,LiveVideo,"Represents posts created by users, including media posts, location check-ins, and live videos.",Represents live video broadcasts created by the user.
+Posts,LifeEvent,"Represents posts created by users, including media posts, location check-ins, and live videos.","Represents significant life events shared by the user, such as marriage or graduation."
+Stories,StoryPhotoVideo,"Represents temporary stories shared by users, which expire after a certain period of time.",Represents a story containing a photo or video.
+Stories,StoryText,"Represents temporary stories shared by users, which expire after a certain period of time.",Represents a story containing only text.
+Stories,StoryHighlights,"Represents temporary stories shared by users, which expire after a certain period of time.",Represents story highlights that can be saved beyond their expiration date.
+Stories,HideFrom,"Represents temporary stories shared by users, which expire after a certain period of time.",Represents a list of users from whom a specific story is hidden.
+Stories,CloseFriends,"Represents temporary stories shared by users, which expire after a certain period of time.",Represents a list of close friends who can view exclusive stories from the user.
+Reels,ReelVideo,"Represents short videos shared by users, often with music, effects, or remixing.",Represents a short video that is part of a reel.
+Reels,ReelMusic,"Represents short videos shared by users, often with music, effects, or remixing.",Represents music that is added to a reel video.
+Reels,ReelEffects,"Represents short videos shared by users, often with music, effects, or remixing.","Represents effects applied to a reel video, such as filters or transitions."
+Reels,ReelRemix,"Represents short videos shared by users, often with music, effects, or remixing.",Represents remix content that is added to or derived from another user's reel.
+ContentInteraction,LikesReactions,"The class representing user interactions with content, such as likes, reactions, and comments.",Represents user interactions involving likes and reactions to content.
+ContentInteraction,Comments,"The class representing user interactions with content, such as likes, reactions, and comments.",Represents user interactions involving comments on content.
+LikesReactions,Like,Represents user interactions involving likes and reactions to content.,Represents a user's 'like' interaction on a post or content.
+LikesReactions,React,Represents user interactions involving likes and reactions to content.,"Represents a user's reaction to a post, such as love, angry, etc."
+Comments,TextComment,Represents user interactions involving comments on content.,Represents a text-based comment made by a user.
+Comments,GIFComment,Represents user interactions involving comments on content.,Represents a comment made by a user that contains a GIF.
+Comments,EmojiComment,Represents user interactions involving comments on content.,Represents a comment made by a user that contains an emoji.
+VideoContent,Videos,"The main class representing video-related content in the system, including video history and notifications.","Represents video content watched by users, including viewing history and notifications."
+Videos,VideoNotifications,"Represents video content watched by users, including viewing history and notifications.","Represents notifications related to video content, such as new video uploads, reminders, and other updates."

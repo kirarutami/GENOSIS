@@ -1,0 +1,290 @@
+    <!-- Instance: User Ethan -->
+    <rdf:Description rdf:about="#Ethan">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>EthanDares</hasUserID>
+        <hasUsername>Ethan</hasUsername>
+        <hasEmail>ethan@example.com</hasEmail>
+        <hasPhoneNumber>+1234567890</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/ethan.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2021-01-01T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-10T10:00:00</hasLastLoginDate>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: ShortVideoPost by Ethan -->
+    <rdf:Description rdf:about="#EthanBlackoutChallengePost">
+        <rdf:type rdf:resource="#ShortVideoPost"/>
+        <hasPostID>Post001</hasPostID>
+        <hasCaption>Alright, let's see if I can do this... #BlackoutChallenge #DontBackDown</hasCaption>
+        <hasBackgroundMusic>Trending TikTok Sound - "Dare Me" remix</hasBackgroundMusic>
+        <hasPostTimestamp>2024-04-10T15:00:00</hasPostTimestamp>
+        <hasPostURL>https://tiktok.com/post/ethanblackoutchallenge</hasPostURL>
+        <hasViewCount>100000</hasViewCount>
+        <hasLikeCount>5000</hasLikeCount>
+        <hasCommentCount>200</hasCommentCount>
+        <hasShareCount>50</hasShareCount>
+        <hasRemixableStatus>true</hasRemixableStatus>
+        <hasDuetStatus>true</hasDuetStatus>
+        <hasStitchStatus>true</hasStitchStatus>
+        <hasPostTags>#BlackoutChallenge #DontBackDown</hasPostTags>
+        <hasPostLocation>Unknown</hasPostLocation>
+        <hasPostDeviceInfo>iPhone 12, TikTok App</hasPostDeviceInfo>
+        <hasPostIP>192.168.1.1</hasPostIP>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: Comment by MaxDares -->
+    <rdf:Description rdf:about="#Comment001">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>Finally! Thought you'd never do it. Let's gooo! 🔥🔥</hasCommentText>
+        <hasCommentTimestamp>2024-04-10T15:05:00</hasCommentTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.2</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#EthanBlackoutChallengePost"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <commentedBy rdf:resource="#MaxDares"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by SarahCares -->
+    <rdf:Description rdf:about="#Comment002">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>This is dangerous, please don't do this! People have gotten seriously hurt!</hasCommentText>
+        <hasCommentTimestamp>2024-04-10T15:10:00</hasCommentTimestamp>
+        <hasDeviceInfo>iOS, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.3</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#EthanBlackoutChallengePost"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <commentedBy rdf:resource="#SarahCares"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by RiskyKing -->
+    <rdf:Description rdf:about="#Comment003">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>Welp, he almost made it! But dude, that fall was brutal. 🤣</hasCommentText>
+        <hasCommentTimestamp>2024-04-10T15:15:00</hasCommentTimestamp>
+        <hasDeviceInfo>Windows 10, Chrome Browser</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.4</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#EthanBlackoutChallengePost"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <commentedBy rdf:resource="#RiskyKing"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by JakeMaster -->
+    <rdf:Description rdf:about="#Comment004">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>Yo, can someone make this a meme? This is hilarious.</hasCommentText>
+        <hasCommentTimestamp>2024-04-10T15:20:00</hasCommentTimestamp>
+        <hasDeviceInfo>MacOS, Safari Browser</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.5</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#EthanBlackoutChallengePost"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <commentedBy rdf:resource="#JakeMaster"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by MaxDares -->
+    <rdf:Description rdf:about="#Comment005">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>@JakeMaster I already got the clip. Posting it now lol</hasCommentText>
+        <hasCommentTimestamp>2024-04-10T15:25:00</hasCommentTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.2</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#EthanBlackoutChallengePost"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <commentedBy rdf:resource="#MaxDares"/>
+    </rdf:Description>
+
+    <!-- Instance: Comment by SarahCares -->
+    <rdf:Description rdf:about="#Comment006">
+        <rdf:type rdf:resource="#Comment"/>
+        <hasCommentText>STOP ENCOURAGING THIS. Someone needs to report this!!</hasCommentText>
+        <hasCommentTimestamp>2024-04-10T15:30:00</hasCommentTimestamp>
+        <hasDeviceInfo>iOS, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.3</hasUserInteractionIP>
+        <commentsOnContent rdf:resource="#EthanBlackoutChallengePost"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <commentedBy rdf:resource="#SarahCares"/>
+    </rdf:Description>
+
+    <!-- Instance: User MaxDares -->
+    <rdf:Description rdf:about="#MaxDares">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>MaxDares</hasUserID>
+        <hasUsername>Max</hasUsername>
+        <hasEmail>max@example.com</hasEmail>
+        <hasPhoneNumber>+0987654321</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/max.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2020-05-15T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-10T11:00:00</hasLastLoginDate>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: User SarahCares -->
+    <rdf:Description rdf:about="#SarahCares">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>SarahCares</hasUserID>
+        <hasUsername>Sarah</hasUsername>
+        <hasEmail>sarah@example.com</hasEmail>
+        <hasPhoneNumber>+1122334455</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/sarah.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2019-08-20T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-10T12:00:00</hasLastLoginDate>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: User RiskyKing -->
+    <rdf:Description rdf:about="#RiskyKing">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>RiskyKing</hasUserID>
+        <hasUsername>RiskyKing</hasUsername>
+        <hasEmail>riskyking@example.com</hasEmail>
+        <hasPhoneNumber>+2233445566</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/riskyking.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2022-02-10T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-10T13:00:00</hasLastLoginDate>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: User JakeMaster -->
+    <rdf:Description rdf:about="#JakeMaster">
+        <rdf:type rdf:resource="#User"/>
+        <hasUserID>JakeMaster</hasUserID>
+        <hasUsername>JakeMaster</hasUsername>
+        <hasEmail>jakemaster@example.com</hasEmail>
+        <hasPhoneNumber>+3344556677</hasPhoneNumber>
+        <hasProfilePicture>https://tiktok.com/profile/jakemaster.jpg</hasProfilePicture>
+        <hasAccountCreationDate>2021-11-25T00:00:00</hasAccountCreationDate>
+        <hasLastLoginDate>2024-04-10T14:00:00</hasLastLoginDate>
+        <hasSubscriptionStatus>true</hasSubscriptionStatus>
+        <hasPremiumMembershipStatus>false</hasPremiumMembershipStatus>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from MaxDares to Ethan -->
+    <rdf:Description rdf:about="#DM001">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Bro, stop being a wimp. Everyone's done it. You gonna let a girl beat your record?</hasTextContent>
+        <hasTimestamp>2024-04-10T19:45:00</hasTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.2</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#Ethan"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#MaxDares"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from Ethan to MaxDares -->
+    <rdf:Description rdf:about="#DM002">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>I don't know, man. I saw that some people got hurt doing this.</hasTextContent>
+        <hasTimestamp>2024-04-10T19:47:00</hasTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.1</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#MaxDares"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#Ethan"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from MaxDares to Ethan -->
+    <rdf:Description rdf:about="#DM003">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Come on, it's just a few seconds. What's the worst that could happen? 😂</hasTextContent>
+        <hasTimestamp>2024-04-10T19:50:00</hasTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.2</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#Ethan"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#MaxDares"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from Ethan to MaxDares -->
+    <rdf:Description rdf:about="#DM004">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Ugh, fine. But if something goes wrong, I swear—</hasTextContent>
+        <hasTimestamp>2024-04-10T19:55:00</hasTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.1</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#MaxDares"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#Ethan"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from MaxDares to Ethan -->
+    <rdf:Description rdf:about="#DM005">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Nothing's gonna happen! Just record and post it. And tag me.</hasTextContent>
+        <hasTimestamp>2024-04-10T19:57:00</hasTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.2</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#Ethan"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#MaxDares"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from Ethan to MaxDares -->
+    <rdf:Description rdf:about="#DM006">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Alright, done. Hope you're happy.</hasTextContent>
+        <hasTimestamp>2024-04-10T20:10:00</hasTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.1</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#MaxDares"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#Ethan"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from MaxDares to Ethan -->
+    <rdf:Description rdf:about="#DM007">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>LMAO bro that was HILARIOUS. You actually passed out???</hasTextContent>
+        <hasTimestamp>2024-04-10T20:15:00</hasTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.2</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#Ethan"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#MaxDares"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from Ethan to MaxDares -->
+    <rdf:Description rdf:about="#DM008">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Yeah, I hit my head, dude. I don't feel great.</hasTextContent>
+        <hasTimestamp>2024-04-10T20:17:00</hasTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.1</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#MaxDares"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#Ethan"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from MaxDares to Ethan -->
+    <rdf:Description rdf:about="#DM009">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Relax, you're fine. This is gonna blow up!</hasTextContent>
+        <hasTimestamp>2024-04-10T20:18:00</hasTimestamp>
+        <hasDeviceInfo>Android, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.2</hasUserInteractionIP>
+        <sendsMessageTo rdf:resource="#Ethan"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#MaxDares"/>
+    </rdf:Description>
+
+    <!-- Instance: DirectMessage from Ethan's parent to MaxDares -->
+    <rdf:Description rdf:about="#DM010">
+        <rdf:type rdf:resource="#DirectMessage"/>
+        <hasTextContent>Hello, this is Ethan's parent. Ethan ended up in the hospital after following your advice. I will be reporting this to the police.</hasTextContent>
+        <hasTimestamp>2024-04-10T20:30:00</hasTimestamp>
+        <hasDeviceInfo>iPhone 12, TikTok App</hasDeviceInfo>
+        <hasUserInteractionIP>192.168.1.1</hasUserInteractionIP>
+        <hasMediaAttachment>https://tiktok.com/media/ethan_hospital.jpg</hasMediaAttachment>
+        <sendsMessageTo rdf:resource="#MaxDares"/>
+        <belongsToPlatform>TikTok</belongsToPlatform>
+        <sentBy rdf:resource="#Ethan"/>
+    </rdf:Description>
+

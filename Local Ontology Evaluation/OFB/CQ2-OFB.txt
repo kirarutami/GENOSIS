@@ -1,0 +1,50 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#> # Namespace ontologi OFB Anda
+
+SELECT DISTINCT ?matchType ?identifier ?user1 ?platform1 ?user2 ?platform2
+WHERE {
+  {
+    # ----- Blok 1: Mencocokkan berdasarkan Username -----
+    BIND("Username" AS ?matchType)
+    ?user1 rdf:type ex:User ;
+           ex:hasUsername ?identifier ;
+           ex:belongsToPlatform ?platform1 .
+    ?user2 rdf:type ex:User ;
+           ex:hasUsername ?identifier ;
+           ex:belongsToPlatform ?platform2 .
+  }
+  UNION
+  {
+    # ----- Blok 2: Mencocokkan berdasarkan Email -----
+    BIND("Email" AS ?matchType)
+    ?user1 rdf:type ex:User ;
+           ex:hasEmail ?identifier ;
+           ex:belongsToPlatform ?platform1 .
+    ?user2 rdf:type ex:User ;
+           ex:hasEmail ?identifier ;
+           ex:belongsToPlatform ?platform2 .
+    # FILTER STRLEN DIHAPUS DARI SINI
+  }
+  UNION
+  {
+    # ----- Blok 3: Mencocokkan berdasarkan Nomor Telepon -----
+    BIND("PhoneNumber" AS ?matchType)
+    ?user1 rdf:type ex:User ;
+           ex:hasPhoneNumber ?identifier ;
+           ex:belongsToPlatform ?platform1 .
+    ?user2 rdf:type ex:User ;
+           ex:hasPhoneNumber ?identifier ;
+           ex:belongsToPlatform ?platform2 .
+    # FILTER STRLEN DIHAPUS DARI SINI
+  }
+
+  # ----- Filter Umum yang Berlaku untuk SEMUA Blok UNION -----
+  FILTER (?user1 != ?user2)
+  FILTER (STR(?platform1) != STR(?platform2))
+  FILTER (STR(?user1) < STR(?user2))
+}
+ORDER BY ?identifier ?matchType ?user1 ?user2

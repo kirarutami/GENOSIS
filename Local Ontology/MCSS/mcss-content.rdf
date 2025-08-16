@@ -1,0 +1,251 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Class: Content -->
+    <owl:Class rdf:about="#Content">
+        <rdfs:comment>Represents all types of content on the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-class: Video -->
+    <owl:Class rdf:about="#Video">
+        <rdfs:subClassOf rdf:resource="#Content"/>
+        <rdfs:comment>Represents video content in the system.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for Video -->
+
+    <!-- hasTitle -->
+    <owl:DatatypeProperty rdf:about="#hasTitle">
+        <rdfs:domain rdf:resource="#Video"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the title of the video.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasDescription -->
+    <owl:DatatypeProperty rdf:about="#hasDescription">
+        <rdfs:domain rdf:resource="#Video"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the description of the video.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasDurationInMinutes -->
+    <owl:DatatypeProperty rdf:about="#hasDurationInMinutes">
+        <rdfs:domain rdf:resource="#Video"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the duration of the video in minutes.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasPublicationDate -->
+    <owl:DatatypeProperty rdf:about="#hasPublicationDate">
+        <rdfs:domain rdf:resource="#Video"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the publication date and time of the video.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasViewCount -->
+    <owl:DatatypeProperty rdf:about="#hasViewCount">
+        <rdfs:domain rdf:resource="#Video"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the number of views the video has received.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasLikeCount -->
+    <owl:DatatypeProperty rdf:about="#hasLikeCount">
+        <rdfs:domain rdf:resource="#Video"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the number of likes the video has received.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasDislikeCount -->
+    <owl:DatatypeProperty rdf:about="#hasDislikeCount">
+        <rdfs:domain rdf:resource="#Video"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the number of dislikes the video has received.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasCommentCount -->
+    <owl:DatatypeProperty rdf:about="#hasCommentCount">
+        <rdfs:domain rdf:resource="#Video"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the number of comments on the video.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasVideoTags -->
+    <owl:DatatypeProperty rdf:about="#hasVideoTags">
+        <rdfs:domain rdf:resource="#Video"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores tags associated with the video.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasVideoLocation -->
+    <owl:DatatypeProperty rdf:about="#hasVideoLocation">
+        <rdfs:domain rdf:resource="#Video"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the location associated with the video.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasContentRating -->
+    <owl:DatatypeProperty rdf:about="#hasContentRating">
+        <rdfs:domain rdf:resource="#Video"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the content rating of the video (e.g., PG, R).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: ShortVideo -->
+    <owl:Class rdf:about="#ShortVideo">
+        <rdfs:subClassOf rdf:resource="#Content"/>
+        <rdfs:comment>Represents short video content in the system.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for ShortVideo -->
+
+    <!-- hasShortDescription -->
+    <owl:DatatypeProperty rdf:about="#hasShortDescription">
+        <rdfs:domain rdf:resource="#ShortVideo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the description of the short video.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasDurationInSeconds -->
+    <owl:DatatypeProperty rdf:about="#hasDurationInSeconds">
+        <rdfs:domain rdf:resource="#ShortVideo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the duration of the short video in seconds.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasMusicUsedInShort -->
+    <owl:DatatypeProperty rdf:about="#hasMusicUsedInShort">
+        <rdfs:domain rdf:resource="#ShortVideo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the music used in the short video.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasEffectsUsedInShort -->
+    <owl:DatatypeProperty rdf:about="#hasEffectsUsedInShort">
+        <rdfs:domain rdf:resource="#ShortVideo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the effects used in the short video.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasShortUploadDate -->
+    <owl:DatatypeProperty rdf:about="#hasShortUploadDate">
+        <rdfs:domain rdf:resource="#ShortVideo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the upload date and time of the short video.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasShortVideoTags -->
+    <owl:DatatypeProperty rdf:about="#hasShortVideoTags">
+        <rdfs:domain rdf:resource="#ShortVideo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents tags associated with the short video.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasShortVideoLocation -->
+    <owl:DatatypeProperty rdf:about="#hasShortVideoLocation">
+        <rdfs:domain rdf:resource="#ShortVideo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the location associated with the short video.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasRemixableStatus -->
+    <owl:DatatypeProperty rdf:about="#hasRemixableStatus">
+        <rdfs:domain rdf:resource="#ShortVideo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents whether the short video is remixable.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: Live -->
+    <owl:Class rdf:about="#Live">
+        <rdfs:subClassOf rdf:resource="#Content"/>
+        <rdfs:comment>Represents live streaming content within the system.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for Live -->
+
+    <!-- hasLiveDurationInMinutes -->
+    <owl:DatatypeProperty rdf:about="#hasLiveDurationInMinutes">
+        <rdfs:domain rdf:resource="#Live"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the duration of the live session in minutes.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasViewerCountInLive -->
+    <owl:DatatypeProperty rdf:about="#hasViewerCountInLive">
+        <rdfs:domain rdf:resource="#Live"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the total number of viewers during the live session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasReactionCountInLive -->
+    <owl:DatatypeProperty rdf:about="#hasReactionCountInLive">
+        <rdfs:domain rdf:resource="#Live"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the total number of reactions received during the live session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasLiveStartTime -->
+    <owl:DatatypeProperty rdf:about="#hasLiveStartTime">
+        <rdfs:domain rdf:resource="#Live"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the start time of the live session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasLiveEndTime -->
+    <owl:DatatypeProperty rdf:about="#hasLiveEndTime">
+        <rdfs:domain rdf:resource="#Live"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the end time of the live session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasLiveTags -->
+    <owl:DatatypeProperty rdf:about="#hasLiveTags">
+        <rdfs:domain rdf:resource="#Live"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents tags associated with the live session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasLiveLocation -->
+    <owl:DatatypeProperty rdf:about="#hasLiveLocation">
+        <rdfs:domain rdf:resource="#Live"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the location associated with the live session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- hasSuperChatRevenue -->
+    <owl:DatatypeProperty rdf:about="#hasSuperChatRevenue">
+        <rdfs:domain rdf:resource="#Live"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Represents the total revenue generated from super chat during the live session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

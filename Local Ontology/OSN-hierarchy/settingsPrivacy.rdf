@@ -1,0 +1,275 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas SettingsPrivacy -->
+    <owl:Class rdf:about="#SettingsPrivacy"/>
+
+    <!-- Sub-kelas AccountSettings -->
+    <owl:Class rdf:about="#AccountSettings">
+        <rdfs:subClassOf rdf:resource="#SettingsPrivacy"/>
+    </owl:Class>
+
+    <!-- Individu di dalam AccountSettings -->
+    <owl:NamedIndividual rdf:about="#GeneralSettings">
+        <rdf:type rdf:resource="#AccountSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage general account settings.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas PrivacySettings di dalam AccountSettings -->
+    <owl:Class rdf:about="#PrivacySettings">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam PrivacySettings -->
+    <owl:NamedIndividual rdf:about="#ProfilePrivacy">
+        <rdf:type rdf:resource="#PrivacySettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage who can see their profile information.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#BlockedAccounts">
+        <rdf:type rdf:resource="#PrivacySettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage blocked accounts.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ActivityStatus">
+        <rdf:type rdf:resource="#PrivacySettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage their online status visibility.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas SecuritySettings di dalam AccountSettings -->
+    <owl:Class rdf:about="#SecuritySettings">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam SecuritySettings -->
+    <owl:NamedIndividual rdf:about="#TwoFactorAuthentication">
+        <rdf:type rdf:resource="#SecuritySettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can enable two-factor authentication for added security.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LoginAlerts">
+        <rdf:type rdf:resource="#SecuritySettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can receive alerts for unrecognized logins.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#PasswordManagement">
+        <rdf:type rdf:resource="#SecuritySettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their account password.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas DataUsageSettings di dalam AccountSettings -->
+    <owl:Class rdf:about="#DataUsageSettings">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam DataUsageSettings -->
+    <owl:NamedIndividual rdf:about="#CellularDataUse">
+        <rdf:type rdf:resource="#DataUsageSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage data usage on cellular networks.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#WiFiDataUse">
+        <rdf:type rdf:resource="#DataUsageSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage data usage on Wi-Fi networks.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas NotificationSettings di dalam AccountSettings -->
+    <owl:Class rdf:about="#NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam NotificationSettings -->
+    <owl:NamedIndividual rdf:about="#PushNotifications">
+        <rdf:type rdf:resource="#NotificationSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage push notification settings.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#EmailNotifications">
+        <rdf:type rdf:resource="#NotificationSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage email notification settings.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SMSNotifications">
+        <rdf:type rdf:resource="#NotificationSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage SMS notification settings.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#NotificationSounds">
+        <rdf:type rdf:resource="#NotificationSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage sounds for notifications.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas LanguageSettings di dalam AccountSettings -->
+    <owl:Class rdf:about="#LanguageSettings">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam LanguageSettings -->
+    <owl:NamedIndividual rdf:about="#DisplayLanguage">
+        <rdf:type rdf:resource="#LanguageSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change the language for the app's display.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#PreferredContentLanguage">
+        <rdf:type rdf:resource="#LanguageSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can set their preferred language for content.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas Accessibility di dalam AccountSettings -->
+    <owl:Class rdf:about="#Accessibility">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam Accessibility -->
+    <owl:NamedIndividual rdf:about="#TextSize">
+        <rdf:type rdf:resource="#Accessibility"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can adjust the text size for better readability.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#HighContrastMode">
+        <rdf:type rdf:resource="#Accessibility"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can enable high contrast mode for better visibility.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#VoiceCommands">
+        <rdf:type rdf:resource="#Accessibility"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can enable and configure voice commands.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas AccountManagement di dalam AccountSettings -->
+    <owl:Class rdf:about="#AccountManagement">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam AccountManagement -->
+    <owl:NamedIndividual rdf:about="#DeactivateAccount">
+        <rdf:type rdf:resource="#AccountManagement"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can deactivate their account temporarily.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DeleteAccount">
+        <rdf:type rdf:resource="#AccountManagement"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can delete their account permanently.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DownloadYourInformation">
+        <rdf:type rdf:resource="#AccountManagement"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can download their account information.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TransferYourInformation">
+        <rdf:type rdf:resource="#AccountManagement"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can transfer their account information to another service.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas AdPreferences di dalam AccountSettings -->
+    <owl:Class rdf:about="#AdPreferences">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam AdPreferences -->
+    <owl:NamedIndividual rdf:about="#AdSettings">
+        <rdf:type rdf:resource="#AdPreferences"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage their ad preferences and settings.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AdInterests">
+        <rdf:type rdf:resource="#AdPreferences"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage their interests for targeted ads.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AdInteractions">
+        <rdf:type rdf:resource="#AdPreferences"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can see a list of advertisers they have interacted with.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas PrivacyShortcuts di dalam AccountSettings -->
+    <owl:Class rdf:about="#PrivacyShortcuts">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam PrivacyShortcuts -->
+    <owl:NamedIndividual rdf:about="#QuickPrivacySettings">
+        <rdf:type rdf:resource="#PrivacyShortcuts"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can quickly access and manage their privacy settings.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas ActivityLog di dalam AccountSettings -->
+    <owl:Class rdf:about="#ActivityLog">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam ActivityLog -->
+    <owl:NamedIndividual rdf:about="#ViewActivityLog">
+        <rdf:type rdf:resource="#ActivityLog"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view and manage their activity log.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas LinkedAccounts di dalam AccountSettings -->
+    <owl:Class rdf:about="#LinkedAccounts">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam LinkedAccounts -->
+    <owl:NamedIndividual rdf:about="#ConnectOtherServices">
+        <rdf:type rdf:resource="#LinkedAccounts"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can link their account with other services like Facebook, Instagram, etc.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas PaymentSettings di dalam AccountSettings -->
+    <owl:Class rdf:about="#PaymentSettings">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam PaymentSettings -->
+    <owl:NamedIndividual rdf:about="#ManagePaymentMethods">
+        <rdf:type rdf:resource="#PaymentSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage their saved payment methods.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TransactionHistory">
+        <rdf:type rdf:resource="#PaymentSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view their transaction history.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#PaymentNotifications">
+        <rdf:type rdf:resource="#PaymentSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage notifications for payments.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas SecurityCheckup di dalam AccountSettings -->
+    <owl:Class rdf:about="#SecurityCheckup">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam SecurityCheckup -->
+    <owl:NamedIndividual rdf:about="#SecurityRecommendations">
+        <rdf:type rdf:resource="#SecurityCheckup"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can perform a security checkup and follow recommendations.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas LoginActivity di dalam AccountSettings -->
+    <owl:Class rdf:about="#LoginActivity">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam LoginActivity -->
+    <owl:NamedIndividual rdf:about="#ViewLoginActivity">
+        <rdf:type rdf:resource="#LoginActivity"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view and manage their login activity.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas DeviceManagement di dalam AccountSettings -->
+    <owl:Class rdf:about="#DeviceManagement">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam DeviceManagement -->
+    <owl:NamedIndividual rdf:about="#AuthorizedDevices">
+        <rdf:type rdf:resource="#DeviceManagement"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view and manage devices authorized to access their account.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

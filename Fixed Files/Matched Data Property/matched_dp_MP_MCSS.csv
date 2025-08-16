@@ -1,0 +1,96 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+MP:hasCommentTimestamp,MCSS:hasCommentTimestamp,100.0,"
+            The date and time when this comment was created.
+            Useful for forensic timeline reconstruction.
+        ",Records the timestamp when a comment interaction occurred.
+MP:hasEmail,MCSS:hasEmail,100.0,Stores the email address associated with the user's account.,The email address associated with the user.
+MP:hasPostDeviceInfo,MCSS:hasPostDeviceInfo,100.0,"
+            Stores information about the device or app used to create the post
+            (e.g., 'Twitter Web on MacBook Pro', 'Android App').
+        ",Device information used to create the short video post.
+MP:hasPostLocation,MCSS:hasPostLocation,100.0,"
+            Geographical location or place the user tagged 
+            (e.g., 'New York, USA').
+        ",Location associated with the short video post.
+MP:hasPostTags,MCSS:hasPostTags,100.0,"
+            Contains hashtags, labels, or additional tags associated with the post.
+            Useful for categorizing or searching content by topic.
+        ",Tags associated with the short video post.
+MP:hasPostURL,MCSS:hasPostURL,100.0,"
+            Contains the public URL or permalink to the post, if available.
+            Useful for referencing the post directly from an external link.
+        ",URL of the short video post.
+MP:hasSubscriptionStatus,MCSS:hasSubscriptionStatus,100.0,"Indicates the user's subscription status (e.g., premium, free).",Indicates whether the user has an active subscription.
+MP:hasPrivacySetting,MCSS:hasPrivacySettings,97.14,"Specifies the user's privacy settings (e.g., public profile, private account).",Privacy settings defined by the user.
+MP:hasDMTimestamp,MCSS:hasTimestamp,92.31,"
+            The date and time when the DM was sent.
+        ",Represents the timestamp of when the message was sent.
+MP:hasNotificationsSetting,MCSS:hasNotificationSoundSetting,92.0,"Specifies the user's notifications settings (e.g., email notifications enabled).",Indicates the user's chosen notification sound setting.
+MP:hasPostTimestamp,MCSS:hasReportTimestamp,88.24,"
+            Records the date and time when the post was created or published.
+        ",Records the timestamp when a report interaction occurred.
+MP:hasCommentContent,MCSS:hasCommentCount,87.5,"
+            Holds the main text/body of a comment posted by a user.
+        ",Represents the number of comments on the video.
+MP:hasListDescription,MCSS:hasDescription,87.5,Stores the description of the list.,Stores the description of the video.
+MP:hasPostDeviceInfo,MCSS:hasDeviceInfo,86.67,"
+            Stores information about the device or app used to create the post
+            (e.g., 'Twitter Web on MacBook Pro', 'Android App').
+        ",Stores the device information of the user device who gave a comment.
+MP:hasListDescription,MCSS:hasShortDescription,86.49,Stores the description of the list.,Stores the description of the short video.
+MP:hasPostTimestamp,MCSS:hasTimestamp,85.71,"
+            Records the date and time when the post was created or published.
+        ",Represents the timestamp of when the message was sent.
+MP:hasScheduledTime,MCSS:hasPostScheduleTime,85.71,"
+            If the post status is ""scheduled"", records the date and time
+            when the post will be published.
+        ",Specifies the scheduled time for the post to be published.
+MP:hasPostInteractionIP,MCSS:hasUserInteractionIP,85.0,"
+            Captures the IP address from which the user posted. 
+            Useful for forensic tracing of post origin.
+        ",Stores the IP information of the user device who gave a comment.
+MP:hasPostInteractionIP,MCSS:hasPostIP,84.71,"
+            Captures the IP address from which the user posted. 
+            Useful for forensic tracing of post origin.
+        ",IP address used to create the short video post.
+MP:hasLocation,MCSS:hasLiveLocation,84.62,Indicates the user's location as shown on their profile.,Represents the location associated with the live session.
+MP:hasLocation,MCSS:hasPostLocation,84.62,Indicates the user's location as shown on their profile.,Location associated with the short video post.
+MP:hasPassword,MCSS:hasPasswordHash,84.62,Stores the password for the user's account.,Hashed password of the user.
+MP:hasCommentContent,MCSS:hasCommentText,83.87,"
+            Holds the main text/body of a comment posted by a user.
+        ",Stores the text of a comment.
+MP:hasPostStatus,MCSS:hasPostTags,83.33,"
+            Indicates the publishing status of the post (e.g., ""draft"", ""scheduled"", or ""published"").
+            Useful for distinguishing between different post states.
+        ",Tags associated with the short video post.
+MP:hasCommentIP,MCSS:hasCommentTimestamp,82.5,"
+            The IP address of the device used to post the comment.
+            Critical for digital forensics or geolocation.
+        ",Records the timestamp when a comment interaction occurred.
+MP:hasLocation,MCSS:hasVideoLocation,81.48,Indicates the user's location as shown on their profile.,Represents the location associated with the video.
+MP:hasPostTimestamp,MCSS:hasGiftTimestamp,81.25,"
+            Records the date and time when the post was created or published.
+        ",Records the timestamp when a gift was sent during a live session.
+MP:hasCreationDate,MCSS:hasAccountCreationDate,81.08,Indicates the creation date of the community.,The date and time when the user's account was created.
+MP:hasCreationDate,MCSS:hasChannelCreationDate,81.08,Indicates the creation date of the community.,Date when the channel was created.
+MP:hasRetweetTimestamp,MCSS:hasReportTimestamp,81.08,Mencatat tanggal dan waktu ketika retweet atau reblog terjadi.,Records the timestamp when a report interaction occurred.
+MP:hasDMTimestamp,MCSS:hasGiftTimestamp,80.0,"
+            The date and time when the DM was sent.
+        ",Records the timestamp when a gift was sent during a live session.
+MP:hasDMTimestamp,MCSS:hasLikeTimestamp,80.0,"
+            The date and time when the DM was sent.
+        ",Records the timestamp when a like interaction occurred.
+MP:hasPostLocation,MCSS:hasPostURL,80.0,"
+            Geographical location or place the user tagged 
+            (e.g., 'New York, USA').
+        ",URL of the short video post.
+MP:hasPostTimestamp,MCSS:hasCommentTimestamp,80.0,"
+            Records the date and time when the post was created or published.
+        ",Records the timestamp when a comment interaction occurred.
+MP:hasPostTimestamp,MCSS:hasPostIP,80.0,"
+            Records the date and time when the post was created or published.
+        ",IP address used to create the short video post.
+MP:hasPostURL,MCSS:hasPostLocation,80.0,"
+            Contains the public URL or permalink to the post, if available.
+            Useful for referencing the post directly from an external link.
+        ",Location associated with the short video post.

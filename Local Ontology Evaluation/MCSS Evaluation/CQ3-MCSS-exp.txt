@@ -1,0 +1,13 @@
+Competency Question 3: “Can a person be considered as a suspect of an online crime based on online communication with a victim?”
+
+Secara konseptual, jawaban atas CQ3 ini tergantung pada konteks hukum dan kondisi forensik di mana seseorang dapat diklasifikasikan sebagai suspect apabila:
+
+Ia berkomunikasi langsung (misalnya melalui DirectMessage) atau berkomentar ke korban dengan isi yang mengindikasikan ancaman/pengakuan kesalahan.
+Ia dilaporkan oleh korban (misalnya, ex:reportsUser) berdasarkan interaksi digital yang dilakukan.
+Atau kedua hal di atas terjadi (korban menerima pesan yang mengancam dan langsung melaporkannya).
+Di RDF Anda, kita bisa mendeteksi kriteria “berkomunikasi dengan korban” dengan SPARQL. Misalnya, kita anggap “Lisa” adalah korban (dalam YouTube Case, Lisa adalah pihak yang dirugikan).
+
+Catatan:
+
+Dalam domain forensik nyata, tentu perlu bukti lebih daripada sekadar satu pesan. Namun, secara model data di RDF, hal ini cukup untuk menjawab CQ3 dengan menyoroti “bagaimana* mendeteksi user yang menjadi suspect karena interaksi langsung dengan korban.”*
+Kriteria “kata kunci ancaman” atau “laporan resmi korban” adalah metode heuristik. Jika domain Anda punya skema khusus (misal ontologi forensik yang menandai status user, threat level, dll.), Anda bisa menyesuaikan query.

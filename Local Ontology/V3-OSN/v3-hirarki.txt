@@ -1,0 +1,534 @@
+User (Class)
+  ├── UserProfile (Sub-class)
+  │    ├── hasProfilePicture (Data Property)
+  │    ├── hasProfilePictureHash (Data Property)          --> Untuk verifikasi integritas foto profil
+  │    ├── hasUsername (Data Property)
+  │    ├── hasEmail (Data Property)
+  │    ├── hasFullname (Data Property)
+  │    │    ├── hasFirstName (Data Property)
+  │    │    ├── hasMiddleName (Data Property)
+  │    │    └── hasLastName (Data Property)
+  │    ├── hasCoverPhoto (Data Property)
+  │    ├── hasBio (Data Property)
+  │    ├── hasDetails (Data Property)
+  │    ├── hasHighlights (Data Property)
+  │    ├── hasLinks (Data Property)
+  │    ├── hasAccountVerification (Data Property)
+  │    └── hasAccountCreationDate (Data Property)         --> Untuk menyimpan tanggal pembuatan akun
+  ├── PrivacySettings (Sub-class)
+  │    ├── hasAccountPrivacy (Data Property)
+  │    │    ├── hasPrivateAccount (Data Property)
+  │    │    ├── hasCloseFriends (Data Property)
+  │    │    └── hasBlockedAccounts (Data Property)
+  │    │         ├── hasBlockingOptions (Data Property)
+  │    │         ├── hasBlockNotifications (Data Property)
+  │    │         └── hasReviewBlockedAccounts (Data Property)
+  │    └── StoryAndLiveSettings (Sub-class)               --> Diubah menjadi sub-class untuk mendukung properti lebih lanjut
+  │         ├── hasHideStory (Data Property)
+  │         ├── hasAllowStoryReplies (Data Property)
+  │         ├── hasStoryExpiration (Data Property)        --> Untuk menyimpan waktu kadaluarsa story
+  │         └── hasLastStoryUpdate (Data Property)        --> Menyimpan waktu terakhir kali story diperbarui
+  └── SecuritySettings (Sub-class)
+        ├── LoginSecurity (Sub-sub-class)
+        │    ├── TwoFactorAuthentication (Individual)
+        │    ├── LoginAlerts (Individual)
+        │    ├── PasswordManagement (Individual)
+        │    └── SessionManagement (Sub-sub-class)
+        │         ├── hasActiveSessions (Data Property)
+        │         ├── hasLastLogin (Data Property)        --> Waktu login terakhir
+        │         ├── hasLoginIP (Data Property)          --> Alamat IP sesi login terakhir
+        │         └── hasLogoutFromSessions (Data Property)
+        └── GeneralAccount (Sub-class)
+            ├── hasPhoneNumber (Data Property)
+            ├── hasPhoneNumberVerificationStatus (Data Property)  --> Status verifikasi nomor telepon
+            ├── Language (Data Property)
+            ├── TimeZone (Data Property)
+            └── ApplyForVerification (Individual)
+
+ContentCreation (Class)
+├── Posts (Sub-class)
+│   ├── PhotoVideo (Sub-class)       --> Untuk menyimpan informasi tambahan seperti format, resolusi, dll.
+│   │   ├── hasResolution (Data Property)        --> Menyimpan resolusi foto/video
+│   │   ├── hasDuration (Data Property)          --> Menyimpan durasi video
+│   │   ├── hasFormat (Data Property)            --> Menyimpan format file (JPEG, MP4, dll.)
+│   ├── FeelingActivity (Data Property)  --> Data property untuk menyimpan status atau aktivitas (mis. "Happy", "Running")
+│   ├── CheckIn (Sub-class)             --> Menyimpan metadata terkait lokasi check-in
+│   │   ├── hasLocation (Data Property)         --> Menyimpan lokasi geografis (koordinat GPS atau nama lokasi)
+│   │   ├── hasTimestamp (Data Property)        --> Menyimpan waktu check-in
+│   ├── LiveVideo (Sub-class)           --> Menyimpan metadata streaming video
+│   │   ├── hasTimestamp (Data Property)        --> Menyimpan waktu kapan live video dimulai
+│   │   ├── hasDuration (Data Property)         --> Menyimpan durasi dari live video
+│   │   ├── hasDeviceInfo (Data Property)       --> Menyimpan informasi perangkat yang digunakan
+│   ├── BackgroundColor (Data Property) --> Menyimpan warna latar belakang dari post
+│   ├── GIF (Data Property)             --> Menyimpan GIF atau animasi yang digunakan
+│   ├── LifeEvent (Sub-class)           --> Menyimpan event penting dalam hidup pengguna
+│       ├── hasEventType (Data Property)        --> Tipe event (misalnya "Marriage", "Graduation")
+│       ├── hasEventDate (Data Property)        --> Waktu/durasi event terjadi
+│       ├── hasLocation (Data Property)         --> Lokasi dari event
+├── Stories (Sub-class)
+│   ├── StoryPhotoVideo (Sub-class)     --> Menyimpan informasi multimedia pada stories
+│   │   ├── hasResolution (Data Property)        --> Menyimpan resolusi foto/video
+│   │   ├── hasDuration (Data Property)          --> Menyimpan durasi video
+│   ├── StoryText (Data Property)       --> Menyimpan teks yang ditambahkan ke stories
+│   ├── StoryMusic (Data Property)      --> Menyimpan musik yang digunakan dalam stories
+│   ├── StoryStickers (Data Property)   --> Menyimpan stiker yang digunakan dalam stories
+│   ├── StoryHighlights (Sub-class)     --> Menyimpan highlights dari stories
+│   ├── HideFrom (Sub-sub-class)        --> Menyimpan pengaturan untuk menyembunyikan stories dari pengguna tertentu
+│   └── CloseFriends (Sub-sub-class)    --> Menyimpan pengaturan stories yang hanya terlihat oleh teman dekat
+└── Reels (Sub-class)
+    ├── ReelVideo (Sub-class)           --> Menyimpan informasi video yang diunggah sebagai reels
+    │   ├── hasDuration (Data Property)          --> Menyimpan durasi dari reel video
+    │   ├── hasResolution (Data Property)        --> Menyimpan resolusi dari reel video
+    ├── ReelMusic (Sub-class)           --> Menyimpan informasi musik yang digunakan dalam reels
+    ├── ReelEffects (Sub-class)         --> Menyimpan efek yang digunakan dalam reels (mis. filter)
+    └── ReelRemix (Sub-class)           --> Menyimpan remix dari reel video dengan video lainnya
+
+ContentInteraction (Class)
+  ├── LikesReactions (Sub-class)
+  │    ├── Like (Sub-class)
+  │    │    ├── hasTimestamp (Data Property)            --> Waktu Like diberikan
+  │    │    ├── hasUserInteractionIP (Data Property)    --> IP pengguna yang melakukan Like
+  │    │    └── hasDeviceInfo (Data Property)           --> Informasi perangkat yang digunakan
+  │    └── React (Sub-class)
+  │         ├── hasReactionType (Data Property)         --> Jenis reaksi (Love, Angry, dll.)
+  │         ├── hasTimestamp (Data Property)            --> Waktu reaksi diberikan
+  │         ├── hasUserInteractionIP (Data Property)    --> IP pengguna yang memberikan reaksi
+  │         └── hasDeviceInfo (Data Property)           --> Informasi perangkat yang digunakan
+  ├── Comments (Sub-class)
+  │    ├── TextComment (Sub-class)
+  │    │    ├── hasCommentText (Data Property)          --> Teks komentar
+  │    │    ├── hasTimestamp (Data Property)            --> Waktu komentar dibuat
+  │    │    ├── hasUserInteractionIP (Data Property)    --> IP pengguna yang memberikan komentar
+  │    │    └── hasDeviceInfo (Data Property)           --> Informasi perangkat yang digunakan
+  │    ├── GIFComment (Sub-class)
+  │    │    ├── hasGIFLink (Data Property)              --> Link ke GIF yang digunakan
+  │    │    ├── hasTimestamp (Data Property)            --> Waktu komentar GIF dibuat
+  │    │    ├── hasUserInteractionIP (Data Property)    --> IP pengguna yang memberikan komentar GIF
+  │    │    └── hasDeviceInfo (Data Property)           --> Informasi perangkat yang digunakan
+  │    └── EmojiComment (Sub-class)
+  │         ├── hasEmojiCode (Data Property)            --> Kode emoji yang digunakan
+  │         ├── hasTimestamp (Data Property)            --> Waktu komentar emoji dibuat
+  │         ├── hasUserInteractionIP (Data Property)    --> IP pengguna yang memberikan komentar emoji
+  │         └── hasDeviceInfo (Data Property)           --> Informasi perangkat yang digunakan
+  └── isTargetedToContent (Object Property)             --> Menghubungkan interaksi dengan konten yang ditargetkan
+Object Property:
+commentedBy: Menghubungkan komentar dengan User yang membuatnya.
+commentsOn: Menghubungkan komentar dengan ContentCreation yang dikomentari.
+
+VideoContent (Class)
+  ├── Videos (Sub-class)
+  │    ├── VideoHistory (Individual)
+  │    │    ├── hasVideoWatchTimestamp (Data Property)    --> Waktu video ditonton
+  │    │    ├── hasVideoWatchDuration (Data Property)     --> Durasi video ditonton
+  │    │    ├── hasVideoWatchIP (Data Property)           --> IP pengguna saat menonton video
+  │    │    ├── hasVideoQuality (Data Property)           --> Kualitas video yang diputar
+  │    │    └── hasVideoDeviceInfo (Data Property)        --> Informasi perangkat pengguna
+  │    └──  VideoNotifications (Sub-class)
+  │         ├── hasNotificationTimestamp (Data Property)      --> Waktu notifikasi diterima
+  │         ├── hasNotificationStatus (Data Property)         --> Status notifikasi (aktif/non-aktif)
+  │         ├── hasNotificationType (Data Property)           --> Jenis notifikasi (upload baru, pengingat, dll.)
+  │         ├── hasNotificationIP (Data Property)             --> IP pengguna yang menerima notifikasi
+  │         └── hasNotificationDeviceInfo (Data Property)     --> Informasi perangkat yang menerima notifikasi
+
+└── ShortVideoContent (Class)
+      ├── Reels (Sub-class)
+      │    └── ReelSettings (Sub-class)
+      │         ├── hasClosedCaption (Data Property)
+      │         ├── hasQuality (Data Property)
+      │         ├── hasDataSaver (Data Property)
+      │         └── hasPlaybackSpeed (Data Property)
+      │    ├── hasReelWatchTimestamp (Data Property)      --> Waktu reels ditonton
+      │    ├── hasReelWatchDuration (Data Property)       --> Durasi reels ditonton
+      │    ├── hasReelWatchIP (Data Property)             --> IP pengguna saat menonton reels
+      │    └── hasReelDeviceInfo (Data Property)          --> Informasi perangkat pengguna
+
+DirectMessages (Class)
+  ├── viewsMessages (Object Property)                     --> Melihat pesan
+  └── hasMessageViewTimestamp (Data Property)       --> Waktu pesan dilihat
+  ├── TextMessage (Sub-class)
+  │    ├── sendsTextMessage (Object Property)             --> Mengirim pesan teks
+  │    ├── sendsPhotoVideoMessage (Object Property)       --> Mengirim pesan foto/video
+  │    ├── sendsVoiceMessage (Object Property)            --> Mengirim pesan suara
+  │    ├── hasMessageContentType (Data Property)         --> Jenis konten pesan
+  │    └── hasMessageSendTimestamp (Data Property)       --> Waktu pesan dikirim
+  ├── GroupChat (Sub-class)
+  │    ├── createsGroupChat (Object Property)             --> Membuat percakapan grup
+  │    ├── addssMembersTo (Object Property)            --> Menambah/menghapus anggota grup
+  │    ├── RemovesMembersFrom (Object Property)            --> Menambah/menghapus anggota grup
+  │    └── hasGroupChatActionTimestamp (Data Property)   --> Waktu tindakan dalam grup dilakukan
+  ├── MessageNotifications (Sub-class)
+  │    ├── enablsNotifications (Object Property)  --> Mengaktifkan/mematikan notifikasi
+  │    ├── disablesNotifications (Object Property)  --> Mengaktifkan/mematikan notifikasi
+  │    └── hasNotificationActionTimestamp (Data Property) --> Waktu tindakan notifikasi dilakukan
+  ├── MessagePrivacy (Sub-class)
+  │    ├── hasLastSeenStatus (Data Property)             --> Status terakhir dilihat
+  │    ├── hasReadReceiptsStatus (Data Property)         --> Status tanda baca
+  │    └── hasTypingIndicatorsStatus (Data Property)     --> Status indikator mengetik
+  ├── VideoCalls (Sub-class)
+  │    ├── callsOneOnOneVideoCall (Object Property)           --> Panggilan video 1 lawan 1
+  │    ├── callsGroupVideoCall (Object Property)              --> Panggilan video grup
+  │    └── hasVideoCallTimestamp (Data Property)              --> Waktu panggilan video dilakukan
+  │    └── hasVideoCallType (Data Property)                   --> Jenis panggilan video
+  └── VoiceCalls (Sub-class)
+       ├── callsOneOnOneVoiceCall (Object Property)           --> Panggilan suara 1 lawan 1
+       ├── callsGroupVoiceCall (Object Property)              --> Panggilan suara grup
+       └── hasVoiceCallTimestamp (Data Property)              --> Waktu panggilan suara dilakukan
+       └── hasVoiceCallType (Data Property)                   --> Jenis panggilan suara
+
+
+Marketplace (Class)
+ ├── Listings (Sub-class)
+ │    ├── User -> listsItemTo -> Listing (Object Property)
+ │    ├── User -> listsVehicleTo -> Listing (Object Property)
+ │    ├── User -> listsPropertyTo -> Listing (Object Property)
+ │    ├── Items (Listing Individual)
+ │    ├── Vehicles (Listing Individual)
+ │    ├── Property (Listing Individual)
+ │    ├── ListingDetails (Sub-class)
+ │    │    ├── hasListingTitle (Data Property)
+ │    │    ├── hasListingPrice (Data Property)
+ │    │    ├── hasListingCategory (Data Property)
+ │    │    ├── hasListingCreationTimestamp (Data Property)
+ │    │    ├── hasListingUpdateTimestamp (Data Property)
+ │    │    ├── hasSellerLocation (Data Property)
+ │    │    ├── hasListingViews (Data Property)
+ │    │    ├── hasListingInteractionIP (Data Property)
+ │    │    ├── hasListingDeviceInfo (Data Property)
+ │    │    ├── hasListingExpirationDate (Data Property)          --> Waktu listing kedaluwarsa
+ │    │    ├── hasListingBoostStatus (Data Property)             --> Status apakah listing di-boost (Boolean)
+ │    │    ├── hasListingShareCount (Data Property)              --> Jumlah listing dibagikan
+ │    │    ├── hasBuyerInterestsCount (Data Property)            --> Jumlah pengguna yang menandai listing sebagai menarik
+ │    │    ├── hasSellerPaymentMethod (Data Property)            --> Metode pembayaran yang diterima penjual
+ │    │    ├── hasShippingCost (Data Property)                   --> Biaya pengiriman yang ditawarkan
+ │    │    ├── hasReturnPolicy (Data Property)                   --> Kebijakan pengembalian (e.g., 7 hari, No Returns)
+ │    │    └── hasListingKeywords (Data Property)                --> Kata kunci untuk meningkatkan visibilitas
+ │    ├── hasItemDescription (Data Property)
+ │    ├── hasItemLocation (Data Property)
+ │    ├── hasItemCondition (Data Property)
+ │    ├── hasListingAvailability (Data Property)
+ │    ├── hasItemSKU (Data Property)
+ │    ├── hasBoostListing (Data Property)
+ │    └── hasShippingOffer (Data Property)
+ ├── ListingsManagement (Sub-class)
+ │    ├── hasActiveListingsCount (Data Property)                 --> Jumlah listing yang aktif
+ │    ├── hasInactiveListingsCount (Data Property)               --> Jumlah listing yang tidak aktif
+ │    ├── hasTotalListingsCount (Data Property)                  --> Total semua listing (aktif + nonaktif)
+ │    ├── hasPendingApprovalListingsCount (Data Property)        --> Jumlah listing menunggu persetujuan
+ │    └── hasDraftListingsCount (Data Property)                  --> Jumlah listing dalam draft
+ ├── MessageSeller (Sub-class)
+ │    ├── hasMessageSentTimestamp (Data Property)                --> Waktu pesan dikirim
+ │    ├── hasSellerResponseTime (Data Property)                  --> Durasi waktu respons penjual
+ │    ├── hasMessageContent (Data Property)                      --> Isi pesan yang dikirim ke penjual
+ │    └── hasMessageBuyerAttachment (Data Property)              --> File lampiran dalam pesan (e.g., foto produk)
+ ├── TodaysPicks (Sub-class)
+ │    ├── isRecommendedForUser -> User (Object Property)          --> Rekomendasi untuk pengguna berdasarkan minat
+ │    └── isFeaturedListing -> Listing (Object Property)          --> Menandai listing yang tampil di "Today's Picks"
+ ├── SellerInformation (Sub-class)
+ │    ├── User -> viewsSellerProfile -> SellerInformation (Object Property)
+ │    ├── hasSellerRating (Data Property)                        --> Rating penjual
+ │    ├── hasNumberOfSales (Data Property)                       --> Jumlah penjualan yang berhasil
+ │    ├── hasSellerVerificationStatus (Data Property)            --> Status verifikasi penjual (Boolean)
+ │    ├── hasSellerJoinDate (Data Property)                      --> Waktu penjual bergabung
+ │    ├── hasSellerFollowersCount (Data Property)                --> Jumlah pengikut penjual
+ │    ├── hasSellerListedItemsCount (Data Property)              --> Total item yang di-list oleh penjual
+ │    └── hasSellerPreferredCommunicationMethod (Data Property)  --> Metode komunikasi preferensi (e.g., Chat, Call)
+
+
+Groups (Class)
+  ├── GroupSettings (Sub-class)
+  │    ├── PinnedGroups (Sub-class)
+  │    │    ├── User -> pinsGroup -> PinnedGroups (Object Property)
+  │    │    ├── hasGroupPinnedTimestamp (Data Property)            --> Waktu grup dipin
+  │    ├── GroupNotifications (Sub-class)
+  │    │    ├── User -> enablesGroupNotifications -> GroupNotifications (Object Property)
+  │    │    ├── User -> disablesGroupNotifications -> GroupNotifications (Object Property)
+  │    │    ├── hasNotificationFrequency (Data Property)           --> Frekuensi notifikasi (e.g., Daily, Weekly)
+  │    │    ├── hasNotificationType (Data Property)                --> Jenis notifikasi (e.g., Posts, Events)
+  │    └── GroupPrivacy (Sub-class)
+  │         ├── hasPrivacyLevel (Data Property)                    --> Privasi grup (e.g., Public, Private, Hidden)
+  │         ├── hasMembershipApprovalStatus (Data Property)        --> Apakah persetujuan anggota diperlukan (Boolean)
+  │         ├── hasLinkedPages (Data Property)                     --> Halaman terkait dengan grup
+  │         ├── hasGroupBadges (Data Property)                     --> Lencana atau pencapaian grup
+  │         ├── hasGroupRules (Data Property)                      --> Aturan grup
+  ├── hasGroupName (Data Property)
+  ├── hasGroupDescription (Data Property)
+  ├── hasMembershipRequestsCount (Data Property)                   --> Jumlah permintaan keanggotaan
+  ├── hasGroupCategory (Data Property)                             --> Kategori grup (e.g., Travel, Education)
+  ├── hasGroupCreationTimestamp (Data Property)                    --> Waktu grup dibuat
+  ├── hasLastActivityTimestamp (Data Property)                     --> Waktu aktivitas terakhir di grup
+  ├── hasGroupCoverPhoto (Data Property)                           --> Foto sampul grup
+  ├── GroupRoles (Sub-class)
+  │    ├── Admin (Sub-class)
+  │    ├── Moderator (Sub-class)
+  │    ├── Member (Sub-class)
+  │    ├── User -> hasAdminRole -> Admin (Object Property)
+  │    ├── User -> hasModeratorRole -> Moderator (Object Property)
+  │    └── User -> hasMemberRole ->  Member (Object Property)
+  ├── GroupFeatures (Sub-class)
+  │    ├── Events (Sub-class)
+  │    │    ├── Moderator -> createsGroupEvents -> Events
+  │    │    ├── Moderator -> cancelsGroupEvents -> Events
+  │    │    ├── Admin -> createsGroupEvents -> Events
+  │    │    ├── Admin -> cancelsGroupEvents -> Events
+  │    │    ├── hasEventCreationTimestamp (Data Property)          --> Waktu event dibuat
+  │    │    ├── hasEventTitle (Data Property)                      --> Nama event
+  │    │    ├── hasEventDescription (Data Property)                --> Deskripsi event
+  │    │    ├── hasEventDate (Data Property)                       --> Tanggal event
+  │    │    ├── hasEventLocation (Data Property)                   --> Lokasi event
+  │    │    └── hasCoHost -> User (Object Property)                --> Co-host event
+  │    ├── Files (Sub-class)
+  │    │    ├── Moderator -> createsGroupFiles -> Files
+  │    │    ├── Moderator -> removesGroupFiles -> Files
+  │    │    ├── Admin -> createsGroupFiles -> Files
+  │    │    ├── Admin -> removesGroupFiles -> Files
+  │    │    ├── hasFileUploadTimestamp (Data Property)             --> Waktu file diunggah
+  │    │    ├── hasFileName (Data Property)                        --> Nama file
+  │    │    └── hasFileType (Data Property)                        --> Jenis file (e.g., PDF, Image)
+  │    ├── Photos (Sub-class)
+  │    │    ├── Moderator -> addsGroupPhotos -> Photos
+  │    │    ├── Moderator -> removesGroupPhotos -> Photos
+  │    │    ├── Admin -> addsGroupPhotos -> Photos
+  │    │    ├── Admin -> removesGroupPhotos -> Photos
+  │    │    ├── hasPhotoUploadTimestamp (Data Property)            --> Waktu foto diunggah
+  │    │    ├── hasPhotoCaption (Data Property)                    --> Keterangan foto
+  │    │    └── hasPhotoTags -> User (Object Property)             --> Tag pengguna di foto
+  │    ├── Polls (Sub-class)
+  │    │    ├── Moderator -> createsGroupPolls -> Polls
+  │    │    ├── Moderator -> removesGroupPolls -> Polls
+  │    │    ├── Admin -> createsGroupPolls -> Polls
+  │    │    ├── Admin -> removesGroupPolls -> Polls
+  │    │    ├── hasPollCreationTimestamp (Data Property)           --> Waktu polling dibuat
+  │    │    ├── hasPollQuestion (Data Property)                    --> Pertanyaan polling
+  │    │    ├── hasPollOptions (Data Property)                     --> Opsi polling (Array)
+  │    │    └── hasPollVotesCount (Data Property)                  --> Jumlah total suara
+  │    └── Announcements (Sub-class)
+  │         ├── hasAnnouncementTitle (Data Property)               --> Judul pengumuman
+  │         ├── hasAnnouncementTimestamp (Data Property)           --> Waktu pengumuman dibuat
+  │         └── hasAnnouncementBody (Data Property)                --> Isi pengumuman
+  ├── DiscoverGroups (Sub-class)
+  │    ├── GroupEvents (Sub-class)
+  │    │    ├── hasEventName (Data Property)
+  │    │    ├── hasEventDate (Data Property)
+  │    │    ├── hasEventLocation (Data Property)
+  │    │    └── hasEventCoHost (Sub-class)
+  │    ├── GroupInvites (Sub-class)
+  │    │    ├── hasInviteSentTimestamp (Data Property)             --> Waktu undangan dikirim
+  │    │    ├── hasInviteAcceptedTimestamp (Data Property)         --> Waktu undangan diterima
+  │    │    └── hasInviteStatus (Data Property)                    --> Status undangan (e.g., Pending, Accepted)
+  ├── GroupInsights (Sub-class)
+  │    ├── MemberEngagement (Sub-class)
+  │    │    ├── hasEngagementTimestamp (Data Property)             --> Waktu keterlibatan dicatat
+  │    │    ├── hasEngagementType (Data Property)                  --> Jenis keterlibatan (e.g., Post, Comment, Reaction)
+  │    ├── GrowthMetrics (Sub-class)
+  │    │    ├── hasGrowthRate (Data Property)                      --> Persentase pertumbuhan grup
+  │    │    ├── hasNewMembersCount (Data Property)                 --> Jumlah anggota baru
+  │    │    └── hasChurnRate (Data Property)                       --> Persentase anggota keluar
+  │    └── ContentPerformance (Sub-class)
+  │         ├── hasContentInteractionCount (Data Property)         --> Jumlah interaksi dengan konten
+  │         ├── hasContentViewsCount (Data Property)               --> Jumlah total views konten
+  │         └── hasContentEngagementRate (Data Property)           --> Tingkat keterlibatan konten
+  ├── GroupModeration (Sub-class)                                  --> **Sub-kelas Baru**
+  │    ├── ModerationActions (Sub-class)
+  │    │    ├── Moderator -> setsMemberToAdmin -> Admin (Object Property)   
+  │    │    ├── Moderator -> removesAdmin -> Admin (Object Property)   
+  │    │    ├── Moderator -> deletesGroup -> Group (Object Property)   
+  │    │    ├── Admin -> removesMember -> User (Object Property)   --> Menghapus anggota grup
+  │    │    ├── Admin -> approvesPost -> Post (Object Property)    --> Menyetujui postingan anggota
+  │    │    ├── Admin -> deniesPost -> Post (Object Property)      --> Menolak postingan anggota
+  │    │    ├── Admin -> setsGroupRuleViolation -> User (Object Property) 
+  │    │    └── Admin -> reviewsReportedContent -> Content (Object Property)
+  │    ├── Violations (Sub-class)
+  │    │    ├── hasViolationType (Data Property)                   --> Jenis pelanggaran (e.g., Spam, Harassment)
+  │    │    ├── hasViolationReportedTimestamp (Data Property)      --> Waktu pelanggaran dilaporkan
+  │    │    ├── hasViolationResolvedStatus (Data Property)         --> Status pelanggaran (e.g., Resolved, Pending)
+  │    │    └── hasViolationActionsTaken (Data Property)           --> Tindakan yang diambil (e.g., Warning, Removal)
+  │    ├── GroupRules (Sub-class)
+  │         ├── hasRuleDescription (Data Property)                 --> Deskripsi aturan grup
+  │         ├── hasRuleCreationTimestamp (Data Property)           --> Waktu aturan dibuat
+  │         └── hasRuleModifiedTimestamp (Data Property)           --> Waktu aturan diperbarui
+
+
+Events (Class)
+  ├── hasEventCreationTimestamp (Data Property)       --> Waktu event dibuat
+  ├── hasEventUpdateTimestamp (Data Property)         --> Waktu event diperbarui
+  ├── hasEventStartTimestamp (Data Property)          --> Waktu event dimulai
+  ├── hasEventEndTimestamp (Data Property)            --> Waktu event berakhir
+  ├── hasEventInteractionIP (Data Property)           --> IP pengguna saat mengelola event
+  └── hasEventDeviceInfo (Data Property)              --> Informasi perangkat yang digunakan
+  └── EventInvitations (Sub-class)
+       ├── User -> sendsEventInvitationTo -> User (Object Property)
+       ├── User -> acceptsEventInvitationFrom -> User (Object Property)
+       ├── ManageInvites (Individual)
+       ├── hasInvitationSentTimestamp (Data Property)      --> Waktu pengiriman undangan
+       └── hasInviteAcceptanceTimestamp (Data Property)    --> Waktu undangan diterima
+  ├── EventTypes (Sub-class)
+  │    ├── InPerson (Individual)
+  │    │    ├── hasEventLocation (Data Property)           --> Lokasi event fisik
+  │    └── Virtual (Individual)
+  │         ├── hasVirtualEventLink (Data Property)        --> Tautan ke event virtual
+  └── EventNotifications (Individual)
+       ├── hasNotificationSentTimestamp (Data Property)    --> Waktu notifikasi dikirim
+       ├── hasNotificationType (Data Property)             --> Jenis notifikasi event
+       └── hasNotificationRecipient (Data Property)        --> Penerima notifikasi event
+
+Avatars (Class)
+  ├── User -> createsAvatar -> Avatars (Object Property): Menghubungkan pengguna dengan proses pembuatan avatar baru.                   
+  ├── User -> editsAvatar -> Avatars (Object Property): Menghubungkan pengguna dengan proses pengeditan avatar yang sudah ada.
+  ├── hasAvatarCreationTimestamp (Data Property)          --> Waktu avatar dibuat
+  ├── User -> buysClothesFor -> Avatars (Object Property)                        --> Proses membeli pakaian untuk avatar
+  ├── User -> triesNewOutfitsFor -> Avatars (Object Property)                     --> Proses mencoba pakaian baru
+  ├── hasClothingItem (Data Property)                     --> Pakaian yang dipilih atau dibeli
+  ├── hasOutfitCategory (Data Property)                   --> Kategori pakaian yang dicoba
+  └── hasEditTimestamp (Data Property)                    --> Waktu avatar terakhir diedit
+  └── AvatarPosts (Sub-class)
+       ├── User -> createAvatarPosts -> Posts (Object Property)  
+       ├── hasPostCreationTimestamp (Data Property)            --> Waktu postingan dibuat
+       ├── hasPostCaption (Data Property)                      --> Caption pada postingan
+       └── hasPostVisibility (Data Property)                   --> Tingkat visibilitas postingan
+
+Birthdays (Class)
+    └── BirthdayPosts (Sub-class)
+        ├── hasBirthdayPostTimestamp (Data Property)       --> Waktu postingan dibuat
+        └── hasMessageContent (Data Property)              --> Konten pesan yang dikirim
+    └── User -> writesBirthdayOnTimeline -> User (Object Property)  --> Menulis di timeline ulang tahun
+    └── User -> sendBirthdayMessageTo -> User (Object Property) --> Mengirim pesan ulang tahun
+
+Gaming (Class)
+  ├── PlayGames (Sub-class)
+  │    ├── User -> savesGame -> PlayGames (Object Property)                       --> Menyimpan permainan
+  │    ├── User -> sharesGame -> PlayGames (Object Property)                       --> Membagikan permainan
+  │    ├── User -> connectsGame -> PlayGames (Object Property)                       --> Notifikasi terkait permainan
+  │    ├── hasGameSaveTimestamp (Data Property)         --> Waktu penyimpanan permainan
+  │    ├── hasGameSharePlatform (Data Property)         --> Platform berbagi permainan
+  │    └── hasGameConnectionType (Data Property)        --> Jenis koneksi yang digunakan
+  ├── PlayerInfo (Sub-class)
+  │    ├── hasPlayerName (Data Property)                     --> Nama pemain
+  │    └── hasPlayerAvatar (Data Property)                   --> Avatar pemain
+  └── Notifications (Sub-class)
+       └── GameNotifications (Individual)                    --> 
+
+MessengerKids (Class)
+  ├── ChildInformation (Sub-class)
+  │    ├── hasFirstName (Data Property)               --> Nama depan anak
+  │    ├── hasLastName (Data Property)                --> Nama belakang anak
+  │    └── hasBirthday (Data Property)                --> Tanggal lahir anak
+  └── ConnectKids (Sub-class)
+       ├── hasConnectionTimestamp (Data Property)     --> Waktu koneksi dibuat
+       └── hasConnectionStatus (Data Property)        --> Status koneksi
+  ├── User -> createChildAccount -> MessengerKids (Object Properties)
+  ├── User -> connectMessengerKid -> MessengerKids (Object Property)           --> Koneksi antar anak di platform
+
+Pages (Class)
+  ├── PagesManagement (Sub-class)
+  │    ├── User -> createPage -> Pages (Object Property)                 --> Membuat halaman baru
+  │    ├── User -> activatePage -> Pages (Object Property)               --> Mengaktifkan halaman
+  │    ├── User -> deactivatePage -> Pages (Object Property)             --> Menonaktifkan halaman
+  │    ├── User -> mergePages -> Pages (Object Property)                 --> Menggabungkan halaman
+  │    ├── PagesSettings (Sub-class)
+  │    │    ├── hasName (Data Property)                                  --> Nama halaman
+  │    │    ├── hasDescription (Data Property)                           --> Deskripsi halaman
+  │    │    ├── hasCategory (Data Property)                              --> Kategori halaman
+  │    │    ├── hasContactInfo (Data Property)                           --> Informasi kontak halaman
+  │    │    ├── hasLocation (Data Property)                              --> Lokasi halaman
+  │    │    ├── hasHours (Data Property)                                 --> Jam operasional
+  │    │    ├── hasWebsite (Data Property)                               --> Situs web halaman
+  │    │    └── hasUserRoles (Data Property)                             --> Peran pengguna di halaman
+  │    ├── PagesFeatures (Sub-class)
+  │    │    ├── hasEventCount (Data Property)                            --> Jumlah event di halaman
+  │    │    ├── hasPostCount (Data Property)                             --> Jumlah postingan di halaman
+  │    │    ├── hasPhotoCount (Data Property)                            --> Jumlah foto di halaman
+  │    │    ├── hasVideoCount (Data Property)                            --> Jumlah video di halaman
+  │    │    ├── hasStoryCount (Data Property)                            --> Jumlah stories di halaman
+  │    │    └── hasJobCount (Data Property)                              --> Jumlah lowongan pekerjaan di halaman
+  │    ├── PagesInsights (Sub-class)
+  │    │    ├── hasViewCount (Data Property)                             --> Jumlah view halaman
+  │    │    ├── hasPostReach (Data Property)                             --> Jumlah jangkauan postingan
+  │    │    ├── hasEngagementCount (Data Property)                       --> Jumlah interaksi
+  │    │    ├── hasFollowerCount (Data Property)                         --> Jumlah pengikut
+  │    │    └── hasDemographicsInfo (Data Property)                      --> Informasi demografi audiens
+  │    ├── PagesPromotions (Sub-class)
+  │         ├── User -> boostPost -> Pages (Object Property)             --> Mempromosikan postingan
+  │         ├── User -> createAd -> Pages (Object Property)              --> Membuat iklan
+  │         └── User -> targetAudience -> Pages (Object Property)        --> Menargetkan audiens
+  ├── PagesActivities (Sub-class)
+  │    ├── User -> postUpdate -> Pages (Object Property)                 --> Memperbarui postingan di halaman
+  │    ├── User -> likePost -> Pages (Object Property)                   --> Menyukai postingan
+  │    ├── User -> commentOnPost -> Pages (Object Property)              --> Berkomentar pada postingan
+  │    ├── User -> sharePost -> Pages (Object Property)                  --> Membagikan postingan
+  │    └── User -> reactToPost -> Pages (Object Property)                --> Memberikan reaksi terhadap postingan
+  ├── PagesInvites (Sub-class)
+  │    ├── User -> sendInvite -> Pages (Object Property)                 --> Mengirim undangan
+  │    ├── User -> acceptInvite -> Pages (Object Property)               --> Menerima undangan
+  │    └── User -> manageInvite -> Pages (Object Property)               --> Mengelola undangan
+  ├── PagesSearch (Sub-class)
+  │    ├── User -> searchByKeyword -> Pages (Object Property)            --> Mencari halaman berdasarkan kata kunci
+  │    └── User -> searchByCategory -> Pages (Object Property)           --> Mencari halaman berdasarkan kategori
+
+HelpSupport (Class)
+  ├── User -> accessHelpCenter  -> HelpSupport (Object Property)                --> Mengakses pusat bantuan
+  ├── User -> submitsReportProblem -> HelpSupport (Object Property)             --> Melaporkan masalah
+  ├── User -> accessSupportInbox -> HelpSupport (Object Property)              --> Mengakses kotak masuk dukungan
+  ├── hasSupportAccessTimestamp (Data Property)         --> Waktu akses ke pusat dukungan
+  ├── hasReportTimestamp (Data Property)                --> Waktu pelaporan masalah
+  └── hasInboxAccessTimestamp (Data Property)           --> Waktu akses ke kotak masuk dukungan
+
+SettingsPrivacy (Class)
+  ├── AccountSettings (Sub-class)
+  │    ├── hasGeneralSettings (Data Property)                 --> Pengaturan umum akun
+  │    ├── PrivacySettings (Sub-class)
+  │    │    ├── hasProfilePrivacySettings (Data Property)      --> Pengaturan privasi profil
+  │    │    ├── hasBlockedAccounts (Data Property)             --> Akun yang diblokir
+  │    │    └── hasActivityStatus (Data Property)              --> Status aktivitas
+  │    ├── SecuritySettings (Sub-class)
+  │    │    ├── User -> settingsTwoFactorAuthentication -> SecuritySettings (Object Property)      --> Pengaturan otentikasi dua faktor
+  │    │    ├── User -> settingsLoginAlerts -> SecuritySettings (Object Property)                  --> Notifikasi login
+  │    │    └── User -> settingsPasswordManagement -> SecuritySettings (Object Property)           --> Pengelolaan kata sandi
+  │    ├── DataUsageSettings (Sub-class)
+  │    │    ├── hasCellularDataUsageSettings (Data Property)   --> Penggunaan data seluler
+  │    │    └── hasWiFiDataUsageSettings (Data Property)       --> Penggunaan data WiFi
+  │    ├── NotificationSettings (Sub-class)
+  │    │    ├── hasPushNotificationsStatus (Data Property)     --> Status push notification
+  │    │    ├── hasEmailNotificationsStatus (Data Property)    --> Status notifikasi email
+  │    │    ├── hasSMSNotificationsStatus (Data Property)      --> Status notifikasi SMS
+  │    │    └── hasNotificationSoundsSettings (Data Property)  --> Pengaturan suara notifikasi
+  │    ├── AccountManagement (Sub-class)
+  │    │    ├── User -> deactivatesAccount -> AccountManagement (Object Property)            --> Menonaktifkan akun
+  │    │    ├── User -> deletesAccount -> AccountManagement (Object Property)                --> Menghapus akun
+  │    │    ├── User -> downloadsYourInformation -> AccountManagement (Object Property)      --> Mengunduh informasi akun
+  │    │    └── User ->transfersYourInformation -> AccountManagement (Object Property)      --> Mentransfer informasi akun
+  │    ├── AdPreferences (Sub-class)
+  │    │    ├── hasAdSettings (Data Property)                  --> Pengaturan iklan
+  │    │    ├── hasAdInterests (Data Property)                 --> Minat iklan pengguna
+  │    │    └── hasAdInteractions (Data Property)              --> Interaksi pengguna dengan iklan
+  │    ├── LinkedAccounts (Sub-class)
+  │    │    └── User -> connectsOtherServices -> LinkedAccounts (Object Property)         --> Menghubungkan layanan lain
+  │    ├── PaymentSettings (Sub-class)
+  │    │    ├── hasPaymentMethods (Data Property)              --> Metode pembayaran
+  │    │    ├── hasTransactionHistory (Data Property)          --> Riwayat transaksi
+  │    │    └── hasPaymentNotificationSettings (Data Property) --> Pengaturan notifikasi pembayaran
+  │    ├── SecurityCheckup (Sub-class)
+  │    │    └── hasSecurityRecommendations (Data Property)     --> Rekomendasi keamanan
+  │    └── DeviceManagement (Sub-class)
+  │         └── hasAuthorizedDevices (Data Property)           --> Perangkat yang diotorisasi
+
+ProfessionalAccess (Class)
+  └── MetaVerified (Sub-class)
+       └── hasPublicPresenceStatus (Data Property)         --> Status kehadiran publik pengguna yang diverifikasi
+AlsoFromMeta (Class)
+  ├── OtherApps (Sub-class)
+  │    ├── Messenger (Object Property)                     --> Menghubungkan pengguna dengan aplikasi Messenger
+  │    └── WhatsApp (Object Property)                      --> Menghubungkan pengguna dengan aplikasi WhatsApp
+       └── hasConnectedAppStatus (Data Property)           --> Status apakah aplikasi terhubung dengan akun
+
+ActivityLog (Class)
+  ├── User -> likesActivities -> ActivityLog (Object Property)           --> Aktivitas like oleh pengguna
+  ├── User -> commentsActivities -> ActivityLog (Object Property)        --> Aktivitas komentar oleh pengguna
+  ├── User -> tagsActivities -> ActivityLog (Object Property)            --> Aktivitas tag oleh pengguna
+  ├── User -> reviewsActivities -> ActivityLog (Object Property)         --> Aktivitas review oleh pengguna
+  ├── hasActivityTimestamp (Data Property)        --> Waktu aktivitas dilakukan
+  └── hasActivityType (Data Property)             --> Jenis aktivitas yang dilakukan
+  └── User -> downloadsInformation -> ActivityLog (Object Property)                 --> Mengunduh informasi pengguna
+
+Logout (Class)
+  └── Logout (Object Property)                           --> Tindakan logout
+       └── hasLogoutTimestamp (Data Property)            --> Waktu logout dilakukan

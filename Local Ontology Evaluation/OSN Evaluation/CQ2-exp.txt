@@ -1,0 +1,16 @@
+Mencocokkan berdasarkan email yang sama
+
+Jika dua akun memiliki hasEmail yang sama di platform berbeda, maka mereka dianggap akun yang sama.
+Contoh: BestDealsOnline (Facebook) memiliki email sophia@example.com, sehingga cocok dengan akun Sophia lainnya.
+Mencocokkan berdasarkan username yang sama
+
+Jika dua akun memiliki hasUsername yang sama di platform berbeda, maka mereka dianggap akun yang sama.
+Contoh: Jika MeanQueen digunakan di Instagram dan Facebook, akun tersebut cocok.
+Mencocokkan berdasarkan hasLinkedAccount
+
+Jika akun A memiliki hasLinkedAccount yang sama dengan hasUsername akun B, maka mereka dianggap sebagai akun yang terhubung.
+Contoh: JamesRecommends (Facebook) memiliki hasLinkedAccount = "MeanQueen", sehingga cocok dengan akun MeanQueen di Instagram.
+Mencocokkan berdasarkan isLinkedTo
+
+Jika ada properti isLinkedTo langsung menghubungkan dua akun, maka akun tersebut dianggap satu orang.
+Contoh: User_MeanQueen di Instagram memiliki isLinkedTo dengan User_JamesRecommends di Facebook.

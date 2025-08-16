@@ -1,0 +1,83 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas ContentCreation -->
+    <owl:Class rdf:about="#ContentCreation">
+        <rdfs:comment>Represents actions related to creating and managing content on a microblogging platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: makePost -->
+    <owl:ObjectProperty rdf:about="#makePost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ContentCreation"/>
+        <rdfs:comment>Indicates the action of creating a new post by the user.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: addToQueue -->
+    <owl:ObjectProperty rdf:about="#addToQueue">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ContentCreation"/>
+        <rdfs:comment>Allows a user to add a post to a queue for later publication.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: schedulePost -->
+    <owl:ObjectProperty rdf:about="#schedulePost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ContentCreation"/>
+        <rdfs:comment>Schedules a post to be published at a specified time.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: saveAsDraft -->
+    <owl:ObjectProperty rdf:about="#saveAsDraft">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ContentCreation"/>
+        <rdfs:comment>Saves a post as a draft for future editing or posting.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: postAsPrivate -->
+    <owl:ObjectProperty rdf:about="#postAsPrivate">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ContentCreation"/>
+        <rdfs:comment>Posts content with a private visibility setting.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: addContentLabel -->
+    <owl:ObjectProperty rdf:about="#addContentLabel">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ContentCreation"/>
+        <rdfs:comment>Adds a label or tag to the content for categorization or filtering.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: controlReblogRetweet -->
+    <owl:ObjectProperty rdf:about="#controlReblogRetweet">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ContentCreation"/>
+        <rdfs:comment>Enables or disables the option for other users to reblog or retweet the content.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: postMedia -->
+    <owl:ObjectProperty rdf:about="#postMedia">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ContentCreation"/>
+        <rdfs:comment>Posts media content such as images, videos, or GIFs.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: postLink -->
+    <owl:ObjectProperty rdf:about="#postLink">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ContentCreation"/>
+        <rdfs:comment>Posts a link within the content.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+</rdf:RDF>

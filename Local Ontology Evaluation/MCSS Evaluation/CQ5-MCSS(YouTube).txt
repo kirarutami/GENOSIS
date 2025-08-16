@@ -1,0 +1,31 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# Menggunakan namespace dasar dari file RDF untuk elemen ontologi
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+# CQ5: How can social media analysis help in identifying networks or associations between suspects?
+# Pendekatan (YouTube Case): Mengidentifikasi pengguna yang berasosiasi melalui
+# komentar pada video-video yang menjadi pusat sengketa hak cipta.
+
+SELECT DISTINCT ?commenter ?videoCommentedOnLabel ?commentTimestamp ?commentText
+WHERE {
+  # Tentukan video yang menjadi fokus sengketa
+  VALUES ?videoCommentedOn { ex:LisaSwissAlpsVideo ex:StolenSwissAlpsVideo }
+
+  # Temukan komentar pada video-video tersebut
+  ?comment rdf:type ex:Comment ;
+           ex:commentsOnContent ?videoCommentedOn ; # Terkait dengan salah satu video fokus
+           ex:commentedBy ?commenter ;           # Pengguna yang berkomentar
+           ex:hasCommentTimestamp ?commentTimestamp ;
+           ex:hasCommentText ?commentText .
+
+  # Dapatkan label video (URI saja dalam kasus ini, bisa diganti jika ada rdfs:label)
+  BIND(STR(?videoCommentedOn) AS ?videoCommentedOnLabel)
+
+  # Pastikan komentator adalah User
+  ?commenter rdf:type ex:User .
+}
+ORDER BY ?commentTimestamp

@@ -1,0 +1,80 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+# Tidak perlu prefix OSN:, MP:, dll. karena kita akan merujuk kelas dan properti
+# langsung dengan genosisOwl: sesuai struktur GENOSIS.txt
+
+SELECT DISTINCT
+  ?contentIRI         # IRI dari Post, Story, atau Reel
+  ?contentType        # Untuk membedakan apakah ini Post, Story, atau Reel
+  ?mediaURL           # URL ke media (foto/video)
+  ?timestamp          # Waktu posting/pembuatan
+  ?location           # Lokasi yang terkait dengan konten
+  ?platform           # Platform OSN (Facebook/Instagram)
+  ?postedBy           # IRI pengguna yang memposting
+  ?postedByLabel      # Label pengguna yang memposting
+WHERE {
+  {
+    # Opsi 1: Media dari OSN Posts
+    BIND("OSN Post" AS ?contentType)
+    ?contentIRI rdf:type genosisOwl:OSN:Post ; # Kelas spesifik untuk Postingan OSN
+                genosisOwl:belongsToPlatform ?platform ;
+                genosisOwl:postedBy ?postedBy .
+    
+    # Properti untuk Posts (sesuai GENOSIS.txt dan Local-CQ10.txt)
+    # ex:hasPostMedia -> genosisOwl:hasAttachmentURL
+    # ex:hasPostTimestamp -> genosisOwl:hasCreationTimestamp
+    # ex:hasMessageLocation -> genosisOwl:hasLocation
+    OPTIONAL { ?contentIRI genosisOwl:hasAttachmentURL ?mediaURL_post . }
+    OPTIONAL { ?contentIRI genosisOwl:hasCreationTimestamp ?timestamp . }
+    OPTIONAL { ?contentIRI genosisOwl:hasLocation ?location . }
+    BIND(?mediaURL_post AS ?mediaURL) # Menyatukan variabel mediaURL
+  }
+  UNION
+  {
+    # Opsi 2: Media dari OSN Stories
+    BIND("OSN Story" AS ?contentType)
+    ?contentIRI rdf:type genosisOwl:OSN:Story ; # Kelas spesifik untuk Story OSN
+                genosisOwl:belongsToPlatform ?platform ;
+                genosisOwl:postedBy ?postedBy .
+
+    # Properti untuk Stories (sesuai GENOSIS.txt dan Local-CQ10.txt)
+    # ex:hasStoryMedia -> genosisOwl:hasAttachmentURL
+    # ex:hasStoryTimestamp -> genosisOwl:hasCreationTimestamp
+    # ex:hasMessageLocation -> genosisOwl:hasLocation
+    OPTIONAL { ?contentIRI genosisOwl:hasAttachmentURL ?mediaURL_story . }
+    OPTIONAL { ?contentIRI genosisOwl:hasCreationTimestamp ?timestamp . }
+    OPTIONAL { ?contentIRI genosisOwl:hasLocation ?location . }
+    BIND(?mediaURL_story AS ?mediaURL) # Menyatukan variabel mediaURL
+  }
+  UNION
+  {
+    # Opsi 3: Media dari OSN Reels (genosisOwl:OSN:ReelVideo)
+    BIND("OSN Reel" AS ?contentType)
+    ?contentIRI rdf:type genosisOwl:OSN:ReelVideo ; # Kelas spesifik untuk Reel OSN
+                genosisOwl:belongsToPlatform ?platform ;
+                genosisOwl:postedBy ?postedBy . # Asumsi Reels juga memiliki postedBy
+
+    # Properti untuk Reels (berdasarkan struktur Video dan Local-CQ10.txt)
+    # ex:hasReelMedia -> bisa genosisOwl:hasAttachmentURL atau genosisOwl:hasContentURL
+    # ex:hasReelTimestamp -> genosisOwl:hasCreationTimestamp
+    # ex:hasMessageLocation -> genosisOwl:hasLocation
+    OPTIONAL { ?contentIRI genosisOwl:hasAttachmentURL ?mediaURL_reel_attach . } 
+    OPTIONAL { ?contentIRI genosisOwl:hasContentURL ?mediaURL_reel_content . } # Video sering pakai ini
+    BIND(COALESCE(?mediaURL_reel_attach, ?mediaURL_reel_content) AS ?mediaURL) # Ambil yang ada
+
+    OPTIONAL { ?contentIRI genosisOwl:hasCreationTimestamp ?timestamp . }
+    OPTIONAL { ?contentIRI genosisOwl:hasLocation ?location . }
+  }
+
+  # Filter hanya untuk platform OSN (Facebook atau Instagram)
+  # Menggunakan perbandingan string langsung (case-sensitive) seperti yang berhasil di OSN8
+  FILTER(STR(?platform) = "Facebook" || STR(?platform) = "Instagram")
+
+  # Pastikan kita hanya mendapatkan entri yang memiliki URL media, karena ini inti dari CQ
+  FILTER(BOUND(?mediaURL))
+
+  # Mengambil label pengguna yang memposting (opsional)
+  OPTIONAL { ?postedBy rdfs:label ?postedByLabel . }
+}
+ORDER BY DESC(?timestamp) ?postedByLabel

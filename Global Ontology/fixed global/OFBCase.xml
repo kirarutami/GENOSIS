@@ -1,0 +1,421 @@
+
+
+    <owl:Ontology rdf:about="http://example.org/gsmfo.owl">
+        <dc:title xml:lang="en">GSMFO - Global Social Media Forensic Ontology (Reddit Case)</dc:title>
+        <owl:DatatypeProperty rdf:about="#belongsToPlatform">
+            <rdfs:label xml:lang="en">belongs to Platform</rdfs:label>
+            <rdfs:comment xml:lang="en">Indicates the social media platform to which an entity (e.g., user account, post, message) belongs.</rdfs:comment>
+            <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasPasswordHash">
+            <rdfs:label xml:lang="en">has Password Hash</rdfs:label>
+            <rdfs:comment xml:lang="en">Stores the hashed password of the user.</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:UserAccount"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasNSFWVisibilitySetting">
+            <rdfs:label xml:lang="en">has NSFW Visibility Setting</rdfs:label>
+            <rdfs:comment xml:lang="en">Indicates if the user has enabled NSFW content visibility.</rdfs:comment>
+            <rdfs:domain rdf:resource="#OFB:ProfileSettings"/> <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        </owl:DatatypeProperty>
+
+        <owl:DatatypeProperty rdf:about="#hasLastLoginIP">
+            <rdfs:label xml:lang="en">has Last Login IP</rdfs:label>
+            <rdfs:comment xml:lang="en">IP address associated with the user's last login.</rdfs:comment>
+            <rdfs:domain rdf:resource="#Global:UserAccount"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+        <owl:Class rdf:about="#OFB:AccountDeletionActivity">
+            <rdfs:label xml:lang="en">OFB Account Deletion Activity</rdfs:label>
+            <rdfs:subClassOf rdf:resource="#Global:UserManagementActivity"/>
+            <rdfs:comment xml:lang="en">Represents the process or request of deleting a user account on an OFB platform.</rdfs:comment>
+        </owl:Class>
+        <owl:DatatypeProperty rdf:about="#isAccountDeleted">
+            <rdfs:label xml:lang="en">is Account Deleted</rdfs:label>
+            <rdfs:domain rdf:resource="#OFB:AccountDeletionActivity"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        </owl:DatatypeProperty>
+        <owl:DatatypeProperty rdf:about="#deletionReason">
+            <rdfs:label xml:lang="en">deletion Reason</rdfs:label>
+            <rdfs:domain rdf:resource="#OFB:AccountDeletionActivity"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+        <owl:DatatypeProperty rdf:about="#deletionRequestedOn">
+            <rdfs:label xml:lang="en">deletion Requested On</rdfs:label>
+            <rdfs:domain rdf:resource="#OFB:AccountDeletionActivity"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        </owl:DatatypeProperty>
+        <owl:ObjectProperty rdf:about="#deletedAccount">
+            <rdfs:label xml:lang="en">deleted Account</rdfs:label>
+            <rdfs:domain rdf:resource="#OFB:AccountDeletionActivity"/>
+            <rdfs:range rdf:resource="#OFB:User"/>
+        </owl:ObjectProperty>
+
+
+        <owl:DatatypeProperty rdf:about="#hasPostTitle">
+            <rdfs:label xml:lang="en">has Post Title</rdfs:label>
+            <rdfs:comment xml:lang="en">The title of a post in a forum or blog.</rdfs:comment>
+            <rdfs:domain rdf:resource="#OFB:Post"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+        <owl:ObjectProperty rdf:about="#postInCommunity">
+            <rdfs:label xml:lang="en">post In Community</rdfs:label>
+            <rdfs:comment xml:lang="en">Relates a post to the community it was made in.</rdfs:comment>
+            <rdfs:domain rdf:resource="#OFB:Post"/>
+            <rdfs:range rdf:resource="#OFB:Community"/>
+        </owl:ObjectProperty>
+        <owl:DatatypeProperty rdf:about="#hasCrosspostedTitle">
+            <rdfs:label xml:lang="en">has Crossposted Title</rdfs:label>
+            <rdfs:domain rdf:resource="#OFB:CrossPostContent"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+        <owl:ObjectProperty rdf:about="#crossPostOf">
+             <rdfs:label xml:lang="en">cross-post Of</rdfs:label>
+             <rdfs:comment xml:lang="en">Links a cross-post to its original post.</rdfs:comment>
+             <rdfs:domain rdf:resource="#OFB:CrossPostContent"/>
+             <rdfs:range rdf:resource="#OFB:Post"/>
+        </owl:ObjectProperty>
+
+        <owl:Class rdf:about="#OFB:DislikeAction">
+            <rdfs:label xml:lang="en">OFB Dislike Action</rdfs:label>
+            <rdfs:subClassOf rdf:resource="#Global:ReactionAction"/>
+            <rdfs:comment xml:lang="en">Represents the action of disliking (downvoting) content on an OFB platform.</rdfs:comment>
+        </owl:Class>
+
+        <owl:DatatypeProperty rdf:about="#hasMessageStatus">
+            <rdfs:label xml:lang="en">has Message Status</rdfs:label>
+            <rdfs:comment xml:lang="en">The status of a direct message (e.g., sent, delivered, read, blocked).</rdfs:comment>
+            <rdfs:domain rdf:resource="#OFB:DirectMessage"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+        <owl:DatatypeProperty rdf:about="#hasMessageDevice">
+            <rdfs:label xml:lang="en">has Message Device</rdfs:label>
+            <rdfs:comment xml:lang="en">Device used to send/receive a direct message.</rdfs:comment>
+            <rdfs:domain rdf:resource="#OFB:DirectMessage"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+        
+        <owl:DatatypeProperty rdf:about="#hasUsername"/>
+        <owl:DatatypeProperty rdf:about="#hasBio"/>
+        <owl:DatatypeProperty rdf:about="#hasProfileVisibility"/>
+        <owl:DatatypeProperty rdf:about="#hasTwoFactorAuthenticationEnabled"/>
+        <owl:DatatypeProperty rdf:about="#hasCreationTimestamp"/> <owl:DatatypeProperty rdf:about="#hasIpAddress"/> <owl:DatatypeProperty rdf:about="#hasContentText"/> <owl:DatatypeProperty rdf:about="#hasAttachmentURL"/> <owl:DatatypeProperty rdf:about="#hasInteractionTimestamp"/> <owl:DatatypeProperty rdf:about="#hasScheduledPublishTimestamp"/>
+        <owl:DatatypeProperty rdf:about="#hasBlockReason"/>
+        <owl:DatatypeProperty rdf:about="#hasReportReason"/>
+
+        <owl:ObjectProperty rdf:about="#attributedToUser"/> <owl:ObjectProperty rdf:about="#commentsOn"/> <owl:ObjectProperty rdf:about="#reactedTo"/> <owl:ObjectProperty rdf:about="#messageReceiver"/>
+        <owl:ObjectProperty rdf:about="#performedBy"/>
+        <owl:ObjectProperty rdf:about="#targetUser"/>
+
+        <owl:Class rdf:about="#OFB:User"/>
+        <owl:Class rdf:about="#OFB:Community"/>
+        <owl:Class rdf:about="#OFB:Post"/>
+        <owl:Class rdf:about="#OFB:ScheduledPost"/>
+        <owl:Class rdf:about="#OFB:CrossPostContent"/>
+        <owl:Class rdf:about="#OFB:CommentAction"/>
+        <owl:Class rdf:about="#OFB:LikeAction"/>
+        <owl:Class rdf:about="#OFB:DirectMessage"/>
+        <owl:Class rdf:about="#OFB:ModeratorAction"/>
+        <owl:Class rdf:about="#OFB:ReportAction"/>
+    </owl:Ontology>
+
+    <rdf:Description rdf:about="#User_CyberSentinel_Reddit">
+        <rdf:type rdf:resource="#OFB:User"/>
+        <rdfs:label>CyberSentinel (Reddit User)</rdfs:label>
+        <hasUsername>CyberSentinel</hasUsername>
+        <hasBio>Cybersecurity researcher investigating dark web marketplaces.</hasBio>
+        <hasProfileVisibility>Public</hasProfileVisibility>
+        <hasPasswordHash>hashed_password_ABC123</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasTwoFactorAuthenticationEnabled>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-11-20T10:30:00Z</hasCreationTimestamp>
+        <hasLastLoginIP>192.168.1.47</hasLastLoginIP>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#User_DarkTraderX_Reddit">
+        <rdf:type rdf:resource="#OFB:User"/>
+        <rdfs:label>DarkTraderX (Reddit User)</rdfs:label>
+        <hasUsername>DarkTraderX</hasUsername>
+        <hasBio>Vendor of premium CC dumps and stolen data. No refunds.</hasBio>
+        <hasProfileVisibility>Private</hasProfileVisibility>
+        <hasPasswordHash>hashed_password_XYZ999</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasTwoFactorAuthenticationEnabled>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-05T03:00:00Z</hasCreationTimestamp>
+        <hasLastLoginIP>185.220.101.45</hasLastLoginIP>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+        <OFB:hasProfileSettings rdf:resource="#ProfileSettings_DarkTraderX_Reddit"/>
+    </rdf:Description>
+    <OFB:ProfileSettings rdf:about="#ProfileSettings_DarkTraderX_Reddit">
+        <hasNSFWVisibilitySetting rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasNSFWVisibilitySetting>
+    </OFB:ProfileSettings>
+
+
+    <rdf:Description rdf:about="#User_CryptoWhale420_Reddit">
+        <rdf:type rdf:resource="#OFB:User"/>
+        <rdfs:label>CryptoWhale420 (Reddit User)</rdfs:label>
+        <hasUsername>CryptoWhale420</hasUsername>
+        <hasBio>Investor in altcoins and rare opportunities. YOLO!</hasBio>
+        <hasProfileVisibility>Public</hasProfileVisibility>
+        <hasPasswordHash>hashed_pass_whale420</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasTwoFactorAuthenticationEnabled>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-01T12:00:00Z</hasCreationTimestamp>
+        <hasLastLoginIP>10.45.88.200</hasLastLoginIP>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+        <OFB:hasProfileSettings rdf:resource="#ProfileSettings_CryptoWhale420_Reddit"/>
+    </rdf:Description>
+    <OFB:ProfileSettings rdf:about="#ProfileSettings_CryptoWhale420_Reddit">
+        <hasNSFWVisibilitySetting rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasNSFWVisibilitySetting>
+    </OFB:ProfileSettings>
+
+    <rdf:Description rdf:about="#User_AnonBuyer99_Reddit">
+        <rdf:type rdf:resource="#OFB:User"/>
+        <rdfs:label>AnonBuyer99 (Reddit User)</rdfs:label>
+        <hasUsername>AnonBuyer99</hasUsername>
+        <hasBio>Here for quick deals. No questions asked.</hasBio>
+        <hasProfileVisibility>Private</hasProfileVisibility>
+        <hasPasswordHash>hashed_pass_anon99</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasTwoFactorAuthenticationEnabled>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-03-15T09:25:00Z</hasCreationTimestamp>
+        <hasLastLoginIP>172.16.0.33</hasLastLoginIP>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+        <OFB:hasProfileSettings rdf:resource="#ProfileSettings_AnonBuyer99_Reddit"/>
+    </rdf:Description>
+    <OFB:ProfileSettings rdf:about="#ProfileSettings_AnonBuyer99_Reddit">
+        <hasNSFWVisibilitySetting rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasNSFWVisibilitySetting>
+    </OFB:ProfileSettings>
+
+    <rdf:Description rdf:about="#User_SecurityWatchdog_Reddit">
+        <rdf:type rdf:resource="#OFB:User"/>
+        <rdfs:label>SecurityWatchdog (Reddit User)</rdfs:label>
+        <hasUsername>SecurityWatchdog</hasUsername>
+        <hasBio>Fighting fraud and illegal content on the web.</hasBio>
+        <hasProfileVisibility>Public</hasProfileVisibility>
+        <hasPasswordHash>hashed_pass_watchdog</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasTwoFactorAuthenticationEnabled>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-12-10T16:00:00Z</hasCreationTimestamp>
+        <hasLastLoginIP>203.44.55.66</hasLastLoginIP>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+        <OFB:hasProfileSettings rdf:resource="#ProfileSettings_SecurityWatchdog_Reddit"/>
+    </rdf:Description>
+    <OFB:ProfileSettings rdf:about="#ProfileSettings_SecurityWatchdog_Reddit">
+        <hasNSFWVisibilitySetting rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasNSFWVisibilitySetting>
+    </OFB:ProfileSettings>
+
+    <rdf:Description rdf:about="#User_DeepMarketMod_Reddit">
+        <rdf:type rdf:resource="#OFB:User"/> <rdf:type rdf:resource="#Global:ModeratorRole"/> <rdfs:label>DeepMarketMod (Reddit Moderator)</rdfs:label>
+        <hasUsername>DeepMarketMod</hasUsername>
+        <hasBio>Official mod of r/DeepMarket. Keep it clean or get out.</hasBio>
+        <hasProfileVisibility>Private</hasProfileVisibility>
+        <hasPasswordHash>hashed_pass_deepmod</hasPasswordHash>
+        <hasTwoFactorAuthenticationEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasTwoFactorAuthenticationEnabled>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-10-20T02:00:00Z</hasCreationTimestamp>
+        <hasLastLoginIP>103.45.88.77</hasLastLoginIP>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+        <OFB:hasProfileSettings rdf:resource="#ProfileSettings_DeepMarketMod_Reddit"/>
+    </rdf:Description>
+    <OFB:ProfileSettings rdf:about="#ProfileSettings_DeepMarketMod_Reddit">
+        <hasNSFWVisibilitySetting rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasNSFWVisibilitySetting>
+    </OFB:ProfileSettings>
+
+    <rdf:Description rdf:about="#AccountDeletion_DeepMarketMod_001_Reddit">
+        <rdf:type rdf:resource="#OFB:AccountDeletionActivity"/>
+        <rdfs:label>DeepMarketMod Account Deletion Request</rdfs:label>
+        <isAccountDeleted rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isAccountDeleted>
+        <deletionReason>Covering tracks after suspicious activity.</deletionReason>
+        <deletionRequestedOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-22T10:00:00Z</deletionRequestedOn>
+        <deletedAccount rdf:resource="#User_DeepMarketMod_Reddit"/>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Community_DeepMarketSub_Reddit">
+        <rdf:type rdf:resource="#OFB:Community"/>
+        <rdfs:label>r/DeepMarket Subreddit</rdfs:label>
+        <Global:hasGroupName>r/DeepMarket</Global:hasGroupName>
+        <hasGroupDescription>Subreddit known for illicit trade discussions.</hasGroupDescription> <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Community_CardingHubSub_Reddit">
+        <rdf:type rdf:resource="#OFB:Community"/>
+        <rdfs:label>r/CardingHub Subreddit</rdfs:label>
+        <Global:hasGroupName>r/CardingHub</Global:hasGroupName>
+        <hasGroupDescription>Subreddit known for carding tips.</hasGroupDescription>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Post_DarkTraderX_001_Reddit">
+        <rdf:type rdf:resource="#OFB:Post"/>
+        <rdfs:label>DarkTraderX CC Dumps Post</rdfs:label>
+        <hasPostTitle>Premium CC Dumps Fresh Verified 💳</hasPostTitle>
+        <hasContentText>"Looking for untraceable payment methods? We have fresh CC dumps from USA, EU, and Asia. Each card comes with full info. Prices start at $50 per card... Visit our marketplace: [hidden Tor link]"</hasContentText>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T15:00:00Z</hasCreationTimestamp>
+        <attributedToUser rdf:resource="#User_DarkTraderX_Reddit"/>
+        <postInCommunity rdf:resource="#Community_DeepMarketSub_Reddit"/>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#ScheduledPost_DeepMarketMod_001_Reddit">
+        <rdf:type rdf:resource="#OFB:ScheduledPost"/>
+        <rdfs:label>DeepMarketMod Scheduled Maintenance Post</rdfs:label>
+        <hasPostTitle>"Sub Maintenance Notice"</hasPostTitle> <hasContentText>"We will be performing some cleanup. If you see any suspicious or spam content, let the mods know. We'll keep transactions safe."</hasContentText>
+        <hasScheduledPublishTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-22T12:00:00Z</hasScheduledPublishTimestamp>
+        <attributedToUser rdf:resource="#User_DeepMarketMod_Reddit"/>
+        <postInCommunity rdf:resource="#Community_DeepMarketSub_Reddit"/>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#CrossPost_AnonBuyer99_001_Reddit">
+        <rdf:type rdf:resource="#OFB:CrossPostContent"/>
+        <rdfs:label>AnonBuyer99 Crosspost of CC Dumps</rdfs:label>
+        <hasCrosspostedTitle>"[X-Post] Premium CC Dumps from r/DeepMarket"</hasCrosspostedTitle>
+        <hasContentText>"Check out this vendor's listing. Verified by some users. Reposting for those interested in advanced carding methods."</hasContentText>
+        <crossPostOf rdf:resource="#Post_DarkTraderX_001_Reddit"/>
+        <hasCreationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T18:00:00Z</hasCreationTimestamp>
+        <attributedToUser rdf:resource="#User_AnonBuyer99_Reddit"/>
+        <postInCommunity rdf:resource="#Community_CardingHubSub_Reddit"/>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Upvote_CryptoWhale420_001_Reddit">
+        <rdf:type rdf:resource="#OFB:LikeAction"/> <rdfs:label>CryptoWhale420 Upvote on DarkTraderX Post</rdfs:label>
+        <performedBy rdf:resource="#User_CryptoWhale420_Reddit"/>
+        <reactedTo rdf:resource="#Post_DarkTraderX_001_Reddit"/>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T16:25:00Z</hasInteractionTimestamp>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Downvote_SecurityWatchdog_001_Reddit">
+        <rdf:type rdf:resource="#OFB:DislikeAction"/> <rdfs:label>SecurityWatchdog Downvote on DarkTraderX Post</rdfs:label>
+        <performedBy rdf:resource="#User_SecurityWatchdog_Reddit"/>
+        <reactedTo rdf:resource="#Post_DarkTraderX_001_Reddit"/>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T17:05:00Z</hasInteractionTimestamp>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_CryptoWhale420_001_Reddit">
+        <rdf:type rdf:resource="#OFB:CommentAction"/>
+        <rdfs:label>CryptoWhale420 Comment on DarkTraderX Post</rdfs:label>
+        <performedBy rdf:resource="#User_CryptoWhale420_Reddit"/>
+        <hasContentText>"Legit seller. Bought last week, no issues. Cards worked like a charm!"</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T16:20:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_DarkTraderX_001_Reddit"/>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_AnonBuyer99_001_Reddit">
+        <rdf:type rdf:resource="#OFB:CommentAction"/>
+        <rdfs:label>AnonBuyer99 Comment on DarkTraderX Post</rdfs:label>
+        <performedBy rdf:resource="#User_AnonBuyer99_Reddit"/>
+        <hasContentText>"Can I use Bitcoin or Monero for payment?"</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T16:30:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_DarkTraderX_001_Reddit"/>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_DarkTraderX_002_Reddit">
+        <rdf:type rdf:resource="#OFB:CommentAction"/>
+        <rdfs:label>DarkTraderX Reply to AnonBuyer99</rdfs:label>
+        <performedBy rdf:resource="#User_DarkTraderX_Reddit"/>
+        <hasContentText>"Only Monero (XMR). BTC isn't private enough. Send PM if interested."</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T16:35:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_DarkTraderX_001_Reddit"/> <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_SecurityWatchdog_001_Reddit">
+        <rdf:type rdf:resource="#OFB:CommentAction"/>
+        <rdfs:label>SecurityWatchdog Comment on DarkTraderX Post</rdfs:label>
+        <performedBy rdf:resource="#User_SecurityWatchdog_Reddit"/>
+        <hasContentText>"This is illegal. Hope Reddit takes this down."</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T17:00:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_DarkTraderX_001_Reddit"/>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Comment_DarkTraderX_003A_Reddit"> <rdf:type rdf:resource="#OFB:CommentAction"/>
+        <rdfs:label>DarkTraderX Threatening Reply to SecurityWatchdog</rdfs:label>
+        <performedBy rdf:resource="#User_DarkTraderX_Reddit"/>
+        <hasContentText>"Get lost, @SecurityWatchdog. We have ways to handle nosy people like you. Next time, think before interfering."</hasContentText>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T17:10:00Z</hasInteractionTimestamp>
+        <commentsOn rdf:resource="#Post_DarkTraderX_001_Reddit"/>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#BlockAction_DeepMarketMod_001_Reddit">
+        <rdf:type rdf:resource="#OFB:ModeratorAction"/> <rdfs:label>DeepMarketMod blocks SecurityWatchdog</rdfs:label>
+        <performedBy rdf:resource="#User_DeepMarketMod_Reddit"/>
+        <targetUser rdf:resource="#User_SecurityWatchdog_Reddit"/> <hasBlockReason>Criticizing the sub for illegal activity</hasBlockReason>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-20T17:20:00Z</hasInteractionTimestamp>
+        <OFB:moderationActionType>BlockUser</OFB:moderationActionType> <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_DeepMarketMod_to_CyberSentinel_1_Reddit">
+        <rdf:type rdf:resource="#OFB:DirectMessage"/>
+        <rdfs:label>DM from DeepMarketMod to CyberSentinel (Threat 1)</rdfs:label>
+        <attributedToUser rdf:resource="#User_DeepMarketMod_Reddit"/>
+        <messageReceiver rdf:resource="#User_CyberSentinel_Reddit"/>
+        <hasMessageContent>"Hey. I saw you poking around in our sub. I'd suggest you stop before you regret it."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-19T02:15:00Z</hasMessageSentTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+        <hasIpAddress>103.45.88.77</hasIpAddress>
+        <hasMessageDevice>Android (VPN)</hasMessageDevice>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_CyberSentinel_to_DeepMarketMod_1_Reddit">
+        <rdf:type rdf:resource="#OFB:DirectMessage"/>
+        <rdfs:label>DM from CyberSentinel to DeepMarketMod (Reply 1)</rdfs:label>
+        <attributedToUser rdf:resource="#User_CyberSentinel_Reddit"/>
+        <messageReceiver rdf:resource="#User_DeepMarketMod_Reddit"/>
+        <hasMessageContent>"You guys are selling stolen financial info. That's illegal, and I'm reporting this."</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-19T02:20:00Z</hasMessageSentTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+        <hasIpAddress>192.168.1.47</hasIpAddress>
+        <hasMessageDevice>Windows PC (Reddit Web)</hasMessageDevice>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_DeepMarketMod_to_CyberSentinel_2_Reddit">
+        <rdf:type rdf:resource="#OFB:DirectMessage"/>
+        <rdfs:label>DM from DeepMarketMod to CyberSentinel (Threat 2 - Doxing Implication)</rdfs:label>
+        <attributedToUser rdf:resource="#User_DeepMarketMod_Reddit"/>
+        <messageReceiver rdf:resource="#User_CyberSentinel_Reddit"/>
+        <hasMessageContent>"Report all you want. Accounts get banned, but we're always back. Maybe you should worry about your OWN privacy instead. Nice IP address, by the way. 😉"</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-19T02:30:00Z</hasMessageSentTimestamp>
+        <hasMessageStatus>delivered</hasMessageStatus>
+        <hasIpAddress>103.45.88.77</hasIpAddress>
+        <hasMessageDevice>Android (VPN)</hasMessageDevice>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_CyberSentinel_to_DeepMarketMod_2_Reddit">
+        <rdf:type rdf:resource="#OFB:DirectMessage"/>
+        <rdfs:label>DM from CyberSentinel to DeepMarketMod (Reply 2)</rdfs:label>
+        <attributedToUser rdf:resource="#User_CyberSentinel_Reddit"/>
+        <messageReceiver rdf:resource="#User_DeepMarketMod_Reddit"/>
+        <hasMessageContent>"Is that a threat?"</hasMessageContent>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-19T02:35:00Z</hasMessageSentTimestamp>
+        <hasMessageStatus>sent</hasMessageStatus>
+        <hasIpAddress>192.168.1.47</hasIpAddress>
+        <hasMessageDevice>Windows PC (Reddit Web)</hasMessageDevice>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DM_CyberSentinel_Block_DeepMarketMod_Reddit">
+        <rdf:type rdf:resource="#OFB:DirectMessage"/> <rdfs:label>CyberSentinel's last DM attempt / Block indicator</rdfs:label>
+        <attributedToUser rdf:resource="#User_CyberSentinel_Reddit"/>
+        <messageReceiver rdf:resource="#User_DeepMarketMod_Reddit"/>
+        <hasMessageSentTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-19T02:45:00Z</hasMessageSentTimestamp> <hasMessageStatus>blocked</hasMessageStatus> <hasIpAddress>192.168.1.47</hasIpAddress>
+        <hasMessageDevice>Windows PC (Reddit Web)</hasMessageDevice>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </rdf:Description>
+    <OFB:UserManagementActivity rdf:about="#Block_CyberSentinel_DeepMarketMod_Reddit">
+        <rdfs:label>CyberSentinel blocks DeepMarketMod via DM interface</rdfs:label>
+        <performedBy rdf:resource="#User_CyberSentinel_Reddit"/>
+        <targetUser rdf:resource="#User_DeepMarketMod_Reddit"/>
+        <hasInteractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-04-19T02:45:00Z</hasInteractionTimestamp>
+        <OFB:userManagementActionType>BlockUserViaDM</OFB:userManagementActionType>
+        <belongsToPlatform>Reddit</belongsToPlatform>
+    </OFB:UserManagementActivity>

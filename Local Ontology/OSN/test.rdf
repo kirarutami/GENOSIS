@@ -1,0 +1,11 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Masukkan RDF Kelas User, ContentCreation, ContentInteraction, VideoContent, ShortVideoContent, Marketplace, Groups, Events, Avatars, Birthdays, Gaming, MessengerKids, Pages, HelpSupport, ProfessionalAccess, AlsoFromMeta, Activity, Logout, SettingsPrivacy disini -->
+    ===masukkan RDF kelas User disini===
+
+
+
+</rdf:RDF>

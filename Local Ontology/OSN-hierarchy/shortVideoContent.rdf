@@ -1,0 +1,96 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas ShortVideoContent -->
+    <owl:Class rdf:about="#ShortVideoContent"/>
+
+    <!-- Sub-kelas Reels -->
+    <owl:Class rdf:about="#Reels">
+        <rdfs:subClassOf rdf:resource="#ShortVideoContent"/>
+    </owl:Class>
+
+    <!-- Individu di dalam Reels -->
+    <owl:NamedIndividual rdf:about="#WatchReels">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can watch short video clips (reels).</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#FollowCreator">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can follow the creator of the reels.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LikeReact">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can like or react to reels.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can comment on reels.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Share">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can share reels.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SaveReel">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can save reels for later.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#CopyLink">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can copy the link to the reels.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Remix">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can remix the reels.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#HideReel">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can hide specific reels from their feed.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ReportReel">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can report inappropriate reels.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MuteReel">
+        <rdf:type rdf:resource="#Reels"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can mute the audio of the reels.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas ReelSettings di dalam Reels -->
+    <owl:Class rdf:about="#ReelSettings">
+        <rdfs:subClassOf rdf:resource="#Reels"/>
+    </owl:Class>
+
+    <!-- Individu di dalam ReelSettings -->
+    <owl:NamedIndividual rdf:about="#ClosedCaption">
+        <rdf:type rdf:resource="#ReelSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can enable closed captions on reels.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Quality">
+        <rdf:type rdf:resource="#ReelSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can adjust the video quality of reels.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DataSaver">
+        <rdf:type rdf:resource="#ReelSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can enable data saver mode for reels.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#PlaybackSpeed">
+        <rdf:type rdf:resource="#ReelSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can adjust the playback speed of reels.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

@@ -1,0 +1,71 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Class: Notifications -->
+    <owl:Class rdf:about="#Notifications">
+        <rdfs:comment>Represents notifications and related interactions in the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-class: HideNotifications -->
+    <owl:Class rdf:about="#HideNotifications">
+        <rdfs:subClassOf rdf:resource="#Notifications"/>
+        <rdfs:comment>Represents the functionality to hide notifications for users or channels.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: hidesUserNotificationsFor -->
+    <owl:ObjectProperty rdf:about="#hidesUserNotificationsFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a User hides notifications for another User.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: hidesChannelNotificationsFor -->
+    <owl:ObjectProperty rdf:about="#hidesChannelNotificationsFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Channel"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a User hides notifications for a specific Channel.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasHiddenNotificationReason -->
+    <owl:DatatypeProperty rdf:about="#hasHiddenNotificationReason">
+        <rdfs:domain rdf:resource="#HideNotifications"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Describes the reason for hiding notifications.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: ManageMentions -->
+    <owl:Class rdf:about="#ManageMentions">
+        <rdfs:subClassOf rdf:resource="#Notifications"/>
+        <rdfs:comment>Represents the functionality to manage mentions and their related details.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: managesMentionsFor -->
+    <owl:ObjectProperty rdf:about="#managesUserMentionsFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a User manages mentions for specific users.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: managesMentionsFor -->
+    <owl:ObjectProperty rdf:about="#managesChannelMentionsFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Channel"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a User manages mentions for specific users.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasMentionedContentDetails -->
+    <owl:DatatypeProperty rdf:about="#hasMentionedContentDetails">
+        <rdfs:domain rdf:resource="#ManageMentions"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Describes the details of the content where a mention occurred.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

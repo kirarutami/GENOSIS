@@ -1,0 +1,358 @@
+    <!-- Instance of User: Amina -->
+    <rdf:Description rdf:about="#AminaReports">
+        <rdf:type rdf:resource="#User"/>
+        <hasEmail>amina.reporter@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasBirthday>1985-06-15</hasBirthday>
+        <hasSecuritySettings>2FA enabled</hasSecuritySettings>
+        <hasSubscriptionStatus>premium</hasSubscriptionStatus>
+        <hasNotificationsSetting>enabled</hasNotificationsSetting>
+        <hasPrivacySetting>public</hasPrivacySetting>
+        <hasLogoutStatus>false</hasLogoutStatus>
+        <hasBio>Journalist covering climate change and economic policies.</hasBio>
+        <hasLocation>New York, USA</hasLocation>
+        <hasWebsite>https://aminareports.com</hasWebsite>
+        <hasBirthDate>1985-06-15</hasBirthDate>
+        <hasTips>Stay informed, stay engaged.</hasTips>
+        <hasProfilePicture>https://aminareports.com/profile.jpg</hasProfilePicture>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance of User: RealPatriot99 -->
+    <rdf:Description rdf:about="#RealPatriot99">
+        <rdf:type rdf:resource="#User"/>
+        <hasEmail>realpatriot99@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasBirthday>1978-11-22</hasBirthday>
+        <hasSecuritySettings>2FA disabled</hasSecuritySettings>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSetting>enabled</hasNotificationsSetting>
+        <hasPrivacySetting>public</hasPrivacySetting>
+        <hasLogoutStatus>false</hasLogoutStatus>
+        <hasBio>Fighting for free speech and truth.</hasBio>
+        <hasLocation>Unknown</hasLocation>
+        <hasWebsite>None</hasWebsite>
+        <hasBirthDate>1978-11-22</hasBirthDate>
+        <hasTips>Speak your mind.</hasTips>
+        <hasProfilePicture>https://realpatriot99.com/profile.jpg</hasProfilePicture>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance of User: FreeSpeechWarrior -->
+    <rdf:Description rdf:about="#FreeSpeechWarrior">
+        <rdf:type rdf:resource="#User"/>
+        <hasEmail>freespeechwarrior@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasBirthday>1982-03-10</hasBirthday>
+        <hasSecuritySettings>2FA disabled</hasSecuritySettings>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSetting>enabled</hasNotificationsSetting>
+        <hasPrivacySetting>public</hasPrivacySetting>
+        <hasLogoutStatus>false</hasLogoutStatus>
+        <hasBio>Defender of free speech.</hasBio>
+        <hasLocation>Unknown</hasLocation>
+        <hasWebsite>None</hasWebsite>
+        <hasBirthDate>1982-03-10</hasBirthDate>
+        <hasTips>Freedom above all.</hasTips>
+        <hasProfilePicture>https://freespeechwarrior.com/profile.jpg</hasProfilePicture>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance of User: AnonDestroyer -->
+    <rdf:Description rdf:about="#AnonDestroyer">
+        <rdf:type rdf:resource="#User"/>
+        <hasEmail>anondestroyer@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasBirthday>1990-07-05</hasBirthday>
+        <hasSecuritySettings>2FA disabled</hasSecuritySettings>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSetting>enabled</hasNotificationsSetting>
+        <hasPrivacySetting>public</hasPrivacySetting>
+        <hasLogoutStatus>false</hasLogoutStatus>
+        <hasBio>Anonymous and unstoppable.</hasBio>
+        <hasLocation>Unknown</hasLocation>
+        <hasWebsite>None</hasWebsite>
+        <hasBirthDate>1990-07-05</hasBirthDate>
+        <hasTips>Stay anonymous.</hasTips>
+        <hasProfilePicture>https://anondestroyer.com/profile.jpg</hasProfilePicture>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance of User: BotReplier55 -->
+    <rdf:Description rdf:about="#BotReplier55">
+        <rdf:type rdf:resource="#User"/>
+        <hasEmail>botreplier55@mail.com</hasEmail>
+        <hasPassword>encrypted_password</hasPassword>
+        <hasBirthday>2000-01-01</hasBirthday>
+        <hasSecuritySettings>2FA disabled</hasSecuritySettings>
+        <hasSubscriptionStatus>free</hasSubscriptionStatus>
+        <hasNotificationsSetting>enabled</hasNotificationsSetting>
+        <hasPrivacySetting>public</hasPrivacySetting>
+        <hasLogoutStatus>false</hasLogoutStatus>
+        <hasBio>Automated responses for truth.</hasBio>
+        <hasLocation>Unknown</hasLocation>
+        <hasWebsite>None</hasWebsite>
+        <hasBirthDate>2000-01-01</hasBirthDate>
+        <hasTips>Automation is key.</hasTips>
+        <hasProfilePicture>https://botreplier55.com/profile.jpg</hasProfilePicture>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Amina's Post instance -->
+    <rdf:Description rdf:about="#Post_Amina001">
+        <rdf:type rdf:resource="#Post"/>
+        <postedBy rdf:resource="#AminaReports"/>
+
+        <hasPostURL>https://twitter.com/AminaReports/status/123456</hasPostURL>
+        <hasPostDeviceInfo>Twitter Web (MacBook Pro)</hasPostDeviceInfo>
+        <hasPostInteractionIP>192.168.1.12</hasPostInteractionIP>
+        <hasPostMedia>None</hasPostMedia>
+        <hasPostLocation>New York, USA</hasPostLocation>
+        <hasPostContent>"Just published my latest article on climate policies..."</hasPostContent>
+        <hasPostTags>#ClimateChange #EconomicGrowth</hasPostTags>
+        <hasPostTimestamp>2024-04-15T12:30:00Z</hasPostTimestamp>
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+
+    <!-- Instance of #Post in draft mode -->
+    <rdf:Description rdf:about="#Post_RP99_Draft_001">
+        <rdf:type rdf:resource="#Post"/>
+        <!-- postedBy menunjuk ke user RealPatriot99 -->
+        <postedBy rdf:resource="#RealPatriot99"/>
+
+        <!-- Contoh metadata dasar -->
+        <hasPostURL>None</hasPostURL>
+        <hasPostDeviceInfo>Twitter Android App</hasPostDeviceInfo>
+        <hasPostInteractionIP>10.0.0.99</hasPostInteractionIP>
+        <hasPostMedia>None</hasPostMedia>
+        <hasPostLocation>Unknown</hasPostLocation>
+        <hasPostContent>"Drafting a post calling out mainstream media..."</hasPostContent>
+        <hasPostTags>#SpeakTruth</hasPostTags>
+        <hasPostTimestamp>2024-05-01T10:00:00Z</hasPostTimestamp>
+
+        <!-- Data property khusus status -->
+        <hasPostStatus>draft</hasPostStatus>
+
+        <!-- Karena status = draft, hasScheduledTime tidak diperlukan -->
+        <!-- <hasScheduledTime> ... </hasScheduledTime> (opsional) -->
+
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- Instance of #Post in scheduled mode -->
+    <rdf:Description rdf:about="#Post_Amina_Scheduled_001">
+        <rdf:type rdf:resource="#Post"/>
+        <!-- postedBy menunjuk ke user AminaReports -->
+        <postedBy rdf:resource="#AminaReports"/>
+
+        <!-- Contoh metadata dasar -->
+        <hasPostURL>None</hasPostURL>
+        <hasPostDeviceInfo>Twitter Web (MacBook)</hasPostDeviceInfo>
+        <hasPostInteractionIP>192.168.1.12</hasPostInteractionIP>
+        <hasPostMedia>https://aminareports.com/images/teaser.png</hasPostMedia>
+        <hasPostLocation>New York, USA</hasPostLocation>
+        <hasPostContent>"[Scheduled] New insights on climate policy to be posted soon."</hasPostContent>
+        <hasPostTags>#ClimateDebate #ScheduledPost</hasPostTags>
+        <hasPostTimestamp>2024-05-02T09:00:00Z</hasPostTimestamp>
+
+        <!-- Status & jadwal publikasi -->
+        <hasPostStatus>scheduled</hasPostStatus>
+        <hasScheduledTime>2024-05-02T16:30:00Z</hasScheduledTime>
+
+        <belongsToPlatform>Twitter</belongsToPlatform>
+    </rdf:Description>
+
+    <!-- ========== 1) Komentar oleh @RealPatriot99 (Selasa, 1:05 PM) ========== -->
+    <rdf:Description rdf:about="#Comment_RealPatriot99_1">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <!-- Relasi ke User dan Post -->
+        <commentedBy rdf:resource="#RealPatriot99"/>
+        <commentedOn rdf:resource="#Post_Amina001"/>
+
+        <!-- Isi komentar dan metadata forensik -->
+        <hasCommentContent>
+        "Another fake news journalist pushing the globalist agenda. 
+        Maybe go back to your kitchen where you belong. #WomenShouldntReport"
+        </hasCommentContent>
+        <hasCommentTimestamp>2024-04-15T13:05:00Z</hasCommentTimestamp>
+        <hasCommentIP>10.0.0.101</hasCommentIP>
+        <hasCommentDevice>Android (VPN)</hasCommentDevice>
+    </rdf:Description>
+
+
+    <!-- ========== 2) Komentar oleh @FreeSpeechWarrior (Selasa, 1:10 PM) ========== -->
+    <rdf:Description rdf:about="#Comment_FreeSpeechWarrior_1">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <commentedBy rdf:resource="#FreeSpeechWarrior"/>
+        <commentedOn rdf:resource="#Post_Amina001"/>
+
+        <hasCommentContent>
+        "The climate scam is the biggest hoax in history. 
+        People like you are the real problem. Hope you lose your job."
+        </hasCommentContent>
+        <hasCommentTimestamp>2024-04-15T13:10:00Z</hasCommentTimestamp>
+        <hasCommentIP>10.0.0.102</hasCommentIP>
+        <hasCommentDevice>Windows PC (VPN)</hasCommentDevice>
+    </rdf:Description>
+
+
+    <!-- ========== 3) Komentar oleh @AnonDestroyer (Selasa, 1:20 PM) ========== -->
+    <rdf:Description rdf:about="#Comment_AnonDestroyer_1">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <commentedBy rdf:resource="#AnonDestroyer"/>
+        <commentedOn rdf:resource="#Post_Amina001"/>
+
+        <hasCommentContent>
+        "Her real name is Amina K. She lives in Brooklyn. 
+        Here’s her email: amina.reporter[at]mail.com. Let’s send her some messages!"
+        </hasCommentContent>
+        <hasCommentTimestamp>2024-04-15T13:20:00Z</hasCommentTimestamp>
+        <hasCommentIP>10.0.0.103</hasCommentIP>
+        <hasCommentDevice>Windows (Multi-VPN)</hasCommentDevice>
+    </rdf:Description>
+
+
+    <!-- ========== 4) Komentar oleh @ClimateAdvocate (Selasa, 1:25 PM) ========== -->
+    <rdf:Description rdf:about="#Comment_ClimateAdvocate_1">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <commentedBy rdf:resource="#ClimateAdvocate"/>
+        <commentedOn rdf:resource="#Post_Amina001"/>
+
+        <hasCommentContent>
+        "This is disgusting. You guys are attacking her for no reason. 
+        Disagree, but don’t harass her."
+        </hasCommentContent>
+        <hasCommentTimestamp>2024-04-15T13:25:00Z</hasCommentTimestamp>
+        <hasCommentIP>10.0.0.104</hasCommentIP>
+        <hasCommentDevice>Twitter Web</hasCommentDevice>
+    </rdf:Description>
+
+
+    <!-- ========== 5) Komentar kedua oleh @RealPatriot99 (Selasa, 1:30 PM) ========== -->
+    <rdf:Description rdf:about="#Comment_RealPatriot99_2">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <commentedBy rdf:resource="#RealPatriot99"/>
+        <commentedOn rdf:resource="#Post_Amina001"/>
+
+        <hasCommentContent>
+        "Cry more. If you can’t handle criticism, get off Twitter. #FreeSpeech"
+        </hasCommentContent>
+        <hasCommentTimestamp>2024-04-15T13:30:00Z</hasCommentTimestamp>
+        <hasCommentIP>10.0.0.105</hasCommentIP>
+        <hasCommentDevice>Android (VPN)</hasCommentDevice>
+    </rdf:Description>
+
+
+    <!-- ========== 6) Komentar oleh @BotReplier55 (Selasa, 1:35 PM) ========== -->
+    <rdf:Description rdf:about="#Comment_BotReplier55_1">
+        <rdf:type rdf:resource="#Comment"/>
+
+        <commentedBy rdf:resource="#BotReplier55"/>
+        <commentedOn rdf:resource="#Post_Amina001"/>
+
+        <hasCommentContent>
+        "This journalist is a fraud. BLOCK HER ACCOUNT NOW. #FakeNews #GlobalistLies"
+        </hasCommentContent>
+        <hasCommentTimestamp>2024-04-15T13:35:00Z</hasCommentTimestamp>
+        <hasCommentIP>10.0.0.106</hasCommentIP>
+        <hasCommentDevice>Automated Bot Script</hasCommentDevice>
+    </rdf:Description>
+
+    <!-- 1) DM_AnonDestroyer_1 (Selasa, 2:00 PM) -->
+    <rdf:Description rdf:about="#DM_AnonDestroyer_1">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <dmSender rdf:resource="#AnonDestroyer"/>
+        <dmReceiver rdf:resource="#AminaReports"/>
+
+        <hasDMContent>
+        "We know where you live. If you don’t stop spreading lies, 
+        we’ll make sure you regret it. Watch your back."
+        </hasDMContent>
+        <hasDMTimestamp>2024-04-15T14:00:00Z</hasDMTimestamp>
+        <hasDMIP>8.8.8.8</hasDMIP>
+        <hasDMDevice>Windows PC (VPN)</hasDMDevice>
+        <hasDMThreatLevel>high</hasDMThreatLevel>
+    </rdf:Description>
+
+
+    <!-- 2) DM_Amina_AnonDestroyer_1 (Selasa, 2:05 PM) -->
+    <rdf:Description rdf:about="#DM_Amina_AnonDestroyer_1">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <dmSender rdf:resource="#AminaReports"/>
+        <dmReceiver rdf:resource="#AnonDestroyer"/>
+
+        <hasDMContent>
+        "Who are you? Why are you doing this?"
+        </hasDMContent>
+        <hasDMTimestamp>2024-04-15T14:05:00Z</hasDMTimestamp>
+        <hasDMIP>192.168.1.12</hasDMIP>
+        <hasDMDevice>MacBook Pro (Twitter Web)</hasDMDevice>
+        <hasDMThreatLevel>low</hasDMThreatLevel>
+    </rdf:Description>
+
+
+    <!-- 3) DM_AnonDestroyer_2 (Selasa, 2:10 PM) -->
+    <rdf:Description rdf:about="#DM_AnonDestroyer_2">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <dmSender rdf:resource="#AnonDestroyer"/>
+        <dmReceiver rdf:resource="#AminaReports"/>
+
+        <hasDMContent>
+        "LOL, you think you’re important? Just shut up and stop writing your garbage articles. 
+        Or we’ll take it to the next level."
+        </hasDMContent>
+        <hasDMTimestamp>2024-04-15T14:10:00Z</hasDMTimestamp>
+        <hasDMIP>8.8.4.4</hasDMIP>
+        <hasDMDevice>Windows PC (VPN)</hasDMDevice>
+        <hasDMThreatLevel>high</hasDMThreatLevel>
+    </rdf:Description>
+
+
+    <!-- 4) DM_RealPatriot99_1 (Selasa, 2:15 PM) -->
+    <rdf:Description rdf:about="#DM_RealPatriot99_1">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <dmSender rdf:resource="#RealPatriot99"/>
+        <dmReceiver rdf:resource="#AminaReports"/>
+
+        <hasDMContent>
+        "You should just delete your account. Nobody wants to hear from you. 
+        Maybe something ‘unfortunate’ will happen if you don’t."
+        </hasDMContent>
+        <hasDMTimestamp>2024-04-15T14:15:00Z</hasDMTimestamp>
+        <hasDMIP>10.0.0.99</hasDMIP>
+        <hasDMDevice>Android (VPN)</hasDMDevice>
+        <hasDMThreatLevel>high</hasDMThreatLevel>
+    </rdf:Description>
+
+    <!-- A) Amina memblokir AnonDestroyer -->
+    <rdf:Description rdf:about="#Block_Amina_Anon_001">
+        <rdf:type rdf:resource="#Block"/>
+        <blockInitiator rdf:resource="#AminaReports"/>
+        <blockedUser rdf:resource="#AnonDestroyer"/>
+
+        <hasInteractionTime>2024-04-15T14:20:00Z</hasInteractionTime>
+        <hasInteractionIP>192.168.1.12</hasInteractionIP>
+        <hasInteractionDevice>Twitter Web</hasInteractionDevice>
+        <hasBlockReason>Threatening DMs</hasBlockReason>
+    </rdf:Description>
+
+    <!-- B) Amina memblokir RealPatriot99 -->
+    <rdf:Description rdf:about="#Block_Amina_RP99_001">
+        <rdf:type rdf:resource="#Block"/>
+        <blockInitiator rdf:resource="#AminaReports"/>
+        <blockedUser rdf:resource="#RealPatriot99"/>
+
+        <hasInteractionTime>2024-04-15T14:20:00Z</hasInteractionTime>
+        <hasInteractionIP>192.168.1.12</hasInteractionIP>
+        <hasInteractionDevice>Twitter Web</hasInteractionDevice>
+        <hasBlockReason>Threatening DM</hasBlockReason>
+    </rdf:Description>
+
+
+

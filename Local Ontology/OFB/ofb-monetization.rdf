@@ -1,0 +1,113 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Monetization Class -->
+    <owl:Class rdf:about="#Monetization">
+        <rdfs:comment>Represents the monetization features on the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- RevenueGeneration Subclass -->
+    <owl:Class rdf:about="#RevenueGeneration">
+        <rdfs:subClassOf rdf:resource="#Monetization"/>
+        <rdfs:comment>Represents revenue generation methods such as subscriptions and ad revenue.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Subscription Subclass -->
+    <owl:Class rdf:about="#Subscription">
+        <rdfs:subClassOf rdf:resource="#RevenueGeneration"/>
+        <rdfs:comment>Represents subscription-based revenue generation.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: enablesSubscriptionFor -->
+    <owl:ObjectProperty rdf:about="#enablesSubscriptionFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a user enabling subscription for specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for Subscription -->
+    <owl:DatatypeProperty rdf:about="#hasSubscriptionFee">
+        <rdfs:domain rdf:resource="#Subscription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the subscription fee.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasSubscriptionDuration">
+        <rdfs:domain rdf:resource="#Subscription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Specifies the subscription duration in months.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasSubscriptionBenefits">
+        <rdfs:domain rdf:resource="#Subscription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Describes the benefits included in the subscription.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- AdRevenue Subclass -->
+    <owl:Class rdf:about="#AdRevenue">
+        <rdfs:subClassOf rdf:resource="#RevenueGeneration"/>
+        <rdfs:comment>Represents revenue generated through advertisements.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: receivesAdRevenueFrom -->
+    <owl:ObjectProperty rdf:about="#receivesAdRevenueFrom">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a user receiving ad revenue from specific content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for AdRevenue -->
+    <owl:DatatypeProperty rdf:about="#hasRevenueAmount">
+        <rdfs:domain rdf:resource="#AdRevenue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the total revenue generated from ads.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAdImpressions">
+        <rdfs:domain rdf:resource="#AdRevenue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Indicates the number of ad impressions.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAdClickRate">
+        <rdfs:domain rdf:resource="#AdRevenue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the click-through rate for ads.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Donations Subclass -->
+    <owl:Class rdf:about="#Donations">
+        <rdfs:subClassOf rdf:resource="#Monetization"/>
+        <rdfs:comment>Represents donations made to creators or content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: donatesTo -->
+    <owl:ObjectProperty rdf:about="#donatesTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links a user donating to specific content or creators.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for Donations -->
+    <owl:DatatypeProperty rdf:about="#hasDonationAmount">
+        <rdfs:domain rdf:resource="#Donations"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Specifies the amount donated.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDonationTimestamp">
+        <rdfs:domain rdf:resource="#Donations"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the timestamp of the donation.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDonationMessage">
+        <rdfs:domain rdf:resource="#Donations"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Includes a message provided by the donor.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

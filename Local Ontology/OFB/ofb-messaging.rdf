@@ -1,0 +1,156 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Messaging Class -->
+    <owl:Class rdf:about="#Messaging">
+        <rdfs:comment>Represents the messaging functionality within the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- DirectMessaging Subclass -->
+    <owl:Class rdf:about="#DirectMessaging">
+        <rdfs:subClassOf rdf:resource="#Messaging"/>
+        <rdfs:comment>Represents one-on-one messaging interactions.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: sendsMessageTo -->
+    <owl:ObjectProperty rdf:about="#sendsMessageTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user who sends a direct message to another user.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: receivesMessageFrom -->
+    <owl:ObjectProperty rdf:about="#receivesMessageFrom">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user who receives a direct message from another user.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: mutesUser -->
+    <owl:ObjectProperty rdf:about="#mutesUser">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user who mutes another user.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: blocksUser -->
+    <owl:ObjectProperty rdf:about="#blocksUser">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user who blocks another user.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for DirectMessaging -->
+    <owl:DatatypeProperty rdf:about="#hasMessageContent">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the content of a direct message.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMessageTimestamp">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the timestamp of a direct message.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMessageFrequency">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates the frequency of direct messages exchanged between users.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMuteTimestamp">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies when a user muted another user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasBlocksTimestamp">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies when a user blocked another user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMessageStatus">
+        <rdfs:domain rdf:resource="#DirectMessaging"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the status of a direct message (e.g., sent, delivered, read).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- GroupMessaging Subclass -->
+    <owl:Class rdf:about="#GroupMessaging">
+        <rdfs:subClassOf rdf:resource="#Messaging"/>
+        <rdfs:comment>Represents group messaging interactions.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for GroupMessaging -->
+    <owl:ObjectProperty rdf:about="#participatesInGroupMessage">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupMessage"/>
+        <rdfs:comment>Links a user participating in a group message thread.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasParticipants">
+        <rdfs:domain rdf:resource="#GroupMessage"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a group message thread to its participants.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#joinsGroupChat">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupMessaging"/>
+        <rdfs:comment>Links a user to the group chat they joined.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#leavesGroupChat">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupMessaging"/>
+        <rdfs:comment>Links a user to the group chat they left.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#mutesGroupChat">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupMessaging"/>
+        <rdfs:comment>Links a user to the group chat they muted.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for GroupMessaging -->
+    <owl:DatatypeProperty rdf:about="#hasGroupMessageContent">
+        <rdfs:domain rdf:resource="#GroupMessage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the content of a group message.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupCreatedDate">
+        <rdfs:domain rdf:resource="#GroupMessage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Indicates the creation date of the group message thread.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupName">
+        <rdfs:domain rdf:resource="#GroupMessage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the name of the group chat.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupMessageFrequency">
+        <rdfs:domain rdf:resource="#GroupMessage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates the frequency of messages within the group chat.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasJoinTimestamp">
+        <rdfs:domain rdf:resource="#GroupMessage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the timestamp when a user joined the group chat.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasLeaveTimestamp">
+        <rdfs:domain rdf:resource="#GroupMessage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the timestamp when a user left the group chat.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

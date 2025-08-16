@@ -1,0 +1,67 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas ContentInteraction -->
+    <owl:Class rdf:about="#ContentInteraction"/>
+
+    <!-- Sub-kelas LikesReactions -->
+    <owl:Class rdf:about="#LikesReactions">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+    </owl:Class>
+
+    <!-- Individu di dalam LikesReactions -->
+    <owl:NamedIndividual rdf:about="#Like">
+        <rdf:type rdf:resource="#LikesReactions"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can like posts, comments, or stories.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#React">
+        <rdf:type rdf:resource="#LikesReactions"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can react to posts with different emotions.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas Comments -->
+    <owl:Class rdf:about="#Comments">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+    </owl:Class>
+
+    <!-- Individu di dalam Comments -->
+    <owl:NamedIndividual rdf:about="#TextComment">
+        <rdf:type rdf:resource="#Comments"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add text comments.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#GIFComment">
+        <rdf:type rdf:resource="#Comments"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add GIFs in comments.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#EmojiComment">
+        <rdf:type rdf:resource="#Comments"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add emojis in comments.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas Shares -->
+    <owl:Class rdf:about="#Shares">
+        <rdfs:subClassOf rdf:resource="#ContentInteraction"/>
+    </owl:Class>
+
+    <!-- Individu di dalam Shares -->
+    <owl:NamedIndividual rdf:about="#ShareToFeed">
+        <rdf:type rdf:resource="#Shares"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can share posts to their feed.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ShareToStory">
+        <rdf:type rdf:resource="#Shares"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can share posts to their story.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ShareToExternalApps">
+        <rdf:type rdf:resource="#Shares"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can share posts to external applications like WhatsApp.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

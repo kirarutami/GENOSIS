@@ -1,0 +1,53 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# Menggunakan namespace dasar dari file RDF untuk elemen ontologi
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+# CQ6: How can metadata from social media platforms be used to corroborate the timeline of events?
+# Pendekatan: Mengambil timestamp dari peristiwa kunci dalam kasus TikTok
+# (Postingan Ethan, komentar terkait, DM) dan mengurutkannya.
+
+SELECT ?timestamp ?eventType ?description ?actor
+WHERE {
+  {
+    # Postingan ShortVideo oleh Ethan
+    BIND(ex:EthanBlackoutChallengePost AS ?event)
+    ?event rdf:type ex:ShortVideoPost ;
+           ex:hasPostTimestamp ?timestamp ;   # Metadata: Waktu posting
+           ex:hasCaption ?description .       # Detail: Caption postingan
+    BIND(ex:Ethan AS ?actor)                 # Pelaku: Ethan
+    BIND("Post" AS ?eventType)               # Jenis Peristiwa: Postingan
+  }
+  UNION
+  {
+    # Komentar pada postingan Ethan oleh aktor kunci
+    ?event rdf:type ex:Comment ;
+           ex:commentsOnContent ex:EthanBlackoutChallengePost ; # Terkait dengan postingan Ethan
+           ex:hasCommentTimestamp ?timestamp ; # Metadata: Waktu komentar
+           ex:commentedBy ?actor ;          # Pelaku: Pengirim komentar
+           ex:hasCommentText ?description .   # Detail: Teks komentar
+    # Filter hanya untuk komentar dari pengguna yang relevan dengan interaksi
+    FILTER(?actor IN (ex:MaxDares, ex:SarahCares, ex:RiskyKing, ex:JakeMaster))
+    BIND("Comment" AS ?eventType)            # Jenis Peristiwa: Komentar
+  }
+  UNION
+  {
+    # Pesan Langsung antara Ethan dan MaxDares (termasuk dari orang tua Ethan)
+    ?event rdf:type ex:DirectMessage .       # Instance Pesan Langsung
+    ?event ex:hasTimestamp ?timestamp ;      # Metadata: Waktu pengiriman DM
+           ex:hasTextContent ?description ;  # Detail: Teks DM
+           ex:sentBy ?sender ;
+           ex:sentTo ?recipient .
+    # Filter hanya untuk DM antara Ethan dan MaxDares, atau DM dari orang tua (via akun Ethan) ke MaxDares
+    FILTER( (?sender = ex:Ethan && ?recipient = ex:MaxDares) ||
+            (?sender = ex:MaxDares && ?recipient = ex:Ethan) ||
+            (?event = ex:DM010 && ?sender = ex:Ethan && ?recipient = ex:MaxDares) # DM penting dari orang tua
+          )
+    BIND(?sender AS ?actor)                   # Pelaku: Pengirim DM
+    BIND("DirectMessage" AS ?eventType)      # Jenis Peristiwa: Pesan Langsung
+  }
+}
+ORDER BY ?timestamp # Mengurutkan hasil berdasarkan waktu

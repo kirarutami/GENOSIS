@@ -1,0 +1,135 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+MP:hasBio,OFB:hasBio,100.0,Stores the bio or description on the user's profile.,The bio of the user.
+MP:hasCommentTimestamp,OFB:hasCommentTimestamp,100.0,"
+            The date and time when this comment was created.
+            Useful for forensic timeline reconstruction.
+        ",Records the timestamp when a comment was made.
+MP:hasCommunityDescription,OFB:hasCommunityDescription,100.0,Provides a description of the community.,Provides a description for the community.
+MP:hasCommunityName,OFB:hasCommunityName,100.0,Stores the name of the community.,Defines the name of the community.
+MP:hasEmail,OFB:hasEmail,100.0,Stores the email address associated with the user's account.,The email address associated with the user account.
+MP:hasMemberCount,OFB:hasMemberCount,100.0,Stores the number of members in the community.,Represents the total number of members in a community.
+MP:hasPostContent,OFB:hasPostContent,100.0,"
+            Main textual content or body of the post, 
+            including any caption or message written by the user.
+        ","Content of the post, typically text or markdown."
+MP:hasPostMedia,OFB:hasPostMedia,100.0,"
+            Holds the URL(s) or reference to media (images, videos, GIFs) 
+            attached to the post.
+        ","Media associated with the post, such as images, GIFs, or videos."
+MP:hasDMTimestamp,OFB:hasTimestamp,92.31,"
+            The date and time when the DM was sent.
+        ",Records the date and time when the user action was performed.
+MP:hasEmail,OFB:hasEmailFrequency,90.0,Stores the email address associated with the user's account.,Indicates the frequency of email notifications.
+MP:hasEmail,OFB:hasEmailNotificationEnabled,90.0,Stores the email address associated with the user's account.,Indicates whether email notifications are enabled for a user.
+MP:hasPostTimestamp,OFB:hasReportTimestamp,88.24,"
+            Records the date and time when the post was created or published.
+        ",Records the timestamp when the report was filed.
+MP:hasPostTimestamp,OFB:hasUpvoteTimestamp,88.24,"
+            Records the date and time when the post was created or published.
+        ",Records the timestamp when an upvote was made.
+MP:hasListDescription,OFB:hasDescription,87.5,Stores the description of the list.,Provides a description for the community.
+MP:hasDMTimestamp,OFB:hasMuteTimestamp,86.67,"
+            The date and time when the DM was sent.
+        ",Records the timestamp when a topic or user was muted.
+MP:hasSessionDuration,OFB:hasSessionID,86.09,Stores the duration of the live session.,Unique identifier for the session.
+MP:hasPostTimestamp,OFB:hasTimestamp,85.71,"
+            Records the date and time when the post was created or published.
+        ",Records the date and time when the user action was performed.
+MP:hasCommentContent,OFB:hasCommentsCount,84.85,"
+            Holds the main text/body of a comment posted by a user.
+        ",Represents the total number of comments for a content item.
+MP:hasCommunityName,OFB:hasCommunityTheme,84.85,Stores the name of the community.,Defines the theme or aesthetic of the community.
+MP:hasPassword,OFB:hasPasswordHash,84.62,Stores the password for the user's account.,The hashed password of the user.
+MP:hasSubscriptionStatus,OFB:hasSubscriptionStartDate,84.44,"Indicates the user's subscription status (e.g., premium, free).",Records the start date of a user's subscription.
+MP:hasPostTimestamp,OFB:hasAnonymousPostTimestamp,84.0,"
+            Records the date and time when the post was created or published.
+        ",Records the timestamp of when the anonymous post was created.
+MP:hasCommentContent,OFB:hasCommentText,83.87,"
+            Holds the main text/body of a comment posted by a user.
+        ",Stores the text of a comment.
+MP:hasDMTimestamp,OFB:hasAwardTimestamp,83.87,"
+            The date and time when the DM was sent.
+        ",Records the timestamp when an award was given.
+MP:hasPostTimestamp,OFB:hasPinTimestamp,83.87,"
+            Records the date and time when the post was created or published.
+        ",Records the timestamp when a post was pinned.
+MP:hasListDescription,OFB:hasRuleDescription,83.33,Stores the description of the list.,Provides a textual description of a specific community rule.
+MP:hasPostContent,OFB:hasAnonymousPostContent,83.08,"
+            Main textual content or body of the post, 
+            including any caption or message written by the user.
+        ",Defines the content of an anonymous post.
+MP:hasDMTimestamp,OFB:hasPinTimestamp,82.76,"
+            The date and time when the DM was sent.
+        ",Records the timestamp when a post was pinned.
+MP:hasCommentIP,OFB:hasCommentTimestamp,82.5,"
+            The IP address of the device used to post the comment.
+            Critical for digital forensics or geolocation.
+        ",Records the timestamp when a comment was made.
+MP:hasCreationDate,OFB:hasRegistrationDate,82.35,Indicates the creation date of the community.,"
+            The date and time when the user registered on the platform.
+            Useful for forensic timeline and account history.
+        "
+MP:hasPostTimestamp,OFB:hasBlocksTimestamp,82.35,"
+            Records the date and time when the post was created or published.
+        ",Specifies when a user blocked another user.
+MP:hasPostTimestamp,OFB:hasLogoutTimestamp,82.35,"
+            Records the date and time when the post was created or published.
+        ",The date and time when the session was logged out.
+MP:hasBio,OFB:hasBookmarkTimestamp,81.82,Stores the bio or description on the user's profile.,Records the timestamp when content was bookmarked.
+MP:hasBirthDate,OFB:hasBio,81.82,Records the user's birth date displayed on their profile.,The bio of the user.
+MP:hasBirthday,OFB:hasBio,81.82,Stores the user's birth date.,The bio of the user.
+MP:hasBookmarkCount,OFB:hasBio,81.82,Stores the count of items saved in bookmarks.,The bio of the user.
+MP:hasBookmarkDate,OFB:hasBio,81.82,Records the date and time when a bookmark was saved.,The bio of the user.
+MP:hasDMDevice,OFB:hasDeviceID,81.82,"
+            The device/app used to send this DM (e.g., 'Twitter Web', 'Android App').
+        ",Represents the unique identifier of the notification device.
+MP:hasPostMedia,OFB:hasAnonymousPostMedia,81.82,"
+            Holds the URL(s) or reference to media (images, videos, GIFs) 
+            attached to the post.
+        ","Defines the media (e.g., images or videos) associated with an anonymous post."
+MP:hasDMContent,OFB:hasDraftContent,81.48,"
+            The text/body of the direct message.
+        ","Content of the draft, typically text or markdown."
+MP:hasPostTimestamp,OFB:hasJoinTimestamp,81.25,"
+            Records the date and time when the post was created or published.
+        ",Records the timestamp of when a user joined the community.
+MP:hasPostTimestamp,OFB:hasMuteTimestamp,81.25,"
+            Records the date and time when the post was created or published.
+        ",Records the timestamp when a topic or user was muted.
+MP:hasRetweetTimestamp,OFB:hasReportTimestamp,81.08,Mencatat tanggal dan waktu ketika retweet atau reblog terjadi.,Records the timestamp when the report was filed.
+MP:hasScheduledTime,OFB:hasScheduledPostMedia,81.08,"
+            If the post status is ""scheduled"", records the date and time
+            when the post will be published.
+        ","Media attachment for the scheduled post, such as an image or video."
+MP:hasScheduledTime,OFB:hasScheduledPostTitle,81.08,"
+            If the post status is ""scheduled"", records the date and time
+            when the post will be published.
+        ",Title of the scheduled post.
+MP:hasCommentTimestamp,OFB:hasJoinTimestamp,80.0,"
+            The date and time when this comment was created.
+            Useful for forensic timeline reconstruction.
+        ",Records the timestamp of when a user joined the community.
+MP:hasCommentTimestamp,OFB:hasMuteTimestamp,80.0,"
+            The date and time when this comment was created.
+            Useful for forensic timeline reconstruction.
+        ",Records the timestamp when a topic or user was muted.
+MP:hasCreationDate,OFB:hasCommunityCreationDate,80.0,Indicates the creation date of the community.,Records the date and time the community was created.
+MP:hasDMTimestamp,OFB:hasJoinTimestamp,80.0,"
+            The date and time when the DM was sent.
+        ",Records the timestamp of when a user joined the community.
+MP:hasDMTimestamp,OFB:hasLikeTimestamp,80.0,"
+            The date and time when the DM was sent.
+        ",Records the timestamp when a like was made.
+MP:hasMemberCount,OFB:hasActiveMembersCount,80.0,Stores the number of members in the community.,Represents the number of active members in a community.
+MP:hasPostContent,OFB:hasCrosspostedContent,80.0,"
+            Main textual content or body of the post, 
+            including any caption or message written by the user.
+        ",Content of the cross-posted content.
+MP:hasPostTimestamp,OFB:hasCommentTimestamp,80.0,"
+            Records the date and time when the post was created or published.
+        ",Records the timestamp when a comment was made.
+MP:hasPostTimestamp,OFB:hasPostCreationTimestamp,80.0,"
+            Records the date and time when the post was created or published.
+        ",Timestamp of when the post was created.
+MP:hasRetweetTimestamp,OFB:hasMuteTimestamp,80.0,Mencatat tanggal dan waktu ketika retweet atau reblog terjadi.,Records the timestamp when a topic or user was muted.
+MP:hasSubscriptionStatus,OFB:hasSubscriptionType,80.0,"Indicates the user's subscription status (e.g., premium, free).","Indicates the type of subscription (e.g., Free, Premium)."

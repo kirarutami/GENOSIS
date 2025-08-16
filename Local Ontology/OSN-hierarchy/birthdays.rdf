@@ -1,0 +1,30 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Birthdays -->
+    <owl:Class rdf:about="#Birthdays"/>
+
+    <!-- Sub-kelas ManageBirthdays -->
+    <owl:Class rdf:about="#ManageBirthdays">
+        <rdfs:subClassOf rdf:resource="#Birthdays"/>
+    </owl:Class>
+
+    <!-- Sub-kelas BirthdayPosts di dalam ManageBirthdays -->
+    <owl:Class rdf:about="#BirthdayPosts">
+        <rdfs:subClassOf rdf:resource="#ManageBirthdays"/>
+    </owl:Class>
+
+    <!-- Individu di dalam BirthdayPosts -->
+    <owl:NamedIndividual rdf:about="#WriteOnTimeline">
+        <rdf:type rdf:resource="#BirthdayPosts"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can write birthday messages on timelines.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SendMessage">
+        <rdf:type rdf:resource="#BirthdayPosts"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can send birthday messages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

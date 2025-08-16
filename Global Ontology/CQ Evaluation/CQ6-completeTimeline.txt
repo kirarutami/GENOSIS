@@ -1,0 +1,123 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+PREFIX OFB: <http://saralutami.org/OnlineForumsBlogs#>
+PREFIX MCSS: <http://saralutami.org/MediaContentSharingSites#>
+
+SELECT DISTINCT 
+  ?timestamp 
+  ?eventType 
+  ?actor ?actorLabel 
+  ?platform 
+  ?descriptionOrContent 
+  ?relatedItemIRI
+  ?location 
+  ?ipAddress 
+  ?deviceInfo
+WHERE {
+  OPTIONAL { ?actor rdfs:label ?actorLabel . }
+
+  {
+    BIND("Post Creation" AS ?eventType)
+    ?relatedItemIRI rdf:type/rdfs:subClassOf* genosisOwl:Global:Post ;
+                    genosisOwl:postedBy ?actor ;
+                    genosisOwl:hasCreationTimestamp ?timestamp ;
+                    genosisOwl:belongsToPlatform ?platform .
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasContentText ?descriptionOrContent . }
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasLocation ?location . }
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasIpAddress ?ipAddress . } 
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasPostDeviceInfo ?deviceInfo . }
+  }
+  UNION
+  {
+    BIND("Video Publication" AS ?eventType)
+    ?relatedItemIRI rdf:type/rdfs:subClassOf* genosisOwl:MCSS:Video ; 
+                    genosisOwl:attributedToUser ?actor ; 
+                    MCSS:hasPublicationDate ?timestamp ; 
+                    genosisOwl:belongsToPlatform ?platform .
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasTitle ?title . BIND(STR(?title) AS ?descriptionOrContent) }
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasLocation ?location . }
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasIpAddress ?ipAddress . }
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasPostDeviceInfo ?deviceInfo . }
+  }
+  UNION
+  {
+    BIND("Comment Made" AS ?eventType)
+    ?relatedItemIRI rdf:type/rdfs:subClassOf* genosisOwl:Global:CommentOrReplyAction ;
+                    (genosisOwl:commentedBy | genosisOwl:performedBy) ?actor ;
+                    genosisOwl:hasInteractionTimestamp ?timestamp ;
+                    genosisOwl:belongsToPlatform ?platform .
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasContentText ?descriptionOrContent . }
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasLocation ?location . } 
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasIpAddress ?ip1 . }
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasCommentSpecificIP ?ip2 . }
+    BIND(COALESCE(?ip1, ?ip2) AS ?ipAddress)
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasDeviceInfo ?dev1 . }
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasCommentDevice ?dev2 . }
+    BIND(COALESCE(?dev1, ?dev2) AS ?deviceInfo)
+  }
+  UNION
+  {
+    BIND("Direct Message Sent" AS ?eventType)
+    ?relatedItemIRI rdf:type/rdfs:subClassOf* genosisOwl:Global:DirectMessage ;
+                    genosisOwl:attributedToUser ?actor ; 
+                    genosisOwl:hasMessageSentTimestamp ?timestamp ;
+                    genosisOwl:belongsToPlatform ?platform .
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasMessageContent ?descriptionOrContent . }
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasLocation ?location . } 
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasIpAddress ?ip1 . }
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasDMSpecificIP ?ip2 . }
+    BIND(COALESCE(?ip1, ?ip2) AS ?ipAddress)
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasDeviceInfo ?dev1 . }
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasDMDevice ?dev2 . }
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasMessageDevice ?dev3 . }
+    BIND(COALESCE(?dev1, ?dev2, ?dev3) AS ?deviceInfo)
+  }
+  UNION
+  {
+    BIND("User Account Created" AS ?eventType)
+    ?actor rdf:type/rdfs:subClassOf* genosisOwl:Global:UserAccount ;
+           genosisOwl:hasCreationTimestamp ?timestamp ;
+           genosisOwl:belongsToPlatform ?platform .
+    # Menghilangkan CONCAT, ?descriptionOrContent akan diisi oleh ?actorLabel jika ada, atau kosong.
+    # Atau bisa diisi string statis jika ?actorLabel tidak diinginkan di sini.
+    # Untuk konsistensi, kita biarkan ?descriptionOrContent bisa kosong jika label ?actor kosong.
+    BIND(STR(?actorLabel) AS ?descriptionOrContent)
+    BIND(?actor AS ?relatedItemIRI) 
+    OPTIONAL { ?actor genosisOwl:hasIpAddress ?ipAddress . } 
+    OPTIONAL { ?actor genosisOwl:hasLocation ?location . } 
+  }
+  UNION
+  {
+    BIND("Report Submitted" AS ?eventType)
+    ?relatedItemIRI rdf:type/rdfs:subClassOf* genosisOwl:Global:ReportAction ;
+           genosisOwl:performedBy ?actor ;
+           genosisOwl:hasInteractionTimestamp ?timestamp ;
+           genosisOwl:belongsToPlatform ?platform .
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasReportReason ?descriptionOrContent . }
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasIpAddress ?ipAddress . }
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasInteractionDevice ?deviceInfo . } 
+  }
+  UNION
+  {
+    BIND("Live Event Started" AS ?eventType)
+    ?relatedItemIRI rdf:type/rdfs:subClassOf* genosisOwl:MCSS:Live ; 
+           genosisOwl:attributedToUser ?actor ;
+           MCSS:hasLiveStartTime ?timestamp ; 
+           genosisOwl:belongsToPlatform ?platform .
+    OPTIONAL { ?relatedItemIRI rdfs:label ?descriptionOrContent .} 
+    OPTIONAL { ?relatedItemIRI genosisOwl:hasLocation ?location . }
+  }
+  UNION
+  {
+    BIND("Account Deletion Requested" AS ?eventType)
+    ?delActivity rdf:type genosisOwl:OFB:AccountDeletionActivity ; 
+                 OFB:deletionRequestedOn ?timestamp ;
+                 genosisOwl:deletedAccount ?actor . 
+    OPTIONAL { ?actor genosisOwl:belongsToPlatform ?platform . } 
+    OPTIONAL { ?delActivity genosisOwl:belongsToPlatform ?platformFromActivity . BIND(COALESCE(?platform, ?platformFromActivity) AS ?platform) }
+    OPTIONAL { ?delActivity OFB:deletionReason ?descriptionOrContent . }
+    BIND(?delActivity AS ?relatedItemIRI)
+  }
+}
+ORDER BY ?timestamp

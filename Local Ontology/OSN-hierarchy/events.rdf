@@ -1,0 +1,78 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Events -->
+    <owl:Class rdf:about="#Events"/>
+
+    <!-- Sub-kelas EventManagement -->
+    <owl:Class rdf:about="#EventManagement">
+        <rdfs:subClassOf rdf:resource="#Events"/>
+    </owl:Class>
+
+    <!-- Sub-kelas CreateEvent di dalam EventManagement -->
+    <owl:Class rdf:about="#CreateEvent">
+        <rdfs:subClassOf rdf:resource="#EventManagement"/>
+    </owl:Class>
+
+    <!-- Individu di dalam CreateEvent -->
+    <owl:NamedIndividual rdf:about="#InPerson">
+        <rdf:type rdf:resource="#CreateEvent"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can create in-person events.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Virtual">
+        <rdf:type rdf:resource="#CreateEvent"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can create virtual events.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas ManageEvent di dalam EventManagement -->
+    <owl:Class rdf:about="#ManageEvent">
+        <rdfs:subClassOf rdf:resource="#EventManagement"/>
+    </owl:Class>
+
+    <!-- Individu di dalam ManageEvent -->
+    <owl:NamedIndividual rdf:about="#EventName">
+        <rdf:type rdf:resource="#ManageEvent"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the event name.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Date">
+        <rdf:type rdf:resource="#ManageEvent"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the event date.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Location">
+        <rdf:type rdf:resource="#ManageEvent"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the event location.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas EventInvitations di dalam EventManagement -->
+    <owl:Class rdf:about="#EventInvitations">
+        <rdfs:subClassOf rdf:resource="#EventManagement"/>
+    </owl:Class>
+
+    <!-- Individu di dalam EventInvitations -->
+    <owl:NamedIndividual rdf:about="#SendInvites">
+        <rdf:type rdf:resource="#EventInvitations"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can send event invitations.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AcceptInvites">
+        <rdf:type rdf:resource="#EventInvitations"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can accept event invitations.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ManageInvites">
+        <rdf:type rdf:resource="#EventInvitations"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage event invitations.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Individu EventNotifications -->
+    <owl:NamedIndividual rdf:about="#EventNotifications">
+        <rdf:type rdf:resource="#Events"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage notifications for event activities.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

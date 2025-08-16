@@ -1,0 +1,163 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Agent -->
+    <owl:Class rdf:about="#Agent">
+        <rdfs:comment>Represents the general concept of an agent, which may be a criminal group, organisation, or individual suspects.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Kelas CriminalGroup -->
+    <owl:Class rdf:about="#CriminalGroup">
+        <rdfs:subClassOf rdf:resource="#Agent"/>
+        <rdfs:comment>Represents a group involved in criminal activities.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Kelas CriminalOrganisation -->
+    <owl:Class rdf:about="#CriminalOrganisation">
+        <rdfs:subClassOf rdf:resource="#Agent"/>
+        <rdfs:comment>Represents an organised criminal entity.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Kelas Suspects -->
+    <owl:Class rdf:about="#Suspects">
+        <rdfs:subClassOf rdf:resource="#Agent"/>
+        <rdfs:comment>Represents individuals suspected of criminal activity based on their interactions in OSNs.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Kelas ThresholdOfSuspiciousActivity -->
+    <owl:Class rdf:about="#ThresholdOfSuspiciousActivity">
+        <rdfs:comment>Represents a threshold that, when exceeded, triggers suspicion.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Kelas Crime_Case_Solving -->
+    <owl:Class rdf:about="#Crime_Case_Solving">
+        <rdfs:comment>Represents the process and methods used to solve a crime case.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Kelas FlaggedContent -->
+    <owl:Class rdf:about="#FlaggedContent">
+        <rdfs:comment>Represents digital content that has been flagged as suspicious.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Kelas FlaggedProfiles -->
+    <owl:Class rdf:about="#FlaggedProfiles">
+        <rdfs:comment>Represents profiles that have been flagged as suspicious.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: followsFlaggedProfiles -->
+    <owl:ObjectProperty rdf:about="#followsFlaggedProfiles">
+        <rdfs:domain rdf:resource="#Suspects"/>
+        <rdfs:range rdf:resource="#FlaggedProfiles"/>
+        <rdfs:comment>Indicates that a suspect follows profiles that have been flagged as suspicious.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: likesFlaggedContent -->
+    <owl:ObjectProperty rdf:about="#likesFlaggedContent">
+        <rdfs:domain rdf:resource="#Suspects"/>
+        <rdfs:range rdf:resource="#FlaggedContent"/>
+        <rdfs:comment>Indicates that a suspect has liked content that has been flagged.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: sharesFlaggedContent -->
+    <owl:ObjectProperty rdf:about="#sharesFlaggedContent">
+        <rdfs:domain rdf:resource="#Suspects"/>
+        <rdfs:range rdf:resource="#FlaggedContent"/>
+        <rdfs:comment>Indicates that a suspect has shared flagged content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: commentsOnFlaggedContent -->
+    <owl:ObjectProperty rdf:about="#commentsOnFlaggedContent">
+        <rdfs:domain rdf:resource="#Suspects"/>
+        <rdfs:range rdf:resource="#FlaggedContent"/>
+        <rdfs:comment>Indicates that a suspect has commented on flagged content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: triggers -->
+    <owl:ObjectProperty rdf:about="#triggers">
+        <rdfs:domain rdf:resource="#Suspects"/>
+        <rdfs:range rdf:resource="#ThresholdOfSuspiciousActivity"/>
+        <rdfs:comment>Links a suspect to a threshold that triggers suspicion based on activities.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: performsActivity -->
+    <owl:ObjectProperty rdf:about="#performsActivity">
+        <rdfs:domain rdf:resource="#Suspects"/>
+        <rdfs:range rdf:resource="#UserActivity"/>
+        <rdfs:comment>Links a suspect to activities performed on social networks.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: isConsideredSuspectBy -->
+    <owl:ObjectProperty rdf:about="#isConsideredSuspectBy">
+        <rdfs:domain rdf:resource="#Suspects"/>
+        <rdfs:range rdf:resource="#ThresholdOfSuspiciousActivity"/>
+        <rdfs:comment>Links a person to the threshold that, once exceeded, classifies them as a suspect.</rdfs:comment>
+    </owl:ObjectProperty>
+
+        <!-- Object Property: isConsideredSuspect -->
+    <owl:ObjectProperty rdf:about="#isConsideredSuspect">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Suspect"/>
+        <rdfs:comment>Links a user to the status of being considered a suspect.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: markedAsFlaggedContent -->
+    <owl:ObjectProperty rdf:about="#markedAsFlaggedContent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#UserActivity"/>
+        <rdfs:range rdf:resource="#FlaggedContent"/>
+        <rdfs:comment>Marks specific content (video, post) as suspicious or flagged.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: markedAsFlaggedProfile -->
+    <owl:ObjectProperty rdf:about="#markedAsFlaggedProfile">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#UserActivity"/>
+        <rdfs:range rdf:resource="#FlaggedProfiles"/>
+        <rdfs:comment>Marks specific user profiles as suspicious or flagged.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: activatesCase -->
+    <owl:ObjectProperty rdf:about="#activatesCase">
+        <rdfs:domain rdf:resource="#ThresholdOfSuspiciousActivity"/>
+        <rdfs:range rdf:resource="#Crime_Case_Solving"/>
+        <rdfs:comment>Links a suspicious activity threshold to the activation of a crime case.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: involvesFlaggedContent -->
+    <owl:ObjectProperty rdf:about="#involvesFlaggedContent">
+        <rdfs:domain rdf:resource="#DigitalCrime"/>
+        <rdfs:range rdf:resource="#FlaggedContent"/>
+        <rdfs:comment>Links a digital crime to flagged content that it involves.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: ThresholdCriteria -->
+    <owl:DatatypeProperty rdf:about="#ThresholdCriteria">
+        <rdfs:domain rdf:resource="#ThresholdOfSuspiciousActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the criteria for a threshold of suspicious activity.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasThresholdValue -->
+    <owl:DatatypeProperty rdf:about="#hasThresholdValue">
+        <rdfs:domain rdf:resource="#ThresholdOfSuspiciousActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Stores the numerical value of a threshold for suspicious activity.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasCaseID -->
+    <owl:DatatypeProperty rdf:about="#hasCaseID">
+        <rdfs:domain rdf:resource="#Crime_Case_Solving"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores the unique identifier for a crime case.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasEvidenceChainOfCustody -->
+    <owl:DatatypeProperty rdf:about="#hasEvidenceChainOfCustody">
+        <rdfs:domain rdf:resource="#Crime_Case_Solving"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Tracks the chain of custody for evidence in a crime case.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

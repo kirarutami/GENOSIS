@@ -1,0 +1,52 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>  # Sesuaikan dengan namespace RDF Anda
+
+SELECT ?suspect ?victim ?platform ?messageText ?threat ?verbalAbuse ?blackmail
+WHERE {
+  {
+    # Mencari pesan DM yang berpotensi mengancam atau memaksa
+    ?message rdf:type ex:DirectMessage ;
+             ex:hasTextContent ?messageText ;
+             ex:sentBy ?suspect ;
+             ex:sentTo ?victim ;
+             ex:belongsToPlatform ?platform .
+
+    # Klasifikasi ancaman
+    BIND (
+      IF (
+        REGEX(?messageText, "you should just do it", "i") ||
+        REGEX(?messageText, "don't back down", "i") ||
+        REGEX(?messageText, "if you don't do it, you will regret it", "i") ||
+        REGEX(?messageText, "this will blow up", "i"),
+        "Threat", 
+        ""
+      ) AS ?threat
+    )
+
+    # Klasifikasi pelecehan verbal
+    BIND (
+      IF (
+        REGEX(?messageText, "everyone's done it", "i") ||
+        REGEX(?messageText, "just a few seconds", "i") ||
+        REGEX(?messageText, "nothing's going to happen", "i"),
+        "Verbal Abuse", 
+        ""
+      ) AS ?verbalAbuse
+    )
+
+    # Klasifikasi pemerasan
+    BIND (
+      IF (
+        REGEX(?messageText, "if something goes wrong", "i") ||
+        REGEX(?messageText, "you better not back out", "i") ||
+        REGEX(?messageText, "I have proof and backups", "i"),
+        "Blackmail", 
+        ""
+      ) AS ?blackmail
+    )
+  }
+}
+ORDER BY ?suspect ?platform

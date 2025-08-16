@@ -1,0 +1,1978 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns='http://knowledgeweb.semanticweb.org/heterogeneity/alignment'
+	 xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' 
+	 xmlns:xsd='http://www.w3.org/2001/XMLSchema#' 
+	 alignmentSource='AgreementMakerLight'>
+
+<Alignment>
+	<xml>yes</xml>
+	<level>0</level>
+	<type>11</type>
+	<onto1>D:\thesis\Fixed Files\Local Ontologies\Local OFB.rdf</onto1>
+	<onto2>http://example.org/genosis.owl</onto2>
+	<uri1>D:\thesis\Fixed Files\Local Ontologies\Local OFB.rdf</uri1>
+	<uri2>http://example.org/genosis.owl</uri2>
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasQueueCreationTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasQueueCreationTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasAnonymousPostTitle"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasAnonymousPostTitle"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasBannerImageURL"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasBannerImageURL"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasNotificationFrequency"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:notificationFrequency"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasScheduledPostTitle"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasScheduledPostTitle"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasRuleType"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasRuleType"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasModeratorReputation"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasModeratorReputation"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasProcessingStatus"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasProcessingStatus"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasAvailableLanguages"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasAvailableLanguages"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasJoinDateAsModerator"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasJoinDateAsModerator"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasDraftMedia"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasDraftMedia"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasProfileVisibility"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasProfileVisibility"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasDraftContent"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasDraftContent"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasCrosspostedMedia"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasCrosspostedMedia"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasScheduledPostMedia"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasScheduledPostMedia"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#deletionRequestedOn"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#deletionRequestedOn"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasDraftSavedTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasDraftSavedTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasModeratorPermissions"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasModeratorPermissions"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasActivityLevel"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasActivityLevel"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasDraftTitle"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasDraftTitle"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasContrastSetting"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasContrastSetting"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasScheduledPostContent"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasScheduledPostContent"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasAverageResponseTime"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasAverageResponseTime"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasAnonymousPostContent"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasAnonymousPostContent"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasUsername"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasUsername"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasTotalPostsApproved"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasTotalPostsApproved"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasPostingRules"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasPostingRules"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasGroupName"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:GroupName"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasEmail"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasEmail"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasBio"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasBio"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasFilterType"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasFilterType"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasModeratorRoleType"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasModeratorRoleType"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasPhoneNumber"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasPhoneNumber"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasLastUpdatedTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasLastUpdatedTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#appliesToContentType"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#appliesToContentType"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasTrendingScore"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasTrendingScore"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasFilterValue"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasFilterValue"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasScheduledPublishTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasScheduledPublishTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasModeratorNotes"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasModeratorNotes"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasPreferredLanguage"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasPreferredLanguage"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasCommunityTheme"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasCommunityTheme"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasSearchCriteria"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasSearchCriteria"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasCrosspostedTitle"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasCrosspostedTitle"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#isActiveModerator"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#isActiveModerator"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasTotalPostsDenied"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasTotalPostsDenied"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#canAllowAnonymousPosts"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#canAllowAnonymousPosts"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasSearchTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasSearchTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasDescription"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasDescription"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasTotalCommentsRemoved"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasTotalCommentsRemoved"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasKarmaPointsEarned"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasKarmaPointsEarned"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasCrosspostedContent"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasCrosspostedContent"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasAnonymousPostMedia"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasAnonymousPostMedia"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasRestrictedModeEnabled"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasRestrictedModeEnabled"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasNotificationType"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:notificationType"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasThemePreference"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasThemePreference"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasTrendingKeyword"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasTrendingKeyword"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasModerationPriority"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasModerationPriority"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasPostCreationTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasPostCreationTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasMessageContent"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasMessageContent"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasFontSize"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasFontSize"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasSpotlightReason"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasSpotlightReason"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasNSFWVisibilitySetting"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasNSFWVisibilitySetting"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasReputationLevel"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasReputationLevel"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasSearchResultCount"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasSearchResultCount"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#deletionReason"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#deletionReason"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasTotalUsersBanned"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasTotalUsersBanned"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasAnonymousSessionID"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasAnonymousSessionID"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#isAccountDeleted"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#isAccountDeleted"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasAnonymousPostTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasAnonymousPostTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#blocksUser"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:blocksUser"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#deniesPost"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:deniesPost"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#approvesPost"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:approvesPost"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#unblocksUser"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:unblocksUser"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#sendsMessageTo"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#sendsMessageTo"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#joinsGroupChat"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:joinsGroupChat"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#followsCommunity"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:followsCommunity"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#receivesMessageFrom"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:receivesMessageFrom"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#associatedWithUser"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#associatedWithUser"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#performedBy"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#performedBy"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#unsubscribesFrom"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:unsubscribesFrom"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#commentsOn"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:commentsOn"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#searchesFor"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:searchesFor"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#leavesGroupChat"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:leavesGroupChat"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#repliesToComment"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:repliesToComment"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#mutesGroupChat"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:mutesGroupChat"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#messageReceiver"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:messageReceiver"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#createdByModerator"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:createdByModerator"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#subscribesTo"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:subscribesTo"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#joinsCommunity"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:joinsCommunity"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#editsScheduledPost"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:editsScheduledPost"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#pinsPostByCommunity"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:communityPinsPost"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9849</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasMessageTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasMessageSentTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9488</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasResolutionStatus"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasReportResolutionStatus"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9424</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasCommentsCount"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:commentCount"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9365</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#canSetProfileVisibility"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:canSetVisibility"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9356</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasVotesCount"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:voteCount"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9348</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasViewsCount"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:viewCount"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9348</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#canEditProfile"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:canEditProfileSetting"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9324</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#CommunityReputation"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:CommunityReputation"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasEditTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9252</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasLikeTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasTimestampData"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9252</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasCategoryName"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasCategory"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9228</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#receivesRecommendations"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:receivesRecommendation"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.922</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#savesPostAsDraft"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:savesDraft"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.92</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasParticipants"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasParticipant"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9178</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#sharedToCommunity"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:contentSharedToCommunity"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9166</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasTwoFactorAuthenticationEnabled"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasTwoFactorAuthenticationStatus"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.906</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#sharesContent"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:userSharesContent"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9055</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasFlairName"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasName"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9011</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasMemberCount"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:count"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8995</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasUnreadCount"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:likeCount"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8995</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasPollOptions"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:hasPostOptions"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8967</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasCommentText"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasContentText"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8967</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#likesContent"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:likedContent"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8953</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasDonationTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasCreationTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8914</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#editsCrossPost"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#crossPostOf"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8769</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasDraftViewsCount"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasViewCount"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8669</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#blockedTargetUser"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#targetUser"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.864</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasDonationMessage"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasMessageReaction"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.859</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#followsTopic"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:follows"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8559</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasCommunityCreationDate"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasChannelCreationDate"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8497</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasLeaveTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasGameSaveTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8487</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasRuleDescription"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasGroupDescription"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8486</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasPostContent"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasContentURL"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8454</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#associatedWithPost"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#MCSS:associatedWithCommentedPost"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8411</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasSessionID"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasSessionExpire"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8402</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#associatedWithAwardingUser"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#MCSS:associatedWithUser"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8379</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#AnonymousMode"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:AnonymousMode"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8334</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasPinTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasInteractionTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8306</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#DigestSummary"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:DigestSummary"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8302</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#ModerationQueue"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:ModerationQueue"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.827</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#ModeratorStatistics"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:ModeratorStatistics"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8232</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasCommentTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasEventEndTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8198</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#ReputationSystem"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:ReputationSystem"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8196</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasActionType"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasGameConnectionType"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8181</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#NotificationPreferences"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:NotificationPreferences"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8147</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#ScheduledPost"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:ScheduledPost"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8147</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#TrendingContent"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:TrendingContent"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8144</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasAvatarURL"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasPlayerAvatar"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8118</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasDeviceID"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasEventDeviceInfo"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8103</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasMuteTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasEventUpdateTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8102</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#SpotlightCommunity"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:SpotlightCommunity"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8067</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasCommunityDescription"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasChannelDescription"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8067</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#LanguageSettings"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:LanguageSettings"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8023</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#donatesTo"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#donatedBy"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7968</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#FlairSearch"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:FlairSearch"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7911</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#messageSender"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:sendsMessageTo"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.785</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#ProfileSettings"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:ProfileSettings"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7848</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasReportTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasEventStartTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.784</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasSearchKeyword"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasSearchData"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7835</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#createsPost"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#createAvatarPost"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7818</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#postsScheduledPost"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:publishesScheduledPost"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7816</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasSharesCount"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasPostCount"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7814</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#SecuritySettings"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:SecuritySettings"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7804</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasDraftCommentsCount"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasEventCount"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7775</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasGroupCreatedDate"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasGroupCategory"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7743</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#canEditAvatar"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#editsAvatar"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7721</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#enablesSubscriptionFor"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:enablesNotificationsFor"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7703</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#ContentInteraction"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:ContentInteraction"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7682</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#NotificationSettings"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:NotificationSettings"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7638</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasPostTitle"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:postCount"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7633</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasPostMedia"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasPostReach"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7633</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasJoinTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasEventCreationTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7615</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasReplyTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasLastActivityTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7504</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasInAppNotificationEnabled"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:notificationStatus"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7489</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasAwardTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasAvatarCreationTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7364</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasReplyText"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasCaptionText"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7358</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasRevenueAmount"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:eventCount"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7347</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasCommunityName"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasLastName"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7321</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasShareTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasInviteAcceptanceTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7239</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasLogoutTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasInvitationSentTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7197</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#downvotesContent"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:dislikedContent"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7143</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#associatedWithContent"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#uploadsContent"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7143</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#isFiledBy"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#isFollowedByAccount"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7075</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasBlockTimestamp"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasGroupCreationTimestamp"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7074</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasActiveMembersCount"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasMembershipRequestsCount"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7033</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasPushNotificationEnabled"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:isNotificationSoundEnabled"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6955</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#createdByUser"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:reactedBy"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6916</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#unlocksPost"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:schedulesPost"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6897</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#Accessibility"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:Accessibility"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.689</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#removesComment"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:likesComment"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.689</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#Flair"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:Flair"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6852</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#Moderator"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:Moderator"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6747</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasMessageStatus"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasMembershipApprovalStatus"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.674</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#PushNotifications"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:PushNotification"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6716</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#ModeratorActions"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:ModeratorAction"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6649</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasMessageIP"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasIpAddress"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.659</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasDraftSharesCount"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasPhotoCount"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.658</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#CrossPost"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:CrossPostAction"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6568</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasGroupMessageContent"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasGroupName"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6561</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#FlairSystem"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:FlairSystemFeature"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6558</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#Post"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:Post"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6501</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#isAnonymousModeEnabled"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasAnonymousModeStatus"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6492</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#SearchFeatures"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:SearchFeature"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6489</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#AdvancedSearch"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:AdvancedSearchFeature"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6477</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#TrendSearch"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:TrendSearchFeature"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6477</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#SearchFilter"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:SearchFilterFeature"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6477</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#bookmarksContent"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:locksContent"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6469</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasDonationAmount"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasLocation"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.64</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#AccountDeletion"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:AccountDeletionActivity"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6391</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#SearchAndDiscovery"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:SearchAndDiscoveryFeature"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.639</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#User"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:User"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6385</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#managesRules"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#managesChannel"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6378</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#mutesUser"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#attributedToUser"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6323</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#Bookmark"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#MP:Bookmark"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6313</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#addTagsOnContent"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#commentsOnContent"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6308</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#upvotesContent"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#likedContent"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.625</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#CommunityModeration"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:CommunityModerationAction"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6247</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#requestsAccountDeletion"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#deletedAccount"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6239</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasRegistrationDate"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:hasModeration"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6223</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasGroupMessageFrequency"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasGroupRules"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6208</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#pinsPost"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:pinsItem"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.62</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#Community"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:Community"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6157</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasPollQuestion"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasPostCaption"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.61</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#CommunityCreation"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:CommunityCreationActivity"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6078</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#CommunityEntry"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#OFB:CommunityEntryActivity"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6078</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#hasPasswordHash"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#hasProfilePictureHash"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6056</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.w3.org/2002/07/owl#Content"/>
+			<entity2 rdf:resource="http://example.org/genosis.owl#Global:Content"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6004</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+</Alignment>
+</rdf:RDF>

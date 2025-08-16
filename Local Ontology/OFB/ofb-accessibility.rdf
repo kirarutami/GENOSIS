@@ -1,0 +1,72 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Accessibility Class -->
+    <owl:Class rdf:about="#Accessibility">
+        <rdfs:comment>Represents accessibility-related features for user experience optimization.</rdfs:comment>
+    </owl:Class>
+
+    <!-- AccessibilitySettings Subclass -->
+    <owl:Class rdf:about="#AccessibilitySettings">
+        <rdfs:subClassOf rdf:resource="#Accessibility"/>
+        <rdfs:comment>Represents display-related accessibility settings.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: adjustsDisplayPreferences -->
+    <owl:ObjectProperty rdf:about="#adjustsDisplayPreferences">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#AccessibilitySettings"/>
+        <rdfs:comment>Links a user to their display preferences in accessibility settings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasFontSize -->
+    <owl:DatatypeProperty rdf:about="#hasFontSize">
+        <rdfs:domain rdf:resource="#AccessibilitySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the font size setting for accessibility.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasThemePreference -->
+    <owl:DatatypeProperty rdf:about="#hasThemePreference">
+        <rdfs:domain rdf:resource="#AccessibilitySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the theme preference for accessibility (e.g., light, dark).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasContrastSetting -->
+    <owl:DatatypeProperty rdf:about="#hasContrastSetting">
+        <rdfs:domain rdf:resource="#AccessibilitySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the contrast setting for accessibility (e.g., high, low).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- LanguageSettings Subclass -->
+    <owl:Class rdf:about="#LanguageSettings">
+        <rdfs:subClassOf rdf:resource="#Accessibility"/>
+        <rdfs:comment>Represents user language preferences for accessibility.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: choosesLanguagePreference -->
+    <owl:ObjectProperty rdf:about="#choosesLanguagePreference">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#LanguageSettings"/>
+        <rdfs:comment>Links a user to their preferred language settings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasPreferredLanguage -->
+    <owl:DatatypeProperty rdf:about="#hasPreferredLanguage">
+        <rdfs:domain rdf:resource="#LanguageSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the preferred language of the user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasAvailableLanguages -->
+    <owl:DatatypeProperty rdf:about="#hasAvailableLanguages">
+        <rdfs:domain rdf:resource="#LanguageSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Lists available languages as an array.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

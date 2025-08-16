@@ -1,0 +1,197 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas DirectMessages -->
+    <owl:Class rdf:about="#DirectMessages"/>
+
+    <!-- Individu di dalam DirectMessages -->
+    <owl:NamedIndividual rdf:about="#ViewMessages">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view their direct messages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas SendMessage -->
+    <owl:Class rdf:about="#SendMessage">
+        <rdfs:subClassOf rdf:resource="#DirectMessages"/>
+    </owl:Class>
+
+    <!-- Individu di dalam SendMessage -->
+    <owl:NamedIndividual rdf:about="#SendTextMessage">
+        <rdf:type rdf:resource="#SendMessage"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can send text messages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SendPhotoVideoMessage">
+        <rdf:type rdf:resource="#SendMessage"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can send photo or video messages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SendVoiceMessage">
+        <rdf:type rdf:resource="#SendMessage"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can send voice messages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SendGIFMessage">
+        <rdf:type rdf:resource="#SendMessage"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can send GIFs in messages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SendStickerMessage">
+        <rdf:type rdf:resource="#SendMessage"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can send stickers in messages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ShareFiles">
+        <rdf:type rdf:resource="#SendMessage"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can send files through messages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Individu MessageRequests -->
+    <owl:NamedIndividual rdf:about="#MessageRequests">
+        <rdf:type rdf:resource="#DirectMessages"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage message requests.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas GroupMessaging -->
+    <owl:Class rdf:about="#GroupMessaging">
+        <rdfs:subClassOf rdf:resource="#DirectMessages"/>
+    </owl:Class>
+
+    <!-- Individu di dalam GroupMessaging -->
+    <owl:NamedIndividual rdf:about="#CreateGroupChat">
+        <rdf:type rdf:resource="#GroupMessaging"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can create group chats for messaging.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AddRemoveMembers">
+        <rdf:type rdf:resource="#GroupMessaging"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add or remove members from group chats.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SetGroupChatName">
+        <rdf:type rdf:resource="#GroupMessaging"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can set or change the name of group chats.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SetGroupChatPhoto">
+        <rdf:type rdf:resource="#GroupMessaging"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can set or change the photo of group chats.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ManageGroupChatSettings">
+        <rdf:type rdf:resource="#GroupMessaging"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage settings for group chats, including notifications.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas MessageNotifications -->
+    <owl:Class rdf:about="#MessageNotifications">
+        <rdfs:subClassOf rdf:resource="#DirectMessages"/>
+    </owl:Class>
+
+    <!-- Individu di dalam MessageNotifications -->
+    <owl:NamedIndividual rdf:about="#EnableDisableNotifications">
+        <rdf:type rdf:resource="#MessageNotifications"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can enable or disable notifications for messages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MuteConversations">
+        <rdf:type rdf:resource="#MessageNotifications"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can mute notifications for specific conversations.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ArchiveConversations">
+        <rdf:type rdf:resource="#MessageNotifications"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can archive conversations to hide them from the main inbox.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DeleteConversations">
+        <rdf:type rdf:resource="#MessageNotifications"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can delete entire conversations.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MarkAsUnread">
+        <rdf:type rdf:resource="#MessageNotifications"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can mark conversations as unread.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ReactToMessages">
+        <rdf:type rdf:resource="#MessageNotifications"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can react to messages with emojis.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ForwardMessages">
+        <rdf:type rdf:resource="#MessageNotifications"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can forward messages to other users or group chats.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SearchMessages">
+        <rdf:type rdf:resource="#MessageNotifications"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can search for specific messages within conversations.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#StarMessages">
+        <rdf:type rdf:resource="#MessageNotifications"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can star important messages for easy access later.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#EnableVanishMode">
+        <rdf:type rdf:resource="#MessageNotifications"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can enable vanish mode for disappearing messages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas MessagePrivacy -->
+    <owl:Class rdf:about="#MessagePrivacy">
+        <rdfs:subClassOf rdf:resource="#DirectMessages"/>
+    </owl:Class>
+
+    <!-- Individu di dalam MessagePrivacy -->
+    <owl:NamedIndividual rdf:about="#LastSeenStatus">
+        <rdf:type rdf:resource="#MessagePrivacy"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage who can see their last seen status.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ReadReceipts">
+        <rdf:type rdf:resource="#MessagePrivacy"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can enable or disable read receipts for messages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TypingIndicators">
+        <rdf:type rdf:resource="#MessagePrivacy"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can enable or disable typing indicators in conversations.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas VideoCalls -->
+    <owl:Class rdf:about="#VideoCalls">
+        <rdfs:subClassOf rdf:resource="#DirectMessages"/>
+    </owl:Class>
+
+    <!-- Individu di dalam VideoCalls -->
+    <owl:NamedIndividual rdf:about="#OneOnOneVideoCall">
+        <rdf:type rdf:resource="#VideoCalls"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can start one-on-one video calls.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#GroupVideoCall">
+        <rdf:type rdf:resource="#VideoCalls"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can start group video calls.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas VoiceCalls -->
+    <owl:Class rdf:about="#VoiceCalls">
+        <rdfs:subClassOf rdf:resource="#DirectMessages"/>
+    </owl:Class>
+
+    <!-- Individu di dalam VoiceCalls -->
+    <owl:NamedIndividual rdf:about="#OneOnOneVoiceCall">
+        <rdf:type rdf:resource="#VoiceCalls"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can start one-on-one voice calls.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#GroupVoiceCall">
+        <rdf:type rdf:resource="#VoiceCalls"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can start group voice calls.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

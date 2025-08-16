@@ -1,0 +1,67 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Gaming -->
+    <owl:Class rdf:about="#Gaming"/>
+
+    <!-- Sub-kelas PlayGames -->
+    <owl:Class rdf:about="#PlayGames">
+        <rdfs:subClassOf rdf:resource="#Gaming"/>
+    </owl:Class>
+
+    <!-- Sub-kelas GameActions di dalam PlayGames -->
+    <owl:Class rdf:about="#GameActions">
+        <rdfs:subClassOf rdf:resource="#PlayGames"/>
+    </owl:Class>
+
+    <!-- Individu di dalam GameActions -->
+    <owl:NamedIndividual rdf:about="#Save">
+        <rdf:type rdf:resource="#GameActions"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can save game progress.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Share">
+        <rdf:type rdf:resource="#GameActions"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can share game activities.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Connect">
+        <rdf:type rdf:resource="#GameActions"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can connect with other players.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas PlayerInfo -->
+    <owl:Class rdf:about="#PlayerInfo">
+        <rdfs:subClassOf rdf:resource="#Gaming"/>
+    </owl:Class>
+
+    <!-- Sub-kelas EditPlayerInfo di dalam PlayerInfo -->
+    <owl:Class rdf:about="#EditPlayerInfo">
+        <rdfs:subClassOf rdf:resource="#PlayerInfo"/>
+    </owl:Class>
+
+    <!-- Individu di dalam EditPlayerInfo -->
+    <owl:NamedIndividual rdf:about="#PlayerName">
+        <rdf:type rdf:resource="#EditPlayerInfo"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can edit player name.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Avatar">
+        <rdf:type rdf:resource="#EditPlayerInfo"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can edit player avatar.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas Notifications -->
+    <owl:Class rdf:about="#Notifications">
+        <rdfs:subClassOf rdf:resource="#Gaming"/>
+    </owl:Class>
+
+    <!-- Individu di dalam Notifications -->
+    <owl:NamedIndividual rdf:about="#GameNotifications">
+        <rdf:type rdf:resource="#Notifications"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage game notifications.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

@@ -1,0 +1,265 @@
+Berikut adalah representasi hierarkis dari kelas-kelas dalam Ontologi Forensik Media Sosial Global (GSMFO), berdasarkan definisi rdfs:subClassOf yang ada di Canvas:owl:Thing (Kelas Puncak)
+|-- Global:UserAccount (Akun Pengguna Global)
+|   |-- MCSS:User
+|   |-- MP:User
+|   |-- OFB:User
+|   |-- OSN:User
+|   |   |-- OSN:UserProfile
+|-- Global:Content (Konten Global)
+|   |-- Global:UserPost (Postingan Pengguna Global)
+|   |   |-- MCSS:Post
+|   |   |-- MP:Post
+|   |   |-- OFB:Post
+|   |   |-- OSN:Posts
+|   |   |-- OSN:BirthdayPosts
+|   |   |-- OSN:AvatarPosts
+|   |   |-- OSN:PhotoVideo
+|   |   |-- MCSS:VideoPost
+|   |   |-- MCSS:ShortVideoPost
+|   |   |-- MCSS:LivePost
+|   |   |-- OFB:ScheduledPost
+|   |   |-- OFB:CrossPost
+|   |   |-- OFB:Draft
+|   |   |-- OFB:AnonymousMode (*Catatan: Juga subkelas Content*)
+|   |-- Global:VideoContent (Konten Video Global)
+|   |   |-- MCSS:Video
+|   |   |-- MCSS:ShortVideo
+|   |   |-- OSN:VideoContent
+|   |   |-- OSN:ReelVideo
+|   |   |-- OSN:ShortVideoContent
+|   |-- Global:LiveContent (Konten Langsung Global)
+|   |   |-- MCSS:Live
+|   |   |-- OSN:LiveVideo
+|   |-- Global:Poll (Polling Global)
+|   |   |-- OFB:Polls
+|   |   |-- OSN:Polls
+|   |-- OFB:Content (*Catatan: Langsung di bawah Global:Content*)
+|   |-- MCSS:Content (*Catatan: Langsung di bawah Global:Content*)
+|   |-- OFB:TagContent
+|   |-- OFB:FlairSystem
+|   |-- MCSS:SuperChat
+|-- Global:ContentInteraction (Interaksi Konten Global)
+|   |-- Global:SharingAction (Aksi Berbagi Global)
+|   |   |-- MCSS:Share
+|   |   |-- MP:ReblogRetweetPost
+|   |   |-- OFB:CrossPost (*Catatan: Juga subkelas UserPost*)
+|   |   |-- OFB:ShareRepost
+|   |-- Global:CommentOrReply (Komentar atau Balasan Global)
+|   |   |-- MCSS:Comment
+|   |   |-- MP:Comment
+|   |   |-- OFB:Comment
+|   |   |-- OFB:ReplyToComments
+|   |   |-- OSN:EmojiComment
+|   |   |-- OSN:GIFComment
+|   |   |-- OSN:TextComment
+|   |-- Global:Reaction (Reaksi Global)
+|   |   |-- MCSS:Dislike
+|   |   |-- MCSS:Like
+|   |   |-- MP:Likes
+|   |   |-- OFB:Like
+|   |   |-- OSN:Like
+|   |   |-- OSN:LikesReactions (*Catatan: Konsep umum OSN*)
+|   |-- Global:ReportAction (Aksi Laporan Global)
+|   |   |-- MCSS:Report
+|   |   |-- MP:Report
+|   |-- MCSS:ContentInteraction (*Catatan: Langsung di bawah Global:ContentInteraction*)
+|   |-- MP:ContentInteraction (*Catatan: Langsung di bawah Global:ContentInteraction*)
+|   |-- OFB:ContentInteraction (*Catatan: Langsung di bawah Global:ContentInteraction*)
+|   |-- OSN:ContentInteraction (*Catatan: Langsung di bawah Global:ContentInteraction*)
+|   |-- OFB:Engagement (*Catatan: Langsung di bawah Global:ContentInteraction*)
+|   |   |-- OFB:UpvoteDownvote
+|   |   |-- OFB:Like (*Catatan: Juga di bawah Global:Reaction*)
+|   |   |-- OFB:ReplyToComments (*Catatan: Juga di bawah Global:CommentOrReply*)
+|   |-- MCSS:InteractionType (*Catatan: Langsung di bawah Global:ContentInteraction*)
+|   |   |-- MCSS:Like (*Catatan: Juga di bawah Global:Reaction*)
+|   |   |-- MCSS:Comment (*Catatan: Juga di bawah Global:CommentOrReply*)
+|   |   |-- MCSS:Share (*Catatan: Juga di bawah Global:SharingAction*)
+|   |   |-- MCSS:Dislike (*Catatan: Juga di bawah Global:Reaction*)
+|   |   |-- MCSS:Report (*Catatan: Juga di bawah Global:ReportAction*)
+|   |   |-- MCSS:WatchLater
+|   |   |-- MCSS:Gift
+|   |-- OFB:Bookmark
+|   |-- OFB:GiveAwards
+|   |-- OFB:BlockUnblockUser
+|   |-- OFB:Mute
+|   |-- OFB:Topic
+|   |-- OFB:FollowTopics
+|   |-- OFB:PinPosts
+|-- Global:Notification (Notifikasi Global)
+|   |-- MCSS:Notifications
+|   |-- MP:Notifications
+|   |-- OFB:Notifications
+|   |-- OSN:GroupNotifications
+|   |-- OSN:MessageNotifications
+|   |-- OSN:VideoNotifications
+|   |-- MCSS:HideNotifications (*Catatan: Lebih ke aksi?*)
+|   |-- OFB:PushNotifications
+|   |-- OFB:NotificationDevice
+|   |-- OFB:NotificationPreferences
+|   |-- OFB:ActivitySummaries
+|   |   |-- OFB:WeeklyDigests
+|   |-- OFB:DigestSummary
+|-- Global:NotificationSettings (Pengaturan Notifikasi Global)
+|   |-- MCSS:NotificationSettings
+|   |-- MP:NotificationSettings
+|   |-- OFB:NotificationSettings
+|   |-- OSN:NotificationSettings
+|-- Global:ModerationAction (Aksi Moderasi Global)
+|   |-- OFB:ModeratorActions
+|   |-- OSN:ModerationActions
+|-- Global:ModeratorRole (Peran Moderator Global)
+|   |-- OFB:Moderator
+|   |-- OSN:Moderator
+|-- Global:DirectMessage (Pesan Langsung Global)
+|   |-- MCSS:DirectMessages
+|   |-- OFB:DirectMessaging
+|   |-- OSN:DirectMessages
+|   |-- Global:GroupMessage (Pesan Grup Global)
+|   |   |-- MCSS:GroupMessage
+|   |-- MCSS:MessageContent
+|   |-- MCSS:MessageActions
+|   |-- MCSS:AdvancedMessagingFeatures
+|   |-- MCSS:MessageAnalytics
+|-- Global:Page (Halaman Global)
+|   |-- OSN:Pages
+|   |-- OSN:PagesManagement
+|   |   |-- OSN:PagesSettings
+|   |-- OSN:PagesFeatures
+|   |-- OSN:PagesInsights
+|   |-- MCSS:NewsWatchPage (*Catatan: Perlu verifikasi apakah ini Page*)
+|-- Global:ProfileSettings (Pengaturan Profil Global)
+|   |-- MCSS:ProfileSettings
+|   |-- MP:ProfileSettings
+|   |-- OFB:ProfileSettings
+|   |-- OFB:AccountDeletion (*Catatan: Terkait pengaturan profil*)
+|   |-- OFB:Session (*Catatan: Terkait pengaturan profil/keamanan*)
+|-- Global:GroupFile (File Grup Global)
+|   |-- OSN:Files
+|-- Global:SearchFunctionality (Fungsionalitas Pencarian Global)
+|   |-- MCSS:Search
+|   |-- MCSS:SearchFunctionality
+|   |-- MP:SearchFunctionality
+|-- Global:Group (Grup Global)
+|   |-- OSN:Groups
+|   |-- OFB:Community (*Catatan: OFB menggunakan istilah Community*)
+|   |   |-- OFB:CommunityCreation
+|   |   |-- OFB:CommunityEntry
+|   |   |-- OFB:SpotlightCommunity
+|   |   |-- OFB:CommunityNotifications
+|   |   |-- OFB:ReputationSystem
+|   |   |   |-- OFB:CommunityReputation
+|   |   |   |-- OFB:Leaderboards
+|   |   |-- OFB:CommunityModeration
+|   |   |   |-- OFB:Moderator (*Catatan: Juga di bawah Global:ModeratorRole*)
+|   |   |   |-- OFB:ModeratorActions (*Catatan: Juga di bawah Global:ModerationAction*)
+|   |   |   |-- OFB:ModerationQueue
+|   |   |   |-- OFB:Reports
+|   |   |   |-- OFB:CommunitySettings
+|   |   |   |-- OFB:ModeratorStatistics
+|   |   |-- OFB:CommunityRules
+|-- Global:MarketplaceFeature (Fitur Marketplace Global)
+|   |-- MCSS:CreatorMarketplace
+|   |-- OSN:Marketplace
+|   |   |-- OSN:Listings
+|   |   |   |-- OSN:ListingDetails
+|   |   |-- OSN:ListingsManagement
+|   |   |-- OSN:MessageSeller
+|   |   |-- OSN:SellerInformation
+|-- Global:SecuritySettings (Pengaturan Keamanan Global)
+|   |-- OFB:SecuritySettings
+|   |-- OSN:SecuritySettings
+|-- Global:AccountSettings (Pengaturan Akun Global)
+|   |-- OSN:AccountSettings
+|   |   |-- OSN:PrivacySettings (*Catatan: Juga subkelas User*)
+|   |   |-- OSN:SecuritySettings (*Catatan: Juga subkelas User*)
+|   |   |-- OSN:DataUsageSettings
+|   |   |-- OSN:NotificationSettings (*Catatan: Juga subkelas Notifications, DirectMessages, User*)
+|   |   |-- OSN:AccountManagement
+|   |   |-- OSN:DeviceManagement
+|-- Global:MonetizationFeature (Fitur Monetisasi Global)
+|   |-- MCSS:Monetization
+|   |-- MP:Monetization
+|   |-- MCSS:Shopping
+|   |-- MCSS:Subscription (*Catatan: Juga subkelas Global:SubscriptionFeature*)
+|   |-- MCSS:CreatorMarketplace (*Catatan: Juga subkelas Global:MarketplaceFeature*)
+|   |-- OFB:RevenueGeneration
+|   |   |-- OFB:Subscription (*Catatan: Juga subkelas Global:SubscriptionFeature*)
+|   |   |-- OFB:AdRevenue
+|   |-- OFB:Donations
+|-- Global:SubscriptionFeature (Fitur Langganan Global)
+|   |-- MCSS:Subscription
+|   |-- MP:Subscription
+|   |-- OFB:Subscription
+|-- OSN:ContentCreation (*Catatan: Kelas aksi, bukan entitas konten*)
+|   |-- OSN:Posts (*Catatan: Juga subkelas Global:UserPost*)
+|   |-- OSN:Stories
+|   |   |-- OSN:StoryPhotoVideo
+|   |   |-- OSN:StoryText
+|   |   |-- OSN:StoryHighlights
+|   |   |-- OSN:HideFrom
+|   |   |-- OSN:CloseFriends
+|   |-- OSN:Reels (*Catatan: Juga subkelas Global:VideoContent*)
+|   |   |-- OSN:ReelVideo (*Catatan: Juga subkelas Global:VideoContent*)
+|   |   |-- OSN:ReelMusic
+|   |   |-- OSN:ReelEffects
+|   |   |-- OSN:ReelRemix
+|-- OSN:Gaming
+|   |-- OSN:PlayGames
+|   |-- OSN:PlayerInfo
+|-- OSN:MessengerKids
+|   |-- OSN:ChildInformation
+|   |-- OSN:ConnectKids
+|-- OSN:HelpSupport
+|-- OSN:ProfessionalAccess
+|   |-- OSN:MetaVerified
+|-- OSN:AlsoFromMeta
+|   |-- OSN:OtherApps
+|-- OSN:ActivityLog
+|-- OSN:Logout
+|-- MP:ContentCreation (*Catatan: Kelas aksi*)
+|-- MP:LiveInteractions
+|   |-- MP:LiveSpacesRooms
+|   |-- MP:UpcomingSessions
+|-- MP:DiscoveryAndSearch
+|   |-- MP:SearchFunctionality (*Catatan: Juga subkelas Global:SearchFunctionality*)
+|   |-- MP:ExploreSettings
+|-- MP:AccessibilityAndDisplay
+|-- MP:Community (*Catatan: Dipetakan ke Global:Group*)
+|-- MP:Drafts
+|-- MP:Lists
+|-- MP:Bookmarks
+|-- MP:FollowerRequests
+|-- MCSS:Search
+|   |-- MCSS:SearchFunctionality (*Catatan: Juga subkelas Global:SearchFunctionality*)
+|   |-- MCSS:SearchRecommendation
+|-- MCSS:NewsInformation
+|   |-- MCSS:NewsWatchPage (*Catatan: Perlu verifikasi apakah ini Page*)
+|   |-- MCSS:BreakingNews
+|   |-- MCSS:TopNews
+|-- OFB:SearchAndDiscovery
+|   |-- OFB:SearchFeatures
+|   |   |-- OFB:GlobalSearch
+|   |   |-- OFB:AdvancedSearch
+|   |   |-- OFB:TrendSearch
+|   |-- OFB:SearchFilter
+|   |-- OFB:TrendingContent
+|-- OFB:Recommendations
+|   |-- OFB:PersonalizedFeed
+|   |-- OFB:RecommendedContent
+|   |-- OFB:ExploreCategories
+|   |-- OFB:Category
+|   |-- OFB:FlairSearch
+|   |-- OFB:Flair
+|-- OFB:Messaging
+|   |-- OFB:DirectMessaging (*Catatan: Juga subkelas Global:DirectMessage*)
+|   |-- OFB:GroupMessaging (*Catatan: Terkait Global:GroupMessage*)
+|-- OFB:Accessibility
+|   |-- OFB:AccessibilitySettings
+|   |-- OFB:LanguageSettings
+|-- OFB:Analytics
+|   |-- OFB:StatsAndInsights
+|   |   |-- OFB:EngagementMetrics
+|   |   |-- OFB:CommunityMetrics
+|   |   |-- OFB:UserInsights
+
+Penjelasan Format:owl:Thing: Kelas dasar dalam OWL, semua kelas lain secara implisit adalah subkelasnya.Global:NamaKelas: Kelas global yang digeneralisasi. Label dalam kurung adalah terjemahan atau penjelasan singkat.|--: Menandakan hubungan subkelas (kelas di bawahnya adalah subkelas dari kelas di atasnya).NamaOntologi:NamaKelasAsli: Nama kelas asli dari ontologi lokal (OSN, MP, MCSS, OFB) yang dipetakan ke kelas global di atasnya.(*Catatan: ...): Komentar tambahan untuk klarifikasi, potensi ambiguitas, atau saran dari analisis sebelumnya.Hierarki ini mencoba mengikuti struktur logis berdasarkan konsep utama dan relasi subkelas yang terdeteksi, sambil tetap menunjukkan pemetaan dari kelas-kelas ontologi lokal Anda. Beberapa kelas mungkin muncul di beberapa tempat jika mereka merupakan subkelas dari lebih dari satu kelas induk dalam ontologi gabungan, atau jika pemetaan dari grup networkx sedikit berbeda dari struktur owlready2.

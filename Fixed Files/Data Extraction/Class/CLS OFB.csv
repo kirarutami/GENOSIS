@@ -1,0 +1,86 @@
+class,subClass,classComment,subClassComment
+User,ProfileSettings,Represents a user in the online forum or blog system.,Settings related to managing the user's profile.
+User,SecuritySettings,Represents a user in the online forum or blog system.,Settings related to managing the user's profile security.
+User,SubscriptionPlan,Represents a user in the online forum or blog system.,Represents a subscription plan for a user.
+User,NotificationSettings,Represents a user in the online forum or blog system.,Represents notification settings for a user.
+User,NotificationSettings,Represents a user in the online forum or blog system.,Represents settings related to notifications.
+User,AnonymousSession,Represents a user in the online forum or blog system.,Represents a session where the user operates in anonymous mode.
+User,AccountDeactivation,Represents a user in the online forum or blog system.,Represents a user's account deactivation process and state.
+ProfileSettings,AccountDeletion,Settings related to managing the user's profile.,Handles the process and properties related to account deletion.
+ProfileSettings,Session,Settings related to managing the user's profile.,"Handles session management, including logouts."
+NotificationSettings,PushNotifications,Represents notification settings for a user.,Represents push notification settings.
+NotificationSettings,PushNotifications,Represents settings related to notifications.,Represents push notification settings.
+NotificationSettings,EmailNotifications,Represents notification settings for a user.,Represents email notification settings.
+NotificationSettings,EmailNotifications,Represents settings related to notifications.,Represents email notification settings.
+NotificationSettings,InAppNotifications,Represents notification settings for a user.,Represents in-app notification settings.
+NotificationSettings,InAppNotifications,Represents settings related to notifications.,Represents in-app notification settings.
+Content,Post,"Represents all forms of user-generated content, including posts and drafts, within the platform.","Represents posts created by users, which may contain text, media, and other metadata."
+Content,TagContent,"Represents all forms of user-generated content, including posts and drafts, within the platform.",Represents content tagged by users with specific labels.
+Content,Polls,"Represents all forms of user-generated content, including posts and drafts, within the platform.",Represents polls created by users with questions and options for interaction.
+Content,FlairSystem,"Represents all forms of user-generated content, including posts and drafts, within the platform.",Represents a system for assigning flair labels to posts or users to provide additional context or categorization.
+Content,AnonymousMode,"Represents all forms of user-generated content, including posts and drafts, within the platform.",Represents the functionality of sharing content anonymously within a community.
+Post,Draft,"Represents posts created by users, which may contain text, media, and other metadata.","Represents drafts saved by users, which can be edited and later posted."
+Post,ScheduledPost,"Represents posts created by users, which may contain text, media, and other metadata.",Represents posts scheduled by users to be published at a future timestamp.
+Post,CrossPost,"Represents posts created by users, which may contain text, media, and other metadata.",Represents posts that are cross-posted from other communities or original posts.
+Community,CommunityCreation,"Represents an online community where users can join, follow, and interact with posts and rules.",Represents the creation process and properties of a community.
+Community,CommunityEntry,"Represents an online community where users can join, follow, and interact with posts and rules.",Represents the process and properties of joining or following a community.
+Community,CommunityRules,"Represents an online community where users can join, follow, and interact with posts and rules.",Represents rules or guidelines that govern behavior and content within a community.
+Community,CommunityRules,"Represents an online community where users can join, follow, and interact with posts and rules.",Represents the rules governing a community's content and behavior.
+Community,SpotlightCommunity,"Represents an online community where users can join, follow, and interact with posts and rules.",Represents communities featured in spotlight sections.
+Community,CommunityNotifications,"Represents an online community where users can join, follow, and interact with posts and rules.",Represents notification settings and preferences for a community.
+Community,ReputationSystem,"Represents an online community where users can join, follow, and interact with posts and rules.",Represents the reputation mechanisms within a community.
+Community,CommunityModeration,"Represents an online community where users can join, follow, and interact with posts and rules.","Represents moderation functionalities for a community, including moderators and their actions."
+ReputationSystem,CommunityReputation,Represents the reputation mechanisms within a community.,"Defines a community's reputation metrics, including karma points and levels."
+ReputationSystem,Leaderboards,Represents the reputation mechanisms within a community.,Represents leaderboards within the community.
+CommunityModeration,Moderator,"Represents moderation functionalities for a community, including moderators and their actions.",Represents a moderator assigned to a community with specific roles and permissions.
+CommunityModeration,ModeratorActions,"Represents moderation functionalities for a community, including moderators and their actions.",Represents the actions a moderator can perform in a community.
+CommunityModeration,ModerationQueue,"Represents moderation functionalities for a community, including moderators and their actions.",Represents a queue that contains flagged content for moderation.
+CommunityModeration,CommunityRules,"Represents moderation functionalities for a community, including moderators and their actions.",Represents rules or guidelines that govern behavior and content within a community.
+CommunityModeration,CommunityRules,"Represents moderation functionalities for a community, including moderators and their actions.",Represents the rules governing a community's content and behavior.
+CommunityModeration,Reports,"Represents moderation functionalities for a community, including moderators and their actions.",Represents user reports for violations in the community.
+CommunityModeration,CommunitySettings,"Represents moderation functionalities for a community, including moderators and their actions.","Represents settings for a community, including posting rules, banner, and flair."
+CommunityModeration,ModeratorStatistics,"Represents moderation functionalities for a community, including moderators and their actions.",Represents various statistics associated with a moderator's activity in the community.
+ContentInteraction,Engagement,"Represents all forms of user interactions with content, including voting, liking, and replying.",Represents various types of engagement actions performed on content.
+ContentInteraction,ShareRepost,"Represents all forms of user interactions with content, including voting, liking, and replying.",Represents sharing or reposting content to a community or other platforms.
+ContentInteraction,Bookmark,"Represents all forms of user interactions with content, including voting, liking, and replying.",Represents bookmarking content for later reference.
+ContentInteraction,GiveAwards,"Represents all forms of user interactions with content, including voting, liking, and replying.",Represents giving awards to content or users as recognition.
+ContentInteraction,BlockUnblockUser,"Represents all forms of user interactions with content, including voting, liking, and replying.",Represents blocking and unblocking actions between users.
+ContentInteraction,Mute,"Represents all forms of user interactions with content, including voting, liking, and replying.",Represents muting actions on users or topics.
+ContentInteraction,Topic,"Represents all forms of user interactions with content, including voting, liking, and replying.",Represents topics on forums
+ContentInteraction,FollowTopics,"Represents all forms of user interactions with content, including voting, liking, and replying.",Represents following topics actions.
+ContentInteraction,PinPosts,"Represents all forms of user interactions with content, including voting, liking, and replying.",Represents pinning actions for posts by users or communities.
+Engagement,UpvoteDownvote,Represents various types of engagement actions performed on content.,Represents upvote or downvote actions on content.
+Engagement,Like,Represents various types of engagement actions performed on content.,Represents a like action on content.
+Engagement,ReplyToComments,Represents various types of engagement actions performed on content.,Represents a reply to a comment action.
+Engagement,Comment,Represents various types of engagement actions performed on content.,Represents comments made by users on content.
+SearchAndDiscovery,SearchFeatures,Represents the overall structure for search and discovery functionalities.,Defines various search-related features.
+SearchAndDiscovery,SearchFilter,Represents the overall structure for search and discovery functionalities.,Represents filters used in advanced search queries.
+SearchAndDiscovery,TrendingContent,Represents the overall structure for search and discovery functionalities.,Represents content identified as trending based on user activities.
+SearchFeatures,GlobalSearch,Defines various search-related features.,Represents global search functionality for different targets.
+SearchFeatures,AdvancedSearch,Defines various search-related features.,Represents advanced search functionalities with additional filters.
+SearchFeatures,TrendSearch,Defines various search-related features.,Represents trends observed in user searches.
+Recommendations,PersonalizedFeed,Represents the system that provides recommendations to users.,Represents personalized recommendation feeds based on user activity and preferences.
+Recommendations,RecommendedContent,Represents the system that provides recommendations to users.,Represents the content recommended to a user.
+Recommendations,ExploreCategories,Represents the system that provides recommendations to users.,Represents category browsing features for exploring content.
+Recommendations,Category,Represents the system that provides recommendations to users.,Represents content categories available for exploration.
+Recommendations,FlairSearch,Represents the system that provides recommendations to users.,Represents the ability to search for content by specific flair tags.
+Recommendations,Flair,Represents the system that provides recommendations to users.,Represents flair tags associated with posts or content.
+Notifications,NotificationSettings,Represents notifications and their configurations.,Represents notification settings for a user.
+Notifications,NotificationSettings,Represents notifications and their configurations.,Represents settings related to notifications.
+Notifications,NotificationDevice,Represents notifications and their configurations.,Represents a device configured for push notifications.
+Notifications,NotificationPreferences,Represents notifications and their configurations.,Represents preferences for in-app notifications.
+Notifications,ActivitySummaries,Represents notifications and their configurations.,Represents activity summary notifications like digests.
+Notifications,DigestSummary,Represents notifications and their configurations.,Represents a summary of weekly activity digest.
+ActivitySummaries,WeeklyDigests,Represents activity summary notifications like digests.,Represents weekly digest activity summaries.
+Messaging,DirectMessaging,Represents the messaging functionality within the platform.,Represents one-on-one messaging interactions.
+Messaging,GroupMessaging,Represents the messaging functionality within the platform.,Represents group messaging interactions.
+Monetization,RevenueGeneration,Represents the monetization features on the platform.,Represents revenue generation methods such as subscriptions and ad revenue.
+Monetization,Donations,Represents the monetization features on the platform.,Represents donations made to creators or content.
+RevenueGeneration,Subscription,Represents revenue generation methods such as subscriptions and ad revenue.,Represents subscription-based revenue generation.
+RevenueGeneration,AdRevenue,Represents revenue generation methods such as subscriptions and ad revenue.,Represents revenue generated through advertisements.
+Accessibility,AccessibilitySettings,Represents accessibility-related features for user experience optimization.,Represents display-related accessibility settings.
+Accessibility,LanguageSettings,Represents accessibility-related features for user experience optimization.,Represents user language preferences for accessibility.
+Analytics,StatsAndInsights,"Represents analytics data and insights for content, users, and communities.",Represents statistical and insight data.
+StatsAndInsights,EngagementMetrics,Represents statistical and insight data.,Represents engagement metrics for content.
+StatsAndInsights,CommunityMetrics,Represents statistical and insight data.,"Represents metrics for communities, including growth and engagement."
+StatsAndInsights,UserInsights,Represents statistical and insight data.,Represents insights for users based on their drafts or contributions.

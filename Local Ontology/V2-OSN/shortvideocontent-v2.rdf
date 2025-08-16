@@ -1,0 +1,182 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas ShortVideoContent -->
+    <owl:Class rdf:about="#ShortVideoContent">
+        <rdfs:comment>Represents short video content created by the user, specifically reels.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas Reels -->
+    <owl:Class rdf:about="#Reels">
+        <rdfs:subClassOf rdf:resource="#ShortVideoContent"/>
+        <rdfs:subClassOf rdf:resource="#ContentCreation"/>
+        <rdfs:comment>Represents short-form video content (reels) created by the user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas untuk Reels -->
+    <owl:Class rdf:about="#ReelSettings">
+        <rdfs:subClassOf rdf:resource="#Reels"/>
+        <rdfs:comment>Settings related to the display and playback of reels.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for ReelSettings -->
+    <owl:DatatypeProperty rdf:about="#ClosedCaption">
+        <rdfs:domain rdf:resource="#ReelSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether closed captions are enabled for the reel.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#Quality">
+        <rdfs:domain rdf:resource="#ReelSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the video quality setting for the reel (e.g., 720p, 1080p).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#DataSaver">
+        <rdfs:domain rdf:resource="#ReelSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether data saver mode is enabled for the reel.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#PlaybackSpeed">
+        <rdfs:domain rdf:resource="#ReelSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the playback speed setting for the reel (e.g., 1.0, 1.5, 2.0).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for Reels -->
+
+    <owl:ObjectProperty rdf:about="#watchReels">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reels"/>
+        <rdfs:comment>Defines the relationship where a user watches a reel.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#followCreator">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reels"/>
+        <rdfs:comment>Defines the relationship where a user follows a creator of a reel.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#likeReactReels">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reels"/>
+        <rdfs:comment>Defines the relationship where a user likes or reacts to a reel.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#commentReels">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reels"/>
+        <rdfs:comment>Defines the relationship where a user comments on a reel.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#shareReels">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reels"/>
+        <rdfs:comment>Defines the relationship where a user shares a reel.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#saveReels">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reels"/>
+        <rdfs:comment>Defines the relationship where a user saves a reel for later viewing.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#copyLinkReels">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reels"/>
+        <rdfs:comment>Defines the relationship where a user copies the link to a reel.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#remixReels">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reels"/>
+        <rdfs:comment>Defines the relationship where a user creates a remix of a reel.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hideReels">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reels"/>
+        <rdfs:comment>Defines the relationship where a user hides a reel from view.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#reportReels">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reels"/>
+        <rdfs:comment>Defines the relationship where a user reports a reel for violating guidelines.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#muteReels">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Reels"/>
+        <rdfs:comment>Defines the relationship where a user mutes the sound of a reel.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Karakteristik untuk Object Properties -->
+    <owl:FunctionalProperty rdf:about="#watchReels"/>
+    <owl:FunctionalProperty rdf:about="#saveReels"/>
+    <owl:FunctionalProperty rdf:about="#remixReels"/>
+
+    <owl:AsymmetricProperty rdf:about="#likeReactReels"/>
+    <owl:AsymmetricProperty rdf:about="#hideReels"/>
+    <owl:AsymmetricProperty rdf:about="#remixReels"/>
+
+    <!-- Disjointness for Reels and ReelSettings -->
+    <owl:Class rdf:about="#Reels">
+        <rdfs:subClassOf rdf:resource="#ShortVideoContent"/>
+        <rdfs:subClassOf rdf:resource="#ContentCreation"/>
+        <owl:disjointWith rdf:resource="#ReelSettings"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ReelSettings">
+        <rdfs:subClassOf rdf:resource="#Reels"/>
+        <owl:disjointWith rdf:resource="#Reels"/>
+    </owl:Class>
+
+    <!-- Disjointness for User Activities on Reels -->
+    <owl:ObjectProperty rdf:about="#watchReels">
+        <owl:disjointWith rdf:resource="#likeReactReels"/>
+        <owl:disjointWith rdf:resource="#commentReels"/>
+        <owl:disjointWith rdf:resource="#shareReels"/>
+        <owl:disjointWith rdf:resource="#saveReels"/>
+        <owl:disjointWith rdf:resource="#copyLinkReels"/>
+        <owl:disjointWith rdf:resource="#remixReels"/>
+        <owl:disjointWith rdf:resource="#hideReels"/>
+        <owl:disjointWith rdf:resource="#reportReels"/>
+        <owl:disjointWith rdf:resource="#muteReels"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#likeReactReels">
+        <owl:disjointWith rdf:resource="#watchReels"/>
+        <owl:disjointWith rdf:resource="#commentReels"/>
+        <owl:disjointWith rdf:resource="#shareReels"/>
+        <owl:disjointWith rdf:resource="#saveReels"/>
+        <owl:disjointWith rdf:resource="#copyLinkReels"/>
+        <owl:disjointWith rdf:resource="#remixReels"/>
+        <owl:disjointWith rdf:resource="#hideReels"/>
+        <owl:disjointWith rdf:resource="#reportReels"/>
+        <owl:disjointWith rdf:resource="#muteReels"/>
+    </owl:ObjectProperty>
+
+    <!-- Additional Disjointness for other activities -->
+    <owl:ObjectProperty rdf:about="#commentReels">
+        <owl:disjointWith rdf:resource="#watchReels"/>
+        <owl:disjointWith rdf:resource="#likeReactReels"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#shareReels">
+        <owl:disjointWith rdf:resource="#watchReels"/>
+        <owl:disjointWith rdf:resource="#likeReactReels"/>
+        <owl:disjointWith rdf:resource="#commentReels"/>
+    </owl:ObjectProperty>
+
+
+
+</rdf:RDF>

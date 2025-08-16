@@ -1,0 +1,111 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Class: Search -->
+    <owl:Class rdf:about="#Search">
+        <rdfs:comment>Represents search functionalities and recommendations within the system.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-class: SearchFunctionality -->
+    <owl:Class rdf:about="#SearchFunctionality">
+        <rdfs:subClassOf rdf:resource="#Search"/>
+        <rdfs:comment>Handles direct search actions performed by users.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for SearchFunctionality -->
+    <owl:ObjectProperty rdf:about="#searchesForContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchFunctionality"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user searches for specific content using search functionality.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#deletesSearchHistory">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchFunctionality"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user deletes their search history.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for SearchFunctionality -->
+    <owl:DatatypeProperty rdf:about="#hasSearchKeyword">
+        <rdfs:domain rdf:resource="#SearchFunctionality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the keyword used in a search action.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-class: SearchRecommendation -->
+    <owl:Class rdf:about="#SearchRecommendation">
+        <rdfs:subClassOf rdf:resource="#Search"/>
+        <rdfs:comment>Handles recommendations generated based on user activity and preferences.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for SearchRecommendation -->
+    <owl:ObjectProperty rdf:about="#viewsRecommendationsBasedOnWatchHistory">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchRecommendation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user views recommendations based on their watch history.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#viewsRecommendationsBasedOnSearchHistory">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchRecommendation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user views recommendations based on their search history.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#viewsRecommendationsBasedOnSubscriptions">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchRecommendation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user views recommendations based on their subscriptions.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#viewsRecommendationsBasedOnLikes">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchRecommendation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user views recommendations based on their likes.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#viewsRecommendationsBasedOnDislikes">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchRecommendation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user views recommendations based on their dislikes.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#editsRecommendations">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchRecommendation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user edits their recommendation preferences.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#pausesRecommendations">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchRecommendation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user pauses their recommendations.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#providesSurveyFeedbackFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SearchRecommendation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user provides feedback for their recommendations via a survey.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property for SearchRecommendation -->
+    <owl:DatatypeProperty rdf:about="#hasRecommendationAlgorithm">
+        <rdfs:domain rdf:resource="#SearchRecommendation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the algorithm used for generating recommendations.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

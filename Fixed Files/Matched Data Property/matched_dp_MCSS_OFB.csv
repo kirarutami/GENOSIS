@@ -1,0 +1,99 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+MCSS:hasCommentText,OFB:hasCommentText,100.0,Stores the text of a comment.,Stores the text of a comment.
+MCSS:hasCommentTimestamp,OFB:hasCommentTimestamp,100.0,Records the timestamp when a comment interaction occurred.,Records the timestamp when a comment was made.
+MCSS:hasDescription,OFB:hasDescription,100.0,Stores the description of the video.,Provides a description for the community.
+MCSS:hasEmail,OFB:hasEmail,100.0,The email address associated with the user.,The email address associated with the user account.
+MCSS:hasLikeTimestamp,OFB:hasLikeTimestamp,100.0,Records the timestamp when a like interaction occurred.,Records the timestamp when a like was made.
+MCSS:hasMessageStatus,OFB:hasMessageStatus,100.0,"Represents the status of the message, such as sent, delivered, or read.","Represents the status of a direct message (e.g., sent, delivered, read)."
+MCSS:hasPasswordHash,OFB:hasPasswordHash,100.0,Hashed password of the user.,The hashed password of the user.
+MCSS:hasPhoneNumber,OFB:hasPhoneNumber,100.0,The phone number associated with the user.,The phone number associated with the user account.
+MCSS:hasRecommendationAlgorithm,OFB:hasRecommendationAlgorithm,100.0,Stores the algorithm used for generating recommendations.,Indicates the algorithm used to generate recommendations.
+MCSS:hasReportReason,OFB:hasReportReason,100.0,Indicates the reason for reporting specific content.,"Specifies the reason for filing the report (e.g., Spam, Harassment, Policy Violation)."
+MCSS:hasReportTimestamp,OFB:hasReportTimestamp,100.0,Records the timestamp when a report interaction occurred.,Records the timestamp when the report was filed.
+MCSS:hasSearchKeyword,OFB:hasSearchKeyword,100.0,Stores the keyword used in a search action.,Stores the keyword used in a search query.
+MCSS:hasShareTimestamp,OFB:hasShareTimestamp,100.0,Records the timestamp when a share interaction occurred.,Records the timestamp when content was shared.
+MCSS:hasSubscriptionBenefits,OFB:hasSubscriptionBenefits,100.0,Describes the benefits associated with a subscription.,Describes the benefits included in the subscription.
+MCSS:hasTimestamp,OFB:hasTimestamp,100.0,Represents the timestamp of when the message was sent.,Records the date and time when the user action was performed.
+MCSS:hasUsername,OFB:hasUsername,100.0,The username chosen by the user.,The username of the user.
+MCSS:hasCommentCount,OFB:hasCommentsCount,96.77,Represents the number of comments on the video.,Represents the total number of comments for a content item.
+MCSS:hasViewCount,OFB:hasViewsCount,96.0,Represents the number of views the video has received.,Represents the total number of views for a content item.
+MCSS:hasDislikeTimestamp,OFB:hasLikeTimestamp,91.43,Records the timestamp when a dislike interaction occurred.,Records the timestamp when a like was made.
+MCSS:amount,OFB:hasDonationAmount,90.0,The amount donated in the SuperChat.,Specifies the amount donated.
+MCSS:amount,OFB:hasRevenueAmount,90.0,The amount donated in the SuperChat.,Represents the total revenue generated from ads.
+MCSS:donationTime,OFB:hasDonationTimestamp,90.0,The timestamp when the donation was made.,Specifies the timestamp of the donation.
+MCSS:hasEmail,OFB:hasEmailFrequency,90.0,The email address associated with the user.,Indicates the frequency of email notifications.
+MCSS:hasEmail,OFB:hasEmailNotificationEnabled,90.0,The email address associated with the user.,Indicates whether email notifications are enabled for a user.
+MCSS:hasTimestamp,OFB:hasPinTimestamp,88.89,Represents the timestamp of when the message was sent.,Records the timestamp when a post was pinned.
+MCSS:hasDescription,OFB:hasRuleDescription,87.5,Stores the description of the video.,Provides a textual description of a specific community rule.
+MCSS:hasAccountCreationDate,OFB:hasCommunityCreationDate,86.96,The date and time when the user's account was created.,Records the date and time the community was created.
+MCSS:hasGiftTimestamp,OFB:hasTimestamp,85.71,Records the timestamp when a gift was sent during a live session.,Records the date and time when the user action was performed.
+MCSS:hasLikeTimestamp,OFB:hasTimestamp,85.71,Records the timestamp when a like interaction occurred.,Records the date and time when the user action was performed.
+MCSS:hasReportTimestamp,OFB:hasReplyTimestamp,85.71,Records the timestamp when a report interaction occurred.,Records the timestamp when a reply was made.
+MCSS:hasShareTimestamp,OFB:hasSearchTimestamp,85.71,Records the timestamp when a share interaction occurred.,Records the timestamp of a search query.
+MCSS:hasTimestamp,OFB:hasJoinTimestamp,85.71,Represents the timestamp of when the message was sent.,Records the timestamp of when a user joined the community.
+MCSS:hasTimestamp,OFB:hasLikeTimestamp,85.71,Represents the timestamp of when the message was sent.,Records the timestamp when a like was made.
+MCSS:hasTimestamp,OFB:hasMuteTimestamp,85.71,Represents the timestamp of when the message was sent.,Records the timestamp when a topic or user was muted.
+MCSS:hasLikeTimestamp,OFB:hasBlockTimestamp,84.85,Records the timestamp when a like interaction occurred.,Records the timestamp when a user was blocked.
+MCSS:hasLikeTimestamp,OFB:hasLeaveTimestamp,84.85,Records the timestamp when a like interaction occurred.,Specifies the timestamp when a user left the group chat.
+MCSS:hasShortDescription,OFB:hasDescription,84.85,Stores the description of the short video.,Provides a description for the community.
+MCSS:hasPostIP,OFB:hasPostingRules,84.71,IP address used to create the short video post.,Specifies the rules for posting in the community.
+MCSS:hasSubscriptionStatus,OFB:hasSubscriptionStartDate,84.44,Indicates whether the user has an active subscription.,Records the start date of a user's subscription.
+MCSS:hasGiftTimestamp,OFB:hasPinTimestamp,83.87,Records the timestamp when a gift was sent during a live session.,Records the timestamp when a post was pinned.
+MCSS:hasLikeTimestamp,OFB:hasPinTimestamp,83.87,Records the timestamp when a like interaction occurred.,Records the timestamp when a post was pinned.
+MCSS:hasCommentCount,OFB:hasDraftCommentsCount,83.33,Represents the number of comments on the video.,Represents the number of comments on a user's draft.
+MCSS:hasDeviceInfo,OFB:hasDeviceID,83.33,Stores the device information of the user device who gave a comment.,Represents the unique identifier of the notification device.
+MCSS:hasReportTimestamp,OFB:hasUpvoteTimestamp,83.33,Records the timestamp when a report interaction occurred.,Records the timestamp when an upvote was made.
+MCSS:hasShareTimestamp,OFB:hasMessageTimestamp,83.33,Records the timestamp when a share interaction occurred.,Specifies the timestamp of a direct message.
+MCSS:hasTwoFactorAuthenticationStatus,OFB:hasTwoFactorAuthenticationEnabled,83.08,Status of two-factor authentication for the user (enabled/disabled).,Indicates if two-factor authentication is enabled for the user.
+MCSS:hasSubscriptionBenefits,OFB:hasSubscriptionFee,82.93,Describes the benefits associated with a subscription.,Represents the subscription fee.
+MCSS:hasShareTimestamp,OFB:hasTimestamp,82.76,Records the timestamp when a share interaction occurred.,Records the date and time when the user action was performed.
+MCSS:hasTimestamp,OFB:hasAwardTimestamp,82.76,Represents the timestamp of when the message was sent.,Records the timestamp when an award was given.
+MCSS:hasTimestamp,OFB:hasBlockTimestamp,82.76,Represents the timestamp of when the message was sent.,Records the timestamp when a user was blocked.
+MCSS:hasTimestamp,OFB:hasLeaveTimestamp,82.76,Represents the timestamp of when the message was sent.,Specifies the timestamp when a user left the group chat.
+MCSS:hasTimestamp,OFB:hasReplyTimestamp,82.76,Represents the timestamp of when the message was sent.,Records the timestamp when a reply was made.
+MCSS:hasTimestamp,OFB:hasShareTimestamp,82.76,Represents the timestamp of when the message was sent.,Records the timestamp when content was shared.
+MCSS:hasGiftTimestamp,OFB:hasLogoutTimestamp,82.35,Records the timestamp when a gift was sent during a live session.,The date and time when the session was logged out.
+MCSS:hasLikeTimestamp,OFB:hasBlocksTimestamp,82.35,Records the timestamp when a like interaction occurred.,Specifies when a user blocked another user.
+MCSS:hasShareTimestamp,OFB:hasAwardTimestamp,82.35,Records the timestamp when a share interaction occurred.,Records the timestamp when an award was given.
+MCSS:hasShareTimestamp,OFB:hasLeaveTimestamp,82.35,Records the timestamp when a share interaction occurred.,Specifies the timestamp when a user left the group chat.
+MCSS:hasShareTimestamp,OFB:hasReplyTimestamp,82.35,Records the timestamp when a share interaction occurred.,Records the timestamp when a reply was made.
+MCSS:hasGroupMessageCreatedTimestamp,OFB:hasGroupName,81.82,Represents the timestamp when the group message thread was created.,Represents the name of the group chat.
+MCSS:hasGroupMessageLastActivity,OFB:hasGroupName,81.82,Represents the timestamp of the last activity in the group message thread.,Represents the name of the group chat.
+MCSS:hasGroupMessageTitle,OFB:hasGroupName,81.82,Represents the title of a group message thread.,Represents the name of the group chat.
+MCSS:hasMessageReaction,OFB:hasMessageIP,81.82,Represents an array of emojis reacting to the message.,Represents the IP address used during direct messaging.
+MCSS:hasTimestamp,OFB:hasBlocksTimestamp,81.82,Represents the timestamp of when the message was sent.,Specifies when a user blocked another user.
+MCSS:hasTimestamp,OFB:hasScheduledPublishTimestamp,81.82,Represents the timestamp of when the message was sent.,Timestamp indicating when the scheduled post will be published.
+MCSS:hasTimestamp,OFB:hasSearchTimestamp,81.82,Represents the timestamp of when the message was sent.,Records the timestamp of a search query.
+MCSS:hasGiftTimestamp,OFB:hasJoinTimestamp,81.25,Records the timestamp when a gift was sent during a live session.,Records the timestamp of when a user joined the community.
+MCSS:hasGiftTimestamp,OFB:hasLikeTimestamp,81.25,Records the timestamp when a gift was sent during a live session.,Records the timestamp when a like was made.
+MCSS:hasGiftTimestamp,OFB:hasMuteTimestamp,81.25,Records the timestamp when a gift was sent during a live session.,Records the timestamp when a topic or user was muted.
+MCSS:hasLikeTimestamp,OFB:hasJoinTimestamp,81.25,Records the timestamp when a like interaction occurred.,Records the timestamp of when a user joined the community.
+MCSS:hasLikeTimestamp,OFB:hasMuteTimestamp,81.25,Records the timestamp when a like interaction occurred.,Records the timestamp when a topic or user was muted.
+MCSS:hasLiveStartTime,OFB:hasPollStartTime,81.25,Represents the start time of the live session.,Indicates the start time of a poll.
+MCSS:hasResponseTime,OFB:hasAverageResponseTime,81.08,Represents the average response time for a message in seconds.,Specifies the average response time of the moderator in hours.
+MCSS:hasShortDescription,OFB:hasRuleDescription,81.08,Stores the description of the short video.,Provides a textual description of a specific community rule.
+MCSS:hasGroupMessageTitle,OFB:hasGroupMessageContent,80.95,Represents the title of a group message thread.,Represents the content of a group message.
+MCSS:hasChannelDescription,OFB:hasDescription,80.0,Description of the channel.,Provides a description for the community.
+MCSS:hasCommentTimestamp,OFB:hasJoinTimestamp,80.0,Records the timestamp when a comment interaction occurred.,Records the timestamp of when a user joined the community.
+MCSS:hasCommentTimestamp,OFB:hasMuteTimestamp,80.0,Records the timestamp when a comment interaction occurred.,Records the timestamp when a topic or user was muted.
+MCSS:hasLastLoginDate,OFB:hasLastLoginIP,80.0,The date and time of the user's last login.,"
+            The IP address used during the user's last login.
+            Important for digital forensics or geolocation.
+        "
+MCSS:hasLikeCount,OFB:hasViewsCount,80.0,Represents the number of likes the video has received.,Represents the total number of views for a content item.
+MCSS:hasLikeTimestamp,OFB:hasUnblockTimestamp,80.0,Records the timestamp when a like interaction occurred.,Records the timestamp when a user was unblocked.
+MCSS:hasNotificationPreferences,OFB:hasNotificationFrequency,80.0,Notification preferences set by the user.,"Defines the frequency of notifications for a community (e.g., Instant or Daily Digest)."
+MCSS:hasReportTimestamp,OFB:hasShareTimestamp,80.0,Records the timestamp when a report interaction occurred.,Records the timestamp when content was shared.
+MCSS:hasReportTimestamp,OFB:hasTimestamp,80.0,Records the timestamp when a report interaction occurred.,Records the date and time when the user action was performed.
+MCSS:hasResponseTime,OFB:hasReason,80.0,Represents the average response time for a message in seconds.,"Optional property specifying the reason for the action, such as privacy concerns or security."
+MCSS:hasShareTimestamp,OFB:hasReportTimestamp,80.0,Records the timestamp when a share interaction occurred.,Records the timestamp when the report was filed.
+MCSS:hasSubscriptionBenefits,OFB:hasSubscriptionEndDate,80.0,Describes the benefits associated with a subscription.,Records the end date of a user's subscription.
+MCSS:hasSubscriptionStatus,OFB:hasSubscriptionType,80.0,Indicates whether the user has an active subscription.,"Indicates the type of subscription (e.g., Free, Premium)."
+MCSS:hasTimestamp,OFB:hasFollowTimestamp,80.0,Represents the timestamp of when the message was sent.,Records the timestamp when a user started following a topic.
+MCSS:hasTimestamp,OFB:hasLogoutTimestamp,80.0,Represents the timestamp of when the message was sent.,The date and time when the session was logged out.
+MCSS:hasTimestamp,OFB:hasReportTimestamp,80.0,Represents the timestamp of when the message was sent.,Records the timestamp when the report was filed.
+MCSS:hasTimestamp,OFB:hasUpvoteTimestamp,80.0,Represents the timestamp of when the message was sent.,Records the timestamp when an upvote was made.
+MCSS:hasTitle,OFB:hasPostTitle,80.0,Stores the title of the video.,Title of the post.
+MCSS:hasUnreadMessageCount,OFB:hasUnreadCount,80.0,Represents the number of unread messages for a user.,Indicates the number of unread notifications.
+MCSS:hasViewCount,OFB:hasDraftViewsCount,80.0,Represents the number of views the video has received.,Represents the number of views on a user's draft.
+MCSS:hasViewCount,OFB:hasVotesCount,80.0,Represents the number of views the video has received.,Represents the total number of votes for a content item.

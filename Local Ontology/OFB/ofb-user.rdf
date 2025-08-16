@@ -1,0 +1,392 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- User Class -->
+    <owl:Class rdf:about="#User">
+        <rdfs:comment>Represents a user in the online forum or blog system.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ProfileSettings Sub-class -->
+    <owl:Class rdf:about="#ProfileSettings">
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <rdfs:comment>Settings related to managing the user's profile.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ProfileSettings Sub-class -->
+    <owl:Class rdf:about="#SecuritySettings">
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <rdfs:comment>Settings related to managing the user's profile security.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:about="#canEditProfile">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Indicates that a user can edit their profile settings.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#canEditAvatar">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Indicates that a user can edit their avatar.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#canEditBio">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Indicates that a user can edit their bio.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#canSetProfileVisibility">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Indicates that a user can set their profile visibility (Public or Private).</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#updatedBy">
+        <rdfs:domain rdf:resource="#ProfileSettings"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Links profile settings to the user actions that updated them.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#canEditPassword">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SecuritySettings"/>
+        <rdfs:comment>Indicates that a user can edit their password.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#canEnableTwoFactorAuthentication">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SecuritySettings"/>
+        <rdfs:comment>Indicates that a user can enable two-factor authentication.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#canSetNSFWVisibility">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SecuritySettings"/>
+        <rdfs:comment>Indicates that a user can set NSFW content visibility settings.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties -->
+    <owl:DatatypeProperty rdf:about="#hasUsername">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The username of the user.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAvatarURL">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>The URL of the user's avatar.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasBio">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The bio of the user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasProfileVisibility">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies whether the user's profile is Public or Private.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPasswordHash">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The hashed password of the user.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasTwoFactorAuthenticationEnabled">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if two-factor authentication is enabled for the user.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasNSFWVisibilitySetting">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if the user has enabled NSFW content visibility.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="#updatedBy">
+        <rdfs:domain rdf:resource="#SecuritySettings"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Links profile settings to the user actions that updated them.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- SubscriptionPlan Sub-class -->
+    <owl:Class rdf:about="#SubscriptionPlan">
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <rdfs:comment>Represents a subscription plan for a user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for SubscriptionPlan -->
+    <owl:ObjectProperty rdf:about="#subscribesTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SubscriptionPlan"/>
+        <rdfs:comment>Links a user to the subscription plan they have subscribed to.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#unsubscribesFrom">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SubscriptionPlan"/>
+        <rdfs:comment>Links a user to the subscription plan they have unsubscribed from.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithSubscriptionPlan">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#SubscriptionPlan"/>
+        <rdfs:comment>Associates a user with their subscription plan.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for SubscriptionPlan -->
+    <owl:DatatypeProperty rdf:about="#hasSubscriptionType">
+        <rdfs:domain rdf:resource="#SubscriptionPlan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates the type of subscription (e.g., Free, Premium).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasSubscriptionStartDate">
+        <rdfs:domain rdf:resource="#SubscriptionPlan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the start date of a user's subscription.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasSubscriptionEndDate">
+        <rdfs:domain rdf:resource="#SubscriptionPlan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the end date of a user's subscription.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- NotificationSettings Sub-class -->
+    <owl:Class rdf:about="#NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <rdfs:comment>Represents notification settings for a user.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for NotificationSettings -->
+    <owl:ObjectProperty rdf:about="#configuresPushNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#NotificationSettings"/>
+        <rdfs:comment>Links a user to the configuration of push notifications.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#configuresEmailNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#NotificationSettings"/>
+        <rdfs:comment>Links a user to the configuration of email notifications.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#configuresInAppNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#NotificationSettings"/>
+        <rdfs:comment>Links a user to the configuration of in-app notifications.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#updatedBy">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Links notification settings to the user actions that updated them.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for NotificationSettings -->
+    <owl:DatatypeProperty rdf:about="#hasPushNotificationEnabled">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether push notifications are enabled for a user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEmailNotificationEnabled">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether email notifications are enabled for a user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasInAppNotificationEnabled">
+        <rdfs:domain rdf:resource="#NotificationSettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether in-app notifications are enabled for a user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- AnonymousSession Sub-class -->
+    <owl:Class rdf:about="#AnonymousSession">
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <rdfs:comment>Represents a session where the user operates in anonymous mode.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for AnonymousSession -->
+    <owl:ObjectProperty rdf:about="#enablesAnonymousMode">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#AnonymousSession"/>
+        <rdfs:comment>Indicates that a user enables anonymous mode.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#disablesAnonymousMode">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#AnonymousSession"/>
+        <rdfs:comment>Indicates that a user disables anonymous mode.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#anonymousActivityLoggedBy">
+        <rdfs:domain rdf:resource="#AnonymousSession"/>
+        <rdfs:range rdf:resource="#AnonymousSession"/>
+        <rdfs:comment>Links anonymous activity with the session that logged it.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for AnonymousSession -->
+    <owl:DatatypeProperty rdf:about="#isAnonymousModeEnabled">
+        <rdfs:domain rdf:resource="#AnonymousSession"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if anonymous mode is enabled for the user.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasAnonymousSessionID">
+        <rdfs:domain rdf:resource="#AnonymousSession"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The unique identifier for the anonymous session.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#expiresAt">
+        <rdfs:domain rdf:resource="#AnonymousSession"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The expiration time for the anonymous session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- AccountDeactivation Sub-class -->
+    <owl:Class rdf:about="#AccountDeactivation">
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <rdfs:comment>Represents a user's account deactivation process and state.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for AccountDeactivation -->
+    <owl:ObjectProperty rdf:about="#requestsAccountDeactivation">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Indicates that a user requests account deactivation.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#deactivationRequestedBy">
+        <rdfs:domain rdf:resource="#AccountDeactivation"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Links account deactivation with the user action that initiated it.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for AccountDeactivation -->
+    <owl:DatatypeProperty rdf:about="#isAccountDeactivated">
+        <rdfs:domain rdf:resource="#AccountDeactivation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates if the account is currently deactivated.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#deactivationReason">
+        <rdfs:domain rdf:resource="#AccountDeactivation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The reason provided for account deactivation.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- AccountDeletion Sub-class -->
+    <owl:Class rdf:about="#AccountDeletion">
+        <rdfs:subClassOf rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Handles the process and properties related to account deletion.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: requestsAccountDeletion -->
+    <owl:ObjectProperty rdf:about="#requestsAccountDeletion">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Indicates that a user has requested account deletion.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: deletionRequestedBy -->
+    <owl:ObjectProperty rdf:about="#deletionRequestedBy">
+        <rdfs:domain rdf:resource="#AccountDeletion"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Links the account deletion process to the user action that initiated it.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: isAccountDeleted -->
+    <owl:DatatypeProperty rdf:about="#isAccountDeleted">
+        <rdfs:domain rdf:resource="#AccountDeletion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether the account has been deleted.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: deletionReason -->
+    <owl:DatatypeProperty rdf:about="#deletionReason">
+        <rdfs:domain rdf:resource="#AccountDeletion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores the reason for account deletion.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: deletionRequestedOn -->
+    <owl:DatatypeProperty rdf:about="#deletionRequestedOn">
+        <rdfs:domain rdf:resource="#AccountDeletion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The date and time when account deletion was requested.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Session Sub-class -->
+    <owl:Class rdf:about="#Session">
+        <rdfs:subClassOf rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Handles session management, including logouts.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: logsOutFromSession -->
+    <owl:ObjectProperty rdf:about="#logsOutFromSession">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Session"/>
+        <rdfs:comment>Links a user to the session they logged out from.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: logoutPerformedBy -->
+    <owl:ObjectProperty rdf:about="#logoutPerformedBy">
+        <rdfs:domain rdf:resource="#Session"/>
+        <rdfs:range rdf:resource="#UserAction"/>
+        <rdfs:comment>Links a session to the user action that performed the logout.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasLogoutTimestamp -->
+    <owl:DatatypeProperty rdf:about="#hasLogoutTimestamp">
+        <rdfs:domain rdf:resource="#Session"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The date and time when the session was logged out.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasSessionID -->
+    <owl:DatatypeProperty rdf:about="#hasSessionID">
+        <rdfs:domain rdf:resource="#Session"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Unique identifier for the session.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+
+</rdf:RDF>
+
+

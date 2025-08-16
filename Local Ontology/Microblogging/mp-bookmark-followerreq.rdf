@@ -1,0 +1,71 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Bookmarks -->
+    <owl:Class rdf:about="#Bookmarks">
+        <rdfs:comment>Represents a collection of content items saved as bookmarks by users.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: clearsAllBookmarks -->
+    <owl:ObjectProperty rdf:about="#clearsAllBookmarks">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Bookmarks"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user clears all saved bookmarks.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasBookmarkCount -->
+    <owl:DatatypeProperty rdf:about="#hasBookmarkCount">
+        <rdfs:domain rdf:resource="#Bookmarks"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the count of items saved in bookmarks.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasBookmarkDate -->
+    <owl:DatatypeProperty rdf:about="#hasBookmarkDate">
+        <rdfs:domain rdf:resource="#Bookmarks"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Records the date and time when a bookmark was saved.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Kelas FollowerRequests -->
+    <owl:Class rdf:about="#FollowerRequests">
+        <rdfs:comment>Represents follower requests that a user can accept or decline.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: acceptsOrDeclinesFollowerRequests -->
+    <owl:ObjectProperty rdf:about="#acceptsFollowerRequests">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#FollowerRequests"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user accepts  follower requests.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#declinesFollowerRequests">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#FollowerRequests"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user declines follower requests.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasRequestDate -->
+    <owl:DatatypeProperty rdf:about="#hasRequestDate">
+        <rdfs:domain rdf:resource="#FollowerRequests"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Records the date when the follower request was received.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: isRequestAccepted -->
+    <owl:DatatypeProperty rdf:about="#isRequestAccepted">
+        <rdfs:domain rdf:resource="#FollowerRequests"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates whether the follower request was accepted (true) or declined (false).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

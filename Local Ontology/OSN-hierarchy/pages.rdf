@@ -1,0 +1,248 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Pages -->
+    <owl:Class rdf:about="#Pages"/>
+
+    <!-- Sub-kelas PagesManagement -->
+    <owl:Class rdf:about="#PagesManagement">
+        <rdfs:subClassOf rdf:resource="#Pages"/>
+    </owl:Class>
+
+    <!-- Individu di dalam PagesManagement -->
+    <owl:NamedIndividual rdf:about="#CreatePage">
+        <rdf:type rdf:resource="#PagesManagement"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can create new pages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas PageSettings di dalam PagesManagement -->
+    <owl:Class rdf:about="#PageSettings">
+        <rdfs:subClassOf rdf:resource="#PagesManagement"/>
+    </owl:Class>
+
+    <!-- Individu di dalam PageSettings -->
+    <owl:NamedIndividual rdf:about="#PageName">
+        <rdf:type rdf:resource="#PageSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the page name.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Description">
+        <rdf:type rdf:resource="#PageSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the page description.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Categories">
+        <rdf:type rdf:resource="#PageSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the categories associated with the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ContactInfo">
+        <rdf:type rdf:resource="#PageSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the contact information of the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Location">
+        <rdf:type rdf:resource="#PageSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the location details of the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Hours">
+        <rdf:type rdf:resource="#PageSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the hours of operation for the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Website">
+        <rdf:type rdf:resource="#PageSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage the website associated with the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Roles">
+        <rdf:type rdf:resource="#PageSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage roles associated with the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas PageFeatures di dalam PagesManagement -->
+    <owl:Class rdf:about="#PageFeatures">
+        <rdfs:subClassOf rdf:resource="#PagesManagement"/>
+    </owl:Class>
+
+    <!-- Individu di dalam PageFeatures -->
+    <owl:NamedIndividual rdf:about="#Events">
+        <rdf:type rdf:resource="#PageFeatures"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage events on the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Posts">
+        <rdf:type rdf:resource="#PageFeatures"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage posts on the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Photos">
+        <rdf:type rdf:resource="#PageFeatures"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage photos on the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Videos">
+        <rdf:type rdf:resource="#PageFeatures"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage videos on the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Stories">
+        <rdf:type rdf:resource="#PageFeatures"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage stories on the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Jobs">
+        <rdf:type rdf:resource="#PageFeatures"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage job listings on the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas PageInsights di dalam PagesManagement -->
+    <owl:Class rdf:about="#PageInsights">
+        <rdfs:subClassOf rdf:resource="#PagesManagement"/>
+    </owl:Class>
+
+    <!-- Individu di dalam PageInsights -->
+    <owl:NamedIndividual rdf:about="#PageViews">
+        <rdf:type rdf:resource="#PageInsights"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view insights on page views.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#PostReach">
+        <rdf:type rdf:resource="#PageInsights"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view insights on post reach.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Engagement">
+        <rdf:type rdf:resource="#PageInsights"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view insights on engagement metrics.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Followers">
+        <rdf:type rdf:resource="#PageInsights"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view insights on followers.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Demographics">
+        <rdf:type rdf:resource="#PageInsights"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view insights on demographics.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas PromotePage di dalam PagesManagement -->
+    <owl:Class rdf:about="#PromotePage">
+        <rdfs:subClassOf rdf:resource="#PagesManagement"/>
+    </owl:Class>
+
+    <!-- Individu di dalam PromotePage -->
+    <owl:NamedIndividual rdf:about="#BoostPost">
+        <rdf:type rdf:resource="#PromotePage"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can boost posts to increase reach.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#CreateAd">
+        <rdf:type rdf:resource="#PromotePage"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can create ads for their page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AudienceTargeting">
+        <rdf:type rdf:resource="#PromotePage"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can target specific audiences for their ads.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas ManagePage di dalam PagesManagement -->
+    <owl:Class rdf:about="#ManagePage">
+        <rdfs:subClassOf rdf:resource="#PagesManagement"/>
+    </owl:Class>
+
+    <!-- Individu di dalam ManagePage -->
+    <owl:NamedIndividual rdf:about="#Activate">
+        <rdf:type rdf:resource="#ManagePage"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can activate a page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Deactivate">
+        <rdf:type rdf:resource="#ManagePage"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can deactivate a page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MergePages">
+        <rdf:type rdf:resource="#ManagePage"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can merge multiple pages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas PageActivities di dalam PagesManagement -->
+    <owl:Class rdf:about="#PageActivities">
+        <rdfs:subClassOf rdf:resource="#PagesManagement"/>
+    </owl:Class>
+
+    <!-- Individu di dalam PageActivities -->
+    <owl:NamedIndividual rdf:about="#PostUpdates">
+        <rdf:type rdf:resource="#PageActivities"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can post updates on the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Like">
+        <rdf:type rdf:resource="#PageActivities"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can like posts on the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Comment">
+        <rdf:type rdf:resource="#PageActivities"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can comment on posts on the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Share">
+        <rdf:type rdf:resource="#PageActivities"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can share posts on the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#React">
+        <rdf:type rdf:resource="#PageActivities"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can react to posts on the page.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas PageInvites -->
+    <owl:Class rdf:about="#PageInvites">
+        <rdfs:subClassOf rdf:resource="#Pages"/>
+    </owl:Class>
+
+    <!-- Individu di dalam PageInvites -->
+    <owl:NamedIndividual rdf:about="#SendInvites">
+        <rdf:type rdf:resource="#PageInvites"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can send invites to like or follow pages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AcceptInvites">
+        <rdf:type rdf:resource="#PageInvites"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can accept invites to like or follow pages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ManageInvites">
+        <rdf:type rdf:resource="#PageInvites"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage invites for pages.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#PageNotifications">
+        <rdf:type rdf:resource="#PageInvites"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage notifications for page activities.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas SearchPages -->
+    <owl:Class rdf:about="#SearchPages">
+        <rdfs:subClassOf rdf:resource="#Pages"/>
+    </owl:Class>
+
+    <!-- Individu di dalam SearchPages -->
+    <owl:NamedIndividual rdf:about="#SearchPagesByKeyword">
+        <rdf:type rdf:resource="#SearchPages"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can search pages by keyword.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SearchPagesByCategory">
+        <rdf:type rdf:resource="#SearchPages"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can search pages by category.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

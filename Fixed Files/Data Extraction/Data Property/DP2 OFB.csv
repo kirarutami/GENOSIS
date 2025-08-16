@@ -1,0 +1,195 @@
+class,dataProperty,classComment,dataPropertyComment
+User,hasUsername,Represents a user in the online forum or blog system.,The username of the user.
+User,hasEmail,Represents a user in the online forum or blog system.,The email address associated with the user account.
+User,hasPhoneNumber,Represents a user in the online forum or blog system.,The phone number associated with the user account.
+User,hasAvatarURL,Represents a user in the online forum or blog system.,The URL of the user's avatar.
+User,hasBio,Represents a user in the online forum or blog system.,The bio of the user.
+User,hasProfileVisibility,Represents a user in the online forum or blog system.,Specifies whether the user's profile is Public or Private.
+User,hasPasswordHash,Represents a user in the online forum or blog system.,The hashed password of the user.
+User,hasTwoFactorAuthenticationEnabled,Represents a user in the online forum or blog system.,Indicates if two-factor authentication is enabled for the user.
+User,hasNSFWVisibilitySetting,Represents a user in the online forum or blog system.,Indicates if the user has enabled NSFW content visibility.
+SubscriptionPlan,hasSubscriptionType,Represents a subscription plan for a user.,"Indicates the type of subscription (e.g., Free, Premium)."
+SubscriptionPlan,hasSubscriptionStartDate,Represents a subscription plan for a user.,Records the start date of a user's subscription.
+SubscriptionPlan,hasSubscriptionEndDate,Represents a subscription plan for a user.,Records the end date of a user's subscription.
+NotificationSettings,hasPushNotificationEnabled,Represents notification settings for a user.,Indicates whether push notifications are enabled for a user.
+NotificationSettings,hasPushNotificationEnabled,Represents settings related to notifications.,Indicates whether push notifications are enabled for a user.
+NotificationSettings,hasEmailNotificationEnabled,Represents notification settings for a user.,Indicates whether email notifications are enabled for a user.
+NotificationSettings,hasEmailNotificationEnabled,Represents settings related to notifications.,Indicates whether email notifications are enabled for a user.
+NotificationSettings,hasInAppNotificationEnabled,Represents notification settings for a user.,Indicates whether in-app notifications are enabled for a user.
+NotificationSettings,hasInAppNotificationEnabled,Represents settings related to notifications.,Indicates whether in-app notifications are enabled for a user.
+AnonymousSession,isAnonymousModeEnabled,Represents a session where the user operates in anonymous mode.,Indicates if anonymous mode is enabled for the user.
+AnonymousSession,hasAnonymousSessionID,Represents a session where the user operates in anonymous mode.,The unique identifier for the anonymous session.
+AnonymousSession,expiresAt,Represents a session where the user operates in anonymous mode.,The expiration time for the anonymous session.
+AccountDeactivation,isAccountDeactivated,Represents a user's account deactivation process and state.,Indicates if the account is currently deactivated.
+AccountDeactivation,deactivationReason,Represents a user's account deactivation process and state.,The reason provided for account deactivation.
+AccountDeletion,isAccountDeleted,Handles the process and properties related to account deletion.,Indicates whether the account has been deleted.
+AccountDeletion,deletionReason,Handles the process and properties related to account deletion.,Stores the reason for account deletion.
+AccountDeletion,deletionRequestedOn,Handles the process and properties related to account deletion.,The date and time when account deletion was requested.
+Session,hasLogoutTimestamp,"Handles session management, including logouts.",The date and time when the session was logged out.
+Session,hasSessionID,"Handles session management, including logouts.",Unique identifier for the session.
+UserAction,hasActionType,"Represents actions performed by users within the system, such as editing profiles, enabling two-factor authentication, or requesting account deletion.","Specifies the type of action performed by the user, such as EditProfile, EnableTwoFactorAuth, or RequestAccountDeletion."
+UserAction,hasTimestamp,"Represents actions performed by users within the system, such as editing profiles, enabling two-factor authentication, or requesting account deletion.",Records the date and time when the user action was performed.
+UserAction,hasReason,"Represents actions performed by users within the system, such as editing profiles, enabling two-factor authentication, or requesting account deletion.","Optional property specifying the reason for the action, such as privacy concerns or security."
+User,hasRegistrationDate,Represents a user in the online forum or blog system.,"
+            The date and time when the user registered on the platform.
+            Useful for forensic timeline and account history.
+        "
+User,hasLastLoginIP,Represents a user in the online forum or blog system.,"
+            The IP address used during the user's last login.
+            Important for digital forensics or geolocation.
+        "
+Post,hasPostTitle,"Represents posts created by users, which may contain text, media, and other metadata.",Title of the post.
+Post,hasPostContent,"Represents posts created by users, which may contain text, media, and other metadata.","Content of the post, typically text or markdown."
+Post,hasPostMedia,"Represents posts created by users, which may contain text, media, and other metadata.","Media associated with the post, such as images, GIFs, or videos."
+Post,hasPostCreationTimestamp,"Represents posts created by users, which may contain text, media, and other metadata.",Timestamp of when the post was created.
+Draft,hasDraftTitle,"Represents drafts saved by users, which can be edited and later posted.",Title of the draft.
+Draft,hasDraftContent,"Represents drafts saved by users, which can be edited and later posted.","Content of the draft, typically text or markdown."
+Draft,hasDraftMedia,"Represents drafts saved by users, which can be edited and later posted.","Media associated with the draft, such as images, GIFs, or videos."
+Draft,hasDraftSavedTimestamp,"Represents drafts saved by users, which can be edited and later posted.",Timestamp of when the draft was saved.
+ScheduledPost,hasScheduledPostTitle,Represents posts scheduled by users to be published at a future timestamp.,Title of the scheduled post.
+ScheduledPost,hasScheduledPostContent,Represents posts scheduled by users to be published at a future timestamp.,Content of the scheduled post.
+ScheduledPost,hasScheduledPostMedia,Represents posts scheduled by users to be published at a future timestamp.,"Media attachment for the scheduled post, such as an image or video."
+ScheduledPost,hasScheduledPublishTimestamp,Represents posts scheduled by users to be published at a future timestamp.,Timestamp indicating when the scheduled post will be published.
+CrossPost,hasCrosspostedTitle,Represents posts that are cross-posted from other communities or original posts.,Title of the cross-posted content.
+CrossPost,hasCrosspostedContent,Represents posts that are cross-posted from other communities or original posts.,Content of the cross-posted content.
+CrossPost,hasCrosspostedMedia,Represents posts that are cross-posted from other communities or original posts.,Media attachment for the cross-posted content.
+TagContent,hasTagLabel,Represents content tagged by users with specific labels.,Represents the label of a tag associated with the content.
+Polls,hasPollQuestion,Represents polls created by users with questions and options for interaction.,Represents the question posed in a poll.
+Polls,hasPollOptions,Represents polls created by users with questions and options for interaction.,"Represents the options provided in a poll, stored as an array of strings."
+Polls,hasPollStartTime,Represents polls created by users with questions and options for interaction.,Indicates the start time of a poll.
+Polls,hasPollEndTime,Represents polls created by users with questions and options for interaction.,Indicates the end time of a poll.
+FlairSystem,hasFlairLabel,Represents a system for assigning flair labels to posts or users to provide additional context or categorization.,Defines the label or tag associated with a flair in the system.
+AnonymousMode,hasAnonymousPostTitle,Represents the functionality of sharing content anonymously within a community.,Defines the title of an anonymous post.
+AnonymousMode,hasAnonymousPostContent,Represents the functionality of sharing content anonymously within a community.,Defines the content of an anonymous post.
+AnonymousMode,hasAnonymousPostMedia,Represents the functionality of sharing content anonymously within a community.,"Defines the media (e.g., images or videos) associated with an anonymous post."
+AnonymousMode,hasAnonymousPostTimestamp,Represents the functionality of sharing content anonymously within a community.,Records the timestamp of when the anonymous post was created.
+CommunityCreation,hasCommunityName,Represents the creation process and properties of a community.,Defines the name of the community.
+CommunityCreation,hasCommunityDescription,Represents the creation process and properties of a community.,Provides a description for the community.
+CommunityCreation,hasCommunityTheme,Represents the creation process and properties of a community.,Defines the theme or aesthetic of the community.
+CommunityCreation,hasCommunityCreationDate,Represents the creation process and properties of a community.,Records the date and time the community was created.
+CommunityEntry,hasJoinTimestamp,Represents the process and properties of joining or following a community.,Records the timestamp of when a user joined the community.
+CommunityEntry,hasJoinTimestamp,Represents the process and properties of joining or following a community.,Specifies the timestamp when a user joined the group chat.
+GroupMessage,hasJoinTimestamp,,Records the timestamp of when a user joined the community.
+GroupMessage,hasJoinTimestamp,,Specifies the timestamp when a user joined the group chat.
+CommunityEntry,hasFollowStatus,Represents the process and properties of joining or following a community.,Indicates whether a user is currently following a community.
+CommunityRules,hasRuleDescription,Represents rules or guidelines that govern behavior and content within a community.,Provides a textual description of a specific community rule.
+CommunityRules,hasRuleDescription,Represents rules or guidelines that govern behavior and content within a community.,Provides a description of the community rule.
+CommunityRules,hasRuleDescription,Represents the rules governing a community's content and behavior.,Provides a textual description of a specific community rule.
+CommunityRules,hasRuleDescription,Represents the rules governing a community's content and behavior.,Provides a description of the community rule.
+CommunityRules,hasRuleType,Represents rules or guidelines that govern behavior and content within a community.,"Defines the type of rule (e.g., Content, Behavior)."
+CommunityRules,hasRuleType,Represents rules or guidelines that govern behavior and content within a community.,"Specifies the type of rule (e.g., ContentRule, BehaviorRule)."
+CommunityRules,hasRuleType,Represents the rules governing a community's content and behavior.,"Defines the type of rule (e.g., Content, Behavior)."
+CommunityRules,hasRuleType,Represents the rules governing a community's content and behavior.,"Specifies the type of rule (e.g., ContentRule, BehaviorRule)."
+SpotlightCommunity,hasSpotlightReason,Represents communities featured in spotlight sections.,Records the reason for a community being highlighted in the spotlight.
+CommunityNotifications,hasNotificationType,Represents notification settings and preferences for a community.,"Specifies the type of community notifications, such as Post or Comment."
+CommunityNotifications,hasNotificationFrequency,Represents notification settings and preferences for a community.,"Defines the frequency of notifications for a community (e.g., Instant or Daily Digest)."
+CommunityReputation,hasKarmaPoints,"Defines a community's reputation metrics, including karma points and levels.",Indicates the number of karma points earned by a user in the community.
+CommunityReputation,hasReputationLevel,"Defines a community's reputation metrics, including karma points and levels.","Represents the user's reputation level, such as Bronze, Silver, or Gold."
+Leaderboards,hasLeaderboardType,Represents leaderboards within the community.,"Defines the type of leaderboard (e.g., Karma, Activity)."
+Moderator,hasModeratorRoleType,Represents a moderator assigned to a community with specific roles and permissions.,"Defines the role type of the moderator (e.g., Lead Moderator, Assistant Moderator)."
+Moderator,hasJoinDateAsModerator,Represents a moderator assigned to a community with specific roles and permissions.,Records the date and time a user was assigned as a moderator.
+Moderator,hasModeratorPermissions,Represents a moderator assigned to a community with specific roles and permissions.,"Lists the permissions assigned to the moderator (e.g., EditRules, BanUsers, ManagePosts)."
+Moderator,isActiveModerator,Represents a moderator assigned to a community with specific roles and permissions.,Indicates whether a moderator is currently active in the community.
+Moderator,hasModeratorReputation,Represents a moderator assigned to a community with specific roles and permissions.,Represents the reputation score of the moderator based on votes or contributions.
+Moderator,hasModeratorNotes,Represents a moderator assigned to a community with specific roles and permissions.,Optional notes about the moderator's activities or status.
+Moderator,hasModeratorNotes,Represents a moderator assigned to a community with specific roles and permissions.,Optional notes by the moderator regarding the report.
+Reports,hasModeratorNotes,Represents user reports for violations in the community.,Optional notes about the moderator's activities or status.
+Reports,hasModeratorNotes,Represents user reports for violations in the community.,Optional notes by the moderator regarding the report.
+ModerationQueue,hasModerationPriority,Represents a queue that contains flagged content for moderation.,"Defines the priority level of the moderation queue (e.g., High, Medium, Low)."
+ModerationQueue,hasQueueCreationTimestamp,Represents a queue that contains flagged content for moderation.,Records the timestamp when the moderation queue was created.
+ModerationQueue,hasProcessingStatus,Represents a queue that contains flagged content for moderation.,"Defines the processing status of the queue (e.g., Pending, Resolved)."
+CommunityRules,hasLastUpdatedTimestamp,Represents rules or guidelines that govern behavior and content within a community.,Records the last updated timestamp of the community rule.
+CommunityRules,hasLastUpdatedTimestamp,Represents the rules governing a community's content and behavior.,Records the last updated timestamp of the community rule.
+CommunityRules,appliesToContentType,Represents rules or guidelines that govern behavior and content within a community.,"Defines the content types to which the rule applies (e.g., Posts, Comments, Polls)."
+CommunityRules,appliesToContentType,Represents the rules governing a community's content and behavior.,"Defines the content types to which the rule applies (e.g., Posts, Comments, Polls)."
+Reports,hasReportReason,Represents user reports for violations in the community.,"Specifies the reason for filing the report (e.g., Spam, Harassment, Policy Violation)."
+Reports,hasReportTimestamp,Represents user reports for violations in the community.,Records the timestamp when the report was filed.
+Reports,hasResolutionStatus,Represents user reports for violations in the community.,"Specifies the resolution status of the report (e.g., Approved, Denied, Pending)."
+CommunitySettings,hasBannerImageURL,"Represents settings for a community, including posting rules, banner, and flair.",Defines the URL for the community's banner image.
+CommunitySettings,hasDescription,"Represents settings for a community, including posting rules, banner, and flair.",Provides a description for the community.
+CommunitySettings,hasPostingRules,"Represents settings for a community, including posting rules, banner, and flair.",Specifies the rules for posting in the community.
+CommunitySettings,canAllowAnonymousPosts,"Represents settings for a community, including posting rules, banner, and flair.",Indicates if the community allows anonymous posts.
+CommunitySettings,hasRestrictedModeEnabled,"Represents settings for a community, including posting rules, banner, and flair.",Indicates if restricted mode is enabled for the community.
+Moderator,hasTotalPostsApproved,Represents a moderator assigned to a community with specific roles and permissions.,Tracks the total number of posts approved by the moderator.
+Moderator,hasTotalPostsDenied,Represents a moderator assigned to a community with specific roles and permissions.,Tracks the total number of posts denied by the moderator.
+Moderator,hasTotalUsersBanned,Represents a moderator assigned to a community with specific roles and permissions.,Tracks the total number of users banned by the moderator.
+Moderator,hasTotalCommentsRemoved,Represents a moderator assigned to a community with specific roles and permissions.,Tracks the total number of comments removed by the moderator.
+Moderator,hasAverageResponseTime,Represents a moderator assigned to a community with specific roles and permissions.,Specifies the average response time of the moderator in hours.
+Moderator,hasActivityLevel,Represents a moderator assigned to a community with specific roles and permissions.,"Specifies the activity level of the moderator (e.g., High, Medium, Low)."
+Moderator,hasKarmaPointsEarned,Represents a moderator assigned to a community with specific roles and permissions.,Optional property to track karma points earned by the moderator.
+UpvoteDownvote,hasUpvoteTimestamp,Represents upvote or downvote actions on content.,Records the timestamp when an upvote was made.
+UpvoteDownvote,hasDownvoteTimestamp,Represents upvote or downvote actions on content.,Records the timestamp when a downvote was made.
+Like,hasLikeTimestamp,Represents a like action on content.,Records the timestamp when a like was made.
+ReplyToComments,hasReplyText,Represents a reply to a comment action.,Stores the text content of a reply.
+ReplyToComments,hasReplyTimestamp,Represents a reply to a comment action.,Records the timestamp when a reply was made.
+ShareRepost,hasShareTimestamp,Represents sharing or reposting content to a community or other platforms.,Records the timestamp when content was shared.
+Bookmark,hasBookmarkTimestamp,Represents bookmarking content for later reference.,Records the timestamp when content was bookmarked.
+GiveAwards,hasAwardType,Represents giving awards to content or users as recognition.,"Specifies the type of award given (e.g., Gold, Silver, Platinum)."
+GiveAwards,hasAwardTimestamp,Represents giving awards to content or users as recognition.,Records the timestamp when an award was given.
+BlockUnblockUser,hasBlockReason,Represents blocking and unblocking actions between users.,Stores the reason for blocking a user.
+BlockUnblockUser,hasBlockTimestamp,Represents blocking and unblocking actions between users.,Records the timestamp when a user was blocked.
+BlockUnblockUser,hasUnblockTimestamp,Represents blocking and unblocking actions between users.,Records the timestamp when a user was unblocked.
+Mute,hasMuteTimestamp,Represents muting actions on users or topics.,Records the timestamp when a topic or user was muted.
+Mute,hasMuteTimestamp,Represents muting actions on users or topics.,Specifies when a user muted another user.
+DirectMessaging,hasMuteTimestamp,Represents one-on-one messaging interactions.,Records the timestamp when a topic or user was muted.
+DirectMessaging,hasMuteTimestamp,Represents one-on-one messaging interactions.,Specifies when a user muted another user.
+FollowTopics,hasFollowTimestamp,Represents following topics actions.,Records the timestamp when a user started following a topic.
+PinPosts,hasPinTimestamp,Represents pinning actions for posts by users or communities.,Records the timestamp when a post was pinned.
+Comment,hasCommentText,Represents comments made by users on content.,Stores the text of a comment.
+Comment,hasCommentTimestamp,Represents comments made by users on content.,Records the timestamp when a comment was made.
+GlobalSearch,hasSearchKeyword,Represents global search functionality for different targets.,Stores the keyword used in a search query.
+GlobalSearch,hasSearchTimestamp,Represents global search functionality for different targets.,Records the timestamp of a search query.
+AdvancedSearch,hasSearchCriteria,Represents advanced search functionalities with additional filters.,Stores criteria used in an advanced search query.
+AdvancedSearch,hasSearchResultCount,Represents advanced search functionalities with additional filters.,Records the number of results returned in an advanced search query.
+SearchFilter,hasFilterType,Represents filters used in advanced search queries.,"Specifies the type of filter used (e.g., flair, tags)."
+SearchFilter,hasFilterValue,Represents filters used in advanced search queries.,Stores the value of the filter applied in a search.
+TrendSearch,hasTrendingKeyword,Represents trends observed in user searches.,Stores the trending keyword observed in user searches.
+TrendSearch,hasTrendingScore,Represents trends observed in user searches.,Records the score associated with a trending keyword or content.
+PersonalizedFeed,hasRecommendationSource,Represents personalized recommendation feeds based on user activity and preferences.,"Indicates the source of recommendations (e.g., browsing history, preferences)."
+PersonalizedFeed,hasRecommendationAlgorithm,Represents personalized recommendation feeds based on user activity and preferences.,Indicates the algorithm used to generate recommendations.
+ExploreCategories,hasCategoryName,Represents category browsing features for exploring content.,Specifies the name of the category being explored.
+Flair,hasFlairName,Represents flair tags associated with posts or content.,Specifies the name of the flair tag used.
+NotificationDevice,hasDeviceType,Represents a device configured for push notifications.,Indicates the type of device used for push notifications.
+NotificationDevice,hasDeviceID,Represents a device configured for push notifications.,Represents the unique identifier of the notification device.
+User,hasEmailFrequency,Represents a user in the online forum or blog system.,Indicates the frequency of email notifications.
+NotificationPreferences,hasPreferenceType,Represents preferences for in-app notifications.,Specifies the type of notification preference.
+NotificationPreferences,hasUnreadCount,Represents preferences for in-app notifications.,Indicates the number of unread notifications.
+DigestSummary,hasSummaryDate,Represents a summary of weekly activity digest.,Specifies the date of the digest summary.
+DigestSummary,hasDigestType,Represents a summary of weekly activity digest.,"Specifies the type of digest summary (e.g., activity, recommendations)."
+DirectMessaging,hasMessageContent,Represents one-on-one messaging interactions.,Represents the content of a direct message.
+DirectMessaging,hasMessageTimestamp,Represents one-on-one messaging interactions.,Specifies the timestamp of a direct message.
+DirectMessaging,hasMessageFrequency,Represents one-on-one messaging interactions.,Indicates the frequency of direct messages exchanged between users.
+DirectMessaging,hasBlocksTimestamp,Represents one-on-one messaging interactions.,Specifies when a user blocked another user.
+DirectMessaging,hasMessageStatus,Represents one-on-one messaging interactions.,"Represents the status of a direct message (e.g., sent, delivered, read)."
+GroupMessage,hasGroupMessageContent,,Represents the content of a group message.
+GroupMessage,hasGroupCreatedDate,,Indicates the creation date of the group message thread.
+GroupMessage,hasGroupName,,Represents the name of the group chat.
+GroupMessage,hasGroupMessageFrequency,,Indicates the frequency of messages within the group chat.
+GroupMessage,hasLeaveTimestamp,,Specifies the timestamp when a user left the group chat.
+DirectMessaging,hasMessageIP,Represents one-on-one messaging interactions.,Represents the IP address used during direct messaging.
+DirectMessaging,hasMessageDevice,Represents one-on-one messaging interactions.,Represents the device or app used during direct messaging.
+Subscription,hasSubscriptionFee,Represents subscription-based revenue generation.,Represents the subscription fee.
+Subscription,hasSubscriptionDuration,Represents subscription-based revenue generation.,Specifies the subscription duration in months.
+Subscription,hasSubscriptionBenefits,Represents subscription-based revenue generation.,Describes the benefits included in the subscription.
+AdRevenue,hasRevenueAmount,Represents revenue generated through advertisements.,Represents the total revenue generated from ads.
+AdRevenue,hasAdImpressions,Represents revenue generated through advertisements.,Indicates the number of ad impressions.
+AdRevenue,hasAdClickRate,Represents revenue generated through advertisements.,Represents the click-through rate for ads.
+Donations,hasDonationAmount,Represents donations made to creators or content.,Specifies the amount donated.
+Donations,hasDonationTimestamp,Represents donations made to creators or content.,Specifies the timestamp of the donation.
+Donations,hasDonationMessage,Represents donations made to creators or content.,Includes a message provided by the donor.
+AccessibilitySettings,hasFontSize,Represents display-related accessibility settings.,Represents the font size setting for accessibility.
+AccessibilitySettings,hasThemePreference,Represents display-related accessibility settings.,"Specifies the theme preference for accessibility (e.g., light, dark)."
+AccessibilitySettings,hasContrastSetting,Represents display-related accessibility settings.,"Specifies the contrast setting for accessibility (e.g., high, low)."
+LanguageSettings,hasPreferredLanguage,Represents user language preferences for accessibility.,Specifies the preferred language of the user.
+LanguageSettings,hasAvailableLanguages,Represents user language preferences for accessibility.,Lists available languages as an array.
+Content,hasViewsCount,"Represents all forms of user-generated content, including posts and drafts, within the platform.",Represents the total number of views for a content item.
+Content,hasVotesCount,"Represents all forms of user-generated content, including posts and drafts, within the platform.",Represents the total number of votes for a content item.
+Content,hasCommentsCount,"Represents all forms of user-generated content, including posts and drafts, within the platform.",Represents the total number of comments for a content item.
+Content,hasSharesCount,"Represents all forms of user-generated content, including posts and drafts, within the platform.",Represents the total number of shares for a content item.
+CommunityMetrics,hasMemberCount,"Represents metrics for communities, including growth and engagement.",Represents the total number of members in a community.
+CommunityMetrics,hasEngagementRate,"Represents metrics for communities, including growth and engagement.",Represents the engagement rate of a community.
+CommunityMetrics,hasActiveMembersCount,"Represents metrics for communities, including growth and engagement.",Represents the number of active members in a community.
+UserInsights,hasDraftViewsCount,Represents insights for users based on their drafts or contributions.,Represents the number of views on a user's draft.
+UserInsights,hasDraftCommentsCount,Represents insights for users based on their drafts or contributions.,Represents the number of comments on a user's draft.
+UserInsights,hasDraftSharesCount,Represents insights for users based on their drafts or contributions.,Represents the number of shares for a user's draft.
+UserInsights,hasDraftEngagementRate,Represents insights for users based on their drafts or contributions.,Represents the engagement rate for a user's draft.

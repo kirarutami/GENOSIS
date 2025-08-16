@@ -1,0 +1,3 @@
+?platform rdf:type ?category .	    -> Mengambil semua individu beserta kategori
+FILTER (?category IN (...))	        -> Membatasi hanya kategori yang termasuk social media
+ORDER BY ?category ?platform	    -> Mengurutkan berdasarkan kategori dan platform

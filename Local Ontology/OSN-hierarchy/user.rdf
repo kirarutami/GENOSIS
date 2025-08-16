@@ -1,0 +1,209 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas User -->
+    <owl:Class rdf:about="#User"/>
+
+    <!-- Sub-kelas UserProfile -->
+    <owl:Class rdf:about="#UserProfile">
+        <rdfs:subClassOf rdf:resource="#User"/>
+    </owl:Class>
+
+    <!-- Sub-kelas Fullname di dalam UserProfile -->
+    <owl:Class rdf:about="#Fullname">
+        <rdfs:subClassOf rdf:resource="#UserProfile"/>
+    </owl:Class>
+
+    <!-- Individu di dalam UserProfile -->
+    <owl:NamedIndividual rdf:about="#ProfilePicture">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their profile picture.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Username">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their username.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Email">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their email address.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#FirstName">
+        <rdf:type rdf:resource="#Fullname"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their first name.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MiddleName">
+        <rdf:type rdf:resource="#Fullname"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their middle name.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LastName">
+        <rdf:type rdf:resource="#Fullname"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their last name.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#CoverPhoto">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their cover photo.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Bio">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can edit their bio information.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Details">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add/edit pronoun, work, education, current city, hometown, relationship, and followers.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Highlights">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage highlights.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Links">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add links to their profile.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AccountVerification">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can apply for account verification.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas PrivacySettings -->
+    <owl:Class rdf:about="#PrivacySettings">
+        <rdfs:subClassOf rdf:resource="#User"/>
+    </owl:Class>
+
+    <!-- Sub-kelas AccountPrivacy di dalam PrivacySettings -->
+    <owl:Class rdf:about="#AccountPrivacy">
+        <rdfs:subClassOf rdf:resource="#PrivacySettings"/>
+    </owl:Class>
+
+    <!-- Sub-kelas BlockedAccounts di dalam AccountPrivacy -->
+    <owl:Class rdf:about="#BlockedAccounts">
+        <rdfs:subClassOf rdf:resource="#AccountPrivacy"/>
+    </owl:Class>
+
+    <!-- Individu di dalam AccountPrivacy -->
+    <owl:NamedIndividual rdf:about="#PrivateAccount">
+        <rdf:type rdf:resource="#AccountPrivacy"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can set their account to private.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#CloseFriends">
+        <rdf:type rdf:resource="#AccountPrivacy"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can manage their close friends list.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#BlockingOptions">
+        <rdf:type rdf:resource="#BlockedAccounts"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can choose different blocking options such as blocking messages or profile viewing.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#BlockNotifications">
+        <rdf:type rdf:resource="#BlockedAccounts"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can block notifications from blocked accounts.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ReviewBlockedAccounts">
+        <rdf:type rdf:resource="#BlockedAccounts"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can review and manage the list of blocked accounts.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas StoryAndLiveSettings di dalam PrivacySettings -->
+    <owl:Class rdf:about="#StoryAndLiveSettings">
+        <rdfs:subClassOf rdf:resource="#PrivacySettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam StoryAndLiveSettings -->
+    <owl:NamedIndividual rdf:about="#HideStory">
+        <rdf:type rdf:resource="#StoryAndLiveSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can hide their story from specific accounts.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AllowStoryReplies">
+        <rdf:type rdf:resource="#StoryAndLiveSettings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can control who can reply to their stories.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas SecuritySettings -->
+    <owl:Class rdf:about="#SecuritySettings">
+        <rdfs:subClassOf rdf:resource="#User"/>
+    </owl:Class>
+
+    <!-- Sub-kelas LoginSecurity di dalam SecuritySettings -->
+    <owl:Class rdf:about="#LoginSecurity">
+        <rdfs:subClassOf rdf:resource="#SecuritySettings"/>
+    </owl:Class>
+
+    <!-- Sub-kelas SessionManagement di dalam LoginSecurity -->
+    <owl:Class rdf:about="#SessionManagement">
+        <rdfs:subClassOf rdf:resource="#LoginSecurity"/>
+    </owl:Class>
+
+    <!-- Individu di dalam LoginSecurity -->
+    <owl:NamedIndividual rdf:about="#TwoFactorAuthentication">
+        <rdf:type rdf:resource="#LoginSecurity"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can enable two-factor authentication for their account.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LoginAlerts">
+        <rdf:type rdf:resource="#LoginSecurity"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can receive alerts for unrecognized logins.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#PasswordManagement">
+        <rdf:type rdf:resource="#LoginSecurity"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their account password.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ActiveSessions">
+        <rdf:type rdf:resource="#SessionManagement"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view and manage active sessions.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LogoutFromSessions">
+        <rdf:type rdf:resource="#SessionManagement"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can log out from specific active sessions.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas AccountSettings -->
+    <owl:Class rdf:about="#AccountSettings">
+        <rdfs:subClassOf rdf:resource="#User"/>
+    </owl:Class>
+
+    <!-- Sub-kelas GeneralAccount di dalam AccountSettings -->
+    <owl:Class rdf:about="#GeneralAccount">
+        <rdfs:subClassOf rdf:resource="#AccountSettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam GeneralAccount -->
+    <owl:NamedIndividual rdf:about="#PhoneNumber">
+        <rdf:type rdf:resource="#GeneralAccount"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add or change their phone number.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Language">
+        <rdf:type rdf:resource="#GeneralAccount"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change the language settings.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TimeZone">
+        <rdf:type rdf:resource="#GeneralAccount"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can set their account time zone.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ApplyForVerification">
+        <rdf:type rdf:resource="#GeneralAccount"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can apply for account verification.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

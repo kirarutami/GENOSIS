@@ -1,0 +1,286 @@
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    
+
+    <!-- Class: User -->
+    <owl:Class rdf:about="#User">
+        <rdfs:comment>The primary class representing the user in the system.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#SecuritySettings"/>
+        <owl:disjointWith rdf:resource="#PrivacySettings"/>
+    </owl:Class>
+
+    <!-- Class: UserProfile -->
+    <owl:Class rdf:about="#UserProfile">
+        <rdfs:comment>Represents the profile of a user, containing personal information such as profile picture, username, and email.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <owl:disjointWith rdf:resource="#SecuritySettings"/>
+        <owl:disjointWith rdf:resource="#PrivacySettings"/>
+    </owl:Class>
+
+    <!-- Data Property: hasFirstName -->
+    <owl:DatatypeProperty rdf:about="#hasFirstName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the first name of the user.</rdfs:comment>
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <propertyDisjointWith rdf:resource="#hasLastName"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasLastName -->
+    <owl:DatatypeProperty rdf:about="#hasLastName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the last name of the user.</rdfs:comment>
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <propertyDisjointWith rdf:resource="#hasFirstName"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasMiddleName -->
+    <owl:DatatypeProperty rdf:about="#hasMiddleName">
+        <rdfs:comment>Stores the middle name of the user, if applicable.</rdfs:comment>
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <propertyDisjointWith rdf:resource="#hasFirstName"/>
+        <propertyDisjointWith rdf:resource="#hasLastName"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasProfilePicture -->
+    <owl:DatatypeProperty rdf:about="#hasProfilePicture">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the URL or file path to the user's profile picture.</rdfs:comment>
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <propertyDisjointWith rdf:resource="#hasCoverPhoto"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasProfilePictureHash -->
+    <owl:DatatypeProperty rdf:about="#hasProfilePictureHash">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>For verifying the integrity of the profile picture using hash.</rdfs:comment>
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <propertyDisjointWith rdf:resource="#hasCoverPhoto"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasCoverPhoto -->
+    <owl:DatatypeProperty rdf:about="#hasCoverPhoto">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the URL or file path to the user's cover photo.</rdfs:comment>
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <propertyDisjointWith rdf:resource="#hasProfilePicture"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasUsername -->
+    <owl:DatatypeProperty rdf:about="#hasUsername">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the unique username of the user.</rdfs:comment>
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <propertyDisjointWith rdf:resource="#hasEmail"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasEmail -->
+    <owl:DatatypeProperty rdf:about="#hasEmail">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the email address of the user.</rdfs:comment>
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <propertyDisjointWith rdf:resource="#hasUsername"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasBio -->
+    <owl:DatatypeProperty rdf:about="#hasBio">
+        <rdfs:comment>Stores the biography or short description of the user.</rdfs:comment>
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasDetails -->
+    <owl:DatatypeProperty rdf:about="#hasDetails">
+        <rdfs:comment>Stores additional details about the user.</rdfs:comment>
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasHighlights -->
+    <owl:DatatypeProperty rdf:about="#hasHighlights">
+        <rdfs:comment>Stores highlights associated with the user's profile.</rdfs:comment>
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasAccountCreationDate -->
+    <owl:DatatypeProperty rdf:about="#hasAccountCreationDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the account creation date for the user.</rdfs:comment>
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasAccountVerification -->
+    <owl:DatatypeProperty rdf:about="#hasAccountVerification">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates whether the user's account has been verified.</rdfs:comment>
+        <rdfs:domain rdf:resource="#UserProfile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+
+    <!-- Class: PrivacySettings -->
+    <owl:Class rdf:about="#PrivacySettings">
+        <rdfs:comment>Represents the privacy settings related to the user's account, including blocked accounts and story settings.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <owl:disjointWith rdf:resource="#UserProfile"/>
+    </owl:Class>
+
+    <!-- Data Property: hasAccountPrivacy -->
+    <owl:DatatypeProperty rdf:about="#hasAccountPrivacy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the privacy setting of the user's account, indicating whether the account is private or public.</rdfs:comment>
+        <rdfs:domain rdf:resource="#PrivacySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasPrivateAccount -->
+    <owl:DatatypeProperty rdf:about="#hasPrivateAccount">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates whether the user account is private.</rdfs:comment>
+        <rdfs:domain rdf:resource="#PrivacySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasCloseFriends -->
+    <owl:DatatypeProperty rdf:about="#hasCloseFriends">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates whether the user has a close friends list.</rdfs:comment>
+        <rdfs:domain rdf:resource="#PrivacySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasBlockedAccounts -->
+    <owl:DatatypeProperty rdf:about="#hasBlockedAccounts">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates whether the user has blocked accounts.</rdfs:comment>
+        <rdfs:domain rdf:resource="#PrivacySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasBlockingOptions -->
+    <owl:DatatypeProperty rdf:about="#hasBlockingOptions">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates the available blocking options for the user.</rdfs:comment>
+        <rdfs:domain rdf:resource="#PrivacySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasBlockNotifications -->
+    <owl:DatatypeProperty rdf:about="#hasBlockNotifications">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates whether the user is notified about blocked accounts.</rdfs:comment>
+        <rdfs:domain rdf:resource="#PrivacySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasReviewBlockedAccounts -->
+    <owl:DatatypeProperty rdf:about="#hasReviewBlockedAccounts">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates whether the user has reviewed the list of blocked accounts.</rdfs:comment>
+        <rdfs:domain rdf:resource="#PrivacySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasHideStory -->
+    <owl:DatatypeProperty rdf:about="#hasHideStory">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores whether the user's story is hidden from certain users.</rdfs:comment>
+        <rdfs:domain rdf:resource="#PrivacySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasAllowStoryReplies -->
+    <owl:DatatypeProperty rdf:about="#hasAllowStoryReplies">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates whether replies to the user's story are allowed.</rdfs:comment>
+        <rdfs:domain rdf:resource="#PrivacySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasStoryExpiration -->
+    <owl:DatatypeProperty rdf:about="#hasStoryExpiration">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the expiration time of the user's story.</rdfs:comment>
+        <rdfs:domain rdf:resource="#PrivacySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasLastStoryUpdate -->
+    <owl:DatatypeProperty rdf:about="#hasLastStoryUpdate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the time of the last update to the user's story.</rdfs:comment>
+        <rdfs:domain rdf:resource="#PrivacySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+
+    <!-- Class: SecuritySettings -->
+    <owl:Class rdf:about="#SecuritySettings">
+        <rdfs:comment>Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#User"/>
+        <owl:disjointWith rdf:resource="#UserProfile"/>
+    </owl:Class>
+
+    <!-- Data Property: hasActiveSessions -->
+    <owl:DatatypeProperty rdf:about="#hasActiveSessions">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates the number of active sessions the user has.</rdfs:comment>
+        <rdfs:domain rdf:resource="#SecuritySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasLastLogin -->
+    <owl:DatatypeProperty rdf:about="#hasLastLogin">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the date and time of the user's last login.</rdfs:comment>
+        <rdfs:domain rdf:resource="#SecuritySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasLoginIP -->
+    <owl:DatatypeProperty rdf:about="#hasLoginIP">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the IP address used during the user's last login session.</rdfs:comment>
+        <rdfs:domain rdf:resource="#SecuritySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasLogoutFromSessions -->
+    <owl:DatatypeProperty rdf:about="#hasLogoutFromSessions">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates whether the user has logged out from all active sessions.</rdfs:comment>
+        <rdfs:domain rdf:resource="#SecuritySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasPhoneNumberVerificationStatus -->
+    <owl:DatatypeProperty rdf:about="#hasPhoneNumberVerificationStatus">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates the verification status of the user's phone number.</rdfs:comment>
+        <rdfs:domain rdf:resource="#SecuritySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasPhoneNumber -->
+    <owl:DatatypeProperty rdf:about="#hasPhoneNumber">
+        <rdfs:comment>Stores the user's phone number.</rdfs:comment>
+        <rdfs:domain rdf:resource="#SecuritySettings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>
+
+
+
+

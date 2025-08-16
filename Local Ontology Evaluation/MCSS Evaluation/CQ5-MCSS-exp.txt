@@ -1,0 +1,24 @@
+Inti dari menjawab CQ5 ("Bagaimana analisis media sosial dapat membantu dalam mengidentifikasi jaringan atau asosiasi antar tersangka?") menggunakan ontologi Anda adalah dengan memanfaatkan dan mengkueri hubungan (relationships) antar entitas, terutama antar pengguna (User), yang telah dimodelkan dalam ontologi tersebut.
+
+Hal-hal kunci yang perlu diperhatikan adalah:
+
+Identifikasi Jenis Hubungan: Kenali berbagai cara asosiasi atau hubungan antar pengguna dimodelkan dalam ontologi Anda. Ini termasuk:
+
+Komunikasi Langsung: Seperti pertukaran ex:DirectMessage (melalui properti ex:sentBy dan ex:sentTo).   
+Interaksi Tidak Langsung (melalui Konten): Seperti pengguna yang berbeda berkomentar (ex:Comment) atau menyukai (ex:Like) pada konten (ex:Content, ex:Post) yang sama, atau konten milik satu sama lain. Ini menunjukkan keterlibatan atau ketertarikan pada topik/pihak yang sama.
+Hubungan Kontekstual Bersama: Pengguna yang berpartisipasi dalam peristiwa yang sama, misalnya berkomentar di video yang sama (ex:commentsOnContent) atau live stream yang sama.
+Tindakan Langsung Antar Pengguna: Seperti satu pengguna melaporkan pengguna lain (ex:reportsUser pada ex:Report).   
+Hubungan Struktural Lainnya: Seperti langganan, pertemanan, pengelolaan channel bersama (jika dimodelkan dan ada datanya).
+Fokus pada Properti Penghubung: Perhatikan owl:ObjectProperty yang menghubungkan instance ex:User satu sama lain, baik secara langsung maupun tidak langsung melalui instance interaksi atau konten. Contoh kunci: ex:sentBy, ex:sentTo, ex:commentedBy, ex:reportsUser, ex:commentedBy (dikombinasikan dengan ex:commentsOnContent untuk melihat siapa lagi yang berkomentar di konten yang sama).
+
+Gunakan SPARQL untuk Menemukan Pola Koneksi: SPARQL digunakan untuk mencari pola-pola hubungan ini dalam data RDF. Anda perlu merumuskan kueri yang:
+
+Mencari instance interaksi (DM, Komentar, Laporan, dll.).
+Mengambil pengguna yang terlibat dalam interaksi tersebut.
+Menghubungkan pengguna berdasarkan interaksi langsung atau tidak langsung (misalnya, dua pengguna yang mengirim DM satu sama lain, atau dua pengguna yang berkomentar di postingan yang sama).
+Filter Berdasarkan Konteks (Jika Perlu): Seringkali analisis jaringan dimulai dari titik tertentu (tersangka yang diketahui atau insiden spesifik). Kueri SPARQL dapat difilter untuk hanya menampilkan asosiasi yang melibatkan pengguna atau konten tertentu tersebut, sehingga memetakan jaringan yang paling relevan dengan investigasi.
+
+Singkatnya, untuk menjawab CQ5, Anda perlu menunjukkan bagaimana struktur relasional dalam ontologi dapat dikueri menggunakan SPARQL untuk mengungkap berbagai jenis koneksi (langsung, tidak langsung, kontekstual) antar pengguna, sehingga memetakan jaringan sosial mereka.
+
+
+Sources and related content

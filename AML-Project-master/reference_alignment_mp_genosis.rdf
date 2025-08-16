@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns="http://knowledgeweb.semanticweb.org/heterogeneity/alignment"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+<Alignment>
+  <xml>yes</xml>
+  <level>0</level>
+  <type>11</type>
+  <onto1><Ontology rdf:about="http://saralutami.org/MicrobloggingPlatforms"/></onto1>
+  <onto2><Ontology rdf:about="http://example.org/genosis.owl"/></onto2>
+  
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#NotificationSettings"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#MP:NotificationSettings"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#follow"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:followsAccount"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#joinsCommunity"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:joinsCommunity"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#canEditAvatar"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:editsAvatar"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#LiveInteractions"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#MP:LiveInteractionActivity"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#reports"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:reports"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#Post"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#MP:Post"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#hasPostInteractionIP"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:hasIpAddress"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#hasPrivacySetting"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#hasAccountPrivacy"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#dmReceiver"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:messageReceiver"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#commentedBy"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:commentedBy"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#ReblogRetweetPost"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#MP:ReblogRetweetAction"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#hasPostContent"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:hasContentText"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#hasLocation"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:hasLocation"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#searchesForLists"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:searchesFor"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#searchFor"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:searchesFor"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#hasPostURL"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:hasContentURL"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#hasPostTimestamp"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:hasCreationTimestamp"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#Likes"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#MP:LikeAction"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#hasCommentIP"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:hasIpAddress"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#hasPostLocation"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:hasLocation"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#sharesCommunity"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:userSharesCommunity"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#User"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#MP:User"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#hasCommentTimestamp"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:hasInteractionTimestamp"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#reportComment"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:reportsContent"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#hasScheduledTime"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#hasScheduledPublishTimestamp"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#postedBy"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:postedBy"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#DirectMessages"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#MP:DirectMessage"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#postedBy"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:attributedToUser"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#deletesMessage"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:deletesMessage"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#schedulePost"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:schedulesPost"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#hasRetweetTimestamp"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:hasInteractionTimestamp"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#reportsMessage"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:reportsMessage"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#commentedOn"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:commentsOn"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#Comment"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#MP:CommentAction"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#hasEmail"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#hasEmail"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#hasDMTimestamp"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:hasMessageSentTimestamp"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#addsOrFollowsList"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:followsList"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#isSubscribedTo"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:subscribesTo"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#commentsOn"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:commentsOn"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#sendsVoiceNotesTo"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:sendsVoiceNoteTo"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#unfollow"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:unfollows"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#blocks"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:blocksUser"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#repliesToMessage"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:repliesToMessage"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#likesComment"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:likesComment"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#hasBio"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#hasBio"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#searchesForCommunity"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:searchesFor"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#unblocks"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:unblocksUser"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#saveSearchesFor"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:savesSearch"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#likesPost"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:likedContent"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#pinsCommunity"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#Global:userPinsCommunity"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#hasCreationDate"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#hasGroupCreationTimestamp"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell>
+        <entity1 rdf:resource="http://saralutami.org/MicrobloggingPlatforms#Report"/>
+        <entity2 rdf:resource="http://example.org/genosis.owl#MP:ReportAction"/>
+        <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+        <relation>=</relation>
+      </Cell>
+    </map>
+</Alignment>
+</rdf:RDF>

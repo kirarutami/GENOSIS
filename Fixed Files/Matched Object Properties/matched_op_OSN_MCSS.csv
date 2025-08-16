@@ -1,0 +1,8 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+OSN:commentedBy,MCSS:commentedBy,100.0,Links a comment with the User who made the comment.,Links a comment with the User who made the comment.
+OSN:commentsOn,MCSS:commentsOnContent,90.0,Links a comment with the ContentCreation that was commented on.,Indicates that a user comments on specific content.
+OSN:enablesNotifications,MCSS:enablesNotificationForGroupMessages,87.69,Links a user to the action of enabling notifications.,Enables notifications for group messages.
+OSN:viewsMessages,MCSS:viewsMessageStats,86.67,Links a user to the messages they have viewed.,Represents a user viewing analytics for a specific message.
+OSN:belongsTo,MCSS:belongsToLive,81.82,"The inverse property of 'hasProfileOn', indicating that a social media profile belongs to a user on a given platform.",Links the SuperChat donation to the corresponding live stream event.
+OSN:interactsWithVideo,MCSS:interactsWithShop,80.0,"Links a User's interaction with a video (e.g., watching history) to the specific video content.",Indicates that a User interacts with shopping-related features.
+OSN:sendsTextMessage,MCSS:sendsMessageTo,80.0,Indicates that a user sent a text message.,Represents a user sending a message to another user.

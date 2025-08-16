@@ -1,0 +1,31 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# Menggunakan namespace dasar dari file RDF untuk elemen ontologi
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+# MCSS9: Can videos or media uploads be used as evidence to verify a suspect's involvement?
+# Pendekatan (Kasus YouTube): Mengidentifikasi unggahan media (video) yang terkait
+# dengan tersangka (WanderlustTravels) dan merupakan inti dari dugaan kejahatan (pelanggaran hak cipta).
+# VERSI DIPERBAIKI: Menghindari shortcut ';' untuk potensi masalah parser.
+
+SELECT ?suspect ?channel ?videoEvidence ?videoTitle ?videoURL ?uploadTimestamp
+WHERE {
+  # Identifikasi pengguna yang diduga tersangka
+  BIND(ex:WanderlustTravels AS ?suspect) .
+
+  # Temukan channel yang dimiliki oleh tersangka
+  ?suspect ex:ownsChannel ?channel .
+
+  # Temukan video yang diunggah oleh channel tersebut (yang diduga dicuri)
+  ?channel ex:uploadsVideo ?videoEvidence .
+  FILTER(?videoEvidence = ex:StolenSwissAlpsVideo) . # Fokus pada bukti video spesifik
+
+  # Dapatkan metadata tentang bukti video tersebut (menggunakan triple eksplisit)
+  ?videoEvidence rdf:type ex:Video .
+  ?videoEvidence ex:hasTitle ?videoTitle .          # Judul video bukti
+  ?videoEvidence ex:hasURL ?videoURL .              # URL video bukti
+  ?videoEvidence ex:hasPublicationDate ?uploadTimestamp . # Waktu unggah bukti
+}

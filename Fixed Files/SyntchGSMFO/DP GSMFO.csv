@@ -1,0 +1,312 @@
+class,dataProperty,classComment,dataPropertyComment
+OSN:PageSettings,hasName,Represents configurable settings for a page.,The name of the page.
+OSN:PageSettings,hasDescription,Represents configurable settings for a page.,The description of the page.
+OSN:PageSettings,hasCategory,Represents configurable settings for a page.,The category of the page.
+OSN:PageSettings,hasContactInfo,Represents configurable settings for a page.,The contact information for the page.
+OSN:PageSettings,hasLocation,Represents configurable settings for a page.,The location of the page.
+OSN:PageSettings,hasHours,Represents configurable settings for a page.,The operating hours of the page.
+OSN:PageSettings,hasWebsite,Represents configurable settings for a page.,The website link associated with the page.
+"OSN:PageSettings,hasUserRoles,Represents configurable settings for a page.,""The roles of users associated with the page (e.g., Admin, Moderator)."""
+"OSN:PageFeature,hasEventCount,""Represents features such as events, posts, photos, and videos available on a page."",The number of events on the page."
+"OSN:PageFeature,hasPostCount,""Represents features such as events, posts, photos, and videos available on a page."",The number of posts on the page."
+"OSN:PageFeature,hasPhotoCount,""Represents features such as events, posts, photos, and videos available on a page."",The number of photos on the page."
+"OSN:PageFeature,hasVideoCount,""Represents features such as events, posts, photos, and videos available on a page."",The number of videos on the page."
+"OSN:PageInsight,hasViewCount,""Represents insights like views, reach, and engagement for a page."",The total number of views on the page."
+"OSN:PageInsight,hasPostReach,""Represents insights like views, reach, and engagement for a page."",The reach of posts on the page."
+"MCSS:Channel,hasChannelID,""Represents a content creator's channel on the platform, with attributes and relationships to content and users."",Unique identifier for the channel."
+"MCSS:Channel,hasChannelName,""Represents a content creator's channel on the platform, with attributes and relationships to content and users."",Name of the channel."
+"MCSS:Channel,hasChannelDescription,""Represents a content creator's channel on the platform, with attributes and relationships to content and users."",Description of the channel."
+"MCSS:Channel,hasChannelCreationDate,""Represents a content creator's channel on the platform, with attributes and relationships to content and users."",Date when the channel was created."
+"MCSS:Channel,hasChannelProfilePicture,""Represents a content creator's channel on the platform, with attributes and relationships to content and users."",URL of the channel's profile picture."
+"MCSS:Channel,hasSubscriberCount,""Represents a content creator's channel on the platform, with attributes and relationships to content and users."",Total number of subscribers for the channel."
+"MCSS:Channel,hasPlaylist,""Represents a content creator's channel on the platform, with attributes and relationships to content and users."",the channel to playlists"
+"MCSS:Channel,hasTotalViews,""Represents a content creator's channel on the platform, with attributes and relationships to content and users."",Total number of views across all content in the channel."
+"http://www.w3.org/2002/07/owl#Thing,Global:hasTimestampData,,""A generic property for metadatas. Sub-properties should be used for specific metadatas for example: timestamps, ip address, location, etc."""
+"Global:Content,Global:hasCreationTimestamp,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,""Timestamp indicating when an entity (e.g., account, post, group, file, event, poll, rule) was created."""
+"Global:Content,Global:hasCreationTimestamp,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,""Timestamp yang menunjukkan kapan sebuah entitas (misalnya, akun, postingan, grup, file, acara, polling, aturan) dibuat."""
+"Global:Content,Global:hasCreationTimestamp,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,""Timestamp indicating when an entity (e.g., account, post, group, file, event, poll, rule) was created."""
+"Global:Content,Global:hasCreationTimestamp,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,""Timestamp yang menunjukkan kapan sebuah entitas (misalnya, akun, postingan, grup, file, acara, polling, aturan) dibuat."""
+"Global:Content,Global:hasCreationTimestamp,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""Timestamp indicating when an entity (e.g., account, post, group, file, event, poll, rule) was created."""
+"Global:Content,Global:hasCreationTimestamp,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""Timestamp yang menunjukkan kapan sebuah entitas (misalnya, akun, postingan, grup, file, acara, polling, aturan) dibuat."""
+"Global:UserAccount,Global:hasCreationTimestamp,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,""Timestamp indicating when an entity (e.g., account, post, group, file, event, poll, rule) was created."""
+"Global:UserAccount,Global:hasCreationTimestamp,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,""Timestamp yang menunjukkan kapan sebuah entitas (misalnya, akun, postingan, grup, file, acara, polling, aturan) dibuat."""
+"Global:UserAccount,Global:hasCreationTimestamp,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,""Timestamp indicating when an entity (e.g., account, post, group, file, event, poll, rule) was created."""
+"Global:UserAccount,Global:hasCreationTimestamp,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,""Timestamp yang menunjukkan kapan sebuah entitas (misalnya, akun, postingan, grup, file, acara, polling, aturan) dibuat."""
+"Global:UserAccount,Global:hasCreationTimestamp,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",""Timestamp indicating when an entity (e.g., account, post, group, file, event, poll, rule) was created."""
+"Global:UserAccount,Global:hasCreationTimestamp,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",""Timestamp yang menunjukkan kapan sebuah entitas (misalnya, akun, postingan, grup, file, acara, polling, aturan) dibuat."""
+"Global:Group,Global:hasCreationTimestamp,Represents a generalized group or community entity within a social media platform.,""Timestamp indicating when an entity (e.g., account, post, group, file, event, poll, rule) was created."""
+"Global:Group,Global:hasCreationTimestamp,Represents a generalized group or community entity within a social media platform.,""Timestamp yang menunjukkan kapan sebuah entitas (misalnya, akun, postingan, grup, file, acara, polling, aturan) dibuat."""
+"Global:Group,Global:hasCreationTimestamp,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,""Timestamp indicating when an entity (e.g., account, post, group, file, event, poll, rule) was created."""
+"Global:Group,Global:hasCreationTimestamp,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,""Timestamp yang menunjukkan kapan sebuah entitas (misalnya, akun, postingan, grup, file, acara, polling, aturan) dibuat."""
+"Global:Group,Global:hasCreationTimestamp,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""Timestamp indicating when an entity (e.g., account, post, group, file, event, poll, rule) was created."""
+"Global:Group,Global:hasCreationTimestamp,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""Timestamp yang menunjukkan kapan sebuah entitas (misalnya, akun, postingan, grup, file, acara, polling, aturan) dibuat."""
+"Global:ContentInteraction,Global:hasCreationTimestamp,Represents any interaction a user has with content or other users related to content.,""Timestamp indicating when an entity (e.g., account, post, group, file, event, poll, rule) was created."""
+"Global:ContentInteraction,Global:hasCreationTimestamp,Represents any interaction a user has with content or other users related to content.,""Timestamp yang menunjukkan kapan sebuah entitas (misalnya, akun, postingan, grup, file, acara, polling, aturan) dibuat."""
+"Global:ContentInteraction,Global:hasCreationTimestamp,""An instance of Global:ContentInteraction cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""Timestamp indicating when an entity (e.g., account, post, group, file, event, poll, rule) was created."""
+"Global:ContentInteraction,Global:hasCreationTimestamp,""An instance of Global:ContentInteraction cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""Timestamp yang menunjukkan kapan sebuah entitas (misalnya, akun, postingan, grup, file, acara, polling, aturan) dibuat."""
+"Global:ContentInteraction,Global:hasInteractionTimestamp,Represents any interaction a user has with content or other users related to content.,""Timestamp indicating when an interaction (e.g., like, comment, share, report, gift, award, block, bookmark, follow, reply, upvote) occurred."""
+"Global:ContentInteraction,Global:hasInteractionTimestamp,""An instance of Global:ContentInteraction cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""Timestamp indicating when an interaction (e.g., like, comment, share, report, gift, award, block, bookmark, follow, reply, upvote) occurred."""
+"Global:GroupMessage,Global:hasLastActivityTimestamp,Represents a message sent within a group chat context.,""Timestamp indicating the last recorded activity for an entity (e.g., group message thread, user login)."""
+"Global:UserAccount,Global:hasLastActivityTimestamp,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,""Timestamp indicating the last recorded activity for an entity (e.g., group message thread, user login)."""
+"Global:UserAccount,Global:hasLastActivityTimestamp,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,""Timestamp indicating the last recorded activity for an entity (e.g., group message thread, user login)."""
+"Global:UserAccount,Global:hasLastActivityTimestamp,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",""Timestamp indicating the last recorded activity for an entity (e.g., group message thread, user login)."""
+Global:Message,Global:hasMessageSentTimestamp,Represents any form of message exchanged between users or in groups.,Timestamp indicating when a message was sent.
+"Global:Message,Global:hasMessageSentTimestamp,""An instance of Global:Message cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",Timestamp indicating when a message was sent."
+"http://www.w3.org/2002/07/owl#Thing,Global:hasIpAddress,,""The IP address associated with an activity or entity. The specific context (login, post, comment) should be inferred from the domain class or related properties."""
+"http://www.w3.org/2002/07/owl#Thing,Global:hasIpAddress,,""Alamat IP yang terkait dengan aktivitas atau entitas. Konteks spesifik (login, post, komentar) harus disimpulkan dari kelas domain atau properti terkait."""
+Global:Group,Global:GroupName,Represents a generalized group or community entity within a social media platform.,The name of a group or community.
+Global:Group,Global:GroupName,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,The name of a group or community.
+"Global:Group,Global:GroupName,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",The name of a group or community."
+Global:Message,Global:hasMessageContent,Represents any form of message exchanged between users or in groups.,The textual content of a message.
+"Global:Message,Global:hasMessageContent,""An instance of Global:Message cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",The textual content of a message."
+Global:Message,Global:hasMessageReaction,Represents any form of message exchanged between users or in groups.,Represents an emoji or other reaction to a message.
+"Global:Message,Global:hasMessageReaction,""An instance of Global:Message cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",Represents an emoji or other reaction to a message."
+MCSS:GiftAction,Global:hasGiftPrice,,The monetary price of a gift sent during an interaction.
+Global:Message,Global:hasAttachmentURL,Represents any form of message exchanged between users or in groups.,The URL of a media attachment in a message or post.
+"Global:Message,Global:hasAttachmentURL,""An instance of Global:Message cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",The URL of a media attachment in a message or post."
+Global:Post,Global:hasAttachmentURL,Represents a generalized user-generated post.,The URL of a media attachment in a message or post.
+"Global:Post,Global:hasAttachmentURL,""A Global:Post is distinct from other types of Global:Content such as VideoContent, LiveContent, Poll, Story, or NewsContent."",The URL of a media attachment in a message or post."
+Global:UserAccount,Global:hasProfileVisibility,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,Specifies whether a user's profile is public or private.
+Global:UserAccount,Global:hasProfileVisibility,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,Specifies whether a user's profile is public or private.
+"Global:UserAccount,Global:hasProfileVisibility,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",Specifies whether a user's profile is public or private."
+"http://www.w3.org/2002/07/owl#Thing,Global:hasLocation,,""Geographic location associated with an entity or activity (e.g., post, user profile, event)."""
+"http://www.w3.org/2002/07/owl#Thing,Global:hasLocation,,""Lokasi geografis yang terkait dengan entitas atau aktivitas (misalnya, postingan, profil pengguna, acara)."""
+Global:Content,Global:hasContentURL,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,The URL or permalink to a piece of content.
+Global:Content,Global:hasContentURL,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,The URL or permalink to a piece of content.
+"Global:Content,Global:hasContentURL,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",The URL or permalink to a piece of content."
+"Global:Content,Global:hasCaptionText,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,""The caption or descriptive text associated with a piece of content, typically media."""
+"Global:Content,Global:hasCaptionText,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,""The caption or descriptive text associated with a piece of content, typically media."""
+"Global:Content,Global:hasCaptionText,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""The caption or descriptive text associated with a piece of content, typically media."""
+"Global:VideoContent,Global:hasClosedCaptions,""Represents video content, including standard videos, short videos, and reels."",Indicates whether video content has closed captions available or enabled."
+"Global:VideoContent,Global:hasClosedCaptions,""A Global:VideoContent is distinct from other types of Global:Content such as Post, LiveContent, Poll, Story, or NewsContent."",Indicates whether video content has closed captions available or enabled."
+Global:Content,Global:hasContentText,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,The main textual content of an entity like a post or message.
+Global:Content,Global:hasContentText,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,The main textual content of an entity like a post or message.
+"Global:Content,Global:hasContentText,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",The main textual content of an entity like a post or message."
+"http://www.w3.org/2002/07/owl#Thing,Global:count,,""A generic property for counts. Sub-properties should be used for specific counts (e.g., viewCount, likeCount)."""
+"Global:Content,Global:viewCount,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,""The number of views an entity (e.g., post, video, profile, page) has received."""
+"Global:Content,Global:viewCount,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,""The number of views an entity (e.g., post, video, profile, page) has received."""
+"Global:Content,Global:viewCount,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""The number of views an entity (e.g., post, video, profile, page) has received."""
+"Global:UserAccount,Global:viewCount,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,""The number of views an entity (e.g., post, video, profile, page) has received."""
+"Global:UserAccount,Global:viewCount,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,""The number of views an entity (e.g., post, video, profile, page) has received."""
+"Global:UserAccount,Global:viewCount,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",""The number of views an entity (e.g., post, video, profile, page) has received."""
+"OSN:Page,Global:viewCount,Represents Pages in the online social network context.,""The number of views an entity (e.g., post, video, profile, page) has received."""
+"Global:Content,Global:likeCount,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,""The number of likes an entity (e.g., post, comment, video) has received."""
+"Global:Content,Global:likeCount,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,""The number of likes an entity (e.g., post, comment, video) has received."""
+"Global:Content,Global:likeCount,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""The number of likes an entity (e.g., post, comment, video) has received."""
+"Global:Content,Global:voteCount,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,""The number of votes an entity (e.g., post, poll option) has received."""
+"Global:Content,Global:voteCount,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,""The number of votes an entity (e.g., post, poll option) has received."""
+"Global:Content,Global:voteCount,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""The number of votes an entity (e.g., post, poll option) has received."""
+"Global:Poll,Global:voteCount,Represents a poll created by users for interaction.,""The number of votes an entity (e.g., post, poll option) has received."""
+"Global:Poll,Global:voteCount,""A Global:Poll is distinct from other types of Global:Content such as Post, VideoContent, LiveContent, Story, or NewsContent."",""The number of votes an entity (e.g., post, poll option) has received."""
+"Global:Content,Global:commentCount,A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.,""The number of comments an entity (e.g., post, video) has received."""
+"Global:Content,Global:commentCount,Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.,""The number of comments an entity (e.g., post, video) has received."""
+"Global:Content,Global:commentCount,""An instance of Global:Content cannot simultaneously be an instance of Global:UserAccount, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""The number of comments an entity (e.g., post, video) has received."""
+"OSN:Page,Global:postCount,Represents Pages in the online social network context.,""The number of posts associated with an entity (e.g., a Page)."""
+"OSN:Page,Global:videoCount,Represents Pages in the online social network context.,""The number of videos associated with an entity (e.g., a Page)."""
+"OSN:Page,Global:eventCount,Represents Pages in the online social network context.,""The number of events associated with an entity (e.g., a Page)."""
+"Global:NotificationSettings,Global:notificationFrequency,Represents user-configurable settings related to notifications.,""Defines the frequency of notifications (e.g., Instant, Daily Digest)."""
+"Global:NotificationSettings,Global:notificationFrequency,""NotificationSettings are distinct from ProfileSettings, SecuritySettings, PrivacySettings, and Accessibility settings."",""Defines the frequency of notifications (e.g., Instant, Daily Digest)."""
+"Global:NotificationSettings,Global:notificationType,Represents user-configurable settings related to notifications.,""Specifies the type of notification (e.g., Post, Comment, New Upload, Reminder)."""
+"Global:NotificationSettings,Global:notificationType,""NotificationSettings are distinct from ProfileSettings, SecuritySettings, PrivacySettings, and Accessibility settings."",""Specifies the type of notification (e.g., Post, Comment, New Upload, Reminder)."""
+Global:NotificationSettings,Global:isNotificationSoundEnabled,Represents user-configurable settings related to notifications.,Indicates if sound is enabled for notifications.
+"Global:NotificationSettings,Global:isNotificationSoundEnabled,""NotificationSettings are distinct from ProfileSettings, SecuritySettings, PrivacySettings, and Accessibility settings."",Indicates if sound is enabled for notifications."
+"Global:NotificationSettings,Global:notificationStatus,Represents user-configurable settings related to notifications.,""Indicates the status of a notification (e.g., active, inactive, read, unread)."""
+"Global:NotificationSettings,Global:notificationStatus,""NotificationSettings are distinct from ProfileSettings, SecuritySettings, PrivacySettings, and Accessibility settings."",""Indicates the status of a notification (e.g., active, inactive, read, unread)."""
+"Global:UserAccount,Global:hasProfileDetails,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,""A generic property for profile details. Sub-properties should be used for specific properties like first name, last name, bio, profile picture, etc."""
+"Global:UserAccount,Global:hasProfileDetails,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,""A generic property for profile details. Sub-properties should be used for specific properties like first name, last name, bio, profile picture, etc."""
+"Global:UserAccount,Global:hasProfileDetails,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",""A generic property for profile details. Sub-properties should be used for specific properties like first name, last name, bio, profile picture, etc."""
+Global:UserAccount,hasLinkedAccount,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,
+Global:UserAccount,hasLinkedAccount,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,
+"Global:UserAccount,hasLinkedAccount,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."","
+Global:UserAccount,hasFirstName,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,The first name of the child.
+Global:UserAccount,hasFirstName,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,The first name of the child.
+"Global:UserAccount,hasFirstName,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",The first name of the child."
+OSN:ChildInformation,hasFirstName,Contains information about the child using Messenger Kids.,The first name of the child.
+Global:UserAccount,hasLastName,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,The last name of the child.
+Global:UserAccount,hasLastName,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,The last name of the child.
+"Global:UserAccount,hasLastName,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."",The last name of the child."
+OSN:ChildInformation,hasLastName,Contains information about the child using Messenger Kids.,The last name of the child.
+Global:UserAccount,hasMiddleName,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,
+Global:UserAccount,hasMiddleName,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,
+"Global:UserAccount,hasMiddleName,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."","
+Global:UserAccount,hasProfilePicture,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,
+Global:UserAccount,hasProfilePicture,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,
+"Global:UserAccount,hasProfilePicture,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."","
+Global:UserAccount,hasCoverPhotoURL,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,
+Global:UserAccount,hasCoverPhotoURL,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,
+"Global:UserAccount,hasCoverPhotoURL,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."","
+Global:UserAccount,hasProfilePictureHash,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,
+Global:UserAccount,hasProfilePictureHash,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,
+"Global:UserAccount,hasProfilePictureHash,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."","
+Global:UserAccount,hasUsername,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,
+Global:UserAccount,hasUsername,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,
+"Global:UserAccount,hasUsername,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."","
+Global:UserAccount,hasEmail,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,
+Global:UserAccount,hasEmail,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,
+"Global:UserAccount,hasEmail,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."","
+Global:UserAccount,hasBio,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,
+Global:UserAccount,hasBio,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,
+"Global:UserAccount,hasBio,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."","
+Global:UserAccount,hasHighlights,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,
+Global:UserAccount,hasHighlights,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,
+"Global:UserAccount,hasHighlights,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."","
+Global:UserAccount,hasPhoneNumber,Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.,
+Global:UserAccount,hasPhoneNumber,Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.,
+"Global:UserAccount,hasPhoneNumber,""An instance of Global:UserAccount cannot simultaneously be an instance of Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature, as these represent fundamentally different top-level categories."","
+"Global:ProfileSettings,Global:hasProfileSetting,Represents user-configurable settings related to their profile.,""A generic property for profile settings. Sub-properties should be used for specific properties like account verification status, account privacy, etc."""
+"Global:ProfileSettings,Global:hasProfileSetting,""ProfileSettings are distinct from NotificationSettings, SecuritySettings, PrivacySettings, and Accessibility settings."",""A generic property for profile settings. Sub-properties should be used for specific properties like account verification status, account privacy, etc."""
+Global:ProfileSettings,hasAccountVerification,Represents user-configurable settings related to their profile.,
+"Global:ProfileSettings,hasAccountVerification,""ProfileSettings are distinct from NotificationSettings, SecuritySettings, PrivacySettings, and Accessibility settings."","
+Global:PrivacySettings,hasAccountPrivacy,Represents privacy-related settings for a user account or profile.,
+"Global:PrivacySettings,hasAccountPrivacy,""PrivacySettings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and Accessibility settings."","
+Global:PrivacySettings,hasPrivateAccount,Represents privacy-related settings for a user account or profile.,
+"Global:PrivacySettings,hasPrivateAccount,""PrivacySettings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and Accessibility settings."","
+"Global:Accessibility,hasFontSize,""Accessibility settings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and PrivacySettings."","
+"Global:Accessibility,hasThemePreference,""Accessibility settings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and PrivacySettings."","
+"Global:Accessibility,hasContrastSetting,""Accessibility settings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and PrivacySettings."","
+"Global:Accessibility,hasPreferredLanguage,""Accessibility settings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and PrivacySettings."","
+"Global:Accessibility,hasAvailableLanguages,""Accessibility settings are distinct from ProfileSettings, NotificationSettings, SecuritySettings, and PrivacySettings."","
+Global:SecuritySettings,hasTwoFactorAuthenticationStatus,Represents security-related settings for a user account or profile.,
+"Global:SecuritySettings,hasTwoFactorAuthenticationStatus,""SecuritySettings are distinct from ProfileSettings, NotificationSettings, PrivacySettings, and Accessibility settings."","
+"OFB:ProfileSettings,hasNSFWVisibilitySetting,""OFB:ProfileSettings are distinct from MCSS:ProfileSettings, MP:ProfileSettings, and OSN:AccountSettings."","
+"Global:SearchFunctionality,Global:hasSearchData,Represents the capability and actions related to searching.,""A generic property for search data and history. Sub-properties should be used for specific properties like account verification status, account privacy, etc."""
+"Global:SearchFunctionality,Global:hasSearchData,""An instance of Global:SearchFunctionality cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:Marketplace, or Global:AdditionalFeature."",""A generic property for search data and history. Sub-properties should be used for specific properties like account verification status, account privacy, etc."""
+Global:SearchFunctionality,hasSearchHistory,Represents the capability and actions related to searching.,Records the search query history.
+"Global:SearchFunctionality,hasSearchHistory,""An instance of Global:SearchFunctionality cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:Marketplace, or Global:AdditionalFeature."",Records the search query history."
+Global:SearchFunctionality,hasSearchTimestamp,Represents the capability and actions related to searching.,
+"Global:SearchFunctionality,hasSearchTimestamp,""An instance of Global:SearchFunctionality cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:Marketplace, or Global:AdditionalFeature."","
+Global:SearchFunctionality,hasSearchCriteria,Represents the capability and actions related to searching.,
+"Global:SearchFunctionality,hasSearchCriteria,""An instance of Global:SearchFunctionality cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:Marketplace, or Global:AdditionalFeature."","
+Global:SearchFunctionality,hasSearchResultCount,Represents the capability and actions related to searching.,
+"Global:SearchFunctionality,hasSearchResultCount,""An instance of Global:SearchFunctionality cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:Marketplace, or Global:AdditionalFeature."","
+Global:SearchFunctionality,hasFilterType,Represents the capability and actions related to searching.,
+"Global:SearchFunctionality,hasFilterType,""An instance of Global:SearchFunctionality cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:Marketplace, or Global:AdditionalFeature."","
+Global:SearchFunctionality,hasFilterValue,Represents the capability and actions related to searching.,
+"Global:SearchFunctionality,hasFilterValue,""An instance of Global:SearchFunctionality cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:Marketplace, or Global:AdditionalFeature."","
+Global:SearchFunctionality,hasTrendingKeyword,Represents the capability and actions related to searching.,
+"Global:SearchFunctionality,hasTrendingKeyword,""An instance of Global:SearchFunctionality cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:Marketplace, or Global:AdditionalFeature."","
+Global:SearchFunctionality,hasTrendingScore,Represents the capability and actions related to searching.,
+"Global:SearchFunctionality,hasTrendingScore,""An instance of Global:SearchFunctionality cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:Group, Global:Marketplace, or Global:AdditionalFeature."","
+Global:ModerationAction,Global:hasModeration,Represents actions performed by moderators or administrators.,A generic property for moderation settings.
+Global:ModerationAction,hasModeratorRoleType,Represents actions performed by moderators or administrators.,
+Global:ModerationAction,hasJoinDateAsModerator,Represents actions performed by moderators or administrators.,
+Global:ModerationAction,hasModeratorPermissions,Represents actions performed by moderators or administrators.,
+Global:ModerationAction,isActiveModerator,Represents actions performed by moderators or administrators.,
+Global:ModerationAction,hasModeratorReputation,Represents actions performed by moderators or administrators.,
+Global:ModerationAction,hasModeratorNotes,Represents actions performed by moderators or administrators.,
+"OFB:ModerationQueue,hasModerationPriority,""Represents a queue for flagged content (OFB specific concept, related to moderation activity)."","
+"OFB:ModerationQueue,hasQueueCreationTimestamp,""Represents a queue for flagged content (OFB specific concept, related to moderation activity)."","
+"OFB:ModerationQueue,hasProcessingStatus,""Represents a queue for flagged content (OFB specific concept, related to moderation activity)."","
+OFB:ModeratorStatistics,Global:hasGroupPostStatistic,Represents statistics about a moderator's activity (OFB specific concept).,A generic property for group or community statistic
+OFB:ModeratorStatistics,hasTotalPostsApproved,Represents statistics about a moderator's activity (OFB specific concept).,
+OFB:ModeratorStatistics,hasTotalPostsDenied,Represents statistics about a moderator's activity (OFB specific concept).,
+OFB:ModeratorStatistics,hasTotalUsersBanned,Represents statistics about a moderator's activity (OFB specific concept).,
+OFB:ModeratorStatistics,hasTotalCommentsRemoved,Represents statistics about a moderator's activity (OFB specific concept).,
+OFB:ModeratorStatistics,hasAverageResponseTime,Represents statistics about a moderator's activity (OFB specific concept).,
+OFB:ModeratorStatistics,hasActivityLevel,Represents statistics about a moderator's activity (OFB specific concept).,
+OFB:ModeratorStatistics,hasKarmaPointsEarned,Represents statistics about a moderator's activity (OFB specific concept).,
+Global:GroupManagementActivity,Global:hasGroupActivity,Represents activities related to the management of groups or communities.,A generic property for group or community activities
+Global:GroupManagementActivity,hasLastUpdatedTimestamp,Represents activities related to the management of groups or communities.,
+Global:GroupManagementActivity,appliesToContentType,Represents activities related to the management of groups or communities.,
+Global:GroupManagementActivity,hasReportResolutionStatus,Represents activities related to the management of groups or communities.,
+Global:GroupManagementActivity,hasBannerImageURL,Represents activities related to the management of groups or communities.,
+Global:GroupManagementActivity,hasPostingRules,Represents activities related to the management of groups or communities.,
+Global:GroupManagementActivity,canAllowAnonymousPosts,Represents activities related to the management of groups or communities.,
+Global:GroupManagementActivity,hasRestrictedModeEnabled,Represents activities related to the management of groups or communities.,
+"Global:Group,Global:hasGroupDetails,Represents a generalized group or community entity within a social media platform.,""A generic property for group or community details like name, description, banner, etc"""
+"Global:Group,Global:hasGroupDetails,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,""A generic property for group or community details like name, description, banner, etc"""
+"Global:Group,Global:hasGroupDetails,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."",""A generic property for group or community details like name, description, banner, etc"""
+Global:Group,hasGroupName,Represents a generalized group or community entity within a social media platform.,
+Global:Group,hasGroupName,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,hasGroupName,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+Global:Group,hasGroupDescription,Represents a generalized group or community entity within a social media platform.,
+Global:Group,hasGroupDescription,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,hasGroupDescription,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+Global:Group,hasMembershipRequestsCount,Represents a generalized group or community entity within a social media platform.,
+Global:Group,hasMembershipRequestsCount,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,hasMembershipRequestsCount,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+Global:Group,hasGroupCategory,Represents a generalized group or community entity within a social media platform.,
+Global:Group,hasGroupCategory,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,hasGroupCategory,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+Global:Group,hasGroupCreationTimestamp,Represents a generalized group or community entity within a social media platform.,
+Global:Group,hasGroupCreationTimestamp,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,hasGroupCreationTimestamp,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+Global:Group,hasLastActivityTimestamp,Represents a generalized group or community entity within a social media platform.,
+Global:Group,hasLastActivityTimestamp,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,hasLastActivityTimestamp,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+Global:Group,hasGroupCoverPhoto,Represents a generalized group or community entity within a social media platform.,
+Global:Group,hasGroupCoverPhoto,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,hasGroupCoverPhoto,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+Global:Group,hasLinkedPages,Represents a generalized group or community entity within a social media platform.,
+Global:Group,hasLinkedPages,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,hasLinkedPages,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+Global:Group,hasGroupBadges,Represents a generalized group or community entity within a social media platform.,
+Global:Group,hasGroupBadges,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,hasGroupBadges,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+Global:Group,hasGroupRules,Represents a generalized group or community entity within a social media platform.,
+Global:Group,hasGroupRules,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,hasGroupRules,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+Global:Group,hasCommunityTheme,Represents a generalized group or community entity within a social media platform.,
+Global:Group,hasCommunityTheme,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,hasCommunityTheme,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+Global:Group,hasRuleType,Represents a generalized group or community entity within a social media platform.,
+Global:Group,hasRuleType,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,hasRuleType,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+OFB:SpotlightCommunity,hasSpotlightReason,,
+OFB:ReputationSystem,hasReputationLevel,,
+Global:Group,hasPrivacyLevel,Represents a generalized group or community entity within a social media platform.,
+Global:Group,hasPrivacyLevel,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,hasPrivacyLevel,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+Global:Group,hasMembershipApprovalStatus,Represents a generalized group or community entity within a social media platform.,
+Global:Group,hasMembershipApprovalStatus,Merepresentasikan entitas grup atau komunitas yang digeneralisasi dalam platform media sosial.,
+"Global:Group,hasMembershipApprovalStatus,""An instance of Global:Group cannot simultaneously be an instance of Global:UserAccount, Global:Content, Global:Message, Global:ContentInteraction, Global:SearchFunctionality, Global:Marketplace, or Global:AdditionalFeature."","
+OFB:AnonymousMode,OFB:hasAnonymousDetails,,A generic property for anonymous mode activity for online forum blogs category
+OFB:AnonymousMode,hasAnonymousPostTitle,,
+OFB:AnonymousMode,hasAnonymousPostContent,,
+OFB:AnonymousMode,hasAnonymousPostMedia,,
+OFB:AnonymousMode,hasAnonymousPostTimestamp,,
+OFB:AnonymousMode,hasAnonymousModeStatus,,
+OFB:AnonymousMode,hasAnonymousSessionID,,
+OFB:AnonymousMode,hasSessionExpire,,
+"OFB:Post,OFB:hasPostOptions,,""A generic property for online forum blogs post options like draft, scheduled, and crossposts"""
+OFB:DraftContent,hasDraftTitle,Content saved as a draft within OFB.,
+OFB:DraftContent,hasDraftContent,Content saved as a draft within OFB.,
+OFB:DraftContent,hasDraftMedia,Content saved as a draft within OFB.,
+OFB:DraftContent,hasDraftSavedTimestamp,Content saved as a draft within OFB.,
+OFB:ScheduledPost,hasScheduledPostTitle,,
+OFB:ScheduledPost,hasScheduledPostContent,,
+OFB:ScheduledPost,hasScheduledPostMedia,,
+Global:Post,hasScheduledPublishTimestamp,Represents a generalized user-generated post.,
+"Global:Post,hasScheduledPublishTimestamp,""A Global:Post is distinct from other types of Global:Content such as VideoContent, LiveContent, Poll, Story, or NewsContent."","
+OFB:CrossPostContent,hasCrosspostedTitle,Content that has been cross-posted from another source within OFB.,
+OFB:CrossPostContent,hasCrosspostedContent,Content that has been cross-posted from another source within OFB.,
+OFB:CrossPostContent,hasCrosspostedMedia,Content that has been cross-posted from another source within OFB.,
+OSN:AdditionalFeature,OSN:hasKidsDetails,,Represents kids details in online social network sites.
+OSN:ChildInformation,hasBirthday,Contains information about the child using Messenger Kids.,The birthday of the child.
+OSN:ConnectKids,hasConnectionTimestamp,Represents the connection status and timestamps for Messenger Kids users.,The timestamp when the connection was created.
+"OSN:ConnectKids,hasConnectionStatus,Represents the connection status and timestamps for Messenger Kids users.,""The connection status (e.g., Active, Pending)."""
+OSN:Games,hasGameSaveTimestamp,Represents game-playing activities.,The timestamp when the game was saved.
+"OSN:Games,hasGameSharePlatform,Represents game-playing activities.,""The platform where the game was shared (e.g., Facebook, Instagram)."""
+"OSN:Games,hasGameConnectionType,Represents game-playing activities.,""The type of connection used for gaming (e.g., Wi-Fi, Mobile Data)."""
+OSN:PlayerInfo,hasPlayerName,Represents player-related details.,The name of the player.
+OSN:PlayerInfo,hasPlayerAvatar,Represents player-related details.,The avatar of the player (URL).
+"OSN:Avatars,OSN:hasAvatarDetails,""Represents the avatars created, edited, and customized by users."",A generic property for avatar details"
+"OSN:Avatars,hasAvatarCreationTimestamp,""Represents the avatars created, edited, and customized by users."",The timestamp when the avatar was created."
+"OSN:Avatars,hasClothingItem,""Represents the avatars created, edited, and customized by users."",The clothing item selected or purchased for the avatar."
+"OSN:Avatars,hasOutfitCategory,""Represents the avatars created, edited, and customized by users."",The category of outfits the avatar is trying or wearing."
+"OSN:Avatars,hasEditTimestamp,""Represents the avatars created, edited, and customized by users."",The timestamp of the last edit made to the avatar."
+OSN:AvatarPost,hasPostCreationTimestamp,Represents posts created using avatars.,The timestamp when the avatar post was created.
+OSN:AvatarPost,hasPostCaption,Represents posts created using avatars.,The caption associated with the avatar post.
+"OSN:AvatarPost,hasPostVisibility,Represents posts created using avatars.,""The visibility level of the avatar post (e.g., Public, Private)."""
+OSN:Events,OSN:hasEventDetails,Represents events created and managed by users.,A generic property for events details
+OSN:Events,hasEventCreationTimestamp,Represents events created and managed by users.,The timestamp when the event was created.
+OSN:Events,hasEventUpdateTimestamp,Represents events created and managed by users.,The timestamp when the event was last updated.
+OSN:Events,hasEventStartTimestamp,Represents events created and managed by users.,The timestamp when the event starts.
+OSN:Events,hasEventEndTimestamp,Represents events created and managed by users.,The timestamp when the event ends.
+OSN:Events,hasEventInteractionIP,Represents events created and managed by users.,The IP address of the user managing the event.
+OSN:Events,hasEventDeviceInfo,Represents events created and managed by users.,Device information of the user managing the event.
+EventInvitations,hasInvitationSentTimestamp,Handles invitations for events.,The timestamp when the invitation was sent.
+EventInvitations,hasInviteAcceptanceTimestamp,Handles invitations for events.,The timestamp when the invitation was accepted.
+OFB:AccountDeletionActivity,isAccountDeleted,Represents the process or request of deleting a user account on an OFB platform.,
+OFB:AccountDeletionActivity,deletionReason,Represents the process or request of deleting a user account on an OFB platform.,
+OFB:AccountDeletionActivity,deletionRequestedOn,Represents the process or request of deleting a user account on an OFB platform.,

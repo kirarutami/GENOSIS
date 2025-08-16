@@ -1,0 +1,163 @@
+
+Kelompok #1 (Ukuran: 47):
+  - MCSS:Content: MCSS:Represents all types of content on the platform.
+  - MCSS:ContentInteraction: MCSS:Represents interactions on content within the platform.
+  - MCSS:HideNotifications: MCSS:Represents the functionality to hide notifications for users or channels.
+  - MCSS:Live: MCSS:Represents live streaming content within the system.
+  - MCSS:LivePost: MCSS:Represents posts associated with live sessions.
+  - MCSS:NotificationSettings: MCSS:Represents settings for managing message notifications.
+  - MCSS:Notifications: MCSS:Represents notifications and related interactions in the platform.
+  - MCSS:Post: MCSS:Represents a generic post on the platform, including audience type and schedule time.
+  - MCSS:ShortVideo: MCSS:Represents short video content in the system.
+  - MCSS:ShortVideoPost: MCSS:Represents posts associated with short videos.
+  - MCSS:Video: MCSS:Represents video content in the system.
+  - MCSS:VideoPost: MCSS:Represents posts that are associated with videos.
+  - MP:ContentCreation: MP:Represents actions related to creating and managing content on a microblogging platform.
+  - MP:ContentInteraction: MP:
+  - MP:LiveInteractions: MP:Represents live interaction features on the platform, including live spaces, rooms, and upcoming sessions.
+  - MP:LiveSpacesRooms: MP:Represents live spaces or rooms for users to listen, speak, and interact during live sessions.
+  - MP:NotificationSettings: MP:Represents settings related to notifications that the user can configure.
+  - MP:Notifications: MP:Represents user notifications and their related settings on the platform.
+  - MP:Post: MP:Represents a specific post or piece of content created by a user.
+  - MP:ReblogRetweetPost: MP:
+  - OFB:Content: OFB:Represents all forms of user-generated content, including posts and drafts, within the platform.
+  - OFB:ContentInteraction: OFB:Represents all forms of user interactions with content, including voting, liking, and replying.
+  - OFB:CrossPost: OFB:Represents posts that are cross-posted from other communities or original posts.
+  - OFB:NotificationSettings: OFB:Represents notification settings for a user.
+  - OFB:Notifications: OFB:Represents notifications and their configurations.
+  - OFB:PinPosts: OFB:Represents pinning actions for posts by users or communities.
+  - OFB:Post: OFB:Represents posts created by users, which may contain text, media, and other metadata.
+  - OFB:PushNotifications: OFB:Represents push notification settings.
+  - OFB:ScheduledPost: OFB:Represents posts scheduled by users to be published at a future timestamp.
+  - OFB:ShareRepost: OFB:Represents sharing or reposting content to a community or other platforms.
+  - OSN:AvatarPosts: OSN:Represents posts created using avatars.
+  - OSN:BirthdayPosts: OSN:Represents posts created for birthdays.
+  - OSN:ContentCreation: OSN:The main class representing content creation functionality, including posts, stories, and reels.
+  - OSN:ContentInteraction: OSN:The class representing user interactions with content, such as likes, reactions, and comments.
+  - OSN:GroupNotifications: OSN:Represents notification settings for a group.
+  - OSN:LiveVideo: OSN:Represents live video broadcasts created by the user.
+  - OSN:MessageNotifications: OSN:Represents notification settings related to direct messages.
+  - OSN:NotificationSettings: OSN:Handles configurations for notifications like push, email, and SMS.
+  - OSN:PhotoVideo: OSN:Represents posts containing photos or videos uploaded by the user.
+  - OSN:Posts: OSN:Represents posts created by users, including media posts, location check-ins, and live videos.
+  - OSN:ReelVideo: OSN:Represents a short video that is part of a reel.
+  - OSN:ShortVideoContent: OSN:Represents short video content shared on social network platforms.
+  - OSN:StoryPhotoVideo: OSN:Represents a story containing a photo or video.
+  - OSN:VideoCalls: OSN:Represents video call interactions within direct messages.
+  - OSN:VideoContent: OSN:The main class representing video-related content in the system, including video history and notifications.
+  - OSN:VideoNotifications: OSN:Represents notifications related to video content, such as new video uploads, reminders, and other updates.
+  - OSN:Videos: OSN:Represents video content watched by users, including viewing history and notifications.
+
+
+Kelompok #2 (Ukuran: 9):
+  - OFB:CommunityModeration: OFB:Represents moderation functionalities for a community, including moderators and their actions.
+  - OFB:Donations: OFB:Represents donations made to creators or content.
+  - OFB:ModerationQueue: OFB:Represents a queue that contains flagged content for moderation.
+  - OFB:Moderator: OFB:Represents a moderator assigned to a community with specific roles and permissions.
+  - OFB:ModeratorActions: OFB:Represents the actions a moderator can perform in a community.
+  - OFB:ModeratorStatistics: OFB:Represents various statistics associated with a moderator's activity in the community.
+  - OSN:GroupModeration: OSN:Represents the moderation activities and policies within a group.
+  - OSN:ModerationActions: OSN:Represents actions that moderators or admins can take in group moderation.
+  - OSN:Moderator: OSN:Represents a moderator role in a group.
+
+
+Kelompok #3 (Ukuran: 8):
+  - MCSS:Comment: MCSS:Represents a comment interaction with content.
+  - MP:Comment: MP:
+  - OFB:Comment: OFB:Represents comments made by users on content.
+  - OFB:ReplyToComments: OFB:Represents a reply to a comment action.
+  - OSN:Comments: OSN:Represents user interactions involving comments on content.
+  - OSN:EmojiComment: OSN:Represents a comment made by a user that contains an emoji.
+  - OSN:GIFComment: OSN:Represents a comment made by a user that contains a GIF.
+  - OSN:TextComment: OSN:Represents a text-based comment made by a user.
+
+
+Kelompok #4 (Ukuran: 7):
+  - MCSS:User: MCSS:The primary class representing individual users in the system.
+  - MP:User: MP:Represents a user in a microblogging platform (e.g., Twitter, Tumblr).
+  - OFB:BlockUnblockUser: OFB:Represents blocking and unblocking actions between users.
+  - OFB:User: OFB:Represents a user in the online forum or blog system.
+  - OFB:UserInsights: OFB:Represents insights for users based on their drafts or contributions.
+  - OSN:User: OSN:The primary class representing the user in the system.
+  - OSN:UserProfile: OSN:Represents the profile of a user, containing personal information such as profile picture, username, and email.
+
+
+Kelompok #5 (Ukuran: 6):
+  - MCSS:Dislike: MCSS:Represents a dislike interaction with content.
+  - MCSS:Like: MCSS:Represents a like interaction with content.
+  - MP:Likes: MP:
+  - OFB:Like: OFB:Represents a like action on content.
+  - OSN:Like: OSN:Represents a user's 'like' interaction on a post or content.
+  - OSN:LikesReactions: OSN:Represents user interactions involving likes and reactions to content.
+
+
+Kelompok #6 (Ukuran: 5):
+  - MCSS:DirectMessages: MCSS:Represents the functionality and content of direct messages in the system.
+  - MCSS:NewsWatchPage: MCSS:Represents the page where users watch or read news content.
+  - OFB:DirectMessaging: OFB:Represents one-on-one messaging interactions.
+  - OSN:DirectMessages: OSN:Represents direct messaging interactions among users on the platform.
+  - OSN:Pages: OSN:Represents Pages in the online social network context.
+
+
+Kelompok #7 (Ukuran: 5):
+  - OFB:Engagement: OFB:Represents various types of engagement actions performed on content.
+  - OSN:AccountManagement: OSN:Handles configurations for deactivating, deleting, downloading, or transferring account information.
+  - OSN:DeviceManagement: OSN:Handles authorized devices associated with the user's account.
+  - OSN:ListingsManagement: OSN:Represents the management of listings in the marketplace, including metrics and status.
+  - OSN:PagesManagement: OSN:Handles creation, activation, deactivation, and merging of Pages.
+
+
+Kelompok #8 (Ukuran: 4):
+  - MCSS:ProfileSettings: MCSS:Sub-class representing settings a user can edit in their profile.
+  - MP:ProfileSettings: MP:Represents profile customization settings for the user.
+  - OFB:ProfileSettings: OFB:Settings related to managing the user's profile.
+  - OSN:Files: OSN:Represents files uploaded to a group.
+
+
+Kelompok #9 (Ukuran: 4):
+  - MCSS:Search: MCSS:Represents search functionalities and recommendations within the system.
+  - MCSS:SearchFunctionality: MCSS:Handles direct search actions performed by users.
+  - MP:DiscoveryAndSearch: MP:Represents features for discovering and searching content, people, and topics on a microblogging platform.
+  - MP:SearchFunctionality: MP:Represents search functionalities within the platform.
+
+
+Kelompok #10 (Ukuran: 3):
+  - MCSS:GroupMessage: MCSS:Represents group message threads and related interactions.
+  - OFB:GroupMessaging: OFB:Represents group messaging interactions.
+  - OSN:Groups: OSN:Represents groups in the online social network site.
+
+
+Kelompok #11 (Ukuran: 2):
+  - MCSS:CreatorMarketplace: MCSS:Represents interactions with the creator marketplace.
+  - OSN:Marketplace: OSN:Represents the marketplace feature in the online social network site.
+
+
+Kelompok #12 (Ukuran: 2):
+  - OFB:Polls: OFB:Represents polls created by users with questions and options for interaction.
+  - OSN:Polls: OSN:Represents polls created in a group.
+
+
+Kelompok #13 (Ukuran: 2):
+  - OFB:SecuritySettings: OFB:Settings related to managing the user's profile security.
+  - OSN:SecuritySettings: OSN:Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.
+
+
+Kelompok #14 (Ukuran: 2):
+  - OFB:CommunitySettings: OFB:Represents settings for a community, including posting rules, banner, and flair.
+  - OSN:AccountSettings: OSN:Handles general, privacy, security, and account management settings.
+
+
+Kelompok #15 (Ukuran: 2):
+  - MCSS:Monetization: MCSS:Represents all monetization-related features and interactions.
+  - MP:Monetization: MP:Represents features related to monetization on the platform, including subscriptions and advertisements.
+
+
+Kelompok #16 (Ukuran: 2):
+  - MCSS:Report: MCSS:Represents a report interaction with content.
+  - MP:Report: MP:
+
+
+Kelompok #17 (Ukuran: 2):
+  - MCSS:Subscription: MCSS:Represents subscription-related features on the platform.
+  - MP:Subscription: MP:Represents subscription-related features for monetization.
+

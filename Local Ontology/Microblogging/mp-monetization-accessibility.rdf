@@ -1,0 +1,92 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Monetization -->
+    <owl:Class rdf:about="#Monetization">
+        <rdfs:comment>Represents features related to monetization on the platform, including subscriptions and advertisements.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas Subscription -->
+    <owl:Class rdf:about="#Subscription">
+        <rdfs:subClassOf rdf:resource="#Monetization"/>
+        <rdfs:comment>Represents subscription-related features for monetization.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas Advertisement -->
+    <owl:Class rdf:about="#Advertisement">
+        <rdfs:subClassOf rdf:resource="#Monetization"/>
+        <rdfs:comment>Represents advertisement-related features for monetization.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasSubscribed -->
+    <owl:DatatypeProperty rdf:about="#hasSubscribed">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates if the user has subscribed to a service.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: isSubscribedTo -->
+    <owl:ObjectProperty rdf:about="#isSubscribedTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Subscription"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Links a user to a specific subscription they are subscribed to.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: receivesAdvertisements -->
+    <owl:ObjectProperty rdf:about="#receivesAdvertisements">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Advertisement"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Links a user to advertisements they receive on the platform.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasAdvertisements -->
+    <owl:DatatypeProperty rdf:about="#hasAdvertisements">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates whether the user is exposed to advertisements.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Kelas AccessibilityAndDisplay -->
+    <owl:Class rdf:about="#AccessibilityAndDisplay">
+        <rdfs:comment>Represents settings for accessibility, display, language, and data usage on the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasAccessibilitySettings -->
+    <owl:DatatypeProperty rdf:about="#hasAccessibilitySettings">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the user's accessibility settings.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasDisplaySettings -->
+    <owl:DatatypeProperty rdf:about="#hasDisplaySettings">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the user's display settings.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasLanguagePreferences -->
+    <owl:DatatypeProperty rdf:about="#hasLanguagePreferences">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the user's preferred language settings.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasDataUsageSettings -->
+    <owl:DatatypeProperty rdf:about="#hasDataUsageSettings">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the user's data usage settings.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

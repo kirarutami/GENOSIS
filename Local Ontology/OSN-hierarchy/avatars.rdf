@@ -1,0 +1,41 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Avatars -->
+    <owl:Class rdf:about="#Avatars"/>
+
+    <!-- Sub-kelas CreateAvatar -->
+    <owl:Class rdf:about="#CreateAvatar">
+        <rdfs:subClassOf rdf:resource="#Avatars"/>
+    </owl:Class>
+
+    <!-- Sub-kelas EditAvatar di dalam CreateAvatar -->
+    <owl:Class rdf:about="#EditAvatar">
+        <rdfs:subClassOf rdf:resource="#CreateAvatar"/>
+    </owl:Class>
+
+    <!-- Individu di dalam EditAvatar -->
+    <owl:NamedIndividual rdf:about="#BuyClothes">
+        <rdf:type rdf:resource="#EditAvatar"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can buy clothes for their avatar.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TryNewOutfits">
+        <rdf:type rdf:resource="#EditAvatar"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can try new outfits for their avatar.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas AvatarPosts -->
+    <owl:Class rdf:about="#AvatarPosts">
+        <rdfs:subClassOf rdf:resource="#Avatars"/>
+    </owl:Class>
+
+    <!-- Individu di dalam AvatarPosts -->
+    <owl:NamedIndividual rdf:about="#CreatePostWithAvatar">
+        <rdf:type rdf:resource="#AvatarPosts"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can create posts using their avatar.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

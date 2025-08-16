@@ -1,0 +1,50 @@
+User (Class)
+  └── ProfileSettings (Sub-class)
+
+Channel (Class)
+
+ContentInteraction (Class)
+  └── InteractionType (Sub-class)
+      ├── Like (Sub-class)
+      ├── Comment (Sub-class)
+      ├── Share (Sub-class)
+      ├── Dislike (Sub-class)
+      ├── Report (Sub-class)
+      ├── WatchLater (Sub-class)
+      └── Gift (Sub-class)
+
+Search (Class)
+  ├── SearchFunctionality (Sub-class)
+  └── SearchRecommendation (Sub-class)
+
+NewsInformation (Class)
+  ├── NewsWatchPage (Sub-class)
+  ├── BreakingNews (Sub-class)
+  └── TopNews (Sub-class)
+
+Content (Class)
+  ├── Video (Sub-class)
+  ├── ShortVideo (Sub-class)
+  └── Live (Sub-class)
+
+Monetization (Class)
+  ├── Shopping (Sub-class)
+  ├── Subscription (Sub-class)
+  └── CreatorMarketplace (Sub-class)
+
+Notifications (Class)
+  ├── HideNotifications (Sub-class)
+  └── ManageMentions (Sub-class)
+
+Post (Class)
+  ├── VideoPost (Sub-class)
+  ├── ShortVideoPost (Sub-class)
+  └── LivePost (Sub-class)
+
+DirectMessages (Class)
+  ├── MessageContent (Sub-class)
+  ├── MessageActions (Sub-class)
+  ├── AdvancedMessagingFeatures (Sub-class)
+  ├── NotificationSettings (Sub-class)
+  ├── GroupMessages (Sub-class)
+  └── MessageAnalytics (Sub-class)

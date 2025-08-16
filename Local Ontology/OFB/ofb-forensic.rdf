@@ -1,0 +1,138 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:forensic="http://example.org/ontology/forensic#">
+
+    <!-- Class Definitions with Descriptions -->
+    <owl:Class rdf:about="forensic:Agent">
+        <rdfs:comment>A person or entity that may perform or be involved in suspicious activities.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:CriminalGroup">
+        <rdfs:comment>A group of criminals who collaborate to perform illegal activities.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:CriminalOrganisation">
+        <rdfs:comment>A formal organization involved in criminal activity, typically larger in scale.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:Suspects">
+        <rdfs:comment>Represents individuals suspected of being involved in suspicious activities.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:UserActivity">
+        <rdfs:comment>Activities performed by users that are relevant to suspicion, such as posting, commenting, or liking suspicious content.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:ThresholdOfSuspiciousActivity">
+        <rdfs:comment>Defines the threshold for an activity to be considered suspicious based on frequency, type, or other criteria.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:FlaggedProfiles">
+        <rdfs:comment>Profiles that are flagged for suspicious behavior, either by activity or association with other flagged entities.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:FlaggedContent">
+        <rdfs:comment>Content that has been flagged as suspicious due to its nature or context (e.g., hate speech, illegal transactions).</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="forensic:Crime_Case_Solving">
+        <rdfs:comment>Represents a criminal case being investigated or solved based on suspicious activity and thresholds.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property Definitions with Characteristics, Domain, Range, and Comments -->
+    <owl:ObjectProperty rdf:about="forensic:triggers">
+        <rdfs:domain rdf:resource="forensic:ThresholdOfSuspiciousActivity"/>
+        <rdfs:range rdf:resource="forensic:Crime_Case_Solving"/>
+        <rdfs:comment>Links a threshold to the triggering of a criminal investigation case.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:performsActivity">
+        <rdfs:domain rdf:resource="forensic:Suspects"/>
+        <rdfs:range rdf:resource="forensic:UserActivity"/>
+        <rdfs:comment>Relates a suspect to specific activities they perform.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:followsFlaggedProfiles">
+        <rdfs:domain rdf:resource="forensic:Suspects"/>
+        <rdfs:range rdf:resource="forensic:FlaggedProfiles"/>
+        <rdfs:comment>Indicates that a suspect follows flagged profiles, which may signify suspicious behavior.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:likesFlaggedContent">
+        <rdfs:domain rdf:resource="forensic:Suspects"/>
+        <rdfs:range rdf:resource="forensic:FlaggedContent"/>
+        <rdfs:comment>Indicates that a suspect likes flagged content, signaling potential involvement with suspicious material.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:sharesFlaggedContent">
+        <rdfs:domain rdf:resource="forensic:Suspects"/>
+        <rdfs:range rdf:resource="forensic:FlaggedContent"/>
+        <rdfs:comment>Indicates that a suspect shares flagged content, further tying them to suspicious behavior.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:commentsOnFlaggedContent">
+        <rdfs:domain rdf:resource="forensic:Suspects"/>
+        <rdfs:range rdf:resource="forensic:FlaggedContent"/>
+        <rdfs:comment>Indicates that a suspect comments on flagged content, a behavior associated with engagement in suspicious activities.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:isConsideredSuspect">
+        <rdfs:domain rdf:resource="forensic:Suspects"/>
+        <rdfs:range rdf:resource="forensic:ThresholdOfSuspiciousActivity"/>
+        <rdfs:comment>Links a suspect to the threshold of suspicious activity that classifies them as a suspect.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="forensic:markedAsFlaggedProfile">
+        <rdfs:domain rdf:resource="forensic:Suspects"/>
+        <rdfs:range rdf:resource="forensic:FlaggedProfiles"/>
+        <rdfs:comment>Marks a suspect as a flagged profile, indicating further investigation is required.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property Definitions with Domain, Range, and Comments -->
+    <owl:DatatypeProperty rdf:about="forensic:ThresholdCriteria">
+        <rdfs:domain rdf:resource="forensic:ThresholdOfSuspiciousActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the criteria for classifying an activity as suspicious (e.g., activity frequency, content type).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="forensic:hasThresholdValue">
+        <rdfs:domain rdf:resource="forensic:ThresholdOfSuspiciousActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Specifies the threshold value, such as the number of suspicious activities within a given time frame.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Example Instances with Comments -->
+    <forensic:Suspects rdf:about="forensic:Suspect1">
+        <forensic:performsActivity rdf:resource="forensic:UserActivity1"/>
+        <forensic:isConsideredSuspect rdf:resource="forensic:ThresholdOfSuspiciousActivity1"/>
+        <forensic:followsFlaggedProfiles rdf:resource="forensic:FlaggedProfiles1"/>
+        <forensic:likesFlaggedContent rdf:resource="forensic:FlaggedContent1"/>
+        <rdfs:comment>
+            Suspect1 has performed suspicious activities and is considered a suspect based on the threshold of suspicious activities.
+        </rdfs:comment>
+    </forensic:Suspects>
+
+    <forensic:ThresholdOfSuspiciousActivity rdf:about="forensic:ThresholdOfSuspiciousActivity1">
+        <forensic:hasThresholdValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</forensic:hasThresholdValue>
+        <forensic:ThresholdCriteria>More than 50 suspicious activities in 1 hour</forensic:ThresholdCriteria>
+        <rdfs:comment>
+            The threshold is triggered if a user performs more than 50 suspicious activities in an hour.
+        </rdfs:comment>
+    </forensic:ThresholdOfSuspiciousActivity>
+
+    <forensic:Suspects rdf:about="forensic:Suspect1">
+        <forensic:performsActivity rdf:resource="forensic:UserActivity1"/>
+        <forensic:isConsideredSuspect rdf:resource="forensic:ThresholdOfSuspiciousActivity1"/>
+    </forensic:Suspects>
+
+    <forensic:UserActivity rdf:about="forensic:UserActivity1">
+        <forensic:followsFlaggedProfiles rdf:resource="forensic:FlaggedProfiles1"/>
+    </forensic:UserActivity>
+
+    <forensic:ThresholdOfSuspiciousActivity rdf:about="forensic:ThresholdOfSuspiciousActivity1">
+        <forensic:hasThresholdValue rdf:datatype="xsd:integer">1</forensic:hasThresholdValue>
+    </forensic:ThresholdOfSuspiciousActivity>
+
+</rdf:RDF>

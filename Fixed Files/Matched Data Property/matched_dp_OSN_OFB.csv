@@ -1,0 +1,143 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+OSN:hasBio,OFB:hasBio,100.0,Stores the biography or short description of the user.,The bio of the user.
+OSN:hasCommentText,OFB:hasCommentText,100.0,Stores the text of the comment.,Stores the text of a comment.
+OSN:hasDescription,OFB:hasDescription,100.0,The description of the page.,Provides a description for the community.
+OSN:hasEmail,OFB:hasEmail,100.0,Stores the email address of the user.,The email address associated with the user account.
+OSN:hasGroupName,OFB:hasGroupName,100.0,The name of the group.,Represents the name of the group chat.
+OSN:hasLogoutTimestamp,OFB:hasLogoutTimestamp,100.0,Timestamp indicating when the logout occurred.,The date and time when the session was logged out.
+OSN:hasMessageContent,OFB:hasMessageContent,100.0,The message content sent in the birthday post.,Represents the content of a direct message.
+OSN:hasNotificationFrequency,OFB:hasNotificationFrequency,100.0,"The frequency of group notifications (e.g., Daily, Weekly).","Defines the frequency of notifications for a community (e.g., Instant or Daily Digest)."
+OSN:hasNotificationType,OFB:hasNotificationType,100.0,"Indicates the type of video notification, such as new upload, reminder, or other alerts.","Specifies the type of community notifications, such as Post or Comment."
+OSN:hasPhoneNumber,OFB:hasPhoneNumber,100.0,Stores the user's phone number.,The phone number associated with the user account.
+OSN:hasPollOptions,OFB:hasPollOptions,100.0,The options for the poll (Array).,"Represents the options provided in a poll, stored as an array of strings."
+OSN:hasPollQuestion,OFB:hasPollQuestion,100.0,The question for the poll.,Represents the question posed in a poll.
+OSN:hasPostCreationTimestamp,OFB:hasPostCreationTimestamp,100.0,The timestamp when the avatar post was created.,Timestamp of when the post was created.
+OSN:hasReportTimestamp,OFB:hasReportTimestamp,100.0,Timestamp for submitting a problem report.,Records the timestamp when the report was filed.
+OSN:hasRuleDescription,OFB:hasRuleDescription,100.0,The description of the group rule.,Provides a textual description of a specific community rule.
+OSN:hasTimestamp,OFB:hasTimestamp,100.0,Stores the timestamp when the like was given.,Records the date and time when the user action was performed.
+OSN:hasUsername,OFB:hasUsername,100.0,Stores the unique username of the user.,The username of the user.
+OSN:hasViewCount,OFB:hasViewsCount,96.0,The total number of views on the page.,Represents the total number of views for a content item.
+OSN:hasReactionType,OFB:hasActionType,92.86,"Stores the type of reaction given, such as Love, Angry, etc.","Specifies the type of action performed by the user, such as EditProfile, EnableTwoFactorAuth, or RequestAccountDeletion."
+OSN:hasLastLogin,OFB:hasLastLoginIP,92.31,Stores the date and time of the user's last login.,"
+            The IP address used during the user's last login.
+            Important for digital forensics or geolocation.
+        "
+OSN:hasFileType,OFB:hasFilterType,91.67,"The type of the file (e.g., PDF, Image).","Specifies the type of filter used (e.g., flair, tags)."
+OSN:hasPollCreationTimestamp,OFB:hasPostCreationTimestamp,91.67,The timestamp when the poll was created.,Timestamp of when the post was created.
+OSN:hasMessageSendTimestamp,OFB:hasMessageTimestamp,90.48,Timestamp of when a text message was sent.,Specifies the timestamp of a direct message.
+OSN:hasMessageSentTimestamp,OFB:hasMessageTimestamp,90.48,The timestamp when a message was sent to the seller.,Specifies the timestamp of a direct message.
+OSN:hasMessageViewTimestamp,OFB:hasMessageTimestamp,90.48,Timestamp of when a message was viewed by the user.,Specifies the timestamp of a direct message.
+OSN:hasEmail,OFB:hasEmailFrequency,90.0,Stores the email address of the user.,Indicates the frequency of email notifications.
+OSN:hasEmail,OFB:hasEmailNotificationEnabled,90.0,Stores the email address of the user.,Indicates whether email notifications are enabled for a user.
+OSN:hasEmailNotificationsStatus,OFB:hasEmail,90.0,Status of email notifications (enabled/disabled).,The email address associated with the user account.
+OSN:hasPhoneNumberVerificationStatus,OFB:hasPhoneNumber,90.0,Indicates the verification status of the user's phone number.,The phone number associated with the user account.
+OSN:hasRuleCreationTimestamp,OFB:hasQueueCreationTimestamp,89.8,The timestamp when the rule was created.,Records the timestamp when the moderation queue was created.
+OSN:hasMessageContentType,OFB:hasMessageContent,89.47,"Specifies the type of content in the message, e.g., text, photo, video.",Represents the content of a direct message.
+OSN:hasNotificationIP,OFB:hasNotificationType,88.89,Stores the IP address of the user who received the video notification.,"Specifies the type of community notifications, such as Post or Comment."
+OSN:hasTimestamp,OFB:hasPinTimestamp,88.89,Stores the timestamp when the like was given.,Records the timestamp when a post was pinned.
+OSN:hasPostTimestamp,OFB:hasReportTimestamp,88.24,Stores post's timestamp,Records the timestamp when the report was filed.
+OSN:hasPostTimestamp,OFB:hasUpvoteTimestamp,88.24,Stores post's timestamp,Records the timestamp when an upvote was made.
+OSN:hasEventCreationTimestamp,OFB:hasQueueCreationTimestamp,88.0,The timestamp when the event was created.,Records the timestamp when the moderation queue was created.
+OSN:hasDescription,OFB:hasRuleDescription,87.5,The description of the page.,Provides a textual description of a specific community rule.
+OSN:hasListingUpdateTimestamp,OFB:hasLastUpdatedTimestamp,87.5,The timestamp when the listing was last updated.,Records the last updated timestamp of the community rule.
+OSN:hasRuleDescription,OFB:hasDescription,87.5,The description of the group rule.,Provides a description for the community.
+OSN:hasGameSaveTimestamp,OFB:hasMessageTimestamp,87.18,The timestamp when the game was saved.,Specifies the timestamp of a direct message.
+OSN:hasMessageContent,OFB:hasGroupMessageContent,87.18,The message content sent in the birthday post.,Represents the content of a group message.
+OSN:hasAccountCreationDate,OFB:hasCommunityCreationDate,86.96,Stores the account creation date for the user.,Records the date and time the community was created.
+OSN:hasPollVotesCount,OFB:hasVotesCount,86.67,The total number of votes for the poll.,Represents the total number of votes for a content item.
+OSN:hasGameSaveTimestamp,OFB:hasLeaveTimestamp,86.49,The timestamp when the game was saved.,Specifies the timestamp when a user left the group chat.
+OSN:hasGroupDescription,OFB:hasRuleDescription,86.49,A description of the group.,Provides a textual description of a specific community rule.
+OSN:hasListingCreationTimestamp,OFB:hasPostCreationTimestamp,86.27,The timestamp when the listing was created.,Timestamp of when the post was created.
+OSN:hasConnectionTimestamp,OFB:hasDonationTimestamp,85.71,The timestamp when the connection was created.,Specifies the timestamp of the donation.
+OSN:hasEditTimestamp,OFB:hasTimestamp,85.71,The timestamp of the last edit made to the avatar.,Records the date and time when the user action was performed.
+OSN:hasEventCreationTimestamp,OFB:hasPostCreationTimestamp,85.71,The timestamp when the event was created.,Timestamp of when the post was created.
+OSN:hasGroupCreationTimestamp,OFB:hasPostCreationTimestamp,85.71,The creation timestamp of the group.,Timestamp of when the post was created.
+OSN:hasPostTimestamp,OFB:hasTimestamp,85.71,Stores post's timestamp,Records the date and time when the user action was performed.
+OSN:hasReportTimestamp,OFB:hasReplyTimestamp,85.71,Timestamp for submitting a problem report.,Records the timestamp when a reply was made.
+OSN:hasTimestamp,OFB:hasJoinTimestamp,85.71,Stores the timestamp when the like was given.,Records the timestamp of when a user joined the community.
+OSN:hasTimestamp,OFB:hasLikeTimestamp,85.71,Stores the timestamp when the like was given.,Records the timestamp when a like was made.
+OSN:hasTimestamp,OFB:hasMuteTimestamp,85.71,Stores the timestamp when the like was given.,Records the timestamp when a topic or user was muted.
+OSN:hasEventDescription,OFB:hasDescription,84.85,The description of the event.,Provides a description for the community.
+OSN:hasGroupDescription,OFB:hasDescription,84.85,A description of the group.,Provides a description for the community.
+OSN:hasCategory,OFB:hasCategoryName,84.62,The category of the page.,Specifies the name of the category being explored.
+OSN:hasPostCount,OFB:hasPostContent,84.62,The number of posts on the page.,"Content of the post, typically text or markdown."
+OSN:hasVideoCount,OFB:hasViewsCount,84.62,The number of videos on the page.,Represents the total number of views for a content item.
+OSN:hasAvatarCreationTimestamp,OFB:hasPostCreationTimestamp,84.0,The timestamp when the avatar was created.,Timestamp of when the post was created.
+OSN:hasGroupCreationTimestamp,OFB:hasQueueCreationTimestamp,84.0,The creation timestamp of the group.,Records the timestamp when the moderation queue was created.
+OSN:hasPostTimestamp,OFB:hasAnonymousPostTimestamp,84.0,Stores post's timestamp,Records the timestamp of when the anonymous post was created.
+OSN:hasEditTimestamp,OFB:hasPinTimestamp,83.87,The timestamp of the last edit made to the avatar.,Records the timestamp when a post was pinned.
+OSN:hasPostTimestamp,OFB:hasPinTimestamp,83.87,Stores post's timestamp,Records the timestamp when a post was pinned.
+OSN:hasDeviceInfo,OFB:hasDeviceID,83.33,Stores the device information of the user who gave the like.,Represents the unique identifier of the notification device.
+OSN:hasFirstName,OFB:hasFlairName,83.33,Stores the first name of the user.,Specifies the name of the flair tag used.
+OSN:hasLoginIP,OFB:hasLastLoginIP,83.33,Stores the IP address used during the user's last login session.,"
+            The IP address used during the user's last login.
+            Important for digital forensics or geolocation.
+        "
+OSN:hasNotificationTimestamp,OFB:hasPostCreationTimestamp,83.33,Stores the timestamp when the video notification was received.,Timestamp of when the post was created.
+OSN:hasReportTimestamp,OFB:hasUpvoteTimestamp,83.33,Timestamp for submitting a problem report.,Records the timestamp when an upvote was made.
+OSN:hasRuleCreationTimestamp,OFB:hasPostCreationTimestamp,83.33,The timestamp when the rule was created.,Timestamp of when the post was created.
+OSN:hasTimestamp,OFB:hasAwardTimestamp,82.76,Stores the timestamp when the like was given.,Records the timestamp when an award was given.
+OSN:hasTimestamp,OFB:hasBlockTimestamp,82.76,Stores the timestamp when the like was given.,Records the timestamp when a user was blocked.
+OSN:hasTimestamp,OFB:hasLeaveTimestamp,82.76,Stores the timestamp when the like was given.,Specifies the timestamp when a user left the group chat.
+OSN:hasTimestamp,OFB:hasReplyTimestamp,82.76,Stores the timestamp when the like was given.,Records the timestamp when a reply was made.
+OSN:hasTimestamp,OFB:hasShareTimestamp,82.76,Stores the timestamp when the like was given.,Records the timestamp when content was shared.
+OSN:hasViolationType,OFB:hasActionType,82.76,"The type of violation reported (e.g., Spam, Harassment).","Specifies the type of action performed by the user, such as EditProfile, EnableTwoFactorAuth, or RequestAccountDeletion."
+OSN:hasEventUpdateTimestamp,OFB:hasLastUpdatedTimestamp,82.61,The timestamp when the event was last updated.,Records the last updated timestamp of the community rule.
+OSN:hasMessageViewTimestamp,OFB:hasMessageIP,82.5,Timestamp of when a message was viewed by the user.,Represents the IP address used during direct messaging.
+OSN:hasEditTimestamp,OFB:hasReportTimestamp,82.35,The timestamp of the last edit made to the avatar.,Records the timestamp when the report was filed.
+OSN:hasLogoutTimestamp,OFB:hasMuteTimestamp,82.35,Timestamp indicating when the logout occurred.,Records the timestamp when a topic or user was muted.
+OSN:hasPostTimestamp,OFB:hasBlocksTimestamp,82.35,Stores post's timestamp,Specifies when a user blocked another user.
+OSN:hasPostTimestamp,OFB:hasLogoutTimestamp,82.35,Stores post's timestamp,The date and time when the session was logged out.
+OSN:hasReelWatchTimestamp,OFB:hasSearchTimestamp,82.05,Timestamp of when the reel was watched.,Records the timestamp of a search query.
+OSN:hasBio,OFB:hasBookmarkTimestamp,81.82,Stores the biography or short description of the user.,Records the timestamp when content was bookmarked.
+OSN:hasBirthday,OFB:hasBio,81.82,The birthday of the child.,The bio of the user.
+OSN:hasBirthdayPostTimestamp,OFB:hasBio,81.82,The timestamp when the birthday post was created.,The bio of the user.
+OSN:hasFileType,OFB:hasRuleType,81.82,"The type of the file (e.g., PDF, Image).","Defines the type of rule (e.g., Content, Behavior)."
+OSN:hasGroupName,OFB:hasGroupMessageContent,81.82,The name of the group.,Represents the content of a group message.
+OSN:hasGroupName,OFB:hasGroupMessageFrequency,81.82,The name of the group.,Indicates the frequency of messages within the group chat.
+OSN:hasInboxAccessTimestamp,OFB:hasTimestamp,81.82,Timestamp for accessing the support inbox.,Records the date and time when the user action was performed.
+OSN:hasMessageAttachment,OFB:hasMessageIP,81.82,Attachment on direct messages sent by the user.,Represents the IP address used during direct messaging.
+OSN:hasMessageContentType,OFB:hasMessageIP,81.82,"Specifies the type of content in the message, e.g., text, photo, video.",Represents the IP address used during direct messaging.
+OSN:hasMessageLocation,OFB:hasMessageIP,81.82,Location on direct messages sent by the user.,Represents the IP address used during direct messaging.
+OSN:hasMessageSendTimestamp,OFB:hasMessageIP,81.82,Timestamp of when a text message was sent.,Represents the IP address used during direct messaging.
+OSN:hasMessageSentTimestamp,OFB:hasMessageIP,81.82,The timestamp when a message was sent to the seller.,Represents the IP address used during direct messaging.
+OSN:hasNotificationTimestamp,OFB:hasDonationTimestamp,81.82,Stores the timestamp when the video notification was received.,Specifies the timestamp of the donation.
+OSN:hasPollCreationTimestamp,OFB:hasDonationTimestamp,81.82,The timestamp when the poll was created.,Specifies the timestamp of the donation.
+OSN:hasPostCreationTimestamp,OFB:hasDonationTimestamp,81.82,The timestamp when the avatar post was created.,Specifies the timestamp of the donation.
+OSN:hasReelWatchTimestamp,OFB:hasTimestamp,81.82,Timestamp of when the reel was watched.,Records the date and time when the user action was performed.
+OSN:hasSupportAccessTimestamp,OFB:hasTimestamp,81.82,Timestamp for accessing the support center.,Records the date and time when the user action was performed.
+OSN:hasTimestamp,OFB:hasBlocksTimestamp,81.82,Stores the timestamp when the like was given.,Specifies when a user blocked another user.
+OSN:hasTimestamp,OFB:hasScheduledPublishTimestamp,81.82,Stores the timestamp when the like was given.,Timestamp indicating when the scheduled post will be published.
+OSN:hasTimestamp,OFB:hasSearchTimestamp,81.82,Stores the timestamp when the like was given.,Records the timestamp of a search query.
+OSN:hasPollCreationTimestamp,OFB:hasQueueCreationTimestamp,81.63,The timestamp when the poll was created.,Records the timestamp when the moderation queue was created.
+OSN:hasPostCreationTimestamp,OFB:hasQueueCreationTimestamp,81.63,The timestamp when the avatar post was created.,Records the timestamp when the moderation queue was created.
+OSN:hasEditTimestamp,OFB:hasJoinTimestamp,81.25,The timestamp of the last edit made to the avatar.,Records the timestamp of when a user joined the community.
+OSN:hasEditTimestamp,OFB:hasLikeTimestamp,81.25,The timestamp of the last edit made to the avatar.,Records the timestamp when a like was made.
+OSN:hasEditTimestamp,OFB:hasMuteTimestamp,81.25,The timestamp of the last edit made to the avatar.,Records the timestamp when a topic or user was muted.
+OSN:hasPostTimestamp,OFB:hasJoinTimestamp,81.25,Stores post's timestamp,Records the timestamp of when a user joined the community.
+OSN:hasPostTimestamp,OFB:hasMuteTimestamp,81.25,Stores post's timestamp,Records the timestamp when a topic or user was muted.
+OSN:hasEventDescription,OFB:hasRuleDescription,81.08,The description of the event.,Provides a textual description of a specific community rule.
+OSN:hasEventEndTimestamp,OFB:hasLeaveTimestamp,81.08,The timestamp when the event ends.,Specifies the timestamp when a user left the group chat.
+OSN:hasGameSaveTimestamp,OFB:hasShareTimestamp,81.08,The timestamp when the game was saved.,Records the timestamp when content was shared.
+OSN:hasPostVisibility,OFB:hasProfileVisibility,81.08,"The visibility level of the avatar post (e.g., Public, Private).",Specifies whether the user's profile is Public or Private.
+OSN:hasGameSaveTimestamp,OFB:hasDraftSavedTimestamp,80.95,The timestamp when the game was saved.,Timestamp of when the draft was saved.
+OSN:hasEditTimestamp,OFB:hasCommentTimestamp,80.0,The timestamp of the last edit made to the avatar.,Records the timestamp when a comment was made.
+OSN:hasEventCreationTimestamp,OFB:hasDonationTimestamp,80.0,The timestamp when the event was created.,Specifies the timestamp of the donation.
+OSN:hasFileUploadTimestamp,OFB:hasFollowTimestamp,80.0,The timestamp when the file was uploaded.,Records the timestamp when a user started following a topic.
+OSN:hasGroupCreationTimestamp,OFB:hasDonationTimestamp,80.0,The creation timestamp of the group.,Specifies the timestamp of the donation.
+OSN:hasLogoutTimestamp,OFB:hasBlockTimestamp,80.0,Timestamp indicating when the logout occurred.,Records the timestamp when a user was blocked.
+OSN:hasLogoutTimestamp,OFB:hasTimestamp,80.0,Timestamp indicating when the logout occurred.,Records the date and time when the user action was performed.
+OSN:hasMessageViewTimestamp,OFB:hasLeaveTimestamp,80.0,Timestamp of when a message was viewed by the user.,Specifies the timestamp when a user left the group chat.
+OSN:hasNotificationStatus,OFB:hasNotificationType,80.0,Indicates whether the video notification is active or inactive.,"Specifies the type of community notifications, such as Post or Comment."
+OSN:hasPlayerName,OFB:hasFlairName,80.0,The name of the player.,Specifies the name of the flair tag used.
+OSN:hasPostCount,OFB:hasVotesCount,80.0,The number of posts on the page.,Represents the total number of votes for a content item.
+OSN:hasPostTimestamp,OFB:hasCommentTimestamp,80.0,Stores post's timestamp,Records the timestamp when a comment was made.
+OSN:hasPostTimestamp,OFB:hasPostCreationTimestamp,80.0,Stores post's timestamp,Timestamp of when the post was created.
+OSN:hasReportTimestamp,OFB:hasShareTimestamp,80.0,Timestamp for submitting a problem report.,Records the timestamp when content was shared.
+OSN:hasReportTimestamp,OFB:hasTimestamp,80.0,Timestamp for submitting a problem report.,Records the date and time when the user action was performed.
+OSN:hasTimestamp,OFB:hasFollowTimestamp,80.0,Stores the timestamp when the like was given.,Records the timestamp when a user started following a topic.
+OSN:hasTimestamp,OFB:hasLogoutTimestamp,80.0,Stores the timestamp when the like was given.,The date and time when the session was logged out.
+OSN:hasTimestamp,OFB:hasReportTimestamp,80.0,Stores the timestamp when the like was given.,Records the timestamp when the report was filed.
+OSN:hasTimestamp,OFB:hasUpvoteTimestamp,80.0,Stores the timestamp when the like was given.,Records the timestamp when an upvote was made.
+OSN:hasViewCount,OFB:hasDraftViewsCount,80.0,The total number of views on the page.,Represents the number of views on a user's draft.
+OSN:hasViewCount,OFB:hasVotesCount,80.0,The total number of views on the page.,Represents the total number of votes for a content item.

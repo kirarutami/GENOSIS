@@ -1,0 +1,436 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Content Class -->
+    <owl:Class rdf:about="#Content">
+        <rdfs:comment>Represents all forms of user-generated content, including posts and drafts, within the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-Class: Post -->
+    <owl:Class rdf:about="#Post">
+        <rdfs:subClassOf rdf:resource="#Content"/>
+        <rdfs:comment>Represents posts created by users, which may contain text, media, and other metadata.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for Post -->
+    <owl:DatatypeProperty rdf:about="#hasPostTitle">
+        <rdfs:domain rdf:resource="#Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Title of the post.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPostContent">
+        <rdfs:domain rdf:resource="#Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Content of the post, typically text or markdown.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPostMedia">
+        <rdfs:domain rdf:resource="#Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>Media associated with the post, such as images, GIFs, or videos.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPostCreationTimestamp">
+        <rdfs:domain rdf:resource="#Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp of when the post was created.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for Post -->
+    <owl:ObjectProperty rdf:about="#createsPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Indicates that a user created a post.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithUser">
+        <rdfs:domain rdf:resource="#Post"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a post to the user who created it.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithCommunity">
+        <rdfs:domain rdf:resource="#Post"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links a post to the community it belongs to.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Sub-Class: Draft -->
+    <owl:Class rdf:about="#Draft">
+        <rdfs:subClassOf rdf:resource="#Post"/>
+        <rdfs:comment>Represents drafts saved by users, which can be edited and later posted.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for Draft -->
+    <owl:DatatypeProperty rdf:about="#hasDraftTitle">
+        <rdfs:domain rdf:resource="#Draft"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Title of the draft.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDraftContent">
+        <rdfs:domain rdf:resource="#Draft"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Content of the draft, typically text or markdown.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDraftMedia">
+        <rdfs:domain rdf:resource="#Draft"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>Media associated with the draft, such as images, GIFs, or videos.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDraftSavedTimestamp">
+        <rdfs:domain rdf:resource="#Draft"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp of when the draft was saved.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for Draft -->
+    <owl:ObjectProperty rdf:about="#savesPostAsDraft">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Draft"/>
+        <rdfs:comment>Indicates that a user saved a post as a draft.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#editsDraft">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Draft"/>
+        <rdfs:comment>Indicates that a user edited a draft.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#postsDraft">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Draft"/>
+        <rdfs:comment>Indicates that a user posted a draft.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithCommunity">
+        <rdfs:domain rdf:resource="#Draft"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links a draft to the community it belongs to.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- ScheduledPost Class -->
+    <owl:Class rdf:about="#ScheduledPost">
+        <rdfs:subClassOf rdf:resource="#Post"/>
+        <rdfs:comment>Represents posts scheduled by users to be published at a future timestamp.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for ScheduledPost -->
+    <owl:DatatypeProperty rdf:about="#hasScheduledPostTitle">
+        <rdfs:domain rdf:resource="#ScheduledPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Title of the scheduled post.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasScheduledPostContent">
+        <rdfs:domain rdf:resource="#ScheduledPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Content of the scheduled post.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasScheduledPostMedia">
+        <rdfs:domain rdf:resource="#ScheduledPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>Media attachment for the scheduled post, such as an image or video.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasScheduledPublishTimestamp">
+        <rdfs:domain rdf:resource="#ScheduledPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp indicating when the scheduled post will be published.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for ScheduledPost -->
+    <owl:ObjectProperty rdf:about="#postsScheduledPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ScheduledPost"/>
+        <rdfs:comment>Links a user to the scheduled post they have created.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#editsScheduledPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ScheduledPost"/>
+        <rdfs:comment>Indicates that a user edits an existing scheduled post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithUser">
+        <rdfs:domain rdf:resource="#ScheduledPost"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a scheduled post to the user who created it.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithCommunity">
+        <rdfs:domain rdf:resource="#ScheduledPost"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links a scheduled post to the community it belongs to.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- CrossPost Class -->
+    <owl:Class rdf:about="#CrossPost">
+        <rdfs:subClassOf rdf:resource="#Post"/>
+        <rdfs:comment>Represents posts that are cross-posted from other communities or original posts.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for CrossPost -->
+    <owl:DatatypeProperty rdf:about="#hasCrosspostedTitle">
+        <rdfs:domain rdf:resource="#CrossPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Title of the cross-posted content.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasCrosspostedContent">
+        <rdfs:domain rdf:resource="#CrossPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Content of the cross-posted content.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasCrosspostedMedia">
+        <rdfs:domain rdf:resource="#CrossPost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>Media attachment for the cross-posted content.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for CrossPost -->
+    <owl:ObjectProperty rdf:about="#postsCrossPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#CrossPost"/>
+        <rdfs:comment>Links a user to the cross-post they have created.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#editsCrossPost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#CrossPost"/>
+        <rdfs:comment>Indicates that a user edits an existing cross-post.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithOriginalPost">
+        <rdfs:domain rdf:resource="#CrossPost"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Links a cross-post to its original post.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithUser">
+        <rdfs:domain rdf:resource="#CrossPost"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a cross-post to the user who created it.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#associatedWithCommunity">
+        <rdfs:domain rdf:resource="#CrossPost"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links a cross-post to the community it belongs to.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+
+    <!-- TagContent Sub-class -->
+    <owl:Class rdf:about="#TagContent">
+        <rdfs:subClassOf rdf:resource="#Content"/>
+        <rdfs:comment>Represents content tagged by users with specific labels.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: addTagsOnContent -->
+    <owl:ObjectProperty rdf:about="#addTagsOnContent">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Indicates that a user has tagged a piece of content.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasTagLabel -->
+    <owl:DatatypeProperty rdf:about="#hasTagLabel">
+        <rdfs:domain rdf:resource="#TagContent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the label of a tag associated with the content.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: associatedWithPost -->
+    <owl:ObjectProperty rdf:about="#associatedWithPost">
+        <rdfs:domain rdf:resource="#TagContent"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Links tagged content to the post it is associated with.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: associatedWithUser -->
+    <owl:ObjectProperty rdf:about="#associatedWithUser">
+        <rdfs:domain rdf:resource="#TagContent"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links tagged content to the user who created the tag.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Polls Sub-class -->
+    <owl:Class rdf:about="#Polls">
+        <rdfs:subClassOf rdf:resource="#Content"/>
+        <rdfs:comment>Represents polls created by users with questions and options for interaction.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: opensPoll -->
+    <owl:ObjectProperty rdf:about="#opensPoll">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Polls"/>
+        <rdfs:comment>Indicates that a user has created or opened a poll.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasPollQuestion -->
+    <owl:DatatypeProperty rdf:about="#hasPollQuestion">
+        <rdfs:domain rdf:resource="#Polls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the question posed in a poll.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasPollOptions -->
+    <owl:DatatypeProperty rdf:about="#hasPollOptions">
+        <rdfs:domain rdf:resource="#Polls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the options provided in a poll, stored as an array of strings.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasPollStartTime -->
+    <owl:DatatypeProperty rdf:about="#hasPollStartTime">
+        <rdfs:domain rdf:resource="#Polls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Indicates the start time of a poll.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasPollEndTime -->
+    <owl:DatatypeProperty rdf:about="#hasPollEndTime">
+        <rdfs:domain rdf:resource="#Polls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Indicates the end time of a poll.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: associatedWithCommunity -->
+    <owl:ObjectProperty rdf:about="#associatedWithCommunity">
+        <rdfs:domain rdf:resource="#Polls"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links polls to the community they are associated with.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+
+    <!-- FlairSystem Class -->
+    <owl:Class rdf:about="#FlairSystem">
+        <rdfs:subClassOf rdf:resource="#Content"/>
+        <rdfs:comment>Represents a system for assigning flair labels to posts or users to provide additional context or categorization.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasFlairLabel -->
+    <owl:DatatypeProperty rdf:about="#hasFlairLabel">
+        <rdfs:domain rdf:resource="#FlairSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the label or tag associated with a flair in the system.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: associatedWithPost -->
+    <owl:ObjectProperty rdf:about="#associatedWithPost">
+        <rdfs:domain rdf:resource="#FlairSystem"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Links a flair to a specific post in the system.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: associatedWithUser -->
+    <owl:ObjectProperty rdf:about="#associatedWithUser">
+        <rdfs:domain rdf:resource="#FlairSystem"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a flair to a specific user in the system.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- AnonymousMode Class -->
+    <owl:Class rdf:about="#AnonymousMode">
+        <rdfs:subClassOf rdf:resource="#Content"/>
+        <rdfs:comment>Represents the functionality of sharing content anonymously within a community.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: postsContentAsAnonymous -->
+    <owl:ObjectProperty rdf:about="#postsContentAsAnonymous">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Post"/>
+        <rdfs:comment>Indicates that a user has posted content anonymously.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasAnonymousPostTitle -->
+    <owl:DatatypeProperty rdf:about="#hasAnonymousPostTitle">
+        <rdfs:domain rdf:resource="#AnonymousMode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the title of an anonymous post.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasAnonymousPostContent -->
+    <owl:DatatypeProperty rdf:about="#hasAnonymousPostContent">
+        <rdfs:domain rdf:resource="#AnonymousMode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines the content of an anonymous post.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasAnonymousPostMedia -->
+    <owl:DatatypeProperty rdf:about="#hasAnonymousPostMedia">
+        <rdfs:domain rdf:resource="#AnonymousMode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>Defines the media (e.g., images or videos) associated with an anonymous post.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasAnonymousPostTimestamp -->
+    <owl:DatatypeProperty rdf:about="#hasAnonymousPostTimestamp">
+        <rdfs:domain rdf:resource="#AnonymousMode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Records the timestamp of when the anonymous post was created.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: associatedWithCommunity -->
+    <owl:ObjectProperty rdf:about="#associatedWithCommunity">
+        <rdfs:domain rdf:resource="#AnonymousMode"/>
+        <rdfs:range rdf:resource="#Community"/>
+        <rdfs:comment>Links an anonymous post to the community it belongs to.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: anonymousActivityLoggedBy -->
+    <owl:ObjectProperty rdf:about="#anonymousActivityLoggedBy">
+        <rdfs:domain rdf:resource="#AnonymousMode"/>
+        <rdfs:range rdf:resource="#AnonymousSession"/>
+        <rdfs:comment>Indicates that the anonymous activity is logged by a specific anonymous session.</rdfs:comment>
+    </owl:ObjectProperty>
+
+</rdf:RDF>
+
+
+

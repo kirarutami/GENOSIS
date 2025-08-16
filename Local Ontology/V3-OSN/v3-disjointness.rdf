@@ -1,0 +1,130 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+    <!-- Disjointness among Top-Level Classes -->
+    <owl:Class rdf:about="#User">
+        <owl:disjointWith rdf:resource="#ContentCreation"/>
+        <owl:disjointWith rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#VideoContent"/>
+        <owl:disjointWith rdf:resource="#ShortVideoContent"/>
+        <owl:disjointWith rdf:resource="#DirectMessages"/>
+        <owl:disjointWith rdf:resource="#Marketplace"/>
+        <owl:disjointWith rdf:resource="#Groups"/>
+        <owl:disjointWith rdf:resource="#Pages"/>
+        <owl:disjointWith rdf:resource="#HelpSupport"/>
+        <owl:disjointWith rdf:resource="#SettingsPrivacy"/>
+        <owl:disjointWith rdf:resource="#ProfessionalAccess"/>
+        <owl:disjointWith rdf:resource="#AlsoFromMeta"/>
+        <owl:disjointWith rdf:resource="#ActivityLog"/>
+        <owl:disjointWith rdf:resource="#Logout"/>
+    </owl:Class>
+
+    <!-- Disjointness among Sub-Classes of User -->
+    <owl:Class rdf:about="#UserProfile">
+        <owl:disjointWith rdf:resource="#PrivacySettings"/>
+        <owl:disjointWith rdf:resource="#SecuritySettings"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#PrivacySettings">
+        <owl:disjointWith rdf:resource="#SecuritySettings"/>
+        <owl:disjointWith rdf:resource="#StoryAndLiveSettings"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#SecuritySettings">
+        <owl:disjointWith rdf:resource="#GeneralAccount"/>
+        <owl:disjointWith rdf:resource="#LoginSecurity"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LoginSecurity">
+        <owl:disjointWith rdf:resource="#SessionManagement"/>
+    </owl:Class>
+
+    <!-- Disjointness among Sub-Classes of ContentCreation -->
+    <owl:Class rdf:about="#Posts">
+        <owl:disjointWith rdf:resource="#Stories"/>
+        <owl:disjointWith rdf:resource="#Reels"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#PhotoVideo">
+        <owl:disjointWith rdf:resource="#CheckIn"/>
+        <owl:disjointWith rdf:resource="#LiveVideo"/>
+        <owl:disjointWith rdf:resource="#LifeEvent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Stories">
+        <owl:disjointWith rdf:resource="#Reels"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#StoryPhotoVideo">
+        <owl:disjointWith rdf:resource="#StoryHighlights"/>
+    </owl:Class>
+
+    <!-- Disjointness among Sub-Classes of ContentInteraction -->
+    <owl:Class rdf:about="#LikesReactions">
+        <owl:disjointWith rdf:resource="#Comments"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Like">
+        <owl:disjointWith rdf:resource="#React"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#TextComment">
+        <owl:disjointWith rdf:resource="#GIFComment"/>
+        <owl:disjointWith rdf:resource="#EmojiComment"/>
+    </owl:Class>
+
+    <!-- Disjointness among Sub-Classes of VideoContent -->
+    <owl:Class rdf:about="#Videos">
+        <owl:disjointWith rdf:resource="#VideoNotifications"/>
+    </owl:Class>
+
+    <!-- Disjointness among Sub-Classes of Groups -->
+    <owl:Class rdf:about="#GroupSettings">
+        <owl:disjointWith rdf:resource="#GroupRoles"/>
+        <owl:disjointWith rdf:resource="#GroupFeatures"/>
+        <owl:disjointWith rdf:resource="#DiscoverGroups"/>
+        <owl:disjointWith rdf:resource="#GroupInsights"/>
+        <owl:disjointWith rdf:resource="#GroupModeration"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#PinnedGroups">
+        <owl:disjointWith rdf:resource="#GroupNotifications"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#GroupFeatures">
+        <owl:disjointWith rdf:resource="#GroupRoles"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#GroupEvents">
+        <owl:disjointWith rdf:resource="#GroupInvites"/>
+    </owl:Class>
+
+    <!-- Disjointness among Sub-Classes of Pages -->
+    <owl:Class rdf:about="#PagesManagement">
+        <owl:disjointWith rdf:resource="#PagesActivities"/>
+        <owl:disjointWith rdf:resource="#PagesInvites"/>
+        <owl:disjointWith rdf:resource="#PagesSearch"/>
+    </owl:Class>
+
+    <!-- Disjointness among Sub-Classes of SettingsPrivacy -->
+    <owl:Class rdf:about="#AccountSettings">
+        <owl:disjointWith rdf:resource="#PrivacySettings"/>
+        <owl:disjointWith rdf:resource="#SecuritySettings"/>
+        <owl:disjointWith rdf:resource="#NotificationSettings"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#PrivacySettings">
+        <owl:disjointWith rdf:resource="#AdPreferences"/>
+        <owl:disjointWith rdf:resource="#LinkedAccounts"/>
+        <owl:disjointWith rdf:resource="#PaymentSettings"/>
+    </owl:Class>
+
+    <!-- Disjointness among Other Classes -->
+    <owl:Class rdf:about="#HelpSupport">
+        <owl:disjointWith rdf:resource="#ProfessionalAccess"/>
+        <owl:disjointWith rdf:resource="#AlsoFromMeta"/>
+        <owl:disjointWith rdf:resource="#ActivityLog"/>
+    </owl:Class>
+
+</rdf:RDF>

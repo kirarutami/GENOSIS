@@ -1,0 +1,100 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#">
+
+    <!-- Disjointness for Main Classes -->
+    <owl:Class rdf:about="#User">
+        <owl:disjointWith rdf:resource="#Channel"/>
+        <owl:disjointWith rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#Search"/>
+        <owl:disjointWith rdf:resource="#NewsInformation"/>
+        <owl:disjointWith rdf:resource="#Content"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Post"/>
+        <owl:disjointWith rdf:resource="#DirectMessages"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Channel">
+        <owl:disjointWith rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#Search"/>
+        <owl:disjointWith rdf:resource="#NewsInformation"/>
+        <owl:disjointWith rdf:resource="#Content"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Post"/>
+        <owl:disjointWith rdf:resource="#DirectMessages"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ContentInteraction">
+        <owl:disjointWith rdf:resource="#Search"/>
+        <owl:disjointWith rdf:resource="#NewsInformation"/>
+        <owl:disjointWith rdf:resource="#Content"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Post"/>
+        <owl:disjointWith rdf:resource="#DirectMessages"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Search">
+        <owl:disjointWith rdf:resource="#NewsInformation"/>
+        <owl:disjointWith rdf:resource="#Content"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Post"/>
+        <owl:disjointWith rdf:resource="#DirectMessages"/>
+    </owl:Class>
+
+    <!-- Disjointness for ContentInteraction Sub-classes -->
+    <owl:Class rdf:about="#Like">
+        <owl:disjointWith rdf:resource="#Comment"/>
+        <owl:disjointWith rdf:resource="#Share"/>
+        <owl:disjointWith rdf:resource="#Dislike"/>
+        <owl:disjointWith rdf:resource="#Report"/>
+        <owl:disjointWith rdf:resource="#WatchLater"/>
+        <owl:disjointWith rdf:resource="#Gift"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Comment">
+        <owl:disjointWith rdf:resource="#Share"/>
+        <owl:disjointWith rdf:resource="#Dislike"/>
+        <owl:disjointWith rdf:resource="#Report"/>
+        <owl:disjointWith rdf:resource="#WatchLater"/>
+        <owl:disjointWith rdf:resource="#Gift"/>
+    </owl:Class>
+
+    <!-- Disjointness for Content Sub-classes -->
+    <owl:Class rdf:about="#Video">
+        <owl:disjointWith rdf:resource="#ShortVideo"/>
+        <owl:disjointWith rdf:resource="#Live"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ShortVideo">
+        <owl:disjointWith rdf:resource="#Live"/>
+    </owl:Class>
+
+    <!-- Disjointness for Notifications Sub-classes -->
+    <owl:Class rdf:about="#HideNotifications">
+        <owl:disjointWith rdf:resource="#ManageMentions"/>
+    </owl:Class>
+
+    <!-- Disjointness for Post Sub-classes -->
+    <owl:Class rdf:about="#VideoPost">
+        <owl:disjointWith rdf:resource="#ShortVideoPost"/>
+        <owl:disjointWith rdf:resource="#LivePost"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ShortVideoPost">
+        <owl:disjointWith rdf:resource="#LivePost"/>
+    </owl:Class>
+
+    <!-- Disjointness for DirectMessages Sub-classes -->
+    <owl:Class rdf:about="#MessageContent">
+        <owl:disjointWith rdf:resource="#MessageActions"/>
+        <owl:disjointWith rdf:resource="#AdvancedMessagingFeatures"/>
+        <owl:disjointWith rdf:resource="#NotificationSettings"/>
+        <owl:disjointWith rdf:resource="#GroupMessage"/>
+        <owl:disjointWith rdf:resource="#MessageAnalytics"/>
+    </owl:Class>
+
+</rdf:RDF>

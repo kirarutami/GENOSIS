@@ -1,0 +1,247 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Marketplace -->
+    <owl:Class rdf:about="#Marketplace"/>
+
+    <!-- Sub-kelas Sell -->
+    <owl:Class rdf:about="#Sell">
+        <rdfs:subClassOf rdf:resource="#Marketplace"/>
+    </owl:Class>
+
+    <!-- Sub-kelas CreateListing di dalam Sell -->
+    <owl:Class rdf:about="#CreateListing">
+        <rdfs:subClassOf rdf:resource="#Sell"/>
+    </owl:Class>
+
+    <!-- Individu di dalam CreateListing -->
+    <owl:NamedIndividual rdf:about="#Items">
+        <rdf:type rdf:resource="#CreateListing"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can create listings for items.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Vehicles">
+        <rdf:type rdf:resource="#CreateListing"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can create listings for vehicles.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Property">
+        <rdf:type rdf:resource="#CreateListing"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can create listings for properties.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AddPhotos">
+        <rdf:type rdf:resource="#CreateListing"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add photos to their listings.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas ListingDetails di dalam CreateListing -->
+    <owl:Class rdf:about="#ListingDetails">
+        <rdfs:subClassOf rdf:resource="#CreateListing"/>
+    </owl:Class>
+
+    <!-- Individu di dalam ListingDetails -->
+    <owl:NamedIndividual rdf:about="#Title">
+        <rdf:type rdf:resource="#ListingDetails"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can provide a title for their listing.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Price">
+        <rdf:type rdf:resource="#ListingDetails"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can set a price for their listing.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Category">
+        <rdf:type rdf:resource="#ListingDetails"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can choose a category for their listing.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Description">
+        <rdf:type rdf:resource="#CreateListing"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add a description for their listing.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Location">
+        <rdf:type rdf:resource="#CreateListing"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can specify the location for their listing.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Condition">
+        <rdf:type rdf:resource="#CreateListing"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can specify the condition of the item (New, Used).</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Availability">
+        <rdf:type rdf:resource="#CreateListing"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can specify the availability of the listing (Single, Stock).</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#OfferShipping">
+        <rdf:type rdf:resource="#CreateListing"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can offer shipping options for their listing.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MeetupPreference">
+        <rdf:type rdf:resource="#CreateListing"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can specify meetup preferences (Public meetup, Door pickup, Door dropoff).</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SKU">
+        <rdf:type rdf:resource="#CreateListing"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can add a SKU for inventory management.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#BoostListing">
+        <rdf:type rdf:resource="#CreateListing"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can boost their listings to reach a larger audience.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#HideFromFriends">
+        <rdf:type rdf:resource="#CreateListing"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can hide their listings from specific friends.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas ManageListings -->
+    <owl:Class rdf:about="#ManageListings">
+        <rdfs:subClassOf rdf:resource="#Marketplace"/>
+    </owl:Class>
+
+    <!-- Individu di dalam ManageListings -->
+    <owl:NamedIndividual rdf:about="#EditListing">
+        <rdf:type rdf:resource="#ManageListings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can edit their existing listings.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DeleteListing">
+        <rdf:type rdf:resource="#ManageListings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can delete their existing listings.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MarkAsSold">
+        <rdf:type rdf:resource="#ManageListings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can mark their listings as sold.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#RenewListing">
+        <rdf:type rdf:resource="#ManageListings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can renew their expired listings.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas Messaging -->
+    <owl:Class rdf:about="#Messaging">
+        <rdfs:subClassOf rdf:resource="#Marketplace"/>
+    </owl:Class>
+
+    <!-- Individu di dalam Messaging -->
+    <owl:NamedIndividual rdf:about="#SendMessage">
+        <rdf:type rdf:resource="#Messaging"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can send messages to potential buyers or sellers.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ViewMessage">
+        <rdf:type rdf:resource="#Messaging"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view messages from potential buyers or sellers.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MarkAsSpam">
+        <rdf:type rdf:resource="#Messaging"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can mark messages as spam.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MarkAsRead">
+        <rdf:type rdf:resource="#Messaging"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can mark messages as read.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas Search -->
+    <owl:Class rdf:about="#Search">
+        <rdfs:subClassOf rdf:resource="#Marketplace"/>
+    </owl:Class>
+
+    <!-- Individu di dalam Search -->
+    <owl:NamedIndividual rdf:about="#ByCategory">
+        <rdf:type rdf:resource="#Search"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can search for listings by category.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ByLocation">
+        <rdf:type rdf:resource="#Search"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can search for listings by location.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas TodaysPicks -->
+    <owl:Class rdf:about="#TodaysPicks">
+        <rdfs:subClassOf rdf:resource="#Marketplace"/>
+    </owl:Class>
+
+    <!-- Sub-kelas ViewListings di dalam TodaysPicks -->
+    <owl:Class rdf:about="#ViewListings">
+        <rdfs:subClassOf rdf:resource="#TodaysPicks"/>
+    </owl:Class>
+
+    <!-- Individu di dalam ViewListings -->
+    <owl:NamedIndividual rdf:about="#SendMessageToSeller">
+        <rdf:type rdf:resource="#ViewListings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can send a message to the seller.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SendOffer">
+        <rdf:type rdf:resource="#ViewListings"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can send an offer to the seller.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SaveListing">
+        <rdf:type rdf:resource="#TodaysPicks"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can save listings for later.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ShareListing">
+        <rdf:type rdf:resource="#TodaysPicks"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can share listings with others.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas SellerInformation -->
+    <owl:Class rdf:about="#SellerInformation">
+        <rdfs:subClassOf rdf:resource="#Marketplace"/>
+    </owl:Class>
+
+    <!-- Individu di dalam SellerInformation -->
+    <owl:NamedIndividual rdf:about="#ViewSellerProfile">
+        <rdf:type rdf:resource="#SellerInformation"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view the profile of the seller.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#FollowSeller">
+        <rdf:type rdf:resource="#SellerInformation"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can follow the seller for updates.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas ListingDetails -->
+    <owl:Class rdf:about="#ListingDetails">
+        <rdfs:subClassOf rdf:resource="#Marketplace"/>
+    </owl:Class>
+
+    <!-- Individu di dalam ListingDetails -->
+    <owl:NamedIndividual rdf:about="#ViewProductDetails">
+        <rdf:type rdf:resource="#ListingDetails"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view detailed information about the product.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#RelatedProducts">
+        <rdf:type rdf:resource="#ListingDetails"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can view products related to the listing.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ReportListing">
+        <rdf:type rdf:resource="#ListingDetails"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can report inappropriate listings.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#GetHelpOnMarketplace">
+        <rdf:type rdf:resource="#ListingDetails"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can access help resources related to the marketplace.</hasFeatureDescription>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

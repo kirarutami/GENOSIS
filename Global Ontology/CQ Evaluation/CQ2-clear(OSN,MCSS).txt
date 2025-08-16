@@ -1,0 +1,94 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+
+SELECT DISTINCT ?user1 ?user1Label ?platform1 ?user2 ?user2Label ?platform2 ?matchCriteria ?sharedValue
+WHERE {
+  ?user1 rdf:type/rdfs:subClassOf* genosisOwl:Global:UserAccount ;
+         genosisOwl:belongsToPlatform ?platform1 .
+  ?user2 rdf:type/rdfs:subClassOf* genosisOwl:Global:UserAccount ;
+         genosisOwl:belongsToPlatform ?platform2 .
+
+  FILTER(?user1 != ?user2)
+  FILTER(STR(?user1) < STR(?user2)) 
+  FILTER(?platform1 != ?platform2)
+
+  {
+    # 1. Berdasarkan Email yang Sama
+    ?user1 genosisOwl:hasEmail ?sharedValue .
+    ?user2 genosisOwl:hasEmail ?sharedValue .
+    # Mengganti LOWERCASE dengan !regex untuk cek "none" secara case-insensitive
+    FILTER(isLiteral(?sharedValue) && STR(?sharedValue) != "" && !regex(STR(?sharedValue), "^none$", "i"))
+    BIND("Email" AS ?matchCriteria)
+  }
+  UNION
+  {
+    # 2. Berdasarkan Username yang Sama
+    ?user1 genosisOwl:hasUsername ?sharedValue .
+    ?user2 genosisOwl:hasUsername ?sharedValue .
+    FILTER(isLiteral(?sharedValue) && STR(?sharedValue) != "" && !regex(STR(?sharedValue), "^none$", "i"))
+    BIND("Username" AS ?matchCriteria)
+  }
+  UNION
+  {
+    # 3. Berdasarkan Nomor Telepon yang Sama
+    ?user1 genosisOwl:hasPhoneNumber ?sharedValue .
+    ?user2 genosisOwl:hasPhoneNumber ?sharedValue .
+    FILTER(isLiteral(?sharedValue) && STR(?sharedValue) != "" && !regex(STR(?sharedValue), "^none$", "i"))
+    BIND("Phone Number" AS ?matchCriteria)
+  }
+  UNION
+  {
+    # 4. Berdasarkan Linked Account (Username dari ?user1/2 ada di hasLinkedAccount ?user2/1)
+    ?user1 genosisOwl:hasLinkedAccount ?linkedUsername .
+    ?user2 genosisOwl:hasUsername ?linkedUsername .
+    FILTER(isLiteral(?linkedUsername) && STR(?linkedUsername) != "") # Tidak perlu cek "none" di sini, karena mencocokkan username
+    BIND("Linked Account (via Username)" AS ?matchCriteria)
+    BIND(?linkedUsername AS ?sharedValue)
+  }
+  UNION
+  {
+    # Kasus 2: user2.hasLinkedAccount = user1.hasUsername (simetris)
+    ?user2 genosisOwl:hasLinkedAccount ?linkedUsername .
+    ?user1 genosisOwl:hasUsername ?linkedUsername .
+    FILTER(isLiteral(?linkedUsername) && STR(?linkedUsername) != "") # Tidak perlu cek "none" di sini
+    BIND("Linked Account (via Username)" AS ?matchCriteria)
+    BIND(?linkedUsername AS ?sharedValue)
+  }
+  UNION
+  {
+    # 5. Berdasarkan Website Profil yang Sama
+    ?user1 genosisOwl:hasProfileWebsite ?sharedValue .
+    ?user2 genosisOwl:hasProfileWebsite ?sharedValue .
+    FILTER(isIRI(?sharedValue) || (isLiteral(?sharedValue) && STR(?sharedValue) != "" && !regex(STR(?sharedValue), "^none$", "i")))
+    BIND("Website" AS ?matchCriteria)
+  }
+  UNION
+  {
+    # 6. Berdasarkan Tanggal Lahir yang Sama (hasUserBirthday)
+    ?user1 genosisOwl:hasUserBirthday ?sharedValue .
+    ?user2 genosisOwl:hasUserBirthday ?sharedValue .
+    # Tanggal lahir diasumsikan valid jika ada, tidak perlu cek "none"
+    BIND("Birth Date" AS ?matchCriteria)
+  }
+  UNION
+  {
+    # 7. Berdasarkan URL Gambar Profil yang Sama
+    ?user1 genosisOwl:hasProfilePicture ?sharedValue .
+    ?user2 genosisOwl:hasProfilePicture ?sharedValue .
+    FILTER(isIRI(?sharedValue) || (isLiteral(?sharedValue) && STR(?sharedValue) != "" && !regex(STR(?sharedValue), "^none$", "i")))
+    BIND("Profile Picture URL" AS ?matchCriteria)
+  }
+  UNION
+  {
+    # 8. Berdasarkan Hash Password yang Sama
+    ?user1 genosisOwl:hasPasswordHash ?sharedValue .
+    ?user2 genosisOwl:hasPasswordHash ?sharedValue .
+    FILTER(isLiteral(?sharedValue) && STR(?sharedValue) != "") # Hash password tidak mungkin "none"
+    BIND("Password Hash" AS ?matchCriteria)
+  }
+
+  OPTIONAL { ?user1 rdfs:label ?user1Label . }
+  OPTIONAL { ?user2 rdfs:label ?user2Label . }
+}
+ORDER BY ?matchCriteria ?sharedValue ?user1 ?user2

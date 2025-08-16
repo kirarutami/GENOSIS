@@ -1,0 +1,3 @@
+Bagaimana Hasil Query Menjawab OFB8:
+
+Hasil query ini adalah daftar konkret dari postingan dan komentar yang terdeteksi memiliki potensi terkait aktivitas ilegal atau perilaku mencurigakan, beserta alasan deteksinya. Ini secara langsung menunjukkan bagaimana thread dan komentar dapat dianalisis (berdasarkan konten teks dan konteks komunitas/asosiasi) untuk tujuan deteksi, yang merupakan inti dari pertanyaan OFB8. Penyelidik kemudian dapat memeriksa item-item yang ditandai ini lebih lanjut.

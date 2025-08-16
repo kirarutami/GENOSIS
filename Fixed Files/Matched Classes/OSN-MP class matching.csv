@@ -1,0 +1,21 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+OSN:ContentCreation,MP:ContentCreation,100.0,"OSN:The main class representing content creation functionality, including posts, stories, and reels.",MP:Represents actions related to creating and managing content on a microblogging platform.
+OSN:ContentInteraction,MP:ContentInteraction,100.0,"OSN:The class representing user interactions with content, such as likes, reactions, and comments.",MP:
+OSN:NotificationSettings,MP:NotificationSettings,100.0,"OSN:Handles configurations for notifications like push, email, and SMS.",MP:Represents settings related to notifications that the user can configure.
+OSN:User,MP:User,100.0,OSN:The primary class representing the user in the system.,"MP:Represents a user in a microblogging platform (e.g., Twitter, Tumblr)."
+OSN:Comments,MP:Comment,93.33,OSN:Represents user interactions involving comments on content.,MP:
+OSN:AvatarPosts,MP:Post,90.0,OSN:Represents posts created using avatars.,MP:Represents a specific post or piece of content created by a user.
+OSN:BirthdayPosts,MP:Post,90.0,OSN:Represents posts created for birthdays.,MP:Represents a specific post or piece of content created by a user.
+OSN:EmojiComment,MP:Comment,90.0,OSN:Represents a comment made by a user that contains an emoji.,MP:
+OSN:Files,MP:ProfileSettings,90.0,OSN:Represents files uploaded to a group.,MP:Represents profile customization settings for the user.
+OSN:LikesReactions,MP:Likes,90.0,OSN:Represents user interactions involving likes and reactions to content.,MP:
+OSN:MessageNotifications,MP:Notifications,90.0,OSN:Represents notification settings related to direct messages.,MP:Represents user notifications and their related settings on the platform.
+OSN:NotificationSettings,MP:Notifications,90.0,"OSN:Handles configurations for notifications like push, email, and SMS.",MP:Represents user notifications and their related settings on the platform.
+OSN:TextComment,MP:Comment,90.0,OSN:Represents a text-based comment made by a user.,MP:
+OSN:UserProfile,MP:User,90.0,"OSN:Represents the profile of a user, containing personal information such as profile picture, username, and email.","MP:Represents a user in a microblogging platform (e.g., Twitter, Tumblr)."
+OSN:Like,MP:Likes,88.89,OSN:Represents a user's 'like' interaction on a post or content.,MP:
+OSN:Posts,MP:Post,88.89,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",MP:Represents a specific post or piece of content created by a user.
+OSN:GroupNotifications,MP:Notifications,83.87,OSN:Represents notification settings for a group.,MP:Represents user notifications and their related settings on the platform.
+OSN:VideoNotifications,MP:Notifications,83.87,"OSN:Represents notifications related to video content, such as new video uploads, reminders, and other updates.",MP:Represents user notifications and their related settings on the platform.
+OSN:GIFComment,MP:Comment,82.35,OSN:Represents a comment made by a user that contains a GIF.,MP:
+OSN:Posts,MP:ReblogRetweetPost,80.0,"OSN:Represents posts created by users, including media posts, location check-ins, and live videos.",MP:

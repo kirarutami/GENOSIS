@@ -1,0 +1,218 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#">
+
+    <!-- Disjointness for Main Classes -->
+    <owl:Class rdf:about="#User">
+        <owl:disjointWith rdf:resource="#UserAction"/>
+        <owl:disjointWith rdf:resource="#Content"/>
+        <owl:disjointWith rdf:resource="#Community"/>
+        <owl:disjointWith rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#SearchAndDiscovery"/>
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Messaging"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#UserAction">
+        <owl:disjointWith rdf:resource="#Content"/>
+        <owl:disjointWith rdf:resource="#Community"/>
+        <owl:disjointWith rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#SearchAndDiscovery"/>
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Messaging"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Content">
+        <owl:disjointWith rdf:resource="#Community"/>
+        <owl:disjointWith rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#SearchAndDiscovery"/>
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Messaging"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Community">
+        <owl:disjointWith rdf:resource="#ContentInteraction"/>
+        <owl:disjointWith rdf:resource="#SearchAndDiscovery"/>
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Messaging"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ContentInteraction">
+        <owl:disjointWith rdf:resource="#SearchAndDiscovery"/>
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Messaging"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#SearchAndDiscovery">
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Messaging"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Notifications">
+        <owl:disjointWith rdf:resource="#Messaging"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Messaging">
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Monetization">
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Analytics">
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <!-- Disjointness for Sub-Classes -->
+    <owl:Class rdf:about="#ProfileSettings">
+        <owl:disjointWith rdf:resource="#SecuritySettings"/>
+        <owl:disjointWith rdf:resource="#SubscriptionPlan"/>
+        <owl:disjointWith rdf:resource="#NotificationSettings"/>
+        <owl:disjointWith rdf:resource="#AnonymousSession"/>
+        <owl:disjointWith rdf:resource="#AccountDeactivation"/>
+        <owl:disjointWith rdf:resource="#AccountDeletion"/>
+        <owl:disjointWith rdf:resource="#Session"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ContentInteraction">
+        <owl:disjointWith rdf:resource="#Engagement"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Engagement">
+        <owl:disjointWith rdf:resource="#UpvoteDownvote"/>
+        <owl:disjointWith rdf:resource="#Like"/>
+        <owl:disjointWith rdf:resource="#ReplyToComments"/>
+        <owl:disjointWith rdf:resource="#ShareRepost"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#SearchFeatures">
+        <owl:disjointWith rdf:resource="#Recommendations"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Recommendations">
+        <owl:disjointWith rdf:resource="#PersonalizedFeed"/>
+        <owl:disjointWith rdf:resource="#ExploreCategories"/>
+        <owl:disjointWith rdf:resource="#FlairSearch"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Community">
+        <owl:disjointWith rdf:resource="#CommunityReputation"/>
+        <owl:disjointWith rdf:resource="#CommunityModeration"/>
+    </owl:Class>
+
+    <!-- Disjointness for User Sub-classes -->
+    <owl:Class rdf:about="#ProfileSettings">
+        <owl:disjointWith rdf:resource="#AnonymousSession"/>
+        <owl:disjointWith rdf:resource="#AccountDeactivation"/>
+        <owl:disjointWith rdf:resource="#AccountDeletion"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#SecuritySettings">
+        <owl:disjointWith rdf:resource="#NotificationSettings"/>
+        <owl:disjointWith rdf:resource="#SubscriptionPlan"/>
+        <owl:disjointWith rdf:resource="#Session"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#AnonymousSession">
+        <owl:disjointWith rdf:resource="#AccountDeletion"/>
+        <owl:disjointWith rdf:resource="#Session"/>
+    </owl:Class>
+
+    <!-- Disjointness for Community Moderation Sub-classes -->
+    <owl:Class rdf:about="#Moderator">
+        <owl:disjointWith rdf:resource="#ModerationQueue"/>
+        <owl:disjointWith rdf:resource="#CommunityRules"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ModerationQueue">
+        <owl:disjointWith rdf:resource="#CommunityRules"/>
+    </owl:Class>
+
+    <!-- Disjointness for ContentInteraction Engagement Sub-classes -->
+    <owl:Class rdf:about="#UpvoteDownvote">
+        <owl:disjointWith rdf:resource="#Like"/>
+        <owl:disjointWith rdf:resource="#ReplyToComments"/>
+        <owl:disjointWith rdf:resource="#ShareRepost"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Like">
+        <owl:disjointWith rdf:resource="#ReplyToComments"/>
+        <owl:disjointWith rdf:resource="#ShareRepost"/>
+        <owl:disjointWith rdf:resource="#Bookmark"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ReplyToComments">
+        <owl:disjointWith rdf:resource="#ShareRepost"/>
+        <owl:disjointWith rdf:resource="#Bookmark"/>
+    </owl:Class>
+
+    <!-- Disjointness for Search and Recommendations -->
+    <owl:Class rdf:about="#GlobalSearch">
+        <owl:disjointWith rdf:resource="#AdvancedSearch"/>
+        <owl:disjointWith rdf:resource="#TrendSearch"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#AdvancedSearch">
+        <owl:disjointWith rdf:resource="#TrendSearch"/>
+        <owl:disjointWith rdf:resource="#PersonalizedFeed"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#PersonalizedFeed">
+        <owl:disjointWith rdf:resource="#ExploreCategories"/>
+        <owl:disjointWith rdf:resource="#FlairSearch"/>
+    </owl:Class>
+
+    <!-- Disjointness for Monetization Sub-classes -->
+    <owl:Class rdf:about="#RevenueGeneration">
+        <owl:disjointWith rdf:resource="#Donations"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Subscription">
+        <owl:disjointWith rdf:resource="#AdRevenue"/>
+    </owl:Class>
+
+    <!-- Disjointness for Analytics Sub-classes -->
+    <owl:Class rdf:about="#EngagementMetrics">
+        <owl:disjointWith rdf:resource="#CommunityMetrics"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#CommunityMetrics">
+        <owl:disjointWith rdf:resource="#UserInsights"/>
+    </owl:Class>
+
+    <!-- Disjointness for Notifications Sub-classes -->
+    <owl:Class rdf:about="#PushNotifications">
+        <owl:disjointWith rdf:resource="#EmailNotifications"/>
+        <owl:disjointWith rdf:resource="#InAppNotifications"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ActivitySummaries">
+        <owl:disjointWith rdf:resource="#WeeklyDigests"/>
+    </owl:Class>
+
+</rdf:RDF>

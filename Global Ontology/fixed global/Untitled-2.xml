@@ -1,0 +1,618 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/gsmfo.owl#"
+     xml:base="http://example.org/gsmfo.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <owl:ObjectProperty rdf:about="#Global:commentedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:label xml:lang="en">commented By</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a comment or reply action to the user account that authored it. This is functional as a specific comment action is performed by one primary user.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Menghubungkan aksi komentar atau balasan dengan akun pengguna yang membuatnya. Properti ini functional karena sebuah aksi komentar spesifik dilakukan oleh satu pengguna utama.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:CommentOrReplyAction"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#commentedBy</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#commentedBy</alignWithMP>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#commentedBy</alignWithOSN>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#MCSS:commentedBy">
+        <rdfs:subPropertyOf rdf:resource="#Global:commentedBy"/>
+        <MCSScomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a comment with the User who made the comment.</MCSScomment>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#MP:commentedBy">
+        <rdfs:subPropertyOf rdf:resource="#Global:commentedBy"/>
+        <MPcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Points to the user who wrote this comment.</MPcomment>
+    </owl:ObjectProperty>
+     <owl:ObjectProperty rdf:about="#OSN:commentedBy">
+        <rdfs:subPropertyOf rdf:resource="#Global:commentedBy"/>
+        <OSNcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a comment with the User who made the comment.</OSNcomment>
+    </owl:ObjectProperty>
+
+
+    <owl:ObjectProperty rdf:about="#Global:commentsOn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:label xml:lang="en">comments On</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a comment or reply action to the specific content it is commenting on. This is functional as a specific comment action targets one piece of content.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Menghubungkan aksi komentar atau balasan dengan konten spesifik yang dikomentari. Properti ini functional karena sebuah aksi komentar spesifik menargetkan satu konten.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:CommentOrReplyAction"/>
+        <rdfs:range rdf:resource="#Global:Content"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#commentsOnContent</alignWithMCSS>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#associatedWithCommentedPost</alignWithMCSS> <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#commentsOn</alignWithMP>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#commentedOn</alignWithMP>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#commentsOn</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#commentsOn</alignWithOSN>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#MCSS:commentsOnContent">
+        <rdfs:subPropertyOf rdf:resource="#Global:commentsOn"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#MCSS:associatedWithCommentedPost">
+        <rdfs:subPropertyOf rdf:resource="#Global:commentsOn"/>
+        <rdfs:comment xml:lang="en">Specialization for comments on MCSS posts.</rdfs:comment>
+        <rdfs:domain rdf:resource="#MCSS:CommentAction"/>
+        <rdfs:range rdf:resource="#MCSS:Post"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:likedContent">
+        <rdfs:label xml:lang="en">liked Content</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a liking reaction action to the content that was liked. The reflexivity depends on whether the subject is the user performing the action or the action itself. Not explicitly set to allow users liking their own content via a reaction action.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:ReactionAction"/> <rdfs:range rdf:resource="#Global:Content"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#likesContent</alignWithMCSS>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#likesContent</alignWithOFB>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#likesPost</alignWithMP> 
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:dislikedContent">
+        <rdfs:label xml:lang="en">disliked Content</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a disliking reaction action to the content that was disliked. Not explicitly set as irreflexive to allow users disliking their own content via a reaction action.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:ReactionAction"/> <rdfs:range rdf:resource="#Global:Content"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#dislikesContent</alignWithMCSS>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:sharedContent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/> <rdfs:label xml:lang="en">shared Content</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a sharing action to the content that was shared. The sharing action itself is irreflexive.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:SharingAction"/>
+        <rdfs:range rdf:resource="#Global:Content"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#associatedWithSharedPost</alignWithMCSS> <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#sharesContent</alignWithOFB>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:reportedContent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/> <rdfs:label xml:lang="en">reported Content</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a reporting action to the content that was reported. The reporting action itself is irreflexive.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:ReportAction"/>
+        <rdfs:range rdf:resource="#Global:Content"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#associatedWithReportedPost</alignWithMCSS> <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#isFiledFor</alignWithOFB> 
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:attributedToUser">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/> 
+        <rdfs:label xml:lang="en">attributed to User</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates an entity (e.g., content, channel, post) to the user account it is primarily associated with or owned by. Often functional, as content typically has one primary author/owner.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Content"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#associatedWithUser</alignWithMCSS> <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#associatedWithUser</alignWithOFB> <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#postedBy</alignWithOSN> <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#postedBy</alignWithMP> 
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#MCSS:associatedWithUser">
+        <rdfs:subPropertyOf rdf:resource="#Global:attributedToUser"/>
+        <rdfs:domain rdf:resource="#MCSS:Channel"/> <rdfs:range rdf:resource="#MCSS:User"/>     
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:blocksUser">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/> 
+        <rdfs:label xml:lang="en">blocks User</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to another user account that it blocks. This is asymmetric (if A blocks B, B does not necessarily block A) and irreflexive (a user does not block themselves).</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#blocks</alignWithMP>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#blocksUser</alignWithOFB>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:unblocksUser">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">unblocks User</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to another user account that it unblocks. Irreflexive.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#unblocks</alignWithMP>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#unblocksUser</alignWithOFB>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:locksContent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/> 
+        <rdfs:label xml:lang="en">locks Content</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a moderator or user to a piece of content (e.g., post) that they lock. The actor (user/moderator) does not lock itself via this property.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/> <rdfs:range rdf:resource="#Global:Content"/>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#locksPost</alignWithOFB>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:follows">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/> 
+        <rdfs:label xml:lang="en">follows</rdfs:label>
+        <rdfs:comment xml:lang="en">A general property indicating a following relationship. It's typically asymmetric (A follows B doesn't mean B follows A) and irreflexive (a user does not follow themselves).</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/> 
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:followsAccount">
+        <rdfs:subPropertyOf rdf:resource="#Global:follows"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">follows Account</rdfs:label>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/>
+        <owl:inverseOf rdf:resource="#Global:isFollowedByAccount"/>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#follow</alignWithMP>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#follows</alignWithOSN>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:isFollowedByAccount">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">is followed by Account</rdfs:label>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/>
+        <owl:inverseOf rdf:resource="#Global:followsAccount"/>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#isFollowedBy</alignWithOSN>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:followsCommunity">
+        <rdfs:subPropertyOf rdf:resource="#Global:follows"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:label xml:lang="en">follows Community</rdfs:label>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Group"/>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#followsCommunity</alignWithOFB>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:followsTopic">
+        <rdfs:subPropertyOf rdf:resource="#Global:follows"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:label xml:lang="en">follows Topic</rdfs:label>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Topic"/>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#followsTopic</alignWithOFB>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:followsList">
+        <rdfs:subPropertyOf rdf:resource="#Global:follows"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:label xml:lang="en">follows List</rdfs:label>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#MP:List"/> 
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#addsOrFollowsList</alignWithMP>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:unfollows">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">unfollows</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents the action of unfollowing an entity. Irreflexive.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/> <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#unfollow</alignWithMP>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:reports">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/> 
+        <rdfs:label xml:lang="en">reports</rdfs:label>
+        <rdfs:comment xml:lang="en">A general property indicating a reporting action where a user reports another user. Use sub-properties for specific targets. Typically irreflexive (user does not report themselves).</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/> 
+        <rdfs:range rdf:resource="#Global:UserAccount"/> <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#reports</alignWithMP> 
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:reportsContent">
+        <rdfs:subPropertyOf rdf:resource="#Global:reports"/>
+        <rdfs:label xml:lang="en">reports Content</rdfs:label>
+        <rdfs:comment xml:lang="en">A user reports a piece of content.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Content"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#reportsContent</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#reportComment</alignWithMP> 
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:reportsAccount">
+        <rdfs:subPropertyOf rdf:resource="#Global:reports"/>
+        <rdfs:label xml:lang="en">reports Account</rdfs:label>
+        <rdfs:comment xml:lang="en">A user reports another user account.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#reportsUser</alignWithMCSS>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:reportsMessage">
+        <rdfs:subPropertyOf rdf:resource="#Global:reports"/>
+        <rdfs:label xml:lang="en">reports Message</rdfs:label>
+        <rdfs:comment xml:lang="en">A user reports a message.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Message"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#reportsMessage</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#reportsMessage</alignWithMP>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:reportsChannel"> 
+        <rdfs:subPropertyOf rdf:resource="#Global:reports"/>
+        <rdfs:label xml:lang="en">reports Channel</rdfs:label>
+        <rdfs:comment xml:lang="en">A user reports a channel.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#MCSS:Channel"/> 
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#reportsChannel</alignWithMCSS>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:sendsMessageTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/> 
+        <rdfs:label xml:lang="en">sends Message To</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user (sender) to another user (receiver) of a message. Typically irreflexive in a direct person-to-person messaging context.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sendsMessageTo</alignWithMCSS>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#sendsMessageTo</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#sendsTextMessage</alignWithOSN> 
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:searchesFor">
+        <rdfs:label xml:lang="en">searches For</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user to the entity or concept they are searching for.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/> <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#searchesForContent</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#searchFor</alignWithMP> <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#searchesForCommunity</alignWithMP>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#searchesForLists</alignWithMP>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#searchesFor</alignWithOFB> 
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:savesSearch">
+        <rdfs:label xml:lang="en">saves Search</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user to a search query or search functionality that they save.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:SearchFunctionality"/> 
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#saveSearchesFor</alignWithMP>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:canEditProfileSetting">
+        <rdfs:label xml:lang="en">can Edit Profile Setting</rdfs:label>
+        <rdfs:comment xml:lang="en">Indicates that a user has permission to edit a profile setting. This describes a capability.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:ProfileSettings"/> 
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#canEditProfile</alignWithOFB>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:canSetVisibility">
+        <rdfs:label xml:lang="en">can Set Visibility</rdfs:label>
+        <rdfs:comment xml:lang="en">Indicates that a user can set the visibility of their profile or content. This describes a capability.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:PrivacySettings"/> 
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#canSetProfileVisibility</alignWithOFB>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:editsAvatar"> 
+        <rdfs:label xml:lang="en">edits Avatar</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user to an avatar they edit.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Content"/> 
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#editsAvatar</alignWithOSN>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#canEditAvatar</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#canEditAvatar</alignWithMP>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:likesComment">
+        <rdfs:label xml:lang="en">likes Comment</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a liking reaction action to the comment that was liked.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:ReactionAction"/>
+        <rdfs:range rdf:resource="#Global:CommentOrReplyAction"/> 
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#likesComment</alignWithMP>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:joinsCommunity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">joins Community</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to a group or community they join. Irreflexive (a user joins a community, not itself as the community).</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Group"/>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#joinsCommunity</alignWithMP>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#joinsCommunity</alignWithOFB>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:pinsItem">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">pins Item</rdfs:label>
+        <rdfs:comment xml:lang="en">A general property for pinning an item. Typically irreflexive (the pinner is distinct from the pinned item). Use sub-properties for specific actor/target.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/> <rdfs:range rdf:resource="#Global:UserAccount"/> </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:userPinsCommunity">
+        <rdfs:subPropertyOf rdf:resource="#Global:pinsItem"/>
+        <rdfs:label xml:lang="en">user Pins Community</rdfs:label>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Group"/>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#pinsCommunity</alignWithMP>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:communityPinsPost">
+        <rdfs:subPropertyOf rdf:resource="#Global:pinsItem"/>
+        <rdfs:label xml:lang="en">community Pins Post</rdfs:label>
+        <rdfs:domain rdf:resource="#Global:Group"/> <rdfs:range rdf:resource="#Global:Post"/>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#pinsPostByCommunity</alignWithOFB>
+    </owl:ObjectProperty>
+     <owl:ObjectProperty rdf:about="#Global:pinsGroup"> 
+        <rdfs:subPropertyOf rdf:resource="#Global:pinsItem"/>
+        <rdfs:label xml:lang="en">pins Group</rdfs:label>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Group"/>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#pinsGroup</alignWithOSN>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:leavesGroupChat">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">leaves Group Chat</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to a group chat they leave. Irreflexive.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:GroupMessage"/> <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#leavesGroupChat</alignWithOFB>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:mutesGroupChat">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">mutes Group Chat</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to a group chat they mute. Irreflexive.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:GroupMessage"/> <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#mutesGroupChat</alignWithOFB>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:createsGroupChat">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">creates Group Chat</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to a group chat they create. Irreflexive.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:GroupMessage"/> 
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#createsGroupChat</alignWithOSN>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:subscribesTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">subscribes To</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to an entity they subscribe to (e.g., creator, plan, service). Asymmetric and irreflexive.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/> <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#subscribesTo</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#isSubscribedTo</alignWithMP>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#subscribesToCreator</alignWithOSN>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:schedulesPost">
+        <rdfs:label xml:lang="en">schedules Post</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to a post they schedule for future publication.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Post"/> <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#schedulePost</alignWithMP>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:editsScheduledPost">
+        <rdfs:label xml:lang="en">edits Scheduled Post</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to a scheduled post they edit.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#OFB:ScheduledPost"/> 
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#editsScheduledPost</alignWithOFB>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:publishesScheduledPost">
+        <rdfs:label xml:lang="en">publishes Scheduled Post</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account (or system) to a scheduled post that gets published.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/> 
+        <rdfs:range rdf:resource="#OFB:ScheduledPost"/> <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#postsScheduledPost</alignWithOFB>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:postedBy">
+        <rdfs:subPropertyOf rdf:resource="#Global:attributedToUser"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:label xml:lang="en">posted By</rdfs:label>
+        <rdfs:comment xml:lang="en">Specifically relates a Post or Story to the UserAccount that authored it. Functional.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Post"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/> <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#postedBy</alignWithMP>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#postedBy</alignWithOSN>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:enablesNotificationsFor">
+        <rdfs:label xml:lang="en">enables Notifications For</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to an entity (e.g., group message, user) for which they enable notifications.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/> <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#enablesNotificationForGroupMessages</alignWithMCSS>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#enablesNotifications</alignWithOSN>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:viewsMessage">
+        <rdfs:label xml:lang="en">views Message</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to a message they view.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Message"/>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#viewsMessages</alignWithOSN>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:viewsMessageAnalytics">
+        <rdfs:label xml:lang="en">views Message Analytics</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to message analytics data they view.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:AnalyticsData"/> <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#viewsMessageStats</alignWithMCSS>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#MCSS:belongsToLive">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:label xml:lang="en">MCSS belongs to Live</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a donation or superchat to the live event it belongs to. A specific superchat belongs to one live event.</rdfs:comment>
+        <rdfs:domain rdf:resource="#MCSS:SuperChat"/> 
+        <rdfs:range rdf:resource="#MCSS:Live"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#belongsToLive</alignWithMCSS>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#OSN:belongsToUser"> 
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/> 
+        <rdfs:label xml:lang="en">OSN profile belongs to User</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates an OSN User Profile to the OSN User account it belongs to. Functional and InverseFunctional if a profile is uniquely tied to one user, and a user has one primary profile concept of this type.</rdfs:comment>
+        <rdfs:domain rdf:resource="#OSN:UserProfile"/> 
+        <rdfs:range rdf:resource="#OSN:User"/>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#belongsTo</alignWithOSN>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:interactsWithShop">
+        <rdfs:label xml:lang="en">interacts With Shop</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to a shop or marketplace feature they interact with.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:MarketplaceFeature"/> 
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#interactsWithShop</alignWithMCSS>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:interactsWithVideo">
+        <rdfs:label xml:lang="en">interacts With Video</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to a video content they interact with.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:VideoContent"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#interactsWithVideo</alignWithMCSS>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:approvesPost">
+        <rdfs:label xml:lang="en">approves Post</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a moderator or admin to a post they approve.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:ModeratorRole"/> 
+        <rdfs:range rdf:resource="#Global:Post"/>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#approvesPost</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#approvesPost</alignWithOSN>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:deniesPost">
+        <rdfs:label xml:lang="en">denies Post</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a moderator or admin to a post they deny or reject.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:ModeratorRole"/>
+        <rdfs:range rdf:resource="#Global:Post"/>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#deniesPost</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#deniesPost</alignWithOSN>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:joinsGroupChat"> 
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">joins Group Chat</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to a group chat they join. Irreflexive.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:GroupMessage"/> 
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#joinsGroupChat</alignWithOFB>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:createdByModerator"> 
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:label xml:lang="en">created By Moderator</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates an entity (e.g., a rule) to the moderator who created it. Functional.</rdfs:comment>
+        <rdfs:domain rdf:resource="#OFB:CommunityRules"/> 
+        <rdfs:range rdf:resource="#Global:ModeratorRole"/>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#createdByModerator</alignWithOFB>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:reactedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:label xml:lang="en">reacted By</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a reaction action to the user account that performed the reaction. Functional.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:ReactionAction"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#reactedBy</alignWithOSN>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:deletesMessage">
+        <rdfs:label xml:lang="en">deletes Message</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to a message they delete.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Message"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#deletesMessage</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#deletesMessage</alignWithMP>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#deletesMessage</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#deletesMessage</alignWithOSN>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:repliesToMessage">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">replies To Message</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a message (reply) to the message it is replying to. Irreflexive (a message doesn't reply to itself).</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Message"/> 
+        <rdfs:range rdf:resource="#Global:Message"/>  
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#repliesToMessage</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#repliesToMessage</alignWithMP>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#repliesToMessage</alignWithOFB>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#repliesToMessage</alignWithOSN>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:sendsVoiceNoteTo">
+        <rdfs:subPropertyOf rdf:resource="#Global:sendsMessageTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">sends Voice Note To</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user (sender) to another user (receiver) of a voice note. Irreflexive.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sendsVoiceNoteTo</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#sendsVoiceNotesTo</alignWithMP>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#sendsVoiceNoteTo</alignWithOSN>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:repliesToComment">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">replies To Comment</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a comment (reply action) to the comment action it is replying to. Irreflexive.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:CommentOrReplyAction"/> 
+        <rdfs:range rdf:resource="#Global:CommentOrReplyAction"/>  
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#repliesToComment</alignWithMCSS>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#repliesOnComment</alignWithOSN>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:userSharesCommunity">
+        <rdfs:label xml:lang="en">user Shares Community</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to a community they share.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Group"/>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#sharesCommunity</alignWithMP>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:contentSharedToCommunity">
+        <rdfs:label xml:lang="en">content Shared To Community</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a piece of content to a community it is shared to.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Content"/>
+        <rdfs:range rdf:resource="#Global:Group"/>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#sharedToCommunity</alignWithOFB>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:savesDraft">
+        <rdfs:label xml:lang="en">saves Draft</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to a draft content they save.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Post"/> 
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#savesPostAsDraft</alignWithMCSS>
+        <alignWithOSN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineSocialNetworkSites#saveAsDraft</alignWithOSN>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:messageReceiver">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/> 
+        <rdfs:label xml:lang="en">message Receiver</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a message to its intended recipient user account. Functional in direct messaging contexts.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Message"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/>
+        <owl:inverseOf rdf:resource="#Global:receivesMessageFrom"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#messageReceiver</alignWithMCSS>
+        <alignWithMP rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MicrobloggingPlatforms#dmReceiver</alignWithMP>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:receivesMessageFrom">
+        <rdfs:label xml:lang="en">receives Message From</rdfs:label>
+        <rdfs:comment xml:lang="en">Inverse of messageReceiver. Relates a user account to a message they receive from another user.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Message"/>
+        <owl:inverseOf rdf:resource="#Global:messageReceiver"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:userSharesContent">
+        <rdfs:label xml:lang="en">user Shares Content</rdfs:label>
+        <rdfs:comment xml:lang="en">A direct relationship between a user and the content they share.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Content"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#sharesContent</alignWithMCSS>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#sharesContent</alignWithOFB>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:hasParticipant">
+        <rdfs:label xml:lang="en">has Participant</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a group chat or group to a user account that is a participant.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:Group"/> 
+        <rdfs:range rdf:resource="#Global:UserAccount"/>
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#hasGroupParticipants</alignWithMCSS>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#hasParticipants</alignWithOFB>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:editsRecommendationPreferences">
+        <rdfs:label xml:lang="en">edits Recommendation Preferences</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to recommendation preferences they edit.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Setting"/> 
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#editsRecommendationPreferences</alignWithMCSS>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#Global:receivesRecommendation">
+        <rdfs:label xml:lang="en">receives Recommendation</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to content or an entity that is recommended to them.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:Content"/> 
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#receivesRecommendation</alignWithMCSS>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#Global:unsubscribesFrom">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">unsubscribes From</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a user account to an entity (e.g., creator, plan, service) they unsubscribe from. Irreflexive.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Global:UserAccount"/>
+        <rdfs:range rdf:resource="#Global:UserAccount"/> 
+        <alignWithMCSS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/MediaContentSharingSites#unsubscribesFromCreator</alignWithMCSS>
+        <alignWithOFB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://saralutami.org/OnlineForumBlogs#unsubscribesFrom</alignWithOFB>
+    </owl:ObjectProperty>
+</rdf:RDF>

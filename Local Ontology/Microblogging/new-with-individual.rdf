@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ex "http://www.co-ode.org/ontologies/ont.owl#" >
+]>
+
+<rdf:RDF xmlns="http://www.co-ode.org/ontologies/ont.owl#"
+     xml:base="http://www.co-ode.org/ontologies/ont.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ex="http://www.co-ode.org/ontologies/ont.owl#">
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+    -->
+
+    <owl:ObjectProperty rdf:about="&ex;addContentLabel">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>Adds a label or tag to the content for categorization or filtering.</rdfs:comment>
+        <rdfs:domain rdf:resource="&ex;User"/>
+        <rdfs:range rdf:resource="&ex;ContentCreation"/>
+    </owl:ObjectProperty>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+    -->
+
+    <owl:Class rdf:about="&ex;ContentCreation"/>
+    <owl:Class rdf:about="&ex;User"/>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+    -->
+
+    <owl:NamedIndividual rdf:about="&ex;Content1">
+        <rdf:type rdf:resource="&ex;ContentCreation"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="&ex;User1">
+        <rdf:type rdf:resource="&ex;User"/>
+    </owl:NamedIndividual>
+
+    <!-- Hubungan antara User1 dan Content1 menggunakan addContentLabel -->
+    <rdf:Description rdf:about="&ex;User1">
+        <ex:addContentLabel rdf:resource="&ex;Content1"/>
+    </rdf:Description>
+
+</rdf:RDF>

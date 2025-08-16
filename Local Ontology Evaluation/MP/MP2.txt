@@ -1,0 +1,54 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?user1 ?platform1 ?user2 ?platform2 ?sharedProperty ?sharedValue
+WHERE {
+  ?user1 rdf:type ex:User ;
+         ex:belongsToPlatform ?platform1 .
+
+  ?user2 rdf:type ex:User ;
+         ex:belongsToPlatform ?platform2 .
+
+  FILTER (?user1 != ?user2)
+
+  {
+    ?user1 ex:hasEmail ?sharedValue .
+    ?user2 ex:hasEmail ?sharedValue .
+    FILTER (?sharedValue != "None")
+    BIND("Email" AS ?sharedProperty)
+  }
+  UNION
+  {
+    ?user1 ex:hasPhoneNumber ?sharedValue .
+    ?user2 ex:hasPhoneNumber ?sharedValue .
+    FILTER (?sharedValue != "None")
+    BIND("PhoneNumber" AS ?sharedProperty)
+  }
+  UNION
+  {
+    ?user1 ex:hasBirthDate ?sharedValue .
+    ?user2 ex:hasBirthDate ?sharedValue .
+    FILTER (?sharedValue != "None")
+    BIND("BirthDate" AS ?sharedProperty)
+  }
+  UNION
+  {
+    ?user1 ex:hasWebsite ?sharedValue .
+    ?user2 ex:hasWebsite ?sharedValue .
+    FILTER (?sharedValue != "None")
+    BIND("Website" AS ?sharedProperty)
+  }
+  UNION
+  {
+    ?user1 ex:hasProfilePicture ?sharedValue .
+    ?user2 ex:hasProfilePicture ?sharedValue .
+    FILTER (?sharedValue != "None")
+    BIND("ProfilePicture" AS ?sharedProperty)
+  }
+
+  FILTER(BOUND(?sharedValue))
+}
+ORDER BY ?sharedProperty ?sharedValue

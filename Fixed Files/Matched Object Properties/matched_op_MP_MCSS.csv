@@ -1,0 +1,28 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+MP:canEditProfile,MCSS:canEditProfile,100.0,Indicates permission to edit profile information.,Indicates that the user can edit their general profile settings.
+MP:commentedBy,MCSS:commentedBy,100.0,"
+            Points to the user who wrote this comment.
+        ",Links a comment with the User who made the comment.
+MP:deletesMessage,MCSS:deletesMessage,100.0,Indicates that a user deletes a specific direct message.,Represents a user deleting a specific message.
+MP:repliesToMessage,MCSS:repliesToMessage,100.0,Indicates that a user replies to a specific direct message.,Represents a user replying to a specific message.
+MP:reportsMessage,MCSS:reportsMessage,100.0,Indicates that a user reports a specific direct message for inappropriate content.,Represents a user reporting a message for review.
+MP:sendsVoiceNotesTo,MCSS:sendsVoiceNoteTo,96.97,Indicates that a user sends voice notes to another user.,Represents a user sending a voice note to another user.
+MP:canEditProfile,MCSS:canEditProfilePicture,90.0,Indicates permission to edit profile information.,Indicates that the user can edit their profile picture within the profile settings.
+MP:commentsOn,MCSS:commentsOnContent,90.0,,Indicates that a user comments on specific content.
+MP:reports,MCSS:reportsChannel,90.0,,Indicates that a user reports specific channel.
+MP:reports,MCSS:reportsContent,90.0,,Indicates that a user reports specific content.
+MP:reports,MCSS:reportsMessage,90.0,,Represents a user reporting a message for review.
+MP:reports,MCSS:reportsUser,90.0,,Indicates that a user reports specific user.
+MP:likesComment,MCSS:likesContent,83.33,,Indicates that a user likes a specific content.
+MP:commentedOn,MCSS:associatedWithCommentedPost,81.82,"
+            Points to the post on which this comment was made.
+            For reblog/retweet, you could similarly add commentedOnReblogRetweetPost, etc.
+        ",Indicates that a comment is associated with a commented post.
+MP:commentedOn,MCSS:commentedBy,81.82,"
+            Points to the post on which this comment was made.
+            For reblog/retweet, you could similarly add commentedOnReblogRetweetPost, etc.
+        ",Links a comment with the User who made the comment.
+MP:sendsMediaTo,MCSS:sendsMediaMessageTo,81.82,"Indicates that a user sends media files (photos, videos) to another user.",Represents a user sending a media message to another user.
+MP:reportComment,MCSS:reportsContent,81.48,,Indicates that a user reports specific content.
+MP:likesPost,MCSS:associatedWithDislikedPost,80.0,,Indicates that a dislike is associated with a disliked post.
+MP:likesPost,MCSS:associatedWithLikedPost,80.0,,Indicates that a like is associated with a liked post.

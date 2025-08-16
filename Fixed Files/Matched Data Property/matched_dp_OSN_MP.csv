@@ -1,0 +1,127 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+OSN:hasBio,MP:hasBio,100.0,Stores the biography or short description of the user.,Stores the bio or description on the user's profile.
+OSN:hasBirthday,MP:hasBirthday,100.0,The birthday of the child.,Stores the user's birth date.
+OSN:hasEmail,MP:hasEmail,100.0,Stores the email address of the user.,Stores the email address associated with the user's account.
+OSN:hasLocation,MP:hasLocation,100.0,The location of the page.,Indicates the user's location as shown on their profile.
+OSN:hasPostLocation,MP:hasPostLocation,100.0,Stores Post's geotag location,"
+            Geographical location or place the user tagged 
+            (e.g., 'New York, USA').
+        "
+OSN:hasPostTimestamp,MP:hasPostTimestamp,100.0,Stores post's timestamp,"
+            Records the date and time when the post was created or published.
+        "
+OSN:hasWebsite,MP:hasWebsite,100.0,The website link associated with the page.,Contains the website link provided by the user in their profile.
+OSN:hasTimestamp,MP:hasDMTimestamp,92.31,Stores the timestamp when the like was given.,"
+            The date and time when the DM was sent.
+        "
+OSN:hasLastName,MP:hasListName,90.91,Stores the last name of the user.,Stores the name of the list.
+OSN:hasWiFiDataUsageSettings,MP:hasDataUsageSettings,90.91,Data usage settings for WiFi connections.,Stores the user's data usage settings.
+OSN:Quality,MP:hasQualityFilter,90.0,"Represents the quality setting for the reel, e.g., HD or SD.",Indicates if the quality filter is enabled for notifications.
+OSN:hasBirthdayPostTimestamp,MP:hasBirthday,90.0,The timestamp when the birthday post was created.,Stores the user's birth date.
+OSN:hasEmailNotificationsStatus,MP:hasEmail,90.0,Status of email notifications (enabled/disabled).,Stores the email address associated with the user's account.
+OSN:hasQuality,MP:hasQualityFilter,90.0,Stores the video quality of a reel.,Indicates if the quality filter is enabled for notifications.
+OSN:hasPostCaption,MP:hasPostLocation,89.66,The caption associated with the avatar post.,"
+            Geographical location or place the user tagged 
+            (e.g., 'New York, USA').
+        "
+OSN:hasNotificationSoundsSettings,MP:hasNotificationsSetting,88.46,Settings for notification sounds.,"Specifies the user's notifications settings (e.g., email notifications enabled)."
+OSN:hasReportTimestamp,MP:hasPostTimestamp,88.24,Timestamp for submitting a problem report.,"
+            Records the date and time when the post was created or published.
+        "
+OSN:hasDescription,MP:hasListDescription,87.5,The description of the page.,Stores the description of the list.
+OSN:hasBirthday,MP:hasBirthDate,86.96,The birthday of the child.,Records the user's birth date displayed on their profile.
+OSN:hasFirstName,MP:hasListName,86.96,Stores the first name of the user.,Stores the name of the list.
+OSN:hasDeviceInfo,MP:hasPostDeviceInfo,86.67,Stores the device information of the user who gave the like.,"
+            Stores information about the device or app used to create the post
+            (e.g., 'Twitter Web on MacBook Pro', 'Android App').
+        "
+OSN:hasEditTimestamp,MP:hasDMTimestamp,86.67,The timestamp of the last edit made to the avatar.,"
+            The date and time when the DM was sent.
+        "
+OSN:hasTimestamp,MP:hasPostTimestamp,85.71,Stores the timestamp when the like was given.,"
+            Records the date and time when the post was created or published.
+        "
+OSN:hasUserInteractionIP,MP:hasPostInteractionIP,85.0,Stores the IP address of the user who gave the like.,"
+            Captures the IP address from which the user posted. 
+            Useful for forensic tracing of post origin.
+        "
+OSN:hasLocation,MP:hasPostLocation,84.62,The location of the page.,"
+            Geographical location or place the user tagged 
+            (e.g., 'New York, USA').
+        "
+OSN:hasPostCount,MP:hasPostContent,84.62,The number of posts on the page.,"
+            Main textual content or body of the post, 
+            including any caption or message written by the user.
+        "
+OSN:hasPostLocation,MP:hasLocation,84.62,Stores Post's geotag location,Indicates the user's location as shown on their profile.
+OSN:hasReelLocation,MP:hasLocation,84.62,Stores Reel's geotag location,Indicates the user's location as shown on their profile.
+OSN:hasCommentText,MP:hasCommentContent,83.87,Stores the text of the comment.,"
+            Holds the main text/body of a comment posted by a user.
+        "
+OSN:hasStoryLocation,MP:hasPostLocation,83.87,Stores story's geotag location,"
+            Geographical location or place the user tagged 
+            (e.g., 'New York, USA').
+        "
+OSN:hasCellularDataUsageSettings,MP:hasDataUsageSettings,83.33,Data usage settings for cellular connections.,Stores the user's data usage settings.
+OSN:hasRuleDescription,MP:hasListDescription,83.33,The description of the group rule.,Stores the description of the list.
+OSN:hasEventInteractionIP,MP:hasPostInteractionIP,82.93,The IP address of the user managing the event.,"
+            Captures the IP address from which the user posted. 
+            Useful for forensic tracing of post origin.
+        "
+OSN:hasLogoutTimestamp,MP:hasPostTimestamp,82.35,Timestamp indicating when the logout occurred.,"
+            Records the date and time when the post was created or published.
+        "
+OSN:hasBio,MP:hasBirthDate,81.82,Stores the biography or short description of the user.,Records the user's birth date displayed on their profile.
+OSN:hasBio,MP:hasBirthday,81.82,Stores the biography or short description of the user.,Stores the user's birth date.
+OSN:hasBio,MP:hasBookmarkCount,81.82,Stores the biography or short description of the user.,Stores the count of items saved in bookmarks.
+OSN:hasBio,MP:hasBookmarkDate,81.82,Stores the biography or short description of the user.,Records the date and time when a bookmark was saved.
+OSN:hasBirthday,MP:hasBio,81.82,The birthday of the child.,Stores the bio or description on the user's profile.
+OSN:hasBirthdayPostTimestamp,MP:hasBio,81.82,The timestamp when the birthday post was created.,Stores the bio or description on the user's profile.
+OSN:hasBirthdayPostTimestamp,MP:hasBirthDate,81.82,The timestamp when the birthday post was created.,Records the user's birth date displayed on their profile.
+OSN:hasCommentLocation,MP:hasCommentIP,81.82,Stores Comment's geotag location,"
+            The IP address of the device used to post the comment.
+            Critical for digital forensics or geolocation.
+        "
+OSN:hasLastName,MP:hasHostName,81.82,Stores the last name of the user.,Stores the name of the host of the live session.
+OSN:hasNotificationStatus,MP:hasNotificationsSetting,81.82,Indicates whether the video notification is active or inactive.,"Specifies the user's notifications settings (e.g., email notifications enabled)."
+OSN:hasClosedCaption,MP:hasLocation,81.48,Indicates whether a reel video has closed captions enabled.,Indicates the user's location as shown on their profile.
+OSN:hasEventLocation,MP:hasLocation,81.48,The location of the event.,Indicates the user's location as shown on their profile.
+OSN:hasStoryLocation,MP:hasLocation,81.48,Stores story's geotag location,Indicates the user's location as shown on their profile.
+OSN:hasVideoLocation,MP:hasLocation,81.48,Stores Video's geotag location,Indicates the user's location as shown on their profile.
+OSN:hasBirthdayPostTimestamp,MP:hasPostTimestamp,81.29,The timestamp when the birthday post was created.,"
+            Records the date and time when the post was created or published.
+        "
+OSN:hasEditTimestamp,MP:hasPostTimestamp,81.25,The timestamp of the last edit made to the avatar.,"
+            Records the date and time when the post was created or published.
+        "
+OSN:hasAccountCreationDate,MP:hasCreationDate,81.08,Stores the account creation date for the user.,Indicates the creation date of the community.
+OSN:hasEventDescription,MP:hasListDescription,81.08,The description of the event.,Stores the description of the list.
+OSN:hasReportTimestamp,MP:hasRetweetTimestamp,81.08,Timestamp for submitting a problem report.,Mencatat tanggal dan waktu ketika retweet atau reblog terjadi.
+OSN:hasProfilePrivacySettings,MP:hasPrivacySetting,80.95,Settings for profile visibility and privacy.,"Specifies the user's privacy settings (e.g., public profile, private account)."
+OSN:hasEditTimestamp,MP:hasCommentTimestamp,80.0,The timestamp of the last edit made to the avatar.,"
+            The date and time when this comment was created.
+            Useful for forensic timeline reconstruction.
+        "
+OSN:hasEditTimestamp,MP:hasRetweetTimestamp,80.0,The timestamp of the last edit made to the avatar.,Mencatat tanggal dan waktu ketika retweet atau reblog terjadi.
+OSN:hasEventDeviceInfo,MP:hasPostDeviceInfo,80.0,Device information of the user managing the event.,"
+            Stores information about the device or app used to create the post
+            (e.g., 'Twitter Web on MacBook Pro', 'Android App').
+        "
+OSN:hasNotificationIP,MP:hasNotificationsSetting,80.0,Stores the IP address of the user who received the video notification.,"Specifies the user's notifications settings (e.g., email notifications enabled)."
+OSN:hasPostCaption,MP:hasLocation,80.0,The caption associated with the avatar post.,Indicates the user's location as shown on their profile.
+OSN:hasPostCreationTimestamp,MP:hasPostTimestamp,80.0,The timestamp when the avatar post was created.,"
+            Records the date and time when the post was created or published.
+        "
+OSN:hasPostLocation,MP:hasPostURL,80.0,Stores Post's geotag location,"
+            Contains the public URL or permalink to the post, if available.
+            Useful for referencing the post directly from an external link.
+        "
+OSN:hasPostTimestamp,MP:hasCommentTimestamp,80.0,Stores post's timestamp,"
+            The date and time when this comment was created.
+            Useful for forensic timeline reconstruction.
+        "
+OSN:hasPostTimestamp,MP:hasDMTimestamp,80.0,Stores post's timestamp,"
+            The date and time when the DM was sent.
+        "
+OSN:hasReactionType,MP:hasCreationDate,80.0,"Stores the type of reaction given, such as Love, Angry, etc.",Indicates the creation date of the community.
+OSN:hasReelWatchTimestamp,MP:hasRetweetTimestamp,80.0,Timestamp of when the reel was watched.,Mencatat tanggal dan waktu ketika retweet atau reblog terjadi.

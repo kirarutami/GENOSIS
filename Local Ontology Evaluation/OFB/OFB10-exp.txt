@@ -1,0 +1,7 @@
+Namun, kita bisa membuat query contoh yang fokus pada salah satu pola kunci, misalnya mengelompokkan aktivitas anonim berdasarkan Alamat IP yang sama. Ini dapat membantu mengidentifikasi apakah beberapa nama pengguna anonim atau aktivitas anonim berasal dari sumber teknis yang sama.
+
+Query ini akan mencari pengguna dengan visibilitas "Anonymous" atau komentar/DM yang dikirim dari pengguna anonim (atau yang visibilitasnya tidak diketahui non-anonim) yang memiliki data IP terkait, lalu mengelompokkannya berdasarkan IP tersebut.
+
+Bagaimana Hasil Query Menjawab OFB10:
+
+Hasil query ini akan memberikan daftar alamat IP yang digunakan secara bersamaan oleh beberapa pengguna anonim atau untuk beberapa aksi anonim. Ini adalah pola (penggunaan IP bersama) yang bisa dianalisis. Penyelidik dapat melihat IP mana yang paling aktif digunakan untuk aktivitas anonim dan siapa saja pengguna anonim yang terkait dengan IP tersebut. Ini dapat mengarahkan pada hipotesis bahwa pengguna-pengguna anonim yang berbagi IP yang sama mungkin adalah orang yang sama (menggunakan akun berbeda) atau setidaknya terkait erat (misalnya, menggunakan jaringan yang sama). Ini menunjukkan bagaimana analisis pola (dalam hal ini, pola penggunaan IP) dapat berkontribusi pada identifikasi tersangka. Analisis pola lain (temporal, target, dll.) dapat dilakukan dengan query SPARQL yang berbeda atau dengan menganalisis data yang diekstrak dari query seperti ini lebih lanjut.

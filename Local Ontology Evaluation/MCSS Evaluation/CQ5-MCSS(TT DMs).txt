@@ -1,0 +1,32 @@
+# Prefixes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# Menggunakan namespace dasar dari file RDF untuk elemen ontologi
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+# CQ5: How can social media analysis help in identifying networks or associations between suspects?
+# Pendekatan 1: Mengidentifikasi komunikasi langsung (Direct Messages) antar pengguna.
+# Contoh: Menampilkan asosiasi antara Ethan dan MaxDares melalui DM.
+
+SELECT DISTINCT ?user1 ?user2 ?messageTimestamp ?messageContent
+WHERE {
+  # Temukan instance pesan langsung
+  ?dm rdf:type ex:DirectMessage .
+  ?dm ex:sentBy ?user1 .          # Pengirim
+  ?dm ex:sentTo ?user2 .          # Penerima
+  ?dm ex:hasTimestamp ?messageTimestamp . # Waktu pesan
+  ?dm ex:hasTextContent ?messageContent .  # Isi pesan
+
+  # Pastikan keduanya adalah User
+  ?user1 rdf:type ex:User .
+  ?user2 rdf:type ex:User .
+
+  # Filter untuk menunjukkan interaksi spesifik antara Ethan dan MaxDares
+  FILTER( (?user1 = ex:Ethan && ?user2 = ex:MaxDares) || (?user1 = ex:MaxDares && ?user2 = ex:Ethan) )
+
+  # Opsional: bisa filter keluar DM dari orang tua jika hanya fokus pada interaksi antar 'tersangka' langsung.
+  # FILTER(?dm != ex:DM010)
+}
+ORDER BY ?messageTimestamp

@@ -1,0 +1,72 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?type ?actor ?content ?timestamp ?device ?ip ?platform
+WHERE {
+  {
+    # ===== COMMENT =====
+    SELECT ?actor ?content ?timestamp ?device ?ip ?platform ("Comment" AS ?type)
+    WHERE {
+      {
+        SELECT ?comment (MIN(?actor_) AS ?actor) (MIN(?content_) AS ?content) (MIN(?timestamp_) AS ?timestamp)
+                       (MIN(?device_) AS ?device) (MIN(?ip_) AS ?ip) (MIN(?platform_) AS ?platform)
+        WHERE {
+          ?comment a ex:Comment ;
+                   ex:commentedBy ?actor_ ;
+                   ex:hasCommentText ?content_ ;
+                   ex:hasCommentTimestamp ?timestamp_ ;
+                   ex:hasDeviceInfo ?device_ ;
+                   ex:hasUserInteractionIP ?ip_ ;
+                   ex:belongsToPlatform ?platform_ .
+        }
+        GROUP BY ?comment
+      }
+    }
+  }
+  UNION
+  {
+    # ===== DIRECT MESSAGE =====
+    SELECT ?actor ?content ?timestamp ?device ?ip ?platform ("DirectMessage" AS ?type)
+    WHERE {
+      {
+        SELECT ?dm (MIN(?actor_) AS ?actor) (MIN(?content_) AS ?content) (MIN(?timestamp_) AS ?timestamp)
+                   (MIN(?device_) AS ?device) (MIN(?ip_) AS ?ip) (MIN(?platform_) AS ?platform)
+        WHERE {
+          ?dm a ex:DirectMessage ;
+               ex:sentBy ?actor_ ;
+               ex:hasTextContent ?content_ ;
+               ex:hasTimestamp ?timestamp_ ;
+               ex:hasDeviceInfo ?device_ ;
+               ex:hasUserInteractionIP ?ip_ ;
+               ex:belongsToPlatform ?platform_ .
+        }
+        GROUP BY ?dm
+      }
+    }
+  }
+  UNION
+  {
+    # ===== SHORT VIDEO POST =====
+    SELECT ?actor ?content ?timestamp ?device ?ip ?platform ("VideoPost" AS ?type)
+    WHERE {
+      {
+        SELECT ?post (MIN(?actor_) AS ?actor) (MIN(?content_) AS ?content) (MIN(?timestamp_) AS ?timestamp)
+                     (MIN(?device_) AS ?device) (MIN(?ip_) AS ?ip) (MIN(?platform_) AS ?platform)
+        WHERE {
+          ?post a ex:ShortVideoPost ;
+                ex:hasCaption ?content_ ;
+                ex:hasPostTimestamp ?timestamp_ ;
+                ex:hasPostDeviceInfo ?device_ ;
+                ex:hasPostIP ?ip_ ;
+                ex:belongsToPlatform ?platform_ ;
+                ex:belongsToUser ?actor_ .
+        }
+        GROUP BY ?post
+      }
+    }
+  }
+}
+ORDER BY ?timestamp

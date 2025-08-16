@@ -1,0 +1,237 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Groups -->
+    <owl:Class rdf:about="#Groups">
+        <rdfs:comment>Represents the group functionality in the system.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas GroupManagement -->
+    <owl:Class rdf:about="#GroupManagement">
+        <rdfs:subClassOf rdf:resource="#Groups"/>
+        <rdfs:comment>Management functionalities of groups, such as creating and managing groups.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property for MembershipApproval -->
+    <owl:DatatypeProperty rdf:about="#MembershipApproval">
+        <rdfs:domain rdf:resource="#GroupManagement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Indicates whether group membership requires approval.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-kelas LinkedPages -->
+    <owl:Class rdf:about="#LinkedPages">
+        <rdfs:subClassOf rdf:resource="#GroupManagement"/>
+        <rdfs:comment>Represents pages that are linked to the group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Individual for Badges -->
+    <owl:NamedIndividual rdf:about="#Badges">
+        <rdf:type rdf:resource="#GroupManagement"/>
+        <rdfs:comment>Represents badges that are awarded to group members.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas Roles -->
+    <owl:Class rdf:about="#Roles">
+        <rdfs:subClassOf rdf:resource="#GroupManagement"/>
+        <rdfs:comment>Represents roles that members can hold in the group (e.g., admin, moderator).</rdfs:comment>
+    </owl:Class>
+
+    <!-- Individual for GroupRules -->
+    <owl:NamedIndividual rdf:about="#GroupRules">
+        <rdf:type rdf:resource="#GroupManagement"/>
+        <rdfs:comment>Represents the rules and guidelines of the group.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Individual for MembershipRequests -->
+    <owl:NamedIndividual rdf:about="#MembershipRequests">
+        <rdf:type rdf:resource="#GroupManagement"/>
+        <rdfs:comment>Represents pending requests for group membership.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas GroupSettings -->
+    <owl:Class rdf:about="#GroupSettings">
+        <rdfs:subClassOf rdf:resource="#GroupManagement"/>
+        <rdfs:comment>Settings for managing groups, including notifications and pinned groups.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas for GroupSettings -->
+    <owl:Class rdf:about="#PinnedGroups">
+        <rdfs:subClassOf rdf:resource="#GroupSettings"/>
+        <rdfs:comment>Represents pinned group in group settings.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Notifications">
+        <rdfs:subClassOf rdf:resource="#GroupSettings"/>
+        <rdfs:comment>Represents notification settings for groups.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties -->
+    <owl:DatatypeProperty rdf:about="#hasGroupName">
+        <rdfs:domain rdf:resource="#GroupManagement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the group name of a managed group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupDescription">
+        <rdfs:domain rdf:resource="#GroupManagement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the group description of a managed group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupPrivacy">
+        <rdfs:domain rdf:resource="#GroupManagement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the privacy settings of a managed group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-kelas GroupFeatures -->
+    <owl:Class rdf:about="#GroupFeatures">
+        <rdfs:subClassOf rdf:resource="#GroupManagement"/>
+        <rdfs:comment>Features available in groups such as events, files, and announcements.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas untuk GroupFeatures -->
+    <owl:Class rdf:about="#Events">
+        <rdfs:subClassOf rdf:resource="#GroupFeatures"/>
+        <rdfs:comment>Represents events that can be created and managed in a group.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Files">
+        <rdfs:subClassOf rdf:resource="#GroupFeatures"/>
+        <rdfs:comment>Represents files that can be uploaded and managed in a group.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Photos">
+        <rdfs:subClassOf rdf:resource="#GroupFeatures"/>
+        <rdfs:comment>Represents photos that can be shared in a group.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Polls">
+        <rdfs:subClassOf rdf:resource="#GroupFeatures"/>
+        <rdfs:comment>Represents polls that can be created and managed in a group.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Announcements">
+        <rdfs:subClassOf rdf:resource="#GroupFeatures"/>
+        <rdfs:comment>Represents announcements that can be shared in a group.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties for GroupFeatures -->
+    <owl:ObjectProperty rdf:about="#manageFilesInGroup">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Files"/>
+        <rdfs:comment>Links a user to the action of managing files in a group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#manageEventsInGroup">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Events"/>
+        <rdfs:comment>Links a user to the action of managing events in a group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#managePhotosInGroup">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Photos"/>
+        <rdfs:comment>Links a user to the action of managing photos in a group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#managePollsInGroup">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Polls"/>
+        <rdfs:comment>Links a user to the action of managing polls in a group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#manageAnnouncementsInGroup">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Announcements"/>
+        <rdfs:comment>Links a user to the action of managing announcements in a group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    
+    <!-- Object Properties -->
+
+    <!-- User manages LinkedPages -->
+    <owl:ObjectProperty rdf:about="#managesLinkedPages">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#LinkedPages"/>
+        <rdfs:comment>Links a user to the action of managing linked pages in a group.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- User assigns Roles -->
+    <owl:ObjectProperty rdf:about="#assignsRoles">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Roles"/>
+        <rdfs:comment>Links a user to the action of assigning roles to group members.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- User sets GroupRules -->
+    <owl:ObjectProperty rdf:about="#setsGroupRules">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupManagement"/>
+        <rdfs:comment>Links a user to the action of setting group rules.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- User manages MembershipRequests -->
+    <owl:ObjectProperty rdf:about="#managesMembershipRequests">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupManagement"/>
+        <rdfs:comment>Links a user to the action of managing membership requests.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Karakteristik untuk Object Properties -->
+    <owl:FunctionalProperty rdf:about="#manageFilesInGroup"/>
+    <owl:FunctionalProperty rdf:about="#manageEventsInGroup"/>
+    <owl:FunctionalProperty rdf:about="#managePhotosInGroup"/>
+    <owl:FunctionalProperty rdf:about="#managePollsInGroup"/>
+    <owl:FunctionalProperty rdf:about="#manageAnnouncementsInGroup"/>
+    <owl:FunctionalProperty rdf:about="#managesLinkedPages"/>
+    <owl:FunctionalProperty rdf:about="#assignsRoles"/>
+
+    <!-- Disjointness -->
+    <owl:Class rdf:about="#Events">
+        <owl:disjointWith rdf:resource="#Files"/>
+        <owl:disjointWith rdf:resource="#Photos"/>
+        <owl:disjointWith rdf:resource="#Polls"/>
+        <owl:disjointWith rdf:resource="#Announcements"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Files">
+        <owl:disjointWith rdf:resource="#Events"/>
+        <owl:disjointWith rdf:resource="#Photos"/>
+        <owl:disjointWith rdf:resource="#Polls"/>
+        <owl:disjointWith rdf:resource="#Announcements"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Photos">
+        <owl:disjointWith rdf:resource="#Events"/>
+        <owl:disjointWith rdf:resource="#Files"/>
+        <owl:disjointWith rdf:resource="#Polls"/>
+        <owl:disjointWith rdf:resource="#Announcements"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Polls">
+        <owl:disjointWith rdf:resource="#Events"/>
+        <owl:disjointWith rdf:resource="#Files"/>
+        <owl:disjointWith rdf:resource="#Photos"/>
+        <owl:disjointWith rdf:resource="#Announcements"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Announcements">
+        <owl:disjointWith rdf:resource="#Events"/>
+        <owl:disjointWith rdf:resource="#Files"/>
+        <owl:disjointWith rdf:resource="#Photos"/>
+        <owl:disjointWith rdf:resource="#Polls"/>
+    </owl:Class>
+
+        <owl:Class rdf:about="#LinkedPages">
+        <owl:disjointWith rdf:resource="#Roles"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Roles">
+        <owl:disjointWith rdf:resource="#LinkedPages"/>
+    </owl:Class>
+
+</rdf:RDF>

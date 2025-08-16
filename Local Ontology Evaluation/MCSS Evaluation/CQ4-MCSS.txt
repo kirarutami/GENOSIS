@@ -1,0 +1,23 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?sender ?receiver ?message ?timestamp ?device ?ip
+WHERE {
+  ?dm a ex:DirectMessage ;
+      ex:sentBy ?sender ;
+      ex:sentTo ?receiver ;
+      ex:hasTextContent ?message ;
+      ex:hasTimestamp ?timestamp ;
+      ex:hasDeviceInfo ?device ;
+      ex:hasUserInteractionIP ?ip .
+
+  FILTER (
+    REGEX(?message, "stop being a wimp", "i") ||
+    REGEX(?message, "gonna let a girl beat", "i") ||
+    REGEX(?message, "just record and post", "i")
+  )
+}
+ORDER BY ?timestamp

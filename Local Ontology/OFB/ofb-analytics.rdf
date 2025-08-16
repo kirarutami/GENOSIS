@@ -1,0 +1,116 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Analytics Class -->
+    <owl:Class rdf:about="#Analytics">
+        <rdfs:comment>Represents analytics data and insights for content, users, and communities.</rdfs:comment>
+    </owl:Class>
+
+    <!-- StatsAndInsights Sub-class -->
+    <owl:Class rdf:about="#StatsAndInsights">
+        <rdfs:subClassOf rdf:resource="#Analytics"/>
+        <rdfs:comment>Represents statistical and insight data.</rdfs:comment>
+    </owl:Class>
+
+    <!-- EngagementMetrics Sub-class -->
+    <owl:Class rdf:about="#EngagementMetrics">
+        <rdfs:subClassOf rdf:resource="#StatsAndInsights"/>
+        <rdfs:comment>Represents engagement metrics for content.</rdfs:comment>
+    </owl:Class>
+
+    <!-- EngagementMetrics Properties -->
+    <owl:DatatypeProperty rdf:about="#hasViewsCount">
+        <rdfs:domain rdf:resource="#Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the total number of views for a content item.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasVotesCount">
+        <rdfs:domain rdf:resource="#Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the total number of votes for a content item.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasCommentsCount">
+        <rdfs:domain rdf:resource="#Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the total number of comments for a content item.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasSharesCount">
+        <rdfs:domain rdf:resource="#Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the total number of shares for a content item.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- CommunityMetrics Sub-class -->
+    <owl:Class rdf:about="#CommunityMetrics">
+        <rdfs:subClassOf rdf:resource="#StatsAndInsights"/>
+        <rdfs:comment>Represents metrics for communities, including growth and engagement.</rdfs:comment>
+    </owl:Class>
+
+    <!-- CommunityMetrics Properties -->
+    <owl:ObjectProperty rdf:about="#tracksGrowth">
+        <rdfs:domain rdf:resource="#Community"/>
+        <rdfs:range rdf:resource="#CommunityMetrics"/>
+        <rdfs:comment>Links a community to its growth metrics.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMemberCount">
+        <rdfs:domain rdf:resource="#CommunityMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the total number of members in a community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEngagementRate">
+        <rdfs:domain rdf:resource="#CommunityMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the engagement rate of a community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasActiveMembersCount">
+        <rdfs:domain rdf:resource="#CommunityMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the number of active members in a community.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- UserInsights Sub-class -->
+    <owl:Class rdf:about="#UserInsights">
+        <rdfs:subClassOf rdf:resource="#StatsAndInsights"/>
+        <rdfs:comment>Represents insights for users based on their drafts or contributions.</rdfs:comment>
+    </owl:Class>
+
+    <!-- UserInsights Properties -->
+    <owl:ObjectProperty rdf:about="#tracksPerformance">
+        <rdfs:domain rdf:resource="#Draft"/>
+        <rdfs:range rdf:resource="#UserInsights"/>
+        <rdfs:comment>Links a draft to user insights on its performance.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDraftViewsCount">
+        <rdfs:domain rdf:resource="#UserInsights"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the number of views on a user's draft.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDraftCommentsCount">
+        <rdfs:domain rdf:resource="#UserInsights"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the number of comments on a user's draft.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDraftSharesCount">
+        <rdfs:domain rdf:resource="#UserInsights"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Represents the number of shares for a user's draft.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasDraftEngagementRate">
+        <rdfs:domain rdf:resource="#UserInsights"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the engagement rate for a user's draft.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

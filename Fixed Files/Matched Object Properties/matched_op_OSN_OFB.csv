@@ -1,0 +1,13 @@
+ont 1,ont 2,score,Comment Onto 1,Comment Onto 2
+OSN:approvesPost,OFB:approvesPost,100.0,Allows an admin to approve a post submitted by a group member.,Indicates that a moderator has approved a post in the community.
+OSN:commentsOn,OFB:commentsOn,100.0,Links a comment with the ContentCreation that was commented on.,Links a user to the content they have commented on.
+OSN:deniesPost,OFB:deniesPost,100.0,Allows an admin to deny a post submitted by a group member.,Indicates that a moderator has denied a post in the community.
+OSN:follows,OFB:followsCommunity,90.0,,Indicates that a user is following a community.
+OSN:follows,OFB:followsTopic,90.0,,Links a user to a topic they are following.
+OSN:createsGroupChat,OFB:leavesGroupChat,83.87,Links a user to the creation of a group chat.,Links a user to the group chat they left.
+OSN:editsAvatar,OFB:canEditAvatar,83.33,Links a user to editing an existing avatar.,Indicates that a user can edit their avatar.
+OSN:commentsActivities,OFB:commentsOn,80.0,Records activities related to commenting on content.,Links a user to the content they have commented on.
+OSN:createsGroupChat,OFB:mutesGroupChat,80.0,Links a user to the creation of a group chat.,Links a user to the group chat they muted.
+OSN:pinsGroup,OFB:joinsGroupChat,80.0,Links a user to the groups they have pinned.,Links a user to the group chat they joined.
+OSN:reactedBy,OFB:createdByModerator,80.0,Links a reaction interaction with the User who reacted to the content.,Links a community rule to the moderator who created it.
+OSN:sendsTextMessage,OFB:sendsMessageTo,80.0,Indicates that a user sent a text message.,Links a user who sends a direct message to another user.

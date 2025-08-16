@@ -1,0 +1,46 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://www.w3.org/2002/07/owl#>  # Sesuaikan dengan namespace RDF Anda
+
+SELECT ?interactionType ?user ?content ?timestamp ?location ?device ?ip
+WHERE {
+  {
+    # Menarik metadata dari postingan
+    ?post rdf:type ex:Posts ;
+          ex:hasPostContent ?content ;
+          ex:hasPostTimestamp ?timestamp ;
+          ex:belongsToPlatform ?platform ;
+          ex:hasMessageLocation ?location ;
+          ex:hasDeviceInfo ?device ;
+          ex:hasUserInteractionIP ?ip .
+    BIND("Post" AS ?interactionType)
+    BIND(?post AS ?user)
+  }
+  UNION
+  {
+    # Menarik metadata dari komentar
+    ?comment rdf:type ex:TextComment ;
+             ex:hasCommentText ?content ;
+             ex:hasCommentTimestamp ?timestamp ;
+             ex:hasMessageLocation ?location ;
+             ex:hasDeviceInfo ?device ;
+             ex:hasUserInteractionIP ?ip .
+    BIND("Comment" AS ?interactionType)
+    BIND(?comment AS ?user)
+  }
+  UNION
+  {
+    # Menarik metadata dari direct message
+    ?dm rdf:type ex:TextMessage ;
+        ex:hasMessageText ?content ;
+        ex:hasMessageSendTimestamp ?timestamp ;
+        ex:hasMessageLocation ?location ;
+        ex:hasDeviceInfo ?device ;
+        ex:sendsTextMessage ?user .
+    OPTIONAL { ?dm ex:hasUserInteractionIP ?ip } 
+    BIND("Direct Message" AS ?interactionType)
+  }
+}
+ORDER BY ?timestamp

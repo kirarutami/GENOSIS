@@ -1,0 +1,159 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas LiveInteractions -->
+    <owl:Class rdf:about="#LiveInteractions">
+        <rdfs:comment>Represents live interaction features on the platform, including live spaces, rooms, and upcoming sessions.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas LiveSpacesRooms -->
+    <owl:Class rdf:about="#LiveSpacesRooms">
+        <rdfs:subClassOf rdf:resource="#LiveInteractions"/>
+        <rdfs:comment>Represents live spaces or rooms for users to listen, speak, and interact during live sessions.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas UpcomingSessions -->
+    <owl:Class rdf:about="#UpcomingSessions">
+        <rdfs:subClassOf rdf:resource="#LiveInteractions"/>
+        <rdfs:comment>Represents scheduled live sessions that users can set reminders for or add to their calendar.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasSpacesName -->
+    <owl:DatatypeProperty rdf:about="#hasSpacesName">
+        <rdfs:domain rdf:resource="#LiveSpacesRooms"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the name of the live space or room.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasHostName -->
+    <owl:DatatypeProperty rdf:about="#hasHostName">
+        <rdfs:domain rdf:resource="#LiveSpacesRooms"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the name of the host of the live session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasParticipantCount -->
+    <owl:DatatypeProperty rdf:about="#hasParticipantCount">
+        <rdfs:domain rdf:resource="#LiveSpacesRooms"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the count of participants in the live session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasSessionDuration -->
+    <owl:DatatypeProperty rdf:about="#hasSessionDuration">
+        <rdfs:domain rdf:resource="#LiveSpacesRooms"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the duration of the live session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasScheduledTime -->
+    <owl:DatatypeProperty rdf:about="#hasScheduledTime">
+        <rdfs:domain rdf:resource="#UpcomingSessions"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Stores the scheduled time of an upcoming session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasSessionType -->
+    <owl:DatatypeProperty rdf:about="#hasSessionType">
+        <rdfs:domain rdf:resource="#LiveSpacesRooms"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Specifies the type of live session, such as public or private.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasReminder -->
+    <owl:DatatypeProperty rdf:about="#hasReminder">
+        <rdfs:domain rdf:resource="#UpcomingSessions"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates if a user has set a reminder for an upcoming session.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasUpcomingSessions -->
+    <owl:DatatypeProperty rdf:about="#hasUpcomingSessions">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates if a user has any upcoming live sessions.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for LiveSpacesRooms -->
+    <owl:ObjectProperty rdf:about="#startsListeningTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has started listening to a live space or room.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#requestsToSpeak">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has requested to speak in a live space or room.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#replaysLiveSession">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user is replaying a live session.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#followsHost">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user is following the host of a live space or room.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#viewsGuestLists">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user is viewing the guest list of a live space or room.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#usesReactions">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user is using reactions in a live space or room.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#sharesLiveSession">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user is sharing a live session.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#leavesLiveSession">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#LiveSpacesRooms"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has left a live session.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Properties for UpcomingSessions -->
+    <owl:ObjectProperty rdf:about="#setsReminder">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#UpcomingSessions"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has set a reminder for an upcoming session.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#addsToCalendar">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#UpcomingSessions"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user has added an upcoming session to their calendar.</rdfs:comment>
+    </owl:ObjectProperty>
+
+</rdf:RDF>

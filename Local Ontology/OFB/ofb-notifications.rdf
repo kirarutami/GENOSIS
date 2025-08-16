@@ -1,0 +1,149 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Notifications Class -->
+    <owl:Class rdf:about="#Notifications">
+        <rdfs:comment>Represents notifications and their configurations.</rdfs:comment>
+    </owl:Class>
+
+    <!-- NotificationSettings Subclass -->
+    <owl:Class rdf:about="#NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#Notifications"/>
+        <rdfs:comment>Represents settings related to notifications.</rdfs:comment>
+    </owl:Class>
+
+    <!-- PushNotifications Subclass -->
+    <owl:Class rdf:about="#PushNotifications">
+        <rdfs:subClassOf rdf:resource="#NotificationSettings"/>
+        <rdfs:comment>Represents push notification settings.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: configuresPushNotifications -->
+    <owl:ObjectProperty rdf:about="#configuresPushNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#NotificationDevice"/>
+        <rdfs:comment>Links a user to their push notification device settings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- NotificationDevice Class -->
+    <owl:Class rdf:about="#NotificationDevice">
+        <rdfs:subClassOf rdf:resource="#Notifications"/>
+        <rdfs:comment>Represents a device configured for push notifications.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasDeviceType -->
+    <owl:DatatypeProperty rdf:about="#hasDeviceType">
+        <rdfs:domain rdf:resource="#NotificationDevice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates the type of device used for push notifications.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasDeviceID -->
+    <owl:DatatypeProperty rdf:about="#hasDeviceID">
+        <rdfs:domain rdf:resource="#NotificationDevice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the unique identifier of the notification device.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- EmailNotifications Subclass -->
+    <owl:Class rdf:about="#EmailNotifications">
+        <rdfs:subClassOf rdf:resource="#NotificationSettings"/>
+        <rdfs:comment>Represents email notification settings.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: configuresEmailNotifications -->
+    <owl:ObjectProperty rdf:about="#configuresEmailNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ProfileSettings"/>
+        <rdfs:comment>Links a user to their email notification settings.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasEmailFrequency -->
+    <owl:DatatypeProperty rdf:about="#hasEmailFrequency">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates the frequency of email notifications.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- InAppNotifications Subclass -->
+    <owl:Class rdf:about="#InAppNotifications">
+        <rdfs:subClassOf rdf:resource="#NotificationSettings"/>
+        <rdfs:comment>Represents in-app notification settings.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: customizesInAppNotifications -->
+    <owl:ObjectProperty rdf:about="#customizesInAppNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#NotificationPreferences"/>
+        <rdfs:comment>Links a user to their in-app notification preferences.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- NotificationPreferences Class -->
+    <owl:Class rdf:about="#NotificationPreferences">
+        <rdfs:subClassOf rdf:resource="#Notifications"/>
+        <rdfs:comment>Represents preferences for in-app notifications.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasPreferenceType -->
+    <owl:DatatypeProperty rdf:about="#hasPreferenceType">
+        <rdfs:domain rdf:resource="#NotificationPreferences"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of notification preference.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Data Property: hasUnreadCount -->
+    <owl:DatatypeProperty rdf:about="#hasUnreadCount">
+        <rdfs:domain rdf:resource="#NotificationPreferences"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Indicates the number of unread notifications.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- ActivitySummaries Subclass -->
+    <owl:Class rdf:about="#ActivitySummaries">
+        <rdfs:subClassOf rdf:resource="#Notifications"/>
+        <rdfs:comment>Represents activity summary notifications like digests.</rdfs:comment>
+    </owl:Class>
+
+    <!-- WeeklyDigests Subclass -->
+    <owl:Class rdf:about="#WeeklyDigests">
+        <rdfs:subClassOf rdf:resource="#ActivitySummaries"/>
+        <rdfs:comment>Represents weekly digest activity summaries.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: receivesWeeklyDigest -->
+    <owl:ObjectProperty rdf:about="#receivesWeeklyDigest">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#DigestSummary"/>
+        <rdfs:comment>Links a user to their weekly digest summary.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- DigestSummary Class -->
+    <owl:Class rdf:about="#DigestSummary">
+        <rdfs:subClassOf rdf:resource="#Notifications"/>
+        <rdfs:comment>Represents a summary of weekly activity digest.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Property: hasSummaryDate -->
+    <owl:DatatypeProperty rdf:about="#hasSummaryDate">
+        <rdfs:domain rdf:resource="#DigestSummary"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the date of the digest summary.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Property: hasContentHighlights -->
+    <owl:ObjectProperty rdf:about="#hasContentHighlights">
+        <rdfs:domain rdf:resource="#DigestSummary"/>
+        <rdfs:range rdf:resource="#Content"/>
+        <rdfs:comment>Links digest summaries to content highlights.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Property: hasDigestType -->
+    <owl:DatatypeProperty rdf:about="#hasDigestType">
+        <rdfs:domain rdf:resource="#DigestSummary"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of digest summary (e.g., activity, recommendations).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

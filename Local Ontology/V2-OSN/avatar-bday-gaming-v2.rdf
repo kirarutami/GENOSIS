@@ -1,0 +1,236 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Avatars -->
+    <owl:Class rdf:about="#Avatars">
+        <rdfs:comment>Represents avatar-related activities such as creating, editing, and posting avatars.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas AvatarCreation -->
+    <owl:Class rdf:about="#AvatarCreation">
+        <rdfs:subClassOf rdf:resource="#Avatars"/>
+        <rdfs:comment>Represents the creation of an avatar.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas AvatarEditor -->
+    <owl:Class rdf:about="#AvatarEditor">
+        <rdfs:subClassOf rdf:resource="#AvatarCreation"/>
+        <rdfs:comment>Represents activities related to editing an avatar.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas ClothingOptions -->
+    <owl:Class rdf:about="#ClothingOptions">
+        <rdfs:subClassOf rdf:resource="#AvatarEditor"/>
+        <rdfs:comment>Represents options for avatar clothing and outfits.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Individual for ClothingOptions -->
+    <owl:NamedIndividual rdf:about="#BuyClothes">
+        <rdf:type rdf:resource="#ClothingOptions"/>
+        <rdfs:comment>Represents the action of buying clothes for an avatar.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TryNewOutfits">
+        <rdf:type rdf:resource="#ClothingOptions"/>
+        <rdfs:comment>Represents the action of trying new outfits for an avatar.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas AvatarPosts -->
+    <owl:Class rdf:about="#AvatarPosts">
+        <rdfs:subClassOf rdf:resource="#Avatars"/>
+        <rdfs:comment>Represents the action of creating posts with avatars.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Individual for AvatarPosts -->
+    <owl:NamedIndividual rdf:about="#PostCreationWithAvatar">
+        <rdf:type rdf:resource="#AvatarPosts"/>
+        <rdfs:comment>Represents creating a post with an avatar.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Kelas Birthdays -->
+    <owl:Class rdf:about="#Birthdays">
+        <rdfs:comment>Represents birthday-related activities such as managing posts and sending messages.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas BirthdayManagement -->
+    <owl:Class rdf:about="#BirthdayManagement">
+        <rdfs:subClassOf rdf:resource="#Birthdays"/>
+        <rdfs:comment>Represents the management of birthdays in the system.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas BirthdayPost -->
+    <owl:Class rdf:about="#BirthdayPost">
+        <rdfs:subClassOf rdf:resource="#BirthdayManagement"/>
+        <rdfs:comment>Represents actions related to posting for birthdays.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Individual for BirthdayPost -->
+    <owl:NamedIndividual rdf:about="#TimelinePost">
+        <rdf:type rdf:resource="#BirthdayPost"/>
+        <rdfs:comment>Represents writing a post on a user's timeline for their birthday.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SendBirthdayMessage">
+        <rdf:type rdf:resource="#BirthdayPost"/>
+        <rdfs:comment>Represents sending a birthday message.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Kelas Gaming -->
+    <owl:Class rdf:about="#Gaming">
+        <rdfs:comment>Represents gaming-related activities such as playing games and managing player information.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas Gameplay -->
+    <owl:Class rdf:about="#Gameplay">
+        <rdfs:subClassOf rdf:resource="#Gaming"/>
+        <rdfs:comment>Represents actions related to playing games.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas GameAction -->
+    <owl:Class rdf:about="#GameAction">
+        <rdfs:subClassOf rdf:resource="#Gameplay"/>
+        <rdfs:comment>Represents actions within a game, such as saving or sharing progress.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Individuals for GameAction -->
+    <owl:NamedIndividual rdf:about="#SaveGame">
+        <rdf:type rdf:resource="#GameAction"/>
+        <rdfs:comment>Represents saving a game.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ShareGame">
+        <rdf:type rdf:resource="#GameAction"/>
+        <rdfs:comment>Represents sharing a game.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ConnectWithPlayers">
+        <rdf:type rdf:resource="#GameAction"/>
+        <rdfs:comment>Represents connecting with other players in a game.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas PlayerInformation -->
+    <owl:Class rdf:about="#PlayerInformation">
+        <rdfs:subClassOf rdf:resource="#Gaming"/>
+        <rdfs:comment>Represents the information related to a player in the game.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-sub-kelas PlayerEditor -->
+    <owl:Class rdf:about="#PlayerEditor">
+        <rdfs:subClassOf rdf:resource="#PlayerInformation"/>
+        <rdfs:comment>Represents actions related to editing player information.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Individuals for PlayerEditor -->
+    <owl:NamedIndividual rdf:about="#PlayerName">
+        <rdf:type rdf:resource="#PlayerEditor"/>
+        <rdfs:comment>Represents the name of the player.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#PlayerAvatar">
+        <rdf:type rdf:resource="#PlayerEditor"/>
+        <rdfs:comment>Represents the avatar associated with the player.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas GameNotifications -->
+    <owl:Class rdf:about="#GameNotifications">
+        <rdfs:subClassOf rdf:resource="#Gaming"/>
+        <rdfs:comment>Represents notifications related to games.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Individual for GameNotifications -->
+    <owl:NamedIndividual rdf:about="#NotificationPreferences">
+        <rdf:type rdf:resource="#GameNotifications"/>
+        <rdfs:comment>Represents the preferences for game notifications.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Object Properties for Avatars -->
+    <owl:ObjectProperty rdf:about="#buysClothesFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#ClothingOptions"/>
+        <rdfs:comment>Defines the relationship where a user buys clothes for their avatar.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#triesOutfitsOn">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Avatars"/>
+        <rdfs:comment>Defines the relationship where a user tries new outfits for their avatar.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#createsPostWith">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Avatars"/>
+        <rdfs:comment>Defines the relationship where a user creates a post with their avatar.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Properties for Birthdays -->
+    <owl:ObjectProperty rdf:about="#writesOnTimelineFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#BirthdayPost"/>
+        <rdfs:comment>Defines the relationship where a user writes a post on someone's timeline for their birthday.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#sendsMessageFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#BirthdayPost"/>
+        <rdfs:comment>Defines the relationship where a user sends a birthday message.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Properties for Gaming -->
+    <owl:ObjectProperty rdf:about="#savesGame">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GameAction"/>
+        <rdfs:comment>Defines the relationship where a user saves a game.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#sharesGame">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GameAction"/>
+        <rdfs:comment>Defines the relationship where a user shares a game.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#connectsWithPlayers">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GameAction"/>
+        <rdfs:comment>Defines the relationship where a user connects with other players in a game.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties for PlayerInformation -->
+    <owl:DatatypeProperty rdf:about="#hasPlayerName">
+        <rdfs:domain rdf:resource="#PlayerEditor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the name of a player in the game.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasPlayerAvatar">
+        <rdfs:domain rdf:resource="#PlayerEditor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the avatar of a player in the game.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Karakteristik untuk Object Properties -->
+    <owl:FunctionalProperty rdf:about="#createsPostWithAvatar"/>
+    <owl:FunctionalProperty rdf:about="#writesOnTimelineFor"/>
+    <owl:FunctionalProperty rdf:about="#sendsMessageFor"/>
+    <owl:FunctionalProperty rdf:about="#savesGame"/>
+    <owl:FunctionalProperty rdf:about="#sharesGame"/>
+
+    <!-- Disjointness for the Classes -->
+    <owl:Class rdf:about="#AvatarCreation">
+        <owl:disjointWith rdf:resource="#BirthdayManagement"/>
+        <owl:disjointWith rdf:resource="#Gameplay"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#BirthdayManagement">
+        <owl:disjointWith rdf:resource="#AvatarCreation"/>
+        <owl:disjointWith rdf:resource="#Gameplay"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Gameplay">
+        <owl:disjointWith rdf:resource="#AvatarCreation"/>
+        <owl:disjointWith rdf:resource="#BirthdayManagement"/>
+    </owl:Class>
+
+
+</rdf:RDF>

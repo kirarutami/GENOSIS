@@ -1,0 +1,103 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas Events -->
+    <owl:Class rdf:about="#Events">
+        <rdfs:comment>Represents the event-related activities in the system.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sub-kelas EventManagement -->
+    <owl:Class rdf:about="#EventManagement">
+        <rdfs:subClassOf rdf:resource="#Events"/>
+        <rdfs:comment>Represents the management of events, including creation and details management.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Individuals for CreateEvent -->
+    <owl:NamedIndividual rdf:about="#InPerson">
+        <rdf:type rdf:resource="#Events"/>
+        <rdfs:comment>Represents an in-person event.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Virtual">
+        <rdf:type rdf:resource="#Events"/>
+        <rdfs:comment>Represents a virtual event.</rdfs:comment>
+    </owl:NamedIndividual>
+
+
+    <!-- Data Properties for EventManagement -->
+    <owl:DatatypeProperty rdf:about="#hasEventName">
+        <rdfs:domain rdf:resource="#Events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name of the event.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEventDate">
+        <rdfs:domain rdf:resource="#Events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment>The date of the event.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasEventLocation">
+        <rdfs:domain rdf:resource="#Events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The location of the event.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Sub-kelas EventInvitations -->
+    <owl:Class rdf:about="#EventInvitations">
+        <rdfs:subClassOf rdf:resource="#EventManagement"/>
+        <rdfs:comment>Represents the process of sending, accepting, and managing event invitations.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Individual for EventNotifications -->
+    <owl:NamedIndividual rdf:about="#EventNotifications">
+        <rdf:type rdf:resource="#Events"/>
+        <rdfs:comment>Represents notifications related to events.</rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:about="#sendEventInvitesTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a user to the action of sending invites for an event.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#acceptInviteFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#EventInvitations"/>
+        <rdfs:comment>Links a user to the action of accepting invites for an event.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#manageInviteFor">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#EventInvitations"/>
+        <rdfs:comment>Links a user to the action of managing invites for an event.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#createEventAs">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#EventManagement"/>
+        <rdfs:comment>Links a user to the action of creating an event.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#manageEventDetails">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#EventManagement"/>
+        <rdfs:comment>Links a user to the action of managing event details.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Karakteristik untuk Object Properties -->
+    <owl:FunctionalProperty rdf:about="#sendInvitesTo"/>
+    <owl:FunctionalProperty rdf:about="#acceptInviteFor"/>
+    <owl:FunctionalProperty rdf:about="#manageInviteFor"/>
+    <owl:FunctionalProperty rdf:about="#createEventAs"/>
+    <owl:FunctionalProperty rdf:about="#manageEventDetails"/>
+
+    <!-- Disjointness -->
+    <owl:Class rdf:about="#EventManagement">
+        <owl:disjointWith rdf:resource="#EventInvitations"/>
+    </owl:Class>
+
+</rdf:RDF>

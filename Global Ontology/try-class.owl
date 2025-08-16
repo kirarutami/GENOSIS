@@ -1,0 +1,724 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/gsmfo.owl#"
+     xml:base="http://example.org/gsmfo.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://example.org/gsmfo.owl">
+        <dc:title>GSMFO - Global Social Media Forensic Ontology (Integrated Classes)</dc:title>
+        <dc:description>Ontologi ini mengintegrasikan kelas dari empat ontologi lokal (OSN, MP, MCSS, OFB) berdasarkan hasil merging owlready2 dan pengelompokan networkx, dengan fokus pada generalisasi untuk forensik media sosial.</dc:description>
+        <owl:versionInfo>1.0</owl:versionInfo>
+        <owl:AnnotationProperty rdf:about="http://example.org/gsmfo.owl#OSNcomment"/>
+        <owl:AnnotationProperty rdf:about="http://example.org/gsmfo.owl#MPcomment"/>
+        <owl:AnnotationProperty rdf:about="http://example.org/gsmfo.owl#MCSScomment"/>
+        <owl:AnnotationProperty rdf:about="http://example.org/gsmfo.owl#OFBcomment"/>
+        <owl:AnnotationProperty rdf:about="http://example.org/gsmfo.owl#alignWithOSN"/>
+        <owl:AnnotationProperty rdf:about="http://example.org/gsmfo.owl#alignWithMP"/>
+        <owl:AnnotationProperty rdf:about="http://example.org/gsmfo.owl#alignWithMCSS"/>
+        <owl:AnnotationProperty rdf:about="http://example.org/gsmfo.owl#alignWithOFB"/>
+    </owl:Ontology>
+
+    <owl:AnnotationProperty rdf:about="#OSNcomment">
+        <rdfs:label>OSN Comment</rdfs:label>
+        <rdfs:comment>Original comment from the OSN local ontology.</rdfs:comment>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="#MPcomment">
+        <rdfs:label>MP Comment</rdfs:label>
+        <rdfs:comment>Original comment from the MP local ontology.</rdfs:comment>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="#MCSScomment">
+        <rdfs:label>MCSS Comment</rdfs:label>
+        <rdfs:comment>Original comment from the MCSS local ontology.</rdfs:comment>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="#OFBcomment">
+        <rdfs:label>OFB Comment</rdfs:label>
+        <rdfs:comment>Original comment from the OFB local ontology.</rdfs:comment>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="#alignWithOSN">
+      <rdfs:label>Aligned with OSN</rdfs:label>
+      <rdfs:comment>Indicates alignment with a concept in the OSN ontology.</rdfs:comment>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="#alignWithMP">
+      <rdfs:label>Aligned with MP</rdfs:label>
+      <rdfs:comment>Indicates alignment with a concept in the MP ontology.</rdfs:comment>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="#alignWithMCSS">
+      <rdfs:label>Aligned with MCSS</rdfs:label>
+      <rdfs:comment>Indicates alignment with a concept in the MCSS ontology.</rdfs:comment>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="#alignWithOFB">
+      <rdfs:label>Aligned with OFB</rdfs:label>
+      <rdfs:comment>Indicates alignment with a concept in the OFB ontology.</rdfs:comment>
+    </owl:AnnotationProperty>
+
+
+    <owl:Class rdf:about="#Global:UserAccount">
+        <rdfs:label>Global User Account</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a generalized user account across different social media platforms. This is a core entity for forensic analysis.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan akun pengguna yang digeneralisasi lintas platform media sosial. Ini adalah entitas inti untuk analisis forensik.</rdfs:comment>
+        </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:User">
+        <rdfs:subClassOf rdf:resource="#Global:UserAccount"/>
+        <MCSScomment>The primary class representing individual users in the system.</MCSScomment>
+        <alignWithMCSS>http://saralutami.org/MediaContentSharingSites#User</alignWithMCSS>
+        </owl:Class>
+    <owl:Class rdf:about="#MP:User">
+        <rdfs:subClassOf rdf:resource="#Global:UserAccount"/>
+        <MPcomment>Represents a user in a microblogging platform (e.g., Twitter, Tumblr).</MPcomment>
+        <alignWithMP>http://saralutami.org/MicrobloggingPlatforms#User</alignWithMP>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:User">
+        <rdfs:subClassOf rdf:resource="#Global:UserAccount"/>
+        <OFBcomment>Represents a user in the online forum or blog system.</OFBcomment>
+        <alignWithOFB>http://saralutami.org/OnlineForumBlogs#User</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:User">
+        <rdfs:subClassOf rdf:resource="#Global:UserAccount"/>
+        <OSNcomment>The primary class representing the user in the system.</OSNcomment>
+        <alignWithOSN>http://saralutami.org/OnlineSocialNetworkSites#User</alignWithOSN>
+        <alignWithOSN>http://saralutami.org/OnlineSocialNetworkSites#UserProfile</alignWithOSN>
+        <OSNcomment>Represents the profile of a user, containing personal information such as profile picture, username, and email.</OSNcomment>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="#Global:Content">
+        <rdfs:label>Global Content</rdfs:label>
+        <rdfs:comment xml:lang="en">A generalized representation of any content created or shared on social media platforms. This is a superclass for specific content types.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Representasi umum dari konten apapun yang dibuat atau dibagikan di platform media sosial. Ini adalah superclass untuk tipe konten spesifik.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:Content">
+        <rdfs:subClassOf rdf:resource="#Global:Content"/>
+        <MCSScomment>Represents all types of content on the platform.</MCSScomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OFB:Content">
+        <rdfs:subClassOf rdf:resource="#Global:Content"/>
+        <OFBcomment>Represents all forms of user-generated content, including posts and drafts, within the platform.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:ContentCreation">
+         <rdfs:comment xml:lang="en">Represents the *action* or functionality of content creation in OSN.</rdfs:comment>
+         <OSNcomment>The main class representing content creation functionality, including posts, stories, and reels.</OSNcomment>
+         </owl:Class> 
+     <owl:Class rdf:about="#MP:ContentCreation">
+         <rdfs:comment xml:lang="en">Represents the *action* or functionality of content creation in MP.</rdfs:comment>
+         <MPcomment>Represents actions related to creating and managing content on a microblogging platform.</MPcomment>
+         </owl:Class>
+
+
+    <owl:Class rdf:about="#Global:UserPost">
+        <rdfs:subClassOf rdf:resource="#Global:Content"/>
+        <rdfs:label>Global User Post</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a standard post made by a user, typically containing text and/or media.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan postingan standar yang dibuat oleh pengguna, biasanya berisi teks dan/atau media.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:Post">
+        <rdfs:subClassOf rdf:resource="#Global:UserPost"/>
+        <MCSScomment>Represents a generic post on the platform, including audience type and schedule time.</MCSScomment>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:Post">
+        <rdfs:subClassOf rdf:resource="#Global:UserPost"/>
+        <MPcomment>Represents a specific post or piece of content created by a user.</MPcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:Post">
+        <rdfs:subClassOf rdf:resource="#Global:UserPost"/>
+        <OFBcomment>Represents posts created by users, which may contain text, media, and other metadata.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:Posts"> <rdfs:subClassOf rdf:resource="#Global:UserPost"/>
+        <OSNcomment>Represents posts created by users, including media posts, location check-ins, and live videos.</OSNcomment>
+        </owl:Class>
+    <owl:Class rdf:about="#OSN:BirthdayPosts">
+        <rdfs:subClassOf rdf:resource="#Global:UserPost"/>
+        <OSNcomment>Represents posts created for birthdays.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:AvatarPosts">
+        <rdfs:subClassOf rdf:resource="#Global:UserPost"/>
+        <OSNcomment>Represents posts created using avatars.</OSNcomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:PhotoVideo">
+        <rdfs:subClassOf rdf:resource="#Global:UserPost"/>
+        <OSNcomment>Represents posts containing photos or videos uploaded by the user.</OSNcomment>
+        </owl:Class>
+
+
+    <owl:Class rdf:about="#Global:VideoContent">
+        <rdfs:subClassOf rdf:resource="#Global:Content"/>
+        <rdfs:label>Global Video Content</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents video content, including standard videos, short videos, and reels.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan konten video, termasuk video standar, video pendek, dan reels.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:Video">
+        <rdfs:subClassOf rdf:resource="#Global:VideoContent"/>
+        <MCSScomment>Represents video content in the system.</MCSScomment>
+    </owl:Class>
+     <owl:Class rdf:about="#MCSS:ShortVideo">
+        <rdfs:subClassOf rdf:resource="#Global:VideoContent"/>
+        <MCSScomment>Represents short video content in the system.</MCSScomment>
+        <alignWithMCSS>http://saralutami.org/MediaContentSharingSites#ShortVideo</alignWithMCSS>
+        <alignWithOSN>http://saralutami.org/OnlineSocialNetworkSites#ShortVideoContent</alignWithOSN>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:VideoContent">
+        <rdfs:subClassOf rdf:resource="#Global:VideoContent"/>
+        <OSNcomment>The main class representing video-related content in the system, including video history and notifications.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:ReelVideo">
+        <rdfs:subClassOf rdf:resource="#Global:VideoContent"/>
+        <OSNcomment>Represents a short video that is part of a reel.</OSNcomment>
+        <alignWithMCSS>http://saralutami.org/MediaContentSharingSites#ShortVideoPost</alignWithMCSS>
+        <alignWithOSN>http://saralutami.org/OnlineSocialNetworkSites#ReelVideo</alignWithOSN>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:ShortVideoContent">
+        <rdfs:subClassOf rdf:resource="#Global:VideoContent"/>
+        <OSNcomment>Represents short video content shared on social network platforms.</OSNcomment>
+        <alignWithOSN>http://saralutami.org/OnlineSocialNetworkSites#ShortVideoContent</alignWithOSN>
+        <alignWithMCSS>http://saralutami.org/MediaContentSharingSites#ShortVideo</alignWithMCSS>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:Videos"> <rdfs:comment xml:lang="en">Represents video content watched by users (OSN specific).</rdfs:comment>
+        <OSNcomment>Represents video content watched by users, including viewing history and notifications.</OSNcomment>
+        </owl:Class>
+    <owl:Class rdf:about="#MCSS:VideoPost">
+        <rdfs:subClassOf rdf:resource="#Global:UserPost"/> <rdfs:comment xml:lang="en">A post specifically associated with a video.</rdfs:comment>
+        <MCSScomment>Represents posts that are associated with videos.</MCSScomment>
+        </owl:Class>
+     <owl:Class rdf:about="#MCSS:ShortVideoPost">
+        <rdfs:subClassOf rdf:resource="#Global:UserPost"/> <rdfs:comment xml:lang="en">A post specifically associated with a short video.</rdfs:comment>
+        <MCSScomment>Represents posts associated with short videos.</MCSScomment>
+        <alignWithMCSS>http://saralutami.org/MediaContentSharingSites#ShortVideoPost</alignWithMCSS>
+        <alignWithOSN>http://saralutami.org/OnlineSocialNetworkSites#ReelVideo</alignWithOSN>
+        </owl:Class>
+     <owl:Class rdf:about="#OSN:StoryPhotoVideo">
+        <rdfs:subClassOf rdf:resource="#OSN:Stories"/> <rdfs:comment xml:lang="en">A story containing photo or video (potentially related to Global:VideoContent or a new Global:ImageContent).</rdfs:comment>
+        <OSNcomment>Represents a story containing a photo or video.</OSNcomment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:LiveContent">
+         <rdfs:subClassOf rdf:resource="#Global:Content"/>
+         <rdfs:label>Global Live Content</rdfs:label>
+         <rdfs:comment xml:lang="en">Represents live streaming content or interactions.</rdfs:comment>
+         <rdfs:comment xml:lang="id">Merepresentasikan konten atau interaksi streaming langsung.</rdfs:comment>
+    </owl:Class>
+
+     <owl:Class rdf:about="#MCSS:Live">
+        <rdfs:subClassOf rdf:resource="#Global:LiveContent"/>
+        <MCSScomment>Represents live streaming content within the system.</MCSScomment>
+        <alignWithOSN>http://saralutami.org/OnlineSocialNetworkSites#LiveVideo</alignWithOSN>
+        <alignWithMCSS>http://saralutami.org/MediaContentSharingSites#Live</alignWithMCSS>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:LiveVideo">
+        <rdfs:subClassOf rdf:resource="#Global:LiveContent"/>
+        <OSNcomment>Represents live video broadcasts created by the user.</OSNcomment>
+        <alignWithOSN>http://saralutami.org/OnlineSocialNetworkSites#LiveVideo</alignWithOSN>
+        <alignWithMCSS>http://saralutami.org/MediaContentSharingSites#Live</alignWithMCSS>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:LiveInteractions">
+        <rdfs:comment xml:lang="en">Represents live interaction features (MP specific).</rdfs:comment>
+        <MPcomment>Represents live interaction features on the platform, including live spaces, rooms, and upcoming sessions.</MPcomment>
+        </owl:Class>
+    <owl:Class rdf:about="#MP:LiveSpacesRooms">
+         <rdfs:subClassOf rdf:resource="#MP:LiveInteractions"/>
+         <rdfs:comment xml:lang="en">Represents live spaces/rooms (MP specific).</rdfs:comment>
+         <MPcomment>Represents live spaces or rooms for users to listen, speak, and interact during live sessions.</MPcomment>
+         </owl:Class>
+    <owl:Class rdf:about="#MCSS:LivePost">
+        <rdfs:subClassOf rdf:resource="#Global:UserPost"/> <rdfs:comment xml:lang="en">A post specifically associated with a live session.</rdfs:comment>
+        <MCSScomment>Represents posts associated with live sessions.</MCSScomment>
+        </owl:Class>
+
+    <owl:Class rdf:about="#Global:ContentInteraction">
+        <rdfs:label>Global Content Interaction</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents any interaction a user has with content or other users related to content.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan interaksi apapun yang dilakukan pengguna dengan konten atau pengguna lain terkait konten.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#User"/>
+        <owl:disjointWith rdf:resource="#ContentCreation"/>
+        <owl:disjointWith rdf:resource="#SearchAndDiscovery"/>
+        <owl:disjointWith rdf:resource="#Notifications"/>
+        <owl:disjointWith rdf:resource="#Messaging"/>
+        <owl:disjointWith rdf:resource="#Monetization"/>
+        <owl:disjointWith rdf:resource="#Analytics"/>
+        <owl:disjointWith rdf:resource="#Accessibility"/>
+        <owl:disjointWith rdf:resource="#Community"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:ContentInteraction">
+        <rdfs:subClassOf rdf:resource="#Global:ContentInteraction"/>
+        <MCSScomment>Represents interactions on content within the platform.</MCSScomment>
+    </owl:Class>
+     <owl:Class rdf:about="#MP:ContentInteraction">
+        <rdfs:subClassOf rdf:resource="#Global:ContentInteraction"/>
+        <MPcomment></MPcomment> </owl:Class>
+     <owl:Class rdf:about="#OFB:ContentInteraction">
+        <rdfs:subClassOf rdf:resource="#Global:ContentInteraction"/>
+        <OFBcomment>Represents all forms of user interactions with content, including voting, liking, and replying.</OFBcomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:ContentInteraction">
+        <rdfs:subClassOf rdf:resource="#Global:ContentInteraction"/>
+        <OSNcomment>The class representing user interactions with content, such as likes, reactions, and comments.</OSNcomment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:Notification">
+        <rdfs:label>Global Notification</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents notifications received by users.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan notifikasi yang diterima oleh pengguna.</rdfs:comment>
+        <owl:disjointWith rdf:resource="#UserAction"/>
+         <owl:disjointWith rdf:resource="#Content"/>
+         <owl:disjointWith rdf:resource="#Community"/>
+         <owl:disjointWith rdf:resource="#ContentInteraction"/>
+         <owl:disjointWith rdf:resource="#SearchAndDiscovery"/>
+         <owl:disjointWith rdf:resource="#Messaging"/>
+         <owl:disjointWith rdf:resource="#Monetization"/>
+         <owl:disjointWith rdf:resource="#Analytics"/>
+         <owl:disjointWith rdf:resource="#Accessibility"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:Notifications">
+        <rdfs:subClassOf rdf:resource="#Global:Notification"/>
+        <MCSScomment>Represents notifications and related interactions in the platform.</MCSScomment>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:Notifications">
+        <rdfs:subClassOf rdf:resource="#Global:Notification"/>
+        <MPcomment>Represents user notifications and their related settings on the platform.</MPcomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OFB:Notifications">
+        <rdfs:subClassOf rdf:resource="#Global:Notification"/>
+        <OFBcomment>Represents notifications and their configurations.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:GroupNotifications">
+        <rdfs:subClassOf rdf:resource="#Global:Notification"/>
+        <OSNcomment>Represents notification settings for a group.</OSNcomment>
+        </owl:Class>
+    <owl:Class rdf:about="#OSN:MessageNotifications">
+         <rdfs:subClassOf rdf:resource="#Global:Notification"/>
+         <OSNcomment>Represents notification settings related to direct messages.</OSNcomment>
+         </owl:Class>
+    <owl:Class rdf:about="#OSN:VideoNotifications">
+         <rdfs:subClassOf rdf:resource="#Global:Notification"/>
+         <OSNcomment>Represents notifications related to video content, such as new video uploads, reminders, and other updates.</OSNcomment>
+         </owl:Class>
+    <owl:Class rdf:about="#MCSS:HideNotifications">
+        <rdfs:comment xml:lang="en">Represents the *action* of hiding notifications.</rdfs:comment>
+        <MCSScomment>Represents the functionality to hide notifications for users or channels.</MCSScomment>
+        </owl:Class>
+    <owl:Class rdf:about="#OFB:PushNotifications">
+        <rdfs:subClassOf rdf:resource="#Global:Notification"/> <OFBcomment>Represents push notification settings.</OFBcomment>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="#Global:NotificationSettings">
+        <rdfs:label>Global Notification Settings</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents user-configurable settings related to notifications.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan pengaturan terkait notifikasi yang dapat dikonfigurasi pengguna.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#Global:NotificationSettings"/>
+        <MCSScomment>Represents settings for managing message notifications.</MCSScomment>
+    </owl:Class>
+     <owl:Class rdf:about="#MP:NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#Global:NotificationSettings"/>
+        <MPcomment>Represents settings related to notifications that the user can configure.</MPcomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OFB:NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#Global:NotificationSettings"/>
+        <OFBcomment>Represents notification settings for a user.</OFBcomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:NotificationSettings">
+        <rdfs:subClassOf rdf:resource="#Global:NotificationSettings"/>
+        <OSNcomment>Handles configurations for notifications like push, email, and SMS.</OSNcomment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:SharingAction">
+        <rdfs:subClassOf rdf:resource="#Global:ContentInteraction"/>
+        <rdfs:label>Global Sharing Action</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents the action of sharing, reposting, or reblogging content.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan aksi berbagi, memposting ulang, atau me-reblog konten.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:Share">
+        <rdfs:subClassOf rdf:resource="#Global:SharingAction"/>
+        <MCSScomment>Represents a share interaction with content.</MCSScomment>
+    </owl:Class>
+     <owl:Class rdf:about="#MP:ReblogRetweetPost">
+        <rdfs:subClassOf rdf:resource="#Global:SharingAction"/>
+        <MPcomment></MPcomment> <alignWithMP>http://saralutami.org/MicrobloggingPlatforms#ReblogRetweetPost</alignWithMP>
+        <alignWithMCSS>http://saralutami.org/MediaContentSharingSites#associatedWithSharedPost</alignWithMCSS>
+        <alignWithOFB>http://saralutami.org/OnlineForumBlogs#ShareRepost</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:CrossPost">
+        <rdfs:subClassOf rdf:resource="#Global:SharingAction"/> <rdfs:subClassOf rdf:resource="#Global:UserPost"/>
+        <OFBcomment>Represents posts that are cross-posted from other communities or original posts.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:ShareRepost">
+        <rdfs:subClassOf rdf:resource="#Global:SharingAction"/>
+        <OFBcomment>Represents sharing or reposting content to a community or other platforms.</OFBcomment>
+         <alignWithMP>http://saralutami.org/MicrobloggingPlatforms#ReblogRetweetPost</alignWithMP>
+         <alignWithOFB>http://saralutami.org/OnlineForumBlogs#ShareRepost</alignWithOFB>
+    </owl:Class>
+
+    <owl:Class rdf:about="#OFB:PinPosts">
+        <rdfs:comment xml:lang="en">Represents the action of pinning posts.</rdfs:comment>
+        <OFBcomment>Represents pinning actions for posts by users or communities.</OFBcomment>
+        </owl:Class>
+    <owl:Class rdf:about="#OFB:ScheduledPost">
+        <rdfs:subClassOf rdf:resource="#Global:UserPost"/>
+        <OFBcomment>Represents posts scheduled by users to be published at a future timestamp.</OFBcomment>
+        <alignWithMCSS>http://saralutami.org/MediaContentSharingSites#schedulesMessageFor</alignWithMCSS>
+        <alignWithOFB>http://saralutami.org/OnlineForumBlogs#ScheduledPost</alignWithOFB>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:VideoCalls">
+        <rdfs:comment xml:lang="en">Represents video call interactions (OSN specific).</rdfs:comment>
+        <OSNcomment>Represents video call interactions within direct messages.</OSNcomment>
+        </owl:Class>
+
+
+    <owl:Class rdf:about="#Global:ModerationAction">
+        <rdfs:label>Global Moderation Action</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents actions performed by moderators or administrators within a community or group.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan aksi yang dilakukan oleh moderator atau administrator dalam sebuah komunitas atau grup.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#OFB:ModeratorActions">
+        <rdfs:subClassOf rdf:resource="#Global:ModerationAction"/>
+        <OFBcomment>Represents the actions a moderator can perform in a community.</OFBcomment>
+         <alignWithOSN>http://saralutami.org/OnlineSocialNetworkSites#ModerationActions</alignWithOSN>
+         <alignWithOFB>http://saralutami.org/OnlineForumBlogs#ModeratorActions</alignWithOFB>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:ModerationActions">
+        <rdfs:subClassOf rdf:resource="#Global:ModerationAction"/>
+        <OSNcomment>Represents actions that moderators or admins can take in group moderation.</OSNcomment>
+         <alignWithOSN>http://saralutami.org/OnlineSocialNetworkSites#ModerationActions</alignWithOSN>
+         <alignWithOFB>http://saralutami.org/OnlineForumBlogs#ModeratorActions</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:CommunityModeration">
+        <rdfs:comment xml:lang="en">Represents the overall moderation functionality for a community (OFB).</rdfs:comment>
+        <OFBcomment>Represents moderation functionalities for a community, including moderators and their actions.</OFBcomment>
+        <alignWithOFB>http://saralutami.org/OnlineForumBlogs#CommunityModeration</alignWithOFB>
+        <alignWithOSN>http://saralutami.org/OnlineSocialNetworkSites#GroupModeration</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:GroupModeration">
+        <rdfs:comment xml:lang="en">Represents the overall moderation activities and policies within a group (OSN).</rdfs:comment>
+        <OSNcomment>Represents the moderation activities and policies within a group.</OSNcomment>
+         <alignWithOFB>http://saralutami.org/OnlineForumBlogs#CommunityModeration</alignWithOFB>
+         <alignWithOSN>http://saralutami.org/OnlineSocialNetworkSites#GroupModeration</alignWithOSN>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:ModerationQueue">
+         <rdfs:comment xml:lang="en">Represents a queue for flagged content (OFB).</rdfs:comment>
+         <OFBcomment>Represents a queue that contains flagged content for moderation.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:Donations">
+         <rdfs:comment xml:lang="en">Represents donations (OFB specific). Needs verification if it's a moderation feature or financial.</rdfs:comment>
+         <OFBcomment>Represents donations made to creators or content.</OFBcomment>
+         </owl:Class>
+
+    <owl:Class rdf:about="#Global:ModeratorRole">
+        <rdfs:label>Global Moderator Role</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents the role of a moderator within a group or community.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan peran moderator dalam sebuah grup atau komunitas.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#OFB:Moderator">
+        <rdfs:subClassOf rdf:resource="#Global:ModeratorRole"/>
+        <OFBcomment>Represents a moderator assigned to a community with specific roles and permissions.</OFBcomment>
+        <alignWithOSN>http://saralutami.org/OnlineSocialNetworkSites#Moderator</alignWithOSN>
+        <alignWithOFB>http://saralutami.org/OnlineForumBlogs#Moderator</alignWithOFB>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:Moderator">
+        <rdfs:subClassOf rdf:resource="#Global:ModeratorRole"/>
+        <OSNcomment>Represents a moderator role in a group.</OSNcomment>
+         <alignWithOSN>http://saralutami.org/OnlineSocialNetworkSites#Moderator</alignWithOSN>
+         <alignWithOFB>http://saralutami.org/OnlineForumBlogs#Moderator</alignWithOFB>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:ModeratorStatistics">
+        <rdfs:comment xml:lang="en">Represents statistics about a moderator's activity (OFB).</rdfs:comment>
+        <OFBcomment>Represents various statistics associated with a moderator's activity in the community.</OFBcomment>
+        </owl:Class>
+
+    <owl:Class rdf:about="#Global:CommentOrReply">
+        <rdfs:subClassOf rdf:resource="#Global:ContentInteraction"/>
+        <rdfs:label>Global Comment or Reply</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a comment or a reply to content or another comment.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan komentar atau balasan terhadap konten atau komentar lain.</rdfs:comment>
+        </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:Comment">
+        <rdfs:subClassOf rdf:resource="#Global:CommentOrReply"/>
+        <MCSScomment>Represents a comment interaction with content.</MCSScomment>
+    </owl:Class>
+     <owl:Class rdf:about="#MP:Comment">
+        <rdfs:subClassOf rdf:resource="#Global:CommentOrReply"/>
+        <MPcomment></MPcomment> </owl:Class>
+     <owl:Class rdf:about="#OFB:Comment">
+        <rdfs:subClassOf rdf:resource="#Global:CommentOrReply"/>
+        <OFBcomment>Represents comments made by users on content.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:ReplyToComments">
+        <rdfs:subClassOf rdf:resource="#Global:CommentOrReply"/>
+        <OFBcomment>Represents a reply to a comment action.</OFBcomment>
+        </owl:Class>
+    <owl:Class rdf:about="#OSN:Comments">
+         <rdfs:comment xml:lang="en">Represents the general concept of commenting interaction in OSN.</rdfs:comment>
+         <OSNcomment>Represents user interactions involving comments on content.</OSNcomment>
+         </owl:Class>
+    <owl:Class rdf:about="#OSN:EmojiComment">
+        <rdfs:subClassOf rdf:resource="#Global:CommentOrReply"/>
+        <OSNcomment>Represents a comment made by a user that contains an emoji.</OSNcomment>
+        </owl:Class>
+    <owl:Class rdf:about="#OSN:GIFComment">
+        <rdfs:subClassOf rdf:resource="#Global:CommentOrReply"/>
+        <OSNcomment>Represents a comment made by a user that contains a GIF.</OSNcomment>
+         </owl:Class>
+    <owl:Class rdf:about="#OSN:TextComment">
+        <rdfs:subClassOf rdf:resource="#Global:CommentOrReply"/>
+        <OSNcomment>Represents a text-based comment made by a user.</OSNcomment>
+        </owl:Class>
+
+
+    <owl:Class rdf:about="#Global:Reaction">
+        <rdfs:subClassOf rdf:resource="#Global:ContentInteraction"/>
+        <rdfs:label>Global Reaction</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a user's reaction to content, such as like, dislike, or other emojis.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan reaksi pengguna terhadap konten, seperti suka, tidak suka, atau emoji lainnya.</rdfs:comment>
+        </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:Dislike">
+        <rdfs:subClassOf rdf:resource="#Global:Reaction"/> <MCSScomment>Represents a dislike interaction with content.</MCSScomment>
+        <alignWithMCSS>http://saralutami.org/MediaContentSharingSites#Dislike</alignWithMCSS>
+        <alignWithOFB>http://saralutami.org/OnlineForumBlogs#downvotesContent</alignWithOFB>
+    </owl:Class>
+     <owl:Class rdf:about="#MCSS:Like">
+        <rdfs:subClassOf rdf:resource="#Global:Reaction"/> <MCSScomment>Represents a like interaction with content.</MCSScomment>
+    </owl:Class>
+     <owl:Class rdf:about="#MP:Likes">
+        <rdfs:subClassOf rdf:resource="#Global:Reaction"/> <MPcomment></MPcomment> <alignWithOSN>http://saralutami.org/OnlineSocialNetworkSites#likesActivities</alignWithOSN>
+         <alignWithMCSS>http://saralutami.org/MediaContentSharingSites#likesContent</alignWithMCSS>
+         <alignWithOFB>http://saralutami.org/OnlineForumBlogs#Like</alignWithOFB>
+         <alignWithMP>http://saralutami.org/MicrobloggingPlatforms#Likes</alignWithMP>
+    </owl:Class>
+     <owl:Class rdf:about="#OFB:Like">
+        <rdfs:subClassOf rdf:resource="#Global:Reaction"/> <OFBcomment>Represents a like action on content.</OFBcomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:Like">
+        <rdfs:subClassOf rdf:resource="#Global:Reaction"/> <OSNcomment>Represents a user's 'like' interaction on a post or content.</OSNcomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:LikesReactions">
+         <rdfs:comment xml:lang="en">Represents the general concept of like/reaction interactions in OSN.</rdfs:comment>
+         <OSNcomment>Represents user interactions involving likes and reactions to content.</OSNcomment>
+         </owl:Class>
+
+    <owl:Class rdf:about="#Global:DirectMessage">
+         <rdfs:label>Global Direct Message</rdfs:label>
+         <rdfs:comment xml:lang="en">Represents a private message sent between users.</rdfs:comment>
+         <rdfs:comment xml:lang="id">Merepresentasikan pesan pribadi yang dikirim antar pengguna.</rdfs:comment>
+    </owl:Class>
+
+     <owl:Class rdf:about="#MCSS:DirectMessages">
+        <rdfs:subClassOf rdf:resource="#Global:DirectMessage"/>
+        <MCSScomment>Represents the functionality and content of direct messages in the system.</MCSScomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OFB:DirectMessaging">
+        <rdfs:subClassOf rdf:resource="#Global:DirectMessage"/>
+        <OFBcomment>Represents one-on-one messaging interactions.</OFBcomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:DirectMessages">
+        <rdfs:subClassOf rdf:resource="#Global:DirectMessage"/>
+        <OSNcomment>Represents direct messaging interactions among users on the platform.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:Page">
+        <rdfs:label>Global Page</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a page entity on a social network, often used by businesses or public figures.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan entitas halaman di jejaring sosial, sering digunakan oleh bisnis atau figur publik.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:Pages">
+        <rdfs:subClassOf rdf:resource="#Global:Page"/>
+        <OSNcomment>Represents Pages in the online social network context.</OSNcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:NewsWatchPage">
+        <rdfs:comment xml:lang="en">Represents a page for watching/reading news content (MCSS specific).</rdfs:comment>
+        <MCSScomment>Represents the page where users watch or read news content.</MCSScomment>
+        </owl:Class>
+
+
+    <owl:Class rdf:about="#Global:ProfileSettings">
+        <rdfs:label>Global Profile Settings</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents user-configurable settings related to their profile.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan pengaturan terkait profil yang dapat dikonfigurasi pengguna.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:ProfileSettings">
+        <rdfs:subClassOf rdf:resource="#Global:ProfileSettings"/>
+        <MCSScomment>Sub-class representing settings a user can edit in their profile.</MCSScomment>
+    </owl:Class>
+     <owl:Class rdf:about="#MP:ProfileSettings">
+        <rdfs:subClassOf rdf:resource="#Global:ProfileSettings"/>
+        <MPcomment>Represents profile customization settings for the user.</MPcomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OFB:ProfileSettings">
+        <rdfs:subClassOf rdf:resource="#Global:ProfileSettings"/>
+        <OFBcomment>Settings related to managing the user's profile.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:GroupFile">
+        <rdfs:label>Global Group File</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a file uploaded within a group context.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan file yang diunggah dalam konteks grup.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:Files">
+        <rdfs:subClassOf rdf:resource="#Global:GroupFile"/>
+        <OSNcomment>Represents files uploaded to a group.</OSNcomment>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="#Global:SearchFunctionality">
+        <rdfs:label>Global Search Functionality</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents the capability and actions related to searching within the platform.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan kapabilitas dan aksi terkait pencarian di dalam platform.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MCSS:Search">
+        <rdfs:subClassOf rdf:resource="#Global:SearchFunctionality"/>
+        <MCSScomment>Represents search functionalities and recommendations within the system.</MCSScomment>
+    </owl:Class>
+     <owl:Class rdf:about="#MCSS:SearchFunctionality">
+        <rdfs:subClassOf rdf:resource="#Global:SearchFunctionality"/>
+        <MCSScomment>Handles direct search actions performed by users.</MCSScomment>
+    </owl:Class>
+     <owl:Class rdf:about="#MP:DiscoveryAndSearch">
+         <rdfs:comment xml:lang="en">Represents broader discovery and search features (MP specific).</rdfs:comment>
+         <MPcomment>Represents features for discovering and searching content, people, and topics on a microblogging platform.</MPcomment>
+         </owl:Class>
+     <owl:Class rdf:about="#MP:SearchFunctionality">
+        <rdfs:subClassOf rdf:resource="#Global:SearchFunctionality"/>
+        <MPcomment>Represents search functionalities within the platform.</MPcomment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:Group">
+        <rdfs:label>Global Group</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a group or community entity within a platform.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan entitas grup atau komunitas dalam sebuah platform.</rdfs:comment>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:Groups">
+        <rdfs:subClassOf rdf:resource="#Global:Group"/>
+        <OSNcomment>Represents groups in the online social network site.</OSNcomment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:GroupMessage">
+        <rdfs:subClassOf rdf:resource="#Global:DirectMessage"/> <rdfs:label>Global Group Message</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a message sent within a group chat context.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan pesan yang dikirim dalam konteks obrolan grup.</rdfs:comment>
+    </owl:Class>
+     <owl:Class rdf:about="#MCSS:GroupMessage">
+        <rdfs:subClassOf rdf:resource="#Global:GroupMessage"/>
+        <MCSScomment>Represents group message threads and related interactions.</MCSScomment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:GroupMessaging">
+         <rdfs:comment xml:lang="en">Represents the functionality or interaction of group messaging (OFB).</rdfs:comment>
+         <OFBcomment>Represents group messaging interactions.</OFBcomment>
+         </owl:Class>
+
+    <owl:Class rdf:about="#Global:MarketplaceFeature">
+         <rdfs:label>Global Marketplace Feature</rdfs:label>
+         <rdfs:comment xml:lang="en">Represents features related to online marketplaces within social platforms.</rdfs:comment>
+         <rdfs:comment xml:lang="id">Merepresentasikan fitur terkait marketplace online dalam platform sosial.</rdfs:comment>
+    </owl:Class>
+     <owl:Class rdf:about="#MCSS:CreatorMarketplace">
+        <rdfs:subClassOf rdf:resource="#Global:MarketplaceFeature"/> <MCSScomment>Represents interactions with the creator marketplace.</MCSScomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:Marketplace">
+        <rdfs:subClassOf rdf:resource="#Global:MarketplaceFeature"/>
+        <OSNcomment>Represents the marketplace feature in the online social network site.</OSNcomment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:Poll">
+        <rdfs:subClassOf rdf:resource="#Global:Content"/> <rdfs:label>Global Poll</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents a poll created by users for interaction.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan polling yang dibuat oleh pengguna untuk interaksi.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:Polls">
+        <rdfs:subClassOf rdf:resource="#Global:Poll"/>
+        <OFBcomment>Represents polls created by users with questions and options for interaction.</OFBcomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:Polls">
+        <rdfs:subClassOf rdf:resource="#Global:Poll"/>
+        <OSNcomment>Represents polls created in a group.</OSNcomment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:SecuritySettings">
+        <rdfs:label>Global Security Settings</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents security-related settings for a user account or profile.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan pengaturan terkait keamanan untuk akun atau profil pengguna.</rdfs:comment>
+    </owl:Class>
+     <owl:Class rdf:about="#OFB:SecuritySettings">
+        <rdfs:subClassOf rdf:resource="#Global:SecuritySettings"/>
+        <OFBcomment>Settings related to managing the user's profile security.</OFBcomment>
+    </owl:Class>
+     <owl:Class rdf:about="#OSN:SecuritySettings">
+        <rdfs:subClassOf rdf:resource="#Global:SecuritySettings"/>
+        <OSNcomment>Represents the security settings of the user's account, including session management, two-factor authentication, and login alerts.</OSNcomment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:CommunitySettings">
+        <rdfs:label>Global Community Settings</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents settings specific to a community or group.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan pengaturan spesifik untuk sebuah komunitas atau grup.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OFB:CommunitySettings">
+        <rdfs:subClassOf rdf:resource="#Global:CommunitySettings"/>
+        <OFBcomment>Represents settings for a community, including posting rules, banner, and flair.</OFBcomment>
+    </owl:Class>
+    <owl:Class rdf:about="#Global:AccountSettings">
+         <rdfs:label>Global Account Settings</rdfs:label>
+         <rdfs:comment xml:lang="en">Represents general settings related to a user account.</rdfs:comment>
+         <rdfs:comment xml:lang="id">Merepresentasikan pengaturan umum terkait akun pengguna.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#OSN:AccountSettings">
+        <rdfs:subClassOf rdf:resource="#Global:AccountSettings"/>
+        <OSNcomment>Handles general, privacy, security, and account management settings.</OSNcomment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:MonetizationFeature">
+        <rdfs:label>Global Monetization Feature</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents features related to monetization on the platform.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan fitur terkait monetisasi di platform.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#MCSS:Monetization">
+        <rdfs:subClassOf rdf:resource="#Global:MonetizationFeature"/>
+        <MCSScomment>Represents all monetization-related features and interactions.</MCSScomment>
+    </owl:Class>
+    <owl:Class rdf:about="#MP:Monetization">
+        <rdfs:subClassOf rdf:resource="#Global:MonetizationFeature"/>
+        <MPcomment>Represents features related to monetization on the platform, including subscriptions and advertisements.</MPcomment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Global:ReportAction">
+         <rdfs:subClassOf rdf:resource="#Global:ContentInteraction"/>
+         <rdfs:label>Global Report Action</rdfs:label>
+         <rdfs:comment xml:lang="en">Represents the action of reporting content, users, or messages.</rdfs:comment>
+         <rdfs:comment xml:lang="id">Merepresentasikan aksi melaporkan konten, pengguna, atau pesan.</rdfs:comment>
+    </owl:Class>
+     <owl:Class rdf:about="#MCSS:Report">
+        <rdfs:subClassOf rdf:resource="#Global:ReportAction"/>
+        <MCSScomment>Represents a report interaction with content.</MCSScomment>
+    </owl:Class>
+     <owl:Class rdf:about="#MP:Report">
+        <rdfs:subClassOf rdf:resource="#Global:ReportAction"/>
+        <MPcomment></MPcomment> </owl:Class>
+
+    <owl:Class rdf:about="#Global:SubscriptionFeature">
+        <rdfs:subClassOf rdf:resource="#Global:MonetizationFeature"/>
+        <rdfs:label>Global Subscription Feature</rdfs:label>
+        <rdfs:comment xml:lang="en">Represents features related to user subscriptions.</rdfs:comment>
+        <rdfs:comment xml:lang="id">Merepresentasikan fitur terkait langganan pengguna.</rdfs:comment>
+    </owl:Class>
+     <owl:Class rdf:about="#MCSS:Subscription">
+        <rdfs:subClassOf rdf:resource="#Global:SubscriptionFeature"/>
+        <MCSScomment>Represents subscription-related features on the platform.</MCSScomment>
+    </owl:Class>
+     <owl:Class rdf:about="#MP:Subscription">
+        <rdfs:subClassOf rdf:resource="#Global:SubscriptionFeature"/>
+        <MPcomment>Represents subscription-related features for monetization.</MPcomment>
+    </owl:Class>
+
+</rdf:RDF>

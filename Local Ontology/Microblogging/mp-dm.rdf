@@ -1,0 +1,59 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas DirectMessages -->
+    <owl:Class rdf:about="#DirectMessages">
+        <rdfs:comment>Represents direct messages sent between users on the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property: sendsMediaTo -->
+    <owl:ObjectProperty rdf:about="#sendsMediaTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user sends media files (photos, videos) to another user.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: sendsVoiceNotesTo -->
+    <owl:ObjectProperty rdf:about="#sendsVoiceNotesTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user sends voice notes to another user.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: repliesToMessage -->
+    <owl:ObjectProperty rdf:about="#repliesToMessage">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#DirectMessages"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user replies to a specific direct message.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: deletesMessage -->
+    <owl:ObjectProperty rdf:about="#deletesMessage">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#DirectMessages"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user deletes a specific direct message.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: addsReactionTo -->
+    <owl:ObjectProperty rdf:about="#addsReactionTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#DirectMessages"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user adds a reaction (like, emoji) to a specific direct message.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property: reportsMessage -->
+    <owl:ObjectProperty rdf:about="#reportsMessage">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#DirectMessages"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Indicates that a user reports a specific direct message for inappropriate content.</rdfs:comment>
+    </owl:ObjectProperty>
+
+</rdf:RDF>

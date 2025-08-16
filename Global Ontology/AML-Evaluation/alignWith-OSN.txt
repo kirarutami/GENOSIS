@@ -1,0 +1,19 @@
+PREFIX genosisOwl: <http://example.org/genosis.owl#>
+# Pastikan prefix untuk anotasi alignWithOSN benar.
+# Dari GENOSIS.txt, anotasi <alignWithOSN> ada di namespace default (genosisOwl)
+# dan nama propertinya adalah "alignWithOSN".
+
+SELECT ?genosisEntity ?localOSNEntity
+WHERE {
+  # Mengambil semua entitas di GENOSIS yang punya anotasi alignWithOSN
+  ?genosisEntity genosisOwl:alignWithOSN ?localOSNEntity .
+
+  # Opsional: filter hanya untuk kelas atau properti jika perlu,
+  # tapi untuk reference alignment awal, ambil semua yang ada anotasi tidak masalah.
+  # Contoh:
+  # { ?genosisEntity rdf:type owl:Class . } 
+  # UNION 
+  # { ?genosisEntity rdf:type owl:ObjectProperty . } 
+  # UNION 
+  # { ?genosisEntity rdf:type owl:DatatypeProperty . }
+}

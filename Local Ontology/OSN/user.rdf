@@ -1,0 +1,112 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Kelas User -->
+    <owl:Class rdf:about="#User"/>
+
+    <!-- Properti Objek untuk Relasi Antar Kelas -->
+    <owl:ObjectProperty rdf:about="#hasProfile"/>
+    <owl:ObjectProperty rdf:about="#hasPrivacySetting"/>
+    <owl:ObjectProperty rdf:about="#hasSecuritySetting"/>
+    <owl:ObjectProperty rdf:about="#hasAccountSetting"/>
+    <owl:ObjectProperty rdf:about="#isPartOfUser"/>
+
+    <!-- Sub-kelas UserProfile -->
+    <owl:Class rdf:about="#UserProfile">
+        <rdfs:subClassOf rdf:resource="#User"/>
+    </owl:Class>
+
+    <!-- Individu di dalam UserProfile -->
+    <owl:NamedIndividual rdf:about="#ProfilePicture">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their profile picture.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Username">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their username.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">admin</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Email">
+        <rdf:type rdf:resource="#UserProfile"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their email address.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inactive</status>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas Fullname di dalam UserProfile -->
+    <owl:Class rdf:about="#Fullname">
+        <rdfs:subClassOf rdf:resource="#UserProfile"/>
+    </owl:Class>
+
+    <!-- Individu di dalam Fullname -->
+    <owl:NamedIndividual rdf:about="#FirstName">
+        <rdf:type rdf:resource="#Fullname"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their first name.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#MiddleName">
+        <rdf:type rdf:resource="#Fullname"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their middle name.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inactive</status>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LastName">
+        <rdf:type rdf:resource="#Fullname"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can change their last name.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">admin</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <!-- Sub-kelas PrivacySettings -->
+    <owl:Class rdf:about="#PrivacySettings">
+        <rdfs:subClassOf rdf:resource="#User"/>
+    </owl:Class>
+
+    <!-- Sub-kelas AccountPrivacy di dalam PrivacySettings -->
+    <owl:Class rdf:about="#AccountPrivacy">
+        <rdfs:subClassOf rdf:resource="#PrivacySettings"/>
+    </owl:Class>
+
+    <!-- Individu di dalam AccountPrivacy -->
+    <owl:NamedIndividual rdf:about="#PrivateAccount">
+        <rdf:type rdf:resource="#AccountPrivacy"/>
+        <hasFeatureDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User can set their account to private.</hasFeatureDescription>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</creationDate>
+        <modifiedDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-10T00:00:00</modifiedDate>
+        <accessLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user</accessLevel>
+        <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active</status>
+    </owl:NamedIndividual>
+
+    <!-- Contoh Properti Objek Interaksi Antar Pengguna -->
+    <owl:ObjectProperty rdf:about="#sendMessageTo"/>
+    <owl:ObjectProperty rdf:about="#commentOn"/>
+    <owl:ObjectProperty rdf:about="#reactTo"/>
+    <owl:ObjectProperty rdf:about="#shareContentWith"/>
+    <owl:ObjectProperty rdf:about="#follow"/>
+    <owl:ObjectProperty rdf:about="#blockUser"/>
+    <owl:ObjectProperty rdf:about="#viewContent"/>
+    <owl:ObjectProperty rdf:about="#isConnectedTo"/>
+
+</rdf:RDF>

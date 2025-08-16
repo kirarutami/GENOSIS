@@ -1,0 +1,307 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- DirectMessages Class -->
+    <owl:Class rdf:about="#DirectMessages">
+        <rdfs:comment>Represents direct messaging interactions among users on the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for DirectMessages -->
+    <owl:DatatypeProperty rdf:about="#hasMessageViewTimestamp">
+        <rdfs:domain rdf:resource="#DirectMessages"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp of when a message was viewed by the user.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMessageAttachment">
+        <rdfs:domain rdf:resource="#DirectMessages"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Attachment on direct messages sent by the user.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for DirectMessages -->
+    <owl:ObjectProperty rdf:about="#viewsMessages">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#DirectMessages"/>
+        <rdfs:comment>Links a user to the messages they have viewed.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- TextMessage Sub-class -->
+    <owl:Class rdf:about="#TextMessage">
+        <rdfs:subClassOf rdf:resource="#DirectMessages"/>
+        <rdfs:comment>Represents text-based messages sent within the platform.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for TextMessage -->
+    <owl:DatatypeProperty rdf:about="#hasMessageContentType">
+        <rdfs:domain rdf:resource="#TextMessage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of content in the message, e.g., text, photo, video.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMessageSendTimestamp">
+        <rdfs:domain rdf:resource="#TextMessage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp of when a text message was sent.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for TextMessage -->
+    <owl:ObjectProperty rdf:about="#sendsTextMessage">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#TextMessage"/>
+        <rdfs:comment>Indicates that a user sent a text message.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#sendsPhotoVideoMessage">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#TextMessage"/>
+        <rdfs:comment>Indicates that a user sent a photo or video message.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#sendsVoiceMessage">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#TextMessage"/>
+        <rdfs:comment>Indicates that a user sent a voice message.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- GroupChat Sub-class -->
+    <owl:Class rdf:about="#GroupChat">
+        <rdfs:subClassOf rdf:resource="#DirectMessages"/>
+        <rdfs:comment>Represents group chat interactions within direct messaging.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for GroupChat -->
+    <owl:DatatypeProperty rdf:about="#hasGroupChatActionTimestamp">
+        <rdfs:domain rdf:resource="#GroupChat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp of actions performed within the group chat.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for GroupChat -->
+    <owl:ObjectProperty rdf:about="#createsGroupChat">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupChat"/>
+        <rdfs:comment>Links a user to the creation of a group chat.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#addsMembersTo">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupChat"/>
+        <rdfs:comment>Links a user to the action of adding members to a group chat.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#removesMembersFrom">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupChat"/>
+        <rdfs:comment>Links a user to the action of removing members from a group chat.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- MessageNotifications Sub-class -->
+    <owl:Class rdf:about="#MessageNotifications">
+        <rdfs:subClassOf rdf:resource="#DirectMessages"/>
+        <rdfs:comment>Represents notification settings related to direct messages.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for MessageNotifications -->
+    <owl:DatatypeProperty rdf:about="#hasNotificationActionTimestamp">
+        <rdfs:domain rdf:resource="#MessageNotifications"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp of notification-related actions.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for MessageNotifications -->
+    <owl:ObjectProperty rdf:about="#enablesNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#MessageNotifications"/>
+        <rdfs:comment>Links a user to the action of enabling notifications.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#disablesNotifications">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#MessageNotifications"/>
+        <rdfs:comment>Links a user to the action of disabling notifications.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- VideoCalls Sub-class -->
+    <owl:Class rdf:about="#VideoCalls">
+        <rdfs:subClassOf rdf:resource="#DirectMessages"/>
+        <rdfs:comment>Represents video call interactions within direct messages.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for VideoCalls -->
+    <owl:DatatypeProperty rdf:about="#hasVideoCallTimestamp">
+        <rdfs:domain rdf:resource="#VideoCalls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp of a video call.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasVideoCallType">
+        <rdfs:domain rdf:resource="#VideoCalls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Type of video call, e.g., one-on-one or group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for VideoCalls -->
+    <owl:ObjectProperty rdf:about="#callsOneOnOneVideoCall">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#VideoCalls"/>
+        <rdfs:comment>Links a user to a one-on-one video call.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#callsGroupVideoCall">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#VideoCalls"/>
+        <rdfs:comment>Links a user to a group video call.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- VoiceCalls Sub-class -->
+    <owl:Class rdf:about="#VoiceCalls">
+        <rdfs:subClassOf rdf:resource="#DirectMessages"/>
+        <rdfs:comment>Represents voice call interactions within direct messages.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Data Properties for VoiceCalls -->
+    <owl:DatatypeProperty rdf:about="#hasVoiceCallTimestamp">
+        <rdfs:domain rdf:resource="#VoiceCalls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp of a voice call.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasVoiceCallType">
+        <rdfs:domain rdf:resource="#VoiceCalls"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Type of voice call, e.g., one-on-one or group.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for VoiceCalls -->
+    <owl:ObjectProperty rdf:about="#callsOneOnOneVoiceCall">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#VoiceCalls"/>
+        <rdfs:comment>Links a user to a one-on-one voice call.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#callsGroupVoiceCall">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#VoiceCalls"/>
+        <rdfs:comment>Links a user to a group voice call.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!--Tambahan Data Property-->
+        <!-- Data Properties for DirectMessages -->
+    <owl:DatatypeProperty rdf:about="#hasMessageContent">
+        <rdfs:domain rdf:resource="#DirectMessages"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores the content of a direct message.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMessageTimestamp">
+        <rdfs:domain rdf:resource="#DirectMessages"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Stores the timestamp when a message was sent.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMessageFrequency">
+        <rdfs:domain rdf:resource="#DirectMessages"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Indicates the number of messages sent in a given time period.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMuteTimestamp">
+        <rdfs:domain rdf:resource="#DirectMessages"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp of when a user muted a conversation.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasBlocksTimestamp">
+        <rdfs:domain rdf:resource="#DirectMessages"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp of when a user blocked another user.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMessageStatus">
+        <rdfs:domain rdf:resource="#DirectMessages"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates the status of the message: sent, delivered, or read.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+
+    <!-- Data Properties for GroupChat -->
+    <owl:DatatypeProperty rdf:about="#hasGroupMessageContent">
+        <rdfs:domain rdf:resource="#GroupChat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stores the content of a group chat message.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupCreatedDate">
+        <rdfs:domain rdf:resource="#GroupChat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Indicates the creation date of the group chat.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupName">
+        <rdfs:domain rdf:resource="#GroupChat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Represents the name of the group chat.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasGroupMessageFrequency">
+        <rdfs:domain rdf:resource="#GroupChat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Indicates the frequency of messages within the group chat.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasJoinTimestamp">
+        <rdfs:domain rdf:resource="#GroupChat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the timestamp when a user joined the group chat.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasLeaveTimestamp">
+        <rdfs:domain rdf:resource="#GroupChat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the timestamp when a user left the group chat.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#hasMuteTimestamp">
+        <rdfs:domain rdf:resource="#GroupChat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Stores the timestamp of when a user muted the group chat.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties for GroupChat -->
+    <owl:ObjectProperty rdf:about="#participatesInGroupMessage">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupChat"/>
+        <rdfs:comment>Links a user participating in a group chat.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasParticipants">
+        <rdfs:domain rdf:resource="#GroupChat"/>
+        <rdfs:range rdf:resource="#User"/>
+        <rdfs:comment>Links a group chat to its participants.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#joinsGroupChat">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupChat"/>
+        <rdfs:comment>Links a user to the group chat they joined.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#leavesGroupChat">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupChat"/>
+        <rdfs:comment>Links a user to the group chat they left.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#mutesGroupChat">
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#GroupChat"/>
+        <rdfs:comment>Links a user to the group chat they muted.</rdfs:comment>
+    </owl:ObjectProperty>
+
+
+</rdf:RDF>
